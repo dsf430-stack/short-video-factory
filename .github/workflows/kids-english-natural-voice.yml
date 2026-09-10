@@ -29,7 +29,10 @@ jobs:
         with:
           python-version: '3.12'
       - name: Install free neural TTS
-        run: python -m pip install --disable-pip-version-check edge-tts
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y ffmpeg
+          python -m pip install --disable-pip-version-check edge-tts
       - name: Generate natural narration
         run: python scripts/generate-kids-english-voice.py
       - name: Render and verify POTATO MP4
