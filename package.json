@@ -17,7 +17,9 @@
     "format": "prettier --write .",
     "preinstall": "npx only-allow pnpm",
     "postinstall": "node build/scripts/post-install.js",
-    "lipo-ffmpeg": "node build/scripts/lipo-ffmpeg.js"
+    "lipo-ffmpeg": "node build/scripts/lipo-ffmpeg.js",
+    "kids:potato": "node scripts/render-kids-english-demo.mjs --word potato",
+    "kids:verify": "node scripts/verify-kids-english-video.mjs dist/kids-english/POTATO.mp4"
   },
   "dependencies": {
     "archiver": "^7.0.1",
