@@ -1,0 +1,46 @@
+name: Kids English natural voice demo
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - kids-english-video-factory
+    paths:
+      - .github/workflows/kids-english-natural-voice.yml
+      - scripts/generate-kids-english-voice.py
+      - scripts/render-kids-english-demo.mjs
+
+permissions:
+  contents: write
+
+jobs:
+  render-potato:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: kids-english-video-factory
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install free neural TTS
+        run: python -m pip install --disable-pip-version-check edge-tts
+      - name: Generate natural narration
+        run: python scripts/generate-kids-english-voice.py
+      - name: Render and verify POTATO MP4
+        run: |
+          node scripts/render-kids-english-demo.mjs --word potato
+          node scripts/verify-kids-english-video.mjs dist/kids-english/POTATO.mp4
+      - name: Save generated media
+        run: |
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git add -f assets/kids-english/potato-narration.m4a dist/kids-english/POTATO.mp4
+          git diff --cached --quiet && exit 0
+          git commit -m "build: replace POTATO narration with neural voice [skip ci]"
+          git push origin HEAD:kids-english-video-factory

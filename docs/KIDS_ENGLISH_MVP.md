@@ -17,3 +17,5 @@ npm run kids:verify
 Output: `dist/kids-english/POTATO.mp4`
 
 The renderer first uses the project's `ffmpeg-static` dependency. If dependencies have not been installed, it automatically uses an `ffmpeg` executable available on `PATH`.
+
+The checked-in demo narration is generated with a free Edge Neural English voice. Pushing changes to the Kids English renderer runs the natural-voice workflow, re-renders the MP4, verifies it, and updates the generated media on this branch.
