@@ -1,0 +1,46 @@
+{
+  "id": "potato",
+  "word": "POTATO",
+  "letter": "P",
+  "durationSeconds": 10,
+  "aspectRatio": "9:16",
+  "resolution": { "width": 1080, "height": 1920 },
+  "voice": {
+    "provider": "edge-tts",
+    "locale": "en-US",
+    "rate": "+0%",
+    "pitch": "+8Hz"
+  },
+  "narration": [
+    { "start": 0.0, "end": 3.0, "text": "P is for potato!" },
+    { "start": 3.0, "end": 6.0, "text": "Potato! P-O-T-A-T-O!" },
+    { "start": 6.0, "end": 10.0, "text": "Potato! Great job!" }
+  ],
+  "shots": [
+    {
+      "start": 0.0,
+      "end": 3.0,
+      "camera": "eye-level wide shot, gentle push-in",
+      "action": "Little potato waves hello; a rounded red capital P appears above its head."
+    },
+    {
+      "start": 3.0,
+      "end": 6.0,
+      "camera": "slightly high-angle close-up",
+      "action": "Little potato looks up and laughs; P expands into the colorful crayon word POTATO."
+    },
+    {
+      "start": 6.0,
+      "end": 10.0,
+      "camera": "pull back to full shot",
+      "action": "Little potato holds its straw hat and spins happily on the grass; POTATO gently bobs like a bubble."
+    }
+  ],
+  "visualStyle": "children's crayon picture-book illustration, thick wax-crayon texture, warm handmade feel, stable cute potato character, clean composition, no distortion",
+  "subtitle": {
+    "enabled": true,
+    "language": "en",
+    "safeBottomPercent": 18,
+    "emphasizeWord": "POTATO"
+  }
+}
