@@ -24,8 +24,19 @@ jobs:
           python-version: '3.11'
       - name: Install existing voice dependencies
         run: |
+          set -euxo pipefail
+          command -v python
+          python --version
+          command -v ffmpeg || true
+          command -v ffprobe || true
+          if ! command -v ffmpeg >/dev/null 2>&1 || ! command -v ffprobe >/dev/null 2>&1; then
+            sudo apt-get update
+            sudo apt-get install -y ffmpeg
+          fi
           python -m pip install -r smart_voice/requirements.txt
+          python -c "import edge_tts, certifi; print('Edge TTS and CA bundle available')"
           ffmpeg -version
+          ffprobe -version
       - name: Generate and verify 068 MP3/SRT
         env:
           NARRATION: ${{ inputs.narration }}
@@ -42,6 +53,7 @@ jobs:
           pathlib.Path('smart_voice/output').mkdir(parents=True, exist_ok=True)
           pathlib.Path('smart_voice/output/narration.txt').write_text(text,encoding='utf-8')
           PY
+          set -euxo pipefail
           python smart_voice/generate_voice.py --voice-id 068 --text-file smart_voice/output/narration.txt --output "smart_voice/output/${OUTPUT_NAME}.mp3"
       - name: Upload verified audio and subtitles
         if: success()
@@ -54,6 +66,15 @@ jobs:
             smart_voice/output/*.json
           if-no-files-found: error
           retention-days: 7
+      - name: Report failure context
+        if: failure()
+        shell: bash
+        run: |
+          echo "PATH=$PATH"
+          command -v python || true
+          command -v ffmpeg || true
+          command -v ffprobe || true
+          ls -la smart_voice/output/ || true
       - name: Upload failure log
         if: failure()
         uses: actions/upload-artifact@v4
