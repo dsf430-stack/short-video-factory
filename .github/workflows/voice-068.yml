@@ -1,0 +1,63 @@
+name: 068 曉臻配音
+on:
+  workflow_dispatch:
+    inputs:
+      narration:
+        description: '貼上繁體中文旁白（最多 10000 字）'
+        required: true
+        type: string
+      filename:
+        description: '輸出檔名（不含副檔名）'
+        required: false
+        default: 'voice-068'
+        type: string
+permissions:
+  contents: read
+jobs:
+  synthesize:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install existing voice dependencies
+        run: |
+          python -m pip install -r smart_voice/requirements.txt
+          ffmpeg -version
+      - name: Generate and verify 068 MP3/SRT
+        env:
+          NARRATION: ${{ inputs.narration }}
+          OUTPUT_NAME: ${{ inputs.filename }}
+        run: |
+          python - <<'PY'
+          import os, pathlib, re
+          name=os.environ['OUTPUT_NAME'].strip()
+          if not re.fullmatch(r'[a-zA-Z0-9_-]{1,64}', name):
+              raise SystemExit('Filename must be 1-64 ASCII letters, digits, _ or -')
+          text=os.environ['NARRATION'].strip()
+          if not text or len(text)>10000:
+              raise SystemExit('Narration must contain 1-10000 characters')
+          pathlib.Path('smart_voice/output').mkdir(parents=True, exist_ok=True)
+          pathlib.Path('smart_voice/output/narration.txt').write_text(text,encoding='utf-8')
+          PY
+          python smart_voice/generate_voice.py --voice-id 068 --text-file smart_voice/output/narration.txt --output "smart_voice/output/${OUTPUT_NAME}.mp3"
+      - name: Upload verified audio and subtitles
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: 068-voice-output
+          path: |
+            smart_voice/output/*.mp3
+            smart_voice/output/*.srt
+            smart_voice/output/*.json
+          if-no-files-found: error
+          retention-days: 7
+      - name: Upload failure log
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: 068-error-log
+          path: smart_voice/output/*.error.log
+          if-no-files-found: ignore
