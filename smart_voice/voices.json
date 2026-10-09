@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "voices": {
     "068": {
       "voice": "zh-TW-HsiaoChenNeural",
@@ -137,6 +137,32 @@
       ],
       "tags": [
         "learning"
+      ]
+    },
+    "ZH_HsiaoYu": {
+      "voice": "zh-TW-HsiaoYuNeural",
+      "rate": "+20%",
+      "pitch": "+5Hz",
+      "volume": "+0%",
+      "languages": [
+        "zh-TW"
+      ],
+      "tags": [
+        "chinese",
+        "female"
+      ]
+    },
+    "ZH_Xiaoxiao": {
+      "voice": "zh-CN-XiaoxiaoNeural",
+      "rate": "+20%",
+      "pitch": "+5Hz",
+      "volume": "+0%",
+      "languages": [
+        "zh-CN"
+      ],
+      "tags": [
+        "chinese",
+        "female"
       ]
     }
   }

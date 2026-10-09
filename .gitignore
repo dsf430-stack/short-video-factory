@@ -24,3 +24,9 @@ release
 *.njsproj
 *.sln
 *.sw?
+
+# Python narration runtime and generated output
+__pycache__/
+*.pyc
+.venv/
+smart_voice/output/

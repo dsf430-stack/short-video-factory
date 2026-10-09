@@ -1,0 +1,35 @@
+{
+  "status": "SUCCESS",
+  "voice_id": "068",
+  "preset": {
+    "voice": "zh-TW-HsiaoChenNeural",
+    "rate": "+20%",
+    "pitch": "+5Hz",
+    "volume": "+0%",
+    "languages": [
+      "zh-TW"
+    ],
+    "tags": [
+      "lifestyle",
+      "friendly"
+    ]
+  },
+  "text_sha256": "59383ff8943c12b2244e4d1fb435ac8c9e2557175b8ff1e9d2ebb96d1e0924bb",
+  "chunks": 1,
+  "duration": 6.138776,
+  "loudness": {
+    "input_i": "-13.16",
+    "input_tp": "-1.25",
+    "input_lra": "1.20",
+    "input_thresh": "-23.49",
+    "output_i": "-12.29",
+    "output_tp": "-1.00",
+    "output_lra": "1.10",
+    "output_thresh": "-22.55",
+    "normalization_type": "dynamic",
+    "target_offset": "1.29"
+  },
+  "full_decode": "PASS",
+  "subjective_listening": "UNCERTAIN",
+  "sha256": "bf2ab2595cbbfd88dd32da07a6c922306a2bf7c316581e89748723bc7f1c6d17"
+}

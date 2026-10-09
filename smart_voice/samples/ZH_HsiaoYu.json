@@ -1,0 +1,35 @@
+{
+  "status": "SUCCESS",
+  "voice_id": "ZH_HsiaoYu",
+  "preset": {
+    "voice": "zh-TW-HsiaoYuNeural",
+    "rate": "+20%",
+    "pitch": "+5Hz",
+    "volume": "+0%",
+    "languages": [
+      "zh-TW"
+    ],
+    "tags": [
+      "chinese",
+      "female"
+    ]
+  },
+  "text_sha256": "e07168f58979a5a6386724ff11869d2a63f505f3d836b14737528f71202c6654",
+  "chunks": 1,
+  "duration": 5.32898,
+  "loudness": {
+    "input_i": "-14.78",
+    "input_tp": "-1.08",
+    "input_lra": "0.90",
+    "input_thresh": "-24.91",
+    "output_i": "-12.81",
+    "output_tp": "-1.00",
+    "output_lra": "0.80",
+    "output_thresh": "-23.01",
+    "normalization_type": "dynamic",
+    "target_offset": "1.81"
+  },
+  "full_decode": "PASS",
+  "subjective_listening": "UNCERTAIN",
+  "sha256": "05418d897687dafc442dc3ce6185f256cdf49c165b45d14257c6bcd5fc647a6c"
+}
