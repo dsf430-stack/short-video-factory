@@ -4,7 +4,7 @@ const {Scene,C}=require('./lib/scene-dsl.js');
 const ROOT=__dirname,OUT=path.join(ROOT,'output');
 const fontfile=process.env.FIB_FONT || '/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc';
 const collection=fontkit.openSync(fontfile),font=collection.fonts?collection.fonts.find(f=>/TC/.test(f.postscriptName))||collection.fonts[0]:collection;
-const html=fs.readFileSync(path.join(ROOT,'lib/render.html'),'utf8'),win=new JSDOM(html,{runScripts:'outside-only'}).window;
+const html=fs.readFileSync(path.join(ROOT,'lib/render.html'),'utf8').replace(/function updateCaption\(t\) \{[\s\S]*?\n\}/, "function updateCaption(t){const c=cues.find(q=>t>=q.start&&t<q.end);captionEl.innerHTML='';if(!c){captionEl.style.display='none';return;}captionEl.style.display='';const chars=[...c.text],lines=[];for(let i=0;i<chars.length;i+=20)lines.push(chars.slice(i,i+20).join(''));lines.forEach((line,i)=>{const n=mk('tspan',{x:540,y:1710+i*62});n.textContent=line;captionEl.appendChild(n);});}"),win=new JSDOM(html,{runScripts:'outside-only'}).window;
 const proto=win.SVGElement.prototype;
 proto.getTotalLength=function(){return new svgPathProperties(this.getAttribute('d')).getTotalLength()};
 proto.getPointAtLength=function(l){return new svgPathProperties(this.getAttribute('d')).getPointAtLength(l)};
@@ -14,7 +14,6 @@ win.rough=require('roughjs/bundled/rough.cjs.js');
 [...html.matchAll(/<script>([\s\S]*?)<\/script>/g)].forEach(m=>win.eval(m[1]));
 win.setCanvas(1080,1920);win.setBrand(null);win.setPen({speed:2500,fillSpeed:16000,minSeconds:.16,gapSeconds:.025,charSeconds:[.018,.04],overflow:0,color:'#f5b942'});
 const cueEl=win.document.getElementById('caption');cueEl.setAttribute('x',540);cueEl.setAttribute('y',1735);cueEl.setAttribute('font-size',43);
-win.eval(`updateCaption=function(t){const c=cues.find(q=>t>=q.start&&t<q.end);captionEl.innerHTML='';if(!c){captionEl.style.display='none';return;}captionEl.style.display='';const chars=[...c.text],lines=[];for(let i=0;i<chars.length;i+=20)lines.push(chars.slice(i,i+20).join(''));lines.forEach((line,i)=>{const n=mk('tspan',{x:540,y:1710+i*62});n.textContent=line;captionEl.appendChild(n);});};`);
 function ts(v){const p=v.split(/[:,]/).map(Number);return p[0]*3600+p[1]*60+p[2]+p[3]/1000}
 const srt=fs.readFileSync(path.join(OUT,'fiberglass-20261012.srt'),'utf8');
 const cues=srt.trim().split(/\n\s*\n/).map(b=>{const lines=b.split('\n'),a=lines[1].split(' --> ');return {start:ts(a[0]),end:ts(a[1]),text:lines.slice(2).join('')}});
