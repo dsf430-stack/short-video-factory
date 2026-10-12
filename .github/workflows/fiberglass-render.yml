@@ -1,0 +1,67 @@
+name: 068 玻璃纖維白板成片
+on:
+  push:
+    branches: ['video/fiberglass-068-20261012']
+    paths: ['fiberglass_project/**', '.github/workflows/fiberglass-render.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Download already successful narration without synthesizing again
+        uses: actions/download-artifact@v4
+        with:
+          name: 068-voice-output
+          run-id: 38249536043
+          github-token: ${{ github.token }}
+          path: fiberglass_project/output
+      - name: Install only missing rendering dependencies and Chinese font
+        working-directory: fiberglass_project
+        run: |
+          set -euo pipefail
+          if ! command -v ffmpeg >/dev/null || ! command -v ffprobe >/dev/null || [ ! -f /usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc ]; then
+            sudo apt-get update
+            sudo apt-get install -y ffmpeg fonts-noto-cjk
+          fi
+          if ! python -c 'import fontTools.subset' 2>/dev/null; then python -m pip install fonttools; fi
+          npm install --ignore-scripts --no-audit --no-fund
+          cat render.cjs narration.txt > glyphs.txt
+          pyftsubset /usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc --font-number=3 --text-file=glyphs.txt --output-file=font.otf --layout-features='*'
+      - name: Render existing whiteboard engine and verify voiced MP4
+        working-directory: fiberglass_project
+        env:
+          FIB_FONT: font.otf
+        run: |
+          set -euo pipefail
+          node --expose-gc render.cjs
+          python finish.py
+      - name: Preserve completed deliverables and logs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: fiberglass-068-video-v01
+          path: |
+            fiberglass_project/output/fiberglass_068_v01.mp4
+            fiberglass_project/output/fiberglass-20261012.*
+            fiberglass_project/output/fiberglass_full_mix.mp3
+            fiberglass_project/output/fiberglass_video.srt
+            fiberglass_project/output/timeline.json
+            fiberglass_project/output/qa.json
+            fiberglass_project/output/checkpoint.md
+            fiberglass_project/output/scene-*.png
+            fiberglass_project/output/original_music.wav
+            fiberglass_project/output/scene_sfx.wav
+            fiberglass_project/font.otf
+          if-no-files-found: error
+          retention-days: 30
