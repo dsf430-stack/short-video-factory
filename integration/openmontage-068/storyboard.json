@@ -1,0 +1,55 @@
+{
+  "status": "PLANNED_NOT_RENDERED",
+  "resolution": [
+    1080,
+    1920
+  ],
+  "duration": 20.112,
+  "visual_style": "電影寫實",
+  "motion_required": true,
+  "approved_paid_cost": 0,
+  "scenes": [
+    {
+      "start": 0.05,
+      "end": 3.1041665,
+      "text": "宋國有個農夫，每天辛苦耕田。",
+      "action": "農夫揮鋤耕田，晨光與泥土特寫",
+      "asset_status": "MISSING"
+    },
+    {
+      "start": 3.1041665,
+      "end": 6.4374997,
+      "text": "一天，兔子飛奔而來，撞上樹樁。",
+      "action": "兔子奔跑；撞樁以切鏡與聲效表達，避免血腥",
+      "asset_status": "MISSING"
+    },
+    {
+      "start": 6.4374997,
+      "end": 10.624999500000001,
+      "text": "他撿起兔子，心想：不用耕田，也能吃飽！",
+      "action": "農夫彎腰拾起兔子，驚喜表情",
+      "asset_status": "MISSING"
+    },
+    {
+      "start": 10.6249995,
+      "end": 14.260416,
+      "text": "從此，他放下鋤頭，天天守著樹樁。",
+      "action": "農夫放下鋤頭，坐在樹樁旁等待",
+      "asset_status": "MISSING"
+    },
+    {
+      "start": 14.2604161,
+      "end": 17.3020826,
+      "text": "兔子沒再來，田裡卻長滿雜草。",
+      "action": "日落切換，農夫仍等待；荒田與雜草",
+      "asset_status": "MISSING"
+    },
+    {
+      "start": 17.3020826,
+      "end": 20.010415799999997,
+      "text": "偶然的好運，不能代替努力。",
+      "action": "農夫望向荒田，字幕落點",
+      "asset_status": "MISSING"
+    }
+  ]
+}

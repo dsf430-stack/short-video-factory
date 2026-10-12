@@ -1,0 +1,44 @@
+{
+  "status": "SUCCESS",
+  "input_hash": "b9ef80f85bfa30b5669ce6fa5cf676c54dbe207929568da95db81e24bea21f6a",
+  "voice": "zh-TW-HsiaoChenNeural",
+  "rate": "+20%",
+  "pitch": "+5Hz",
+  "characters": 91,
+  "chunks": 1,
+  "duration": 20.112,
+  "sentences": [
+    {
+      "start": 0.05,
+      "end": 3.1041665,
+      "text": "宋國有個農夫，每天辛苦耕田。"
+    },
+    {
+      "start": 3.1041665,
+      "end": 6.4374997,
+      "text": "一天，兔子飛奔而來，撞上樹樁。"
+    },
+    {
+      "start": 6.4374997,
+      "end": 10.624999500000001,
+      "text": "他撿起兔子，心想：不用耕田，也能吃飽！"
+    },
+    {
+      "start": 10.6249995,
+      "end": 14.260416,
+      "text": "從此，他放下鋤頭，天天守著樹樁。"
+    },
+    {
+      "start": 14.2604161,
+      "end": 17.3020826,
+      "text": "兔子沒再來，田裡卻長滿雜草。"
+    },
+    {
+      "start": 17.3020826,
+      "end": 20.010415799999997,
+      "text": "偶然的好運，不能代替努力。"
+    }
+  ],
+  "sha256": "feb8051fb9ab114b258b521153107e91b190fa868e00d9b30122fd531d99e0df",
+  "subjective_listening": "UNCERTAIN"
+}

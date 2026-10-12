@@ -1,0 +1,316 @@
+{
+  "composition_runtimes": {
+    "ffmpeg": true,
+    "remotion": false,
+    "hyperframes": false
+  },
+  "capabilities": [
+    {
+      "capability": "3d_asset_acquisition",
+      "configured": 1,
+      "total": 1,
+      "available_providers": [
+        "multi"
+      ],
+      "unavailable_providers": []
+    },
+    {
+      "capability": "3d_asset_generation",
+      "configured": 0,
+      "total": 2,
+      "available_providers": [],
+      "unavailable_providers": [
+        "atlas_cloud",
+        "fal"
+      ]
+    },
+    {
+      "capability": "3d_world_generation",
+      "configured": 1,
+      "total": 1,
+      "available_providers": [
+        "threejs"
+      ],
+      "unavailable_providers": []
+    },
+    {
+      "capability": "3d_world_rendering",
+      "configured": 0,
+      "total": 1,
+      "available_providers": [],
+      "unavailable_providers": [
+        "blender"
+      ]
+    },
+    {
+      "capability": "analysis",
+      "configured": 7,
+      "total": 13,
+      "available_providers": [
+        "ffmpeg",
+        "ffprobe",
+        "local",
+        "multi"
+      ],
+      "unavailable_providers": [
+        "azure",
+        "dashscope",
+        "mediapipe",
+        "transformers",
+        "whisperx",
+        "youtube-transcript-api"
+      ]
+    },
+    {
+      "capability": "audio_processing",
+      "configured": 2,
+      "total": 2,
+      "available_providers": [
+        "ffmpeg"
+      ],
+      "unavailable_providers": []
+    },
+    {
+      "capability": "avatar",
+      "configured": 0,
+      "total": 5,
+      "available_providers": [],
+      "unavailable_providers": [
+        "heygen",
+        "kling_official",
+        "sadtalker",
+        "wav2lip"
+      ]
+    },
+    {
+      "capability": "character_animation",
+      "configured": 6,
+      "total": 6,
+      "available_providers": [
+        "openmontage"
+      ],
+      "unavailable_providers": []
+    },
+    {
+      "capability": "clip_acquisition",
+      "configured": 1,
+      "total": 1,
+      "available_providers": [
+        "openmontage"
+      ],
+      "unavailable_providers": []
+    },
+    {
+      "capability": "clip_retrieval",
+      "configured": 0,
+      "total": 1,
+      "available_providers": [],
+      "unavailable_providers": [
+        "openmontage"
+      ]
+    },
+    {
+      "capability": "corpus_population",
+      "configured": 0,
+      "total": 1,
+      "available_providers": [],
+      "unavailable_providers": [
+        "openmontage"
+      ]
+    },
+    {
+      "capability": "enhancement",
+      "configured": 2,
+      "total": 6,
+      "available_providers": [
+        "ffmpeg"
+      ],
+      "unavailable_providers": [
+        "codeformer",
+        "mediapipe",
+        "realesrgan",
+        "rembg"
+      ]
+    },
+    {
+      "capability": "graphics",
+      "configured": 1,
+      "total": 3,
+      "available_providers": [
+        "mermaid"
+      ],
+      "unavailable_providers": [
+        "manim",
+        "pygments"
+      ]
+    },
+    {
+      "capability": "image_generation",
+      "configured": 0,
+      "total": 23,
+      "available_providers": [],
+      "unavailable_providers": [
+        "atlascloud",
+        "bytedance",
+        "comfyui",
+        "dashscope",
+        "fal.ai",
+        "flux",
+        "google_imagen",
+        "grok",
+        "hunyuan_cloud",
+        "ideogram",
+        "kling_official",
+        "local_diffusion",
+        "minimax",
+        "multi",
+        "openai",
+        "pexels",
+        "pixabay",
+        "qwen_local",
+        "recraft",
+        "replicate"
+      ]
+    },
+    {
+      "capability": "music_generation",
+      "configured": 0,
+      "total": 5,
+      "available_providers": [],
+      "unavailable_providers": [
+        "comfyui",
+        "elevenlabs",
+        "fal.ai",
+        "google",
+        "suno"
+      ]
+    },
+    {
+      "capability": "music_library",
+      "configured": 0,
+      "total": 1,
+      "available_providers": [],
+      "unavailable_providers": [
+        "local"
+      ]
+    },
+    {
+      "capability": "music_search",
+      "configured": 1,
+      "total": 2,
+      "available_providers": [
+        "pixabay_music"
+      ],
+      "unavailable_providers": [
+        "freesound"
+      ]
+    },
+    {
+      "capability": "publish",
+      "configured": 1,
+      "total": 1,
+      "available_providers": [
+        "local"
+      ],
+      "unavailable_providers": []
+    },
+    {
+      "capability": "screen_capture",
+      "configured": 2,
+      "total": 2,
+      "available_providers": [
+        "cap",
+        "ffmpeg"
+      ],
+      "unavailable_providers": []
+    },
+    {
+      "capability": "source_ingest",
+      "configured": 0,
+      "total": 1,
+      "available_providers": [],
+      "unavailable_providers": [
+        "yt-dlp"
+      ]
+    },
+    {
+      "capability": "subtitle",
+      "configured": 2,
+      "total": 2,
+      "available_providers": [
+        "openmontage",
+        "remotion"
+      ],
+      "unavailable_providers": []
+    },
+    {
+      "capability": "tts",
+      "configured": 0,
+      "total": 13,
+      "available_providers": [],
+      "unavailable_providers": [
+        "azure",
+        "cartesia",
+        "dashscope",
+        "doubao",
+        "elevenlabs",
+        "fal.ai",
+        "fish_audio",
+        "gemini",
+        "google_tts",
+        "inworld",
+        "kling_official",
+        "openai",
+        "piper"
+      ]
+    },
+    {
+      "capability": "video_generation",
+      "configured": 0,
+      "total": 31,
+      "available_providers": [],
+      "unavailable_providers": [
+        "ark",
+        "atlascloud",
+        "cogvideo",
+        "comfyui",
+        "fal.ai",
+        "gemini_omni",
+        "grok",
+        "heygen",
+        "higgsfield",
+        "hunyuan",
+        "hunyuan_cloud",
+        "kling",
+        "kling_official",
+        "ltx",
+        "ltx-modal",
+        "minimax",
+        "openai",
+        "pexels",
+        "pixabay",
+        "replicate",
+        "runway",
+        "seedance",
+        "veo",
+        "volcengine",
+        "wan"
+      ]
+    },
+    {
+      "capability": "video_post",
+      "configured": 8,
+      "total": 9,
+      "available_providers": [
+        "ffmpeg"
+      ],
+      "unavailable_providers": [
+        "hyperframes"
+      ]
+    }
+  ],
+  "runtime_warnings": [
+    "hyperframes: npm package `hyperframes` not resolvable: timeout (5s) -- offline or slow registry",
+    "comfyui_video: The top-level resource_profile is a ComfyUI provider floor, not a promise that every workflow fits 8GB VRAM. Bundled WAN 2.2 14B FP8 workflows recommend 16GB VRAM; custom low-VRAM workflows can target 8GB-12GB depending on model, quantization, resolution, and frame count."
+  ]
+}

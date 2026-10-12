@@ -1,0 +1,63 @@
+{
+  "success": true,
+  "data": {
+    "output_dir": "projects/shou-zhu-dai-tu-068/assets/video",
+    "clips_downloaded": 2,
+    "clips_reused": 0,
+    "total_clips": 2,
+    "per_source_counts": {
+      "wikimedia": 2,
+      "archive_org": 0
+    },
+    "queries_run": 2,
+    "resolved_sources": [
+      "wikimedia",
+      "archive_org"
+    ],
+    "clips": [
+      {
+        "clip_id": "wikimedia_150949051",
+        "source": "wikimedia",
+        "source_id": "150949051",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Daily_life_in_ancient_Rome_%E2%80%93_how_people_lived,_Terra_X_(English_redub).webm",
+        "query": "ancient Chinese farmer working field",
+        "slot_id": "farmer",
+        "kind": "video",
+        "path": "projects/shou-zhu-dai-tu-068/assets/video/clips/wikimedia_150949051.webm",
+        "thumbnail": "projects/shou-zhu-dai-tu-068/assets/video/thumbnails/wikimedia_150949051.jpg",
+        "duration": 66.888,
+        "width": 1920,
+        "height": 1080,
+        "creator": "ZDF/Terra X/Story House Productions/Jens Afflerbach, Sebastian Scherrer/Jürgen Rehberg/Franziska Menz/Eike Wichmann, Fritz Göran Vöpel, Jörg Barton, Martin Wolkinger, Roger Grein",
+        "license": "CC BY 4.0",
+        "source_tags": "Daily life in ancient Rome – how people lived, Terra X (English redub) In the first century, Rome was a place of longing for many who dreamed of a better life. But for most, everyday life was not very glamorous. Around one million people crowded into an area of 13 square kilometers. This is an AI redub made as described in Help:AI video dubbing . Society of ancient Rome|Insula|History of Rome|Ancient city of Rome|Ladders in Italy|Videos of 2020|Videos of society|AI-generated voice|Videos of anci",
+        "skipped_existing": false
+      },
+      {
+        "clip_id": "wikimedia_1280870",
+        "source": "wikimedia",
+        "source_id": "1280870",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Domestic-rabbit-kanela-breastfeeding.ogv",
+        "query": "rabbit running",
+        "slot_id": "rabbit",
+        "kind": "video",
+        "path": "projects/shou-zhu-dai-tu-068/assets/video/clips/wikimedia_1280870.ogv",
+        "thumbnail": "projects/shou-zhu-dai-tu-068/assets/video/thumbnails/wikimedia_1280870.jpg",
+        "duration": 84.66666666666667,
+        "width": 640,
+        "height": 480,
+        "creator": "Adamantios",
+        "license": "CC BY-SA 3.0",
+        "source_tags": "Domestic-rabbit-kanela-breastfeeding Domestic rabbit ( Oryctolagus cuniculus ) giving milk to four-week-old babies. GFDL|CC-BY-SA-2.5,2.0,1.0|License migration redundant|Self-published work|Ogv videos|Video display resolution 640 x 480|Videos of 2006|Suckling rodents|Rabbit behavior|Videos of domesticated rabbits|Videos of suckling animals|Young domesticated rabbits",
+        "skipped_existing": false
+      }
+    ],
+    "errors": []
+  },
+  "artifacts": [],
+  "error": null,
+  "cost_usd": 0.0,
+  "duration_seconds": 35.89,
+  "seed": null,
+  "model": null
+}
