@@ -1,0 +1,12 @@
+{
+  "private": true,
+  "scripts": {
+    "render": "remotion render src/index.jsx Whiteboard068 out/remotion-068.mp4 --codec=h264"
+  },
+  "dependencies": {
+    "@remotion/cli": "4.0.332",
+    "remotion": "4.0.332",
+    "react": "19.0.0",
+    "react-dom": "19.0.0"
+  }
+}
