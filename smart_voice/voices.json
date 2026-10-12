@@ -164,6 +164,34 @@
         "chinese",
         "female"
       ]
+    },
+    "ZH_Yunxi": {
+      "voice": "zh-CN-YunxiNeural",
+      "rate": "+20%",
+      "pitch": "+5Hz",
+      "volume": "+0%",
+      "languages": [
+        "zh-CN"
+      ],
+      "tags": [
+        "chinese",
+        "male",
+        "story"
+      ]
+    },
+    "ZH_Yunjian": {
+      "voice": "zh-CN-YunjianNeural",
+      "rate": "+20%",
+      "pitch": "+5Hz",
+      "volume": "+0%",
+      "languages": [
+        "zh-CN"
+      ],
+      "tags": [
+        "chinese",
+        "male",
+        "story"
+      ]
     }
   }
 }
