@@ -1,0 +1,55 @@
+name: 068 多角色繪本配音
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'smart_voice/storybook/cast_story.json'
+permissions:
+  contents: read
+  actions: read
+jobs:
+  cast:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Prepare existing voice dependencies
+        run: |
+          set -euo pipefail
+          if ! command -v ffmpeg >/dev/null 2>&1 || ! command -v ffprobe >/dev/null 2>&1; then
+            sudo apt-get update
+            sudo apt-get install -y ffmpeg
+          fi
+          python -m pip install -r smart_voice/requirements.txt
+      - name: Reuse validated 068 narration
+        uses: actions/download-artifact@v8
+        with:
+          name: 068-voice-output
+          github-token: ${{ github.token }}
+          repository: dsf430-stack/short-video-factory
+          run-id: 38204582549
+          path: smart_voice/output/original
+      - name: Generate and verify Chinese character dialogue
+        run: |
+          python smart_voice/storybook/generate_cast.py --script smart_voice/storybook/cast_story.json --narrator smart_voice/output/original/weiwei-jiuzhao-20261012-v2.mp3 --output smart_voice/output/cast
+      - name: Upload validated cast output
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: 068-cast-output
+          path: |
+            smart_voice/output/cast/*.mp3
+            smart_voice/output/cast/*.json
+            smart_voice/output/cast/*.srt
+          if-no-files-found: error
+          retention-days: 7
+      - name: Upload failure evidence
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: 068-cast-error
+          path: smart_voice/output/cast/*.error.log
+          if-no-files-found: ignore
