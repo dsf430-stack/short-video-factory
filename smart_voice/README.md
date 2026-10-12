@@ -50,3 +50,13 @@ python3 -m venv .venv
 `VERIFICATION.md` 記錄測試結果與下一步。`python -m unittest discover -s smart_voice -p 'test_*.py'` 可驗證中文誤選、分段內容保留與拒絕覆寫。即時合成測試需要 Edge-TTS 網路。
 
 本元件不會匯出影片或自動發布社群，也不重建現有影片功能。
+
+## 2026-10-12 服務網址修正（已實測）
+
+舊 `speech.platform.bing.com` 語音合成連線回傳403，聲線清單仍可能正常。程式已改用 Microsoft Read Aloud 新服務網址 `api.msedgeservices.com/tts/cognitiveservices/websocket/v1`，沿用 edge-tts 7.2.8 的原始 client token、DRM、headers 和 TLS 驗證。068聲線、+20%/+5Hz、分段、字幕與音量校驗不變。
+
+GitHub 既有「068 曉臻配音」流程接受 narration 和 filename；優先在此流程執行，成功後取得 068-voice-output，包含MP3/SRT/JSON。不要先在其他環境重建配音系統。
+
+驗證：run 38204582549 在相同故事與套件條件下 SUCCESS；生成《圍魏救趙》53.733878秒，音量 -13.38 LUFS、true peak -1.24 dBTP，完整解碼與14句字幕時間校驗通過。主觀與手機試聽 UNCERTAIN。此結果證實新網址可恢復本次合成，不代表供應端永遠可用。
+
+上游調查：https://github.com/rany2/edge-tts/issues/490
