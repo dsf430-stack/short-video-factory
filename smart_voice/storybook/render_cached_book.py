@@ -159,7 +159,14 @@ def main():
     listing=out/'pages.concat.txt'
     listing.write_text(''.join("file '"+str(p)+"'\n" for p in clips))
     run(['ffmpeg','-y','-v','error','-f','concat','-safe','0','-i',str(listing),'-c','copy',str(out/'picture_track.mp4')])
-    cues=make_stems(out,total)
+    if 'audio_assets' in spec:
+        cues=spec['audio_assets']['events']
+        for key,name in [('music','background_music.wav'),('sfx','environment_sfx.wav')]:
+            asset=base/spec['audio_assets'][key]
+            if not asset.is_file():raise FileNotFoundError(asset)
+            run(['ffmpeg','-y','-v','error','-i',str(asset),'-t',str(total),'-ar',str(SR),'-ac','1','-c:a','pcm_s16le',str(out/name)])
+    else:
+        cues=make_stems(out,total)
     run(['ffmpeg','-y','-v','error','-i',str(voice),'-i',str(out/'background_music.wav'),'-i',str(out/'environment_sfx.wav'),'-filter_complex','[0:a]volume=1.0[v];[1:a]volume=0.10[m];[2:a]volume=0.10[s];[v][m][s]amix=inputs=3:duration=first:normalize=0,loudnorm=I=-13:TP=-1:LRA=7[a]','-map','[a]','-ar',str(SR),'-ac','2','-c:a','pcm_s16le',str(out/'mixed_audio.wav')])
     captions_count=captions(base/spec['subtitles'],out/'captions.ass',total)
     shutil.copy2(base/spec['subtitles'],out/'subtitles.srt')
