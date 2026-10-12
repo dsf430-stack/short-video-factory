@@ -1,0 +1,69 @@
+name: HyperFrames 068 isolated test
+on:
+  push:
+    branches: [test/hyperframes-068]
+    paths: ['.github/workflows/hyperframes-068-test.yml', 'hyperframes_test/**']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Download install render and verify
+        shell: bash
+        run: |
+          set -Eeuo pipefail
+          mkdir -p hf-results
+          exec > >(tee -a hf-results/execution.log) 2>&1
+          trap 'rc=$?; printf "FAILED exit=%s line=%s command=%s\n" "$rc" "$LINENO" "$BASH_COMMAND" > hf-results/checkpoint.txt; exit "$rc"' ERR
+          command -v ffmpeg && command -v ffprobe || { sudo apt-get update; sudo apt-get install -y ffmpeg; }
+          sudo apt-get update
+          sudo apt-get install -y fonts-noto-cjk
+          GIT_LFS_SKIP_SMUDGE=1 git clone --depth 1 https://github.com/heygen-com/hyperframes.git hf-source
+          git -C hf-source rev-parse HEAD > hf-results/hyperframes-source-sha.txt
+          cp hf-source/README.md hf-results/official-README.md
+          python -m venv hf-venv
+          hf-venv/bin/pip install -r smart_voice/requirements.txt
+          mkdir hf-run
+          cd hf-run
+          npm init -y
+          npm install hyperframes gsap
+          cp package-lock.json ../hf-results/
+          npx hyperframes --version
+          npx hyperframes init whiteboard
+          cp ../hyperframes_test/index.html whiteboard/index.html
+          mkdir -p whiteboard/assets
+          cp node_modules/gsap/dist/gsap.min.js whiteboard/assets/
+          cp /usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc whiteboard/assets/font.ttc
+          cd ..
+          printf '%s' '你知道嗎？把大目標拆小，行動就會更容易。先畫出一個目標，再拆成三個步驟。今天只做第一步，完成後打個勾。每天前進一點，慢慢累積，就能看見改變。' > hf-results/narration.txt
+          hf-venv/bin/python smart_voice/generate_voice.py --voice-id 068 --text-file hf-results/narration.txt --output hf-results/narration.mp3
+          cd hf-run/whiteboard
+          npx hyperframes check 2>&1 | tee ../../hf-results/check.log
+          npx hyperframes render --fps 30 --quality delivery --output ../../hf-results/picture.mp4 2>&1 | tee ../../hf-results/render.log
+          cd ../..
+          hf-venv/bin/python hyperframes_test/verify.py
+      - name: Persist checkpoint and all evidence
+        if: always()
+        shell: bash
+        env:
+          JOB_STATUS: ${{ job.status }}
+        run: |
+          mkdir -p hf-results
+          printf '\nGitHub job status: %s\nCommit: %s\nRun: %s\n' "$JOB_STATUS" "$GITHUB_SHA" "$GITHUB_RUN_ID" >> hf-results/checkpoint.txt
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: hyperframes-068-test-${{ github.run_id }}
+          path: hf-results/
+          if-no-files-found: error
+          retention-days: 14
