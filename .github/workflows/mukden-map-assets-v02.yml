@@ -1,0 +1,28 @@
+name: 九一八歷史地圖素材
+on:
+  push:
+    branches: ['video/mukden-map-068-20261012']
+    paths: ['.github/workflows/mukden-map-assets-v02.yml']
+permissions:
+  contents: read
+jobs:
+  download-maps:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Download verified public-domain historical maps
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p maps
+          curl --fail --location --retry 3 --retry-delay 3 --max-time 90 -A 'HistoricalMapVideo/1.0 Educational' 'https://upload.wikimedia.org/wikipedia/commons/3/30/South_Manchuria_Railway_Company_map_of_Manchuria_1929.jpg' -o maps/manchuria_1928.jpg
+          sleep 3
+          curl --fail --location --retry 3 --retry-delay 3 --max-time 90 -A 'HistoricalMapVideo/1.0 Educational' 'https://upload.wikimedia.org/wikipedia/commons/7/76/Mukden_1930_26003954.jpg' -o maps/mukden_1930.jpg
+          file maps/*.jpg
+          sha256sum maps/*.jpg > maps/SHA256SUMS
+      - uses: actions/upload-artifact@v4
+        with:
+          name: mukden-historical-maps-v02
+          path: maps/
+          if-no-files-found: error
+          retention-days: 30
