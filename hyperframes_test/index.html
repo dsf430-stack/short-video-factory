@@ -1,0 +1,32 @@
+<!doctype html><html><head><meta charset="UTF-8"><style>
+@font-face{font-family:Board;src:url("assets/font.ttc")}
+*{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;overflow:hidden}#board{width:100%;height:100%;background:#fffdf6;color:#17242b;font-family:Board,sans-serif}
+h1{position:absolute;top:130px;left:70px;font-size:64px;margin:0;width:940px}p{position:absolute;top:1230px;left:90px;width:900px;font-size:48px;line-height:1.6;text-align:center}
+svg{position:absolute;top:380px;left:80px;width:920px;height:800px}path,circle,rect{fill:none;stroke:#17242b;stroke-width:8;stroke-linecap:round;stroke-linejoin:round}.accent{stroke:#147662}
+#pen{fill:#f0b93e;stroke:#17242b;stroke-width:4}
+</style></head><body><div id="board" data-composition-id="board" data-start="0" data-duration="20" data-width="1080" data-height="1920">
+<h1 id="title">大目標，拆成小步驟</h1>
+<svg viewBox="0 0 920 800" aria-label="手繪目標與三個步驟">
+<circle id="goal" cx="460" cy="145" r="110"/><circle id="center" cx="460" cy="145" r="45"/>
+<path id="arrow" d="M460 260 L460 320 M460 320 L190 420 M460 320 L460 420 M460 320 L730 420"/>
+<rect id="one" x="90" y="430" width="200" height="210" rx="18"/><rect id="two" x="360" y="430" width="200" height="210" rx="18"/><rect id="three" x="630" y="430" width="200" height="210" rx="18"/>
+<path id="tick" class="accent" d="M125 535 L180 590 L255 480"/><path id="progress" class="accent" d="M100 735 Q360 765 460 705 T820 660"/>
+<path id="pen" d="M0 0 L28 -65 L42 -57 L14 8 Z"/>
+</svg>
+<p id="caption">先畫目標，再拆步驟</p>
+<script src="assets/gsap.min.js"></script><script>
+const tl=gsap.timeline({paused:true});
+tl.fromTo("#title",{opacity:0,y:25},{opacity:1,y:0,duration:0.8},0);
+const ids=["goal","center","arrow","one","two","three","tick","progress"];
+const starts=[1,2.2,3.5,5.2,6.6,8,10.5,14];
+ids.forEach((id,i)=>{const el=document.getElementById(id),length=el.getTotalLength();tl.fromTo(el,{strokeDasharray:length,strokeDashoffset:length},{strokeDashoffset:0,duration:1.2,ease:"none"},starts[i]);});
+tl.fromTo("#pen",{x:360,y:145},{x:570,y:145,duration:1.4},1);
+tl.to("#pen",{x:190,y:535,duration:2},4);
+tl.to("#pen",{x:460,y:535,duration:2},7);
+tl.to("#pen",{x:730,y:535,duration:2},10);
+tl.to("#pen",{x:820,y:660,duration:3},14);
+tl.to("#pen",{opacity:0,duration:0.6},18);
+tl.to("#caption",{textContent:"今天先完成第一步",duration:0},9);
+tl.to("#caption",{textContent:"每天一點，看見改變",duration:0},15);
+window.__timelines=window.__timelines||{};window.__timelines.board=tl;
+</script></div></body></html>
