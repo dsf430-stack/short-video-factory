@@ -1,0 +1,39 @@
+name: 068 stability verification
+on:
+  push:
+    branches: ['fix/068-stability-20261012']
+    paths: ['smart_voice/**', '.github/workflows/voice-068-stability.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install existing voice dependencies
+        run: |
+          if ! command -v ffmpeg >/dev/null || ! command -v ffprobe >/dev/null; then
+            sudo apt-get update
+            sudo apt-get install -y ffmpeg
+          fi
+          python -m pip install -r smart_voice/requirements.txt
+      - name: Offline regression checks
+        run: python -m unittest discover -s smart_voice -p 'test_*.py' -v
+      - name: Real new 068 audio, resume, cache and corruption checks
+        run: python smart_voice/verify_stability_live.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: 068-stability-results
+          path: |
+            smart_voice/stability-output/*.mp3
+            smart_voice/stability-output/*.srt
+            smart_voice/stability-output/*.json
+            smart_voice/stability-output/*.error.log
+          if-no-files-found: warn
+          retention-days: 30

@@ -2,6 +2,8 @@ import asyncio
 import importlib.util
 import tempfile
 import unittest
+import ssl
+import aiohttp
 from pathlib import Path
 
 spec = importlib.util.spec_from_file_location('voice', Path(__file__).with_name('generate_voice.py'))
@@ -35,6 +37,31 @@ class NarrationTests(unittest.TestCase):
                 asyncio.run(voice.synthesize('你好', str(out), '068'))
             self.assertEqual(out.read_bytes(), b'previous artifact')
 
+    def test_only_transient_failures_retry(self):
+        self.assertTrue(voice.retryable(TimeoutError('timeout')))
+        self.assertTrue(voice.retryable(ConnectionResetError('reset')))
+        self.assertFalse(voice.retryable(ssl.SSLError('certificate')))
+        for code in (401, 403, 404):
+            self.assertFalse(voice.retryable(aiohttp.ClientResponseError(None, (), status=code)))
+        for code in (429, 503):
+            self.assertTrue(voice.retryable(aiohttp.ClientResponseError(None, (), status=code)))
+
+    def test_cache_identity_contains_text_and_voice_settings(self):
+        preset = voice.VOICES['068']
+        key = voice.chunk_key('你好。', preset)
+        self.assertNotEqual(key, voice.chunk_key('再見。', preset))
+        self.assertNotEqual(key, voice.chunk_key('你好。', dict(preset, rate='+0%')))
+
+    def test_protect_existing_subtitles(self):
+        with tempfile.TemporaryDirectory() as directory:
+            out = Path(directory) / 'test.mp3'
+            out.with_suffix('.srt').write_text('existing subtitles')
+            with self.assertRaises(FileExistsError):
+                asyncio.run(voice.synthesize('你好', str(out), '068'))
+            self.assertFalse(out.exists())
+            self.assertEqual(out.with_suffix('.srt').read_text(), 'existing subtitles')
+
 
 if __name__ == '__main__':
     unittest.main()
+
