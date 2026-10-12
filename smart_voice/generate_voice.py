@@ -85,7 +85,7 @@ async def get_chunk(text: str, preset: dict, cache: Path, temp: Path,
                 raise ValueError('Cached chunk hash mismatch')
             duration = inspect_chunk(saved_audio, record['events'], text)
             return saved_audio, record['events'], duration, True
-        except (ValueError, KeyError, TypeError, RuntimeError) as error:
+        except (ValueError, KeyError, IndexError, TypeError, RuntimeError) as error:
             progress.setdefault('invalid_cache', []).append({'key': key, 'error': str(error)})
             atomic_json(journal, progress)
             print(f'INVALID_CACHE key={key}; regenerating the same text', flush=True)
@@ -98,13 +98,14 @@ async def get_chunk(text: str, preset: dict, cache: Path, temp: Path,
                 volume=preset['volume'], boundary='SentenceBoundary',
                 connect_timeout=15, receive_timeout=30,
             )
-            async with asyncio.timeout(120):
+            async def receive_stream():
                 with raw.open('wb') as handle:
                     async for item in stream.stream():
                         if item['type'] == 'audio':
                             handle.write(item['data'])
                         elif item['type'] == 'SentenceBoundary':
                             events.append((item['offset'] / 1e7, item['duration'] / 1e7, item['text']))
+            await asyncio.wait_for(receive_stream(), timeout=120)
             duration = inspect_chunk(raw, events, text)
             break
         except Exception as error:
