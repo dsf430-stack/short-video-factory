@@ -1,0 +1,56 @@
+name: Remotion 068 Whiteboard Test
+on:
+  push:
+    branches: [test/remotion-068]
+    paths:
+      - 'remotion-068/**'
+      - '.github/workflows/remotion-068-test.yml'
+  workflow_dispatch:
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    defaults:
+      run:
+        working-directory: remotion-068
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install real dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ffmpeg fonts-noto-cjk
+          python -m pip install edge-tts
+          npm install --no-audit --no-fund
+      - name: Generate 068 HsiaoChen narration
+        run: python generate_audio.py
+      - name: Render actual MP4
+        run: npm run render
+      - name: Verify audio video and real frame changes
+        run: |
+          ffprobe -v error -show_entries stream=codec_type,width,height -show_entries format=duration -of json out/remotion-068.mp4 > out/probe.json
+          python - <<'PY'
+          import json,subprocess,sys
+          d=json.load(open('out/probe.json'))
+          streams=d.get('streams',[])
+          assert any(s.get('codec_type')=='video' and s.get('width')==1080 and s.get('height')==1920 for s in streams), 'Missing vertical video'
+          assert any(s.get('codec_type')=='audio' for s in streams), 'Missing audio'
+          assert abs(float(d['format']['duration'])-20)<0.2, 'Incorrect duration'
+          for sec in [1,6,11,16]:
+              subprocess.run(['ffmpeg','-loglevel','error','-ss',str(sec),'-i','out/remotion-068.mp4','-frames:v','1',f'out/frame-{sec}.png','-y'],check=True)
+          import hashlib
+          hashes=[hashlib.sha256(open(f'out/frame-{s}.png','rb').read()).hexdigest() for s in [1,6,11,16]]
+          assert len(set(hashes))==4,'No evidence of scene changes'
+          print('SUCCESS: duration, dimensions, audio, and dynamic scenes verified')
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: remotion-068-test
+          path: |
+            remotion-068/out/
