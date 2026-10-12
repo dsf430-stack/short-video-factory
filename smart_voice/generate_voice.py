@@ -13,6 +13,14 @@ from pathlib import Path
 import certifi
 import edge_tts
 import edge_tts.communicate
+import edge_tts.constants
+
+# Microsoft Read Aloud endpoint migration reported upstream in issue #490.
+# Keep the stock client token, DRM, headers and TLS verification unchanged.
+edge_tts.communicate.WSS_URL = (
+    'wss://api.msedgeservices.com/tts/cognitiveservices/websocket/v1'
+    f'?Ocp-Apim-Subscription-Key={edge_tts.constants.TRUSTED_CLIENT_TOKEN}'
+)
 
 ROOT = Path(__file__).resolve().parent
 VOICES = json.loads((ROOT / 'voices.json').read_text(encoding='utf-8'))['voices']
