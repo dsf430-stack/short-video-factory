@@ -38,7 +38,7 @@ def retryable(error: Exception) -> bool:
         return False
     if isinstance(error, aiohttp.ClientResponseError):
         return error.status in (408, 429, 500, 502, 503, 504)
-    return isinstance(error, (asyncio.TimeoutError, ConnectionError,
+    return isinstance(error, (TimeoutError, asyncio.TimeoutError, ConnectionError,
                               aiohttp.ClientConnectionError, aiohttp.ClientPayloadError))
 
 
