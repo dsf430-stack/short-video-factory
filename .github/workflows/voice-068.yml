@@ -37,6 +37,13 @@ jobs:
           python -c "import edge_tts, certifi; print('Edge TTS and CA bundle available')"
           ffmpeg -version
           ffprobe -version
+      - name: Restore verified voice chunks
+        id: chunks-cache
+        uses: actions/cache/restore@v4
+        with:
+          path: smart_voice/output/.068-cache
+          key: voice-068-v1-${{ runner.os }}-${{ github.run_id }}-${{ github.run_attempt }}
+          restore-keys: voice-068-v1-${{ runner.os }}-
       - name: Generate and verify 068 MP3/SRT
         env:
           NARRATION: ${{ inputs.narration }}
@@ -55,6 +62,12 @@ jobs:
           PY
           set -euxo pipefail
           python smart_voice/generate_voice.py --voice-id 068 --text-file smart_voice/output/narration.txt --output "smart_voice/output/${OUTPUT_NAME}.mp3"
+      - name: Save completed chunks even after a later failure
+        if: always()
+        uses: actions/cache/save@v4
+        with:
+          path: smart_voice/output/.068-cache
+          key: ${{ steps.chunks-cache.outputs.cache-primary-key }}
       - name: Upload verified audio and subtitles
         if: success()
         uses: actions/upload-artifact@v4
@@ -65,7 +78,7 @@ jobs:
             smart_voice/output/*.srt
             smart_voice/output/*.json
           if-no-files-found: error
-          retention-days: 7
+          retention-days: 30
       - name: Report failure context
         if: failure()
         shell: bash
@@ -80,5 +93,8 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: 068-error-log
-          path: smart_voice/output/*.error.log
+          path: |
+            smart_voice/output/*.error.log
+            smart_voice/output/*.progress.json
           if-no-files-found: ignore
+

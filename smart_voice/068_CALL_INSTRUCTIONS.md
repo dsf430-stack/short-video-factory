@@ -36,3 +36,10 @@ GitHub流程成功後，下載 068-voice-output 成果包，
 只有遇到真實外部阻塞才回報BLOCKED。
 除登入、權限、費用或不可逆操作的必要門檻外，
 在已授權範圍內接續執行，不要求使用者重新交代既有流程。
+
+
+## 穩定版本呼叫規則
+
+068的新文字只使用最新main入口與「068 曉臻配音」workflow。優先從smart_voice/checkpoints讀最後成功紀錄；舊ZIP、技能內嵌生成器與歷史失敗checkpoint只作參考，不覆蓋最新成功版本。保留 `.068-cache`，暫時斷線由程式最多重試3次；失敗續跑原文字、同設定。已成功成品仍不可覆寫。檢查 `.progress.json` 的SUCCESS／FAILED／BLOCKED；403／401不盲目重跑。
+
+ChatGPT容器DNS失敗時直接使用GitHub Actions執行真實合成，不重裝同版本或改DNS假裝修好。若目前連接器不提供workflow dispatch，可用已授權的專案測試分支push觸發已配置的驗證workflow；正式旁白仍走既有workflow。缺少執行權限才回報具體阻塞。
