@@ -31,3 +31,19 @@ python3 render_flipbook.py weiwei_v1/manifest.json
 技術完整解碼、音量、時長、音軌、字幕時間及畫面抽樣均須依QA與checkpoint判讀；手機試聽與主觀音色仍需播放確認。不以音軌存在宣稱已人工聽過。未發布到社群。
 
 KB_02_繪本敘事工程規範.md.txt目前只有「12」，沒有完整規範，故本次不宣稱符合未取得的完整KB_02。
+
+## 多角色與地圖版（2026-10-12）
+
+已實測三個聲線：旁白068/zh-TW-HsiaoChenNeural、田忌ZH_Yunjian/zh-CN-YunjianNeural、孫臏ZH_Yunxi/zh-CN-YunxiNeural。全部+20%/+5Hz。原M01-M05為英文，原代號不更改；中文男聲使用明確ZH別名，不與其他技能M02混淆。
+
+`generate_cast.py`沿用smart_voice/generate_voice.py的新服務網址与校驗器，僅合成新角色台詞，依SHA重用原068旁白片段。`.github/workflows/storybook-cast.yml`在更新cast_story.json時執行，可取得068-cast-output。此測試流程的旁白來源固定為本次圍魏救趙run38204582549；該artifact保留至2026-10-19。其他故事或來源過期時，先準備新故事的已驗證旁白，更新來源run、檔名、SHA與旁白時間範圍，不直接套用本次舊素材。
+
+多角色實測run38207878517 SUCCESS。`add_dialogue_map.py`接收`--events narration.json`，依實際角色音訊時間顯示姓名與台詞；地圖動畫依語音事件顯示魏攻趙、齊進逼大梁、魏回援與桂陵迎擊。標示策略示意且不按比例，不宣稱精確古代地理。沒有口型動畫。
+
+新增畫面入口：
+
+```bash
+python3 add_dialogue_map.py weiwei_cast_v3/output/Weiwei_Jiuzhao_068_flipbook_v1.mp4 --font weiwei_cast_v3/fonts/NotoSansCJKtc-Regular.otf --events weiwei_cast_v3/narration.json --output weiwei_cast_v3/output/Weiwei_Jiuzhao_Cast_Dialogue_Map_v3.mp4
+```
+
+依角色音訊的新時間軸重排六頁及翻頁。可透過manifest的audio_assets指定已存在的配樂及重排音效，避免重新製作成功素材。主觀聲音偏好與手機試聽仍待使用者確認。
