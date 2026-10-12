@@ -1,0 +1,58 @@
+name: Double Ten 068 narration (push trigger)
+on:
+  push:
+    branches:
+      - production/double-ten-flat-20261012
+    paths:
+      - 'productions/double-ten-20261012/narration.txt'
+permissions:
+  contents: read
+jobs:
+  voice:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install only missing dependencies
+        run: |
+          if ! command -v ffmpeg >/dev/null || ! command -v ffprobe >/dev/null; then sudo apt-get update && sudo apt-get install -y ffmpeg; fi
+          python -m pip install -r smart_voice/requirements.txt
+      - name: Restore verified chunks
+        uses: actions/cache/restore@v4
+        with:
+          path: smart_voice/output/.068-cache
+          key: doubleten-068-${{ runner.os }}-${{ github.run_id }}-${{ github.run_attempt }}
+          restore-keys: doubleten-068-${{ runner.os }}-
+      - name: Generate 068 and verify
+        run: |
+          mkdir -p smart_voice/output
+          python smart_voice/generate_voice.py --voice-id 068 --text-file productions/double-ten-20261012/narration.txt --output smart_voice/output/double-ten-20261012-068.mp3
+      - name: Save cache
+        if: always()
+        uses: actions/cache/save@v4
+        with:
+          path: smart_voice/output/.068-cache
+          key: doubleten-068-${{ runner.os }}-${{ github.run_id }}-${{ github.run_attempt }}
+      - name: Upload verified output
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: double-ten-068-voice
+          path: |
+            smart_voice/output/double-ten-20261012-068.mp3
+            smart_voice/output/double-ten-20261012-068.srt
+            smart_voice/output/double-ten-20261012-068.json
+          if-no-files-found: error
+          retention-days: 30
+      - name: Upload failure context
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: double-ten-068-failure
+          path: |
+            smart_voice/output/*.error.log
+            smart_voice/output/*.progress.json
+          if-no-files-found: ignore
