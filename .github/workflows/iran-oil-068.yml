@@ -1,0 +1,36 @@
+name: 068 伊朗油價配音
+on:
+  push:
+    paths: ['smart_voice/jobs/iran-oil-20261012.txt']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  voice:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Use existing verified 068 generator
+        run: |
+          if ! command -v ffmpeg >/dev/null; then
+            sudo apt-get update
+            sudo apt-get install -y ffmpeg
+          fi
+          python -m pip install -r smart_voice/requirements.txt
+          python smart_voice/generate_voice.py --voice-id 068 --text-file smart_voice/jobs/iran-oil-20261012.txt --output smart_voice/output/iran-oil-20261012.mp3
+      - uses: actions/upload-artifact@v4
+        if: success()
+        with:
+          name: iran-oil-068-output
+          path: smart_voice/output/iran-oil-20261012.*
+          if-no-files-found: error
+          retention-days: 7
+      - uses: actions/upload-artifact@v4
+        if: failure()
+        with:
+          name: iran-oil-068-error
+          path: smart_voice/output/*.error.log
