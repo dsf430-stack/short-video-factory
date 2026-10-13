@@ -1,11 +1,12 @@
 #!/usr/bin/env python3
 """Self-contained 30-second stickman motion test; never modifies existing videos."""
 import argparse
-import asyncio
 import json
 import math
 import subprocess
 from pathlib import Path
+import hashlib
+import sys
 from PIL import Image, ImageDraw
 
 W,H,FPS,DURATION=540,960,15,30
@@ -63,12 +64,26 @@ def draw_frame(t):
         d.line((400,330,400,390),fill=(255,181,25),width=10)
     return im
 
-async def synthesize(audio_path):
-    import edge_tts
-    tts=edge_tts.Communicate(NARRATION,VOICE,rate="+20%",pitch="+5Hz")
-    await tts.save(str(audio_path))
-    if not audio_path.exists() or audio_path.stat().st_size<1024:
-        raise RuntimeError("068 synthesis did not produce a valid audio file")
+def synthesize(audio_path):
+    """Use the existing, verified 068 engine. Do not replace its WebSocket or cache."""
+    script=Path(__file__).resolve().parents[1]/"smart_voice"/"generate_voice.py"
+    if not script.is_file():
+        raise FileNotFoundError(f"Official 068 entry missing: {script}")
+    narration=audio_path.parent/"narration.txt"
+    narration.write_text(NARRATION,encoding="utf-8")
+    run(sys.executable,str(script),"--voice-id","068","--text-file",str(narration),"--output",str(audio_path))
+    for suffix in (".mp3",".srt",".json"):
+        path=audio_path.with_suffix(suffix)
+        if not path.is_file() or path.stat().st_size==0:
+            raise RuntimeError(f"Missing official 068 artifact: {path}")
+    record=json.loads(audio_path.with_suffix(".json").read_text(encoding="utf-8"))
+    if record.get("status")!="SUCCESS" or record.get("voice_id")!="068":
+        raise RuntimeError("Official 068 QA did not succeed")
+    if hashlib.sha256(audio_path.read_bytes()).hexdigest()!=record.get("sha256"):
+        raise RuntimeError("Official 068 SHA mismatch")
+    if record.get("text_sha256")!=hashlib.sha256(NARRATION.strip().encode()).hexdigest():
+        raise RuntimeError("Official 068 narration mismatch")
+    return float(record["duration"])
 
 def main():
     parser=argparse.ArgumentParser()
@@ -76,7 +91,9 @@ def main():
     args=parser.parse_args()
     out=Path(args.out);out.mkdir(parents=True,exist_ok=True)
     audio=out/"narration_068.mp3"
-    asyncio.run(synthesize(audio))
+    voice_duration=synthesize(audio)
+    if voice_duration > DURATION + 0.1:
+        raise RuntimeError(f"068 narration {voice_duration:.2f}s exceeds {DURATION}s: refusing to truncate speech")
     frames=out/"frames";frames.mkdir(exist_ok=True)
     for n in range(FPS*DURATION):
         draw_frame(n/FPS).save(frames/f"frame_{n:04d}.png")
@@ -90,7 +107,7 @@ def main():
         raise RuntimeError("MP4 validation failed: missing audio or video")
     if not 29.9<=float(probe["format"]["duration"])<=30.1:
         raise RuntimeError("MP4 validation failed: duration is not 30 seconds")
-    (out/"verification.json").write_text(json.dumps({"status":"SUCCESS","format":probe,"voice":VOICE,"rate":"+20%","pitch":"+5Hz","note":"procedural stickman animation, not Gemini-generated video"},ensure_ascii=False,indent=2),encoding="utf-8")
+    (out/"verification.json").write_text(json.dumps({"status":"SUCCESS","format":probe,"voice":VOICE,"rate":"+20%","pitch":"+5Hz","narration_seconds":voice_duration,"narration_sha256":hashlib.sha256(audio.read_bytes()).hexdigest(),"srt":"narration_068.srt","note":"official smart_voice 068 engine; procedural stickman animation, not Gemini-generated video"},ensure_ascii=False,indent=2),encoding="utf-8")
     print("SUCCESS",final)
 
 if __name__=="__main__":
