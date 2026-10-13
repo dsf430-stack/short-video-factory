@@ -1,0 +1,41 @@
+name: Stickman 068 isolated test
+on:
+  push:
+    branches: [test/stickman-068]
+    paths:
+      - 'experiments/stickman_068_test.py'
+      - '.github/workflows/stickman-068-test.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install dependencies
+        run: |
+          python -m pip install --disable-pip-version-check pillow edge-tts
+          ffmpeg -version | head -n 1
+      - name: Render actual 30s motion video with 068 narration
+        run: python experiments/stickman_068_test.py --out "$RUNNER_TEMP/stickman_output"
+      - name: Verify audio video and duration
+        run: |
+          ffprobe -v error -show_streams -show_format "$RUNNER_TEMP/stickman_output/stickman_30s_068.mp4" | grep -E 'codec_type=audio|codec_type=video|duration='
+          test -s "$RUNNER_TEMP/stickman_output/verification.json"
+      - name: Upload test result
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: stickman-30s-068-result
+          path: |
+            ${{ runner.temp }}/stickman_output/stickman_30s_068.mp4
+            ${{ runner.temp }}/stickman_output/narration_068.mp3
+            ${{ runner.temp }}/stickman_output/verification.json
+          if-no-files-found: warn
+          retention-days: 7
