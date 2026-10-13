@@ -1,0 +1,101 @@
+name: yovoice Linux CPU deployment test
+
+on:
+  push:
+    branches: [test/yovoice-actions]
+    paths: [.github/workflows/test-yovoice.yml]
+  workflow_dispatch:
+    inputs:
+      download_model:
+        description: "Download IndexTTS 2.5 Q8 (~3.5 GB) after setup"
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+
+jobs:
+  verify-yovoice:
+    runs-on: ubuntu-latest
+    timeout-minutes: 50
+    steps:
+      - name: Install CLI from official latest release
+        shell: bash
+        run: |
+          set -euo pipefail
+          sudo apt-get update
+          sudo apt-get install -y unzip jq ffmpeg
+          curl --fail --location --retry 3 --connect-timeout 20 \
+            -H "Accept: application/vnd.github+json" \
+            -o /tmp/yovoice-release.json \
+            https://api.github.com/repos/leemysw/yovoice/releases/latest
+          url="$(jq -er '[.assets[] | select(.name | test("^yovoice-.*-cli-linux-x64\\.zip$")) | .browser_download_url][0]' /tmp/yovoice-release.json)"
+          echo "Downloading official Linux CLI from: $url"
+          curl --fail --location --retry 3 --connect-timeout 30 -o /tmp/yovoice.zip "$url"
+          mkdir -p "$HOME/yovoice-cli"
+          unzip -q /tmp/yovoice.zip -d "$HOME/yovoice-cli"
+          binary="$(find "$HOME/yovoice-cli" -type f -name yovoice | head -n 1)"
+          test -n "$binary"
+          chmod +x "$binary"
+          printf '%s\n' "$(dirname "$binary")" >> "$GITHUB_PATH"
+          "$binary" --version
+          "$binary" --help
+
+      - name: Install CPU inference engine
+        shell: bash
+        run: |
+          set -euo pipefail
+          yovoice setup --backend cpu
+          yovoice models list --json > "$RUNNER_TEMP/yovoice-models.json"
+          test -s "$RUNNER_TEMP/yovoice-models.json"
+
+      - name: Optionally download a Chinese-capable cloning model
+        if: ${{ inputs.download_model }}
+        run: yovoice models download index-2.5-q8
+
+      - name: Download and synthesize expressive Chinese smoke test
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p "$RUNNER_TEMP/yovoice-result"
+          yovoice models download qwen3-tts-customvoice-q8
+          yovoice generate --model qwen3-tts-customvoice-q8 --speaker Vivian --language zh --voice-description "以清晰自然的中文解說，帶著好奇與驚訝，語氣有起伏。" --text "人類第一次穿衣服，是因為害羞嗎？答案，可能藏在一隻小小的蝨子身上。" --output "$RUNNER_TEMP/yovoice-result/chinese-smoke.wav" > "$RUNNER_TEMP/yovoice-result/generation.json"
+          ffprobe -v error -show_streams -show_format -of json "$RUNNER_TEMP/yovoice-result/chinese-smoke.wav" > "$RUNNER_TEMP/yovoice-result/probe.json"
+          ffmpeg -v error -i "$RUNNER_TEMP/yovoice-result/chinese-smoke.wav" -f null -
+          ffmpeg -hide_banner -i "$RUNNER_TEMP/yovoice-result/chinese-smoke.wav" -af volumedetect -f null - 2> "$RUNNER_TEMP/yovoice-result/volume.log"
+          if grep -q 'max_volume: -inf' "$RUNNER_TEMP/yovoice-result/volume.log"; then
+            echo "FAILED: synthesized audio is silent"
+            exit 1
+          fi
+
+      - name: Upload actual synthesis and engine diagnostics
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: yovoice-chinese-smoke-and-logs
+          path: |
+            ${{ runner.temp }}/yovoice-result/
+            ~/.yovoice/logs/
+          if-no-files-found: warn
+          retention-days: 14
+
+      - name: Write verification summary
+        if: always()
+        shell: bash
+        run: |
+          {
+            echo "## yovoice Linux setup verification"
+            echo "Workflow run: $GITHUB_RUN_ID"
+            echo "Runner: $RUNNER_OS / $RUNNER_ARCH"
+            echo "Check step results above for CLI, CPU engine, and model download."
+            echo "No synthesized audio is claimed without a provided script and reference voice."
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Upload model-list diagnostic
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: yovoice-model-catalog
+          path: ${{ runner.temp }}/yovoice-models.json
+          if-no-files-found: ignore
+          retention-days: 7
