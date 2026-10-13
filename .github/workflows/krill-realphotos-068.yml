@@ -6,6 +6,7 @@ on:
   workflow_dispatch:
 permissions:
   contents: read
+  actions: read
 jobs:
   produce:
     runs-on: ubuntu-latest
@@ -27,6 +28,13 @@ jobs:
           path: smart_voice/krill_realphotos_20261013/voices/.068-cache
           key: krill-068-${{ runner.os }}-${{ github.run_id }}-${{ github.run_attempt }}
           restore-keys: krill-068-${{ runner.os }}-
+      - name: Reuse verified speech from first measured draft
+        uses: actions/download-artifact@v4
+        with:
+          name: krill-068-narration-and-progress
+          run-id: 38378690634
+          github-token: ${{ github.token }}
+          path: smart_voice/krill_realphotos_20261013/voices
       - name: Existing 068 voice and real photo case adapter
         run: python smart_voice/krill_realphotos_20261013/produce.py
       - uses: actions/cache/save@v4

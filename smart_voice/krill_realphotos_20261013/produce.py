@@ -85,9 +85,15 @@ def main():
         audio=text.with_suffix('.mp3');meta=text.with_suffix('.json')
         if audio.exists():
             record=json.loads(meta.read_text())
-            if record['status']!='SUCCESS' or record['text_sha256']!=hashlib.sha256(s['text'].encode()).hexdigest() or sha(audio)!=record['sha256']:
+            if record['status']!='SUCCESS' or record['voice_id']!='068' or sha(audio)!=record['sha256']:
                 raise RuntimeError('Voice reuse verification failed')
-        else:
+            if record['text_sha256']!=hashlib.sha256(s['text'].encode()).hexdigest():
+                print(f'INVALIDATE revised script scene {i+1}; unaffected speech retained',flush=True)
+                for suffix in ['.mp3','.json','.srt','.progress.json']:
+                    text.with_suffix(suffix).unlink(missing_ok=True)
+            else:
+                print(f'REUSE VERIFIED scene {i+1} sha256={record["sha256"]}',flush=True)
+        if not audio.exists():
             subprocess.run([sys.executable,str(REPO/'smart_voice/generate_voice.py'),'--voice-id','068','--text-file',str(text),'--output',str(audio)],check=True)
     lengths=[duration(voices/f'{i+1:02}.mp3') for i in range(len(spec['scenes']))]
     spoken=sum(lengths);total=spec['target_seconds'];intro=1.0;credits=7.0
@@ -114,7 +120,7 @@ def main():
         part=out/f'speech_part_{i+1:02}.wav'
         padding=gap+(intro if i==0 else 0)
         vf=f'adelay={round(intro*1000)}:all=1,' if i==0 else ''
-        run(['ffmpeg','-y','-v','error','-i',str(audio),'-af',vf+f'apad=pad_dur={gap}', '-t',str(length+padding),'-ar',str(SR),'-ac','1',str(part)])
+        run(['ffmpeg','-y','-v','error','-i',str(audio),'-af',vf+f'apad=whole_dur={length+padding}', '-t',str(length+padding),'-ar',str(SR),'-ac','1',str(part)])
         audio_commands.append(part);cursor=end
     # Spoken text must survive alignment without omissions or inventions.
     normalize=lambda t: ''.join(c for c in t if c.isalnum())
