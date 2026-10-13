@@ -20,7 +20,7 @@ jobs:
           python-version: '3.11'
       - name: Install dependencies
         run: |
-          python -m pip install --disable-pip-version-check pillow edge-tts
+          python -m pip install --disable-pip-version-check pillow\n          python -m pip install -r smart_voice/requirements.txt
           ffmpeg -version | head -n 1
       - name: Render actual 30s motion video with 068 narration
         run: python experiments/stickman_068_test.py --out "$RUNNER_TEMP/stickman_output"
@@ -35,7 +35,7 @@ jobs:
           name: stickman-30s-068-result
           path: |
             ${{ runner.temp }}/stickman_output/stickman_30s_068.mp4
-            ${{ runner.temp }}/stickman_output/narration_068.mp3
+            ${{ runner.temp }}/stickman_output/narration_068.mp3\n            ${{ runner.temp }}/stickman_output/narration_068.srt\n            ${{ runner.temp }}/stickman_output/narration_068.json\n            ${{ runner.temp }}/stickman_output/*.progress.json\n            ${{ runner.temp }}/stickman_output/*.error.log
             ${{ runner.temp }}/stickman_output/verification.json
           if-no-files-found: warn
           retention-days: 7
