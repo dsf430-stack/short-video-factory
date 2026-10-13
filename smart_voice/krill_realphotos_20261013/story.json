@@ -1,0 +1,219 @@
+{
+  "id": "krill-realphotos-068-20261013",
+  "title": "磷蝦多到養活鯨魚，為什麼我們餐桌上很少見？",
+  "target_seconds": 180,
+  "voice_id": "068",
+  "motion": "real photographs with camera motion; no animated animal movement",
+  "assets": [
+    {
+      "id": "krill",
+      "file": "Euphausia_superba.jpg",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/0/03/Euphausia_superba.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Euphausia_superba.jpg",
+      "author": "Dr. Wayne Trivelpiece / NOAA",
+      "license": "Public domain (US NOAA)",
+      "credit": "Dr. Wayne Trivelpiece / NOAA · Public domain",
+      "species": "Euphausia superba"
+    },
+    {
+      "id": "whale",
+      "file": "feeding_humpback.jpg",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/0/03/SBNMS_-_feeding_humpback_whale_%2831319806616%29.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:SBNMS_-_feeding_humpback_whale_(31319806616).jpg",
+      "author": "NOAA National Marine Sanctuaries",
+      "license": "Public domain (US NOAA)",
+      "credit": "NOAA National Marine Sanctuaries · Public domain",
+      "species": "Megaptera novaeangliae",
+      "location": "Stellwagen Bank, USA; feeding illustration, not an Antarctic photograph"
+    },
+    {
+      "id": "penguin",
+      "file": "AdeliePenguins.jpg",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/0/0f/AdeliePenguins.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:AdeliePenguins.jpg",
+      "author": "Giuseppe Zibordi; credit Michael Van Woert / NOAA NESDIS ORA",
+      "license": "Public domain (US NOAA)",
+      "credit": "Giuseppe Zibordi / Michael Van Woert / NOAA · Public domain",
+      "species": "Pygoscelis adeliae"
+    },
+    {
+      "id": "seal",
+      "file": "crabeater_seal.jpg",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/1/15/Crabeater_Seal_%2852249043457%29.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Crabeater_Seal_(52249043457).jpg",
+      "author": "David Stanley",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0/",
+      "credit": "David Stanley · CC BY 2.0 · crop / camera motion",
+      "species": "Lobodon carcinophaga",
+      "location": "Jenny Island, Antarctica"
+    },
+    {
+      "id": "food",
+      "file": "Dried_Antarctic_Krill.jpg",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/4/47/Dried_Antarctic_Krill.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Dried_Antarctic_Krill.jpg",
+      "author": "François Nguyen",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0/",
+      "credit": "François Nguyen · CC BY 2.0 · crop / camera motion",
+      "species": "Euphausia superba, dried; identification as described by uploader"
+    },
+    {
+      "id": "ice",
+      "file": "Ross_sea_ice.jpg",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/72/Open_water_within_the_sea_ice_pack._-_NOAA.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Open_water_within_the_sea_ice_pack._-_NOAA.jpg",
+      "author": "Michael Van Woert / NOAA NESDIS ORA",
+      "license": "Public domain (US NOAA)",
+      "credit": "Michael Van Woert / NOAA · Public domain",
+      "location": "Ross Sea, Antarctica, January 1999"
+    }
+  ],
+  "scenes": [
+    {
+      "title": "鯨魚的大餐",
+      "photo": "whale",
+      "label": "座頭鯨攝食示意｜照片攝於美國 Stellwagen Bank",
+      "lines": [
+        "小小磷蝦",
+        "為何少上餐桌？"
+      ],
+      "text": "鯨魚張開大嘴，把小小的磷蝦變成一頓大餐。企鵝和海豹也靠牠們取得食物。可是走進超市，你很少看到一盤南極磷蝦。海裡有這麼多，為什麼沒有變成常見的晚餐？答案藏在三道門檻裡。"
+    },
+    {
+      "title": "先認識主角",
+      "photo": "krill",
+      "label": "南極磷蝦 Euphausia superba｜真實照片",
+      "lines": [
+        "看起來像蝦",
+        "其實是磷蝦"
+      ],
+      "text": "今天的主角，是南極磷蝦。牠有黑色的大眼睛，身體透明，帶著紅色斑點，成年個體大約六公分長。牠是甲殼類動物，但不是我們平常吃的那種蝦。磷蝦也不只一種，今天講的是生活在南大洋的南極磷蝦。"
+    },
+    {
+      "title": "海洋的能量轉運站",
+      "photo": "penguin",
+      "label": "阿德利企鵝｜南極食物網的成員",
+      "lines": [
+        "浮游植物 → 磷蝦",
+        "磷蝦 → 企鵝、鬚鯨、海豹"
+      ],
+      "text": "南極磷蝦會吃微小的浮游植物，自己又成為許多動物的食物。你可以把牠想成能量轉運站：把微小植物裡的能量，送進企鵝、鬚鯨和海豹的身體。牠們聚成密集的群體，就像一座正在移動的餐廳。"
+    },
+    {
+      "title": "名字會騙人的海豹",
+      "photo": "seal",
+      "label": "食蟹海豹｜照片攝於南極 Jenny Island",
+      "lines": [
+        "食蟹海豹",
+        "主要吃的是磷蝦"
+      ],
+      "text": "還有容易被名字騙到的食蟹海豹。牠主要吃的是磷蝦，並不是螃蟹。牠的牙齒有特殊突起，能在吞入海水後，把磷蝦濾出來。不能只看名字猜動物吃什麼。小小的磷蝦，早已被寫進南極捕食者的菜單。"
+    },
+    {
+      "title": "磷蝦可以吃",
+      "photo": "food",
+      "label": "乾燥南極磷蝦｜加工產品照片",
+      "lines": [
+        "可以食用",
+        "已有罐裝與冷凍產品"
+      ],
+      "text": "人類能不能吃？可以。磷蝦有罐裝、冷凍蝦尾等食用產品，也會被加工成磷蝦油。現在看到的，就是乾燥磷蝦的真實照片。所以，磷蝦並不是不能吃。問題是牠為什麼沒有成為多數人餐桌上的常客。"
+    },
+    {
+      "title": "門檻一：距離",
+      "photo": "ice",
+      "label": "南極羅斯海海冰｜歷史照片，非即時海況",
+      "lines": [
+        "捕撈 → 保存 → 運輸",
+        "數量多 ≠ 容易送上餐桌"
+      ],
+      "text": "第一道門檻，是距離。南極磷蝦生活在南大洋。要變成我們手上的食品，得經過捕撈、保存和長途運輸。從供應鏈來看，數量多，不等於方便取得；方便取得，也不等於能用大家願意接受的價格出售。"
+    },
+    {
+      "title": "門檻二：加工",
+      "photo": "krill",
+      "label": "加工流程為概念示意｜非工廠實拍",
+      "lines": [
+        "小體型＋品質保存",
+        "加工方式決定成品"
+      ],
+      "text": "第二道門檻，是加工。磷蝦體型小，取得食用的肉，需要處理外殼等部分。研究也發現，磷蝦死亡後，體內酵素會分解蛋白質，影響原料狀態。因此保存與加工不能隨便拖延，一口食物背後，有品質控制的問題。"
+    },
+    {
+      "title": "牠可能已經換了形式",
+      "photo": "food",
+      "label": "用途示意｜照片為乾燥磷蝦，並非磷蝦油",
+      "lines": [
+        "磷蝦油",
+        "水產養殖飼料"
+      ],
+      "text": "磷蝦不一定以一整隻的樣子賣給你。牠可以被做成油，也用於水產養殖飼料。這些用途，和一盤需要烹調的海鮮，是不同的市場。沒在餐桌上認出磷蝦，不代表人類沒有利用牠；牠可能只是換了形式。"
+    },
+    {
+      "title": "門檻三：生態",
+      "photo": "penguin",
+      "label": "食物網概念｜不同地點的動物照片",
+      "lines": [
+        "捕撈也要考慮",
+        "依賴磷蝦的動物"
+      ],
+      "text": "第三道門檻，是生態。磷蝦也是野生動物的食物。管理漁業時，需要考慮對生態系統的影響，包含依賴磷蝦的捕食者。這不代表完全不能捕撈，而是不能只問人類能撈多少，也要問其他動物需要留下多少。"
+    },
+    {
+      "title": "小動物，也有大變數",
+      "photo": "ice",
+      "label": "海冰棲地示意｜照片不是當前海冰監測資料",
+      "lines": [
+        "幼年磷蝦利用冰下藻類",
+        "海冰變化也是研究重點"
+      ],
+      "text": "海冰也和磷蝦有關。幼年磷蝦會吃海冰底下的藻類，氣候、海冰和海洋化學的變化，都會影響早期生存。看起來很多的動物，也不是永遠不變的資源。理解磷蝦，還要看到牠的環境，以及整個食物網。"
+    },
+    {
+      "title": "重新看待一口食物",
+      "photo": "seal",
+      "label": "真實照片＋鏡頭運動｜動物本身未被動畫化",
+      "lines": [
+        "能吃，為何不常吃？",
+        "距離・加工・生態"
+      ],
+      "text": "所以，磷蝦可以吃，人類也一直在利用牠。但從南極海洋到餐桌，有距離、加工和生態這三道門檻。下次看到企鵝、海豹，或張嘴進食的鯨魚，可以想起這隻小動物。牠或許不是你的主菜，卻是南極海洋的主角。"
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://www.antarctica.gov.au/about-antarctica/animals/krill/",
+      "supports": "species, morphology, swarms, larval sea ice algae; no biomass estimate used"
+    },
+    {
+      "url": "https://www.antarctica.gov.au/about-antarctica/animals/food-web/",
+      "supports": "food web: phytoplankton, krill and predators"
+    },
+    {
+      "url": "https://www.antarctica.gov.au/about-antarctica/animals/seals/crabeater-seal/",
+      "supports": "crabeater diet and filtering teeth"
+    },
+    {
+      "url": "https://40years.ccamlr.org/ecosystem-based-management-of-krill-fishery/",
+      "supports": "actual edible products, oil, feed, ecosystem-based management; 2021 historical explanation, no current quotas stated"
+    },
+    {
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC1148276/?page=1",
+      "supports": "1987 primary experiments: post-mortem protein autolysis, no modern processing-hour limit claimed"
+    },
+    {
+      "url": "https://www.ccamlr.org/en/system/files/science_journal_papers/02-Butterworth.pdf",
+      "supports": "historical processing constraints; no current clock limits or prices claimed"
+    }
+  ],
+  "inferences": [
+    "Supply chain distance and acceptable retail price are explanatory economic reasoning; not a measured ranking of causes.",
+    "Three thresholds are editorial structure, not an established universal causal model."
+  ],
+  "omitted": [
+    "No stock BGM/SFX of unverified rights.",
+    "No current biomass, quotas, catch totals, toxicity or medical benefit claims."
+  ]
+}

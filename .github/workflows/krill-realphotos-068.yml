@@ -1,0 +1,68 @@
+name: 068 Krill real photographs
+on:
+  push:
+    branches: ['video/krill-realphotos-20261013']
+    paths: ['smart_voice/krill_realphotos_20261013/**', '.github/workflows/krill-realphotos-068.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  produce:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Dependencies on GitHub runner
+        run: |
+          if ! command -v ffmpeg >/dev/null || ! command -v ffprobe >/dev/null; then
+            sudo apt-get update
+            sudo apt-get install -y ffmpeg
+          fi
+          python -m pip install -r smart_voice/requirements.txt numpy Pillow
+      - uses: actions/cache/restore@v4
+        with:
+          path: smart_voice/krill_realphotos_20261013/voices/.068-cache
+          key: krill-068-${{ runner.os }}-${{ github.run_id }}-${{ github.run_attempt }}
+          restore-keys: krill-068-${{ runner.os }}-
+      - name: Existing 068 voice and real photo case adapter
+        run: python smart_voice/krill_realphotos_20261013/produce.py
+      - uses: actions/cache/save@v4
+        if: always()
+        with:
+          path: smart_voice/krill_realphotos_20261013/voices/.068-cache
+          key: krill-068-${{ runner.os }}-${{ github.run_id }}-${{ github.run_attempt }}
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: krill-068-narration-and-progress
+          path: smart_voice/krill_realphotos_20261013/voices/*
+          if-no-files-found: warn
+          retention-days: 30
+      - uses: actions/upload-artifact@v4
+        if: success()
+        with:
+          name: krill-realphotos-delivery
+          path: |
+            smart_voice/krill_realphotos_20261013/output/Krill_Real_Photos_068.mp4
+            smart_voice/krill_realphotos_20261013/output/krill_068.mp3
+            smart_voice/krill_realphotos_20261013/output/krill_068.srt
+            smart_voice/krill_realphotos_20261013/output/*.json
+            smart_voice/krill_realphotos_20261013/output/*.md
+            smart_voice/krill_realphotos_20261013/output/narration.txt
+            smart_voice/krill_realphotos_20261013/output/qa_*.jpg
+            smart_voice/krill_realphotos_20261013/output/credits.png
+            smart_voice/krill_realphotos_20261013/fonts/font-license.txt
+          if-no-files-found: error
+          retention-days: 30
+      - uses: actions/upload-artifact@v4
+        if: failure()
+        with:
+          name: krill-realphotos-error-context
+          path: |
+            smart_voice/krill_realphotos_20261013/voices/*.error.log
+            smart_voice/krill_realphotos_20261013/voices/*.progress.json
+            smart_voice/krill_realphotos_20261013/output/*.json
+          if-no-files-found: warn
