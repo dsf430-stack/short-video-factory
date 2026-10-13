@@ -11,9 +11,9 @@ from PIL import Image, ImageDraw
 
 W,H,FPS,DURATION=540,960,15,30
 VOICE="zh-TW-HsiaoChenNeural"
-NARRATION=("為什麼有些人總是原地踏步？其實不是你不夠努力，而是每天都在重複相同的方法。"
-"想要突破，先把大目標拆成一個小動作。每天前進一點點，就能慢慢跨越眼前的高牆。"
-"真正改變人生的，不是某一天突然成功，而是你今天願意踏出的那一步。你準備開始了嗎？")
+NARRATION=("為什麼努力卻總是原地踏步？因為一直重複舊方法。"
+"把大目標拆成小行動，每天向前一步，慢慢就能跨過高牆。"
+"改變不是突然成功，而是今天開始。你願意試試嗎？")
 
 def run(*args):
     subprocess.run(args,check=True)
