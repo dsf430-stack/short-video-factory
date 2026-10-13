@@ -1,0 +1,32 @@
+name: Huanghelou verified 068 sample
+on:
+  push:
+    branches: ['test/huanghelou-ink-20261013']
+    paths: ['.github/workflows/huanghelou-068.yml']
+permissions:
+  contents: read
+jobs:
+  voice:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: |
+          python -m pip install -r smart_voice/requirements.txt
+          command -v ffmpeg || { sudo apt-get update && sudo apt-get install -y ffmpeg; }
+      - name: Generate real narration with verified 068 workflow
+        run: |
+          mkdir -p smart_voice/output
+          printf '%s' '昔人已乘黃鶴去，此地空餘黃鶴樓。仙人乘鶴，是傳說；樓前的悠悠白雲，卻留住了詩人的鄉愁。' > smart_voice/output/narration.txt
+          python smart_voice/generate_voice.py --voice-id 068 --text-file smart_voice/output/narration.txt --output smart_voice/output/huanghelou.mp3
+      - uses: actions/upload-artifact@v4
+        with:
+          name: huanghelou-068
+          path: |
+            smart_voice/output/*.mp3
+            smart_voice/output/*.srt
+            smart_voice/output/*.json
+          if-no-files-found: error
