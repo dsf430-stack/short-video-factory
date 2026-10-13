@@ -1,0 +1,109 @@
+name: 068 原始人穿衣完整旁白
+on:
+  push:
+    branches: ['video/clothing-stickman-068-20261013']
+    paths: ['smart_voice/jobs/clothing-remaining-20261013.json', '.github/workflows/clothing-remaining-068.yml']
+  workflow_dispatch:
+    inputs:
+      narration:
+        description: '貼上繁體中文旁白（最多 10000 字）'
+        required: true
+        type: string
+      filename:
+        description: '輸出檔名（不含副檔名）'
+        required: false
+        default: 'voice-068'
+        type: string
+permissions:
+  contents: read
+jobs:
+  synthesize:
+    strategy:
+      fail-fast: false
+      max-parallel: 2
+      matrix:
+        part: ['02', '03', '04', '05', '06']
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install existing voice dependencies
+        run: |
+          set -euxo pipefail
+          command -v python
+          python --version
+          command -v ffmpeg || true
+          command -v ffprobe || true
+          if ! command -v ffmpeg >/dev/null 2>&1 || ! command -v ffprobe >/dev/null 2>&1; then
+            sudo apt-get update
+            sudo apt-get install -y ffmpeg
+          fi
+          python -m pip install -r smart_voice/requirements.txt
+          python -c "import edge_tts, certifi; print('Edge TTS and CA bundle available')"
+          ffmpeg -version
+          ffprobe -version
+      - name: Restore verified voice chunks
+        id: chunks-cache
+        uses: actions/cache/restore@v4
+        with:
+          path: smart_voice/output/.068-cache
+          key: voice-068-v1-${{ runner.os }}-${{ matrix.part }}-${{ github.run_id }}-${{ github.run_attempt }}
+          restore-keys: voice-068-v1-${{ runner.os }}-
+      - name: Generate and verify 068 MP3/SRT
+        env:
+          NARRATION: ${{ inputs.narration }}
+          OUTPUT_NAME: clothing-part-${{ matrix.part }}-20261013
+          PART: ${{ matrix.part }}
+        run: |
+          python - <<'PY'
+          import os, pathlib, re, json
+          name=os.environ['OUTPUT_NAME'].strip()
+          if not re.fullmatch(r'[a-zA-Z0-9_-]{1,64}', name):
+              raise SystemExit('Filename must be 1-64 ASCII letters, digits, _ or -')
+          text=json.loads(pathlib.Path('smart_voice/jobs/clothing-remaining-20261013.json').read_text(encoding='utf-8'))[os.environ['PART']]
+          if not text or len(text)>10000:
+              raise SystemExit('Narration must contain 1-10000 characters')
+          pathlib.Path('smart_voice/output').mkdir(parents=True, exist_ok=True)
+          pathlib.Path('smart_voice/output/narration.txt').write_text(text,encoding='utf-8')
+          PY
+          set -euxo pipefail
+          python smart_voice/generate_voice.py --voice-id 068 --text-file smart_voice/output/narration.txt --output "smart_voice/output/${OUTPUT_NAME}.mp3"
+      - name: Save completed chunks even after a later failure
+        if: always()
+        uses: actions/cache/save@v4
+        with:
+          path: smart_voice/output/.068-cache
+          key: ${{ steps.chunks-cache.outputs.cache-primary-key }}
+      - name: Upload verified audio and subtitles
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: clothing-068-part-${{ matrix.part }}
+          path: |
+            smart_voice/output/*.mp3
+            smart_voice/output/*.srt
+            smart_voice/output/*.json
+          if-no-files-found: error
+          retention-days: 30
+      - name: Report failure context
+        if: failure()
+        shell: bash
+        run: |
+          echo "PATH=$PATH"
+          command -v python || true
+          command -v ffmpeg || true
+          command -v ffprobe || true
+          ls -la smart_voice/output/ || true
+      - name: Upload failure log
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: clothing-error-part-${{ matrix.part }}
+          path: |
+            smart_voice/output/*.error.log
+            smart_voice/output/*.progress.json
+          if-no-files-found: ignore
+
