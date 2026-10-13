@@ -32,7 +32,7 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: krill-068-narration-and-progress
-          run-id: 38378690634
+          run-id: 38379187228
           github-token: ${{ github.token }}
           path: smart_voice/krill_realphotos_20261013/voices
       - name: Existing 068 voice and real photo case adapter

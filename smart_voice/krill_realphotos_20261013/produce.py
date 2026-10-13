@@ -102,9 +102,11 @@ def main():
     gap=(total-intro-credits-spoken)/len(lengths)
     assets={a['id']:a for a in spec['assets']}
     for a in spec['assets']:
+        print(f'DOWNLOAD photo {a["id"]} from {a["url"]}',flush=True)
         download(a['url'],photos/a['file'])
         Image.open(photos/a['file']).verify()
         a['sha256']=sha(photos/a['file'])
+        time.sleep(1)
     download('https://raw.githubusercontent.com/notofonts/noto-cjk/main/Sans/OTF/TraditionalChinese/NotoSansCJKtc-Regular.otf',fonts/'NotoSansCJKtc-Regular.otf')
     download('https://raw.githubusercontent.com/notofonts/noto-cjk/main/Sans/LICENSE',fonts/'font-license.txt')
     timeline=[];cursor=intro;subtitles=[];audio_commands=[]

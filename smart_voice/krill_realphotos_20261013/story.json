@@ -8,66 +8,72 @@
     {
       "id": "krill",
       "file": "Euphausia_superba.jpg",
-      "url": "https://upload.wikimedia.org/wikipedia/commons/0/03/Euphausia_superba.jpg",
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/03/Euphausia_superba.jpg/1280px-Euphausia_superba.jpg",
       "page": "https://commons.wikimedia.org/wiki/File:Euphausia_superba.jpg",
       "author": "Dr. Wayne Trivelpiece / NOAA",
       "license": "Public domain (US NOAA)",
       "credit": "Dr. Wayne Trivelpiece / NOAA · Public domain",
-      "species": "Euphausia superba"
+      "species": "Euphausia superba",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/0/03/Euphausia_superba.jpg"
     },
     {
       "id": "whale",
       "file": "feeding_humpback.jpg",
-      "url": "https://upload.wikimedia.org/wikipedia/commons/0/03/SBNMS_-_feeding_humpback_whale_%2831319806616%29.jpg",
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/03/SBNMS_-_feeding_humpback_whale_%2831319806616%29.jpg/1280px-SBNMS_-_feeding_humpback_whale_%2831319806616%29.jpg",
       "page": "https://commons.wikimedia.org/wiki/File:SBNMS_-_feeding_humpback_whale_(31319806616).jpg",
       "author": "NOAA National Marine Sanctuaries",
       "license": "Public domain (US NOAA)",
       "credit": "NOAA National Marine Sanctuaries · Public domain",
       "species": "Megaptera novaeangliae",
-      "location": "Stellwagen Bank, USA; feeding illustration, not an Antarctic photograph"
+      "location": "Stellwagen Bank, USA; feeding illustration, not an Antarctic photograph",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/0/03/SBNMS_-_feeding_humpback_whale_%2831319806616%29.jpg"
     },
     {
       "id": "penguin",
       "file": "AdeliePenguins.jpg",
-      "url": "https://upload.wikimedia.org/wikipedia/commons/0/0f/AdeliePenguins.jpg",
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0f/AdeliePenguins.jpg/1280px-AdeliePenguins.jpg",
       "page": "https://commons.wikimedia.org/wiki/File:AdeliePenguins.jpg",
       "author": "Giuseppe Zibordi; credit Michael Van Woert / NOAA NESDIS ORA",
       "license": "Public domain (US NOAA)",
       "credit": "Giuseppe Zibordi / Michael Van Woert / NOAA · Public domain",
-      "species": "Pygoscelis adeliae"
+      "species": "Pygoscelis adeliae",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/0/0f/AdeliePenguins.jpg"
     },
     {
       "id": "seal",
       "file": "crabeater_seal.jpg",
-      "url": "https://upload.wikimedia.org/wikipedia/commons/1/15/Crabeater_Seal_%2852249043457%29.jpg",
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/15/Crabeater_Seal_%2852249043457%29.jpg/960px-Crabeater_Seal_%2852249043457%29.jpg",
       "page": "https://commons.wikimedia.org/wiki/File:Crabeater_Seal_(52249043457).jpg",
       "author": "David Stanley",
       "license": "CC BY 2.0",
       "license_url": "https://creativecommons.org/licenses/by/2.0/",
       "credit": "David Stanley · CC BY 2.0 · crop / camera motion",
       "species": "Lobodon carcinophaga",
-      "location": "Jenny Island, Antarctica"
+      "location": "Jenny Island, Antarctica",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/1/15/Crabeater_Seal_%2852249043457%29.jpg"
     },
     {
       "id": "food",
       "file": "Dried_Antarctic_Krill.jpg",
-      "url": "https://upload.wikimedia.org/wikipedia/commons/4/47/Dried_Antarctic_Krill.jpg",
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/47/Dried_Antarctic_Krill.jpg/1280px-Dried_Antarctic_Krill.jpg",
       "page": "https://commons.wikimedia.org/wiki/File:Dried_Antarctic_Krill.jpg",
       "author": "François Nguyen",
       "license": "CC BY 2.0",
       "license_url": "https://creativecommons.org/licenses/by/2.0/",
       "credit": "François Nguyen · CC BY 2.0 · crop / camera motion",
-      "species": "Euphausia superba, dried; identification as described by uploader"
+      "species": "Euphausia superba, dried; identification as described by uploader",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/4/47/Dried_Antarctic_Krill.jpg"
     },
     {
       "id": "ice",
       "file": "Ross_sea_ice.jpg",
-      "url": "https://upload.wikimedia.org/wikipedia/commons/7/72/Open_water_within_the_sea_ice_pack._-_NOAA.jpg",
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/72/Open_water_within_the_sea_ice_pack._-_NOAA.jpg/1280px-Open_water_within_the_sea_ice_pack._-_NOAA.jpg",
       "page": "https://commons.wikimedia.org/wiki/File:Open_water_within_the_sea_ice_pack._-_NOAA.jpg",
       "author": "Michael Van Woert / NOAA NESDIS ORA",
       "license": "Public domain (US NOAA)",
       "credit": "Michael Van Woert / NOAA · Public domain",
-      "location": "Ross Sea, Antarctica, January 1999"
+      "location": "Ross Sea, Antarctica, January 1999",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/7/72/Open_water_within_the_sea_ice_pack._-_NOAA.jpg"
     }
   ],
   "scenes": [
