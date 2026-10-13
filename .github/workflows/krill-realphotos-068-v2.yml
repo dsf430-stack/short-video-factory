@@ -1,0 +1,74 @@
+name: 068 Krill richer photos v2
+on:
+  push:
+    branches: ['video/krill-realphotos-20261013']
+    paths: ['smart_voice/krill_realphotos_v2_20261013/**', '.github/workflows/krill-realphotos-068-v2.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  revise:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+          cache-dependency-path: smart_voice/requirements.txt
+      - name: Dependencies on GitHub runner
+        run: |
+          if ! command -v ffmpeg >/dev/null || ! command -v ffprobe >/dev/null; then
+            sudo apt-get update
+            sudo apt-get install -y ffmpeg
+          fi
+          python -m pip install -r smart_voice/requirements.txt numpy Pillow
+      - uses: actions/cache/restore@v4
+        with:
+          path: |
+            smart_voice/krill_realphotos_v2_20261013/voices
+            smart_voice/krill_realphotos_v2_20261013/photos
+            smart_voice/krill_realphotos_v2_20261013/fonts
+          key: krill-v2-${{ runner.os }}-${{ github.run_id }}-${{ github.run_attempt }}
+          restore-keys: krill-v2-${{ runner.os }}-
+      - name: 068 scoped faster prosody
+        run: python smart_voice/krill_realphotos_v2_20261013/produce.py --stage voice
+      - name: Eighteen licensed real photographs
+        run: python smart_voice/krill_realphotos_v2_20261013/produce.py --stage assets
+      - name: Short shots, captions, mix and complete decode
+        run: python smart_voice/krill_realphotos_v2_20261013/produce.py --stage render
+      - uses: actions/cache/save@v4
+        if: always()
+        with:
+          path: |
+            smart_voice/krill_realphotos_v2_20261013/voices
+            smart_voice/krill_realphotos_v2_20261013/photos
+            smart_voice/krill_realphotos_v2_20261013/fonts
+          key: krill-v2-${{ runner.os }}-${{ github.run_id }}-${{ github.run_attempt }}
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: krill-v2-media-and-voice
+          path: |
+            smart_voice/krill_realphotos_v2_20261013/voices/*
+            smart_voice/krill_realphotos_v2_20261013/photos/*
+            smart_voice/krill_realphotos_v2_20261013/fonts/*
+            smart_voice/krill_realphotos_v2_20261013/output/voice_summary.json
+          if-no-files-found: warn
+          retention-days: 30
+      - uses: actions/upload-artifact@v4
+        if: success()
+        with:
+          name: krill-v2-delivery
+          path: |
+            smart_voice/krill_realphotos_v2_20261013/output/Krill_Real_Photos_068_v2.mp4
+            smart_voice/krill_realphotos_v2_20261013/output/krill_068_v2.mp3
+            smart_voice/krill_realphotos_v2_20261013/output/krill_068_v2.srt
+            smart_voice/krill_realphotos_v2_20261013/output/*.json
+            smart_voice/krill_realphotos_v2_20261013/output/*.md
+            smart_voice/krill_realphotos_v2_20261013/output/narration_v2.txt
+            smart_voice/krill_realphotos_v2_20261013/output/qa_*.jpg
+            smart_voice/krill_realphotos_v2_20261013/output/credits.png
+          if-no-files-found: error
+          retention-days: 30

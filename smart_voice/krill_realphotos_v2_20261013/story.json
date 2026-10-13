@@ -1,0 +1,631 @@
+{
+  "id": "krill-realphotos-068-v2-20261013",
+  "title": "磷蝦能餵飽鯨魚，為什麼你不常吃？",
+  "voice_id": "068",
+  "motion": "18 real photographs; camera movement, full-frame/split/triptych/portrait layouts; no animal animation",
+  "assets": [
+    {
+      "id": "krill",
+      "file": "Euphausia_superba.jpg",
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/03/Euphausia_superba.jpg/1280px-Euphausia_superba.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Euphausia_superba.jpg",
+      "author": "Dr. Wayne Trivelpiece / NOAA",
+      "license": "Public domain (US NOAA)",
+      "credit": "Dr. Wayne Trivelpiece / NOAA · Public domain",
+      "species": "Euphausia superba",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/0/03/Euphausia_superba.jpg",
+      "label": "南極磷蝦｜Euphausia superba"
+    },
+    {
+      "id": "whale",
+      "file": "feeding_humpback.jpg",
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/03/SBNMS_-_feeding_humpback_whale_%2831319806616%29.jpg/1280px-SBNMS_-_feeding_humpback_whale_%2831319806616%29.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:SBNMS_-_feeding_humpback_whale_(31319806616).jpg",
+      "author": "NOAA National Marine Sanctuaries",
+      "license": "Public domain (US NOAA)",
+      "credit": "NOAA National Marine Sanctuaries · Public domain",
+      "species": "Megaptera novaeangliae",
+      "location": "Stellwagen Bank, USA; feeding illustration, not an Antarctic photograph",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/0/03/SBNMS_-_feeding_humpback_whale_%2831319806616%29.jpg",
+      "label": "座頭鯨攝食示意｜美國 Stellwagen Bank"
+    },
+    {
+      "id": "penguin",
+      "file": "AdeliePenguins.jpg",
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0f/AdeliePenguins.jpg/1280px-AdeliePenguins.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:AdeliePenguins.jpg",
+      "author": "Giuseppe Zibordi; credit Michael Van Woert / NOAA NESDIS ORA",
+      "license": "Public domain (US NOAA)",
+      "credit": "Giuseppe Zibordi / Michael Van Woert / NOAA · Public domain",
+      "species": "Pygoscelis adeliae",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/0/0f/AdeliePenguins.jpg",
+      "label": "阿德利企鵝｜南極群落"
+    },
+    {
+      "id": "seal",
+      "file": "crabeater_seal.jpg",
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/15/Crabeater_Seal_%2852249043457%29.jpg/960px-Crabeater_Seal_%2852249043457%29.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Crabeater_Seal_(52249043457).jpg",
+      "author": "David Stanley",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0/",
+      "credit": "David Stanley · CC BY 2.0 · crop / camera motion",
+      "species": "Lobodon carcinophaga",
+      "location": "Jenny Island, Antarctica",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/1/15/Crabeater_Seal_%2852249043457%29.jpg",
+      "label": "食蟹海豹｜南極 Jenny Island"
+    },
+    {
+      "id": "food",
+      "file": "Dried_Antarctic_Krill.jpg",
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/47/Dried_Antarctic_Krill.jpg/1280px-Dried_Antarctic_Krill.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Dried_Antarctic_Krill.jpg",
+      "author": "François Nguyen",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0/",
+      "credit": "François Nguyen · CC BY 2.0 · crop / camera motion",
+      "species": "Euphausia superba, dried; identification as described by uploader",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/4/47/Dried_Antarctic_Krill.jpg",
+      "label": "乾燥磷蝦｜加工產品"
+    },
+    {
+      "id": "ice",
+      "file": "Ross_sea_ice.jpg",
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/72/Open_water_within_the_sea_ice_pack._-_NOAA.jpg/1280px-Open_water_within_the_sea_ice_pack._-_NOAA.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Open_water_within_the_sea_ice_pack._-_NOAA.jpg",
+      "author": "Michael Van Woert / NOAA NESDIS ORA",
+      "license": "Public domain (US NOAA)",
+      "credit": "Michael Van Woert / NOAA · Public domain",
+      "location": "Ross Sea, Antarctica, January 1999",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/7/72/Open_water_within_the_sea_ice_pack._-_NOAA.jpg",
+      "label": "南極羅斯海｜1999年照片"
+    },
+    {
+      "id": "bubble",
+      "file": "bubble.jpg",
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3a/Humpback_whale_bubble_net_feeding_Christin_Khan_NOAA.jpg/1280px-Humpback_whale_bubble_net_feeding_Christin_Khan_NOAA.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/3/3a/Humpback_whale_bubble_net_feeding_Christin_Khan_NOAA.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Humpback_whale_bubble_net_feeding_Christin_Khan_NOAA.jpg",
+      "author": "Christin Khan / NOAA NEFSC",
+      "license": "Public domain",
+      "license_url": "https://commons.wikimedia.org/wiki/Template:PD-USGov",
+      "credit": "Christin Khan / NOAA NEFSC · Public domain",
+      "label": "座頭鯨泡泡網攝食示意",
+      "species": "Megaptera novaeangliae"
+    },
+    {
+      "id": "whale_ant",
+      "file": "whale_ant.jpg",
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d6/Humpback_whale_Fournier_Bay_Robert_Pitman_NOAA_PS9.jpg/1280px-Humpback_whale_Fournier_Bay_Robert_Pitman_NOAA_PS9.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/d/d6/Humpback_whale_Fournier_Bay_Robert_Pitman_NOAA_PS9.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Humpback_whale_Fournier_Bay_Robert_Pitman_NOAA_PS9.jpg",
+      "author": "Robert Pitman / NOAA",
+      "license": "Public domain",
+      "license_url": "https://commons.wikimedia.org/wiki/Template:PD-USGov",
+      "credit": "Robert Pitman / NOAA · Public domain",
+      "label": "座頭鯨｜南極 Fournier Bay",
+      "species": "Megaptera novaeangliae"
+    },
+    {
+      "id": "whale_under",
+      "file": "whale_under.jpg",
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d2/Megaptera_novaeangliae_underwater_NOAA.jpg/1280px-Megaptera_novaeangliae_underwater_NOAA.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/d/d2/Megaptera_novaeangliae_underwater_NOAA.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Megaptera_novaeangliae_underwater_NOAA.jpg",
+      "author": "R. Wicklund / NOAA NURP",
+      "license": "Public domain",
+      "license_url": "https://commons.wikimedia.org/wiki/Template:PD-USGov",
+      "credit": "R. Wicklund / NOAA NURP · Public domain",
+      "label": "座頭鯨水下照片｜非南極拍攝",
+      "species": "Megaptera novaeangliae"
+    },
+    {
+      "id": "penguin_close",
+      "file": "penguin_close.jpg",
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/24/Pygoscelis_adeliae.jpg/960px-Pygoscelis_adeliae.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/2/24/Pygoscelis_adeliae.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Pygoscelis_adeliae.jpg",
+      "author": "Dr. Wayne Trivelpiece / NOAA; colour balance MPF",
+      "license": "Public domain",
+      "license_url": "https://commons.wikimedia.org/wiki/Template:PD-USGov",
+      "credit": "Dr. Wayne Trivelpiece / NOAA; colour balance MPF · Public domain",
+      "label": "阿德利企鵝幼鳥",
+      "species": "Pygoscelis adeliae"
+    },
+    {
+      "id": "penguin_swim",
+      "file": "penguin_swim.jpg",
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/62/Porpoising_penguins_%28Pygoscelis_adeliae%29.jpg/1280px-Porpoising_penguins_%28Pygoscelis_adeliae%29.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/6/62/Porpoising_penguins_%28Pygoscelis_adeliae%29.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Porpoising_penguins_(Pygoscelis_adeliae).jpg",
+      "author": "Jason Auch",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0/",
+      "credit": "Jason Auch · CC BY 2.0",
+      "label": "阿德利企鵝躍出水面",
+      "species": "Pygoscelis adeliae"
+    },
+    {
+      "id": "seal_group",
+      "file": "seal_group.jpg",
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/09/Crabeater_Seals_%2852348536119%29.jpg/960px-Crabeater_Seals_%2852348536119%29.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/0/09/Crabeater_Seals_%2852348536119%29.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Crabeater_Seals_(52348536119).jpg",
+      "author": "David Stanley",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0/",
+      "credit": "David Stanley · CC BY 2.0",
+      "label": "食蟹海豹｜南極 Stonington Island",
+      "species": "Lobodon carcinophaga"
+    },
+    {
+      "id": "seal_pair",
+      "file": "seal_pair.jpg",
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/54/Crabeater_Seals_%28js%29.jpg/1280px-Crabeater_Seals_%28js%29.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/5/54/Crabeater_Seals_%28js%29.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Crabeater_Seals_(js).jpg",
+      "author": "Jerzy Strzelecki",
+      "license": "CC BY 3.0",
+      "license_url": "https://creativecommons.org/licenses/by/3.0/",
+      "credit": "Jerzy Strzelecki · CC BY 3.0",
+      "label": "食蟹海豹",
+      "species": "Lobodon carcinophaga"
+    },
+    {
+      "id": "diatoms",
+      "file": "diatoms.jpg",
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/31/Diatoms_through_the_microscope.jpg/1280px-Diatoms_through_the_microscope.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/3/31/Diatoms_through_the_microscope.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Diatoms_through_the_microscope.jpg",
+      "author": "Prof. Gordon T. Taylor / NOAA",
+      "license": "Public domain",
+      "license_url": "https://commons.wikimedia.org/wiki/Template:PD-USGov",
+      "credit": "Prof. Gordon T. Taylor / NOAA · Public domain",
+      "label": "南極海冰中的矽藻｜顯微照片",
+      "species": "Diatoms"
+    },
+    {
+      "id": "finger",
+      "file": "finger.jpg",
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/58/Krill_on_finger.jpg/1280px-Krill_on_finger.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/5/58/Krill_on_finger.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Krill_on_finger.jpg",
+      "author": "Sophie Webb / NOAA",
+      "license": "CC0 1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "credit": "Sophie Webb / NOAA · CC0 1.0",
+      "label": "磷蝦示意｜原圖未註明物種",
+      "species": "Krill, species unspecified"
+    },
+    {
+      "id": "ship",
+      "file": "ship.jpg",
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c0/S.A._Agulhas.jpg/1280px-S.A._Agulhas.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/c/c0/S.A._Agulhas.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:S.A._Agulhas.jpg",
+      "author": "Julian Mason",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0/",
+      "credit": "Julian Mason · CC BY 2.0",
+      "label": "極地航行示意｜Agulhas 研究船",
+      "species": "Ship; not a krill fishing vessel"
+    },
+    {
+      "id": "ice_air",
+      "file": "ice_air.jpg",
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/06/Antarctic_Sea_Ice_-_Amundsen_Sea.jpg/1280px-Antarctic_Sea_Ice_-_Amundsen_Sea.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/0/06/Antarctic_Sea_Ice_-_Amundsen_Sea.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Antarctic_Sea_Ice_-_Amundsen_Sea.jpg",
+      "author": "NASA / Jane Peterson",
+      "license": "Public domain",
+      "license_url": "https://commons.wikimedia.org/wiki/Template:PD-USGov",
+      "credit": "NASA / Jane Peterson · Public domain",
+      "label": "南極阿蒙森海｜2009年照片",
+      "species": "Antarctic ice"
+    },
+    {
+      "id": "swarm",
+      "file": "swarm.jpg",
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1f/Krill_swarm.jpg/1280px-Krill_swarm.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/1/1f/Krill_swarm.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Krill_swarm.jpg",
+      "author": "Jamie Hall / NOAA",
+      "license": "Public domain",
+      "license_url": "https://commons.wikimedia.org/wiki/Template:PD-USGov",
+      "credit": "Jamie Hall / NOAA · Public domain",
+      "label": "磷蝦群示意｜美國 Farallones，非南極",
+      "species": "Krill, species unspecified"
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://www.antarctica.gov.au/about-antarctica/animals/krill/",
+      "supports": "species, morphology, swarms, larval sea ice algae; no biomass estimate used"
+    },
+    {
+      "url": "https://www.antarctica.gov.au/about-antarctica/animals/food-web/",
+      "supports": "food web: phytoplankton, krill and predators"
+    },
+    {
+      "url": "https://www.antarctica.gov.au/about-antarctica/animals/seals/crabeater-seal/",
+      "supports": "crabeater diet and filtering teeth"
+    },
+    {
+      "url": "https://40years.ccamlr.org/ecosystem-based-management-of-krill-fishery/",
+      "supports": "actual edible products, oil, feed, ecosystem-based management; 2021 historical explanation, no current quotas stated"
+    },
+    {
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC1148276/?page=1",
+      "supports": "1987 primary experiments: post-mortem protein autolysis, no modern processing-hour limit claimed"
+    },
+    {
+      "url": "https://www.ccamlr.org/en/system/files/science_journal_papers/02-Butterworth.pdf",
+      "supports": "historical processing constraints; no current clock limits or prices claimed"
+    }
+  ],
+  "inferences": [
+    "Supply chain distance and acceptable retail price are explanatory economic reasoning; not a measured ranking of causes.",
+    "Three thresholds are editorial structure, not an established universal causal model."
+  ],
+  "omitted": [
+    "No stock BGM/SFX of unverified rights.",
+    "No current biomass, quotas, catch totals, toxicity or medical benefit claims."
+  ],
+  "blocks": [
+    {
+      "kind": "hook",
+      "text": "鯨魚吃，企鵝吃，海豹也吃！那我們呢？這種小動物能餵飽海洋巨獸，為什麼很少出現在你的晚餐裡？先別急著說不能吃。",
+      "shots": [
+        [
+          "whale_ant",
+          "鯨魚的大餐",
+          "full"
+        ],
+        [
+          "penguin_swim",
+          "企鵝也吃",
+          "full"
+        ],
+        [
+          "seal_pair",
+          "那我們呢？",
+          "split",
+          "food"
+        ]
+      ]
+    },
+    {
+      "kind": "body",
+      "text": "牠叫磷蝦。但磷蝦不是只有一種。這支片的主角，是生活在南大洋的南極磷蝦。透明身體、黑色大眼睛，再加上紅色斑點，模樣很像小蝦，卻不是你平常買的那種蝦。",
+      "shots": [
+        [
+          "finger",
+          "磷蝦，不只一種",
+          "full"
+        ],
+        [
+          "krill",
+          "南極磷蝦",
+          "full"
+        ],
+        [
+          "krill",
+          "黑眼睛・透明身體",
+          "detail"
+        ]
+      ]
+    },
+    {
+      "kind": "question",
+      "text": "成年南極磷蝦大約六公分長。單看一隻，沒什麼氣勢。可是聚成密集的群體，情況就完全不同。對捕食者來說，找到牠們，就像找到一座移動的自助餐！",
+      "shots": [
+        [
+          "krill",
+          "約六公分",
+          "split",
+          "finger"
+        ],
+        [
+          "swarm",
+          "密集群體",
+          "full"
+        ],
+        [
+          "bubble",
+          "移動的自助餐",
+          "full"
+        ]
+      ]
+    },
+    {
+      "kind": "body",
+      "text": "這座餐廳的能量，從哪裡來？磷蝦會吃微小的浮游植物。牠自己，又被企鵝、鬚鯨和海豹吃掉。小小的身體，把微小植物與大型動物接在一起。這就是牠在食物網裡的關鍵位置。",
+      "shots": [
+        [
+          "diatoms",
+          "能量從微小植物開始",
+          "full"
+        ],
+        [
+          "krill",
+          "植物 → 磷蝦",
+          "split",
+          "diatoms"
+        ],
+        [
+          "penguin",
+          "磷蝦 → 捕食者",
+          "trio",
+          "whale_ant",
+          "seal_group"
+        ]
+      ]
+    },
+    {
+      "kind": "reveal",
+      "text": "看這隻食蟹海豹。名字叫食蟹，主要吃的卻是磷蝦！牠的牙齒有特殊突起，能把磷蝦從海水裡濾出來。牠不是照著名字吃飯，而是早已適應了這份南極菜單。",
+      "shots": [
+        [
+          "seal",
+          "食蟹海豹",
+          "full"
+        ],
+        [
+          "seal_pair",
+          "主食卻是磷蝦！",
+          "full"
+        ],
+        [
+          "seal_group",
+          "從海水中濾出食物",
+          "full"
+        ]
+      ]
+    },
+    {
+      "kind": "question",
+      "text": "所以，人類到底能不能吃？答案是：能！磷蝦已經有罐裝、冷凍蝦尾等食用產品，也會被做成油。你正在看的是乾燥磷蝦。問題不是能不能吃，而是為什麼不常吃。",
+      "shots": [
+        [
+          "food",
+          "人類能吃嗎？",
+          "full"
+        ],
+        [
+          "food",
+          "能！",
+          "detail"
+        ],
+        [
+          "whale",
+          "為何不常吃？",
+          "split",
+          "food"
+        ]
+      ]
+    },
+    {
+      "kind": "body",
+      "text": "第一關，距離。牠生活在南大洋，不是在你家附近的菜市場。從海裡到餐桌，要經過捕撈、保存和長途運輸。看見海裡有很多，跟把一份食品送進超市，是兩件不同的事。",
+      "shots": [
+        [
+          "ice_air",
+          "第一關：距離",
+          "full"
+        ],
+        [
+          "ship",
+          "航行・保存・運輸",
+          "full"
+        ],
+        [
+          "ice",
+          "遠方的資源",
+          "full"
+        ]
+      ]
+    },
+    {
+      "kind": "body",
+      "text": "第二關，加工。磷蝦這麼小，取得食用的肉，還得處理外殼等部分。研究也發現，磷蝦死亡後，體內酵素會分解蛋白質，改變原料的狀態。品質控制，不能省略。",
+      "shots": [
+        [
+          "krill",
+          "第二關：加工",
+          "detail"
+        ],
+        [
+          "food",
+          "小體型，也有工序",
+          "full"
+        ],
+        [
+          "krill",
+          "酵素會分解蛋白質",
+          "split",
+          "food"
+        ]
+      ]
+    },
+    {
+      "kind": "reveal",
+      "text": "而且，磷蝦可能已經換了形式！牠可以被做成磷蝦油，也用在水產養殖飼料裡。沒看見整隻磷蝦，不代表人類沒有利用牠。一盤海鮮、一種原料，走的是不同的市場路線。",
+      "shots": [
+        [
+          "food",
+          "可能已換了形式",
+          "full"
+        ],
+        [
+          "krill",
+          "磷蝦油・養殖飼料",
+          "split",
+          "food"
+        ],
+        [
+          "whale_under",
+          "不只是一盤海鮮",
+          "full"
+        ]
+      ]
+    },
+    {
+      "kind": "body",
+      "text": "第三關，生態。這些磷蝦，原本就有人等著吃。企鵝、鬚鯨和海豹，都在這張食物網裡。管理漁業時，除了人類的需求，也要考慮依賴磷蝦的捕食者。",
+      "shots": [
+        [
+          "penguin_close",
+          "第三關：生態",
+          "portrait"
+        ],
+        [
+          "whale_ant",
+          "牠們也需要食物",
+          "full"
+        ],
+        [
+          "seal_group",
+          "人類不是唯一食客",
+          "trio",
+          "penguin_swim",
+          "whale_ant"
+        ]
+      ]
+    },
+    {
+      "kind": "question",
+      "text": "這代表完全不能捕撈嗎？不是。真正的問題是：在哪裡捕、怎麼捕，以及對生態系統有什麼影響。不能只看人類能拿多少，還得看其他動物需要什麼。",
+      "shots": [
+        [
+          "bubble",
+          "不是完全不能捕撈",
+          "full"
+        ],
+        [
+          "penguin",
+          "不只計算人類需求",
+          "full"
+        ],
+        [
+          "seal_pair",
+          "也要看生態影響",
+          "full"
+        ]
+      ]
+    },
+    {
+      "kind": "body",
+      "text": "海冰，也藏著一個線索。幼年磷蝦會吃海冰底下的藻類。氣候、海冰和海洋化學的變化，都會影響牠們早期的生存。小動物的未來，連著整個生活環境。",
+      "shots": [
+        [
+          "ice_air",
+          "海冰裡的線索",
+          "full"
+        ],
+        [
+          "diatoms",
+          "幼年磷蝦利用冰下藻類",
+          "full"
+        ],
+        [
+          "ice",
+          "環境也在改變",
+          "full"
+        ]
+      ]
+    },
+    {
+      "kind": "punch",
+      "text": "所以，看起來很多的動物，也不是永遠不變的存貨。理解磷蝦，不能只盯著數量。要把牠的環境、加工方式和生態角色，一起放進畫面。",
+      "shots": [
+        [
+          "swarm",
+          "多，不代表永遠不變",
+          "full"
+        ],
+        [
+          "diatoms",
+          "環境・品質・食物網",
+          "split",
+          "krill"
+        ],
+        [
+          "penguin_swim",
+          "小動物，大連結",
+          "full"
+        ]
+      ]
+    },
+    {
+      "kind": "reveal",
+      "text": "現在答案清楚了。磷蝦能吃，也一直被人類利用。但從南極到你的餐桌，有距離、加工和生態這三關。牠沒成為常見的主菜，並不是一個不能吃就能解釋的故事。",
+      "shots": [
+        [
+          "ship",
+          "距離",
+          "full"
+        ],
+        [
+          "food",
+          "加工",
+          "full"
+        ],
+        [
+          "seal_pair",
+          "生態",
+          "trio",
+          "penguin",
+          "whale_ant"
+        ]
+      ]
+    },
+    {
+      "kind": "hook",
+      "text": "下次看見鯨魚張嘴，或企鵝跳進海裡，想想牠們在找什麼。你今晚可能沒吃磷蝦；但南極海洋的很多動物，靠牠把一天的故事接下去！",
+      "shots": [
+        [
+          "whale_ant",
+          "巨獸，也靠小動物",
+          "full"
+        ],
+        [
+          "penguin_swim",
+          "一口磷蝦",
+          "full"
+        ],
+        [
+          "krill",
+          "接起南極食物網",
+          "split",
+          "whale_ant"
+        ]
+      ]
+    }
+  ],
+  "presets": {
+    "hook": {
+      "rate": "+44%",
+      "pitch": "+14Hz"
+    },
+    "body": {
+      "rate": "+38%",
+      "pitch": "+5Hz"
+    },
+    "question": {
+      "rate": "+34%",
+      "pitch": "+12Hz"
+    },
+    "reveal": {
+      "rate": "+27%",
+      "pitch": "+9Hz"
+    },
+    "punch": {
+      "rate": "+40%",
+      "pitch": "+2Hz"
+    }
+  },
+  "credit_seconds": 6,
+  "lead_seconds": 0.25,
+  "chapter_pause": 0.1,
+  "scope": "User-authorized faster prosody and visual revision; base 068 preset unchanged"
+}
