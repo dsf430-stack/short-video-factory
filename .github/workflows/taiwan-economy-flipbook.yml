@@ -1,0 +1,54 @@
+name: Taiwan economy flipbook assets and 068 preview
+on:
+  push:
+    branches: ['test/taiwan-economy-flipbook-20261014']
+    paths: ['.github/workflows/taiwan-economy-flipbook.yml']
+permissions:
+  contents: read
+jobs:
+  assets:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Prepare verified dependencies
+        run: |
+          python -m pip install -r smart_voice/requirements.txt
+          sudo apt-get update
+          sudo apt-get install -y ffmpeg fonts-noto-cjk
+      - name: Fetch actual historical photographs
+        run: |
+          python - <<'PY'
+          import pathlib,hashlib,urllib.request,urllib.parse,time,json
+          root=pathlib.Path('taiwan-economy-assets');root.mkdir()
+          files=['Rice harvesting in Taiwan.jpg','Harvesting on the paddy fields in Taichu.jpg','Taiwan Seito circa 1930.jpg','Light railway of sugar industry in Takao.jpg','唐榮鐵工廠股份有限公司裝運鋼筋去美國-KH2002.018.039-0008.jpg','大榮製鋼股份有限公司.jpg']
+          rows=[]
+          for idx,title in enumerate(files):
+              name=title.replace(' ','_');md=hashlib.md5(name.encode()).hexdigest()
+              url='https://upload.wikimedia.org/wikipedia/commons/'+md[0]+'/'+md[:2]+'/'+urllib.parse.quote(name)
+              req=urllib.request.Request(url,headers={'User-Agent':'AfuHistoryBook/1.0 (educational historical-video project)'})
+              for attempt in range(4):
+                  try:
+                      data=urllib.request.urlopen(req,timeout=60).read();break
+                  except Exception as e:
+                      if attempt==3:raise
+                      print(type(e).__name__,str(e),flush=True);time.sleep(2**(attempt+1))
+              dest=root/('photo-%02d.jpg'%(idx+1));dest.write_bytes(data)
+              assert data[:2]==b'\xff\xd8',title
+              rows.append({'id':idx+1,'title':title,'file':dest.name,'original_url':url,'source_page':'https://commons.wikimedia.org/wiki/File:'+urllib.parse.quote(name),'sha256':hashlib.sha256(data).hexdigest()})
+          (root/'download_manifest.json').write_text(json.dumps(rows,ensure_ascii=False,indent=2))
+          (root/'narration.txt').write_text('翻開這本相簿，台灣的經濟故事，從田裡的稻米與糖廠開始。再往後翻，是工廠、港口與一雙雙工作的手；世界市場，慢慢改變了這座島。')
+          PY
+          cp /usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc taiwan-economy-assets/
+      - name: Generate true 068 speech and timestamps
+        run: |
+          python smart_voice/generate_voice.py --voice-id 068 --text-file taiwan-economy-assets/narration.txt --output taiwan-economy-assets/preview.mp3
+      - uses: actions/upload-artifact@v4
+        with:
+          name: taiwan-economy-verified-assets
+          path: taiwan-economy-assets/
+          if-no-files-found: error
+          retention-days: 30
