@@ -1,0 +1,127 @@
+{
+  "version": 1,
+  "mode": "archival_flipbook",
+  "target_full_duration": 240,
+  "preview": true,
+  "voice": "068",
+  "photos": {
+    "1": {
+      "id": 1,
+      "title": "Rice harvesting in Taiwan.jpg",
+      "file": "photo-01.jpg",
+      "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ee/Rice_harvesting_in_Taiwan.jpg/960px-Rice_harvesting_in_Taiwan.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/e/ee/Rice_harvesting_in_Taiwan.jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Rice_harvesting_in_Taiwan.jpg",
+      "sha256": "643cd91a237c3d761e67d5e35e1b62dc776d75e4477d3dacc35732d2da291af7",
+      "label": "稻田收割",
+      "date": "1912年",
+      "credit_short": "臺灣統計要覽／公有領域",
+      "license": "Public domain",
+      "author": "Unknown",
+      "license_url": null,
+      "modifications": "原圖等比例縮放排版；不裁切主體、不重上色、不生成內容"
+    },
+    "2": {
+      "id": 2,
+      "title": "Harvesting on the paddy fields in Taichu.jpg",
+      "file": "photo-02.jpg",
+      "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d3/Harvesting_on_the_paddy_fields_in_Taichu.jpg/960px-Harvesting_on_the_paddy_fields_in_Taichu.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/d/d3/Harvesting_on_the_paddy_fields_in_Taichu.jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Harvesting_on_the_paddy_fields_in_Taichu.jpg",
+      "sha256": "f4971aeeca6c877f4baeeb9ac06852f8c35d31553a4df9b32da3c0013fabbb3e",
+      "label": "臺中州稻米收穫",
+      "date": "1895–1945年間",
+      "credit_short": "臺中繪葉書／公有領域",
+      "license": "Public domain",
+      "author": "Unknown",
+      "license_url": null,
+      "modifications": "原圖等比例縮放排版；不裁切主體、不重上色、不生成內容"
+    },
+    "3": {
+      "id": 3,
+      "title": "Taiwan Seito circa 1930.jpg",
+      "file": "photo-03.jpg",
+      "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/50/Taiwan_Seito_circa_1930.jpg/960px-Taiwan_Seito_circa_1930.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/5/50/Taiwan_Seito_circa_1930.jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Taiwan_Seito_circa_1930.jpg",
+      "sha256": "8369eae73c3f1a5e615939528f338a618b69ec649ee7666915d3acaf70a9d8ed",
+      "label": "臺灣製糖工場",
+      "date": "約1930年",
+      "credit_short": "日本地理大系／公有領域",
+      "license": "Public domain",
+      "author": "Unknown",
+      "license_url": null,
+      "modifications": "原圖等比例縮放排版；不裁切主體、不重上色、不生成內容"
+    },
+    "4": {
+      "id": 4,
+      "title": "Light railway of sugar industry in Takao.jpg",
+      "file": "photo-04.jpg",
+      "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/21/Light_railway_of_sugar_industry_in_Takao.jpg/330px-Light_railway_of_sugar_industry_in_Takao.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/2/21/Light_railway_of_sugar_industry_in_Takao.jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Light_railway_of_sugar_industry_in_Takao.jpg",
+      "sha256": "3ad91b10a94bb8d62bc77d83b8796a44238750371f7acda3458614694e7278fb",
+      "label": "高雄糖業輕便鐵道",
+      "date": "1945年以前",
+      "credit_short": "屏東臺灣製糖／公有領域",
+      "license": "Public domain",
+      "author": "屏東台灣製糖本社",
+      "license_url": null,
+      "modifications": "原圖等比例縮放排版；不裁切主體、不重上色、不生成內容"
+    },
+    "5": {
+      "id": 5,
+      "title": "唐榮鐵工廠股份有限公司裝運鋼筋去美國-KH2002.018.039-0008.jpg",
+      "file": "photo-05.jpg",
+      "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e3/%E5%94%90%E6%A6%AE%E9%90%B5%E5%B7%A5%E5%BB%A0%E8%82%A1%E4%BB%BD%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8%E8%A3%9D%E9%81%8B%E9%8B%BC%E7%AD%8B%E5%8E%BB%E7%BE%8E%E5%9C%8B-KH2002.018.039-0008.jpg/960px-%E5%94%90%E6%A6%AE%E9%90%B5%E5%B7%A5%E5%BB%A0%E8%82%A1%E4%BB%BD%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8%E8%A3%9D%E9%81%8B%E9%8B%BC%E7%AD%8B%E5%8E%BB%E7%BE%8E%E5%9C%8B-KH2002.018.039-0008.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/e/e3/%E5%94%90%E6%A6%AE%E9%90%B5%E5%B7%A5%E5%BB%A0%E8%82%A1%E4%BB%BD%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8%E8%A3%9D%E9%81%8B%E9%8B%BC%E7%AD%8B%E5%8E%BB%E7%BE%8E%E5%9C%8B-KH2002.018.039-0008.jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:%E5%94%90%E6%A6%AE%E9%90%B5%E5%B7%A5%E5%BB%A0%E8%82%A1%E4%BB%BD%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8%E8%A3%9D%E9%81%8B%E9%8B%BC%E7%AD%8B%E5%8E%BB%E7%BE%8E%E5%9C%8B-KH2002.018.039-0008.jpg",
+      "sha256": "3ff773e5c918ee9767038dd7b9ed346ff11c893b40efada173d35d4f71aa3cc2",
+      "label": "唐榮鋼筋裝船外銷",
+      "date": "20世紀／確切年代未載",
+      "credit_short": "謝惠民／CC BY 3.0 TW",
+      "license": "CC BY 3.0 TW",
+      "author": "謝惠民",
+      "license_url": "https://creativecommons.org/licenses/by/3.0/tw/",
+      "modifications": "原圖等比例縮放排版；不裁切主體、不重上色、不生成內容"
+    },
+    "6": {
+      "id": 6,
+      "title": "大榮製鋼股份有限公司.jpg",
+      "file": "photo-06.jpg",
+      "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d5/%E5%A4%A7%E6%A6%AE%E8%A3%BD%E9%8B%BC%E8%82%A1%E4%BB%BD%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8.jpg/960px-%E5%A4%A7%E6%A6%AE%E8%A3%BD%E9%8B%BC%E8%82%A1%E4%BB%BD%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/d/d5/%E5%A4%A7%E6%A6%AE%E8%A3%BD%E9%8B%BC%E8%82%A1%E4%BB%BD%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8.jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:%E5%A4%A7%E6%A6%AE%E8%A3%BD%E9%8B%BC%E8%82%A1%E4%BB%BD%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8.jpg",
+      "sha256": "f7bcbd8ddc07ad2d931492132b6abcb6ec080cb45f6ddd6ce02739833e2ae592",
+      "label": "大榮製鋼",
+      "date": "20世紀／確切年代未載",
+      "credit_short": "高史博／CC BY 3.0 TW",
+      "license": "CC BY 3.0 TW",
+      "author": "高史博",
+      "license_url": "https://creativecommons.org/licenses/by/3.0/tw/",
+      "modifications": "原圖等比例縮放排版；不裁切主體、不重上色、不生成內容"
+    }
+  },
+  "pages": [
+    {
+      "title": "台灣經濟的故事，從這裡翻開",
+      "subtitle": "前史：田裡的稻米，糖廠裡的機器",
+      "photos": [
+        1,
+        2,
+        3
+      ],
+      "note": "原照年代依來源標示；這一頁是日治前史，不是1950年代。"
+    },
+    {
+      "title": "從生產，到通往世界的航線",
+      "subtitle": "糖業運輸 → 鋼鐵製造與外銷",
+      "photos": [
+        4,
+        5,
+        6
+      ],
+      "note": "CC BY 3.0 TW：creativecommons.org/licenses/by/3.0/tw/  ｜照片等比例縮放"
+    }
+  ]
+}
