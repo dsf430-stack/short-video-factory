@@ -1,0 +1,36 @@
+# 台灣經濟發展｜4分鐘翻頁繪本
+
+## 目前狀態
+
+SUCCESS：12.58秒有聲試片，2頁、每頁3張不同舊照片，共6張真實舊照。1280×720、30fps、H.264/AAC，真實紙頁透視翻轉，不是單頁或單純淡入幻燈片。
+
+SUCCESS：12頁1476字完整敘事草稿與史實來源。全片目標240秒；尚未合成全片語音，1476字稿可能超時，必須根據068實測縮修稿件，禁止截音或拉長空白湊4分鐘。
+
+SUCCESS：068曉臻 zh-TW-HsiaoChenNeural，+20%、+5Hz；本次一段61字，真實MP3/SRT/JSON。Actions run 38574469483，artifact 11899856010。未改main及原配音系統。
+
+SUCCESS：原創五聲音階撥弦配樂，固定低gain .045；不宣稱auto-ducking。完整解碼、六張原照哈希、H.264/AAC、無额外字幕軌、單套燒錄字幕、非黑畫格、真實音訊時間戳均已驗證。終版聲音與源旁白相關0.9998896。實測聲音-13.70 LUFS、true peak -4.19 dBTP。
+
+SUCCESS：已實際查看6張原照、2頁版面、7個預渲染翻頁畫格及9個成片解碼畫格。每頁三照可辨，年代与署名完整，不裁切內容，不用AI圖冒充舊照。
+
+UNCERTAIN：未主觀聽音或手機播放驗收；取樣不等同逐幀觀看。翻頁目前是整頁透視翻轉與頁邊/陰影，非高精度柔性紙張物理模擬。
+
+PENDING：其餘年代的照片來源/授權、全長旁白、精確240秒時間軸及12頁完整渲染。至少36個照片位置；不將現代照標成歷史現場，不用一張照片三個裁切充三張。必須先依本專案設定取得試片確認，再做全長。
+
+## 失敗記錄與有效方案
+
+1. 原始大圖從GitHub Actions遭Wikimedia 429限流；錯誤建議使用標準縮圖。未改代理、未偽造身分、未規避權限；改用明確公開且網站建議的960px尺寸（原圖較小的糖鐵採330px），Actions成功。以後先用標準尺寸，不重試原始大圖路徑。失敗run 38573939210。
+2. 原StoryVideo檢出目錄已不存在；目前成功手繪編碼器仍存在。只加翻頁Renderer，復用sweety video_renderer.encode及既有068，未另建配音／出版系統。
+3. 系統完整NotoCJK字体在新環境缺失；已從GitHub Actions現有字型套件帶回NotoSansCJK-Regular.ttc，明確使用TC index3。不要重用舊衣物故事的子集字型。
+4. GitHub main缺AGENTS.md及PROJECT_STATUS.md，README已讀。這次分支新增局部專案的規範與狀態；不以缺檔當成功，不覆蓋main。
+
+## 最後完成與下一步
+
+最後完成：真實照片、字幕、翻頁動作、音軌及完整解碼驗證。
+下一步：使用者查看試片；確認後從本12頁稿件與已取得照片接續，不重作試片／下載／配音。補齊其餘年代舊照片並實測全長旁白，核定240秒，再擴展此Renderer頁數與時間軸。
+
+## GitHub定位
+
+Repository: dsf430-stack/short-video-factory
+Branch: test/taiwan-economy-flipbook-20261014
+Source: storybook/taiwan-economy/
+官方編碼器：threerocks/sweety-handdraw-video已安裝成功版本，外部傳入--sweety-scripts，不猜測翻頁為官方內建功能。
