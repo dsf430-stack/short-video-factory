@@ -107,24 +107,40 @@ class FlipbookRenderer:
             d.ellipse((6, y, 20, y+14), fill='#8e7a5e')
         self.text(d, (54, 25), '島嶼工作相簿  /  TAIWAN', 17, '#82745e')
         self.text(d, (54, 59), page['title'], 42)
-        self.text(d, (54, 117), page['subtitle'], 22, '#70614e')
+        self.text(d, (54, 106), page['subtitle'], 17, '#70614e')
         for k, photo_id in enumerate(page['photos']):
             photo = self.manifest['photos'][str(photo_id)]
             path = self.root / 'inputs' / photo['file']
             if digest(path) != photo['sha256']:
                 raise ValueError('Photograph changed after download: ' + str(photo_id))
             src = Image.open(path).convert('RGB')
-            x, y, w, h = 54 + k*350, 170, 326, 214
+            x, y, w, h = [(54, 135, 688, 350), (778, 135, 300, 150), (778, 331, 300, 150)][k]
             d.rectangle((x-5, y-5, x+w+5, y+h+6), fill='#fcfaf4', outline='#a6957b', width=1)
             # Fit the entire original photograph: no fabricated detail, recoloring or content crop.
             fitted = ImageOps.contain(src, (w, h), Image.Resampling.LANCZOS)
             image.paste(fitted, (x+(w-fitted.width)//2, y+(h-fitted.height)//2))
-            self.text(d, (x, 398), photo['label'], 22)
-            self.text(d, (x, 432), photo['date'], 17, '#796c5a')
-            self.text(d, (x, 458), photo['credit_short'], 16, '#796c5a')
-        self.text(d, (54, 501), page['note'], 17, '#796c5a')
+            if k == 0:
+                self.text(d, (x, 490), photo['label']+'  '+photo['date'], 19)
+                self.text(d, (x, 520), photo['credit_short'], 16, '#796c5a')
+            else:
+                self.text(d, (x, y+h+7), photo['label'], 19)
+                self.text(d, (x, y+h+32), photo['date'], 16, '#796c5a')
         self.text(d, (1067, 501), f'{number+1:02d}', 19, '#796c5a')
         return image
+
+    def enlarged_photo(self, page_index, photo_index):
+        photo_id = self.manifest['pages'][page_index]['photos'][photo_index]
+        photo = self.manifest['photos'][str(photo_id)]
+        frame = Image.new('RGB', (self.width, self.height), '#f8f0df')
+        src = Image.open(self.root/'inputs'/photo['file']).convert('RGB')
+        fitted = ImageOps.contain(src, (1200, 536), Image.Resampling.LANCZOS)
+        frame.paste(fitted, ((self.width-fitted.width)//2, 64+(536-fitted.height)//2))
+        d = ImageDraw.Draw(frame)
+        self.text(d, (40, 12), photo['label']+'  ｜  '+photo['date'], 32)
+        self.text(d, (40, 604), photo['credit_short'], 17, '#70614e')
+        if photo.get('license_url'):
+            self.text(d, (520, 604), 'creativecommons.org/licenses/by/3.0/tw/', 16, '#70614e')
+        return frame
 
     def turn_frame(self, progress):
         frame = self.background.copy().convert('RGBA')
@@ -173,6 +189,14 @@ class FlipbookRenderer:
             page = 0 if time < self.turn_at else 1
             frame = self.background.copy()
             frame.paste(self.pages[page], (76, 63))
+            start = self.offset if page == 0 else self.turn_at+self.turn_length
+            end = self.turn_at-.22 if page == 0 else self.duration-.3
+            if start <= time < end:
+                position = (time-start)/(end-start)*3
+                photo_index = min(2, int(position))
+                phase = position-photo_index
+                blend = max(0, min(1, phase/.20, (1-phase)/.20))
+                frame = Image.blend(frame, self.enlarged_photo(page, photo_index), blend)
         d = ImageDraw.Draw(frame)
         cue = next((c for c in self.cues if c['start']+self.offset <= time < c['end']+self.offset), None)
         if cue:
