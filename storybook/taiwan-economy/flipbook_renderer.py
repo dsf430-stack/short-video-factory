@@ -72,8 +72,8 @@ class FlipbookRenderer:
         self.offset = .35
         self.duration = self.offset + self.voice_duration + .45
         self.timeline = {'duration': self.duration}
-        if len(self.manifest['pages']) < 2:
-            raise ValueError('A one-page flipbook is not allowed')
+        if len(self.manifest['pages']) != 2:
+            raise ValueError('This representative preview requires exactly two pages; never silently omit full-book pages')
         for page in self.manifest['pages']:
             if len(page['photos']) < 3 or len(set(page['photos'])) != len(page['photos']):
                 raise ValueError('Each page must contain at least three distinct photographs')
