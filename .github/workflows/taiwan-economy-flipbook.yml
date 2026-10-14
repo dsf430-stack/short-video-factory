@@ -28,17 +28,19 @@ jobs:
           rows=[]
           for idx,title in enumerate(files):
               name=title.replace(' ','_');md=hashlib.md5(name.encode()).hexdigest()
-              url='https://upload.wikimedia.org/wikipedia/commons/'+md[0]+'/'+md[:2]+'/'+urllib.parse.quote(name)
+              original='https://upload.wikimedia.org/wikipedia/commons/'+md[0]+'/'+md[:2]+'/'+urllib.parse.quote(name)
+              width=330 if idx==3 else 960
+              url='https://thumb.wikimedia.org/wikipedia/commons/thumb/'+md[0]+'/'+md[:2]+'/'+urllib.parse.quote(name)+'/'+str(width)+'px-'+urllib.parse.quote(name)
               req=urllib.request.Request(url,headers={'User-Agent':'AfuHistoryBook/1.0 (educational historical-video project)'})
               for attempt in range(4):
                   try:
                       data=urllib.request.urlopen(req,timeout=60).read();break
                   except Exception as e:
-                      if attempt==3:raise
+                      if attempt==3 or getattr(e,'code',0) in (401,403,429):raise
                       print(type(e).__name__,str(e),flush=True);time.sleep(2**(attempt+1))
               dest=root/('photo-%02d.jpg'%(idx+1));dest.write_bytes(data)
               assert data[:2]==b'\xff\xd8',title
-              rows.append({'id':idx+1,'title':title,'file':dest.name,'original_url':url,'source_page':'https://commons.wikimedia.org/wiki/File:'+urllib.parse.quote(name),'sha256':hashlib.sha256(data).hexdigest()})
+              rows.append({'id':idx+1,'title':title,'file':dest.name,'download_url':url,'original_url':original,'source_page':'https://commons.wikimedia.org/wiki/File:'+urllib.parse.quote(name),'sha256':hashlib.sha256(data).hexdigest()})
           (root/'download_manifest.json').write_text(json.dumps(rows,ensure_ascii=False,indent=2))
           (root/'narration.txt').write_text('翻開這本相簿，台灣的經濟故事，從田裡的稻米與糖廠開始。再往後翻，是工廠、港口與一雙雙工作的手；世界市場，慢慢改變了這座島。')
           PY
