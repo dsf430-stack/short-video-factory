@@ -1,0 +1,41 @@
+name: 038 native scene visual QA
+on:
+  push:
+    branches: [test/style-038-building-40s]
+    paths: ['.github/workflows/038-preview.yml']
+permissions:
+  contents: read
+jobs:
+  preview:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install render tools
+        run: |
+          python -m pip install playwright
+          python -m playwright install --with-deps chromium
+      - name: Obtain identical pinned upstream and scene
+        run: |
+          git clone https://github.com/lemomo-ai/lemo-opuscar.git /tmp/lemo-opuscar
+          git -C /tmp/lemo-opuscar checkout fdc46d7f0e20cc953a71d56241a92d1b4cb7298e
+          cd /tmp/lemo-opuscar
+          npm ci
+          mkdir -p styles/tilt-shift/demo/038-building
+          cp "$GITHUB_WORKSPACE"/motion_hub/jobs/038-building-40s/native/{index.html,main.js} styles/tilt-shift/demo/038-building/
+      - name: Render matching visual samples
+        run: |
+          mkdir -p "$RUNNER_TEMP/038-qa"
+          for moment in 0 20 39; do
+            python -u motion_hub/render.py /tmp/lemo-opuscar/styles/tilt-shift/demo/038-building/index.html "$RUNNER_TEMP/038-qa/frame-$moment.png" --root /tmp/lemo-opuscar --duration 40 --fps 30 --size 1080x1920 --still "$moment"
+          done
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: 038-native-preview
+          path: ${{ runner.temp }}/038-qa/
+          retention-days: 30
+          if-no-files-found: error
