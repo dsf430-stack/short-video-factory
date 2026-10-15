@@ -33,7 +33,10 @@ jobs:
         run: |
           mkdir -p "$RUNNER_TEMP/038"
           python smart_voice/generate_voice.py --voice-id 068 --text-file motion_hub/jobs/038-building-40s/native/narration.txt --output "$RUNNER_TEMP/038/voice.mp3"
-      - name: Extend narration track to exactly forty seconds without altering 068 voice\n        run: |\n          ffmpeg -v error -y -i "$RUNNER_TEMP/038/voice.mp3" -af apad -t 40 "$RUNNER_TEMP/038/voice40.wav"\n      - name: Render native Lemo 038 scene
+      - name: Extend narration track to exactly forty seconds without altering 068 voice
+        run: |
+          ffmpeg -v error -y -i "$RUNNER_TEMP/038/voice.mp3" -af apad -t 40 "$RUNNER_TEMP/038/voice40.wav"
+      - name: Render native Lemo 038 scene
         run: |
           python motion_hub/render.py /tmp/lemo-opuscar/styles/tilt-shift/demo/038-building/index.html "$RUNNER_TEMP/038/film.mp4" --root /tmp/lemo-opuscar --duration 40 --fps 30 --size 1080x1920 --audio "$RUNNER_TEMP/038/voice40.wav"
       - name: Verify 068 and output streams
