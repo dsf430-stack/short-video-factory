@@ -1,0 +1,4 @@
+Original rain animation and original synthesized score. No stock images or demo story.
+Canvas UI engine and lib.js: lemomo-ai/lemo-opuscar @ fdc46d7f0e20cc953a71d56241a92d1b4cb7298e, MIT. Engine adaptation: local import and 1080x1920 constants only.
+Noto Sans TC: Google / Adobe, SIL OFL 1.1. Inter: Rasmus Andersson, SIL OFL 1.1; bundled font from pinned huashu-art-motion.
+Voice: Microsoft Edge TTS, existing project 068 HsiaoChen preset +20%, +5Hz.

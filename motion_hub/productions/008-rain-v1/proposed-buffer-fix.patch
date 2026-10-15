@@ -1,0 +1,18 @@
+--- a/engine.js
++++ b/engine.js
+@@ -358,6 +358,7 @@
+ export function lightReveal(g, src, dx, dy, dw, dh, p, o = {}) {
+   const { base = 0.07, angle = 0.62, soft = 260, band = 90, glint = 0.5, keep = 1 } = o;
+   const [c, t] = buf('reveal', Math.ceil(dw), Math.ceil(dh));
++  t.clearRect(0, 0, c.width, c.height);
+   const ca = Math.cos(angle), sa = Math.sin(angle);
+   const L = Math.abs(dw * ca) + Math.abs(dh * sa);   // 沿光带法向的总长
+   const front = -soft + p * (L + soft * 2);
+@@ -374,6 +375,7 @@
+   // 前沿高光：只在 src 有像素的地方
+   if (glint > 0 && p > 0 && p < 1) {
+     const [c2, t2] = buf('reveal2', Math.ceil(dw), Math.ceil(dh));
++    t2.clearRect(0, 0, c2.width, c2.height);
+     t2.drawImage(src, 0, 0, dw, dh); t2.globalCompositeOperation = 'source-in';
+     const A2 = at(front - band * 1.6), B2 = at(front + band * 0.4);
+     const g2 = t2.createLinearGradient(A2[0], A2[1], B2[0], B2[1]);
