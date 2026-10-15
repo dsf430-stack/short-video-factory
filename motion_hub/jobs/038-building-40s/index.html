@@ -1,0 +1,32 @@
+<!doctype html><html lang="zh-Hant"><meta charset="utf-8"><title>038 Building Timelapse</title><style>html,body{margin:0;background:#b4d9ec;overflow:hidden}canvas{display:block;width:100vw;height:100vh}</style><canvas id="c" width="1080" height="1920"></canvas><script>
+const c=document.getElementById('c'),g=c.getContext('2d');let T=0;
+const clamp=(x,a=0,b=1)=>Math.max(a,Math.min(b,x)),lerp=(a,b,t)=>a+(b-a)*t;
+function poly(points,fill,stroke){g.beginPath();points.forEach(([x,y],i)=>i?g.lineTo(x,y):g.moveTo(x,y));g.closePath();g.fillStyle=fill;g.fill();if(stroke){g.strokeStyle=stroke;g.lineWidth=2;g.stroke()}}
+function box(x,y,w,h,d,front,side,top){poly([[x,y],[x+w,y],[x+w,y+h],[x,y+h]],front);poly([[x+w,y],[x+w+d,y-d*.42],[x+w+d,y+h-d*.42],[x+w,y+h]],side);poly([[x,y],[x+d,y-d*.42],[x+w+d,y-d*.42],[x+w,y]],top)}
+function draw(t){T=clamp(t,0,40);let p=T/40;g.clearRect(0,0,1080,1920);
+let sky=g.createLinearGradient(0,0,0,1600);sky.addColorStop(0,'#8bc9f4');sky.addColorStop(1,'#e7e9c8');g.fillStyle=sky;g.fillRect(0,0,1080,1920);
+g.save();g.translate(0,Math.sin(T*.1)*8);
+for(let i=0;i<14;i++){let x=(i%5)*245-80,y=370+Math.floor(i/5)*200;box(x,y,140,240,32,['#dfd4bb','#b7d7cb','#e8c5a7'][i%3],'#8da3a2','#f4ebdc');for(let j=0;j<4;j++)for(let k=0;k<3;k++){g.fillStyle='#668b9d';g.fillRect(x+15+k*39,y+18+j*49,22,29)}}
+poly([[0,1080],[1080,940],[1080,1920],[0,1920]],'#91b58b');
+poly([[0,1470],[1080,1270],[1080,1480],[0,1690]],'#505c61');
+for(let i=0;i<13;i++){let x=i*105-90;poly([[x,1554-x*.19],[x+48,1545-x*.19],[x+48,1550-x*.19],[x,1559-x*.19]],'#eee5bd')}
+poly([[120,1120],[785,1010],[970,1200],[295,1355]],'#bca990');
+poly([[160,1150],[755,1050],[906,1200],[312,1320]],'#786c5e');
+let build=clamp((T-12)/16),floors=Math.floor(build*14),fraction=build*14-floors;
+if(T<12){for(let i=0;i<7;i++){let xx=270+i*74;g.fillStyle='#80786a';g.fillRect(xx,1160+i*7,48,24)}}
+if(T>=9){let H=14*46*build,topY=1170-H;box(300,topY,410,H,110,'#b7b9b4','#858d90','#d5d4c7');
+for(let f=0;f<14;f++){let yy=1170-(f+1)*46;if(yy<topY-10)continue;g.fillStyle='#7b8285';g.fillRect(305,yy,399,7);
+for(let j=0;j<8;j++){let glass=clamp((T-26)/9)*14>f;g.fillStyle=glass?'#408fb0':'#555b5c';g.fillRect(316+j*48,yy+10,36,29);if(glass){g.fillStyle='#b9d8dc';g.fillRect(319+j*48,yy+11,4,26)}}}
+}
+if(T>4&&T<36){let craneX=800,craneY=320;g.strokeStyle='#f0a625';g.lineWidth=15;g.beginPath();g.moveTo(craneX,1200);g.lineTo(craneX,craneY);g.stroke();g.lineWidth=11;g.beginPath();g.moveTo(350,craneY);g.lineTo(1020,craneY);g.stroke();g.strokeStyle='#aa6e22';g.lineWidth=3;for(let y=350;y<1200;y+=60){g.beginPath();g.moveTo(794,y);g.lineTo(807,y+55);g.moveTo(807,y);g.lineTo(794,y+55);g.stroke()}
+let hookX=lerp(420,650,(Math.sin(T*1.7)+1)/2),hookY=470+Math.sin(T*1.3)*45;g.strokeStyle='#42454a';g.lineWidth=3;g.beginPath();g.moveTo(hookX,320);g.lineTo(hookX,hookY);g.stroke();box(hookX-38,hookY,80,15,12,'#b2a18b','#77736b','#c8bd9e')}
+for(let i=0;i<6;i++){let x=160+((T*43+i*177)%810),y=1500+i*26;box(x,y,70,25,18,i%2?'#efb541':'#f4f0e7','#a86f33','#fff4c2');g.fillStyle='#252d32';g.fillRect(x+8,y+21,14,12);g.fillRect(x+48,y+21,14,12)}
+for(let i=0;i<18;i++){let x=130+(i*59)%800,y=1230+(i*83)%220;g.fillStyle=['#f0bd2e','#e35c43','#eae3cc'][i%3];g.fillRect(x+Math.sin(T*2+i)*5,y,7,15)}
+g.restore();
+let blur=g.createLinearGradient(0,0,0,1920);blur.addColorStop(0,'rgba(213,229,239,.45)');blur.addColorStop(.28,'rgba(213,229,239,.08)');blur.addColorStop(.55,'rgba(0,0,0,0)');blur.addColorStop(.82,'rgba(230,224,197,.06)');blur.addColorStop(1,'rgba(230,224,197,.4)');g.fillStyle=blur;g.fillRect(0,0,1080,1920);
+g.fillStyle='rgba(26,39,45,.72)';g.fillRect(50,70,500,92);g.fillStyle='#fff';g.font='bold 39px sans-serif';g.fillText('038  微縮建築工地',74,126);g.font='28px monospace';g.fillText('×40 TIME-LAPSE',70,178);
+let labels=['工程車進場','開挖地基','地下結構施工','鋼筋混凝土逐層升起','安裝玻璃帷幕','完工與城市新天際線'];let idx=T<5?0:T<10?1:T<16?2:T<26?3:T<35?4:5;
+g.fillStyle='rgba(32,47,53,.83)';g.fillRect(75,1710,930,105);g.fillStyle='#fff';g.font='bold 48px sans-serif';g.textAlign='center';g.fillText(labels[idx],540,1776);g.textAlign='left';
+}
+window.render=draw;window.seek=draw;window.renderFrame=draw;window.__ready=true;draw(0);
+</script></html>
