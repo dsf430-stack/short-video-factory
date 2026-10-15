@@ -1,0 +1,34 @@
+name: 038 native render prerequisites
+on:
+  push:
+    branches: [test/style-038-building-40s]
+    paths:
+      - '.github/workflows/038-native-check.yml'
+      - 'motion_hub/jobs/038-building-40s/**'
+  workflow_dispatch:
+jobs:
+  inspect-native:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - name: Checkout locked upstream Lemo
+        run: |
+          git clone https://github.com/lemomo-ai/lemo-opuscar.git /tmp/lemo-opuscar
+          cd /tmp/lemo-opuscar
+          git checkout fdc46d7f0e20cc953a71d56241a92d1b4cb7298e
+          test -f styles/tilt-shift/demo/post.js
+          test -f styles/tilt-shift/demo/city.js
+          test -f styles/tilt-shift/demo/sky.js
+          test -f core/render/video.mjs
+      - name: Check available 068 audio and native scene
+        run: |
+          echo 'Checking for existing voice file and native construction scene; no substitute video is permitted.'
+          find . -type f \( -name '*.wav' -o -name '*.mp3' \) | head -30
+          if [ ! -f motion_hub/jobs/038-building-40s/native/main.js ]; then
+            echo 'BLOCKED: native construction scene not yet authored'
+            exit 1
+          fi
+      - name: Report
+        if: always()
+        run: echo '038 is not considered rendered until an MP4 with verified 068 audio exists.'
