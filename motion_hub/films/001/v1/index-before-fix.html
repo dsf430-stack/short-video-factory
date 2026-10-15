@@ -1,0 +1,28 @@
+<!doctype html><meta charset="utf-8"><style>@font-face{font-family:TC;src:url('/shared/water-cycle/NotoSansTC.ttf')}*{margin:0}canvas{display:block}</style><canvas id="c"></canvas><script type="module">
+import * as D from '/.sources/lemo-opuscar/styles/art-deco/demo/engine/deco.js';
+const c=document.querySelector('canvas'),g=c.getContext('2d');c.width=innerWidth;c.height=innerHeight;
+const W=1080,H=1920, gold='#d5b66d', ivory='#f2e8d5';
+const cuts=[0,2.354,5.208,8.312,10.927,13.437,17.2,20];
+const subs=['一滴海水，開始旅行。','陽光加熱，水蒸發成水氣。','升到高空，遇冷凝結成小水滴。','水滴聚在一起，形成雲。','越聚越大，終於落成雨。','回到海洋，下一趟旅程又開始。','蒸發 → 凝結 → 降雨'];
+const names=['一滴水的旅行','01　蒸發','02　凝結','03　成雲','04　降雨','05　回到海洋','循環，生生不息'];
+function line(p,o={}){D.gline(g,p,{w:3,double:true,sheen:.5,...o})}
+function text(s,x,y,z=42){g.fillStyle=ivory;g.font=`500 ${z}px TC`;g.textAlign='center';g.fillText(s,x,y)}
+function drop(x,y,r,t,accent=true){let p=[];for(let i=0;i<=64;i++){let a=i/64*Math.PI*2;let yy=-Math.cos(a);let xx=Math.sin(a)*(0.72+0.28*(1+yy)/2);p.push([x+r*xx,y+r*yy*1.32]);}D.drawShape(g,p,{color:accent?'#37b99b':undefined,glints:[],part:1});line([[x-r*.26,y-r*.35],[x-r*.4,y],[x-r*.3,y+r*.35]],{w:3,alpha:.65});}
+function sea(t,top=1320){const gr=g.createLinearGradient(0,top,0,1750);gr.addColorStop(0,'#504329');gr.addColorStop(1,'#1c1a13');g.fillStyle=gr;g.fillRect(90,top,900,450);for(let j=0;j<10;j++){let p=[];for(let x=90;x<=990;x+=8)p.push([x,top+35+j*35+Math.sin(x/65+t*2-j)*10]);line(p,{w:2,alpha:.85});}}
+function cloud(x,y,r,t){let p=[];for(let i=0;i<=120;i++){let a=i/120*Math.PI*2;let rr=r*(1+.12*Math.cos(6*a));p.push([x+rr*1.45*Math.cos(a),y+rr*.63*Math.sin(a)]);}D.airbrush(g,p,{base:'#b6a477',dark:'#332f25',light:'#f1e2b5',rim:2});line(p,{closed:true,sheen:(t*.15)%1});}
+function frame(t,s,u){g.fillStyle='#231d15';g.fillRect(0,0,W,H);D.sunburst(g,540,820,{rays:36,r0:160,r1:1800,mode:'wedges',rot:0});D.archFrame(g,540,1750,930,1510,{rings:3,gap:18,fill:false,part:D.ss(t/1.1)});line([[72,300],[72,1700],[1008,1700],[1008,300]],{part:D.ss(t/1.1)});for(let i=0;i<19;i++){const on=t>i*.055;g.fillStyle=on?gold:'#65543b';g.beginPath();g.arc(180+i*40,265,on?4.5:3,0,7);g.fill();}text('THE WATER CYCLE',540,175,32);text(names[s],540,360,s===0?67:57);text('001  /  ART DECO',540,1830,27);}
+window.ready=false;await document.fonts.load('40px TC');await document.fonts.ready;
+window.render=t=>{t=Math.max(0,Math.min(19.999,t));let s=cuts.findIndex((a,i)=>t>=a&&t<cuts[i+1]);let u=(t-cuts[s])/(cuts[s+1]-cuts[s]);g.setTransform(c.width/W,0,0,c.height/H,0,0);g.clearRect(0,0,W,H);frame(t,s,u);
+if(s===0){sea(t);D.sunburst(g,540,910,{rays:24,r0:170,r1:400,mode:'lines',part:D.ss(t)});drop(540,975,190,t);text('從海洋，去天空。',540,1450,43);}
+if(s===1){sea(t);D.sunburst(g,540,610,{rays:24,r0:90,r1:300,mode:'lines',rot:t*.04});g.fillStyle=D.goldGrad(g,450,500,630,680,{sheen:(t*.3)%1});g.beginPath();g.arc(540,610,95,0,7);g.fill();for(let i=0;i<19;i++){let v=(u*1.25+i*.051)%1;let x=540+Math.sin(i*2.4)*220*(1-v);let y=1310-v*520;drop(x,y,8+20*(1-v),t,i===0);line([[x,y+35],[x,y+75]],{w:1,alpha:.3});}text('陽光加熱海面',540,1510,44);}
+if(s===2){let q=D.ss(u);for(let i=0;i<26;i++){let a=i*2.399;let r=390*(1-q)+75;drop(540+Math.cos(a)*r,955+Math.sin(a)*r*.7,7+q*17,t,i===0);}drop(540,955,70+q*83,t);D.sunburst(g,540,955,{rays:30,r0:260,r1:440,mode:'lines',part:q});text('遇冷，凝結成液態水滴',540,1480,40);}
+if(s===3){for(let i=0;i<13;i++){let a=i/13*Math.PI*2;let r=410*(1-D.ss(u)) + 40;drop(540+Math.cos(a)*r,970+Math.sin(a)*r*.6,18,t,i===0);}cloud(540,970,130+D.ss(u)*90,t);text('微小水滴，聚成雲',540,1480,43);}
+if(s===4){cloud(540,725,215,t);sea(t,1410);for(let i=0;i<21;i++){let v=(u*2+i*.07)%1;let x=540+Math.sin(i*3.4)*280;let y=870+v*535;drop(x,y,13+v*15,t,i===0);line([[x,y-28],[x,y-75]],{w:2,alpha:.6});}drop(540,920+D.ss(u)*380,110,t);}
+if(s===5){sea(t,1260);let y=850+Math.min(1,u*2.4)*430;if(u<.43)drop(540,y,160*(1-u),t);for(let j=0;j<4;j++){let p=(u*1.6-j*.12);if(p>0&&p<1){g.strokeStyle=gold;g.lineWidth=4*(1-p);g.beginPath();g.ellipse(540,1300,p*440,20+p*90,0,0,7);g.stroke();}}text('每一場雨，都是一次回家',540,1500,42);}
+if(s===6){let stages=[[540,690],[790,1080],[290,1080]];line([...stages,stages[0]],{w:5,part:1});stages.forEach(([x,y],i)=>{g.fillStyle='#292319';g.beginPath();g.arc(x,y,100,0,7);g.fill();drop(x,y,50,t,i===Math.floor((t-17.2)*1.2)%3);});text('蒸發',540,850,35);text('凝結',790,1245,35);text('降雨',290,1245,35);text('水，從未停止旅行',540,1470,48);}
+// All subtitles open symmetrically; hold extends past the associated speech.
+let st=subs[s];const p=D.ss(Math.min(1,(t-cuts[s])/.18));g.save();g.beginPath();g.rect(540-460*p,1585,920*p,130);g.clip();g.fillStyle='#100e0b';g.fillRect(80,1585,920,130);line([[80,1610],[105,1610],[105,1585],[975,1585],[975,1610],[1000,1610],[1000,1690],[975,1690],[975,1715],[105,1715],[105,1690],[80,1690],[80,1610]],{w:2});text(st,540,1665,st.length>16?38:42);g.restore();
+// A pair of engraved doors closes over the live image, then opens into the next stage.
+for(let k=1;k<cuts.length-1;k++){let d=Math.abs(t-cuts[k]);if(d<.18){let a=1-d/.18;g.fillStyle='#372e20';g.fillRect(90,430,450*a,1110);g.fillRect(990-450*a,430,450*a,1110);line([[90+450*a,430],[90+450*a,1540]],{w:6});line([[990-450*a,430],[990-450*a,1540]],{w:6});}}
+};window.render(0);window.ready=true;
+</script>

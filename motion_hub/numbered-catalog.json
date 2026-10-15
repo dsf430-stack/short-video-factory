@@ -1,0 +1,557 @@
+[
+  {
+    "number": "001",
+    "catalog_id": "lemo-opuscar:art-deco",
+    "name": "Art Deco — Style Prompt"
+  },
+  {
+    "number": "002",
+    "catalog_id": "lemo-opuscar:ascii-crt",
+    "name": "ASCII / CRT Terminal: Style Prompt"
+  },
+  {
+    "number": "003",
+    "catalog_id": "lemo-opuscar:backrooms",
+    "name": "Liminal Found Footage — Style Prompt"
+  },
+  {
+    "number": "004",
+    "catalog_id": "lemo-opuscar:blueprint",
+    "name": "Blueprint — Style Prompt"
+  },
+  {
+    "number": "005",
+    "catalog_id": "lemo-opuscar:brick-toy",
+    "name": "Brick Toy — Style Prompt"
+  },
+  {
+    "number": "006",
+    "catalog_id": "lemo-opuscar:cel-anime-80s",
+    "name": "80s Cel Anime — Style Prompt"
+  },
+  {
+    "number": "007",
+    "catalog_id": "lemo-opuscar:crayon-book",
+    "name": "Crayon Picture Book — Style Prompt"
+  },
+  {
+    "number": "008",
+    "catalog_id": "lemo-opuscar:dark-keynote",
+    "name": "Dark Tech Keynote — Style Prompt"
+  },
+  {
+    "number": "009",
+    "catalog_id": "lemo-opuscar:dataviz",
+    "name": "Data Storytelling — Style Prompt"
+  },
+  {
+    "number": "010",
+    "catalog_id": "lemo-opuscar:engraving",
+    "name": "Copperplate Engraving — Style Prompt"
+  },
+  {
+    "number": "011",
+    "catalog_id": "lemo-opuscar:game-show",
+    "name": "Game Show Flat — Style Prompt"
+  },
+  {
+    "number": "012",
+    "catalog_id": "lemo-opuscar:glass-product",
+    "name": "Glass Product Render — Style Prompt"
+  },
+  {
+    "number": "013",
+    "catalog_id": "lemo-opuscar:halftone-dossier",
+    "name": "Halftone Dossier — Style Prompt"
+  },
+  {
+    "number": "014",
+    "catalog_id": "lemo-opuscar:hd-2d",
+    "name": "HD-2D — Style Prompt"
+  },
+  {
+    "number": "015",
+    "catalog_id": "lemo-opuscar:hologram-hud",
+    "name": "Sci-fi Hologram HUD — Style Prompt"
+  },
+  {
+    "number": "016",
+    "catalog_id": "lemo-opuscar:impasto",
+    "name": "Impasto · Palette Knife — Style Prompt"
+  },
+  {
+    "number": "017",
+    "catalog_id": "lemo-opuscar:ink-wash",
+    "name": "Chinese Ink Wash — Style Prompt"
+  },
+  {
+    "number": "018",
+    "catalog_id": "lemo-opuscar:iso-infographic",
+    "name": "Isometric Infographic — Style Prompt"
+  },
+  {
+    "number": "019",
+    "catalog_id": "lemo-opuscar:living-screencast",
+    "name": "Living Screencast — Style Prompt"
+  },
+  {
+    "number": "020",
+    "catalog_id": "lemo-opuscar:lowpoly-island",
+    "name": "Low-poly Isometric Island — Style Prompt"
+  },
+  {
+    "number": "021",
+    "catalog_id": "lemo-opuscar:microgame",
+    "name": "Microgame Frenzy — Style Prompt"
+  },
+  {
+    "number": "022",
+    "catalog_id": "lemo-opuscar:midcentury-toon",
+    "name": "Mid-century Cartoon — Style Prompt"
+  },
+  {
+    "number": "023",
+    "catalog_id": "lemo-opuscar:one-line",
+    "name": "One-line Drawing — Style Prompt"
+  },
+  {
+    "number": "024",
+    "catalog_id": "lemo-opuscar:paper-lantern",
+    "name": "Paper-cut Lightbox — Style Prompt"
+  },
+  {
+    "number": "025",
+    "catalog_id": "lemo-opuscar:paper-popup",
+    "name": "Paper Pop-up Book — Style Prompt"
+  },
+  {
+    "number": "026",
+    "catalog_id": "lemo-opuscar:papercut-red",
+    "name": "Red Paper-cut — Style Prompt"
+  },
+  {
+    "number": "027",
+    "catalog_id": "lemo-opuscar:pictogram-motion",
+    "name": "Pictogram Motion — Style Prompt"
+  },
+  {
+    "number": "028",
+    "catalog_id": "lemo-opuscar:pixel-rpg",
+    "name": "16-bit Pixel RPG — Style Prompt"
+  },
+  {
+    "number": "029",
+    "catalog_id": "lemo-opuscar:risograph",
+    "name": "Risograph Print — Style Prompt"
+  },
+  {
+    "number": "030",
+    "catalog_id": "lemo-opuscar:rubber-hose",
+    "name": "1930s Rubber Hose Cartoon — Style Prompt"
+  },
+  {
+    "number": "031",
+    "catalog_id": "lemo-opuscar:scifi-toon",
+    "name": "Sci-Fi Sitcom Toon — Style Prompt"
+  },
+  {
+    "number": "032",
+    "catalog_id": "lemo-opuscar:shadow-puppet",
+    "name": "Shadow Puppetry — Style Prompt"
+  },
+  {
+    "number": "033",
+    "catalog_id": "lemo-opuscar:silent-film",
+    "name": "1920s Silent Film — Style Prompt"
+  },
+  {
+    "number": "034",
+    "catalog_id": "lemo-opuscar:silkscreen-poster",
+    "name": "Silkscreen Travel Poster — Style Prompt"
+  },
+  {
+    "number": "035",
+    "catalog_id": "lemo-opuscar:spy-titles",
+    "name": "60s Spy Title Sequence — Style Prompt"
+  },
+  {
+    "number": "036",
+    "catalog_id": "lemo-opuscar:stained-glass",
+    "name": "Stained Glass — Style Prompt"
+  },
+  {
+    "number": "037",
+    "catalog_id": "lemo-opuscar:swiss-motion",
+    "name": "Swiss Motion Graphics — Style Prompt"
+  },
+  {
+    "number": "038",
+    "catalog_id": "lemo-opuscar:tilt-shift",
+    "name": "Tilt-Shift Miniature — Style Prompt"
+  },
+  {
+    "number": "039",
+    "catalog_id": "lemo-opuscar:ukiyoe",
+    "name": "Ukiyo-e — Style Prompt"
+  },
+  {
+    "number": "040",
+    "catalog_id": "lemo-opuscar:urban-sketch",
+    "name": "Urban Sketch · Pen & Wash — Style Prompt"
+  },
+  {
+    "number": "041",
+    "catalog_id": "lemo-opuscar:watercolor",
+    "name": "Watercolor Brush — Style Prompt"
+  },
+  {
+    "number": "042",
+    "catalog_id": "lemo-opuscar:whiteboard",
+    "name": "Whiteboard Explainer — Style Prompt (v2, no hands)"
+  },
+  {
+    "number": "043",
+    "catalog_id": "lemo-opuscar:woodcut",
+    "name": "Woodcut Print — Style Prompt"
+  },
+  {
+    "number": "044",
+    "catalog_id": "mg-styles-15:01-flat-vector",
+    "name": "扁平矢量动画 Flat / Vector 2D Motion Graphics"
+  },
+  {
+    "number": "045",
+    "catalog_id": "mg-styles-15:02-line-art",
+    "name": "线条动画 Line Art / Line Animation"
+  },
+  {
+    "number": "046",
+    "catalog_id": "mg-styles-15:03-isometric",
+    "name": "等轴 2.5D Isometric / 2.5D"
+  },
+  {
+    "number": "047",
+    "catalog_id": "mg-styles-15:04-3d-render",
+    "name": "3D 渲染系（C4D/Blender 质感） 3D Render / CGI Motion Design"
+  },
+  {
+    "number": "048",
+    "catalog_id": "mg-styles-15:05-cel-boil",
+    "name": "逐帧手绘 / 线条沸腾 Cel Animation / Frame-by-Frame & Line Boil"
+  },
+  {
+    "number": "049",
+    "catalog_id": "mg-styles-15:06-collage",
+    "name": "拼贴剪贴 Collage / Cutout Animation"
+  },
+  {
+    "number": "050",
+    "catalog_id": "mg-styles-15:07-liquid",
+    "name": "液态流动 Liquid Motion"
+  },
+  {
+    "number": "051",
+    "catalog_id": "mg-styles-15:08-morph",
+    "name": "形变动画 Morphing / Shape Morph"
+  },
+  {
+    "number": "052",
+    "catalog_id": "mg-styles-15:09-bauhaus",
+    "name": "几何构成 / 包豪斯 Geometric / Bauhaus Motion"
+  },
+  {
+    "number": "053",
+    "catalog_id": "mg-styles-15:10-synthwave",
+    "name": "复古系（80s Synthwave / Y2K 千禧） Retro: 80s Synthwave / VHS / Y2K"
+  },
+  {
+    "number": "054",
+    "catalog_id": "mg-styles-15:12-aurora-glass",
+    "name": "弥散渐变 / 玻璃拟态 Gradient Blur (Aurora) & Glassmorphism"
+  },
+  {
+    "number": "055",
+    "catalog_id": "mg-styles-15:18-hanazi",
+    "name": "综艺花字 Variety Show Kinetic Captions (Hanazi)"
+  },
+  {
+    "number": "056",
+    "catalog_id": "mg-styles-15:19-paperclip",
+    "name": "粗描边贴纸人科普 MG（回形针/林超风格） Bold-outline Sticker Explainer MG (PaperClip / Lin Chao style)"
+  },
+  {
+    "number": "057",
+    "catalog_id": "mg-styles-15:20-pixel",
+    "name": "像素风 Pixel Art / 8-bit"
+  },
+  {
+    "number": "058",
+    "catalog_id": "mg-styles-15:22-hud",
+    "name": "赛博朋克 HUD / FUI Cyberpunk HUD / FUI (Fictional UI)"
+  },
+  {
+    "number": "059",
+    "catalog_id": "dashi-animationstyle:复古剪纸",
+    "name": "复古剪纸（S03）"
+  },
+  {
+    "number": "060",
+    "catalog_id": "dashi-animationstyle:复古报刊",
+    "name": "复古报刊（S06）"
+  },
+  {
+    "number": "061",
+    "catalog_id": "dashi-animationstyle:扁平流程图",
+    "name": "扁平流程图（S19）"
+  },
+  {
+    "number": "062",
+    "catalog_id": "dashi-animationstyle:手绘笔记",
+    "name": "手绘笔记（S22）"
+  },
+  {
+    "number": "063",
+    "catalog_id": "dashi-animationstyle:立体卡通",
+    "name": "立体卡通（S35）"
+  },
+  {
+    "number": "064",
+    "catalog_id": "dashi-animationstyle:超现实拼贴",
+    "name": "超现实拼贴（S44）"
+  },
+  {
+    "number": "065",
+    "catalog_id": "dashi-animationstyle:霓虹赛博",
+    "name": "霓虹赛博（v1.2，实测过一次）"
+  },
+  {
+    "number": "066",
+    "catalog_id": "dashi-animationstyle:黑底科技",
+    "name": "黑底科技（11）"
+  },
+  {
+    "number": "067",
+    "catalog_id": "huashu-art-motion:t1_3b1b",
+    "name": "t1_3b1b · 3Blue1Brown 式数学／概念可视化"
+  },
+  {
+    "number": "068",
+    "catalog_id": "huashu-art-motion:t2_keynote_ui",
+    "name": "t2_keynote_ui · 发布会式界面与渐变动效"
+  },
+  {
+    "number": "069",
+    "catalog_id": "huashu-art-motion:t3_finance_chart",
+    "name": "t3_finance_chart · 财经数据图表动画"
+  },
+  {
+    "number": "070",
+    "catalog_id": "huashu-art-motion:y1_kurzgesagt",
+    "name": "Y1 · Kurzgesagt 扁平科普：视频动画语法卡"
+  },
+  {
+    "number": "071",
+    "catalog_id": "huashu-art-motion:y2_vox",
+    "name": "Y2 · Vox 式拼贴解说：视频动画语法卡"
+  },
+  {
+    "number": "072",
+    "catalog_id": "huashu-art-motion:y3_whiteboard",
+    "name": "Y3 · 白板手绘解说（RSA Animate 型）：视频动画语法卡"
+  },
+  {
+    "number": "073",
+    "catalog_id": "huashu-art-motion:y4_storytime",
+    "name": "y4 · 故事型简笔角色动画（YouTube storytime animation）"
+  },
+  {
+    "number": "074",
+    "catalog_id": "huashu-art-motion:y5_kinetic_type",
+    "name": "y5 · 动态文字排版 / 信息图动效（kinetic typography）"
+  },
+  {
+    "number": "075",
+    "catalog_id": "huashu-art-motion:y6_presenter_explainer",
+    "name": "Y6 · 讲解员式财经科普"
+  },
+  {
+    "number": "076",
+    "catalog_id": "huashu-art-motion:01_cave",
+    "name": "01_cave · 40,000 BC 洞穴岩画（纯代码）"
+  },
+  {
+    "number": "077",
+    "catalog_id": "huashu-art-motion:02_egypt",
+    "name": "02_egypt · 公元前1350年埃及墓室壁画（纯代码）"
+  },
+  {
+    "number": "078",
+    "catalog_id": "huashu-art-motion:03_greek",
+    "name": "03_greek · 公元前530 阿提卡黑绘陶器 —— 代码画法笔记"
+  },
+  {
+    "number": "079",
+    "catalog_id": "huashu-art-motion:04_roman",
+    "name": "04_roman · 公元79年 庞贝马赛克 —— 手法笔记"
+  },
+  {
+    "number": "080",
+    "catalog_id": "huashu-art-motion:05_gothic",
+    "name": "05_gothic · 1290 哥特泥金手抄本"
+  },
+  {
+    "number": "081",
+    "catalog_id": "huashu-art-motion:06_renaissance",
+    "name": "06_renaissance · 1503 文艺复兴盛期（达芬奇式）"
+  },
+  {
+    "number": "082",
+    "catalog_id": "huashu-art-motion:08_impressionism",
+    "name": "08_impressionism · 1874 印象派（莫奈）"
+  },
+  {
+    "number": "083",
+    "catalog_id": "huashu-art-motion:09_postimp",
+    "name": "09_postimp · 1889 梵高（标杆实现）"
+  },
+  {
+    "number": "084",
+    "catalog_id": "huashu-art-motion:10_nouveau",
+    "name": "10_nouveau · 1896 新艺术运动（慕夏海报）"
+  },
+  {
+    "number": "085",
+    "catalog_id": "huashu-art-motion:11_cubism",
+    "name": "11_cubism · 1912 分析立体主义（毕加索／布拉克）"
+  },
+  {
+    "number": "086",
+    "catalog_id": "huashu-art-motion:12_bauhaus",
+    "name": "12_bauhaus · 1923 包豪斯海报"
+  },
+  {
+    "number": "087",
+    "catalog_id": "huashu-art-motion:13_pop",
+    "name": "13_pop · 1962 波普（利希滕斯坦漫画格＋沃霍尔四宫格）"
+  },
+  {
+    "number": "088",
+    "catalog_id": "huashu-art-motion:14_8bit",
+    "name": "14_8bit · 1985 8-bit 像素游戏"
+  },
+  {
+    "number": "089",
+    "catalog_id": "huashu-art-motion:15_raytrace",
+    "name": "15_raytrace · 1993 早期光线追踪 CGI"
+  },
+  {
+    "number": "090",
+    "catalog_id": "huashu-art-motion:16_2026",
+    "name": "16_2026 · 2026 扁平矢量插画 ＋ 全片笑点收尾"
+  },
+  {
+    "number": "091",
+    "catalog_id": "huashu-art-motion:17_ink",
+    "name": "17_ink · 中国水墨写意（八大山人／齐白石）"
+  },
+  {
+    "number": "092",
+    "catalog_id": "huashu-art-motion:18_klimt",
+    "name": "18_klimt · 克里姆特金色时期（1907）"
+  },
+  {
+    "number": "093",
+    "catalog_id": "huashu-art-motion:19_munch",
+    "name": "19_munch · 蒙克《呐喊》式表现主义（1893）"
+  },
+  {
+    "number": "094",
+    "catalog_id": "huashu-art-motion:20_dunhuang",
+    "name": "20_dunhuang · 敦煌壁画（莫高窟·盛唐）"
+  },
+  {
+    "number": "095",
+    "catalog_id": "huashu-art-motion:21_kusama",
+    "name": "21_kusama · 草间弥生无限波点"
+  },
+  {
+    "number": "096",
+    "catalog_id": "huashu-art-motion:22_constructivism",
+    "name": "22_constructivism · 1924 俄罗斯构成主义海报（罗德琴科 / 李西茨基）"
+  },
+  {
+    "number": "097",
+    "catalog_id": "huashu-art-motion:23_dali",
+    "name": "23_dali · 1931 达利超现实主义（《记忆的永恒》）"
+  },
+  {
+    "number": "098",
+    "catalog_id": "huashu-art-motion:24_hopper",
+    "name": "24_hopper · 1942 霍珀美国现实主义（硬光块面）"
+  },
+  {
+    "number": "099",
+    "catalog_id": "huashu-art-motion:25_ghibli",
+    "name": "25_ghibli · 1988 吉卜力式手绘水彩背景美术"
+  },
+  {
+    "number": "100",
+    "catalog_id": "huashu-art-motion:26_vaporwave",
+    "name": "26_vaporwave · 2011 蒸汽波 / 赛博霓虹"
+  },
+  {
+    "number": "101",
+    "catalog_id": "huashu-art-motion:27_kirby",
+    "name": "27_kirby · 1966 漫威银河时代（Jack Kirby ＋ 四色胶印）"
+  },
+  {
+    "number": "102",
+    "catalog_id": "huashu-art-motion:28_monet",
+    "name": "28_monet · 1899 莫奈《睡莲》＋《日本桥》"
+  },
+  {
+    "number": "103",
+    "catalog_id": "huashu-art-motion:29_seurat",
+    "name": "29_seurat · 1884 修拉《大碗岛的星期天下午》（点彩：视觉混色渲染器）"
+  },
+  {
+    "number": "104",
+    "catalog_id": "huashu-art-motion:30_matisse",
+    "name": "30_matisse · 1947 马蒂斯《爵士》剪纸"
+  },
+  {
+    "number": "105",
+    "catalog_id": "huashu-art-motion:31_haring",
+    "name": "31_haring · 1982 凯斯·哈林"
+  },
+  {
+    "number": "106",
+    "catalog_id": "huashu-art-motion:32_rembrandt",
+    "name": "32_rembrandt · 1642 伦勃朗明暗法"
+  },
+  {
+    "number": "107",
+    "catalog_id": "huashu-art-motion:33_rubberhose",
+    "name": "33_rubberhose · 1930 橡皮管卡通"
+  },
+  {
+    "number": "108",
+    "catalog_id": "huashu-art-motion:34_shadowpuppet",
+    "name": "34_shadowpuppet · 中国皮影戏"
+  },
+  {
+    "number": "109",
+    "catalog_id": "huashu-art-motion:35_shinkai",
+    "name": "35_shinkai · 2016 新海诚光影"
+  },
+  {
+    "number": "110",
+    "catalog_id": "huashu-art-motion:36_picasso_blue",
+    "name": "36_picasso_blue · 1903 毕加索蓝色时期"
+  },
+  {
+    "number": "111",
+    "catalog_id": "huashu-art-motion:37_rick_morty",
+    "name": "37_rick_morty · Rick & Morty扁平描边卡通"
+  }
+]

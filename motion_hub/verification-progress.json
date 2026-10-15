@@ -1,0 +1,15 @@
+{
+  "001": {
+    "name": "裝飾藝術 Art Deco",
+    "catalog_id": "lemo-opuscar:art-deco",
+    "version": "v1",
+    "status": "失敗",
+    "technical": "通過",
+    "visual": "12張抽幀通過；完整觀看未確認",
+    "voice": "技術通過；主觀未確認；peak -0.26dBTP",
+    "style": "四項可見特徵符合；完整評分未執行",
+    "film_gate": "RED fast_ratio 0.0298",
+    "user_confirmation": "未確認",
+    "next": "等待確認後重測001；002未測試"
+  }
+}
