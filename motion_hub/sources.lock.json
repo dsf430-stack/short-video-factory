@@ -1,0 +1,27 @@
+[
+  {
+    "id": "lemo-opuscar",
+    "url": "https://github.com/lemomo-ai/lemo-opuscar.git",
+    "commit": "fdc46d7f0e20cc953a71d56241a92d1b4cb7298e"
+  },
+  {
+    "id": "xilo-opus-video",
+    "url": "https://github.com/Kianzzz/xilo-opus-video.git",
+    "commit": "f2cd828e2692e7186186408ee01a936707c2c38d"
+  },
+  {
+    "id": "mg-styles-15",
+    "url": "https://github.com/Vincentwei1021/mg-styles-15.git",
+    "commit": "49052d80bfaf9fa8412cc9710530e5e95a3b8d8c"
+  },
+  {
+    "id": "dashi-animationstyle",
+    "url": "https://github.com/chuspeeism/dashi-animationstyle.git",
+    "commit": "aa620f3b859aa5d191b783b2eb0fb59263731c76"
+  },
+  {
+    "id": "huashu-art-motion",
+    "url": "https://github.com/alchaincyf/huashu-art-motion.git",
+    "commit": "2571ee0a9a0467c4d99e935ea9e0fadda19210b0"
+  }
+]
