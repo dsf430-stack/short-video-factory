@@ -1,0 +1,29 @@
+{
+  "number": "008",
+  "name": "深色科技發表會",
+  "catalog_id": "lemo-opuscar:dark-keynote",
+  "source_commit": "fdc46d7f0e20cc953a71d56241a92d1b4cb7298e",
+  "topic": "一滴水如何變成雨",
+  "version": "v1",
+  "actions_url": null,
+  "execution": "local existing motion_hub renderer",
+  "status": "失敗",
+  "technical": "PASS",
+  "frame_review": "7 actual encoded frames inspected; Chinese readable",
+  "voice_technical": "PASS",
+  "subjective_listening": "UNCERTAIN",
+  "style_features": [
+    "near-black grid",
+    "original upstream Canvas UI engine",
+    "single mint focal accent",
+    "light sweep and toast subtitles"
+  ],
+  "film_gate": "RED",
+  "failure": "fast_ratio=0.0; page_frame_share=0.933; final true peak -0.88dBTP misses source -1 target",
+  "user_acceptance": "PENDING",
+  "sha256": "caa1a8892ca084415fe55ef2511411bf62e37e1b0be20542614039964af981bf",
+  "next_number": "009",
+  "next_action": "await user approval of v2 quality repair; do not advance to009",
+  "film_library_file_id": "libfile_c3420a9c9be88191921c271ad33358c0",
+  "media_qa_library_file_id": "libfile_1009c668acac81919f3da9ef09e07df3"
+}

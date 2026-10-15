@@ -1,14 +1,15 @@
-# 008 rain v1 — FAILED; awaiting user confirmation of minimal repair
-Catalog: lemo-opuscar:dark-keynote
-Source: fdc46d7f0e20cc953a71d56241a92d1b4cb7298e
-Branch: test/008-rain-068-v1
-Target: 30s / 1080x1920 / 30fps / 068 narration / Traditional Chinese.
+# 008 rain v1 — FAILED (quality gate), technical PASS
+Date:2026-10-15. Branch:test/008-rain-068-v1. Catalog:lemo-opuscar:dark-keynote.
+Source:fdc46d7f0e20cc953a71d56241a92d1b4cb7298e.
+User approved the diagnosed two-line local buffer fix; applied and deterministic render PASS.
+MP4 actually rendered locally using existing motion_hub/render.py, not GitHub Actions. Main/068 source unchanged. No merge, publication or paid API.
+MP4:008-rain-v1.mp4. 30.000s,1080x1920,30fps,H264/AAC. Audio30s, full decode PASS, no black segments. Voice real068,24.737959s,+20%,+5Hz,offset1s; no truncation. Narration saved in Library libfile_64fe425a5fe081919b30831ddea94859 and reused.
+Final audio measured -13.91LUFS,-0.88dBTP; peak misses source <=-1 target by0.12dB. Not clipping.
+Final encoded frames at1.5,6,11,16,19.5,23,28s inspected; CJK readable. Style: nearblack grid, original UI panels, one mint accent, light sweep, toast captions.
+film_gate actually executed:RED,fast_ratio0.0,page_frame_share0.933; blank_run_s0,blue_purple_share0.017. Animated objects exist, but motion amplitude insufficient for this metric. Do not claim film_gate PASS.
+Full-speed sound viewing, subjective listening, independent MG scoring and user acceptance:UNCERTAIN/PENDING.
+User-facing verdict:008 FAILED quality gate, technical PASS.009 UNTESTED. Wait for review; don't automatically run009.
+Proposed v2 (await confirmation per user bug/failed-QA rule): amplify meaningful coalescence/falling-water movement; remove excessive persistent frame; preserve engine/audio/topic; lower mix true-peak target by0.3dB and check encoded AAC. Do not lower quality thresholds. Preservev1.
+See final-qa.json,film-gate.json,驗證結果.md and encoded-contact-sheet.png. Build recipe and local font subsets committed with source. Technical proof is not artistic/user approval.
 
-Completed: pinned sources fetched; official guides and engine read; original treatment and animated scene code written; original engine copied with only local import and portrait dimensions adapted; real 068 voice generated successfully (24.737959s, full decode pass, measured -13.38 LUFS, -1.24 dBTP); font coverage verified.
-Actual render failure: ValueError: FAILED: nondeterministic page.
-Root cause isolated by read-only runtime diagnostic: upstream lightReveal reuses reveal/reveal2 offscreen canvases without clearRect. Transparent pixels retain previous scene content. Rendering t=1 → t=0 → t=1 gives different screenshots. Clearing just reveal/reveal2 buffers before each call in an ephemeral diagnostic gives identical screenshots. No source fix applied.
-Proposed repair: two clearRect calls in the production-local engine.js only. Exact patch: proposed-buffer-fix.patch. User project requires confirmation before bug fixes; pause before applying.
-Diagnostic frame at 16s inspected: Chinese fonts readable, particle coalescence and accent drop present. Not a successful film; output MP4 not yet rendered. Voice listening, film_gate, full film review and user viewing all unconfirmed.
-Remaining: apply confirmed patch; repeat 3 style frames; shift narration by 1s; generate quiet score and sound effects, mix/pad to30s; render; film_gate; decode and sample frames; persist MP4+assets; update ledger.
-Actions: no 008 run started; existing integration SUCCESS is not this film.
-Next number after 008 completion:009. Never mark 008 passed without full verification.
+Saved film Library ID:libfile_c3420a9c9be88191921c271ad33358c0. Media+QA archive:libfile_1009c668acac81919f3da9ef09e07df3. Both saved successfully; source remains in GitHub branch.

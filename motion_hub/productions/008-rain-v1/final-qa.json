@@ -1,0 +1,27 @@
+{
+  "technical": "PASS",
+  "full_decode": "PASS",
+  "width": 1080,
+  "height": 1920,
+  "fps": "30/1",
+  "duration": "30.000000",
+  "audio_codec": "aac",
+  "audio_duration": "30.000000",
+  "loudness": {
+    "input_i": "-13.91",
+    "input_tp": "-0.88",
+    "input_lra": "1.70",
+    "input_thresh": "-25.72",
+    "output_i": "-14.12",
+    "output_tp": "-1.00",
+    "output_lra": "1.60",
+    "output_thresh": "-25.51",
+    "normalization_type": "dynamic",
+    "target_offset": "0.12"
+  },
+  "black_segments": [],
+  "sha256": "caa1a8892ca084415fe55ef2511411bf62e37e1b0be20542614039964af981bf",
+  "subjective_listening": "UNCERTAIN: not listened",
+  "full_speed_viewing": "UNCERTAIN: not watched",
+  "user_acceptance": "PENDING"
+}
