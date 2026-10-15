@@ -1,0 +1,37 @@
+name: Official Xilo Dashi smoke render
+on:
+  workflow_dispatch:
+jobs:
+  render:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install prerequisites
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ffmpeg
+          python -m pip install numpy playwright
+          python -m playwright install --with-deps chromium
+      - name: Clone upstream skills
+        run: |
+          git clone --depth 1 https://github.com/Kianzzz/xilo-opus-video.git /tmp/xilo
+          git clone --depth 1 https://github.com/chuspeeism/dashi-animationstyle.git /tmp/dashi
+      - name: Check official Xilo environment
+        run: python /tmp/xilo/skills/xilo-opus-video/scripts/check_env.py
+      - name: Create and render official Dashi example
+        run: |
+          node /tmp/dashi/pipeline/自检.mjs
+          node /tmp/dashi/pipeline/新建作品.mjs "$GITHUB_WORKSPACE/demo-output/token_手绘笔记" --style 手绘笔记 --example token
+          node /tmp/dashi/pipeline/render.mjs "$GITHUB_WORKSPACE/demo-output/token_手绘笔记/index.html"
+      - name: Verify output
+        run: |
+          find demo-output -type f -name '*.mp4' -print
+          test -n "$(find demo-output -type f -name '*.mp4' -print -quit)"
+          find demo-output -type f -name '*.mp4' -exec ffprobe -v error -show_entries format=duration -of default=noprint_wrappers=1 {} \;
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: official-dashi-render
+          path: demo-output/
+          if-no-files-found: warn
