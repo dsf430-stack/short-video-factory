@@ -1,0 +1,120 @@
+{
+ "file": "002_ascii-crt_v1.mp4",
+ "orientation": "vertical",
+ "duration_s": 20.0,
+ "sub_band": 0.18,
+ "shots": 3,
+ "hard_cuts": 2,
+ "dissolves": 0,
+ "asl_s": 6.67,
+ "dissolve_share": 0.0,
+ "fast_ratio": 0.0042,
+ "top10_share": 0.227,
+ "drift_ratio": 0.772,
+ "still_ratio": 0.004,
+ "longest_still_s": 0.08,
+ "longest_still_start_s": 8.33,
+ "event_rate": 1.5,
+ "max_event_gap_s": 8.25,
+ "dead_bg": 0.507,
+ "dead_flat": 0.466,
+ "flat_area": 0.75,
+ "flat40_frames": 1.0,
+ "page_frame_share": 0.925,
+ "slow_zoom_share": 0.0,
+ "slow_cam_share": 0.0,
+ "zoom_curve_cv": null,
+ "push_in_per_min": 3.0,
+ "fast_push_per_min": 0.0,
+ "push_in_share": 1.0,
+ "push_in_times_s": [
+  6.1
+ ],
+ "subject_box": 0.14,
+ "flat_light": 0.0,
+ "template_sim_share": null,
+ "template_sim_max": null,
+ "local_fade_ratio": 0.075,
+ "mean_diff": 2.01,
+ "fast_ratio_worst_window": 0.0,
+ "worst_window_start_s": 6.0,
+ "worst_window_len_s": 10.0,
+ "fast_ratio_by_10s": [
+  0.008,
+  0.0
+ ],
+ "blank_run_s": 0.0,
+ "blank_runs_s": [],
+ "cut_times_s": [
+  2.33,
+  13.5
+ ],
+ "dissolve_times_s": [],
+ "blue_purple_share": 0.0,
+ "blue_purple_spans_s": [],
+ "lights": {
+  "fast_ratio": "red",
+  "blank_run_s": "green",
+  "blue_purple_share": "green",
+  "fast_ratio_worst_window": "yellow",
+  "top10_share": "--",
+  "drift_ratio": "yellow",
+  "still_ratio": "--",
+  "longest_still_s": "green",
+  "event_rate": "yellow",
+  "max_event_gap_s": "green",
+  "dead_bg": "green",
+  "dead_flat": "green",
+  "flat_area": "--",
+  "flat_light": "green",
+  "page_frame_share": "yellow",
+  "slow_zoom_share": "green",
+  "push_in_per_min": "green",
+  "fast_push_per_min": "--",
+  "push_in_share": "--",
+  "slow_cam_share": "--",
+  "dissolve_share": "green",
+  "local_fade_ratio": "--",
+  "subject_box": "--",
+  "template_sim_share": "--"
+ },
+ "gate_metrics": [
+  "fast_ratio",
+  "blank_run_s",
+  "blue_purple_share"
+ ],
+ "gate_light": "red",
+ "verdict": "red",
+ "explain": {
+  "summary": "整片没有一次镜头内的快速动作，读起来像翻页",
+  "why": [
+   "77% 的帧只是在缓慢漂移",
+   "画面变化主要靠转场（硬切 2、淡化 0），转场不算镜头内动作"
+  ],
+  "fix": "按 references/镜头语言.md 在「观众这一刻该看哪」的地方补镜头内运动：要看清细节就缓推（0.6–1.5 秒，CAM.track 的 push），在几件东西之间走就横移（glide），要看全貌就拉远（pull）；物自己的大动作（生长、翻页、倒水、录像里的动作）也算，实拍录像本身在动就停住。快推、砸入是重音，只给揭晓、反转、关键数字。每镜匀速慢推几个百分点、淡入淡出、转场都不算数（转场再快也被排除在外）。1 秒左右推近 20% 的缓推和 0.28 秒快推在这项上记分差不多，不用为了过门把推镜改快。也别为了过门每镜塞一次推近：2026-10-12 那支片每 2 秒一推，被判「太多、太快、不 smooth」。",
+  "look": [
+   [
+    "fast_ratio_worst_window",
+    "6–16s 这段几乎没有快动作（前紧后松）"
+   ],
+   [
+    "drift_ratio",
+    "77% 的帧在缓慢漂移"
+   ],
+   [
+    "event_rate",
+    "平均每 10 秒只有 1.5 个视觉事件"
+   ],
+   [
+    "page_frame_share",
+    "92% 的时长被固定的页眉、页码、标题栏、logo 框着"
+   ]
+  ],
+  "worst_window": {
+   "start_s": 6.0,
+   "end_s": 16.0,
+   "fast_ratio": 0.0
+  },
+  "blank_runs": []
+ }
+}

@@ -1,0 +1,32 @@
+<!doctype html><meta charset="utf-8"><style>@font-face{font-family:VT323;src:url('/shared/water-cycle/VT323-Regular.ttf')}@font-face{font-family:TC;src:url('/shared/water-cycle/NotoSansTC.ttf')}*{margin:0}body{background:#090604}canvas{display:block}</style><canvas id="c"></canvas><script type="module">
+import {initTerm,glyph,text,makeRamp,pick} from '/.sources/lemo-opuscar/styles/ascii-crt/demo/term.js';
+import {makeCRT} from '/.sources/lemo-opuscar/styles/ascii-crt/demo/crt.js';
+window.ready=false;const out=document.querySelector('canvas');out.width=innerWidth;out.height=innerHeight;const W=out.width,H=out.height;
+const scene=document.createElement('canvas');scene.width=W;scene.height=H;const g=scene.getContext('2d');
+await initTerm();await document.fonts.load('40px TC');await document.fonts.ready;const crt=makeCRT(out);const ramp=makeRamp(' .,:;-=+*oxO#%@');
+const cuts=[0,2.354,5.208,8.312,10.927,13.437,17.2,20],labels=['OCEAN: TRACKING 01','EVAPORATION: HEAT UP','CONDENSATION: COOL DOWN','CLOUD: DROPLETS MERGE','RAIN: RETURN TO SEA','OCEAN: CYCLE COMPLETE','WATER_CYCLE.LOG [OK]'];
+const sub=['一滴海水，開始旅行。','陽光加熱，水蒸發成水氣。','升到高空，遇冷凝結成小水滴。','水滴聚在一起，形成雲。','越聚越大，終於落成雨。','回到海洋，下一趟旅程又開始。','循環完成，等待下一趟旅程。'];
+const clamp=x=>Math.max(0,Math.min(1,x)),ease=x=>{x=clamp(x);return x*x*(3-2*x)},hash=x=>{let n=Math.sin(x*12.9898)*43758.5453;return n-Math.floor(n)};
+function droplet(x,y,cx,cy,r){let yy=(y-cy)/r;let width=yy<0?Math.max(0,1+yy)*.8:Math.sqrt(Math.max(0,1-yy*yy))*.8;return Math.abs((x-cx)/r)<width&&yy>-1&&yy<1 ? .30+.55*(1-(x-cx)/r)/2 :0;}
+function ellipse(x,y,cx,cy,rx,ry){let d=((x-cx)/rx)**2+((y-cy)/ry)**2;return d<1?.35+.58*(1-d):0}
+function water(x,y,t,level=1260){let wave=level+24*Math.sin(x/76+t*2);if(y<wave||y>1480)return 0;let a=(y-wave)%44;return a<10?.72:((x+y)%90<6?.15:0);}
+function density(x,y,t,s,u){let a=0;
+if(s===0){a=Math.max(water(x,y,t),droplet(x,y,540,870+Math.sin(t*2)*25,270));}
+if(s===1){a=water(x,y,t);let sun=ellipse(x,y,540,480,145,145);a=Math.max(a,sun);for(let k=0;k<21;k++){let v=(u*1.7+hash(k)*1.1)%1;let cx=540+Math.sin(k*4)*330*(1-v*.5),cy=1250-v*650;let rr=22+(1-v)*25;a=Math.max(a,ellipse(x,y,cx,cy,rr,rr));}}
+if(s===2){let q=ease(u);for(let k=0;k<23;k++){let angle=k*2.399;let rr=(1-q)*420+40;a=Math.max(a,ellipse(x,y,540+Math.cos(angle)*rr,900+Math.sin(angle)*rr*.8,20,20));}a=Math.max(a,droplet(x,y,540,900,80+170*q));}
+if(s===3||s===4){let q=s===3?ease(u):1;for(let k=0;k<5;k++)a=Math.max(a,ellipse(x,y,540+(k-2)*115*q,710-(k%2)*65,145*q+20,140*q+20));if(s===3){for(let k=0;k<12;k++){let q2=1-ease(u);a=Math.max(a,ellipse(x,y,540+Math.sin(k*4)*390*q2,1000+Math.cos(k*3)*260*q2,18,24));}}else{a=Math.max(a,water(x,y,t,1390));for(let k=0;k<25;k++){let v=(u*2.2+hash(k+9))%1;let cx=220+hash(k)*640,cy=850+v*510;a=Math.max(a,droplet(x,y,cx,cy,21+hash(k)*20));}a=Math.max(a,droplet(x,y,540,860+ease(u)*430,120));}}
+if(s===5){a=water(x,y,t);let q=ease(u*2);if(u<.52)a=Math.max(a,droplet(x,y,540,650+q*630,210*(1-q*.45)));for(let k=0;k<4;k++){let p=u*1.6-k*.16;if(p>0&&p<1){let d=Math.hypot((x-540)/1.5,(y-1280)*2.7);if(Math.abs(d-p*330)<9)a=Math.max(a,.8*(1-p));}}}
+if(s===6){let angle=Math.atan2((y-930),(x-540));let rr=Math.hypot(x-540,y-930);if(Math.abs(rr-300)<10)a=.25;for(let k=0;k<3;k++){let ph=(t-17.2)*1.4+k*Math.PI*2/3;a=Math.max(a,droplet(x,y,540+Math.cos(ph)*300,930+Math.sin(ph)*300,70));}}
+return a;}
+function draw(t){let s=cuts.findIndex((a,i)=>t>=a&&t<cuts[i+1]);let u=(t-cuts[s])/(cuts[s+1]-cuts[s]);g.globalAlpha=1;g.globalCompositeOperation='source-over';g.fillStyle='#000000';g.fillRect(0,0,W,H);g.globalCompositeOperation='lighter';
+let cw=s===2?12+3*ease(u):12;let cols=Math.floor(960/cw),rows=Math.floor(1120/(cw*2));let ox=540-cols*cw/2,oy=410;let tt=Math.floor(t*15)/15;
+// True glyphs selected by measured ink density, positioned exactly on their grid.
+for(let j=0;j<rows;j++)for(let i=0;i<cols;i++){let x=ox+(i+.5)*cw,y=oy+(j+.5)*cw*2;let a=density(x,y,tt,s,u);if(a>.05){let v=pick(ramp,a,i,j,.45);glyph(g,v.ch,ox+i*cw,oy+j*cw*2,cw,v.a,0);}let trail=density(x,y,tt-.067,s,Math.max(0,u-.025));if(trail>.2&&a<.1)glyph(g,'.',ox+i*cw,oy+j*cw*2,cw,.16,0);}
+let v={ox:100,oy:160,cw:22};let title='> OPEN WATER_CYCLE.LOG';text(g,title.slice(0,Math.floor(t*28)+1),0,0,v,1);if(t<1)text(g,'_',Math.min(title.length,Math.floor(t*28)+1),0,v,1);
+text(g,'002 / ASCII-CRT / 068 VOICE',0,1.3,v,.65);text(g,labels[s],0,3,v,1);text(g,('STATE '+(s+1)+' / 7  TIME '+t.toFixed(1)+'s'),0,4.2,v,.5);
+let log={ox:100,oy:1580,cw:20};text(g,'--------------------------------------------',0,0,log,.5);text(g,'LOG >',0,1.2,log,1);
+g.globalAlpha=1;g.fillStyle='#ff0000';g.font='500 39px TC';g.textBaseline='top';let arr=[...sub[s]],chunks=[];while(arr.length)chunks.push(arr.splice(0,20).join(''));chunks.forEach((l,i)=>g.fillText(l,100,1680+i*58));
+text(g,'STATUS: '+(s===6?'REPEAT [READY]':'RUNNING [LIVE]'),0,4.8,log,.7);if(Math.floor(t*2)%2===0)text(g,'_',37,4.8,log,1);
+crt.render(scene,Math.round(t*30),{noiseA:.008,refl:.3,flick:.008,glow:.38,halo:.15,expo:1,corner:.25});}
+window.render=t=>draw(Math.max(0,Math.min(19.999,t)));window.render(0);window.ready=true;
+</script>
