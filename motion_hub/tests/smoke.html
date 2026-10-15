@@ -1,4 +1,4 @@
-<!doctype html><meta charset="utf-8"><style>body{margin:0;background:#f6ead7}canvas{display:block}</style><canvas></canvas><script>
+<!doctype html><meta charset="utf-8"><link rel="icon" href="data:,"><style>body{margin:0;background:#f6ead7}canvas{display:block}</style><canvas></canvas><script>
 const c=document.querySelector('canvas'),g=c.getContext('2d'); c.width=innerWidth;c.height=innerHeight;
 const draw=t=>{g.fillStyle='#f6ead7';g.fillRect(0,0,c.width,c.height);g.strokeStyle='#17365d';g.lineWidth=8;g.beginPath();g.arc(c.width/2+Math.sin(t*4)*70,c.height/2,45,0,Math.PI*2);g.stroke();g.fillStyle='#ca7625';g.fillRect(30,30,40+t*70,20)};
 const contract=new URLSearchParams(location.search).get('contract')||'render';window[contract]=draw;window.ready=true;

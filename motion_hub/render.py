@@ -10,7 +10,7 @@ def main():
  a=ap.parse_args(); page=pathlib.Path(a.page).resolve(); out=pathlib.Path(a.out).resolve(); root=pathlib.Path(a.root).resolve() if a.root else page.parent
  if not page.is_file() or out.exists(): raise ValueError('Missing page or output already exists')
  rel=page.relative_to(root); w,h=map(int,a.size.split('x'))
- if a.duration<=0 or a.fps<=0 or min(w,h)<=0 or w%2 or h%2: raise ValueError('Invalid duration, fps or even output dimensions')
+ if not math.isfinite(a.duration) or a.duration<=0 or a.fps<=0 or min(w,h)<=0 or w%2 or h%2: raise ValueError('Invalid duration, fps or even output dimensions')
  audio=pathlib.Path(a.audio).resolve() if a.audio else None
  if audio:
   info=probe(audio)
