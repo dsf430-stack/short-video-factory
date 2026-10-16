@@ -143,7 +143,10 @@ class Gemini:
                 print('Provider error:', error.code, status, message[:1200], flush=True)
                 if error.code not in (408, 429, 500, 502, 503, 504) or attempt == 2:
                     raise RuntimeError(f'Gemini {model}: HTTP {error.code}') from None
-                time.sleep(5 * (attempt + 1))
+                retry_after = error.headers.get('Retry-After', '')
+                delay = min(60, max(1, int(retry_after))) if retry_after.isdigit() else 30 * (attempt + 1)
+                print('Respecting provider cooldown seconds:', delay, flush=True)
+                time.sleep(delay)
         raise RuntimeError('Gemini retries exhausted')
 
     def json(self, prompt, files=()):
