@@ -75,7 +75,7 @@ class Gemini:
             if not candidates:
                 raise RuntimeError('No advertised ' + ('image' if image else 'text') + ' generation model')
             return sorted(candidates, reverse=True)[0]
-        self.text_model = choose('TEXT_MODEL', ['gemini-3.8-flash', 'gemini-3.5-flash', 'gemini-3-flash-preview', 'gemini-2.5-flash'], False)
+        self.text_model = choose('TEXT_MODEL', ['gemini-3.5-flash', 'gemini-3.8-flash', 'gemini-3-flash-preview', 'gemini-2.5-flash'], False)
         self.image_model = choose('IMAGE_MODEL', ['gemini-3.1-flash-image', 'gemini-2.5-flash-image', 'gemini-3-pro-image'], True)
         print('Selected models:', self.text_model, self.image_model, flush=True)
 
