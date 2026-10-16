@@ -13,7 +13,7 @@
   "beats": [
     {
       "id": "s0",
-      "text": "天空的雨，原本可能是一滴海水，太陽加熱水面，讓水變成看不見的水蒸氣，進入空氣。",
+      "text": "天空的雨，可能是一滴海水，太陽加熱水面，讓水變成看不見的水蒸氣，進入空氣。",
       "label": "陽光蒸發",
       "plan": {
         "id": "s0",
@@ -77,7 +77,7 @@
         "narrative_requirements": [
           {
             "id": "s0_cause",
-            "narration_quote": "天空的雨，原本可能是一滴海水，太陽加熱水面，讓水變成看不見的水蒸氣，進入空氣。",
+            "narration_quote": "天空的雨，可能是一滴海水，太陽加熱水面，讓水變成看不見的水蒸氣，進入空氣。",
             "observable": "Sun upper-left, three sparse upward curved arrows in center, a low blue ocean surface at bottom, nothing overlaps."
           }
         ]
@@ -217,7 +217,7 @@
     },
     {
       "id": "s3",
-      "text": "水滴長得夠大，便能穿過上升氣流，落向地面成為雨，最後回到河流與海洋，繼續循環。",
+      "text": "水滴長得夠大，便能穿過上升氣流，落向地面成為雨，回到河流與海洋，繼續循環。",
       "label": "雨落大地",
       "plan": {
         "id": "s3",
@@ -281,7 +281,7 @@
         "narrative_requirements": [
           {
             "id": "s3_cause",
-            "narration_quote": "水滴長得夠大，便能穿過上升氣流，落向地面成為雨，最後回到河流與海洋，繼續循環。",
+            "narration_quote": "水滴長得夠大，便能穿過上升氣流，落向地面成為雨，回到河流與海洋，繼續循環。",
             "observable": "A softly scalloped blue-white cloud at top, five falling blue drops in middle, a shallow blue lake/water line at bottom."
           }
         ]
