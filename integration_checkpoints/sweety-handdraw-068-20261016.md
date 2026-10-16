@@ -1,45 +1,38 @@
-# Sweety handdraw integration checkpoint — 2026-10-16
+# Official Sweety handdraw + 068 — verified checkpoint (2026-10-16)
 
-Status: IN_PROGRESS, NOT COMPLETE. Draft PR #4. Latest state is in the continuation below.
+Status: SUCCESS. No Gemini/model API key is required by the production runner or workflow.
 
-Read latest main 8def626c8a2c04b53311b600c6e4debca84754c6, README, existing Actions, actions-request bridge, smart_voice generator and voices.json. AGENTS.md and PROJECT_STATUS.md are absent at main root. Existing motion-hub remains on its separate branch; it was not replaced or merged.
+## Deliverable
 
-Official source read: README.md, skills/sweety-handdraw-video/SKILL.md, runtime-contract, drawing/style, continuous narration, story design, dependency routing and production validators. Pin: 5206ec0d17f9b353e400b64b9c51ad69e721e02a. Full repository is fetched by the isolated workflow, including its bundled dependencies; no official validators are bypassed.
+Topic: 一滴水如何變成雨. Actual film: 29.966667 seconds, 1080×1920, 30fps, H.264/AAC, Traditional Chinese script/subtitles. Voice: unchanged existing 068 zh-TW-HsiaoChenNeural / +20% / +5Hz. Narration master: 28.473469s; full master preserved without stretching/truncation, plus official 1s cover and 0.526531s hold.
 
-Existing 068 is zh-TW-HsiaoChenNeural / +20% / +5Hz. Existing voice implementation and workflows unchanged.
+Final verified source commit: 0a2df7cd40f7daf03f083830527b8eaa85af81f3.
+Final successful Actions: https://github.com/dsf430-stack/short-video-factory/actions/runs/38916904890
+Final artifact: https://github.com/dsf430-stack/short-video-factory/actions/runs/38916904890/artifacts/12053040942
+Artifact name: sweety-068-rain-1080x1920-38916904890. Includes film.mp4, cover, real SRT, script, acceptance and official verification records.
+Final film SHA256: 19a78ebac5cb6cabd5b637f9c379b9da63b957d885389421f8a7c5baf970648a.
 
-Actual run 38905654953, job 116988438504 failed at Check configured model connection: GEMINI_API_KEY and GOOGLE_API_KEY both resolve to empty in this job. This only establishes these two names are unavailable to this workflow, not that the account has no key elsewhere. Connector cannot read secret values. Do not ask user to paste keys into chat or commit credentials.
+## Implementation and use
 
-New workflow: .github/workflows/sweety-handdraw-068.yml, branch integration/sweety-handdraw-068. Supports manual topic input and branch push preflight. Separate official-runtime job verifies official regressions/smoke and existing 068 tests independently of the credential check. Smoke video is a fixture and must never be delivered as the requested story. This workflow is a preflight only; it does NOT yet implement topic-to-production-video automation.
+Workflow: .github/workflows/sweety-handdraw-068.yml (manual topic input). Runner: handdraw/produce.py. Catalog: handdraw/prepared/catalog.json. Instructions/sources: handdraw/README.md.
 
-Remaining: connect an authorized model credential; implement model-authored script, style/drawing plan, guided images and real visual reviews, measured narration alignment via existing 068 SRT, production job build, official render/verify, 1080x1920/30s MP4 checks and final artifact upload. Preserve all official production gates. Test case: 一滴水如何變成雨. No final MP4/artifact exists. Keep PR draft, do not merge or report complete.
+The assistant prepares scripts, original illustrations, drawing plans, actual source-image reviews and semantic polygons using existing ChatGPT capabilities. Actions consumes these prepared jobs, reuses smart_voice/generate_voice.py, and calls the unchanged complete official engine pinned at 5206ec0d17f9b353e400b64b9c51ad69e721e02a (including its five bundled dependencies). Unknown topics fail explicitly until a new bundle is prepared; they do not silently reuse a film. Existing voice code and existing workflows are unchanged. No social publication.
 
-## Verified independent results
+## Actual validation
 
-Run 38905748444: official-runtime SUCCESS. Existing 068: 7 tests passed; official upstream: 59 tests passed; official offline animation smoke passed, including H.264/AAC full decode and fixture delivery rejection. Evidence artifact 12048331571 contains reports only, NOT the requested MP4. model-connection failed due to the two unavailable secret names. No retry without a relevant configuration change.
+- Existing 068: 7 tests; official upstream: 59 tests; offline official smoke passed earlier. Do not repeat solved checks without a relevant change.
+- Four actual final illustrations pass official semantic ownership, lifted-stroke, nib/paint coverage and outline-before-fill checks.
+- Actual production doctor/build/render/verify and SHA-bound finalize pass. Finalization replay reused the same verified film bytes.
+- Downloaded the actual artifact and verified its SHA. Inspected final decoded frames at 6s,26s,28.5s,28.8s and the original cover/illustrations. Official pen scale reduced to 0.25 after the original larger pen intersected captions; actual corrected frames show clearance.
+- Full decode, H264/AAC, complete voice timeline, real SRT boundaries, single burned subtitle layer, bounds/glyph isolation and ending guards pass.
+- Audio: -17.17 LUFS, -6.77dBTP, PCM correlation 0.9999464479, last-phrase correlation 0.9999662066, tail 1.196531s. Human subjective listening/phone preference remains UNCERTAIN and is explicitly retained in review limitations. No BGM.
 
-## Continuation after repository key configuration (21:32–21:56 Taipei)
+## Resolved causes — do not repeat
 
-User configured the repository secret. Rerun 38905748444 verified real Gemini authentication; missing-key blocker is resolved.
+The abandoned model-dependent prototype hit Gemini 404 and repeated 503/high demand. User requested no unnecessary Gemini dependency; the entire model dependency was removed from the entry/workflow. Do not ask for a new Gemini key or restore that dependency.
 
-Production adapter handdraw/produce.py now connects real model-authored storyboard/drawing plan, guided image generation and image reviews, unchanged smart_voice/generate_voice.py 068, actual SRT-boundary alignment, unchanged official production doctor/build/render/verify/finalize, exact 30s 1080x1920/30fps acceptance, and final Actions artifact upload. It is IMPLEMENTED BUT NOT END-TO-END VERIFIED. Do not claim completion or merge yet.
+Existing 068 transient 429 recovered by cooling down and resuming the same endpoint/voice. First prepared voice was 29.152653s, too long with the official cover; four script characters were removed naturally and a new 28.473469s recording was verified. Do not change speed/pitch/voice or reuse the longer voice with the shorter script. A missing re import was fixed and the real SRT parser was tested. The pen-caption intersection was fixed by the single pen-scale change; reviewed film SHA above is authoritative.
 
-Actual failures and minimal changes:
-- gemini-2.5-flash returned 404 despite the API still advertising it. Model selection now requires an actual structured generation probe, not merely models.list.
-- 3.8/3.5/flash-latest returned 503 UNAVAILABLE high demand. gemini-3-flash-preview passed real probes and generated a full storyboard. Repeated full-call 503 remains transient; provider cooldown now respects Retry-After, otherwise 30/60 seconds, up to three attempts.
-- Reduced duplicate CLI/runtime documentation in creative prompts while retaining full art guide + story/drawing guidance and all unchanged official validators.
-- Generated outline/fill ID arrays disagreed with the actual model-authored parts. Adapter now derives both execution orders from that existing semantic parts list, without bypassing verification.
-- Initial 068 request returned websocket 429. Cooldown/resume with same endpoint and voice succeeded in run 38911055209 attempt 2: new narration 30.458776 seconds, CHUNK 1/1 SUCCESS. This is genuine new speech, not the old sample.
-- Need narration about 28.5 seconds so the fixed 1-second cover and 0.2–0.8-second ending fit the 30-second film. Script revision request hit provider 503 after first narration; completed voice/model work is cached for resume.
+## Remaining boundary
 
-Latest production code commit at this point: b1989aeb90d8be772e3749234405755d09887c7e. Latest run: 38911527834 (in progress at checkpoint). Image generation/render/final MP4 remain unverified. Existing 66 regressions and official smoke already passed earlier; do not repeat them without cause. No final video download exists yet. Continue the current run, inspect actual failed step/log, and make only the evidenced minimal correction. Never deliver smoke fixtures or fabricate visual review pass records.
-
-## Latest effective checkpoint — 22:01 Taipei
-
-Status: BLOCKED by external Gemini generation availability; not a missing credential. Latest production code: 101a21c5b2853b37061d0b027c12e2fd9fc17eb9. Latest actual run: https://github.com/dsf430-stack/short-video-factory/actions/runs/38912014461 (FAILED). The same structured JSON format works for tiny probes, and a full original storyboard was generated once and cached; do not classify authentication/JSON support as broken.
-
-Latest adapter improvement: duration correction now copyedits only four sentences, preserving storyboard/style and semantic parts rather than requesting a whole new design. Voice filenames are keyed by exact narration SHA; verified earlier attempt filenames are reused only if their text SHA matches. This preserves the successful real 30.458776s 068 recording from attempt 0 while preventing stale-audio reuse.
-
-Current actual failure: even the short narration-only revision request returned HTTP 503 UNAVAILABLE: 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.' Three attempts with 30s/60s cooldown failed at 13:59:11, 13:59:42, 14:00:42 UTC. Model: gemini-3-flash-preview. No new code defect was established by this run; do not keep changing renderer, voice or endpoints to mask a provider outage.
-
-Completed: credential authentication, real model-list and JSON generation probes, full storyboard/plan generation, canonical official part ordering, new 068 narration (30.458776s), existing 66 tests and offline official renderer smoke. Cached completed work is retained by sweety-068-v1 topic cache. Not yet verified: duration-corrected narration, generated final illustrations, production official render, final QA, final MP4 artifact. No final MP4 exists. PR remains draft/unmerged. Next: once provider generation is available, rerun failed job of run 38912014461; it resumes the verified cached script/voice and attempts the short copyedit request. No repeated setup, new secret, or system rebuild is needed.
+No core blocker for this prepared example. New topics require assistant preparation/review before Actions. Rendering and narration caches are hash-bound and resumable. Main/default branch manual entry should be read back after PR merge. Do not claim an Electron app UI was added.
