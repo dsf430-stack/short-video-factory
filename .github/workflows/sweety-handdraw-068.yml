@@ -1,0 +1,52 @@
+name: Sweety 手繪影片 · 068
+run-name: "Sweety 068 · ${{ inputs.topic || '一滴水如何變成雨' }}"
+on:
+  workflow_dispatch:
+    inputs:
+      topic:
+        description: 影片主題（繁體中文）
+        required: true
+        default: 一滴水如何變成雨
+        type: string
+  push:
+    branches: [integration/sweety-handdraw-068]
+    paths: ['.github/workflows/sweety-handdraw-068.yml', 'handdraw/**']
+permissions:
+  contents: read
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Check configured model connection
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY || secrets.GOOGLE_API_KEY }}
+        run: |
+          python - <<'PY'
+          import os, urllib.request, urllib.error, json
+          key = os.environ.get('GEMINI_API_KEY', '')
+          if not key:
+              raise SystemExit('BLOCKED: Neither GEMINI_API_KEY nor GOOGLE_API_KEY is configured in this repository. Official handdraw needs a model for scripts, illustrations and visual review; existing 068 does not provide that capability.')
+          req = urllib.request.Request('https://generativelanguage.googleapis.com/v1beta/models', headers={'x-goog-api-key': key})
+          try:
+              with urllib.request.urlopen(req, timeout=30) as response:
+                  models = json.load(response)
+              print('Gemini authentication verified; model count:', len(models.get('models', [])))
+          except urllib.error.HTTPError as error:
+              raise SystemExit('Gemini model connection failed: HTTP ' + str(error.code))
+          PY
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Fetch complete pinned official program
+        run: |
+          git clone https://github.com/threerocks/sweety-handdraw-video.git /tmp/sweety-official
+          git -C /tmp/sweety-official checkout 5206ec0d17f9b353e400b64b9c51ad69e721e02a
+          sudo apt-get update
+          sudo apt-get install -y ffmpeg fonts-noto-cjk
+          python -m pip install -r /tmp/sweety-official/skills/sweety-handdraw-video/scripts/requirements.txt -r smart_voice/requirements.txt
+      - name: Verify official runtime
+        run: python -m unittest discover -s /tmp/sweety-official/skills/sweety-handdraw-video/scripts -p 'test*.py' -v
