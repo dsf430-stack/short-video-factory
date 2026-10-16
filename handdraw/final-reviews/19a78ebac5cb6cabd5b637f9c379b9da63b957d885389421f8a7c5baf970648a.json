@@ -1,0 +1,28 @@
+{
+  "video_sha256": "19a78ebac5cb6cabd5b637f9c379b9da63b957d885389421f8a7c5baf970648a",
+  "content": {
+    "status": "pass",
+    "evidence": "Read the four exact delivered Traditional Chinese sentences and real SRT timings (1.05–29.64s). Explanation uses evaporation, condensation on particles, conditional coalescence and falling rain; original illustrations and decoded final frames match those stages. No unrelated reused story or fictitious facts."
+  },
+  "visual": {
+    "status": "pass",
+    "evidence": "Actually inspected decoded final frames at 6, 26, 28.5 and 28.8 seconds plus the unchanged source images/cover. Title and subtitle regions are separate; the reduced 0.25 official pen scale leaves visible clearance above subtitles at the previously failing 26-second frame. White paper, blue/yellow content, no black sampled frame, no duplicate caption layer. All four pages also pass the official bounds/subtitle/glyph tests."
+  },
+  "motion": {
+    "status": "pass",
+    "evidence": "Actual final 6s frame shows partial ink/fill with pen at the current arrow; 26s shows outlined rain/cloud/lake under construction; 28.5s shows completed color and pen departing; 28.8s shows finished artwork without pen. Official semantic stroke/paint ownership and nib coverage checks pass for all four sources. This is the unmodified official progressive drawing renderer, not a static-image pan or crossfade substitute."
+  },
+  "audio": {
+    "status": "pass",
+    "evidence": "Technical audio acceptance only: existing 068 zh-TW-HsiaoChenNeural +20%/+5Hz generated the exact script once (28.473469s). Real sentence-boundary coverage, full H.264/AAC decode, expected/encoded PCM correlation 0.9999464479, last-phrase correlation 0.9999662066, integrated loudness -17.17 LUFS, true peak -6.77 dBTP, tail 1.196531s all passed. Human subjective listening remains UNCERTAIN; no claim of having heard or approved vocal emotion."
+  },
+  "privacy": {
+    "status": "pass",
+    "evidence": "The official Bun/ExifTool clean_image path completed for all four source illustrations and the composed cover. Runner verified that metadata cleanup preserved the actually reviewed RGBA pixel hashes, then bound updated byte hashes to production art/drawing records. FFmpeg output strips input metadata."
+  },
+  "limitations": [
+    "Human subjective listening and phone-speaker preference are UNCERTAIN.",
+    "No background music added.",
+    "New topics require assistant-prepared and reviewed bundles; no Gemini/model API is required by the runner."
+  ]
+}

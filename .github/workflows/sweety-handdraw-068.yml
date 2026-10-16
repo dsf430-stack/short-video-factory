@@ -37,6 +37,16 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y ffmpeg fonts-noto-cjk libimage-exiftool-perl
           python -m pip install -r /tmp/sweety-official/skills/sweety-handdraw-video/scripts/requirements.txt -r smart_voice/requirements.txt
+      - name: Resolve checksum-verified official pen before cached-film verification
+        run: |
+          python - <<'PY'
+          import sys
+          from pathlib import Path
+          skill = Path('/tmp/sweety-official/skills/sweety-handdraw-video')
+          sys.path.insert(0, str(skill / 'scripts'))
+          from hosted_assets import resolve_asset
+          print(resolve_asset(skill / 'assets/hands/pen-only.png'))
+          PY
       - name: Identify resumable topic job
         id: topic
         env:
