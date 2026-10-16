@@ -1,0 +1,66 @@
+name: Qin Shihuang 068 hand-drawn history video
+
+on:
+  push:
+    branches: ['test/qin-shihuang-unification-20261016']
+    paths:
+      - '.github/workflows/qin-shihuang-068.yml'
+      - 'smart_voice/qin_shihuang_handdraw_video.py'
+      - 'smart_voice/jobs/qin-shihuang-unification-20261016.txt'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install the verified 068 and renderer dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ffmpeg fonts-noto-cjk
+          python -m pip install -r smart_voice/requirements.txt Pillow
+      - name: Generate real 068 narration and timed Traditional Chinese subtitles
+        run: |
+          mkdir -p smart_voice/output
+          python smart_voice/generate_voice.py --voice-id 068 --text-file smart_voice/jobs/qin-shihuang-unification-20261016.txt --output smart_voice/output/qin-shihuang-unification-068.mp3
+      - name: Render a representative moving hand-drawn segment
+        run: |
+          python smart_voice/qin_shihuang_handdraw_video.py --audio smart_voice/output/qin-shihuang-unification-068.mp3 --output smart_voice/output/qin-shihuang-preview.mp4 --preview-seconds 6
+          ffmpeg -y -v error -ss 2 -i smart_voice/output/qin-shihuang-preview.mp4 -frames:v 1 smart_voice/output/qin-shihuang-cover.png
+      - name: Render complete vertical history video and burn the single subtitle track
+        run: |
+          python smart_voice/qin_shihuang_handdraw_video.py --audio smart_voice/output/qin-shihuang-unification-068.mp3 --output smart_voice/output/qin-shihuang-silent.mp4
+          ffmpeg -y -v error -i smart_voice/output/qin-shihuang-silent.mp4 -vf "subtitles=smart_voice/output/qin-shihuang-unification-068.srt:force_style='FontName=Noto Sans CJK TC,FontSize=18,PrimaryColour=&H00FFFFFF,OutlineColour=&H80000000,BorderStyle=1,Outline=2,Alignment=2,MarginV=80'" -map 0:v:0 -map 0:a:0 -c:v libx264 -preset veryfast -crf 18 -c:a copy -movflags +faststart smart_voice/output/qin-shihuang-unification-068.mp4
+          ffmpeg -v error -xerror -i smart_voice/output/qin-shihuang-unification-068.mp4 -f null -
+      - name: Verify format, sound and subtitles
+        run: |
+          ffprobe -v error -select_streams v:0 -show_entries stream=codec_name,width,height,r_frame_rate -of json smart_voice/output/qin-shihuang-unification-068.mp4 > smart_voice/output/qin-shihuang-video-probe.json
+          ffprobe -v error -select_streams a:0 -show_entries stream=codec_name,channels -of json smart_voice/output/qin-shihuang-unification-068.mp4 > smart_voice/output/qin-shihuang-audio-probe.json
+          python -c "import json; p=json.load(open('smart_voice/output/qin-shihuang-video-probe.json')); s=p['streams'][0]; assert (s['width'],s['height'],s['r_frame_rate']) == (1080,1920,'30/1'); assert s['codec_name']=='h264'; assert open('smart_voice/output/qin-shihuang-unification-068.srt',encoding='utf8').read().strip()"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: qin-shihuang-unification-068-video
+          path: |
+            smart_voice/output/qin-shihuang-unification-068.mp4
+            smart_voice/output/qin-shihuang-cover.png
+            smart_voice/output/qin-shihuang-unification-068.mp3
+            smart_voice/output/qin-shihuang-unification-068.srt
+            smart_voice/output/qin-shihuang-unification-068.json
+            smart_voice/output/qin-shihuang-video-probe.json
+            smart_voice/output/qin-shihuang-audio-probe.json
+          if-no-files-found: error
+          retention-days: 30
+      - uses: actions/upload-artifact@v4
+        if: failure()
+        with:
+          name: qin-shihuang-unification-068-debug
+          path: smart_voice/output
+          if-no-files-found: ignore
+
