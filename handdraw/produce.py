@@ -52,8 +52,32 @@ class Gemini:
             raise RuntimeError('GEMINI_API_KEY is unavailable')
         self.cache = root / 'model-cache'
         self.cache.mkdir(parents=True, exist_ok=True)
-        self.text_model = os.environ.get('TEXT_MODEL') or 'gemini-2.5-flash'
-        self.image_model = os.environ.get('IMAGE_MODEL') or 'gemini-2.5-flash-image'
+        # Resolve only model IDs actually advertised to this credential.
+        req = urllib.request.Request('https://generativelanguage.googleapis.com/v1beta/models',
+                                     headers={'x-goog-api-key': self.key})
+        with urllib.request.urlopen(req, timeout=30) as response:
+            listing = json.load(response)
+        available = [m['name'].removeprefix('models/') for m in listing.get('models', [])
+                     if 'generateContent' in m.get('supportedGenerationMethods', [])]
+        save(root / 'available-models.json', {'generateContent': available})
+        print('Advertised generation models:', ', '.join(available), flush=True)
+        def choose(variable, preferred, image):
+            requested = os.environ.get(variable)
+            if requested:
+                if requested not in available:
+                    raise RuntimeError(variable + ' is not advertised by the API')
+                return requested
+            for name in preferred:
+                if name in available:
+                    return name
+            candidates = [n for n in available if ('image' in n or 'nano-banana' in n) == image
+                          and (image or ('flash' in n and 'tts' not in n and 'live' not in n))]
+            if not candidates:
+                raise RuntimeError('No advertised ' + ('image' if image else 'text') + ' generation model')
+            return sorted(candidates, reverse=True)[0]
+        self.text_model = choose('TEXT_MODEL', ['gemini-3.8-flash', 'gemini-3.5-flash', 'gemini-3-flash-preview', 'gemini-2.5-flash'], False)
+        self.image_model = choose('IMAGE_MODEL', ['gemini-3.1-flash-image', 'gemini-2.5-flash-image', 'gemini-3-pro-image'], True)
+        print('Selected models:', self.text_model, self.image_model, flush=True)
 
     def generate(self, parts, image=False):
         model = self.image_model if image else self.text_model
