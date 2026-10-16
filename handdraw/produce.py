@@ -216,10 +216,11 @@ def main(args):
     model = Gemini(root)
     font_path = '/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc'
     # Pass the actual official guidance to the model before any design or generation.
-    references = ['SKILL.md', 'references/story-design.md', 'references/style-and-drawing.md',
-                  'references/continuous-narration.md', 'references/runtime-contract.md',
-                  'dependencies/sweety-image-art-direction/GUIDE.md',
-                  'dependencies/omniailab-ai-director/references/FILM-ART GUIDE.md']
+    # Runtime contracts are enforced by the official engine below. The creative
+    # call needs the full art guide and story/drawing guidance, not duplicated
+    # CLI/runtime documentation (72KB previously returned service 503).
+    references = ['references/story-design.md', 'references/style-and-drawing.md',
+                  'dependencies/sweety-image-art-direction/GUIDE.md']
     guidance = '\n'.join((skill / name).read_text() for name in references)
     shape = '''Return one JSON object:
     {"title":"short Traditional Chinese cover title", "design": {"topic":"...",
