@@ -271,10 +271,14 @@ def main(args):
         text = ''.join(s['text'] for s in scenes)
         if len(text) > 300:
             raise ValueError('Keep this short narration within one existing 068 request')
-        narration = root / f'inputs/voice-{attempt}.txt'
+        text_hash = hashlib.sha256(text.encode()).hexdigest()
+        narration = root / f'inputs/voice-{text_hash[:16]}.txt'
         narration.parent.mkdir(parents=True, exist_ok=True)
         narration.write_text(text)
         mp3 = narration.with_suffix('.mp3')
+        legacy = root / f'inputs/voice-{attempt}.mp3'
+        if not mp3.exists() and legacy.exists() and json.loads(legacy.with_suffix('.json').read_text()).get('text_sha256') == text_hash:
+            mp3 = legacy
         if not mp3.exists():
             run(sys.executable, REPO / 'smart_voice/generate_voice.py', '--voice-id', '068', '--text-file', narration, '--output', mp3)
         metadata = json.loads(mp3.with_suffix('.json').read_text())
@@ -283,10 +287,20 @@ def main(args):
         hold = args.seconds - 1 - duration
         if .2 <= hold <= .8:
             break
-        story = model.json(guidance + '\n' + shape + '\nRevise only the full script and corresponding plans, preserving causal facts.\n' +
-                           json.dumps(story, ensure_ascii=False) +
-                           f'\nActual HsiaoChen +20% narration took {duration:.3f}s. Target {target:.3f}s. '
-                           f'Change character count approximately by factor {target/duration:.4f}; do not change the voice rate. This is revision {attempt+1}.')
+        revision = model.json('Copyedit only these four Traditional Chinese narration sentences, preserving every causal fact and their order. '
+                              'Do not design images or regenerate a storyboard. Each sentence has only one final 。 and may use commas. '
+                              'Return JSON {"sentences":["sentence1。","sentence2。","sentence3。","sentence4。"]}. '
+                              f'The actual narration took {duration:.3f}s; target {target:.3f}s. '
+                              f'Change total character count approximately from {len(text)} to {round(len(text)*target/duration)}. '
+                              'Keep natural, complete phrases. Do not add a slogan or filler.\n' +
+                              json.dumps([s['text'] for s in scenes], ensure_ascii=False))
+        sentences = revision.get('sentences', [])
+        if len(sentences) != len(scenes) or not all(isinstance(t, str) and t.endswith('。') for t in sentences):
+            raise ValueError('Narration-only revision must preserve the four sentence structure')
+        for scene, sentence in zip(scenes, sentences):
+            scene['text'] = sentence
+            for requirement in scene['plan']['narrative_requirements']:
+                requirement['narration_quote'] = sentence
     else:
         raise RuntimeError('Could not fit natural 068 narration to requested duration; no stretching or truncation performed')
     save(root / 'design.json', story['design'])
