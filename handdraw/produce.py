@@ -77,6 +77,34 @@ class Gemini:
             return sorted(candidates, reverse=True)[0]
         self.text_model = choose('TEXT_MODEL', ['gemini-3.5-flash', 'gemini-3.8-flash', 'gemini-3-flash-preview', 'gemini-2.5-flash'], False)
         self.image_model = choose('IMAGE_MODEL', ['gemini-3.1-flash-image', 'gemini-2.5-flash-image', 'gemini-3-pro-image'], True)
+        # A list response is not proof that generation works (observed 404/503).
+        # Probe small requests before spending a full storyboard request.
+        candidates = [self.text_model] if os.environ.get('TEXT_MODEL') else [
+            n for n in ['gemini-flash-latest', 'gemini-2.5-flash-lite', 'gemini-3-flash-preview',
+                        'gemini-3.1-flash-lite', 'gemini-2.5-pro', self.text_model] if n in available]
+        probes = []
+        for name in dict.fromkeys(candidates):
+            request = urllib.request.Request(
+                'https://generativelanguage.googleapis.com/v1beta/models/' + name + ':generateContent',
+                data=json.dumps({'contents': [{'parts': [{'text': 'Reply with the word OK.'}]}]}).encode(),
+                headers={'x-goog-api-key': self.key, 'Content-Type': 'application/json'})
+            try:
+                with urllib.request.urlopen(request, timeout=60) as response:
+                    result = json.load(response)
+                if not result.get('candidates'):
+                    raise RuntimeError('Empty generation probe')
+                probes.append({'model': name, 'status': 'generation_verified'})
+                self.text_model = name
+                break
+            except urllib.error.HTTPError as error:
+                probes.append({'model': name, 'http_status': error.code})
+                print('Generation probe:', name, error.code, flush=True)
+                if error.code not in (404, 429, 500, 502, 503, 504):
+                    raise RuntimeError('Model probe authorization/configuration error: HTTP ' + str(error.code)) from None
+        else:
+            save(root / 'model-probes.json', probes)
+            raise RuntimeError('No advertised model passed a real generation probe; provider unavailable')
+        save(root / 'model-probes.json', probes)
         print('Selected models:', self.text_model, self.image_model, flush=True)
 
     def generate(self, parts, image=False):
