@@ -1,0 +1,1 @@
+{"source": "inputs/s0.png", "canvas": [1080, 1920], "title_layers": [{"text": "一滴水", "position": [540, 220]}, {"text": "如何變成雨", "position": [540, 345]}], "font_source": "notofonts/noto-cjk Sans/OTF/TraditionalChinese/NotoSansCJKtc-Regular.otf", "font_size": 100}

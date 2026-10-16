@@ -53,19 +53,16 @@ jobs:
           path: |
             handdraw/output
             smart_voice/output/.068-cache
-          key: sweety-068-v1-${{ steps.topic.outputs.key }}-${{ github.run_id }}-${{ github.run_attempt }}
-          restore-keys: sweety-068-v1-${{ steps.topic.outputs.key }}-
-      - name: Generate script, official handdraw animation, existing 068 and verify full MP4
+          key: sweety-prepared-v1-${{ steps.topic.outputs.key }}-${{ github.run_id }}-${{ github.run_attempt }}
+          restore-keys: sweety-prepared-v1-${{ steps.topic.outputs.key }}-
+      - name: Render prepared official handdraw job using existing 068
         env:
-          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY || secrets.GOOGLE_API_KEY }}
-          TEXT_MODEL: ${{ vars.HANDDRAW_TEXT_MODEL }}
-          IMAGE_MODEL: ${{ vars.HANDDRAW_IMAGE_MODEL }}
           TOPIC: ${{ inputs.topic || '一滴水如何變成雨' }}
         run: |
           set -o pipefail
           mkdir -p handdraw/output
-          python -u handdraw/produce.py --topic "$TOPIC" --seconds 30 --official /tmp/sweety-official --output handdraw/output 2>&1 | tee handdraw/output/run.log
-      - name: Save completed model calls and verified voice work
+          python -u handdraw/produce.py --topic "$TOPIC" --seconds 30 --official /tmp/sweety-official --output handdraw/output/prepared 2>&1 | tee handdraw/output/run.log
+      - name: Save prepared job and verified voice work
         if: always()
         uses: actions/cache/save@v4
         with:
@@ -79,12 +76,12 @@ jobs:
         with:
           name: sweety-068-rain-1080x1920-${{ github.run_id }}
           path: |
-            handdraw/output/outputs/film.mp4
-            handdraw/output/outputs/cover.png
-            handdraw/output/outputs/editing/transcript.srt
-            handdraw/output/script.txt
-            handdraw/output/acceptance.json
-            handdraw/output/outputs/verification.json
+            handdraw/output/prepared/outputs/film.mp4
+            handdraw/output/prepared/outputs/cover.png
+            handdraw/output/prepared/outputs/editing/transcript.srt
+            handdraw/output/prepared/script.txt
+            handdraw/output/prepared/acceptance.json
+            handdraw/output/prepared/outputs/verification.json
           if-no-files-found: error
           retention-days: 30
       - name: Upload diagnostic evidence
@@ -94,15 +91,17 @@ jobs:
           name: sweety-diagnostics-${{ github.run_id }}-${{ github.run_attempt }}
           path: |
             handdraw/output/run.log
-            handdraw/output/story.json
-            handdraw/output/design.json
-            handdraw/output/design
-            handdraw/output/privacy
-            handdraw/output/*review.json
-            handdraw/output/job.json
-            handdraw/output/work/review
-            handdraw/output/work/verification.json
-            handdraw/output/inputs/*.json
-            handdraw/output/inputs/*.error.log
+            handdraw/output/prepared/voice-measurement.json
+            handdraw/output/prepared/acceptance.json
+            handdraw/prepared/rain/story.json
+            handdraw/output/prepared/design.json
+            handdraw/output/prepared/design
+            handdraw/output/prepared/privacy
+            handdraw/output/prepared/*review.json
+            handdraw/output/prepared/job.json
+            handdraw/output/prepared/work/review
+            handdraw/output/prepared/work/verification.json
+            handdraw/output/prepared/inputs/*.json
+            handdraw/output/prepared/inputs/*.error.log
           if-no-files-found: ignore
           retention-days: 14
