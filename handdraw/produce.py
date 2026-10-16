@@ -63,7 +63,7 @@ def main(args):
  from clean_image import clean_image
  from video_verifier import build_fingerprint, file_hash
  command=skill/'scripts/handdraw_video.py'
- fingerprint=hashlib.sha256(''.join(str(p.relative_to(bundle))+digest(p) for p in sorted(bundle.rglob('*')) if p.is_file()).encode()).hexdigest()
+ fingerprint=hashlib.sha256((digest(Path(__file__)) + ''.join(str(p.relative_to(bundle))+digest(p) for p in sorted(bundle.rglob('*')) if p.is_file())).encode()).hexdigest()
  receipt=root/'prepared-receipt.json'
  film=root/'outputs/film.mp4'
  cached=False
@@ -107,7 +107,7 @@ def main(args):
    pages.append({'beats':[{'id':s['id'],'text':s['text'],'actions':[
     {'type':'text','text':s['label'],'x':120,'y':250,'size':90,'weight':1},
     {'type':'illustration','drawing_plan_id':s['id'],'source':'inputs/'+s['id']+'.png','x':120,'y':480,'width':840,'height':840,'weight':5,'parts':s['parts']}]}]})
-  manifest={'version':1,'title':story['title'],'design_file':'design.json','canvas':{'width':1080,'height':1920,'fps':30},'paper':'#FFFFFF','font':{'path':font,'index':3},'cover':{'source':'inputs/cover.png','seconds':1},'hand':{'preset':'pen-only','pen_text':''},'narration':{'source':'inputs/master.wav','alignment':'inputs/alignment.json'},'audio':{'end_hold_seconds':hold},'ending':{'caption_hold_seconds':min(.2,hold)},'captions':{'font':{'path':font,'index':3},'font_size':46,'bottom_margin':210,'max_width_ratio':.9,'max_lines':2,'color':'#FFFFFF','stroke_color':'#151515','stroke_width':3,'background':None},'art_direction':{'record':'design/art-direction.json'},'drawing_plan':'design/drawing-plan.json','drawing_review':'design/drawing-review.json','pages':pages}
+  manifest={'version':1,'title':story['title'],'design_file':'design.json','canvas':{'width':1080,'height':1920,'fps':30},'paper':'#FFFFFF','font':{'path':font,'index':3},'cover':{'source':'inputs/cover.png','seconds':1},'hand':{'preset':'pen-only','scale':.25,'pen_text':''},'narration':{'source':'inputs/master.wav','alignment':'inputs/alignment.json'},'audio':{'end_hold_seconds':hold},'ending':{'caption_hold_seconds':min(.2,hold)},'captions':{'font':{'path':font,'index':3},'font_size':46,'bottom_margin':210,'max_width_ratio':.9,'max_lines':2,'color':'#FFFFFF','stroke_color':'#151515','stroke_width':3,'background':None},'art_direction':{'record':'design/art-direction.json'},'drawing_plan':'design/drawing-plan.json','drawing_review':'design/drawing-review.json','pages':pages}
   save(root/'job.json',manifest);(root/'script.txt').write_text(text)
   for stage in ['doctor','build']:run(sys.executable,command,stage,root)
   run(sys.executable,command,'verify',root,'--assets-only')
