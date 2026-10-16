@@ -13,3 +13,7 @@ Actual run 38905654953, job 116988438504 failed at Check configured model connec
 New workflow: .github/workflows/sweety-handdraw-068.yml, branch integration/sweety-handdraw-068. Supports manual topic input and branch push preflight. Separate official-runtime job verifies official regressions/smoke and existing 068 tests independently of the credential check. Smoke video is a fixture and must never be delivered as the requested story. This workflow is a preflight only; it does NOT yet implement topic-to-production-video automation.
 
 Remaining: connect an authorized model credential; implement model-authored script, style/drawing plan, guided images and real visual reviews, measured narration alignment via existing 068 SRT, production job build, official render/verify, 1080x1920/30s MP4 checks and final artifact upload. Preserve all official production gates. Test case: 一滴水如何變成雨. No final MP4/artifact exists. Keep PR draft, do not merge or report complete.
+
+## Verified independent results
+
+Run 38905748444: official-runtime SUCCESS. Existing 068: 7 tests passed; official upstream: 59 tests passed; official offline animation smoke passed, including H.264/AAC full decode and fixture delivery rejection. Evidence artifact 12048331571 contains reports only, NOT the requested MP4. model-connection failed due to the two unavailable secret names. No retry without a relevant configuration change.
