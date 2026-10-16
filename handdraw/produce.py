@@ -253,10 +253,17 @@ def main(args):
     target = args.seconds - 1.5
     for attempt in range(8):
         scenes = story['scenes']
+        save(root / f'story-attempt-{attempt}.json', story)
         for i, scene in enumerate(scenes):
             if not 1 <= len(scene['label']) <= 6 or not scene['text'].endswith('。'):
                 raise ValueError('Invalid scene label or sentence')
             scene['plan']['id'] = f's{i}'
+            # The model-authored semantic part list is authoritative. Both
+            # execution phases must follow that exact list under Sweety's
+            # contract; do not rely on separately generated ID aliases.
+            order = [part['id'] for part in scene['plan']['parts']]
+            scene['plan']['outline_order'] = order
+            scene['plan']['fill_order'] = order
             validate_plan(scene['plan'])
         text = ''.join(s['text'] for s in scenes)
         if len(text) > 300:
