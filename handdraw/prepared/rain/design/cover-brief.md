@@ -1,0 +1,1 @@
+Portrait cover with verified first illustration, two precise editable Traditional Chinese title lines, ample white margins. No added imagery or slogans.

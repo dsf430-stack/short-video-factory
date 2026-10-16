@@ -1,0 +1,15 @@
+{
+  "status": "resolved",
+  "mode": "inferred",
+  "selection_sha256": "9180140ba25f7362480c89ae121295e762d1efb9934305306b62e069cdb39726",
+  "style_name": "藍黃水循環手繪",
+  "rationale": "Use spare thick ink contours and flat water-blue / sunshine-yellow accents for quick readable progressive drawing.",
+  "content_fit": "Separate the sun, water surface, cloud droplets and falling rain into physical causal stages.",
+  "style_spec": {
+    "line": "rounded black ink contours with few independent strokes",
+    "palette": "water blue, warm yellow, white",
+    "shading": "flat local color, no hatching",
+    "texture": "clean white paper",
+    "background": "pure white, isolated subjects"
+  }
+}

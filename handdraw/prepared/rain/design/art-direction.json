@@ -1,0 +1,66 @@
+{
+  "dependency_sha256": "fbbfd33d70f729011b6a6bc232851c116cd4a89ead2adea4462888a6ce26fc1a",
+  "style_sha256": "cea649b9236b27600d376c97d79ca12cfee5a60e52152e48aa6588ea95706be5",
+  "images": [
+    {
+      "source": "../inputs/s0.png",
+      "method": "generated_under_guidance",
+      "brief_file": "s0-brief.md",
+      "prompt_file": "s0-prompt.txt",
+      "brief_sha256": "065644d36301bdf03b527ac63891b365fedbb9e32e07a89678966f2559a86e80",
+      "prompt_sha256": "772060568e161b0a1e1c637e324ba0f02522bf43308237d64c6d3ef309c06212",
+      "sha256": "19f6c37eef4e42517b0eb5d2f55ed2f033daf08ea1b6705d3f4244de8329c6d7",
+      "status": "pass",
+      "evidence": "Viewed generated source: yellow sun and eight separate rays in upper-left; three blue rising arrows in center; low blue ocean at bottom. Arrows are direction symbols, not visible vapor. No text, humans or clipped subject.",
+      "pixel_sha256": "87d99e4a811e205fe755cd6324efea5febc73ef600fd0b41de9fffcad28160d3"
+    },
+    {
+      "source": "../inputs/s1.png",
+      "method": "generated_under_guidance",
+      "brief_file": "s1-brief.md",
+      "prompt_file": "s1-prompt.txt",
+      "brief_sha256": "c0229d93609d9bab315d3d12a192e001dbeb32207fe8896562b21ecacf86d1c5",
+      "prompt_sha256": "709df5d04972936be814703b2dfb19242b74a2ce807bbf45915fc4e624325fee",
+      "sha256": "4436516bad2acfa59fab5ee42ec6ad1822094d269e722cbbb697214ab367b47d",
+      "status": "pass",
+      "evidence": "Viewed generated source: one rounded cloud silhouette above five separate circular blue droplet symbols. Schematic view, not a literal scale claim; no lettering. Cloud contour and droplet group are separated by white space.",
+      "pixel_sha256": "79874f447fd5d259e4385450e731cd8396b1591cd6695f72276f3e3a5f68c470"
+    },
+    {
+      "source": "../inputs/s2.png",
+      "method": "generated_under_guidance",
+      "brief_file": "s2-brief.md",
+      "prompt_file": "s2-prompt.txt",
+      "brief_sha256": "8ab69034968a433edf2f340d41a02d807f0113648da05c31452f3cdb010d8118",
+      "prompt_sha256": "21f3b8d6b6af92fc15949983666b5c934fb307168bae7a4029b38af5c3a874ad",
+      "sha256": "094a9dbe901bf358945e854d2af86dd9acafd38059543c96ee41f4a9df62a501",
+      "status": "pass",
+      "evidence": "Viewed generated source: two small blue droplet silhouettes at left, yellow right arrow at center, larger blue droplet at right; clear left-to-right coalescence diagram, no text.",
+      "pixel_sha256": "452f88115dce77516814c933fb6c2fe2555bdd7bf1269507de747ef67c900bc7"
+    },
+    {
+      "source": "../inputs/s3.png",
+      "method": "generated_under_guidance",
+      "brief_file": "s3-brief.md",
+      "prompt_file": "s3-prompt.txt",
+      "brief_sha256": "7f1b12a46f0afaaf0cc2c1cbe34d1dfbae3bd116c34c7c4d4be4888a8686b869",
+      "prompt_sha256": "9c2c8cd93df1284897a9f1b4aa45dab7ad4ac6ca6becfb335ab241f594b8ca1a",
+      "sha256": "d67a21ae82b26b2ce1d444223d1a439cff0b6ddcd480b96e697f7f8de8ebadae",
+      "status": "pass",
+      "evidence": "Viewed generated source: cloud at top, five separate falling drop silhouettes below, shallow water shape at bottom; black contours separated by white pen-up gaps; no lettering.",
+      "pixel_sha256": "0f96ce6a0dc9e0bf8d155dffd985742b20012a8467d733bb264a632740bbaf13"
+    },
+    {
+      "source": "../inputs/cover.png",
+      "method": "composed_with_verified_layers",
+      "brief_file": "cover-brief.md",
+      "brief_sha256": "8913bc422f3d90ecb19bc30a8a91dec6715feccc8e1cf2ed3c4e937c59c67ade",
+      "prompt_file": "cover-prompt.txt",
+      "prompt_sha256": "1875571171dc047a1ce64e1a135668caa9899ded4cdc2ab09312f87d0d2e22c9",
+      "status": "pass",
+      "evidence": "Actually viewed 1080x1920 composed cover: exact two-line Traditional Chinese title 一滴水 / 如何變成雨, no clipping, verified sun/arrows/ocean illustration beneath, generous margins and no extra captions.",
+      "sha256": "1015cdb2491c9a9524fa27d0f333b34c43bb59af6ffaeb811967e02849c408eb",
+      "pixel_sha256": "9cd1e6a4267ef23bfc5e01507e5b49d3dd3e318a9fa6d63357db4e21c16f6b8f"
+    }
+  ]
+}

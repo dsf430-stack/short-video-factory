@@ -1,0 +1,128 @@
+"""Render assistant-prepared, reviewed jobs using official Sweety + existing 068.
+No model API or model API key is used by this entry point.
+"""
+import argparse, hashlib, json, re, shutil, subprocess, sys
+from pathlib import Path
+REPO=Path(__file__).resolve().parents[1]
+PIN='5206ec0d17f9b353e400b64b9c51ad69e721e02a'
+def digest(p): return hashlib.sha256(Path(p).read_bytes()).hexdigest()
+def save(p,v):
+ p=Path(p);p.parent.mkdir(parents=True,exist_ok=True);p.write_text(json.dumps(v,ensure_ascii=False,indent=2)+'\n')
+def run(*a): subprocess.run([str(x) for x in a],check=True)
+def normalize(t): return ''.join(c for c in t if c.isalnum())
+def parse_srt(path):
+    def seconds(value):
+        hours, minutes, tail = value.replace(',', '.').split(':')
+        return int(hours) * 3600 + int(minutes) * 60 + float(tail)
+    result = []
+    for block in re.split(r'\n\s*\n', Path(path).read_text().strip()):
+        lines = block.splitlines()
+        left, right = lines[1].split(' --> ')
+        result.append({'start': seconds(left), 'end': seconds(right), 'text': ''.join(lines[2:])})
+    return result
+
+
+def align_scenes(scenes, events):
+    """Map real Edge sentence boundaries; never interpolate character timing."""
+    result, offset = [], 0
+    for index, scene in enumerate(scenes):
+        selected, found = [], ''
+        expected = normalize(scene['text'])
+        while offset < len(events) and len(found) < len(expected):
+            event = events[offset]
+            selected.append(event)
+            found += normalize(event['text'])
+            offset += 1
+        if found != expected or not selected:
+            raise ValueError('Edge sentence boundaries do not match storyboard scene ' + str(index))
+        start = selected[0]['start']
+        if result and start < result[-1]['end']:
+            if result[-1]['end'] - start > .02:
+                raise ValueError('Measured sentence boundaries overlap')
+            start = result[-1]['end']
+        end = selected[-1]['end']
+        result.append({'id': f's{index}', 'text': scene['text'], 'start': start, 'end': end,
+                       'caption_cues': [{'text': scene['text'], 'start': 0, 'end': end - start}]})
+    if offset != len(events):
+        raise ValueError('Unmapped Edge sentence events')
+    return result
+
+
+
+def main(args):
+ from PIL import Image
+ catalog=json.loads((REPO/'handdraw/prepared/catalog.json').read_text())
+ if args.topic not in catalog:
+  raise ValueError('此主題尚未備妥素材。請先在 ChatGPT 提供主題，準備官方手繪任務後再啟動。')
+ bundle=REPO/'handdraw/prepared'/catalog[args.topic]
+ root=Path(args.output).resolve();root.mkdir(parents=True,exist_ok=True)
+ skill=Path(args.official).resolve()/'skills/sweety-handdraw-video'
+ actual=subprocess.check_output(['git','-C',str(skill),'rev-parse','HEAD'],text=True).strip()
+ if actual!=PIN: raise ValueError('Official source pin changed')
+ sys.path.insert(0,str(skill/'scripts'))
+ from clean_image import clean_image
+ from video_verifier import build_fingerprint, file_hash
+ command=skill/'scripts/handdraw_video.py'
+ fingerprint=hashlib.sha256((digest(Path(__file__)) + ''.join(str(p.relative_to(bundle))+digest(p) for p in sorted(bundle.rglob('*')) if p.is_file())).encode()).hexdigest()
+ receipt=root/'prepared-receipt.json'
+ film=root/'outputs/film.mp4'
+ cached=False
+ if receipt.exists() and film.exists() and json.loads(receipt.read_text()).get('bundle_sha256')==fingerprint:
+  try:
+   record=json.loads((root/'work/render-record.json').read_text())
+   cached=record['video_sha256']==file_hash(film) and record['build_fingerprint']==build_fingerprint(root)
+  except (ValueError,FileNotFoundError,KeyError): pass
+ if not cached:
+  for directory in ['style','design','inputs']:
+   shutil.copytree(bundle/directory,root/directory,dirs_exist_ok=True)
+  shutil.copyfile(bundle/'design.json',root/'design.json')
+  story=json.loads((bundle/'story.json').read_text()); scenes=story['scenes']
+  text=''.join(s['text'] for s in scenes);text_hash=hashlib.sha256(text.encode()).hexdigest()
+  narration=root/f'inputs/voice-{text_hash[:16]}.txt';narration.write_text(text)
+  mp3=narration.with_suffix('.mp3')
+  if not mp3.exists():run(sys.executable,REPO/'smart_voice/generate_voice.py','--voice-id','068','--text-file',narration,'--output',mp3)
+  meta=json.loads(mp3.with_suffix('.json').read_text())
+  if meta['text_sha256']!=text_hash or meta['voice_id']!='068' or meta['sha256']!=digest(mp3):raise ValueError('Voice cache mismatch')
+  duration=meta['duration'];hold=args.seconds-1-duration
+  save(root/'voice-measurement.json',{'narration_seconds':duration,'target_film_seconds':args.seconds,'required_ending_hold':hold,'text':text,'voice':meta['preset']})
+  print('MEASURED_NARRATION_SECONDS',duration,'REQUIRED_END_HOLD',hold,flush=True)
+  if not .2<=hold<=.8:raise ValueError('Adjust narration text naturally to fit the requested duration; do not stretch or truncate 068')
+  master=root/'inputs/master.wav';run('ffmpeg','-y','-v','error','-i',mp3,'-ar',48000,'-ac',1,'-c:a','pcm_s16le',master)
+  beats=align_scenes(scenes,parse_srt(mp3.with_suffix('.srt')))
+  save(root/'inputs/alignment.json',{'version':1,'source_sha256':digest(master),'script_sha256':text_hash,'beats':beats})
+  art=json.loads((root/'design/art-direction.json').read_text());drawing=json.loads((root/'design/drawing-review.json').read_text())
+  for entry in art['images']:
+   image=(root/'design'/entry['source']).resolve()
+   pixels=lambda:hashlib.sha256(Image.open(image).convert('RGBA').tobytes()).hexdigest()
+   if entry['sha256']!=digest(image) or entry['pixel_sha256']!=pixels():raise ValueError('Reviewed source image changed')
+   clean_image(image,root/'privacy'/f'{image.stem}.json')
+   if pixels()!=entry['pixel_sha256']:raise ValueError('Privacy cleanup altered reviewed pixels')
+   entry['sha256']=digest(image)
+   for review in drawing['illustrations']:
+    if review['plan_id']==image.stem:review['source_sha256']=digest(image)
+  save(root/'design/art-direction.json',art);save(root/'design/drawing-review.json',drawing)
+  font='/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc'
+  pages=[]
+  for s in scenes:
+   pages.append({'beats':[{'id':s['id'],'text':s['text'],'actions':[
+    {'type':'text','text':s['label'],'x':120,'y':250,'size':90,'weight':1},
+    {'type':'illustration','drawing_plan_id':s['id'],'source':'inputs/'+s['id']+'.png','x':120,'y':480,'width':840,'height':840,'weight':5,'parts':s['parts']}]}]})
+  manifest={'version':1,'title':story['title'],'design_file':'design.json','canvas':{'width':1080,'height':1920,'fps':30},'paper':'#FFFFFF','font':{'path':font,'index':3},'cover':{'source':'inputs/cover.png','seconds':1},'hand':{'preset':'pen-only','scale':.25,'pen_text':''},'narration':{'source':'inputs/master.wav','alignment':'inputs/alignment.json'},'audio':{'end_hold_seconds':hold},'ending':{'caption_hold_seconds':min(.2,hold)},'captions':{'font':{'path':font,'index':3},'font_size':46,'bottom_margin':210,'max_width_ratio':.9,'max_lines':2,'color':'#FFFFFF','stroke_color':'#151515','stroke_width':3,'background':None},'art_direction':{'record':'design/art-direction.json'},'drawing_plan':'design/drawing-plan.json','drawing_review':'design/drawing-review.json','pages':pages}
+  save(root/'job.json',manifest);(root/'script.txt').write_text(text)
+  for stage in ['doctor','build']:run(sys.executable,command,stage,root)
+  run(sys.executable,command,'verify',root,'--assets-only')
+  run(sys.executable,command,'render',root,'--preview','--start',1,'--duration',7)
+  run(sys.executable,command,'render',root)
+  save(receipt,{'bundle_sha256':fingerprint,'official_commit':PIN})
+ run(sys.executable,command,'verify',root)
+ probe=json.loads(subprocess.check_output(['ffprobe','-v','error','-show_streams','-show_format','-of','json',str(film)]))
+ v=next(s for s in probe['streams'] if s['codec_type']=='video')
+ if (v['width'],v['height'],v['avg_frame_rate'])!=(1080,1920,'30/1') or abs(float(v['duration'])-args.seconds)>.05:raise ValueError('Requested format or duration failed')
+ report={'status':'ENGINEERING_PASS','topic':args.topic,'seconds':float(v['duration']),'official_commit':PIN,'voice':'068','sha256':digest(film),'human_listening':'UNCERTAIN','model_api_required':False}
+ review_path=REPO/'handdraw/final-reviews'/f"{digest(film)}.json"
+ if review_path.exists():
+  shutil.copyfile(review_path,root/'review.json');run(sys.executable,command,'finalize',root);report['status']='SUCCESS'
+ save(root/'acceptance.json',report)
+ print('VERIFIED_FILM',str(film),json.dumps(report),flush=True)
+if __name__=='__main__':
+ p=argparse.ArgumentParser(description=__doc__);p.add_argument('--topic',required=True);p.add_argument('--seconds',type=int,default=30);p.add_argument('--official',required=True);p.add_argument('--output',required=True);main(p.parse_args())

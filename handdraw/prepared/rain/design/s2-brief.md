@@ -1,0 +1,1 @@
+Purpose: explain water cycle to a general audience on a portrait phone screen. Two small blue droplets at left, a simple right-pointing arrow in center, one larger blue droplet at right. Keep all parts separate and readable, blue represents liquid water, yellow represents sun energy. No imitation photography or generated text. Drawing complexity must fit about seven seconds.

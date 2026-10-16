@@ -1,0 +1,79 @@
+{
+  "style_sha256": "cea649b9236b27600d376c97d79ca12cfee5a60e52152e48aa6588ea95706be5",
+  "plan_sha256": "bb23399f00a0b89c6f94510b58623bb2a73898e3016768a637602aec2b25826c",
+  "illustrations": [
+    {
+      "plan_id": "s0",
+      "status": "pass",
+      "source_sha256": "19f6c37eef4e42517b0eb5d2f55ed2f033daf08ea1b6705d3f4244de8329c6d7",
+      "crop": null,
+      "anatomy_and_occlusion": "No humans or animals; independent schematic objects, no occluded anatomy. Viewed generated source: yellow sun and eight separate rays in upper-left; three blue rising arrows in center; low blue ocean at bottom. Arrows are direction symbols, not visible vapor. No text, humans or clipped subject.",
+      "part_boundaries": "Normalized semantic regions follow observed sun/arrows/ocean, cloud/droplet group, left drops/arrow/right drop, or cloud/rain/lake respectively. Boundaries lie in visible white gaps; earlier regions own any shared antialias edge.",
+      "stroke_breaks": "Separate rays, arrow contours, cloud scallops and isolated droplet contours require individual lifted strokes; no bridge across blank paper.",
+      "outline_then_fill": "Thick dark contours are visible for every primary object; preserve soft blue/yellow fill variation and reveal color only after all contours.",
+      "spatial_order": "Semantic order follows the listed parts; the merge scene follows the preplanned left-to-right causal diagram.",
+      "narrative_checks": [
+        {
+          "id": "s0_cause",
+          "status": "pass",
+          "evidence": "Viewed generated source: yellow sun and eight separate rays in upper-left; three blue rising arrows in center; low blue ocean at bottom. Arrows are direction symbols, not visible vapor. No text, humans or clipped subject."
+        }
+      ]
+    },
+    {
+      "plan_id": "s1",
+      "status": "pass",
+      "source_sha256": "4436516bad2acfa59fab5ee42ec6ad1822094d269e722cbbb697214ab367b47d",
+      "crop": null,
+      "anatomy_and_occlusion": "No humans or animals; independent schematic objects, no occluded anatomy. Viewed generated source: one rounded cloud silhouette above five separate circular blue droplet symbols. Schematic view, not a literal scale claim; no lettering. Cloud contour and droplet group are separated by white space.",
+      "part_boundaries": "Normalized semantic regions follow observed sun/arrows/ocean, cloud/droplet group, left drops/arrow/right drop, or cloud/rain/lake respectively. Boundaries lie in visible white gaps; earlier regions own any shared antialias edge.",
+      "stroke_breaks": "Separate rays, arrow contours, cloud scallops and isolated droplet contours require individual lifted strokes; no bridge across blank paper.",
+      "outline_then_fill": "Thick dark contours are visible for every primary object; preserve soft blue/yellow fill variation and reveal color only after all contours.",
+      "spatial_order": "Semantic order follows the listed parts; the merge scene follows the preplanned left-to-right causal diagram.",
+      "narrative_checks": [
+        {
+          "id": "s1_cause",
+          "status": "pass",
+          "evidence": "Viewed generated source: one rounded cloud silhouette above five separate circular blue droplet symbols. Schematic view, not a literal scale claim; no lettering. Cloud contour and droplet group are separated by white space."
+        }
+      ]
+    },
+    {
+      "plan_id": "s2",
+      "status": "pass",
+      "source_sha256": "094a9dbe901bf358945e854d2af86dd9acafd38059543c96ee41f4a9df62a501",
+      "crop": null,
+      "anatomy_and_occlusion": "No humans or animals; independent schematic objects, no occluded anatomy. Viewed generated source: two small blue droplet silhouettes at left, yellow right arrow at center, larger blue droplet at right; clear left-to-right coalescence diagram, no text.",
+      "part_boundaries": "Normalized semantic regions follow observed sun/arrows/ocean, cloud/droplet group, left drops/arrow/right drop, or cloud/rain/lake respectively. Boundaries lie in visible white gaps; earlier regions own any shared antialias edge.",
+      "stroke_breaks": "Separate rays, arrow contours, cloud scallops and isolated droplet contours require individual lifted strokes; no bridge across blank paper.",
+      "outline_then_fill": "Thick dark contours are visible for every primary object; preserve soft blue/yellow fill variation and reveal color only after all contours.",
+      "spatial_order": "Semantic order follows the listed parts; the merge scene follows the preplanned left-to-right causal diagram.",
+      "narrative_checks": [
+        {
+          "id": "s2_cause",
+          "status": "pass",
+          "evidence": "Viewed generated source: two small blue droplet silhouettes at left, yellow right arrow at center, larger blue droplet at right; clear left-to-right coalescence diagram, no text."
+        }
+      ]
+    },
+    {
+      "plan_id": "s3",
+      "status": "pass",
+      "source_sha256": "d67a21ae82b26b2ce1d444223d1a439cff0b6ddcd480b96e697f7f8de8ebadae",
+      "crop": null,
+      "anatomy_and_occlusion": "No humans or animals; independent schematic objects, no occluded anatomy. Viewed generated source: cloud at top, five separate falling drop silhouettes below, shallow water shape at bottom; black contours separated by white pen-up gaps; no lettering.",
+      "part_boundaries": "Normalized semantic regions follow observed sun/arrows/ocean, cloud/droplet group, left drops/arrow/right drop, or cloud/rain/lake respectively. Boundaries lie in visible white gaps; earlier regions own any shared antialias edge.",
+      "stroke_breaks": "Separate rays, arrow contours, cloud scallops and isolated droplet contours require individual lifted strokes; no bridge across blank paper.",
+      "outline_then_fill": "Thick dark contours are visible for every primary object; preserve soft blue/yellow fill variation and reveal color only after all contours.",
+      "spatial_order": "Semantic order follows the listed parts; the merge scene follows the preplanned left-to-right causal diagram.",
+      "narrative_checks": [
+        {
+          "id": "s3_cause",
+          "status": "pass",
+          "evidence": "Viewed generated source: cloud at top, five separate falling drop silhouettes below, shallow water shape at bottom; black contours separated by white pen-up gaps; no lettering."
+        }
+      ]
+    }
+  ],
+  "revision_note": "Only removed 原本 and 最後 (four narration characters); visible objects/parts/order unchanged and re-evaluated against the already viewed images. Original generation preflight is retained in drawing-plan.before-text-trim.json."
+}

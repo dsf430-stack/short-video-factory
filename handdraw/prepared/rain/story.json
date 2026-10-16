@@ -1,0 +1,522 @@
+{
+  "topic": "一滴水如何變成雨",
+  "title": "一滴水如何變成雨",
+  "scenes": [
+    {
+      "id": "s0",
+      "text": "天空的雨，可能是一滴海水，太陽加熱水面，讓水變成看不見的水蒸氣，進入空氣。",
+      "label": "陽光蒸發",
+      "plan": {
+        "id": "s0",
+        "composition": "Sun upper-left, three sparse upward curved arrows in center, a low blue ocean surface at bottom, nothing overlaps.",
+        "drawability_reason": "Few isolated semantic objects with broad visible ink contours; no anatomy or occlusion; each outline can be traced independently before sparse flat filling.",
+        "outline_strategy": "visible_source_ink",
+        "spatial_order": "top_to_bottom_left_to_right",
+        "subjects": [
+          {
+            "id": "sun",
+            "kind": "object"
+          },
+          {
+            "id": "upward_arrows",
+            "kind": "object"
+          },
+          {
+            "id": "ocean",
+            "kind": "object"
+          }
+        ],
+        "parts": [
+          {
+            "id": "s0_sun",
+            "subject": "sun",
+            "role": "sun",
+            "stroke_groups": [
+              "independent outer contour",
+              "separate internal accent only if visible"
+            ]
+          },
+          {
+            "id": "s0_upward_arrows",
+            "subject": "upward_arrows",
+            "role": "upward_arrows",
+            "stroke_groups": [
+              "independent outer contour",
+              "separate internal accent only if visible"
+            ]
+          },
+          {
+            "id": "s0_ocean",
+            "subject": "ocean",
+            "role": "ocean",
+            "stroke_groups": [
+              "independent outer contour",
+              "separate internal accent only if visible"
+            ]
+          }
+        ],
+        "outline_order": [
+          "s0_sun",
+          "s0_upward_arrows",
+          "s0_ocean"
+        ],
+        "fill_order": [
+          "s0_sun",
+          "s0_upward_arrows",
+          "s0_ocean"
+        ],
+        "narrative_requirements": [
+          {
+            "id": "s0_cause",
+            "narration_quote": "天空的雨，可能是一滴海水，太陽加熱水面，讓水變成看不見的水蒸氣，進入空氣。",
+            "observable": "Sun upper-left, three sparse upward curved arrows in center, a low blue ocean surface at bottom, nothing overlaps."
+          }
+        ]
+      },
+      "prompt": "Use case: illustration-story. Asset type: illustration source for real progressive ink-and-fill animation. Square white canvas, generous 12 percent white margins. Simple charming hand-drawn rounded black ink outlines, uniform bold line thickness, very sparse clear silhouette, two flat colors sky blue and sunny yellow. Absolutely no writing, no letters, no numbers, no border, no watermark, no texture, no hatching, no gradients, no decorative dots. No people or animals. Composition: Sun upper-left, three sparse upward curved arrows in center, a low blue ocean surface at bottom, nothing overlaps.",
+      "parts": [
+        {
+          "id": "s0_sun",
+          "polygon": [
+            [
+              0,
+              0
+            ],
+            [
+              0.44,
+              0
+            ],
+            [
+              0.44,
+              0.39
+            ],
+            [
+              0,
+              0.39
+            ]
+          ]
+        },
+        {
+          "id": "s0_upward_arrows",
+          "polygon": [
+            [
+              0.25,
+              0.34
+            ],
+            [
+              0.82,
+              0.34
+            ],
+            [
+              0.82,
+              0.79
+            ],
+            [
+              0.25,
+              0.79
+            ]
+          ]
+        },
+        {
+          "id": "s0_ocean",
+          "polygon": [
+            [
+              0,
+              0.78
+            ],
+            [
+              1,
+              0.78
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              0,
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s1",
+      "text": "潮濕空氣上升後溫度降低，水蒸氣在微小顆粒上凝結成小水滴，許多小水滴聚集成雲。",
+      "label": "遇冷凝結",
+      "plan": {
+        "id": "s1",
+        "composition": "One softly scalloped cloud in upper half with five tiny blue circular droplets grouped beneath it; show cloud as droplets, not vapor.",
+        "drawability_reason": "Few isolated semantic objects with broad visible ink contours; no anatomy or occlusion; each outline can be traced independently before sparse flat filling.",
+        "outline_strategy": "visible_source_ink",
+        "spatial_order": "top_to_bottom_left_to_right",
+        "subjects": [
+          {
+            "id": "cloud_contour",
+            "kind": "object"
+          },
+          {
+            "id": "tiny_droplets",
+            "kind": "object"
+          }
+        ],
+        "parts": [
+          {
+            "id": "s1_cloud_contour",
+            "subject": "cloud_contour",
+            "role": "cloud_contour",
+            "stroke_groups": [
+              "independent outer contour",
+              "separate internal accent only if visible"
+            ]
+          },
+          {
+            "id": "s1_tiny_droplets",
+            "subject": "tiny_droplets",
+            "role": "tiny_droplets",
+            "stroke_groups": [
+              "independent outer contour",
+              "separate internal accent only if visible"
+            ]
+          }
+        ],
+        "outline_order": [
+          "s1_cloud_contour",
+          "s1_tiny_droplets"
+        ],
+        "fill_order": [
+          "s1_cloud_contour",
+          "s1_tiny_droplets"
+        ],
+        "narrative_requirements": [
+          {
+            "id": "s1_cause",
+            "narration_quote": "潮濕空氣上升後溫度降低，水蒸氣在微小顆粒上凝結成小水滴，許多小水滴聚集成雲。",
+            "observable": "One softly scalloped cloud in upper half with five tiny blue circular droplets grouped beneath it; show cloud as droplets, not vapor."
+          }
+        ]
+      },
+      "prompt": "Use case: illustration-story. Asset type: illustration source for real progressive ink-and-fill animation. Square white canvas, generous 12 percent white margins. Simple charming hand-drawn rounded black ink outlines, uniform bold line thickness, very sparse clear silhouette, two flat colors sky blue and sunny yellow. Absolutely no writing, no letters, no numbers, no border, no watermark, no texture, no hatching, no gradients, no decorative dots. No people or animals. Composition: One softly scalloped cloud in upper half with five tiny blue circular droplets grouped beneath it; show cloud as droplets, not vapor.",
+      "parts": [
+        {
+          "id": "s1_cloud_contour",
+          "polygon": [
+            [
+              0,
+              0
+            ],
+            [
+              1,
+              0
+            ],
+            [
+              1,
+              0.58
+            ],
+            [
+              0,
+              0.58
+            ]
+          ]
+        },
+        {
+          "id": "s1_tiny_droplets",
+          "polygon": [
+            [
+              0,
+              0.58
+            ],
+            [
+              1,
+              0.58
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              0,
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "text": "雲裡的小水滴互相碰撞，有些合併成更大的水滴，當它們逐漸長大，就更容易往下落。",
+      "label": "水滴長大",
+      "plan": {
+        "id": "s2",
+        "composition": "Two small blue droplets at left, a simple right-pointing arrow in center, one larger blue droplet at right.",
+        "drawability_reason": "Few isolated semantic objects with broad visible ink contours; no anatomy or occlusion; each outline can be traced independently before sparse flat filling.",
+        "outline_strategy": "visible_source_ink",
+        "spatial_order": "top_to_bottom_left_to_right",
+        "subjects": [
+          {
+            "id": "small_drops",
+            "kind": "object"
+          },
+          {
+            "id": "merge_arrow",
+            "kind": "object"
+          },
+          {
+            "id": "large_drop",
+            "kind": "object"
+          }
+        ],
+        "parts": [
+          {
+            "id": "s2_small_drops",
+            "subject": "small_drops",
+            "role": "small_drops",
+            "stroke_groups": [
+              "independent outer contour",
+              "separate internal accent only if visible"
+            ]
+          },
+          {
+            "id": "s2_merge_arrow",
+            "subject": "merge_arrow",
+            "role": "merge_arrow",
+            "stroke_groups": [
+              "independent outer contour",
+              "separate internal accent only if visible"
+            ]
+          },
+          {
+            "id": "s2_large_drop",
+            "subject": "large_drop",
+            "role": "large_drop",
+            "stroke_groups": [
+              "independent outer contour",
+              "separate internal accent only if visible"
+            ]
+          }
+        ],
+        "outline_order": [
+          "s2_small_drops",
+          "s2_merge_arrow",
+          "s2_large_drop"
+        ],
+        "fill_order": [
+          "s2_small_drops",
+          "s2_merge_arrow",
+          "s2_large_drop"
+        ],
+        "narrative_requirements": [
+          {
+            "id": "s2_cause",
+            "narration_quote": "雲裡的小水滴互相碰撞，有些合併成更大的水滴，當它們逐漸長大，就更容易往下落。",
+            "observable": "Two small blue droplets at left, a simple right-pointing arrow in center, one larger blue droplet at right."
+          }
+        ]
+      },
+      "prompt": "Use case: illustration-story. Asset type: illustration source for real progressive ink-and-fill animation. Square white canvas, generous 12 percent white margins. Simple charming hand-drawn rounded black ink outlines, uniform bold line thickness, very sparse clear silhouette, two flat colors sky blue and sunny yellow. Absolutely no writing, no letters, no numbers, no border, no watermark, no texture, no hatching, no gradients, no decorative dots. No people or animals. Composition: Two small blue droplets at left, a simple right-pointing arrow in center, one larger blue droplet at right.",
+      "parts": [
+        {
+          "id": "s2_small_drops",
+          "polygon": [
+            [
+              0,
+              0
+            ],
+            [
+              0.39,
+              0
+            ],
+            [
+              0.39,
+              1
+            ],
+            [
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "id": "s2_merge_arrow",
+          "polygon": [
+            [
+              0.39,
+              0
+            ],
+            [
+              0.62,
+              0
+            ],
+            [
+              0.62,
+              1
+            ],
+            [
+              0.39,
+              1
+            ]
+          ]
+        },
+        {
+          "id": "s2_large_drop",
+          "polygon": [
+            [
+              0.62,
+              0
+            ],
+            [
+              1,
+              0
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              0.62,
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "text": "水滴長得夠大，便能穿過上升氣流，落向地面成為雨，回到河流與海洋，繼續循環。",
+      "label": "雨落大地",
+      "plan": {
+        "id": "s3",
+        "composition": "A softly scalloped blue-white cloud at top, five falling blue drops in middle, a shallow blue lake/water line at bottom.",
+        "drawability_reason": "Few isolated semantic objects with broad visible ink contours; no anatomy or occlusion; each outline can be traced independently before sparse flat filling.",
+        "outline_strategy": "visible_source_ink",
+        "spatial_order": "top_to_bottom_left_to_right",
+        "subjects": [
+          {
+            "id": "cloud",
+            "kind": "object"
+          },
+          {
+            "id": "falling_drops",
+            "kind": "object"
+          },
+          {
+            "id": "lake",
+            "kind": "object"
+          }
+        ],
+        "parts": [
+          {
+            "id": "s3_cloud",
+            "subject": "cloud",
+            "role": "cloud",
+            "stroke_groups": [
+              "independent outer contour",
+              "separate internal accent only if visible"
+            ]
+          },
+          {
+            "id": "s3_falling_drops",
+            "subject": "falling_drops",
+            "role": "falling_drops",
+            "stroke_groups": [
+              "independent outer contour",
+              "separate internal accent only if visible"
+            ]
+          },
+          {
+            "id": "s3_lake",
+            "subject": "lake",
+            "role": "lake",
+            "stroke_groups": [
+              "independent outer contour",
+              "separate internal accent only if visible"
+            ]
+          }
+        ],
+        "outline_order": [
+          "s3_cloud",
+          "s3_falling_drops",
+          "s3_lake"
+        ],
+        "fill_order": [
+          "s3_cloud",
+          "s3_falling_drops",
+          "s3_lake"
+        ],
+        "narrative_requirements": [
+          {
+            "id": "s3_cause",
+            "narration_quote": "水滴長得夠大，便能穿過上升氣流，落向地面成為雨，回到河流與海洋，繼續循環。",
+            "observable": "A softly scalloped blue-white cloud at top, five falling blue drops in middle, a shallow blue lake/water line at bottom."
+          }
+        ]
+      },
+      "prompt": "Use case: illustration-story. Asset type: illustration source for real progressive ink-and-fill animation. Square white canvas, generous 12 percent white margins. Simple charming hand-drawn rounded black ink outlines, uniform bold line thickness, very sparse clear silhouette, two flat colors sky blue and sunny yellow. Absolutely no writing, no letters, no numbers, no border, no watermark, no texture, no hatching, no gradients, no decorative dots. No people or animals. Composition: A softly scalloped blue-white cloud at top, five falling blue drops in middle, a shallow blue lake/water line at bottom.",
+      "parts": [
+        {
+          "id": "s3_cloud",
+          "polygon": [
+            [
+              0,
+              0
+            ],
+            [
+              1,
+              0
+            ],
+            [
+              1,
+              0.42
+            ],
+            [
+              0,
+              0.42
+            ]
+          ]
+        },
+        {
+          "id": "s3_falling_drops",
+          "polygon": [
+            [
+              0,
+              0.42
+            ],
+            [
+              1,
+              0.42
+            ],
+            [
+              1,
+              0.81
+            ],
+            [
+              0,
+              0.81
+            ]
+          ]
+        },
+        {
+          "id": "s3_lake",
+          "polygon": [
+            [
+              0,
+              0.81
+            ],
+            [
+              1,
+              0.81
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              0,
+              1
+            ]
+          ]
+        }
+      ]
+    }
+  ]
+}

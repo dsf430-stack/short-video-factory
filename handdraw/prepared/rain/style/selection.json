@@ -1,0 +1,5 @@
+{
+  "mode": "inferred",
+  "confirmation": "user_delegated",
+  "evidence": "User authorizes assistant-prepared script/assets without a Gemini dependency."
+}
