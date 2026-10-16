@@ -103,6 +103,15 @@ class Gemini:
                 return result
             except urllib.error.HTTPError as error:
                 # Never print URLs containing credentials, request headers or raw error bodies.
+                try:
+                    detail = json.loads(error.read()).get('error', {})
+                    message = str(detail.get('message', 'No provider message')).replace(self.key, '[REDACTED]')
+                    status = str(detail.get('status', ''))
+                except (ValueError, AttributeError):
+                    message, status = 'Non-JSON provider error', ''
+                save(self.cache.parent / 'model-api-error.json',
+                     {'model': model, 'http_status': error.code, 'status': status, 'message': message})
+                print('Provider error:', error.code, status, message[:1200], flush=True)
                 if error.code not in (408, 429, 500, 502, 503, 504) or attempt == 2:
                     raise RuntimeError(f'Gemini {model}: HTTP {error.code}') from None
                 time.sleep(5 * (attempt + 1))
