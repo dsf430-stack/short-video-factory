@@ -1,7 +1,7 @@
 """Render assistant-prepared, reviewed jobs using official Sweety + existing 068.
 No model API or model API key is used by this entry point.
 """
-import argparse, hashlib, json, shutil, subprocess, sys
+import argparse, hashlib, json, re, shutil, subprocess, sys
 from pathlib import Path
 REPO=Path(__file__).resolve().parents[1]
 PIN='5206ec0d17f9b353e400b64b9c51ad69e721e02a'
