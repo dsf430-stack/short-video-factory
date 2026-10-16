@@ -86,7 +86,8 @@ class Gemini:
         for name in dict.fromkeys(candidates):
             request = urllib.request.Request(
                 'https://generativelanguage.googleapis.com/v1beta/models/' + name + ':generateContent',
-                data=json.dumps({'contents': [{'parts': [{'text': 'Reply with the word OK.'}]}]}).encode(),
+                data=json.dumps({'contents': [{'parts': [{'text': 'Return JSON {"ok":true}.'}]}],
+                                 'generationConfig': {'responseMimeType': 'application/json'}}).encode(),
                 headers={'x-goog-api-key': self.key, 'Content-Type': 'application/json'})
             try:
                 with urllib.request.urlopen(request, timeout=60) as response:
