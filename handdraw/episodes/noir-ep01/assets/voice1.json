@@ -1,0 +1,38 @@
+{
+  "status": "SUCCESS",
+  "voice_id": "068",
+  "preset": {
+    "voice": "zh-TW-HsiaoChenNeural",
+    "rate": "+20%",
+    "pitch": "+5Hz",
+    "volume": "+0%",
+    "languages": [
+      "zh-TW"
+    ],
+    "tags": [
+      "lifestyle",
+      "friendly"
+    ]
+  },
+  "text_sha256": "05b955080ac48a3f9ceeaa64dbebb2b7dc29e4021500368ce258686c4f2ba5a0",
+  "chunks": 1,
+  "duration": 4.362449,
+  "loudness": {
+    "input_i": "-13.73",
+    "input_tp": "-1.23",
+    "input_lra": "0.70",
+    "input_thresh": "-24.12",
+    "output_i": "-12.66",
+    "output_tp": "-1.00",
+    "output_lra": "0.80",
+    "output_thresh": "-23.18",
+    "normalization_type": "dynamic",
+    "target_offset": "1.66"
+  },
+  "full_decode": "PASS",
+  "service": "api.msedgeservices.com",
+  "cache_hits": 0,
+  "attempts": [],
+  "subjective_listening": "UNCERTAIN",
+  "sha256": "abb8d5c3236d2e0fc07a7b1c016d81cf0081f1437ec54179d4fd764c4d9a9af8"
+}

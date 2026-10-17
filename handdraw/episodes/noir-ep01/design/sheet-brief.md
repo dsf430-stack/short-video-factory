@@ -1,0 +1,1 @@
+Four portrait inserts: rainy exterior; two fixed human characters and CCTV gesture; clerk close-up; empty surveillance customer area. Preserve existing noir custom specification. Use camera motion only, no actor animation. Monitor typography is a separate exact font layer.

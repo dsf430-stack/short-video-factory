@@ -1,0 +1,11 @@
+{
+  "status": "ready_for_generation",
+  "plan_sha256": "3720c6dceeea69f2b15f6cb1c38265999fff51eca0db51f9bd18fc6727279c44",
+  "style_sha256": "11aa857600a6ffe11d02021ee88ca0fa7391485f136a0b488b0f11394b97439a",
+  "illustrations": [
+    "exterior",
+    "encounter",
+    "clerk",
+    "monitor"
+  ]
+}

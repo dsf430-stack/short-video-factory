@@ -1,0 +1,81 @@
+{
+  "format": {
+    "filename": "noir-ep01.mp4",
+    "nb_streams": 2,
+    "nb_programs": 0,
+    "format_name": "mov,mp4,m4a,3gp,3g2,mj2",
+    "format_long_name": "QuickTime / MOV",
+    "start_time": "0.000000",
+    "duration": "60.023220",
+    "size": "1194656",
+    "bit_rate": "159225",
+    "probe_score": 100,
+    "tags": {
+      "major_brand": "isom",
+      "minor_version": "512",
+      "compatible_brands": "isomiso2avc1mp41",
+      "encoder": "Lavf60.16.100"
+    }
+  },
+  "scenes": [
+    {
+      "scene": 1,
+      "start": 0,
+      "duration": 6,
+      "voice_duration": 4.310204,
+      "voice_id": "068",
+      "subtitle_entries": 1
+    },
+    {
+      "scene": 2,
+      "start": 6,
+      "duration": 7,
+      "voice_duration": 4.362449,
+      "voice_id": "068",
+      "subtitle_entries": 2
+    },
+    {
+      "scene": 3,
+      "start": 13,
+      "duration": 9,
+      "voice_duration": 2.76898,
+      "voice_id": "068",
+      "subtitle_entries": 1
+    },
+    {
+      "scene": 4,
+      "start": 22,
+      "duration": 9,
+      "voice_duration": 3.108571,
+      "voice_id": "068",
+      "subtitle_entries": 1
+    },
+    {
+      "scene": 5,
+      "start": 31,
+      "duration": 9,
+      "voice_duration": 3.552653,
+      "voice_id": "068",
+      "subtitle_entries": 1
+    },
+    {
+      "scene": 6,
+      "start": 40,
+      "duration": 11,
+      "voice_duration": 3.213061,
+      "voice_id": "068",
+      "subtitle_entries": 1
+    },
+    {
+      "scene": 7,
+      "start": 51,
+      "duration": 9,
+      "voice_duration": 3.866122,
+      "voice_id": "068",
+      "subtitle_entries": 1
+    }
+  ],
+  "full_decode": "PASS",
+  "visual_type": "static_storyboard",
+  "subjective_listening": "UNCERTAIN"
+}

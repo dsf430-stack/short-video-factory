@@ -1,0 +1,17 @@
+{
+  "dependency_sha256": "fbbfd33d70f729011b6a6bc232851c116cd4a89ead2adea4462888a6ce26fc1a",
+  "style_sha256": "11aa857600a6ffe11d02021ee88ca0fa7391485f136a0b488b0f11394b97439a",
+  "images": [
+    {
+      "source": "../assets/sheet.png",
+      "method": "generated_under_guidance",
+      "brief_file": "sheet-brief.md",
+      "prompt_file": "sheet-prompt.txt",
+      "status": "pass",
+      "brief_sha256": "03be97e8f6b3c0724d06caf23c197b7cc69c685270afd303e89d2f033f66773d",
+      "prompt_sha256": "48987792e93404bc7ac81d2424b7ff5f465fd5280c4fb49e7d4b2828a393d9cb",
+      "sha256": "c7a7c5a3cd5514e2f7958951cdc79d33dd21fcd1bfa657fabecc2f397dac7d12",
+      "evidence": "Viewed complete generated sheet: top left rainy storefront; top right dark-haired woman on right points toward upper-left camera with one clear raised hand, clerk on left; bottom left same short-haired clerk close-up; bottom right customer area on CCTV is visibly empty. Black-and-white graphite and crosshatching, no stick figures or dialogue text. Clerk torso partially hidden by counter, woman lower body occluded. Photograph-like proportions but visible pencil marks. No claim of character movement. Four separate quadrants are used as complete pictures with camera crops."
+    }
+  ]
+}

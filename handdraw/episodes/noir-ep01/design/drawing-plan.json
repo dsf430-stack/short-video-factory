@@ -1,0 +1,268 @@
+{
+  "illustrations": [
+    {
+      "id": "exterior",
+      "composition": "Rainy convenience store exterior",
+      "drawability_reason": "Clear graphite contours; delivery uses complete illustration with camera motion, no outline reveal or actor animation.",
+      "outline_strategy": "visible_source_ink",
+      "spatial_order": "top_to_bottom_left_to_right",
+      "subjects": [
+        {
+          "id": "exterior",
+          "kind": "environment"
+        }
+      ],
+      "parts": [
+        {
+          "id": "exterior_architecture",
+          "subject": "exterior",
+          "role": "architecture",
+          "stroke_groups": [
+            "Separate graphite contour strokes with pen lifts; no disconnected bridges."
+          ]
+        },
+        {
+          "id": "exterior_lighting",
+          "subject": "exterior",
+          "role": "lighting",
+          "stroke_groups": [
+            "Separate graphite contour strokes with pen lifts; no disconnected bridges."
+          ]
+        }
+      ],
+      "outline_order": [
+        "exterior_architecture",
+        "exterior_lighting"
+      ],
+      "fill_order": [
+        "exterior_architecture",
+        "exterior_lighting"
+      ],
+      "narrative_requirements": [
+        {
+          "id": "exterior",
+          "narration_quote": "凌晨三點十七分",
+          "observable": "Rainy convenience store exterior"
+        }
+      ]
+    },
+    {
+      "id": "encounter",
+      "composition": "Woman right, clerk left, finger toward camera",
+      "drawability_reason": "Clear graphite contours; delivery uses complete illustration with camera motion, no outline reveal or actor animation.",
+      "outline_strategy": "visible_source_ink",
+      "spatial_order": "top_to_bottom_left_to_right",
+      "subjects": [
+        {
+          "id": "encounter",
+          "kind": "human"
+        }
+      ],
+      "parts": [
+        {
+          "id": "encounter_head",
+          "subject": "encounter",
+          "role": "head",
+          "stroke_groups": [
+            "Separate graphite contour strokes with pen lifts; no disconnected bridges."
+          ]
+        },
+        {
+          "id": "encounter_neck",
+          "subject": "encounter",
+          "role": "neck",
+          "stroke_groups": [
+            "Separate graphite contour strokes with pen lifts; no disconnected bridges."
+          ]
+        },
+        {
+          "id": "encounter_torso",
+          "subject": "encounter",
+          "role": "torso",
+          "stroke_groups": [
+            "Separate graphite contour strokes with pen lifts; no disconnected bridges."
+          ]
+        },
+        {
+          "id": "encounter_left_arm",
+          "subject": "encounter",
+          "role": "left_arm",
+          "stroke_groups": [
+            "Separate graphite contour strokes with pen lifts; no disconnected bridges."
+          ]
+        },
+        {
+          "id": "encounter_right_arm",
+          "subject": "encounter",
+          "role": "right_arm",
+          "stroke_groups": [
+            "Separate graphite contour strokes with pen lifts; no disconnected bridges."
+          ]
+        },
+        {
+          "id": "encounter_lower_body",
+          "subject": "encounter",
+          "role": "lower_body",
+          "stroke_groups": [
+            "Separate graphite contour strokes with pen lifts; no disconnected bridges."
+          ]
+        }
+      ],
+      "outline_order": [
+        "encounter_head",
+        "encounter_neck",
+        "encounter_torso",
+        "encounter_left_arm",
+        "encounter_right_arm",
+        "encounter_lower_body"
+      ],
+      "fill_order": [
+        "encounter_head",
+        "encounter_neck",
+        "encounter_torso",
+        "encounter_left_arm",
+        "encounter_right_arm",
+        "encounter_lower_body"
+      ],
+      "narrative_requirements": [
+        {
+          "id": "encounter",
+          "narration_quote": "只指向頭頂的監視器",
+          "observable": "Woman right, clerk left, finger toward camera"
+        }
+      ]
+    },
+    {
+      "id": "clerk",
+      "composition": "Clerk eye close-up",
+      "drawability_reason": "Clear graphite contours; delivery uses complete illustration with camera motion, no outline reveal or actor animation.",
+      "outline_strategy": "visible_source_ink",
+      "spatial_order": "top_to_bottom_left_to_right",
+      "subjects": [
+        {
+          "id": "clerk",
+          "kind": "human"
+        }
+      ],
+      "parts": [
+        {
+          "id": "clerk_head",
+          "subject": "clerk",
+          "role": "head",
+          "stroke_groups": [
+            "Separate graphite contour strokes with pen lifts; no disconnected bridges."
+          ]
+        },
+        {
+          "id": "clerk_neck",
+          "subject": "clerk",
+          "role": "neck",
+          "stroke_groups": [
+            "Separate graphite contour strokes with pen lifts; no disconnected bridges."
+          ]
+        },
+        {
+          "id": "clerk_torso",
+          "subject": "clerk",
+          "role": "torso",
+          "stroke_groups": [
+            "Separate graphite contour strokes with pen lifts; no disconnected bridges."
+          ]
+        },
+        {
+          "id": "clerk_left_arm",
+          "subject": "clerk",
+          "role": "left_arm",
+          "stroke_groups": [
+            "Separate graphite contour strokes with pen lifts; no disconnected bridges."
+          ]
+        },
+        {
+          "id": "clerk_right_arm",
+          "subject": "clerk",
+          "role": "right_arm",
+          "stroke_groups": [
+            "Separate graphite contour strokes with pen lifts; no disconnected bridges."
+          ]
+        },
+        {
+          "id": "clerk_lower_body",
+          "subject": "clerk",
+          "role": "lower_body",
+          "stroke_groups": [
+            "Separate graphite contour strokes with pen lifts; no disconnected bridges."
+          ]
+        }
+      ],
+      "outline_order": [
+        "clerk_head",
+        "clerk_neck",
+        "clerk_torso",
+        "clerk_left_arm",
+        "clerk_right_arm",
+        "clerk_lower_body"
+      ],
+      "fill_order": [
+        "clerk_head",
+        "clerk_neck",
+        "clerk_torso",
+        "clerk_left_arm",
+        "clerk_right_arm",
+        "clerk_lower_body"
+      ],
+      "narrative_requirements": [
+        {
+          "id": "clerk",
+          "narration_quote": "店員回答",
+          "observable": "Clerk eye close-up"
+        }
+      ]
+    },
+    {
+      "id": "monitor",
+      "composition": "Empty customer area on security monitor",
+      "drawability_reason": "Clear graphite contours; delivery uses complete illustration with camera motion, no outline reveal or actor animation.",
+      "outline_strategy": "visible_source_ink",
+      "spatial_order": "top_to_bottom_left_to_right",
+      "subjects": [
+        {
+          "id": "monitor",
+          "kind": "environment"
+        }
+      ],
+      "parts": [
+        {
+          "id": "monitor_architecture",
+          "subject": "monitor",
+          "role": "architecture",
+          "stroke_groups": [
+            "Separate graphite contour strokes with pen lifts; no disconnected bridges."
+          ]
+        },
+        {
+          "id": "monitor_lighting",
+          "subject": "monitor",
+          "role": "lighting",
+          "stroke_groups": [
+            "Separate graphite contour strokes with pen lifts; no disconnected bridges."
+          ]
+        }
+      ],
+      "outline_order": [
+        "monitor_architecture",
+        "monitor_lighting"
+      ],
+      "fill_order": [
+        "monitor_architecture",
+        "monitor_lighting"
+      ],
+      "narrative_requirements": [
+        {
+          "id": "monitor",
+          "narration_quote": "沒有任何人",
+          "observable": "Empty customer area on security monitor"
+        }
+      ]
+    }
+  ]
+}

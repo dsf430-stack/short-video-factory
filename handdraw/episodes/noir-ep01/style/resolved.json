@@ -1,0 +1,15 @@
+{
+  "mode": "custom",
+  "status": "resolved",
+  "selection_sha256": "ac737d507be63e5d73b84b0f6bb4a40c5be2680ba3f71631a2f292d0de9a7942",
+  "style_basis": "黑白鉛筆線條、強對比、懸疑",
+  "style_name": "黑白鉛筆線條、強對比、懸疑",
+  "rationale": "EP01 documented custom style, not a fabricated catalog number.",
+  "style_spec": {
+    "line": "Expressive graphite and black ink contours, natural human anatomy",
+    "palette": "black white graphite gray only",
+    "shading": "directional crosshatching and broad ink shadows",
+    "texture": "restrained paper grain",
+    "background": "Taiwan convenience store at night in rain"
+  }
+}
