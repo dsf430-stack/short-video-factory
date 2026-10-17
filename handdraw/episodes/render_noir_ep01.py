@@ -36,7 +36,7 @@ def frame(i,title,path):
         d.text((410,420),'03:17',font=font(60),fill='black')
     d.text((100,90),f'EP01   {i+1:02d}/07',font=font(58),fill='black')
     d.text((110,1540),title,font=font(88),fill='black')
-    d.text((110,1635),'靜態分鏡版｜068 旁白',font=font(38),fill='black')
+    d.text((110,1690),'靜態分鏡版｜068 旁白',font=font(38),fill='black')
     im.save(path)
 
 def main():
@@ -65,7 +65,13 @@ def main():
         wrapped=[]
         for _,a0,b0,words in entries:
             words=words.replace('\n','')
-            lines='\n'.join(words[k:k+17] for k in range(0,len(words),17))
+            parts=[words[k:k+17] for k in range(0,len(words),17)]
+            if len(parts)>1 and len(parts[-1])<4:
+                move=4-len(parts[-1]);parts[-1]=parts[-2][-move:]+parts[-1];parts[-2]=parts[-2][:-move]
+            for j in range(1,len(parts)):
+                while parts[j] and parts[j][0] in '，。！？、：；？」』':
+                    parts[j]=parts[j-1][-1]+parts[j];parts[j-1]=parts[j-1][:-1]
+            lines='\n'.join(parts)
             wrapped.append(f'{len(wrapped)+1}\n{a0} --> {b0}\n{lines}\n\n')
             all_subtitles.append(f'{len(all_subtitles)+1}\n{stamp(offset+seconds(a0))} --> {stamp(offset+seconds(b0))}\n{lines}\n\n')
         burn=w/f'sub{i}.srt';burn.write_text(''.join(wrapped),encoding='utf-8')
