@@ -1,0 +1,1 @@
+Editable title: 颱風的暴風半徑 / 怎麼看？. Yellow canvas with reviewed third panel showing exact center-to-edge radius; secondary title 別只看颱風中心. No other text.

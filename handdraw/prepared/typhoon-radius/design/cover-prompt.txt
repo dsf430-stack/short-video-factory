@@ -1,0 +1,1 @@
+Deterministic Pillow composition: 1080x1920 #FFD23F, NotoSansCJK index3, 78px title at x80 y240/355; source approved crop [0,768,1024,1130] at [50,720,980,347]; 64px subtitle x80 y1280. Font source notofonts/noto-cjk SIL OFL.

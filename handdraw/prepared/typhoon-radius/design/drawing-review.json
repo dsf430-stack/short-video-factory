@@ -1,0 +1,98 @@
+{
+  "style_sha256": "a28bed573766c47e644f37eaf306fc3d15db663c87aa8400c2da89d33986f388",
+  "plan_sha256": "ffbe1c1d04479b26cc566a2780ddc3292de95d5a6ba5a88ce87ca5a3933eab7d",
+  "illustrations": [
+    {
+      "plan_id": "s0",
+      "status": "pass",
+      "source_sha256": "b899dba626eb17b1c1b18d8aa8da0ea1a1cda38865fb2d8e0a1658efbc2d4966",
+      "crop": [
+        0,
+        0,
+        1024,
+        384
+      ],
+      "anatomy_and_occlusion": "Viewed bean presenter in this crop. Continuous head/torso, no neck. Both stick arms and legs visible; panel 4 lower limbs end at doorway threshold. Foreground hands assigned by earlier masks.",
+      "part_boundaries": "Viewed two separate arms from body to umbrella grip: upper arm y0.62–0.675, lower arm y0.675–0.73 of actual crop, x0.295–0.335. Upper/lower arms no longer share the same region; head and torso retain body ownership. Remaining diagram and border assigned separately.",
+      "stroke_breaks": "Lift at independent rain marks, spiral arcs, umbrella ribs, limbs, circle and radius; do not connect across paper.",
+      "outline_then_fill": "Draw all visible black contours before orange fill and bean body fill. Review preview for solid-black region tracing artifacts.",
+      "spatial_order": "Face and torso, arms, lower limbs, then explanatory diagram and panel frame.",
+      "narrative_checks": [
+        {
+          "id": "s0_cause",
+          "status": "pass",
+          "evidence": "A bean presenter stands on the LEFT, holding an orange umbrella tilted against curved wind lines. On the RIGHT a cyclone spiral is offshore, not above the presenter. Rain streaks above umbrella. No letters or numbers. Verified visually in panel 1."
+        }
+      ]
+    },
+    {
+      "plan_id": "s1",
+      "status": "pass",
+      "source_sha256": "b899dba626eb17b1c1b18d8aa8da0ea1a1cda38865fb2d8e0a1658efbc2d4966",
+      "crop": [
+        0,
+        384,
+        1024,
+        768
+      ],
+      "anatomy_and_occlusion": "Viewed bean presenter in this crop. Continuous head/torso, no neck. Both stick arms and legs visible; panel 4 lower limbs end at doorway threshold. Foreground hands assigned by earlier masks.",
+      "part_boundaries": "Observed face, torso, screen-left arm, screen-right arm, legs assigned first using normalized polygons; remaining weather/house and border assigned separately. Body outline continuous, masks share no duplicated ownership.",
+      "stroke_breaks": "Lift at independent rain marks, spiral arcs, umbrella ribs, limbs, circle and radius; do not connect across paper.",
+      "outline_then_fill": "Draw all visible black contours before orange fill and bean body fill. Review preview for solid-black region tracing artifacts.",
+      "spatial_order": "Face and torso, arms, lower limbs, then explanatory diagram and panel frame.",
+      "narrative_checks": [
+        {
+          "id": "s1_cause",
+          "status": "pass",
+          "evidence": "A bean presenter on the LEFT points toward a large cyclone swirl on the RIGHT. The cyclone has a small orange center dot and much wider surrounding spiral bands. Show visibly that the storm extends well beyond its center. No letters or numbers. Verified visually in panel 2."
+        }
+      ]
+    },
+    {
+      "plan_id": "s2",
+      "status": "pass",
+      "source_sha256": "b899dba626eb17b1c1b18d8aa8da0ea1a1cda38865fb2d8e0a1658efbc2d4966",
+      "crop": [
+        0,
+        768,
+        1024,
+        1130
+      ],
+      "anatomy_and_occlusion": "Viewed bean presenter in this crop. Continuous head/torso, no neck. Both stick arms and legs visible; panel 4 lower limbs end at doorway threshold. Foreground hands assigned by earlier masks.",
+      "part_boundaries": "Observed face, torso, screen-left arm, screen-right arm, legs assigned first using normalized polygons; remaining weather/house and border assigned separately. Body outline continuous, masks share no duplicated ownership.",
+      "stroke_breaks": "Lift at independent rain marks, spiral arcs, umbrella ribs, limbs, circle and radius; do not connect across paper.",
+      "outline_then_fill": "Draw all visible black contours before orange fill and bean body fill. Review preview for solid-black region tracing artifacts.",
+      "spatial_order": "Face and torso, arms, lower limbs, then explanatory diagram and panel frame.",
+      "narrative_checks": [
+        {
+          "id": "s2_cause",
+          "status": "pass",
+          "evidence": "A bean presenter on the LEFT gestures to a large simple circle on the RIGHT. The circle has an orange center dot and an orange straight radius segment from that center to the right circumference. Keep the radius exact and connected to both center and boundary. No letters or numbers. Verified visually in panel 3."
+        }
+      ]
+    },
+    {
+      "plan_id": "s3",
+      "status": "pass",
+      "source_sha256": "b899dba626eb17b1c1b18d8aa8da0ea1a1cda38865fb2d8e0a1658efbc2d4966",
+      "crop": [
+        0,
+        1130,
+        1024,
+        1536
+      ],
+      "anatomy_and_occlusion": "Viewed bean presenter in this crop. Continuous head/torso, no neck. Both stick arms and legs visible; panel 4 lower limbs end at doorway threshold. Foreground hands assigned by earlier masks.",
+      "part_boundaries": "Observed face, torso, screen-left arm, screen-right arm, legs assigned first using normalized polygons; remaining weather/house and border assigned separately. Body outline continuous, masks share no duplicated ownership.",
+      "stroke_breaks": "Lift at independent rain marks, spiral arcs, umbrella ribs, limbs, circle and radius; do not connect across paper.",
+      "outline_then_fill": "Draw all visible black contours before orange fill and bean body fill. Review preview for solid-black region tracing artifacts.",
+      "spatial_order": "Face and torso, arms, lower limbs, then explanatory diagram and panel frame.",
+      "narrative_checks": [
+        {
+          "id": "s3_cause",
+          "status": "pass",
+          "evidence": "A bean presenter on the LEFT stays inside a simple outline house, visible through the large open doorway. On the RIGHT, a spiral storm with outer curved rain bands; one rain band extends toward the house. Small orange warning triangle above the house. No letters or numbers. Verified visually in panel 4."
+        }
+      ]
+    }
+  ]
+}
