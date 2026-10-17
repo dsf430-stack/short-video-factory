@@ -47,7 +47,19 @@ def align_scenes(scenes, events):
         if scene['text'].startswith(spoken) and not scene['text'][len(spoken):].strip():
             cues[-1]['text'] += scene['text'][len(spoken):]
         elif spoken != scene['text']:
-            raise ValueError('Measured subtitle text differs from the scene text')
+            # Provider may trim/insert whitespace around separately spoken English.
+            # Alphanumeric content was already matched exactly above. Preserve
+            # script typography without changing any measured event boundaries.
+            cursor = 0
+            for cue in cues:
+                count = len(normalize(cue['text']))
+                begin = cursor
+                while count:
+                    if scene['text'][cursor].isalnum(): count -= 1
+                    cursor += 1
+                while cursor < len(scene['text']) and not scene['text'][cursor].isalnum(): cursor += 1
+                cue['text'] = scene['text'][begin:cursor]
+            if cursor != len(scene['text']): raise ValueError('Subtitle typography mapping incomplete')
         result.append({'id': f's{index}', 'text': scene['text'], 'start': start, 'end': end,
                        'caption_cues': cues})
     if offset != len(events):
