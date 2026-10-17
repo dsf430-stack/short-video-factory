@@ -26,3 +26,10 @@ def choose_caption_width(texts, measure, canvas_width=1080, stroke=2, max_lines=
                    for row in rows[1:]) for rows in lines):
             return ratio
     raise ValueError('CAPTION_LAYOUT_REQUIRED: split long editorial sentences at measured speech boundaries; keep the voice and subtitle text intact')
+
+
+def caption_bottom_margin(annotation_bottom, caption_height, canvas_height=1920, preferred=210, minimum=120, gap=48):
+    margin = min(preferred, int(canvas_height - annotation_bottom - gap - caption_height))
+    if margin < minimum:
+        raise ValueError('CAPTION_LAYOUT_REQUIRED: move scene annotations above the reserved subtitle area')
+    return margin

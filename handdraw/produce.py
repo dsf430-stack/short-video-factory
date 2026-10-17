@@ -155,10 +155,21 @@ def main(args):
   if story.get('caption_font_size'):
    manifest['captions']['font_size']=story['caption_font_size']
    manifest['captions']['stroke_width']=2
-  from caption_layout import choose_caption_width
+  from caption_layout import choose_caption_width, wrap_lines, caption_bottom_margin
   caption_font=ImageFont.truetype(font,manifest['captions']['font_size'],index=3)
   manifest['captions']['max_width_ratio']=choose_caption_width((cue['text'] for beat in beats for cue in beat['caption_cues']),caption_font.getlength,stroke=manifest['captions']['stroke_width'])
+  caption_options=manifest['captions'];stroke=caption_options['stroke_width']
+  max_caption_height=0
+  for beat in beats:
+   for cue in beat['caption_cues']:
+    lines=wrap_lines(cue['text'],caption_font.getlength,int(1080*caption_options['max_width_ratio'])-16-stroke*2)
+    boxes=[caption_font.getbbox(line,stroke_width=stroke) for line in lines]
+    height=max(box[3]-box[1] for box in boxes)*len(lines)+round(caption_options['font_size']*.18)*(len(lines)-1)+2*(6+stroke)
+    max_caption_height=max(max_caption_height,height)
+  annotation_bottom=max((item['y']+item['size']*1.3 for scene in scenes for item in scene.get('annotations',[])),default=0)
+  caption_options['bottom_margin']=caption_bottom_margin(annotation_bottom,max_caption_height)
   print('CAPTION_WIDTH_RATIO',manifest['captions']['max_width_ratio'],flush=True)
+  print('CAPTION_BOTTOM_MARGIN',caption_options['bottom_margin'],flush=True)
   save(root/'job.json',manifest)
   for stage in ['doctor','build']:run(sys.executable,command,stage,root)
   run(sys.executable,command,'verify',root,'--assets-only')

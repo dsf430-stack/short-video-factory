@@ -5,5 +5,5 @@
   "style": "4",
   "bundle_sha256": "5d1eaac269934f89c35ab9a700cf08f50a596262d4851466e4c8803e6f57fa51",
   "mode": "chatgpt-prepared-no-extra-model-api",
-  "render_revision": "caption-layout-v1"
+  "render_revision": "caption-layout-v2-clearance"
 }

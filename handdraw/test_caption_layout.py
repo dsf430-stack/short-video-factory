@@ -1,5 +1,5 @@
 import unittest
-from caption_layout import choose_caption_width, wrap_lines
+from caption_layout import choose_caption_width, wrap_lines, caption_bottom_margin
 
 
 class CaptionLayoutTests(unittest.TestCase):
@@ -20,3 +20,12 @@ class CaptionLayoutTests(unittest.TestCase):
     def test_overlong_subtitles_fail_before_rendering_instead_of_losing_text(self):
         with self.assertRaisesRegex(ValueError, 'CAPTION_LAYOUT_REQUIRED'):
             choose_caption_width(['長' * 80], lambda text: len(text) * 52)
+
+    def test_two_line_caption_clears_final_scene_annotation(self):
+        bottom, height = 1588.2, 122
+        margin = caption_bottom_margin(bottom, height)
+        self.assertGreaterEqual(1920 - margin - height - bottom, 48)
+        self.assertGreaterEqual(margin, 120)
+        self.assertEqual(caption_bottom_margin(1300, height), 210)
+        with self.assertRaisesRegex(ValueError, 'CAPTION_LAYOUT_REQUIRED'):
+            caption_bottom_margin(1780, height)
