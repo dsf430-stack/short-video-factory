@@ -1,0 +1,548 @@
+{
+  "illustrations": [
+    {
+      "id": "hook",
+      "composition": "A friendly bean presenter in the lower center points with its RIGHT arm to a large outlined crescent moon in the upper-right. A small orange sun sits upper-left. Both arms and both stick legs are separately visible. A simple curved ground line beneath the feet. Clearly daylight, not a night scene. Leave all title/arrow-label boxes empty.",
+      "drawability_reason": "Isolated bean anatomical regions and sparse diagram symbols can be traced in the measured speech window; actual ownership refined after viewing.",
+      "outline_strategy": "visible_source_ink",
+      "spatial_order": "top_to_bottom_left_to_right",
+      "subjects": [
+        {
+          "id": "presenter",
+          "kind": "human",
+          "omitted_roles": {
+            "neck": "Official blob silhouette has no separate neck."
+          },
+          "order_exception": "Head/torso are one continuous bean silhouette; both visible stick arms and legs still receive separate semantic ownership."
+        },
+        {
+          "id": "sun",
+          "kind": "object"
+        },
+        {
+          "id": "moon",
+          "kind": "object"
+        },
+        {
+          "id": "context",
+          "kind": "object"
+        },
+        {
+          "id": "frame",
+          "kind": "object"
+        }
+      ],
+      "parts": [
+        {
+          "id": "hook_head",
+          "subject": "presenter",
+          "role": "head",
+          "stroke_groups": [
+            "Trace only the actually visible contour; lift between separate facial marks and limbs."
+          ]
+        },
+        {
+          "id": "hook_torso",
+          "subject": "presenter",
+          "role": "torso",
+          "stroke_groups": [
+            "Trace only the actually visible contour; lift between separate facial marks and limbs."
+          ]
+        },
+        {
+          "id": "hook_left_arm",
+          "subject": "presenter",
+          "role": "left_arm",
+          "stroke_groups": [
+            "Trace only the actually visible contour; lift between separate facial marks and limbs."
+          ]
+        },
+        {
+          "id": "hook_right_arm",
+          "subject": "presenter",
+          "role": "right_arm",
+          "stroke_groups": [
+            "Trace only the actually visible contour; lift between separate facial marks and limbs."
+          ]
+        },
+        {
+          "id": "hook_lower_body",
+          "subject": "presenter",
+          "role": "lower_body",
+          "stroke_groups": [
+            "Trace only the actually visible contour; lift between separate facial marks and limbs."
+          ]
+        },
+        {
+          "id": "hook_sun",
+          "subject": "sun",
+          "role": "sun",
+          "stroke_groups": [
+            "Independent closed outline and separated visible marks; do not connect across paper."
+          ]
+        },
+        {
+          "id": "hook_moon",
+          "subject": "moon",
+          "role": "moon",
+          "stroke_groups": [
+            "Independent closed outline and separated visible marks; do not connect across paper."
+          ]
+        },
+        {
+          "id": "hook_context",
+          "subject": "context",
+          "role": "context",
+          "stroke_groups": [
+            "Independent closed outline and separated visible marks; do not connect across paper."
+          ]
+        },
+        {
+          "id": "hook_frame",
+          "subject": "frame",
+          "role": "frame",
+          "stroke_groups": [
+            "Independent closed outline and separated visible marks; do not connect across paper."
+          ]
+        }
+      ],
+      "outline_order": [
+        "hook_head",
+        "hook_torso",
+        "hook_left_arm",
+        "hook_right_arm",
+        "hook_lower_body",
+        "hook_sun",
+        "hook_moon",
+        "hook_context",
+        "hook_frame"
+      ],
+      "fill_order": [
+        "hook_head",
+        "hook_torso",
+        "hook_left_arm",
+        "hook_right_arm",
+        "hook_lower_body",
+        "hook_sun",
+        "hook_moon",
+        "hook_context",
+        "hook_frame"
+      ],
+      "narrative_requirements": [
+        {
+          "id": "hook_fact",
+          "narration_quote": "白天抬頭看到月亮",
+          "observable": "A friendly bean presenter in the lower center points with its RIGHT arm to a large outlined crescent moon in the upper-right. A small orange sun sits upper-left. Both arms and both stick legs are separately visible. A simple curved ground line beneath the feet. Clearly daylight, not a night scene. Leave all title/arrow-label boxes empty."
+        }
+      ]
+    },
+    {
+      "id": "reflection",
+      "composition": "A simple reflection diagram: orange sun upper-left, outlined round moon upper-right, bean presenter in lower center. A red arrow from sun to moon represents incoming sunlight, then a blue arrow from moon down toward the bean represents reflected sunlight. Both arrows terminate clearly at the intended targets. Both bean arms and legs are visible. Sparse explanatory symbols only; leave all lettering empty.",
+      "drawability_reason": "Isolated bean anatomical regions and sparse diagram symbols can be traced in the measured speech window; actual ownership refined after viewing.",
+      "outline_strategy": "visible_source_ink",
+      "spatial_order": "top_to_bottom_left_to_right",
+      "subjects": [
+        {
+          "id": "presenter",
+          "kind": "human",
+          "omitted_roles": {
+            "neck": "Official blob silhouette has no separate neck."
+          },
+          "order_exception": "Head/torso are one continuous bean silhouette; both visible stick arms and legs still receive separate semantic ownership."
+        },
+        {
+          "id": "sun",
+          "kind": "object"
+        },
+        {
+          "id": "moon",
+          "kind": "object"
+        },
+        {
+          "id": "context",
+          "kind": "object"
+        },
+        {
+          "id": "frame",
+          "kind": "object"
+        }
+      ],
+      "parts": [
+        {
+          "id": "reflection_head",
+          "subject": "presenter",
+          "role": "head",
+          "stroke_groups": [
+            "Trace only the actually visible contour; lift between separate facial marks and limbs."
+          ]
+        },
+        {
+          "id": "reflection_torso",
+          "subject": "presenter",
+          "role": "torso",
+          "stroke_groups": [
+            "Trace only the actually visible contour; lift between separate facial marks and limbs."
+          ]
+        },
+        {
+          "id": "reflection_left_arm",
+          "subject": "presenter",
+          "role": "left_arm",
+          "stroke_groups": [
+            "Trace only the actually visible contour; lift between separate facial marks and limbs."
+          ]
+        },
+        {
+          "id": "reflection_right_arm",
+          "subject": "presenter",
+          "role": "right_arm",
+          "stroke_groups": [
+            "Trace only the actually visible contour; lift between separate facial marks and limbs."
+          ]
+        },
+        {
+          "id": "reflection_lower_body",
+          "subject": "presenter",
+          "role": "lower_body",
+          "stroke_groups": [
+            "Trace only the actually visible contour; lift between separate facial marks and limbs."
+          ]
+        },
+        {
+          "id": "reflection_sun",
+          "subject": "sun",
+          "role": "sun",
+          "stroke_groups": [
+            "Independent closed outline and separated visible marks; do not connect across paper."
+          ]
+        },
+        {
+          "id": "reflection_moon",
+          "subject": "moon",
+          "role": "moon",
+          "stroke_groups": [
+            "Independent closed outline and separated visible marks; do not connect across paper."
+          ]
+        },
+        {
+          "id": "reflection_context",
+          "subject": "context",
+          "role": "context",
+          "stroke_groups": [
+            "Independent closed outline and separated visible marks; do not connect across paper."
+          ]
+        },
+        {
+          "id": "reflection_frame",
+          "subject": "frame",
+          "role": "frame",
+          "stroke_groups": [
+            "Independent closed outline and separated visible marks; do not connect across paper."
+          ]
+        }
+      ],
+      "outline_order": [
+        "reflection_head",
+        "reflection_torso",
+        "reflection_left_arm",
+        "reflection_right_arm",
+        "reflection_lower_body",
+        "reflection_sun",
+        "reflection_moon",
+        "reflection_context",
+        "reflection_frame"
+      ],
+      "fill_order": [
+        "reflection_head",
+        "reflection_torso",
+        "reflection_left_arm",
+        "reflection_right_arm",
+        "reflection_lower_body",
+        "reflection_sun",
+        "reflection_moon",
+        "reflection_context",
+        "reflection_frame"
+      ],
+      "narrative_requirements": [
+        {
+          "id": "reflection_fact",
+          "narration_quote": "月亮本身不會發光",
+          "observable": "A simple reflection diagram: orange sun upper-left, outlined round moon upper-right, bean presenter in lower center. A red arrow from sun to moon represents incoming sunlight, then a blue arrow from moon down toward the bean represents reflected sunlight. Both arrows terminate clearly at the intended targets. Both bean arms and legs are visible. Sparse explanatory symbols only; leave all lettering empty."
+        }
+      ]
+    },
+    {
+      "id": "horizon",
+      "composition": "Bean presenter stands in lower center on a long horizontal ground/horizon line. A small orange sun upper-left and an outlined half moon upper-right are BOTH above that horizon. Both arms and legs are visible and separated. One blue curved arrow points toward the moon. Show a local sky diagram, not a scale model of orbital distances. Leave all title/arrow-label boxes empty.",
+      "drawability_reason": "Isolated bean anatomical regions and sparse diagram symbols can be traced in the measured speech window; actual ownership refined after viewing.",
+      "outline_strategy": "visible_source_ink",
+      "spatial_order": "top_to_bottom_left_to_right",
+      "subjects": [
+        {
+          "id": "presenter",
+          "kind": "human",
+          "omitted_roles": {
+            "neck": "Official blob silhouette has no separate neck."
+          },
+          "order_exception": "Head/torso are one continuous bean silhouette; both visible stick arms and legs still receive separate semantic ownership."
+        },
+        {
+          "id": "sun",
+          "kind": "object"
+        },
+        {
+          "id": "moon",
+          "kind": "object"
+        },
+        {
+          "id": "context",
+          "kind": "object"
+        },
+        {
+          "id": "frame",
+          "kind": "object"
+        }
+      ],
+      "parts": [
+        {
+          "id": "horizon_head",
+          "subject": "presenter",
+          "role": "head",
+          "stroke_groups": [
+            "Trace only the actually visible contour; lift between separate facial marks and limbs."
+          ]
+        },
+        {
+          "id": "horizon_torso",
+          "subject": "presenter",
+          "role": "torso",
+          "stroke_groups": [
+            "Trace only the actually visible contour; lift between separate facial marks and limbs."
+          ]
+        },
+        {
+          "id": "horizon_left_arm",
+          "subject": "presenter",
+          "role": "left_arm",
+          "stroke_groups": [
+            "Trace only the actually visible contour; lift between separate facial marks and limbs."
+          ]
+        },
+        {
+          "id": "horizon_right_arm",
+          "subject": "presenter",
+          "role": "right_arm",
+          "stroke_groups": [
+            "Trace only the actually visible contour; lift between separate facial marks and limbs."
+          ]
+        },
+        {
+          "id": "horizon_lower_body",
+          "subject": "presenter",
+          "role": "lower_body",
+          "stroke_groups": [
+            "Trace only the actually visible contour; lift between separate facial marks and limbs."
+          ]
+        },
+        {
+          "id": "horizon_sun",
+          "subject": "sun",
+          "role": "sun",
+          "stroke_groups": [
+            "Independent closed outline and separated visible marks; do not connect across paper."
+          ]
+        },
+        {
+          "id": "horizon_moon",
+          "subject": "moon",
+          "role": "moon",
+          "stroke_groups": [
+            "Independent closed outline and separated visible marks; do not connect across paper."
+          ]
+        },
+        {
+          "id": "horizon_context",
+          "subject": "context",
+          "role": "context",
+          "stroke_groups": [
+            "Independent closed outline and separated visible marks; do not connect across paper."
+          ]
+        },
+        {
+          "id": "horizon_frame",
+          "subject": "frame",
+          "role": "frame",
+          "stroke_groups": [
+            "Independent closed outline and separated visible marks; do not connect across paper."
+          ]
+        }
+      ],
+      "outline_order": [
+        "horizon_head",
+        "horizon_torso",
+        "horizon_left_arm",
+        "horizon_right_arm",
+        "horizon_lower_body",
+        "horizon_sun",
+        "horizon_moon",
+        "horizon_context",
+        "horizon_frame"
+      ],
+      "fill_order": [
+        "horizon_head",
+        "horizon_torso",
+        "horizon_left_arm",
+        "horizon_right_arm",
+        "horizon_lower_body",
+        "horizon_sun",
+        "horizon_moon",
+        "horizon_context",
+        "horizon_frame"
+      ],
+      "narrative_requirements": [
+        {
+          "id": "horizon_fact",
+          "narration_quote": "地平線上方",
+          "observable": "Bean presenter stands in lower center on a long horizontal ground/horizon line. A small orange sun upper-left and an outlined half moon upper-right are BOTH above that horizon. Both arms and legs are visible and separated. One blue curved arrow points toward the moon. Show a local sky diagram, not a scale model of orbital distances. Leave all title/arrow-label boxes empty."
+        }
+      ]
+    },
+    {
+      "id": "observe",
+      "composition": "Bean presenter at lower center looks toward upper-right: an outlined crescent moon is PARTIALLY covered by a simple outline cloud. A small orange sun is far upper-left, away from the presenter gaze. Bean raises its RIGHT hand to point at moon and extends its left arm; both legs visible. This explains that clouds can obscure the moon. Leave all lettering empty.",
+      "drawability_reason": "Isolated bean anatomical regions and sparse diagram symbols can be traced in the measured speech window; actual ownership refined after viewing.",
+      "outline_strategy": "visible_source_ink",
+      "spatial_order": "top_to_bottom_left_to_right",
+      "subjects": [
+        {
+          "id": "presenter",
+          "kind": "human",
+          "omitted_roles": {
+            "neck": "Official blob silhouette has no separate neck."
+          },
+          "order_exception": "Head/torso are one continuous bean silhouette; both visible stick arms and legs still receive separate semantic ownership."
+        },
+        {
+          "id": "sun",
+          "kind": "object"
+        },
+        {
+          "id": "moon",
+          "kind": "object"
+        },
+        {
+          "id": "context",
+          "kind": "object"
+        },
+        {
+          "id": "frame",
+          "kind": "object"
+        }
+      ],
+      "parts": [
+        {
+          "id": "observe_head",
+          "subject": "presenter",
+          "role": "head",
+          "stroke_groups": [
+            "Trace only the actually visible contour; lift between separate facial marks and limbs."
+          ]
+        },
+        {
+          "id": "observe_torso",
+          "subject": "presenter",
+          "role": "torso",
+          "stroke_groups": [
+            "Trace only the actually visible contour; lift between separate facial marks and limbs."
+          ]
+        },
+        {
+          "id": "observe_left_arm",
+          "subject": "presenter",
+          "role": "left_arm",
+          "stroke_groups": [
+            "Trace only the actually visible contour; lift between separate facial marks and limbs."
+          ]
+        },
+        {
+          "id": "observe_right_arm",
+          "subject": "presenter",
+          "role": "right_arm",
+          "stroke_groups": [
+            "Trace only the actually visible contour; lift between separate facial marks and limbs."
+          ]
+        },
+        {
+          "id": "observe_lower_body",
+          "subject": "presenter",
+          "role": "lower_body",
+          "stroke_groups": [
+            "Trace only the actually visible contour; lift between separate facial marks and limbs."
+          ]
+        },
+        {
+          "id": "observe_sun",
+          "subject": "sun",
+          "role": "sun",
+          "stroke_groups": [
+            "Independent closed outline and separated visible marks; do not connect across paper."
+          ]
+        },
+        {
+          "id": "observe_moon",
+          "subject": "moon",
+          "role": "moon",
+          "stroke_groups": [
+            "Independent closed outline and separated visible marks; do not connect across paper."
+          ]
+        },
+        {
+          "id": "observe_context",
+          "subject": "context",
+          "role": "context",
+          "stroke_groups": [
+            "Independent closed outline and separated visible marks; do not connect across paper."
+          ]
+        },
+        {
+          "id": "observe_frame",
+          "subject": "frame",
+          "role": "frame",
+          "stroke_groups": [
+            "Independent closed outline and separated visible marks; do not connect across paper."
+          ]
+        }
+      ],
+      "outline_order": [
+        "observe_head",
+        "observe_torso",
+        "observe_left_arm",
+        "observe_right_arm",
+        "observe_lower_body",
+        "observe_sun",
+        "observe_moon",
+        "observe_context",
+        "observe_frame"
+      ],
+      "fill_order": [
+        "observe_head",
+        "observe_torso",
+        "observe_left_arm",
+        "observe_right_arm",
+        "observe_lower_body",
+        "observe_sun",
+        "observe_moon",
+        "observe_context",
+        "observe_frame"
+      ],
+      "narrative_requirements": [
+        {
+          "id": "observe_fact",
+          "narration_quote": "雲遮住",
+          "observable": "Bean presenter at lower center looks toward upper-right: an outlined crescent moon is PARTIALLY covered by a simple outline cloud. A small orange sun is far upper-left, away from the presenter gaze. Bean raises its RIGHT hand to point at moon and extends its left arm; both legs visible. This explains that clouds can obscure the moon. Leave all lettering empty."
+        }
+      ]
+    }
+  ]
+}

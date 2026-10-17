@@ -1,0 +1,17 @@
+{
+  "status": "resolved",
+  "mode": "catalog",
+  "catalog_id": "4",
+  "selection_sha256": "555ae8f5dd517d8e7b3f76a0746c5fc370c83a2001fb8439b0709e50c9b1e3b8",
+  "recipe_sha256": "2d96a21c16f323dd71f57e7ee1a19173fe2b2ae85caeec7de5a9759fd14d4960",
+  "style_name": "小豆人黑色涂鸦信息图",
+  "rationale": "Use unchanged complete official style 4 for a new script; no old topic illustration reused.",
+  "content_fit": "A consistent bean presenter explains sunlight reflection and daytime horizon visibility.",
+  "style_spec": {
+    "line": "Complete official black marker recipe",
+    "palette": "Monochrome props, single orange key item, red/blue arrows",
+    "shading": "Outline-only objects, flat solid black bean",
+    "texture": "Off-white paper from official recipe",
+    "background": "Minimal vertical stacked panels; vivid yellow video canvas outside illustration"
+  }
+}

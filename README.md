@@ -199,3 +199,8 @@ Copyright © 2025 YILS.
 ## Hypit 遠端影片製作
 
 已通過官方 8 秒直式動畫的完整 MP4 渲染測試。可重複執行的 GitHub Actions、固定版本、驗證紀錄與後續製作規範見 [HYPIT.md](HYPIT.md)。
+
+
+## 手繪影片：免額外模型 API 的接力製作
+
+在 ChatGPT 提供題材或完整腳本、畫風、片長，由助手準備新內容的分鏡與圖片，GitHub 自動執行 068、字幕、官方手繪動畫與成片驗證；無須題材範本或額外 Gemini/OpenAI Key。通用 job_id、active-job 自動啟動及交付規範見 [WORKFLOW.md](WORKFLOW.md) 與 [handdraw/README.md](handdraw/README.md)。

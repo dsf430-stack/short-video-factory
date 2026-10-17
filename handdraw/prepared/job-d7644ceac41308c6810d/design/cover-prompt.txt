@@ -1,0 +1,1 @@
+Controlled Pillow composition, 1080x1920 #FFD23F; NotoSansCJK index3 96px at x90 y180/300, reviewed sheet-0 crop [0,0,1024,768] fit 900x800 at x90 y570; 64px subtitle x90 y1470. Font: notofonts/noto-cjk, SIL OFL.

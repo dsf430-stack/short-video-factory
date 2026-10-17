@@ -1,0 +1,20 @@
+A hand-drawn black marker doodle explainer illustration on off-white paper,
+vertical infographic with 2 stacked panels separated by thin hand-drawn lines.
+
+Character: a simple solid-black round blob person with two white dot eyes,
+a small curved smile, and thin black stick arms and legs. The body is solid
+flat black with smooth edges (no sketchy texture). The SAME character appears
+in every panel doing a different action.
+
+Style: clean black marker/pen outlines, slightly wobbly but fully closed
+hand-drawn lines. All objects are OUTLINE-ONLY black line-art with white
+interiors, no shading, no fill. Everything is monochrome black & white EXCEPT
+one orange accent color used ONLY for the single key item in each panel.
+Hand-drawn curved arrows in red or blue point at key spots, each with a short
+handwritten Chinese label. Each panel has a bold hand-written marker-style
+Chinese title at the top. Minimalist composition, lots of white space.
+
+Panels:
+1. Bean presenter stands in lower center on a long horizontal ground/horizon line. A small orange sun upper-left and an outlined half moon upper-right are BOTH above that horizon. Both arms and legs are visible and separated. One blue curved arrow points toward the moon. Show a local sky diagram, not a scale model of orbital distances. Leave all title/arrow-label boxes empty.
+2. Bean presenter at lower center looks toward upper-right: an outlined crescent moon is PARTIALLY covered by a simple outline cloud. A small orange sun is far upper-left, away from the presenter gaze. Bean raises its RIGHT hand to point at moon and extends its left arm; both legs visible. This explains that clouds can obscure the moon. Leave all lettering empty.
+Use case: illustration-story. Production asset: two equal-height stacked panels on a portrait 1024x1536 canvas, each panel about 1024x768 with generous margins. No writing, letters, numbers or watermarks: all labels will be composed with editable font layers. Keep all described visual objects wholly inside the corresponding panel. Preserve a consistent bean character across both panels. This is a schematic explanation, not a literal astronomical scale diagram.

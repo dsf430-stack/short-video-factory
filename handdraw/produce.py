@@ -60,7 +60,7 @@ def align_scenes(scenes, events):
                 while cursor < len(scene['text']) and not scene['text'][cursor].isalnum(): cursor += 1
                 cue['text'] = scene['text'][begin:cursor]
             if cursor != len(scene['text']): raise ValueError('Subtitle typography mapping incomplete')
-        result.append({'id': f's{index}', 'text': scene['text'], 'start': start, 'end': end,
+        result.append({'id': scene['id'], 'text': scene['text'], 'start': start, 'end': end,
                        'caption_cues': cues})
     if offset != len(events):
         raise ValueError('Unmapped Edge sentence events')
@@ -71,7 +71,7 @@ def align_scenes(scenes, events):
 def main(args):
  from PIL import Image
  from preparation import resolve_bundle, choose_candidate
- bundle=resolve_bundle(REPO/'handdraw/prepared',args.topic,args.seconds)
+ bundle=resolve_bundle(REPO/'handdraw/prepared',args.topic,args.seconds,args.job_id,args.style,args.voice_only)
  root=Path(args.output).resolve();root.mkdir(parents=True,exist_ok=True)
  skill=Path(args.official).resolve()/'skills/sweety-handdraw-video'
  actual=subprocess.check_output(['git','-C',str(skill),'rev-parse','HEAD'],text=True).strip()
@@ -80,33 +80,39 @@ def main(args):
  from clean_image import clean_image
  from video_verifier import build_fingerprint, file_hash
  command=skill/'scripts/handdraw_video.py'
- fingerprint=hashlib.sha256((str(args.seconds)+digest(Path(__file__))+digest(REPO/'handdraw/preparation.py')+json.dumps(json.loads((REPO/'smart_voice/voices.json').read_text())['voices']['068'],sort_keys=True) + ''.join(str(p.relative_to(bundle))+digest(p) for p in sorted(bundle.rglob('*')) if p.is_file())).encode()).hexdigest()
+ fingerprint=hashlib.sha256((str(args.seconds)+digest(Path(__file__))+digest(REPO/'handdraw/preparation.py')+digest(REPO/'handdraw/voice_cache.py')+digest(REPO/'smart_voice/generate_voice.py')+json.dumps(json.loads((REPO/'smart_voice/voices.json').read_text())['voices']['068'],sort_keys=True) + ''.join(str(p.relative_to(bundle))+digest(p) for p in sorted(bundle.rglob('*')) if p.is_file())).encode()).hexdigest()
  receipt=root/'prepared-receipt.json'
  film=root/'outputs/film.mp4'
  cached=False
- if receipt.exists() and film.exists() and json.loads(receipt.read_text()).get('bundle_sha256')==fingerprint:
-  try:
+ try:
+  if receipt.exists() and film.exists() and json.loads(receipt.read_text()).get('bundle_sha256')==fingerprint:
    record=json.loads((root/'work/render-record.json').read_text())
    cached=record['video_sha256']==file_hash(film) and record['build_fingerprint']==build_fingerprint(root)
-  except (ValueError,FileNotFoundError,KeyError): pass
+ except (ValueError,OSError,KeyError,TypeError):
+  print('INVALID_RENDER_CACHE: rebuilding this job from validated inputs',flush=True)
  if not cached:
   for directory in ['style','design','inputs']:
    shutil.copytree(bundle/directory,root/directory,dirs_exist_ok=True)
-  shutil.copyfile(bundle/'design.json',root/'design.json')
+  if not args.voice_only:shutil.copyfile(bundle/'design.json',root/'design.json')
   story=json.loads((bundle/'story.json').read_text()); scenes=story['scenes']
   candidates=story.get('script_candidates',[[s['text'] for s in scenes]])
   measured={}; attempts=[]; selected=None
   for _ in range(min(12,len(candidates))):
-   candidate=choose_candidate(candidates,measured,args.seconds-1-.5)
+   candidate=choose_candidate(candidates,measured,args.seconds-1-.5,story.get('preferred_candidate'))
    if candidate is None: break
    if len(candidates[candidate])!=len(scenes):raise ValueError('Script candidate scene count mismatch')
    text=''.join(candidates[candidate]);text_hash=hashlib.sha256(text.encode()).hexdigest()
    narration=root/f'inputs/voice-{text_hash[:16]}.txt';narration.write_text(text)
    mp3=narration.with_suffix('.mp3')
-   if not mp3.exists():run(sys.executable,REPO/'smart_voice/generate_voice.py','--voice-id','068','--text-file',narration,'--output',mp3)
-   meta=json.loads(mp3.with_suffix('.json').read_text())
+   from voice_cache import valid_voice_cache, invalidate_voice_cache
    expected=json.loads((REPO/'smart_voice/voices.json').read_text())['voices']['068']
-   if meta['text_sha256']!=text_hash or meta['voice_id']!='068' or meta['sha256']!=digest(mp3) or any(meta['preset'][k]!=expected[k] for k in ('voice','rate','pitch','volume')):raise ValueError('Voice cache mismatch')
+   if not valid_voice_cache(mp3,text_hash,expected,text):
+    invalidate_voice_cache(mp3)
+    run(sys.executable,REPO/'smart_voice/generate_voice.py','--voice-id','068','--text-file',narration,'--output',mp3)
+   else:
+    print('VOICE_CACHE_HIT',mp3.name,flush=True)
+   if not valid_voice_cache(mp3,text_hash,expected,text):raise ValueError('Generated voice artifacts failed hash/preset/subtitle checks')
+   meta=json.loads(mp3.with_suffix('.json').read_text())
    master=root/'inputs/master.wav';run('ffmpeg','-y','-v','error','-i',mp3,'-ar',48000,'-ac',1,'-c:a','pcm_s16le',master)
    import wave
    with wave.open(str(master)) as wav: duration=wav.getnframes()/wav.getframerate()
@@ -157,10 +163,7 @@ def main(args):
    print('PREVIEW_READY',root/'work/review/preview.mp4',flush=True)
    return
   run(sys.executable,command,'render',root)
-  save(receipt,{'bundle_sha256':fingerprint,'official_commit':PIN})
  run(sys.executable,command,'verify',root)
- if json.loads((bundle/'story.json').read_text()).get('natural_duration'):
-  args.seconds=json.loads((root/'work/timeline.json').read_text())['duration']
  probe=json.loads(subprocess.check_output(['ffprobe','-v','error','-show_streams','-show_format','-of','json',str(film)]))
  v=next(s for s in probe['streams'] if s['codec_type']=='video')
  if (v['width'],v['height'],v['avg_frame_rate'])!=(1080,1920,'30/1') or abs(float(v['duration'])-args.seconds)>.05:raise ValueError('Requested format or duration failed')
@@ -168,7 +171,9 @@ def main(args):
  review_path=REPO/'handdraw/final-reviews'/f"{digest(film)}.json"
  if review_path.exists():
   shutil.copyfile(review_path,root/'review.json');run(sys.executable,command,'finalize',root);report['status']='SUCCESS'
+ report.update(job_id=bundle.name,style=json.loads((bundle/'style/resolved.json').read_text()).get('style_name'),target_seconds=args.seconds)
  save(root/'acceptance.json',report)
+ save(receipt,{'bundle_sha256':fingerprint,'official_commit':PIN,'verified_video_sha256':digest(film)})
  print('VERIFIED_FILM',str(film),json.dumps(report),flush=True)
 if __name__=='__main__':
- p=argparse.ArgumentParser(description=__doc__);p.add_argument('--topic',required=True);p.add_argument('--seconds',type=int,default=30);p.add_argument('--official',required=True);p.add_argument('--output',required=True);p.add_argument('--preview-only',action='store_true');p.add_argument('--voice-only',action='store_true');main(p.parse_args())
+ p=argparse.ArgumentParser(description=__doc__);p.add_argument('--topic',required=True);p.add_argument('--seconds',type=int,default=30);p.add_argument('--official',required=True);p.add_argument('--output',required=True);p.add_argument('--preview-only',action='store_true');p.add_argument('--voice-only',action='store_true');p.add_argument('--job-id');p.add_argument('--style');main(p.parse_args())
