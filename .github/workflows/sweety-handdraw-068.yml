@@ -68,7 +68,7 @@ jobs:
       - name: Measure requested 068 narration before locking storyboard
         run: |
           mkdir -p handdraw/output/gum-style4
-          python -u smart_voice/generate_voice.py --voice-id 068 --text-file handdraw/prepared/gum-style4/script.txt --output handdraw/output/gum-style4/narration.mp3
+          python -u smart_voice/generate_voice.py --voice-id 068 --text-file handdraw/prepared/gum-style4/script.txt --output handdraw/output/gum-style4/narration-v2.mp3
       - name: Upload measured narration
         if: always()
         uses: actions/upload-artifact@v4
