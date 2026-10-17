@@ -1,0 +1,28 @@
+{
+  "video_sha256": "edddcf327a6c7d674fcaa3eb03db57e1f88c73a87e28a1086986856fee3f1ac7",
+  "content": {
+    "status": "pass",
+    "evidence": "Revised Traditional Chinese script retains qualified barrier, heat-storage and serrated-cutting statements. Four standalone English teaching phrases and the explicit 鋁/屢 Chinese homophone joke match real alignment text."
+  },
+  "visual": {
+    "status": "pass",
+    "evidence": "Inspected decoded contact covering all seven new pages and full-size pages 2 and 3. Captions increased 32px to 52px; headings 50px to 64px. All 26 real-timed captions fit at most two lines; long subtitle readable within canvas. Barrier heading moved to x215/y575 and visually confirmed fully inside its drawn box. Black characters and yellow background retained."
+  },
+  "motion": {
+    "status": "pass",
+    "evidence": "Same real sentence timings, source drawings, semantic masks and pen animation workflow. Official full-timeline engineering path/paint checks pass. Enlarged type occupies existing separate title and subtitle regions; sampled finished-page frames show no subject obscured."
+  },
+  "audio": {
+    "status": "pass",
+    "evidence": "Technical scope: existing 068 zh-TW-HsiaoChenNeural Chinese +20%, English-only -25%, pitch +5Hz. Four measured English cues last about 1.85 and 2.333 seconds each. Entire voiced master 80.300408 seconds; real sentence alignment, full decode and loudness pass. Subjective listening remains unverified. Previous large-type render AAC payload exactly matched delivered slow-English video; final large-type master remains the same verified source."
+  },
+  "privacy": {
+    "status": "pass",
+    "evidence": "Official source cleanup receipts and unchanged reviewed pixel hashes; official engineering verification passed. No personal source material or unlicensed music added."
+  },
+  "limitations": [
+    "Subjective listening and pronunciation naturalness have not been independently auditioned; user requested slower English after reviewing the earlier version.",
+    "Visual review used decoded page samples and preview motion samples, not a human real-time watch of every frame.",
+    "No background music. Final duration follows measured PCM timeline; about 81.7 seconds."
+  ]
+}
