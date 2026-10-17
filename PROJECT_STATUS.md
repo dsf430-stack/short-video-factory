@@ -1,3 +1,21 @@
+# 最新結果（2026-10-17）
+
+- 已完成颱風測試影片：官方 4 號完整配方、068 固定聲線/+20%/+5Hz、繁體大字幕、鮮黃畫布。
+- 最終放大版 Actions SUCCESS：https://github.com/dsf430-stack/short-video-factory/actions/runs/39015702590 。前一版 SUCCESS：https://github.com/dsf430-stack/short-video-factory/actions/runs/39015459420 。
+- 實際下載 MP4 完整解碼通過：H.264/AAC、1080×1920、30fps、900幀、音視訊各30.000秒、無額外字幕軌。SHA256 `c6fc9f10746cd1cbc2def685aaf7a44352ced1cfe3f50793bb1d92a222bbc765`。
+- 已查看封面、四幕完成畫面（4.5/10.9/19.5/29.4秒）及四幕繪製過程（2/3、7/8、13/15、22/24秒）。修正主圖大小、空框標示及關鍵字，字幕與圖文無重疊；預覽是官方逐筆輪廓/上色，不是靜態替代。
+- 最終版與前一版的 AAC 音訊資料完全一致；保留完整旁白及真實句界，PCM28.56秒+封面1秒+收尾0.44秒。官方聲音完整性、時間線及工程檢查通過；主觀聽感未驗收，未添加背景音樂。
+- 已保存免解壓 MP4：Typhoon_Radius_Style04_068_30s.mp4（libfile_0a6135ce2b8c8191a9533b111c1b7ae3）。
+- 三個單元測試通過，四格使用原版 build_illustration 的本地檢查通過。首輪手臂重疊失敗及修正保留於下方紀錄。
+
+## 尚未完成：GitHub獨立任意腳本製作
+
+這次已修復準備任務、素材驗證、實測旁白重選、字幕、圖集、快取及渲染；不能將本片成功擴大宣稱「任意腳本都能獨立全自動出片」。新題材仍需助手或接入的通用文字/圖片/視覺審查供應者備料。
+
+無費用 readiness run SUCCESS：https://github.com/dsf430-stack/short-video-factory/actions/runs/39015557509 。只確認 GEMINI_API_KEY 存在，未驗證金鑰有效性、額度、付費狀態或呼叫生成 API，未列印金鑰。其他檢查名稱沒有配置。Google目前的 Gemini 3.1 Flash Lite Image 沒有免費層，1K輸出 US$0.0336/張，另計文字及重試（來源 https://ai.google.dev/gemini-api/docs/pricing ）。已向使用者告知，付費通用生圖尚未啟用。不可改用其他來源冒充官方素材或偽造圖片審查。
+
+---
+
 # 手繪製作診斷與颱風驗證
 
 本次修復分支：fix/handdraw-topic-pipeline。官方引擎固定 5206ec0d17f9b353e400b64b9c51ad69e721e02a，聲音沿用 068 zh-TW-HsiaoChenNeural / +20% / +5Hz。
