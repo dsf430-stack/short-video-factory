@@ -13,7 +13,7 @@
         384
       ],
       "anatomy_and_occlusion": "Viewed bean presenter in this crop. Continuous head/torso, no neck. Both stick arms and legs visible; panel 4 lower limbs end at doorway threshold. Foreground hands assigned by earlier masks.",
-      "part_boundaries": "Observed face, torso, screen-left arm, screen-right arm, legs assigned first using normalized polygons; remaining weather/house and border assigned separately. Body outline continuous, masks share no duplicated ownership.",
+      "part_boundaries": "Viewed two separate arms from body to umbrella grip: upper arm y0.62–0.675, lower arm y0.675–0.73 of actual crop, x0.295–0.335. Upper/lower arms no longer share the same region; head and torso retain body ownership. Remaining diagram and border assigned separately.",
       "stroke_breaks": "Lift at independent rain marks, spiral arcs, umbrella ribs, limbs, circle and radius; do not connect across paper.",
       "outline_then_fill": "Draw all visible black contours before orange fill and bean body fill. Review preview for solid-black region tracing artifacts.",
       "spatial_order": "Face and torso, arms, lower limbs, then explanatory diagram and panel frame.",

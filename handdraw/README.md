@@ -1,23 +1,17 @@
 # 官方手繪影片 + 068
 
-此入口不需要 Gemini 或其他模型 API Key。
+固定官方引擎 5206ec0d17f9b353e400b64b9c51ad69e721e02a；不修改引擎、不強制 Gemini。068 沿用既有 zh-TW-HsiaoChenNeural、+20%、+5Hz。
 
-在 ChatGPT 提供主題後，由助手依官方 sweety-handdraw-video 規範準備腳本、插畫、繪製計畫和實際素材審查，提交到 prepared/。Actions 讀取已備妥的任務，沿用既有 smart_voice/generate_voice.py 的 068 曉臻（+20%、+5Hz），再執行原版官方手繪引擎與 FFmpeg 驗證。
+## 新題材與新腳本
 
-## 啟動
+不需要既有題材範本。助手須按根目錄 AGENTS.md，為內容準備完整故事、分鏡、官方畫風、圖片和實際審查紀錄後提交，Actions 接續整篇配音、實測自然腳本候選、字幕、逐筆動畫與驗證。catalog.json 只作完成素材的索引。
 
-開啟 Actions → Sweety 手繪影片 · 068 → Run workflow；主題填「一滴水如何變成雨」。
+未完成的新題材會自動建立 request.json 與 inputs/design/style 目錄、列出缺項，保存可續作狀態；缺素材不會冒用其他主題。這不是獨立通用生圖服務。GitHub runner 尚未接上任意腳本文字/生圖/視覺審查供應者，因此不能宣稱僅在 Actions 貼任意文字就能獨立完成所有準備。
 
-完成後在該次執行的 Artifacts 下載 sweety-068-rain-1080x1920-執行編號。未知主題會明確要求先備妥素材，不會用舊影片或改標題充當新作品。
+## 渲染
 
-## 固定來源
+使用既有 `.github/workflows/sweety-handdraw-068.yml`，topic 指向已準備的本題材。預設 30 秒、1080×1920、30fps。新颱風測試使用官方 4 號完整配方、鮮黃色畫布與 52px 繁體字幕。
 
-- 官方程式：https://github.com/threerocks/sweety-handdraw-video
-- 固定提交：5206ec0d17f9b353e400b64b9c51ad69e721e02a（完整原始碼與內置依賴由 Actions 取得）
-- 068：本專案既有 smart_voice/generate_voice.py 與 voices.json
-- 原創插畫：本次內建 imagegen 生成，保留逐圖簡報、實際提示詞、SHA、語義部位與實際看圖證據。
-- 封面字型：notofonts/noto-cjk，SIL Open Font License；封面為可控字型圖層合成，規格保留在 design/cover-prompt.txt。字型本體未重複打包。
+旁白按完整腳本生成，以解碼 PCM 實測；不合片長時重選自然長短候選並完整重配，保留實際字幕時間戳。快取指紋包括片長、程式、素材及完整 068 設定。沒有候選能符合時記錄每次實測，明確要求修復腳本，不改聲線或截音。
 
-不更改上游手繪引擎、不使用 runtime_fixture 交付、不更換配音聲線。字幕使用實際 Edge 事件時間，沒有平均猜測；完整旁白不截斷或加速以湊片長。預設只有旁白。
-
-工程驗證與實際視聽審查分開記錄，未聽音不宣稱已通過人耳驗收。
+工程驗證與主觀視聽分開記錄，沒有實際聽音不宣稱聽感通過。預設未添加背景音樂，可自行合成或於發布平台選配樂。

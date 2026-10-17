@@ -17,3 +17,11 @@
 本地 3 個單元測試通過。完整渲染及 Actions：待本次真實執行結果，未標示成功。
 
 尚未具備的能力：GitHub runner 沒有已配置的通用腳本/圖片生成與視覺審查供應者；ChatGPT 助手可準備新題材並提交後自動渲染，但不可將缺素材任務宣稱完整自動生成成功。原有雨題材與其他分支成果保留，不重做。
+
+## 實際執行 39015296470
+
+- GitHub Actions 已啟動：https://github.com/dsf430-stack/short-video-factory/actions/runs/39015296470
+- 安裝、三項單元測試、068 整篇配音、素材/畫風/分鏡審查紀錄驗證及 doctor 通過。
+- 自然腳本候選 24 解碼 PCM 23.0880208333 秒；自動重選候選 39 為 28.56 秒，收尾 0.44 秒，符合30秒要求。聲音設定未變，未拉伸或截音。
+- build 真實失敗：`Part has no drawable outline; prepare a contour layer/mask before generation: s0_right_arm`。根因為第一幕兩手臂區域重疊，前方區域吃掉下臂輪廓。修正上下手臂 y 邊界，不更動已生成圖片或配音；本地使用原版 build_illustration 逐格重驗後再提交。
+- 尚未產生最終 MP4，不回報成功。
