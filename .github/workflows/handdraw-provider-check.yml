@@ -1,0 +1,26 @@
+name: Handdraw generation provider readiness
+on:
+  push:
+    branches: [fix/handdraw-topic-pipeline]
+    paths: ['.github/workflows/handdraw-provider-check.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check configured credential availability without exposing values or calling paid APIs
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          HANDDRAW_API_KEY: ${{ secrets.HANDDRAW_API_KEY }}
+        run: |
+          python - <<'PY'
+          import json, os
+          keys = ['GEMINI_API_KEY', 'GOOGLE_API_KEY', 'OPENAI_API_KEY', 'HANDDRAW_API_KEY']
+          result = {name: bool(os.environ.get(name)) for name in keys}
+          print('PROVIDER_CREDENTIAL_AVAILABILITY=' + json.dumps(result))
+          print('No secret values were printed. No generation API or paid service was called.')
+          PY
