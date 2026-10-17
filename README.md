@@ -194,3 +194,8 @@ Copyright © 2025 YILS.
 [release-date-shield]: https://img.shields.io/github/release-date/YILS-LIN/short-video-factory?color=9cf&style=flat-round
 [license-shield]: https://img.shields.io/github/license/YILS-LIN/short-video-factory.svg?labelColor=black&style=flat-square
 [license-url]: https://github.com/YILS-LIN/short-video-factory/blob/main/LICENSE
+
+
+## Hypit 遠端影片製作
+
+已通過官方 8 秒直式動畫的完整 MP4 渲染測試。可重複執行的 GitHub Actions、固定版本、驗證紀錄與後續製作規範見 [HYPIT.md](HYPIT.md)。
