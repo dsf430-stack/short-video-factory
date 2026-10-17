@@ -66,7 +66,7 @@ def main():
  subtitle=assets/'episode.srt';events=cues(subtitle);assert all(0<=c['start']<c['end']<=60 for c in events);assert all(b['start']>=a['end'] for a,b in zip(events,events[1:]))
  vf=f"subtitles={subtitle}:force_style='FontName=Noto Sans CJK TC,FontSize=8,MarginV=18,Outline=1,Alignment=2'"
  temporary=pathlib.Path(a.output).with_suffix('.tmp.mp4')
- run(['ffmpeg','-y','-loglevel','error','-i',joined,'-i',assets/'narration.m4a','-i',bg,'-filter_complex','[1:a][2:a]amix=inputs=2:normalize=0,alimiter=limit=0.95:level=false[a]','-map','0:v:0','-map','[a]','-vf',vf,'-t','60','-c:v','libx264','-preset','fast','-crf','20','-threads','2','-c:a','aac','-b:a','192k','-ar','48000','-movflags','+faststart',temporary]);temporary.replace(a.output)
+ run(['ffmpeg','-y','-loglevel','error','-i',joined,'-i',assets/'narration.m4a','-i',bg,'-filter_complex','[1:a][2:a]amix=inputs=2:normalize=0,alimiter=limit=0.95:level=false:latency=true[a]','-map','0:v:0','-map','[a]','-vf',vf,'-t','60','-c:v','libx264','-preset','fast','-crf','20','-threads','2','-c:a','aac','-b:a','192k','-ar','48000','-movflags','+faststart',temporary]);temporary.replace(a.output)
  info=probe(a.output);v=next(x for x in info['streams'] if x['codec_type']=='video');au=next(x for x in info['streams'] if x['codec_type']=='audio')
  assert abs(float(info['format']['duration'])-60)<.05 and (v['width'],v['height'],v['avg_frame_rate'])==(1080,1920,'30/1') and int(v['nb_frames'])==1800
  assert v['codec_name']=='h264' and au['codec_name']=='aac' and not any(x['codec_type']=='subtitle' for x in info['streams'])
