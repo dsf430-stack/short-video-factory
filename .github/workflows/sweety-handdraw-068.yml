@@ -98,7 +98,7 @@ jobs:
         run: |
           set -o pipefail
           mkdir -p handdraw/output
-          python -u handdraw/produce.py --topic "$TOPIC" --seconds ${{ inputs.seconds || (github.ref_name == 'render/gum-style4-80s' && 80 || 30) }} --preview-only --official /tmp/sweety-official --output handdraw/output/prepared 2>&1 | tee handdraw/output/run.log
+          python -u handdraw/produce.py --topic "$TOPIC" --seconds ${{ inputs.seconds || (github.ref_name == 'render/gum-style4-80s' && 80 || 30) }} --official /tmp/sweety-official --output handdraw/output/prepared 2>&1 | tee handdraw/output/run.log
       - name: Save prepared job and verified voice work
         if: always()
         uses: actions/cache/save@v4
@@ -108,7 +108,7 @@ jobs:
             smart_voice/output/.068-cache
           key: ${{ steps.cache.outputs.cache-primary-key }}
       - name: Upload verified final film
-        if: false
+        if: success()
         uses: actions/upload-artifact@v4
         with:
           name: sweety-068-1080x1920-${{ github.run_id }}
