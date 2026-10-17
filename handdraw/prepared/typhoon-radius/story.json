@@ -8,7 +8,7 @@
       "id": "s0",
       "text": "沒被颱風中心掃過，為什麼還是狂風暴雨？",
       "label": "中心沒來也有風雨",
-      "label_size": 64,
+      "label_size": 72,
       "source": "inputs/sheet.png",
       "crop": [
         0,
@@ -164,13 +164,45 @@
             ]
           ]
         }
+      ],
+      "label_x": 100,
+      "label_y": 300,
+      "image_x": 60,
+      "image_y": 600,
+      "image_width": 960,
+      "image_height": 840,
+      "annotations": [
+        {
+          "text": "外圍風雨",
+          "x": 110,
+          "y": 662,
+          "size": 32
+        },
+        {
+          "text": "中心",
+          "x": 880,
+          "y": 652,
+          "size": 32
+        },
+        {
+          "text": "中心沒經過",
+          "x": 100,
+          "y": 1160,
+          "size": 80
+        },
+        {
+          "text": "風雨照樣來",
+          "x": 100,
+          "y": 1290,
+          "size": 80
+        }
       ]
     },
     {
       "id": "s1",
       "text": "因為颱風不是只有中心才危險，強風範圍可以向外延伸。",
       "label": "颱風不是一個點",
-      "label_size": 64,
+      "label_size": 72,
       "source": "inputs/sheet.png",
       "crop": [
         0,
@@ -326,13 +358,45 @@
             ]
           ]
         }
+      ],
+      "label_x": 100,
+      "label_y": 300,
+      "image_x": 60,
+      "image_y": 600,
+      "image_width": 960,
+      "image_height": 840,
+      "annotations": [
+        {
+          "text": "中心",
+          "x": 365,
+          "y": 665,
+          "size": 32
+        },
+        {
+          "text": "風場",
+          "x": 885,
+          "y": 620,
+          "size": 32
+        },
+        {
+          "text": "中心不等於",
+          "x": 100,
+          "y": 1160,
+          "size": 80
+        },
+        {
+          "text": "全部影響範圍",
+          "x": 100,
+          "y": 1290,
+          "size": 80
+        }
       ]
     },
     {
       "id": "s2",
       "text": "七級風暴風半徑，是從中心向外，平均風速每秒十五公尺以上的範圍。半徑越大，強風影響越廣。",
       "label": "七級風暴風半徑",
-      "label_size": 64,
+      "label_size": 72,
       "source": "inputs/sheet.png",
       "crop": [
         0,
@@ -488,13 +552,45 @@
             ]
           ]
         }
+      ],
+      "label_x": 100,
+      "label_y": 300,
+      "image_x": 60,
+      "image_y": 600,
+      "image_width": 960,
+      "image_height": 840,
+      "annotations": [
+        {
+          "text": "中心",
+          "x": 370,
+          "y": 668,
+          "size": 32
+        },
+        {
+          "text": "七級風",
+          "x": 850,
+          "y": 668,
+          "size": 32
+        },
+        {
+          "text": "平均風速 ≥ 15 m/s",
+          "x": 100,
+          "y": 1160,
+          "size": 66
+        },
+        {
+          "text": "不是降雨邊界",
+          "x": 100,
+          "y": 1290,
+          "size": 80
+        }
       ]
     },
     {
       "id": "s3",
       "text": "外圍環流也可能帶來強風豪雨，別只看中心，要看氣象署風雨預報。",
       "label": "看風雨預報才安心",
-      "label_size": 64,
+      "label_size": 72,
       "source": "inputs/sheet.png",
       "crop": [
         0,
@@ -649,6 +745,38 @@
               1
             ]
           ]
+        }
+      ],
+      "label_x": 100,
+      "label_y": 300,
+      "image_x": 60,
+      "image_y": 600,
+      "image_width": 960,
+      "image_height": 840,
+      "annotations": [
+        {
+          "text": "留意風雨",
+          "x": 110,
+          "y": 642,
+          "size": 32
+        },
+        {
+          "text": "外圍環流",
+          "x": 867,
+          "y": 620,
+          "size": 30
+        },
+        {
+          "text": "外圍環流也要防",
+          "x": 100,
+          "y": 1160,
+          "size": 72
+        },
+        {
+          "text": "看氣象署風雨預報",
+          "x": 100,
+          "y": 1290,
+          "size": 72
         }
       ]
     }
