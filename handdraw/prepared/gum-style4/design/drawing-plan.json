@@ -140,7 +140,7 @@
       "id": "s1",
       "composition": "One panel. Presenter at left points toward one large opened gum wrapper at right with a folded-over corner and clearly serrated top edge. The gum stick remains partially wrapped. A single orange question mark tile below, no writing inside. Leave heading and annotation positions blank.",
       "drawability_reason": "Sparse outlines and broad flat bean body; five presenter regions and separated simple props are independently traceable within one spoken idea.",
-      "outline_strategy": "visible_source_ink",
+      "outline_strategy": "explicit_mask",
       "spatial_order": "top_to_bottom_left_to_right",
       "subjects": [
         {
@@ -280,7 +280,7 @@
           "observable": "One panel. Presenter at left points toward one large opened gum wrapper at right with a folded-over corner and clearly serrated top edge. The gum stick remains partially wrapped. A single orange question mark tile below, no writing inside. Leave heading and annotation positions blank."
         }
       ],
-      "post_generation_refinement": "Reviewed generated image; refined prop masks and recorded genuinely occluded arm. Original pre-generation plan and receipt preserved separately."
+      "post_generation_refinement": "Reviewed generated image; refined prop masks and recorded genuinely occluded arm. Original pre-generation plan and receipt preserved separately. Added source-aligned contour mask for orange-only question tile after official build rejected absent dark outline. No source pixels changed."
     },
     {
       "id": "s2",
@@ -593,7 +593,7 @@
       "id": "s4",
       "composition": "One panel. Presenter at left with worried face stands beside a large trousers pocket on right containing a wrapped gum stick; a small sun and upward heat wave symbols above pocket show heat exposure, not refrigeration. One orange sun only. Leave labels blank.",
       "drawability_reason": "Sparse outlines and broad flat bean body; five presenter regions and separated simple props are independently traceable within one spoken idea.",
-      "outline_strategy": "visible_source_ink",
+      "outline_strategy": "explicit_mask",
       "spatial_order": "top_to_bottom_left_to_right",
       "subjects": [
         {
@@ -610,10 +610,6 @@
         },
         {
           "id": "pocket",
-          "kind": "object"
-        },
-        {
-          "id": "arrows",
           "kind": "object"
         },
         {
@@ -686,15 +682,6 @@
           ]
         },
         {
-          "id": "s4_arrows",
-          "subject": "arrows",
-          "role": "arrows",
-          "stroke_groups": [
-            "independent visible contour for each separated component",
-            "lift between distinct arrows, teeth, highlights and interior marks"
-          ]
-        },
-        {
           "id": "s4_frame",
           "subject": "panel_frame",
           "role": "panel_frame",
@@ -712,7 +699,6 @@
         "s4_lower_body",
         "s4_heat",
         "s4_pocket",
-        "s4_arrows",
         "s4_frame"
       ],
       "fill_order": [
@@ -723,7 +709,6 @@
         "s4_lower_body",
         "s4_heat",
         "s4_pocket",
-        "s4_arrows",
         "s4_frame"
       ],
       "narrative_requirements": [
@@ -733,7 +718,7 @@
           "observable": "One panel. Presenter at left with worried face stands beside a large trousers pocket on right containing a wrapped gum stick; a small sun and upward heat wave symbols above pocket show heat exposure, not refrigeration. One orange sun only. Leave labels blank."
         }
       ],
-      "post_generation_refinement": "Reviewed generated image; refined prop masks and recorded genuinely occluded arm. Original pre-generation plan and receipt preserved separately."
+      "post_generation_refinement": "Reviewed generated image; refined prop masks and recorded genuinely occluded arm. Original pre-generation plan and receipt preserved separately. Heat arrow is within heat-symbol region; pocket arrow within pocket region. Removed redundant overlapping arrow part so it cannot own only blank paper."
     },
     {
       "id": "s5",

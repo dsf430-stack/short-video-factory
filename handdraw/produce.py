@@ -113,7 +113,7 @@ def main(args):
   for s in scenes:
    pages.append({'beats':[{'id':s['id'],'text':s['text'],'actions':[
     {'type':'text','text':s['label'],'x':s.get('label_x',120),'y':s.get('label_y',250),'size':s.get('label_size',90),'weight':1},
-    {'type':'illustration','drawing_plan_id':s['id'],'source':s.get('source','inputs/'+s['id']+'.png'),'x':120,'y':480,'width':840,'height':840,'weight':5,'parts':s['parts']}]}]})
+    {'type':'illustration','drawing_plan_id':s['id'],'source':s.get('source','inputs/'+s['id']+'.png'),'x':120,'y':480,'width':840,'height':840,'weight':5,'parts':s['parts'],**({'outline_mask':s['outline_mask']} if s.get('outline_mask') else {})}]}]})
   manifest={'version':1,'title':story['title'],'design_file':'design.json','canvas':{'width':1080,'height':1920,'fps':30},'paper':'#FFFFFF','font':{'path':font,'index':3},'cover':{'source':'inputs/cover.png','seconds':1},'hand':{'preset':'pen-only','scale':.25,'pen_text':''},'narration':{'source':'inputs/master.wav','alignment':'inputs/alignment.json'},'audio':{'end_hold_seconds':hold},'ending':{'caption_hold_seconds':min(.2,hold)},'captions':{'font':{'path':font,'index':3},'font_size':46,'bottom_margin':210,'max_width_ratio':.9,'max_lines':2,'color':'#FFFFFF','stroke_color':'#151515','stroke_width':3,'background':None},'art_direction':{'record':'design/art-direction.json'},'drawing_plan':'design/drawing-plan.json','drawing_review':'design/drawing-review.json','pages':pages}
   save(root/'job.json',manifest);(root/'script.txt').write_text(text)
   if story.get('caption_font_size'):
@@ -122,7 +122,7 @@ def main(args):
    save(root/'job.json',manifest)
   for stage in ['doctor','build']:run(sys.executable,command,stage,root)
   run(sys.executable,command,'verify',root,'--assets-only')
-  run(sys.executable,command,'render',root,'--preview','--start',1,'--duration',7)
+  run(sys.executable,command,'render',root,'--preview','--start',1,'--duration',story.get('preview_seconds',7))
   if args.preview_only:
    print('PREVIEW_READY',root/'work/review/preview.mp4',flush=True)
    return

@@ -326,7 +326,7 @@
         "id": "s1",
         "composition": "One panel. Presenter at left points toward one large opened gum wrapper at right with a folded-over corner and clearly serrated top edge. The gum stick remains partially wrapped. A single orange question mark tile below, no writing inside. Leave heading and annotation positions blank.",
         "drawability_reason": "Sparse outlines and broad flat bean body; five presenter regions and separated simple props are independently traceable within one spoken idea.",
-        "outline_strategy": "visible_source_ink",
+        "outline_strategy": "explicit_mask",
         "spatial_order": "top_to_bottom_left_to_right",
         "subjects": [
           {
@@ -466,7 +466,7 @@
             "observable": "One panel. Presenter at left points toward one large opened gum wrapper at right with a folded-over corner and clearly serrated top edge. The gum stick remains partially wrapped. A single orange question mark tile below, no writing inside. Leave heading and annotation positions blank."
           }
         ],
-        "post_generation_refinement": "Reviewed generated image; refined prop masks and recorded genuinely occluded arm. Original pre-generation plan and receipt preserved separately."
+        "post_generation_refinement": "Reviewed generated image; refined prop masks and recorded genuinely occluded arm. Original pre-generation plan and receipt preserved separately. Added source-aligned contour mask for orange-only question tile after official build rejected absent dark outline. No source pixels changed."
       },
       "prompt": "A hand-drawn black marker doodle explainer illustration on off-white paper,\nvertical infographic with 1 stacked panels separated by thin hand-drawn lines.\n\nCharacter: a simple solid-black round blob person with two white dot eyes,\na small curved smile, and thin black stick arms and legs. The body is solid\nflat black with smooth edges (no sketchy texture). The SAME character appears\nin every panel doing a different action.\n\nStyle: clean black marker/pen outlines, slightly wobbly but fully closed\nhand-drawn lines. All objects are OUTLINE-ONLY black line-art with white\ninteriors, no shading, no fill. Everything is monochrome black & white EXCEPT\none orange accent color used ONLY for the single key item in each panel.\nHand-drawn curved arrows in red or blue point at key spots, each with a short\nhandwritten Chinese label. Each panel has a bold hand-written marker-style\nChinese title at the top. Minimalist composition, lots of white space.\n\nPanels:\nOne panel. Presenter at left points toward one large opened gum wrapper at right with a folded-over corner and clearly serrated top edge. The gum stick remains partially wrapped. A single orange question mark tile below, no writing inside. Leave heading and annotation positions blank.\n\n画幅比例:1:1。\n\nProduction typography constraint: reserve all title and annotation spaces as blank; do not draw any letters, digits, words or fake text. All final Traditional Chinese and English typography will be added by editable font layers. This is an illustration source for progressive drawing, not a finished text poster. Keep all subjects completely inside generous margins.\n",
       "source": "inputs/s1.jpg",
@@ -663,7 +663,8 @@
       ],
       "label_x": 180,
       "label_y": 550,
-      "label_size": 50
+      "label_size": 50,
+      "outline_mask": "inputs/s1-outline.png"
     },
     {
       "id": "s2",
@@ -1443,7 +1444,7 @@
         "id": "s4",
         "composition": "One panel. Presenter at left with worried face stands beside a large trousers pocket on right containing a wrapped gum stick; a small sun and upward heat wave symbols above pocket show heat exposure, not refrigeration. One orange sun only. Leave labels blank.",
         "drawability_reason": "Sparse outlines and broad flat bean body; five presenter regions and separated simple props are independently traceable within one spoken idea.",
-        "outline_strategy": "visible_source_ink",
+        "outline_strategy": "explicit_mask",
         "spatial_order": "top_to_bottom_left_to_right",
         "subjects": [
           {
@@ -1460,10 +1461,6 @@
           },
           {
             "id": "pocket",
-            "kind": "object"
-          },
-          {
-            "id": "arrows",
             "kind": "object"
           },
           {
@@ -1536,15 +1533,6 @@
             ]
           },
           {
-            "id": "s4_arrows",
-            "subject": "arrows",
-            "role": "arrows",
-            "stroke_groups": [
-              "independent visible contour for each separated component",
-              "lift between distinct arrows, teeth, highlights and interior marks"
-            ]
-          },
-          {
             "id": "s4_frame",
             "subject": "panel_frame",
             "role": "panel_frame",
@@ -1562,7 +1550,6 @@
           "s4_lower_body",
           "s4_heat",
           "s4_pocket",
-          "s4_arrows",
           "s4_frame"
         ],
         "fill_order": [
@@ -1573,7 +1560,6 @@
           "s4_lower_body",
           "s4_heat",
           "s4_pocket",
-          "s4_arrows",
           "s4_frame"
         ],
         "narrative_requirements": [
@@ -1583,7 +1569,7 @@
             "observable": "One panel. Presenter at left with worried face stands beside a large trousers pocket on right containing a wrapped gum stick; a small sun and upward heat wave symbols above pocket show heat exposure, not refrigeration. One orange sun only. Leave labels blank."
           }
         ],
-        "post_generation_refinement": "Reviewed generated image; refined prop masks and recorded genuinely occluded arm. Original pre-generation plan and receipt preserved separately."
+        "post_generation_refinement": "Reviewed generated image; refined prop masks and recorded genuinely occluded arm. Original pre-generation plan and receipt preserved separately. Heat arrow is within heat-symbol region; pocket arrow within pocket region. Removed redundant overlapping arrow part so it cannot own only blank paper."
       },
       "prompt": "A hand-drawn black marker doodle explainer illustration on off-white paper,\nvertical infographic with 1 stacked panels separated by thin hand-drawn lines.\n\nCharacter: a simple solid-black round blob person with two white dot eyes,\na small curved smile, and thin black stick arms and legs. The body is solid\nflat black with smooth edges (no sketchy texture). The SAME character appears\nin every panel doing a different action.\n\nStyle: clean black marker/pen outlines, slightly wobbly but fully closed\nhand-drawn lines. All objects are OUTLINE-ONLY black line-art with white\ninteriors, no shading, no fill. Everything is monochrome black & white EXCEPT\none orange accent color used ONLY for the single key item in each panel.\nHand-drawn curved arrows in red or blue point at key spots, each with a short\nhandwritten Chinese label. Each panel has a bold hand-written marker-style\nChinese title at the top. Minimalist composition, lots of white space.\n\nPanels:\nOne panel. Presenter at left with worried face stands beside a large trousers pocket on right containing a wrapped gum stick; a small sun and upward heat wave symbols above pocket show heat exposure, not refrigeration. One orange sun only. Leave labels blank.\n\n画幅比例:1:1。\n\nProduction typography constraint: reserve all title and annotation spaces as blank; do not draw any letters, digits, words or fake text. All final Traditional Chinese and English typography will be added by editable font layers. This is an illustration source for progressive drawing, not a finished text poster. Keep all subjects completely inside generous margins.\n",
       "source": "inputs/s4.jpg",
@@ -1776,27 +1762,6 @@
           ]
         },
         {
-          "id": "s4_arrows",
-          "polygon": [
-            [
-              0.53,
-              0.2
-            ],
-            [
-              0.85,
-              0.2
-            ],
-            [
-              0.85,
-              0.64
-            ],
-            [
-              0.53,
-              0.64
-            ]
-          ]
-        },
-        {
           "id": "s4_frame",
           "polygon": [
             [
@@ -1820,7 +1785,8 @@
       ],
       "label_x": 180,
       "label_y": 550,
-      "label_size": 50
+      "label_size": 50,
+      "outline_mask": "inputs/s4-outline.png"
     },
     {
       "id": "s5",
@@ -2553,5 +2519,6 @@
       "label_size": 50
     }
   ],
-  "caption_font_size": 32
+  "caption_font_size": 32,
+  "preview_seconds": 12
 }
