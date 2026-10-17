@@ -1,0 +1,476 @@
+{
+  "illustrations": [
+    {
+      "id": "arrival",
+      "composition": "Woman outside glass with knuckles touching, dry coat against rainy exterior",
+      "drawability_reason": "Readable graphite silhouettes, semantic human anatomy planned; delivery is full image camera mode, not drawing reveal.",
+      "outline_strategy": "visible_source_ink",
+      "spatial_order": "top_to_bottom_left_to_right",
+      "subjects": [
+        {
+          "id": "woman",
+          "kind": "human"
+        }
+      ],
+      "parts": [
+        {
+          "id": "arrival_woman_head",
+          "subject": "woman",
+          "role": "head",
+          "stroke_groups": [
+            "Independent graphite contour strokes with lifts; occluded anatomy is not fabricated in the final complete-image camera mode."
+          ]
+        },
+        {
+          "id": "arrival_woman_neck",
+          "subject": "woman",
+          "role": "neck",
+          "stroke_groups": [
+            "Independent graphite contour strokes with lifts; occluded anatomy is not fabricated in the final complete-image camera mode."
+          ]
+        },
+        {
+          "id": "arrival_woman_torso",
+          "subject": "woman",
+          "role": "torso",
+          "stroke_groups": [
+            "Independent graphite contour strokes with lifts; occluded anatomy is not fabricated in the final complete-image camera mode."
+          ]
+        },
+        {
+          "id": "arrival_woman_left_arm",
+          "subject": "woman",
+          "role": "left_arm",
+          "stroke_groups": [
+            "Independent graphite contour strokes with lifts; occluded anatomy is not fabricated in the final complete-image camera mode."
+          ]
+        },
+        {
+          "id": "arrival_woman_right_arm",
+          "subject": "woman",
+          "role": "right_arm",
+          "stroke_groups": [
+            "Independent graphite contour strokes with lifts; occluded anatomy is not fabricated in the final complete-image camera mode."
+          ]
+        },
+        {
+          "id": "arrival_woman_lower_body",
+          "subject": "woman",
+          "role": "lower_body",
+          "stroke_groups": [
+            "Independent graphite contour strokes with lifts; occluded anatomy is not fabricated in the final complete-image camera mode."
+          ]
+        }
+      ],
+      "outline_order": [
+        "arrival_woman_head",
+        "arrival_woman_neck",
+        "arrival_woman_torso",
+        "arrival_woman_left_arm",
+        "arrival_woman_right_arm",
+        "arrival_woman_lower_body"
+      ],
+      "fill_order": [
+        "arrival_woman_head",
+        "arrival_woman_neck",
+        "arrival_woman_torso",
+        "arrival_woman_left_arm",
+        "arrival_woman_right_arm",
+        "arrival_woman_lower_body"
+      ],
+      "narrative_requirements": [
+        {
+          "id": "arrival",
+          "narration_quote": "玻璃門就傳來三下敲擊聲",
+          "observable": "Woman outside glass with knuckles touching, dry coat against rainy exterior"
+        }
+      ]
+    },
+    {
+      "id": "dialogue",
+      "composition": "Woman right arms down, clerk left, dry floor",
+      "drawability_reason": "Readable graphite silhouettes, semantic human anatomy planned; delivery is full image camera mode, not drawing reveal.",
+      "outline_strategy": "visible_source_ink",
+      "spatial_order": "top_to_bottom_left_to_right",
+      "subjects": [
+        {
+          "id": "clerk",
+          "kind": "human"
+        },
+        {
+          "id": "woman",
+          "kind": "human"
+        }
+      ],
+      "parts": [
+        {
+          "id": "dialogue_clerk_head",
+          "subject": "clerk",
+          "role": "head",
+          "stroke_groups": [
+            "Independent graphite contour strokes with lifts; occluded anatomy is not fabricated in the final complete-image camera mode."
+          ]
+        },
+        {
+          "id": "dialogue_clerk_neck",
+          "subject": "clerk",
+          "role": "neck",
+          "stroke_groups": [
+            "Independent graphite contour strokes with lifts; occluded anatomy is not fabricated in the final complete-image camera mode."
+          ]
+        },
+        {
+          "id": "dialogue_clerk_torso",
+          "subject": "clerk",
+          "role": "torso",
+          "stroke_groups": [
+            "Independent graphite contour strokes with lifts; occluded anatomy is not fabricated in the final complete-image camera mode."
+          ]
+        },
+        {
+          "id": "dialogue_clerk_left_arm",
+          "subject": "clerk",
+          "role": "left_arm",
+          "stroke_groups": [
+            "Independent graphite contour strokes with lifts; occluded anatomy is not fabricated in the final complete-image camera mode."
+          ]
+        },
+        {
+          "id": "dialogue_clerk_right_arm",
+          "subject": "clerk",
+          "role": "right_arm",
+          "stroke_groups": [
+            "Independent graphite contour strokes with lifts; occluded anatomy is not fabricated in the final complete-image camera mode."
+          ]
+        },
+        {
+          "id": "dialogue_clerk_lower_body",
+          "subject": "clerk",
+          "role": "lower_body",
+          "stroke_groups": [
+            "Independent graphite contour strokes with lifts; occluded anatomy is not fabricated in the final complete-image camera mode."
+          ]
+        },
+        {
+          "id": "dialogue_woman_head",
+          "subject": "woman",
+          "role": "head",
+          "stroke_groups": [
+            "Independent graphite contour strokes with lifts; occluded anatomy is not fabricated in the final complete-image camera mode."
+          ]
+        },
+        {
+          "id": "dialogue_woman_neck",
+          "subject": "woman",
+          "role": "neck",
+          "stroke_groups": [
+            "Independent graphite contour strokes with lifts; occluded anatomy is not fabricated in the final complete-image camera mode."
+          ]
+        },
+        {
+          "id": "dialogue_woman_torso",
+          "subject": "woman",
+          "role": "torso",
+          "stroke_groups": [
+            "Independent graphite contour strokes with lifts; occluded anatomy is not fabricated in the final complete-image camera mode."
+          ]
+        },
+        {
+          "id": "dialogue_woman_left_arm",
+          "subject": "woman",
+          "role": "left_arm",
+          "stroke_groups": [
+            "Independent graphite contour strokes with lifts; occluded anatomy is not fabricated in the final complete-image camera mode."
+          ]
+        },
+        {
+          "id": "dialogue_woman_right_arm",
+          "subject": "woman",
+          "role": "right_arm",
+          "stroke_groups": [
+            "Independent graphite contour strokes with lifts; occluded anatomy is not fabricated in the final complete-image camera mode."
+          ]
+        },
+        {
+          "id": "dialogue_woman_lower_body",
+          "subject": "woman",
+          "role": "lower_body",
+          "stroke_groups": [
+            "Independent graphite contour strokes with lifts; occluded anatomy is not fabricated in the final complete-image camera mode."
+          ]
+        }
+      ],
+      "outline_order": [
+        "dialogue_clerk_head",
+        "dialogue_clerk_neck",
+        "dialogue_clerk_torso",
+        "dialogue_clerk_left_arm",
+        "dialogue_clerk_right_arm",
+        "dialogue_clerk_lower_body",
+        "dialogue_woman_head",
+        "dialogue_woman_neck",
+        "dialogue_woman_torso",
+        "dialogue_woman_left_arm",
+        "dialogue_woman_right_arm",
+        "dialogue_woman_lower_body"
+      ],
+      "fill_order": [
+        "dialogue_clerk_head",
+        "dialogue_clerk_neck",
+        "dialogue_clerk_torso",
+        "dialogue_clerk_left_arm",
+        "dialogue_clerk_right_arm",
+        "dialogue_clerk_lower_body",
+        "dialogue_woman_head",
+        "dialogue_woman_neck",
+        "dialogue_woman_torso",
+        "dialogue_woman_left_arm",
+        "dialogue_woman_right_arm",
+        "dialogue_woman_lower_body"
+      ],
+      "narrative_requirements": [
+        {
+          "id": "dialogue",
+          "narration_quote": "她腳邊的地板，連一滴水也沒有",
+          "observable": "Woman right arms down, clerk left, dry floor"
+        }
+      ]
+    },
+    {
+      "id": "question",
+      "composition": "Woman close-up, looking toward clerk, no pointing",
+      "drawability_reason": "Readable graphite silhouettes, semantic human anatomy planned; delivery is full image camera mode, not drawing reveal.",
+      "outline_strategy": "visible_source_ink",
+      "spatial_order": "top_to_bottom_left_to_right",
+      "subjects": [
+        {
+          "id": "woman",
+          "kind": "human"
+        }
+      ],
+      "parts": [
+        {
+          "id": "question_woman_head",
+          "subject": "woman",
+          "role": "head",
+          "stroke_groups": [
+            "Independent graphite contour strokes with lifts; occluded anatomy is not fabricated in the final complete-image camera mode."
+          ]
+        },
+        {
+          "id": "question_woman_neck",
+          "subject": "woman",
+          "role": "neck",
+          "stroke_groups": [
+            "Independent graphite contour strokes with lifts; occluded anatomy is not fabricated in the final complete-image camera mode."
+          ]
+        },
+        {
+          "id": "question_woman_torso",
+          "subject": "woman",
+          "role": "torso",
+          "stroke_groups": [
+            "Independent graphite contour strokes with lifts; occluded anatomy is not fabricated in the final complete-image camera mode."
+          ]
+        },
+        {
+          "id": "question_woman_left_arm",
+          "subject": "woman",
+          "role": "left_arm",
+          "stroke_groups": [
+            "Independent graphite contour strokes with lifts; occluded anatomy is not fabricated in the final complete-image camera mode."
+          ]
+        },
+        {
+          "id": "question_woman_right_arm",
+          "subject": "woman",
+          "role": "right_arm",
+          "stroke_groups": [
+            "Independent graphite contour strokes with lifts; occluded anatomy is not fabricated in the final complete-image camera mode."
+          ]
+        },
+        {
+          "id": "question_woman_lower_body",
+          "subject": "woman",
+          "role": "lower_body",
+          "stroke_groups": [
+            "Independent graphite contour strokes with lifts; occluded anatomy is not fabricated in the final complete-image camera mode."
+          ]
+        }
+      ],
+      "outline_order": [
+        "question_woman_head",
+        "question_woman_neck",
+        "question_woman_torso",
+        "question_woman_left_arm",
+        "question_woman_right_arm",
+        "question_woman_lower_body"
+      ],
+      "fill_order": [
+        "question_woman_head",
+        "question_woman_neck",
+        "question_woman_torso",
+        "question_woman_left_arm",
+        "question_woman_right_arm",
+        "question_woman_lower_body"
+      ],
+      "narrative_requirements": [
+        {
+          "id": "question",
+          "narration_quote": "你看得到我嗎",
+          "observable": "Woman close-up, looking toward clerk, no pointing"
+        }
+      ]
+    },
+    {
+      "id": "gaze",
+      "composition": "Clerk back left foreground, woman right looks past his shoulder",
+      "drawability_reason": "Readable graphite silhouettes, semantic human anatomy planned; delivery is full image camera mode, not drawing reveal.",
+      "outline_strategy": "visible_source_ink",
+      "spatial_order": "top_to_bottom_left_to_right",
+      "subjects": [
+        {
+          "id": "clerk",
+          "kind": "human"
+        },
+        {
+          "id": "woman",
+          "kind": "human"
+        }
+      ],
+      "parts": [
+        {
+          "id": "gaze_clerk_head",
+          "subject": "clerk",
+          "role": "head",
+          "stroke_groups": [
+            "Independent graphite contour strokes with lifts; occluded anatomy is not fabricated in the final complete-image camera mode."
+          ]
+        },
+        {
+          "id": "gaze_clerk_neck",
+          "subject": "clerk",
+          "role": "neck",
+          "stroke_groups": [
+            "Independent graphite contour strokes with lifts; occluded anatomy is not fabricated in the final complete-image camera mode."
+          ]
+        },
+        {
+          "id": "gaze_clerk_torso",
+          "subject": "clerk",
+          "role": "torso",
+          "stroke_groups": [
+            "Independent graphite contour strokes with lifts; occluded anatomy is not fabricated in the final complete-image camera mode."
+          ]
+        },
+        {
+          "id": "gaze_clerk_left_arm",
+          "subject": "clerk",
+          "role": "left_arm",
+          "stroke_groups": [
+            "Independent graphite contour strokes with lifts; occluded anatomy is not fabricated in the final complete-image camera mode."
+          ]
+        },
+        {
+          "id": "gaze_clerk_right_arm",
+          "subject": "clerk",
+          "role": "right_arm",
+          "stroke_groups": [
+            "Independent graphite contour strokes with lifts; occluded anatomy is not fabricated in the final complete-image camera mode."
+          ]
+        },
+        {
+          "id": "gaze_clerk_lower_body",
+          "subject": "clerk",
+          "role": "lower_body",
+          "stroke_groups": [
+            "Independent graphite contour strokes with lifts; occluded anatomy is not fabricated in the final complete-image camera mode."
+          ]
+        },
+        {
+          "id": "gaze_woman_head",
+          "subject": "woman",
+          "role": "head",
+          "stroke_groups": [
+            "Independent graphite contour strokes with lifts; occluded anatomy is not fabricated in the final complete-image camera mode."
+          ]
+        },
+        {
+          "id": "gaze_woman_neck",
+          "subject": "woman",
+          "role": "neck",
+          "stroke_groups": [
+            "Independent graphite contour strokes with lifts; occluded anatomy is not fabricated in the final complete-image camera mode."
+          ]
+        },
+        {
+          "id": "gaze_woman_torso",
+          "subject": "woman",
+          "role": "torso",
+          "stroke_groups": [
+            "Independent graphite contour strokes with lifts; occluded anatomy is not fabricated in the final complete-image camera mode."
+          ]
+        },
+        {
+          "id": "gaze_woman_left_arm",
+          "subject": "woman",
+          "role": "left_arm",
+          "stroke_groups": [
+            "Independent graphite contour strokes with lifts; occluded anatomy is not fabricated in the final complete-image camera mode."
+          ]
+        },
+        {
+          "id": "gaze_woman_right_arm",
+          "subject": "woman",
+          "role": "right_arm",
+          "stroke_groups": [
+            "Independent graphite contour strokes with lifts; occluded anatomy is not fabricated in the final complete-image camera mode."
+          ]
+        },
+        {
+          "id": "gaze_woman_lower_body",
+          "subject": "woman",
+          "role": "lower_body",
+          "stroke_groups": [
+            "Independent graphite contour strokes with lifts; occluded anatomy is not fabricated in the final complete-image camera mode."
+          ]
+        }
+      ],
+      "outline_order": [
+        "gaze_clerk_head",
+        "gaze_clerk_neck",
+        "gaze_clerk_torso",
+        "gaze_clerk_left_arm",
+        "gaze_clerk_right_arm",
+        "gaze_clerk_lower_body",
+        "gaze_woman_head",
+        "gaze_woman_neck",
+        "gaze_woman_torso",
+        "gaze_woman_left_arm",
+        "gaze_woman_right_arm",
+        "gaze_woman_lower_body"
+      ],
+      "fill_order": [
+        "gaze_clerk_head",
+        "gaze_clerk_neck",
+        "gaze_clerk_torso",
+        "gaze_clerk_left_arm",
+        "gaze_clerk_right_arm",
+        "gaze_clerk_lower_body",
+        "gaze_woman_head",
+        "gaze_woman_neck",
+        "gaze_woman_torso",
+        "gaze_woman_left_arm",
+        "gaze_woman_right_arm",
+        "gaze_woman_lower_body"
+      ],
+      "narrative_requirements": [
+        {
+          "id": "gaze",
+          "narration_quote": "她的視線，越過了他的肩膀",
+          "observable": "Clerk back left foreground, woman right looks past his shoulder"
+        }
+      ]
+    }
+  ]
+}

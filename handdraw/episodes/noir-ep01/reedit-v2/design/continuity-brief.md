@@ -1,0 +1,1 @@
+Repair chronology, not restyle: arrival at glass, neutral dialogue with arms down and dry floor, close-up question, gaze past clerk shoulder. Reuse existing exterior, clerk reaction, pointing and empty CCTV pictures only at their correct causal moments. New sheet uses actual old source image for face/costume/location/style reference. No actor motion claim.

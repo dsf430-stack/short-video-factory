@@ -1,0 +1,523 @@
+{
+  "revision": "continuity-v2",
+  "format": {
+    "filename": "/workspace/scratch/6765d51a5708/noir-v2-preview.mp4",
+    "nb_streams": 2,
+    "nb_programs": 0,
+    "format_name": "mov,mp4,m4a,3gp,3g2,mj2",
+    "format_long_name": "QuickTime / MOV",
+    "start_time": "0.000000",
+    "duration": "60.000000",
+    "size": "3140182",
+    "bit_rate": "418690",
+    "probe_score": 100,
+    "tags": {
+      "major_brand": "isom",
+      "minor_version": "512",
+      "compatible_brands": "isomiso2avc1mp41",
+      "encoder": "Lavf60.16.100"
+    }
+  },
+  "video": {
+    "index": 0,
+    "codec_name": "h264",
+    "codec_long_name": "H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10",
+    "profile": "High",
+    "codec_type": "video",
+    "codec_tag_string": "avc1",
+    "codec_tag": "0x31637661",
+    "width": 270,
+    "height": 480,
+    "coded_width": 270,
+    "coded_height": 480,
+    "closed_captions": 0,
+    "film_grain": 0,
+    "has_b_frames": 2,
+    "sample_aspect_ratio": "1:1",
+    "display_aspect_ratio": "9:16",
+    "pix_fmt": "yuv420p",
+    "level": 21,
+    "chroma_location": "left",
+    "field_order": "progressive",
+    "refs": 1,
+    "is_avc": "true",
+    "nal_length_size": "4",
+    "id": "0x1",
+    "r_frame_rate": "30/1",
+    "avg_frame_rate": "30/1",
+    "time_base": "1/15360",
+    "start_pts": 0,
+    "start_time": "0.000000",
+    "duration_ts": 921600,
+    "duration": "60.000000",
+    "bit_rate": "219389",
+    "bits_per_raw_sample": "8",
+    "nb_frames": "1800",
+    "extradata_size": 47,
+    "disposition": {
+      "default": 1,
+      "dub": 0,
+      "original": 0,
+      "comment": 0,
+      "lyrics": 0,
+      "karaoke": 0,
+      "forced": 0,
+      "hearing_impaired": 0,
+      "visual_impaired": 0,
+      "clean_effects": 0,
+      "attached_pic": 0,
+      "timed_thumbnails": 0,
+      "non_diegetic": 0,
+      "captions": 0,
+      "descriptions": 0,
+      "metadata": 0,
+      "dependent": 0,
+      "still_image": 0
+    },
+    "tags": {
+      "language": "und",
+      "handler_name": "VideoHandler",
+      "vendor_id": "[0][0][0][0]",
+      "encoder": "Lavc60.31.102 libx264"
+    }
+  },
+  "audio": {
+    "index": 1,
+    "codec_name": "aac",
+    "codec_long_name": "AAC (Advanced Audio Coding)",
+    "profile": "LC",
+    "codec_type": "audio",
+    "codec_tag_string": "mp4a",
+    "codec_tag": "0x6134706d",
+    "sample_fmt": "fltp",
+    "sample_rate": "48000",
+    "channels": 1,
+    "channel_layout": "mono",
+    "bits_per_sample": 0,
+    "initial_padding": 0,
+    "id": "0x2",
+    "r_frame_rate": "0/0",
+    "avg_frame_rate": "0/0",
+    "time_base": "1/48000",
+    "start_pts": 0,
+    "start_time": "0.000000",
+    "duration_ts": 2880000,
+    "duration": "60.000000",
+    "bit_rate": "190250",
+    "nb_frames": "2814",
+    "extradata_size": 5,
+    "disposition": {
+      "default": 1,
+      "dub": 0,
+      "original": 0,
+      "comment": 0,
+      "lyrics": 0,
+      "karaoke": 0,
+      "forced": 0,
+      "hearing_impaired": 0,
+      "visual_impaired": 0,
+      "clean_effects": 0,
+      "attached_pic": 0,
+      "timed_thumbnails": 0,
+      "non_diegetic": 0,
+      "captions": 0,
+      "descriptions": 0,
+      "metadata": 0,
+      "dependent": 0,
+      "still_image": 0
+    },
+    "tags": {
+      "language": "und",
+      "handler_name": "SoundHandler",
+      "vendor_id": "[0][0][0][0]"
+    }
+  },
+  "full_decode": "PASS",
+  "voice_id": "068",
+  "voice_duration": 56.790204,
+  "voice_offset": 0.45,
+  "voice_sha256": "588bbac5f49bc0458a24a36ee62394a3fa76c0bb6246ae47f90aff0b60e5337f",
+  "voice_preset": {
+    "voice": "zh-TW-HsiaoChenNeural",
+    "rate": "+20%",
+    "pitch": "+5Hz",
+    "volume": "+0%",
+    "languages": [
+      "zh-TW"
+    ],
+    "tags": [
+      "lifestyle",
+      "friendly"
+    ]
+  },
+  "subtitle_cues": [
+    {
+      "start": 0.5,
+      "end": 3.4400000000000004,
+      "text": "凌晨三點十七分，雨下得很大。"
+    },
+    {
+      "start": 3.4400000000000004,
+      "end": 6.367,
+      "text": "便利商店只剩阿哲一個人值班。"
+    },
+    {
+      "start": 6.367,
+      "end": 10.19,
+      "text": "他剛收好找零，玻璃門就傳來三下敲擊聲。"
+    },
+    {
+      "start": 10.19,
+      "end": 12.209999999999999,
+      "text": "門外站著黑衣女子。"
+    },
+    {
+      "start": 12.209999999999999,
+      "end": 15.761999999999999,
+      "text": "她沒有拿傘，頭髮和衣服卻完全沒濕。"
+    },
+    {
+      "start": 15.761999999999999,
+      "end": 17.627,
+      "text": "阿哲按開自動門。"
+    },
+    {
+      "start": 17.627,
+      "end": 19.564999999999998,
+      "text": "女子來到櫃台前。"
+    },
+    {
+      "start": 19.564999999999998,
+      "end": 24.137,
+      "text": "阿哲以為她要買東西，停下手邊的工作，等她開口。"
+    },
+    {
+      "start": 24.137,
+      "end": 27.907999999999998,
+      "text": "她沒有買東西，只低聲問，你看得到我嗎？"
+    },
+    {
+      "start": 27.907999999999998,
+      "end": 32.387,
+      "text": "阿哲愣了一下，有些困惑地回答，妳不是就在我面前？"
+    },
+    {
+      "start": 32.387,
+      "end": 33.867000000000004,
+      "text": "女子沒笑。"
+    },
+    {
+      "start": 33.867000000000004,
+      "end": 36.96,
+      "text": "她抬起手，指向頭頂的監視器。"
+    },
+    {
+      "start": 36.96,
+      "end": 40.179,
+      "text": "阿哲順著她的手，看向旁邊的螢幕。"
+    },
+    {
+      "start": 40.179,
+      "end": 44.45,
+      "text": "監視畫面裡，他面前的客人區，竟然空無一人。"
+    },
+    {
+      "start": 44.45,
+      "end": 47.45,
+      "text": "他立刻抬頭，女子還站在原地。"
+    },
+    {
+      "start": 47.45,
+      "end": 50.325,
+      "text": "但她的視線，越過了他的肩膀。"
+    },
+    {
+      "start": 50.325,
+      "end": 54.335,
+      "text": "這時螢幕閃了一下，浮出四個字，不要回頭。"
+    },
+    {
+      "start": 54.335,
+      "end": 57.179,
+      "text": "阿哲身後，傳來了一聲呼吸。"
+    }
+  ],
+  "subtitle_timing": "One complete measured master with unchanged provider sentence times plus 450ms offset",
+  "narration_correlation": 0.9998394145337295,
+  "camera_motion": [
+    {
+      "index": 0,
+      "start_frame": 0,
+      "end_frame": 103,
+      "start": 0.0,
+      "end": 3.433333333333333,
+      "source": "old",
+      "quadrant": 0,
+      "purpose": "Rainy exterior establishes time and place",
+      "transition": "direct causal cut; continuous narration, rain and drone",
+      "zoom": "1.035+on*0.00007",
+      "pan": [
+        0.5,
+        0.45
+      ]
+    },
+    {
+      "index": 1,
+      "start_frame": 103,
+      "end_frame": 191,
+      "start": 3.433333333333333,
+      "end": 6.366666666666666,
+      "source": "old",
+      "quadrant": 2,
+      "purpose": "Clerk alone at work",
+      "transition": "direct causal cut; continuous narration, rain and drone",
+      "zoom": "1.035+on*0.00007",
+      "pan": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "index": 2,
+      "start_frame": 191,
+      "end_frame": 306,
+      "start": 6.366666666666666,
+      "end": 10.2,
+      "source": "new",
+      "quadrant": 0,
+      "purpose": "Knuckles at glass when knocks are narrated",
+      "transition": "direct causal cut; continuous narration, rain and drone",
+      "zoom": "1.035+on*0.00007",
+      "pan": [
+        0.65,
+        0.4
+      ]
+    },
+    {
+      "index": 3,
+      "start_frame": 306,
+      "end_frame": 529,
+      "start": 10.2,
+      "end": 17.633333333333333,
+      "source": "new",
+      "quadrant": 0,
+      "purpose": "Dry-haired woman outside in rain",
+      "transition": "direct causal cut; continuous narration, rain and drone",
+      "zoom": "1.035+on*0.00007",
+      "pan": [
+        0.85,
+        0.35
+      ]
+    },
+    {
+      "index": 4,
+      "start_frame": 529,
+      "end_frame": 587,
+      "start": 17.633333333333333,
+      "end": 19.566666666666666,
+      "source": "new",
+      "quadrant": 1,
+      "purpose": "Woman now inside, arms down",
+      "transition": "direct causal cut; continuous narration, rain and drone",
+      "zoom": "1.035+on*0.00007",
+      "pan": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "index": 5,
+      "start_frame": 587,
+      "end_frame": 724,
+      "start": 19.566666666666666,
+      "end": 24.133333333333333,
+      "source": "new",
+      "quadrant": 1,
+      "purpose": "Clerk waits, neutral two-shot",
+      "transition": "direct causal cut; continuous narration, rain and drone",
+      "zoom": "1.0390599999999999+on*0.00007",
+      "pan": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "index": 6,
+      "start_frame": 724,
+      "end_frame": 837,
+      "start": 24.133333333333333,
+      "end": 27.9,
+      "source": "new",
+      "quadrant": 2,
+      "purpose": "Woman asks; no raised arm",
+      "transition": "direct causal cut; continuous narration, rain and drone",
+      "zoom": "1.035+on*0.00007",
+      "pan": [
+        0.5,
+        0.4
+      ]
+    },
+    {
+      "index": 7,
+      "start_frame": 837,
+      "end_frame": 972,
+      "start": 27.9,
+      "end": 32.4,
+      "source": "old",
+      "quadrant": 2,
+      "purpose": "Clerk replies, puzzled",
+      "transition": "direct causal cut; continuous narration, rain and drone",
+      "zoom": "1.035+on*0.00007",
+      "pan": [
+        0.5,
+        0.4
+      ]
+    },
+    {
+      "index": 8,
+      "start_frame": 972,
+      "end_frame": 1016,
+      "start": 32.4,
+      "end": 33.86666666666667,
+      "source": "new",
+      "quadrant": 2,
+      "purpose": "Woman does not smile",
+      "transition": "direct causal cut; continuous narration, rain and drone",
+      "zoom": "1.035+on*0.00007",
+      "pan": [
+        0.5,
+        0.4
+      ]
+    },
+    {
+      "index": 9,
+      "start_frame": 1016,
+      "end_frame": 1109,
+      "start": 33.86666666666667,
+      "end": 36.96666666666667,
+      "source": "old",
+      "quadrant": 1,
+      "purpose": "Only now show pointing at CCTV",
+      "transition": "direct causal cut; continuous narration, rain and drone",
+      "zoom": "1.035+on*0.00007",
+      "pan": [
+        0.55,
+        0.32
+      ]
+    },
+    {
+      "index": 10,
+      "start_frame": 1109,
+      "end_frame": 1205,
+      "start": 36.96666666666667,
+      "end": 40.166666666666664,
+      "source": "old",
+      "quadrant": 1,
+      "purpose": "Follow indicated direction toward camera",
+      "transition": "direct causal cut; continuous narration, rain and drone",
+      "zoom": "1.035+on*0.00007",
+      "pan": [
+        0.15,
+        0.05
+      ]
+    },
+    {
+      "index": 11,
+      "start_frame": 1205,
+      "end_frame": 1334,
+      "start": 40.166666666666664,
+      "end": 44.46666666666667,
+      "source": "old",
+      "quadrant": 3,
+      "purpose": "First reveal empty CCTV customer area",
+      "transition": "direct causal cut; continuous narration, rain and drone",
+      "zoom": "1.035+on*0.00007",
+      "pan": [
+        0.5,
+        0.45
+      ]
+    },
+    {
+      "index": 12,
+      "start_frame": 1334,
+      "end_frame": 1424,
+      "start": 44.46666666666667,
+      "end": 47.46666666666667,
+      "source": "new",
+      "quadrant": 1,
+      "purpose": "Return to woman still in place, arms down",
+      "transition": "direct causal cut; continuous narration, rain and drone",
+      "zoom": "1.035+on*0.00007",
+      "pan": [
+        0.7,
+        0.4
+      ]
+    },
+    {
+      "index": 13,
+      "start_frame": 1424,
+      "end_frame": 1510,
+      "start": 47.46666666666667,
+      "end": 50.333333333333336,
+      "source": "new",
+      "quadrant": 3,
+      "purpose": "Gaze shifts past clerk shoulder",
+      "transition": "direct causal cut; continuous narration, rain and drone",
+      "zoom": "1.035+on*0.00007",
+      "pan": [
+        0.6,
+        0.35
+      ]
+    },
+    {
+      "index": 14,
+      "start_frame": 1510,
+      "end_frame": 1630,
+      "start": 50.333333333333336,
+      "end": 54.333333333333336,
+      "source": "old",
+      "quadrant": 3,
+      "purpose": "CCTV warning appears during warning sentence",
+      "transition": "direct causal cut; continuous narration, rain and drone",
+      "zoom": "1.035+on*0.00007",
+      "pan": [
+        0.5,
+        0.45
+      ]
+    },
+    {
+      "index": 15,
+      "start_frame": 1630,
+      "end_frame": 1800,
+      "start": 54.333333333333336,
+      "end": 60.0,
+      "source": "old",
+      "quadrant": 2,
+      "purpose": "Clerk freezes; breath behind him",
+      "transition": "direct causal cut; continuous narration, rain and drone",
+      "zoom": "1.035+on*0.00007",
+      "pan": [
+        0.5,
+        0.35
+      ]
+    }
+  ],
+  "soundscape": {
+    "provenance": "Original procedural rain, three knocks, A-minor drone and breath Foley, seed 317; no external generation service",
+    "knocks_seconds": [
+      9.19,
+      9.469999999999999,
+      9.75
+    ],
+    "breath_seconds": 57.379000000000005,
+    "auto_ducking": "unavailable; fixed low bed",
+    "rms_dbfs": -46.043635788233566
+  },
+  "warning_on": 53.085,
+  "main_narration_max_gap": 0.0,
+  "actor_animation": false,
+  "subjective_listening": "UNCERTAIN",
+  "visual_review": "reviewed_16_preview_shots",
+  "sha256": "3fea7529110316520ee97647cf1cfc703cd423de380493b5e50fa2f2c20f3d6c",
+  "visual_evidence": "Viewed actual full preview contact sheet at every shot midpoint. No pointing pose appears before cue 12; woman enters then stands arms down, asks in close-up, clerk reply, later hand gesture, CCTV absence, return to woman and off-axis gaze. Global narration remains continuous and no inter-shot dip to black. Final full-resolution MP4 still requires QA."
+}

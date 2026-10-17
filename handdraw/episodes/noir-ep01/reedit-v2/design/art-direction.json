@@ -1,0 +1,23 @@
+{
+  "dependency_sha256": "fbbfd33d70f729011b6a6bc232851c116cd4a89ead2adea4462888a6ce26fc1a",
+  "style_sha256": "11aa857600a6ffe11d02021ee88ca0fa7391485f136a0b488b0f11394b97439a",
+  "images": [
+    {
+      "source": "../assets/continuity.png",
+      "method": "generated_under_guidance",
+      "brief_file": "continuity-brief.md",
+      "prompt_file": "continuity-prompt.txt",
+      "status": "pass",
+      "reference_source": "../../../assets/sheet.png",
+      "brief_sha256": "18bdceade81ff8e94eaada53d7e45c44d77eecbd7ed497a0f6e1740f74731362",
+      "prompt_sha256": "cff36fc65b648cf843d13ea452126e756233e08df11495555877b669f3e30e2f",
+      "sha256": "09ec726034998570e5879b675c266f901267de3bf32f78013435b036e3537a78",
+      "actual_size": [
+        941,
+        1672
+      ],
+      "evidence": "Viewed generated sheet: arrival quadrant shows woman outside the glass on right with knuckles touching; inside tile floor is dry, exterior rain visible. Dialogue quadrant woman right has arms lowered, clerk left; identity, uniform, black coat and glass door retained. Woman close-up lower-left looks screen-left with no raised hand; lower-right clerk shoulder foreground left, woman right gaze shifted past him. No early pointing. Lower legs in dialogue partly occluded/cropped by checkout, so no dedicated foot close-up is claimed. Character proportions and pencil crosshatching consistent with reference. Used complete-image camera mode, not anatomy reveal. No embedded text.",
+      "reference_sha256": "c7a7c5a3cd5514e2f7958951cdc79d33dd21fcd1bfa657fabecc2f397dac7d12"
+    }
+  ]
+}

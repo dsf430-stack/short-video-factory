@@ -31,6 +31,7 @@ jobs:
             noir-ep01.mp4
             noir-work/narration.txt
             noir-work/episode.srt
+            noir-work/captions.ass
             noir-work/verification.json
             noir-work/voice*.json
             noir-work/voice*.srt

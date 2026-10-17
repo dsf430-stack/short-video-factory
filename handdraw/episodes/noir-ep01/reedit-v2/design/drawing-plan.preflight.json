@@ -1,0 +1,11 @@
+{
+  "status": "ready_for_generation",
+  "plan_sha256": "7262cf737a48e19392f9a1976d0f6bb2c5013a29dd2f26fb53b6614937de66d2",
+  "style_sha256": "11aa857600a6ffe11d02021ee88ca0fa7391485f136a0b488b0f11394b97439a",
+  "illustrations": [
+    "arrival",
+    "dialogue",
+    "question",
+    "gaze"
+  ]
+}
