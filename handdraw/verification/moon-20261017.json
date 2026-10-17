@@ -1,0 +1,72 @@
+{
+  "topic": "為什麼白天也看得到月亮？",
+  "job_id": "job-d7644ceac41308c6810d",
+  "catalog_entry_required": false,
+  "actions_url": "https://github.com/dsf430-stack/short-video-factory/actions/runs/39019605523",
+  "render_commit": "a92cadc2f546097a88d34fe7f212d0584887d286",
+  "official_commit": "5206ec0d17f9b353e400b64b9c51ad69e721e02a",
+  "video_sha256": "b0693f4e15586df5b7f61cbcf5ac2db0eb523347a072b99e7c8823ffe6e86028",
+  "seconds": 30,
+  "resolution": [
+    1080,
+    1920
+  ],
+  "fps": 30,
+  "frames": 900,
+  "format": "H.264/AAC",
+  "voice": {
+    "id": "068",
+    "voice": "zh-TW-HsiaoChenNeural",
+    "rate": "+20%",
+    "pitch": "+5Hz",
+    "cache_reused": true
+  },
+  "model_api_required": false,
+  "unit_tests_passed": 14,
+  "full_decode": "PASS",
+  "official_checks": {
+    "full_decode": true,
+    "complete_timeline": true,
+    "paths_and_paint_coverage": true,
+    "narration_controls_drawing_time": true,
+    "canvas_bounds": true,
+    "subtitle_order": true,
+    "loudness": true,
+    "semantic_part_order": true,
+    "glyph_isolation": true,
+    "arm_continues_off_canvas": true,
+    "cover_half_second_still_and_fade": true,
+    "mandatory_art_direction": true
+  },
+  "audio_track_correlation": 0.9999756816765135,
+  "final_phrase_encoding_correlation": 0.9999478592547775,
+  "model_visual_review": {
+    "status": "PASS",
+    "sample_times_seconds": [
+      0.5,
+      2,
+      4,
+      6.9,
+      8,
+      11,
+      14.2,
+      16,
+      19,
+      21.4,
+      23,
+      26,
+      29.5
+    ],
+    "findings": [
+      "Four custom scene IDs render with progressive outlines and color fill",
+      "Reviewed Traditional Chinese captions against measured sentence cues",
+      "Question mark no longer isolated on its own row",
+      "Final two-line subtitle clears annotation text",
+      "No observed cropping or caption/annotation overlap in sampled frames"
+    ]
+  },
+  "human_listening": "UNCERTAIN",
+  "background_music": false,
+  "official_final_review_status": "engineering_passed_review_required",
+  "mode": "ChatGPT prepares and reviews new script/art; GitHub renders without extra model API"
+}

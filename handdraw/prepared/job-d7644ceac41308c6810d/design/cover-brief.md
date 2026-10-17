@@ -1,0 +1,1 @@
+Cover for daytime Moon explanation. Exact editable title 白天的月亮 / 沒有加班！; secondary 月光，其實是太陽光. Reuse reviewed top panel from sheet-0 as the visual layer. Yellow portrait canvas. No new image generation.

@@ -1,0 +1,6 @@
+{
+  "mode": "catalog",
+  "catalog_id": "4",
+  "confirmation": "explicit_user_request",
+  "evidence": "User preserves official style 4 and 068 for no-extra-model-API regression after typhoon production."
+}

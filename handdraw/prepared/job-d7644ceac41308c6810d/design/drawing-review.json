@@ -1,0 +1,100 @@
+{
+  "style_sha256": "a1fcea943b70e1128050f2b29c51c1688e63c48c88a1fd0aa32dc9bc75d95289",
+  "plan_sha256": "675fc3d836ee2e5104edc1d19bb54db5a33456cda0613e324142124e748da1da",
+  "illustrations": [
+    {
+      "plan_id": "hook",
+      "status": "pass",
+      "source_sha256": "06a0d3193364646ec665ec672451717ab31d4d13debce5cc460c7ec6b4e4cbc6",
+      "crop": [
+        0,
+        0,
+        1024,
+        768
+      ],
+      "anatomy_and_occlusion": "Actually viewed sheet-0 top: orange Sun upper-left and outlined crescent upper-right above bean. Bean head, torso, lowered screen-left arm, raised screen-right pointing arm and two legs are visible. Clear physical gap between Sun and Moon; no writing. The blob has no separate neck; never invent a hidden body part.",
+      "part_boundaries": "Actual face region and torso assigned separately; screen-left/right arm polygons follow the visibly separate stick limbs, then legs. Sun and Moon regions are separate from the figure. Supporting context owns remaining actual arrows, ground/cloud; panel frame is last. In observe, cloud overlap is excluded from the visible lunar ownership.",
+      "stroke_breaks": "Independent lifted contours for bean limbs/facial marks, sun rays, crescent arcs, arrows and ground; no travel line across blank paper.",
+      "outline_then_fill": "Trace visible black contours before broad solid bean fill and orange Sun accents, preserving all thin outlined moon/cloud shapes.",
+      "spatial_order": "Head, torso, screen-left arm, screen-right arm, lower body, Sun, Moon, remaining context, frame.",
+      "narrative_checks": [
+        {
+          "id": "hook_fact",
+          "status": "pass",
+          "evidence": "Actually viewed sheet-0 top: orange Sun upper-left and outlined crescent upper-right above bean. Bean head, torso, lowered screen-left arm, raised screen-right pointing arm and two legs are visible. Clear physical gap between Sun and Moon; no writing."
+        }
+      ]
+    },
+    {
+      "plan_id": "reflection",
+      "status": "pass",
+      "source_sha256": "06a0d3193364646ec665ec672451717ab31d4d13debce5cc460c7ec6b4e4cbc6",
+      "crop": [
+        0,
+        768,
+        1024,
+        1536
+      ],
+      "anatomy_and_occlusion": "Actually viewed sheet-0 bottom: orange Sun upper-left; red arrow reaches outlined moon upper-right; blue arrow returns diagonally toward bean below, showing reflected rather than self-generated light. Both arms and legs visible; no label text or extra light source. The blob has no separate neck; never invent a hidden body part.",
+      "part_boundaries": "Actual face region and torso assigned separately; screen-left/right arm polygons follow the visibly separate stick limbs, then legs. Sun and Moon regions are separate from the figure. Supporting context owns remaining actual arrows, ground/cloud; panel frame is last. In observe, cloud overlap is excluded from the visible lunar ownership.",
+      "stroke_breaks": "Independent lifted contours for bean limbs/facial marks, sun rays, crescent arcs, arrows and ground; no travel line across blank paper.",
+      "outline_then_fill": "Trace visible black contours before broad solid bean fill and orange Sun accents, preserving all thin outlined moon/cloud shapes.",
+      "spatial_order": "Head, torso, screen-left arm, screen-right arm, lower body, Sun, Moon, remaining context, frame.",
+      "narrative_checks": [
+        {
+          "id": "reflection_fact",
+          "status": "pass",
+          "evidence": "Actually viewed sheet-0 bottom: orange Sun upper-left; red arrow reaches outlined moon upper-right; blue arrow returns diagonally toward bean below, showing reflected rather than self-generated light. Both arms and legs visible; no label text or extra light source."
+        }
+      ]
+    },
+    {
+      "plan_id": "horizon",
+      "status": "pass",
+      "source_sha256": "b1176f4c88346f4ac28abc59da0f6affdaec3bbe18257422d8631002dabeba4f",
+      "crop": [
+        0,
+        0,
+        1024,
+        768
+      ],
+      "anatomy_and_occlusion": "Actually viewed sheet-1 top: orange outlined Sun and crescent both above the straight local horizon; bean and two arms/legs sit below the sky objects. Blue arrow points at crescent. It is a local sky illustration, not orbital scale or a claim that the Moon is always visible. The blob has no separate neck; never invent a hidden body part.",
+      "part_boundaries": "Actual face region and torso assigned separately; screen-left/right arm polygons follow the visibly separate stick limbs, then legs. Sun and Moon regions are separate from the figure. Supporting context owns remaining actual arrows, ground/cloud; panel frame is last. In observe, cloud overlap is excluded from the visible lunar ownership.",
+      "stroke_breaks": "Independent lifted contours for bean limbs/facial marks, sun rays, crescent arcs, arrows and ground; no travel line across blank paper.",
+      "outline_then_fill": "Actual orange-only Sun rays and ring are visible ink. Aligned full-source grayscale mask retains dark and blue contours and explicit visible orange contour edges, with a 5.9-source-pixel edge band before resize. Source artwork pixels unchanged. All contours precede bean/body fill.",
+      "spatial_order": "Head, torso, screen-left arm, screen-right arm, lower body, Sun, Moon, remaining context, frame.",
+      "narrative_checks": [
+        {
+          "id": "horizon_fact",
+          "status": "pass",
+          "evidence": "Actually viewed sheet-1 top: orange outlined Sun and crescent both above the straight local horizon; bean and two arms/legs sit below the sky objects. Blue arrow points at crescent. It is a local sky illustration, not orbital scale or a claim that the Moon is always visible."
+        }
+      ],
+      "outline_mask_sha256": "2e080bcef08aaf668f80d0735e4076a5722d99ff18d7e8a4b0e4fa6f0a5d4a78"
+    },
+    {
+      "plan_id": "observe",
+      "status": "pass",
+      "source_sha256": "b1176f4c88346f4ac28abc59da0f6affdaec3bbe18257422d8631002dabeba4f",
+      "crop": [
+        0,
+        768,
+        1024,
+        1536
+      ],
+      "anatomy_and_occlusion": "Actually viewed sheet-1 bottom: crescent partly hidden by cloud upper-right, orange Sun far upper-left; bean points toward cloud/moon, away from the Sun. Both stick arms and legs visible. Hidden lunar area is not fabricated. The blob has no separate neck; never invent a hidden body part.",
+      "part_boundaries": "Actual face region and torso assigned separately; screen-left/right arm polygons follow the visibly separate stick limbs, then legs. Sun and Moon regions are separate from the figure. Supporting context owns remaining actual arrows, ground/cloud; panel frame is last. In observe, cloud overlap is excluded from the visible lunar ownership.",
+      "stroke_breaks": "Independent lifted contours for bean limbs/facial marks, sun rays, crescent arcs, arrows and ground; no travel line across blank paper.",
+      "outline_then_fill": "Actual orange-only Sun rays and ring are visible ink. Aligned full-source grayscale mask retains dark and blue contours and explicit visible orange contour edges, with a 5.9-source-pixel edge band before resize. Source artwork pixels unchanged. All contours precede bean/body fill.",
+      "spatial_order": "Head, torso, screen-left arm, screen-right arm, lower body, Sun, Moon, remaining context, frame.",
+      "narrative_checks": [
+        {
+          "id": "observe_fact",
+          "status": "pass",
+          "evidence": "Actually viewed sheet-1 bottom: crescent partly hidden by cloud upper-right, orange Sun far upper-left; bean points toward cloud/moon, away from the Sun. Both stick arms and legs visible. Hidden lunar area is not fabricated."
+        }
+      ],
+      "outline_mask_sha256": "2e080bcef08aaf668f80d0735e4076a5722d99ff18d7e8a4b0e4fa6f0a5d4a78"
+    }
+  ]
+}

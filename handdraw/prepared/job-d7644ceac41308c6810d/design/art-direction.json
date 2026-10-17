@@ -1,0 +1,70 @@
+{
+  "dependency_sha256": "fbbfd33d70f729011b6a6bc232851c116cd4a89ead2adea4462888a6ce26fc1a",
+  "style_sha256": "a1fcea943b70e1128050f2b29c51c1688e63c48c88a1fd0aa32dc9bc75d95289",
+  "images": [
+    {
+      "source": "../inputs/sheet-0.png",
+      "method": "generated_under_guidance",
+      "brief_file": "sheet-0-brief.md",
+      "prompt_file": "sheet-0-prompt.txt",
+      "status": "pass",
+      "brief_sha256": "cb65b829cbea61fecb33da9790c37504759fce55256a476ee5d7180b07c8f8a9",
+      "prompt_sha256": "62a2108ed208b4ddbef6768f669969b98e3d0a939771b04b02fed0650f72ebd4",
+      "sha256": "06a0d3193364646ec665ec672451717ab31d4d13debce5cc460c7ec6b4e4cbc6",
+      "pixel_sha256": "8d2564b0712d9cfe5a82ca7ca6d31aae6fd1a9f759b256219abef6388d980383",
+      "approved_crops": [
+        [
+          0,
+          0,
+          1024,
+          768
+        ],
+        [
+          0,
+          768,
+          1024,
+          1536
+        ]
+      ],
+      "evidence": "Actually viewed sheet-0 top: orange Sun upper-left and outlined crescent upper-right above bean. Bean head, torso, lowered screen-left arm, raised screen-right pointing arm and two legs are visible. Clear physical gap between Sun and Moon; no writing. Actually viewed sheet-0 bottom: orange Sun upper-left; red arrow reaches outlined moon upper-right; blue arrow returns diagonally toward bean below, showing reflected rather than self-generated light. Both arms and legs visible; no label text or extra light source. Complete official 4 recipe preserved; no writing; no unrelated previous-topic asset."
+    },
+    {
+      "source": "../inputs/sheet-1.png",
+      "method": "generated_under_guidance",
+      "brief_file": "sheet-1-brief.md",
+      "prompt_file": "sheet-1-prompt.txt",
+      "status": "pass",
+      "brief_sha256": "65b07c35b96b838f7cce909d99ae6659edfc72f9b0f173ef979ec5c7981b5222",
+      "prompt_sha256": "3f0b146926287d977b8a9c5ee858bd68bf0f23bb078e0cc5d131a2ef84afb63d",
+      "sha256": "b1176f4c88346f4ac28abc59da0f6affdaec3bbe18257422d8631002dabeba4f",
+      "pixel_sha256": "29f89fb7e58bc59f1e35cf3cadc5e7954c8f2c114abac0c3aa198ab7edca87c9",
+      "approved_crops": [
+        [
+          0,
+          0,
+          1024,
+          768
+        ],
+        [
+          0,
+          768,
+          1024,
+          1536
+        ]
+      ],
+      "evidence": "Actually viewed sheet-1 top: orange outlined Sun and crescent both above the straight local horizon; bean and two arms/legs sit below the sky objects. Blue arrow points at crescent. It is a local sky illustration, not orbital scale or a claim that the Moon is always visible. Actually viewed sheet-1 bottom: crescent partly hidden by cloud upper-right, orange Sun far upper-left; bean points toward cloud/moon, away from the Sun. Both stick arms and legs visible. Hidden lunar area is not fabricated. Complete official 4 recipe preserved; no writing; no unrelated previous-topic asset."
+    },
+    {
+      "source": "../inputs/cover.png",
+      "method": "composed_with_verified_layers",
+      "brief_file": "cover-brief.md",
+      "prompt_file": "cover-prompt.txt",
+      "status": "pass",
+      "brief_sha256": "972f08034e0e208fc4b6d9b46849b2dd0bfd094b1af0d2ace73e7df9ed3ad5b2",
+      "prompt_sha256": "de31a1dbe594be2d94531a096b5733a707d532114143b4503681fd97e5e8fbe8",
+      "sha256": "826a7a2d09759f3563159297d1e38d21255aff6bf7efffe1f6d102f20a18c5a7",
+      "pixel_sha256": "5954ed4f10ede5b7e7ada26cc436c899f7d421e3e13ebcd8f3df922c14449f5b",
+      "evidence": "Viewed actual 1080x1920 yellow cover. Exact Traditional Chinese title 白天的月亮 / 沒有加班！ is large and fully in frame. Reviewed daytime Sun/Moon/bean panel is intact. Separate controlled subtitle 月光，其實是太陽光 has clear margins and no duplicate text."
+    }
+  ]
+}
