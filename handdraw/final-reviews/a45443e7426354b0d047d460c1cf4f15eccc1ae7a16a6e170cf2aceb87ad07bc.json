@@ -1,0 +1,28 @@
+{
+  "video_sha256": "a45443e7426354b0d047d460c1cf4f15eccc1ae7a16a6e170cf2aceb87ad07bc",
+  "content": {
+    "status": "pass",
+    "evidence": "Reviewed adapted script, all seven decoded page-completion frames and actual final frame. It retains Chewing gum / Aluminum foil teaching and qualifies heat and anti-cut claims. Primary manufacturing and foil sources are retained in design.json; diagrams are schematic rather than a claim about one brand."
+  },
+  "visual": {
+    "status": "pass",
+    "evidence": "Viewed actual v2 completed-page contact sheet and full-size 79.8s ending. Final heading is within its box at x=245 and all handwritten labels stay above paper fill at z=40. Viewed v1 full-size longest two-line subtitle and complete-page stages; v2 uses unchanged subtitle events, dimensions and images. No caption/pen overlap in inspected samples."
+  },
+  "motion": {
+    "status": "pass",
+    "evidence": "Viewed v1 12-second preview at one-second steps plus five consecutive 0.2-second fill-stage samples, and outline/fill/completion samples from all seven pages. V2 changes label z and one x coordinate only; images, semantic masks, drawing windows and voice are unchanged. V2 official paths/paint/part/glyph checks pass. These samples do not establish every-frame smoothness."
+  },
+  "audio": {
+    "status": "pass",
+    "evidence": "Technical checks only: v2 MP4 fully decoded, has AAC narration and matches v1 decoded audio PCM SHA256 2ba1c4f6fb3f10ead5dd0a5f9b81318016275810a1aafb08f34a68126adb6aa4 exactly. Eighteen actual Edge sentence events align the complete fixed-068 script; original measured narration 78.550204s. Source settings verified as zh-TW-HsiaoChenNeural +20% +5Hz. Subjective listening and ASR were not performed."
+  },
+  "privacy": {
+    "status": "pass",
+    "evidence": "Official metadata cleanup audit records in v2 diagnostics show no embedded EXIF/GPS/XMP/IPTC metadata after source cleanup. No new imagery or user photos were added during layout revision."
+  },
+  "limitations": [
+    "Subjective voice naturalness and pronunciation have not been listened to; user acceptance is still required.",
+    "Visual/motion review used decoded frame sequences rather than continuous full playback; it cannot guarantee every-frame smoothness.",
+    "Default narration only, no background music."
+  ]
+}
