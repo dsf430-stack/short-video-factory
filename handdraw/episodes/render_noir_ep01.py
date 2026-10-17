@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Generate a 60s black-and-white suspense storyboard MP4, without pretending to animate actors."""
-import argparse, pathlib, subprocess, sys
+import argparse, pathlib, subprocess, sys, json, re
 from PIL import Image, ImageDraw, ImageFont
 
 SCENES=[
@@ -36,24 +36,54 @@ def frame(i,title,path):
         d.text((410,420),'03:17',font=font(60),fill='black')
     d.text((100,90),f'EP01   {i+1:02d}/07',font=font(58),fill='black')
     d.text((110,1540),title,font=font(88),fill='black')
-    d.text((110,1690),'凌晨 3:17',font=font(58),fill='black')
+    d.text((110,1635),'靜態分鏡版｜068 旁白',font=font(38),fill='black')
     im.save(path)
 
 def main():
     p=argparse.ArgumentParser();p.add_argument('--output',default='noir-ep01.mp4');p.add_argument('--work',default='noir-work');a=p.parse_args()
     w=pathlib.Path(a.work);w.mkdir(parents=True,exist_ok=True)
     segments=[]
+    verification=[]
+    all_subtitles=[]
+    offset=0
+    def stamp(t):
+        ms=round(t*1000); sec,ms=divmod(ms,1000); minute,sec=divmod(sec,60)
+        return f"00:{minute:02}:{sec:02},{ms:03}"
     for i,(title,spoken,duration) in enumerate(SCENES):
         img=w/f'scene{i}.png';vid=w/f'scene{i}.mp4';frame(i,title,img)
-        run(['ffmpeg','-y','-loglevel','error','-loop','1','-framerate','30','-i',str(img),'-t',str(duration),'-vf','format=yuv420p','-r','30','-c:v','libx264','-preset','ultrafast',str(vid)])
+        text=w/f'voice{i}.txt';text.write_text(spoken,encoding='utf-8')
+        audio=w/f'voice{i}.mp3'
+        if not audio.exists():
+            run([sys.executable,'smart_voice/generate_voice.py','--voice-id','068','--text-file',str(text),'--output',str(audio)])
+        meta=json.loads(audio.with_suffix('.json').read_text())
+        if meta['duration']>duration-0.1:
+            raise RuntimeError(f'Scene {i} narration exceeds allotted duration; do not truncate')
+        srt=audio.with_suffix('.srt')
+        entries=re.findall(r'(\d+)\n(.*?) --> (.*?)\n(.*?)(?=\n\n|$)',srt.read_text(),re.S)
+        def seconds(t):
+            h,m,s=t.replace(',','.').split(':');return int(h)*3600+int(m)*60+float(s)
+        wrapped=[]
+        for _,a0,b0,words in entries:
+            words=words.replace('\n','')
+            lines='\n'.join(words[k:k+17] for k in range(0,len(words),17))
+            wrapped.append(f'{len(wrapped)+1}\n{a0} --> {b0}\n{lines}\n\n')
+            all_subtitles.append(f'{len(all_subtitles)+1}\n{stamp(offset+seconds(a0))} --> {stamp(offset+seconds(b0))}\n{lines}\n\n')
+        burn=w/f'sub{i}.srt';burn.write_text(''.join(wrapped),encoding='utf-8')
+        vf=f"subtitles={burn}:force_style='FontName=Noto Sans CJK TC,FontSize=16,MarginV=20,Outline=1,Alignment=2',format=yuv420p"
+        run(['ffmpeg','-y','-loglevel','error','-loop','1','-framerate','30','-i',str(img),'-i',str(audio),'-t',str(duration),'-vf',vf,'-af','apad','-r','30','-c:v','libx264','-preset','ultrafast','-c:a','aac','-b:a','160k',str(vid)])
         segments.append(vid)
+        verification.append({'scene':i+1,'start':offset,'duration':duration,'voice_duration':meta['duration'],'voice_id':meta['voice_id'],'subtitle_entries':len(entries)})
+        offset+=duration
     concat=w/'concat.txt';concat.write_text(''.join("file '"+str(f.resolve())+"'\n" for f in segments))
-    # No synthetic fake narration: use existing voice 068 if available; otherwise fail clearly.
-    text=w/'narration.txt';text.write_text(''.join(s[1] for s in SCENES))
-    audio=w/'voice.mp3'
-    run([sys.executable,'smart_voice/generate_voice.py','--voice-id','068','--text-file',str(text),'--output',str(audio)])
-    run(['ffmpeg','-y','-loglevel','error','-f','concat','-safe','0','-i',str(concat),'-i',str(audio),'-filter_complex','[1:a]apad[a]','-map','0:v','-map','[a]','-t','60','-c:v','copy','-c:a','aac','-b:a','160k',a.output])
-    result=subprocess.check_output(['ffprobe','-v','error','-show_entries','format=duration','-of','default=noprint_wrappers=1:nokey=1',a.output],text=True)
-    if abs(float(result)-60)>.2:raise RuntimeError('duration mismatch '+result)
+    (w/'narration.txt').write_text(''.join(s[1] for s in SCENES),encoding='utf-8')
+    (w/'episode.srt').write_text(''.join(all_subtitles),encoding='utf-8')
+    run(['ffmpeg','-y','-loglevel','error','-f','concat','-safe','0','-i',str(concat),'-c','copy',a.output])
+    probe=json.loads(subprocess.check_output(['ffprobe','-v','error','-show_streams','-show_format','-of','json',a.output],text=True))
+    v=next(x for x in probe['streams'] if x['codec_type']=='video')
+    assert abs(float(probe['format']['duration'])-60)<.2
+    assert (v['width'],v['height'],v['avg_frame_rate'])==(1080,1920,'30/1')
+    assert any(x['codec_type']=='audio' for x in probe['streams'])
+    run(['ffmpeg','-v','error','-i',a.output,'-f','null','-'])
+    (w/'verification.json').write_text(json.dumps({'format':probe['format'],'scenes':verification,'full_decode':'PASS','visual_type':'static_storyboard','subjective_listening':'UNCERTAIN'},ensure_ascii=False,indent=2),encoding='utf-8')
     print('RENDERED',a.output)
 if __name__=='__main__':main()
