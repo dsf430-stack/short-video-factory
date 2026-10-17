@@ -144,7 +144,7 @@ def main(args):
   save(receipt,{'bundle_sha256':fingerprint,'official_commit':PIN})
  run(sys.executable,command,'verify',root)
  if json.loads((bundle/'story.json').read_text()).get('natural_duration'):
-  args.seconds=json.loads((root/'voice-measurement.json').read_text())['target_film_seconds']
+  args.seconds=json.loads((root/'work/timeline.json').read_text())['duration']
  probe=json.loads(subprocess.check_output(['ffprobe','-v','error','-show_streams','-show_format','-of','json',str(film)]))
  v=next(s for s in probe['streams'] if s['codec_type']=='video')
  if (v['width'],v['height'],v['avg_frame_rate'])!=(1080,1920,'30/1') or abs(float(v['duration'])-args.seconds)>.05:raise ValueError('Requested format or duration failed')
