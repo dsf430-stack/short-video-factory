@@ -69,7 +69,7 @@ def main():
             wrapped.append(f'{len(wrapped)+1}\n{a0} --> {b0}\n{lines}\n\n')
             all_subtitles.append(f'{len(all_subtitles)+1}\n{stamp(offset+seconds(a0))} --> {stamp(offset+seconds(b0))}\n{lines}\n\n')
         burn=w/f'sub{i}.srt';burn.write_text(''.join(wrapped),encoding='utf-8')
-        vf=f"subtitles={burn}:force_style='FontName=Noto Sans CJK TC,FontSize=16,MarginV=20,Outline=1,Alignment=2',format=yuv420p"
+        vf=f"subtitles={burn}:force_style='FontName=Noto Sans CJK TC,FontSize=8,MarginV=8,Outline=1,Alignment=2',format=yuv420p"
         run(['ffmpeg','-y','-loglevel','error','-loop','1','-framerate','30','-i',str(img),'-i',str(audio),'-t',str(duration),'-vf',vf,'-af','apad','-r','30','-c:v','libx264','-preset','ultrafast','-c:a','aac','-b:a','160k',str(vid)])
         segments.append(vid)
         verification.append({'scene':i+1,'start':offset,'duration':duration,'voice_duration':meta['duration'],'voice_id':meta['voice_id'],'subtitle_entries':len(entries)})
