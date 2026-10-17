@@ -2,10 +2,10 @@
   "topic": "為什麼白天也看得到月亮？",
   "job_id": "job-d7644ceac41308c6810d",
   "catalog_entry_required": false,
-  "actions_url": "https://github.com/dsf430-stack/short-video-factory/actions/runs/39019605523",
-  "render_commit": "a92cadc2f546097a88d34fe7f212d0584887d286",
+  "actions_url": "https://github.com/dsf430-stack/short-video-factory/actions/runs/39019877970",
+  "render_commit": "3e6f8dc01700deaeaf60a315113b224133e809ff",
   "official_commit": "5206ec0d17f9b353e400b64b9c51ad69e721e02a",
-  "video_sha256": "b0693f4e15586df5b7f61cbcf5ac2db0eb523347a072b99e7c8823ffe6e86028",
+  "video_sha256": "5489093f2a0ec6f7ff1d169c8878bb008b21d32f2dd958eba113d4c91d6bc371",
   "seconds": 30,
   "resolution": [
     1080,
@@ -38,8 +38,8 @@
     "cover_half_second_still_and_fade": true,
     "mandatory_art_direction": true
   },
-  "audio_track_correlation": 0.9999756816765135,
-  "final_phrase_encoding_correlation": 0.9999478592547775,
+  "audio_track_correlation": 0.9999756816765081,
+  "final_phrase_encoding_correlation": 0.9999478592547764,
   "model_visual_review": {
     "status": "PASS",
     "sample_times_seconds": [
@@ -68,5 +68,11 @@
   "human_listening": "UNCERTAIN",
   "background_music": false,
   "official_final_review_status": "engineering_passed_review_required",
-  "mode": "ChatGPT prepares and reviews new script/art; GitHub renders without extra model API"
+  "mode": "ChatGPT prepares and reviews new script/art; GitHub renders without extra model API",
+  "branch_video_sha256": "b0693f4e15586df5b7f61cbcf5ac2db0eb523347a072b99e7c8823ffe6e86028",
+  "branch_actions_url": "https://github.com/dsf430-stack/short-video-factory/actions/runs/39019605523",
+  "merged_pr": "https://github.com/dsf430-stack/short-video-factory/pull/9",
+  "actions_conclusion": "success",
+  "main_delivery_downloaded_and_reviewed": true,
+  "main_full_decode": "PASS"
 }

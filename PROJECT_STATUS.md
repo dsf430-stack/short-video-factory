@@ -35,8 +35,10 @@
 ## 最終交付與可接續狀態
 
 - 第三輪 Actions SUCCESS：https://github.com/dsf430-stack/short-video-factory/actions/runs/39019605523 。
-- 成片 Moon_Daylight_Style04_068_30s.mp4：30.000秒、1080×1920、30fps、900幀、H.264/AAC；SHA256 b0693f4e15586df5b7f61cbcf5ac2db0eb523347a072b99e7c8823ffe6e86028。下載後再次完整解碼通過。
+- 成片 Moon_Daylight_Style04_068_30s.mp4：30.000秒、1080×1920、30fps、900幀、H.264/AAC；SHA256 5489093f2a0ec6f7ff1d169c8878bb008b21d32f2dd958eba113d4c91d6bc371。下載後再次完整解碼通過。
 - 實際看13個時間點（封面、各幕描線/填色/完成、結尾），已修正問號孤立換行及末幕註解/字幕間距；52px字幕、原始配音與句界保留。
 - 官方全部工程檢查通過，音軌與原旁白相關度0.99997568，尾句0.99994786；沒有截音、拉伸或新增模型 API。主觀聽感仍為UNCERTAIN，未偽造人工聽音或官方finalize成功。
-- 詳細驗證：handdraw/verification/moon-20261017.json；修復與新素材在PR #9，準備合併main。
+- 詳細驗證：handdraw/verification/moon-20261017.json；修復與新素材已透過PR #9合併main（3e6f8dc01700deaeaf60a315113b224133e809ff）。
 - 以後在ChatGPT提供題材/腳本、畫風、片長即可接力；GitHub只負責已準備任務的語音、字幕與官方動畫渲染，沒有額外模型API時不會自行理解或生圖。
+
+- main部署後驗證SUCCESS：https://github.com/dsf430-stack/short-video-factory/actions/runs/39019877970 。14項測試通過，直接使用既有068旁白。交付已更新為main實際MP4，重新完整解碼與13點看圖通過，原分支成片也已驗證；兩次輸出不以位元相同為驗收條件。
