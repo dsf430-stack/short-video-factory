@@ -9,7 +9,7 @@ on:
         default: 一滴水如何變成雨
         type: string
   push:
-    branches: [integration/sweety-handdraw-068]
+    branches: [integration/sweety-handdraw-068, render/gum-style4-80s]
     paths: ['.github/workflows/sweety-handdraw-068.yml', 'handdraw/**']
 permissions:
   contents: read
@@ -65,13 +65,17 @@ jobs:
             smart_voice/output/.068-cache
           key: sweety-prepared-v1-${{ steps.topic.outputs.key }}-${{ github.run_id }}-${{ github.run_attempt }}
           restore-keys: sweety-prepared-v1-${{ steps.topic.outputs.key }}-
-      - name: Render prepared official handdraw job using existing 068
-        env:
-          TOPIC: ${{ inputs.topic || '一滴水如何變成雨' }}
+      - name: Measure requested 068 narration before locking storyboard
         run: |
-          set -o pipefail
-          mkdir -p handdraw/output
-          python -u handdraw/produce.py --topic "$TOPIC" --seconds 30 --official /tmp/sweety-official --output handdraw/output/prepared 2>&1 | tee handdraw/output/run.log
+          mkdir -p handdraw/output/gum-style4
+          python -u smart_voice/generate_voice.py --voice-id 068 --text-file handdraw/prepared/gum-style4/script.txt --output handdraw/output/gum-style4/narration.mp3
+      - name: Upload measured narration
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: gum-style4-voice-measurement-${{ github.run_id }}
+          path: handdraw/output/gum-style4
+          if-no-files-found: error
       - name: Save prepared job and verified voice work
         if: always()
         uses: actions/cache/save@v4
@@ -81,7 +85,7 @@ jobs:
             smart_voice/output/.068-cache
           key: ${{ steps.cache.outputs.cache-primary-key }}
       - name: Upload verified final film
-        if: success()
+        if: false
         uses: actions/upload-artifact@v4
         with:
           name: sweety-068-rain-1080x1920-${{ github.run_id }}
