@@ -1,6 +1,6 @@
 {
   "style_sha256": "3011eba2e2dfd04c8d2fcf92ed47dc9422c4ba384c680de2f9af9c095e58bfea",
-  "plan_sha256": "8de267b435da2ea0a12332f55551153f0b8b1df726933d85476d58ab634c752a",
+  "plan_sha256": "a655803bd5019f983b1975a409ac0dca8a1e201c6ddda5275dc4d6dc2165a7dc",
   "illustrations": [
     {
       "plan_id": "s0",
@@ -130,5 +130,6 @@
         }
       ]
     }
-  ]
+  ],
+  "revision_note": "Narration revision only; existing reviewed pixels and semantic masks reused without regeneration."
 }

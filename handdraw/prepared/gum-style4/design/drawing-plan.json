@@ -130,7 +130,7 @@
       "narrative_requirements": [
         {
           "id": "s0_visible",
-          "narration_quote": "口香糖的包裝邊緣，為什麼像一排小鋸齒？學英文吧！口香糖叫 Chewing gum，適合吹泡泡的泡泡糖，則常叫 Bubble gum。",
+          "narration_quote": "口香糖包裝的邊緣，為什麼像一排小鋸齒？英文慢慢念！Chewing gum. 就是口香糖。",
           "observable": "One panel. Presenter at left blowing a single round orange gum bubble at mouth height, attached visibly to mouth; a small unwrapped rectangular gum stick on the right, separated by white space. Leave heading and annotation positions blank for editable text."
         }
       ],
@@ -276,7 +276,7 @@
       "narrative_requirements": [
         {
           "id": "s1_visible",
-          "narration_quote": "打開片狀口香糖，你可能看見一張亮亮的包裝。先猜猜，它是為了防止誤食、方便生產，還是純粹裝飾？",
+          "narration_quote": "打開片狀口香糖，你可能看見亮亮的包裝。先猜猜，是為了防止誤食、方便生產，還是純粹裝飾？",
           "observable": "One panel. Presenter at left points toward one large opened gum wrapper at right with a folded-over corner and clearly serrated top edge. The gum stick remains partially wrapped. A single orange question mark tile below, no writing inside. Leave heading and annotation positions blank."
         }
       ],
@@ -452,7 +452,7 @@
       "narrative_requirements": [
         {
           "id": "s2_visible",
-          "narration_quote": "這種材料常被叫作錫紙，但現在常見的是鋁箔，英文是 Aluminum foil。不過，亮銀色不等於整張都是鋁，口香糖包材也可能是紙、鋁箔與塗層組成的複合材料。",
+          "narration_quote": "常聽人叫它錫紙，但現在常見的是鋁箔。英文是，Aluminum foil. 亮銀色不等於整張都是鋁，口香糖包材也可能由紙、鋁箔與塗層組成。",
           "observable": "One panel. Presenter at left examines a separated three-layer wrapper diagram on right: top foil sheet, middle paper sheet and thin bottom coating, offset vertically, with generous white gaps, no literal chemical structure. One small orange sample tab only. Leave titles and labels blank."
         }
       ],
@@ -583,7 +583,7 @@
       "narrative_requirements": [
         {
           "id": "s3_visible",
-          "narration_quote": "鋁箔的重要本領，是阻隔光線、氣體與濕氣，幫助保存風味。但包裝有沒有封好、材料有沒有破損，同樣重要。它可不是讓口香糖永遠新鮮的魔法盾牌！",
+          "narration_quote": "鋁箔能阻隔光線、氣體與濕氣，幫助保存風味。包裝有沒有封好、材料有沒有破損，同樣重要。它可不是永遠保鮮的魔法盾牌！",
           "observable": "One panel. Presenter at left points toward an intact folded wrapper around a rectangular gum stick on right. Three separate arrows from above stop outside the wrapper, indicating schematic barriers; one arrow orange. No protective superhero shield. Leave labels blank."
         }
       ],
@@ -714,7 +714,7 @@
       "narrative_requirements": [
         {
           "id": "s4_visible",
-          "narration_quote": "還有一個誤會：包著鋁箔，就不怕夏天悶熱？錯！反光不代表放進口袋也能隔絕熱量。口香糖還是應該依照包裝指示，避免高溫保存。",
+          "narration_quote": "讓我「鋁」次提醒：包裝不是冷氣！反光不代表放進口袋也能隔絕熱量。口香糖還是要依照包裝指示，避免高溫保存。",
           "observable": "One panel. Presenter at left with worried face stands beside a large trousers pocket on right containing a wrapped gum stick; a small sun and upward heat wave symbols above pocket show heat exposure, not refrigeration. One orange sun only. Leave labels blank."
         }
       ],
@@ -875,7 +875,7 @@
       "narrative_requirements": [
         {
           "id": "s5_visible",
-          "narration_quote": "至於鋸齒邊，包裝機確實會使用鋸齒或齒形刀具裁切材料，但不同品牌的製程不一樣，不能只看邊緣，就斷言它一定是為了防割手。鋸齒也不代表絕對安全，別拿手指來回刮！",
+          "narration_quote": "至於鋸齒邊，包裝機確實會用鋸齒或齒形刀具裁切材料。但品牌製程不同，不能只看邊緣，就說一定是為了防割手。鋸齒不代表絕對安全，別拿手指來回刮！",
           "observable": "One panel. Presenter at left, arms away from machine, observes a schematic serrated cutter above a flat strip of wrapping paper on right; cutter physically above paper with two cut sheets separated below; no hand touching blade. One orange cut sheet. Leave labels blank."
         }
       ],
@@ -1021,7 +1021,7 @@
       "narrative_requirements": [
         {
           "id": "s6_visible",
-          "narration_quote": "Chewing gum 是口香糖，Aluminum foil 是鋁箔。小小一張包裝，藏著材料與製造的學問。",
+          "narration_quote": "再慢慢複習一次！Chewing gum. 口香糖。Aluminum foil. 鋁箔。這次有聽清楚嗎？小小包裝，也大有學問！",
           "observable": "One panel. Presenter at left waves goodbye; at right, a plain gum stick above and a separate open wrapper below, clearly distinct objects. One orange gum stick only. Leave title and vocabulary labels blank for later exact typesetting."
         }
       ],

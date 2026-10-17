@@ -87,10 +87,12 @@ def main(args):
   text=''.join(s['text'] for s in scenes);text_hash=hashlib.sha256(text.encode()).hexdigest()
   narration=root/f'inputs/voice-{text_hash[:16]}.txt';narration.write_text(text)
   mp3=narration.with_suffix('.mp3')
-  if not mp3.exists():run(sys.executable,REPO/'smart_voice/generate_voice.py','--voice-id','068','--text-file',narration,'--output',mp3)
+  if not mp3.exists():run(sys.executable,REPO/story.get('narration_adapter','smart_voice/generate_voice.py'),'--voice-id','068','--text-file',narration,'--output',mp3)
   meta=json.loads(mp3.with_suffix('.json').read_text())
   if meta['text_sha256']!=text_hash or meta['voice_id']!='068' or meta['sha256']!=digest(mp3):raise ValueError('Voice cache mismatch')
-  duration=meta['duration'];hold=args.seconds-1-duration
+  duration=meta['duration']
+  if story.get('natural_duration'): args.seconds=1+duration+.45
+  hold=args.seconds-1-duration
   save(root/'voice-measurement.json',{'narration_seconds':duration,'target_film_seconds':args.seconds,'required_ending_hold':hold,'text':text,'voice':meta['preset']})
   print('MEASURED_NARRATION_SECONDS',duration,'REQUIRED_END_HOLD',hold,flush=True)
   if not .2<=hold<=.8:raise ValueError('Adjust narration text naturally to fit the requested duration; do not stretch or truncate 068')
@@ -114,7 +116,7 @@ def main(args):
    pages.append({'beats':[{'id':s['id'],'text':s['text'],'actions':[
     {'type':'text','text':s['label'],'x':s.get('label_x',120),'y':s.get('label_y',250),'size':s.get('label_size',90),'weight':1,'z':40},
     {'type':'illustration','drawing_plan_id':s['id'],'source':s.get('source','inputs/'+s['id']+'.png'),'x':120,'y':480,'width':840,'height':840,'weight':5,'parts':s['parts'],**({'outline_mask':s['outline_mask']} if s.get('outline_mask') else {})}]}]})
-  manifest={'version':1,'title':story['title'],'design_file':'design.json','canvas':{'width':1080,'height':1920,'fps':30},'paper':'#FFFFFF','font':{'path':font,'index':3},'cover':{'source':'inputs/cover.png','seconds':1},'hand':{'preset':'pen-only','scale':.25,'pen_text':''},'narration':{'source':'inputs/master.wav','alignment':'inputs/alignment.json'},'audio':{'end_hold_seconds':hold},'ending':{'caption_hold_seconds':min(.2,hold)},'captions':{'font':{'path':font,'index':3},'font_size':46,'bottom_margin':210,'max_width_ratio':.9,'max_lines':2,'color':'#FFFFFF','stroke_color':'#151515','stroke_width':3,'background':None},'art_direction':{'record':'design/art-direction.json'},'drawing_plan':'design/drawing-plan.json','drawing_review':'design/drawing-review.json','pages':pages}
+  manifest={'version':1,'title':story['title'],'design_file':'design.json','canvas':{'width':1080,'height':1920,'fps':30},'paper':story.get('paper','#FFFFFF'),'font':{'path':font,'index':3},'cover':{'source':'inputs/cover.png','seconds':1},'hand':{'preset':'pen-only','scale':.25,'pen_text':''},'narration':{'source':'inputs/master.wav','alignment':'inputs/alignment.json'},'audio':{'end_hold_seconds':hold},'ending':{'caption_hold_seconds':min(.2,hold)},'captions':{'font':{'path':font,'index':3},'font_size':46,'bottom_margin':210,'max_width_ratio':.9,'max_lines':2,'color':'#FFFFFF','stroke_color':'#151515','stroke_width':3,'background':None},'art_direction':{'record':'design/art-direction.json'},'drawing_plan':'design/drawing-plan.json','drawing_review':'design/drawing-review.json','pages':pages}
   save(root/'job.json',manifest);(root/'script.txt').write_text(text)
   if story.get('caption_font_size'):
    manifest['captions']['font_size']=story['caption_font_size']
@@ -129,6 +131,8 @@ def main(args):
   run(sys.executable,command,'render',root)
   save(receipt,{'bundle_sha256':fingerprint,'official_commit':PIN})
  run(sys.executable,command,'verify',root)
+ if json.loads((bundle/'story.json').read_text()).get('natural_duration'):
+  args.seconds=json.loads((root/'voice-measurement.json').read_text())['target_film_seconds']
  probe=json.loads(subprocess.check_output(['ffprobe','-v','error','-show_streams','-show_format','-of','json',str(film)]))
  v=next(s for s in probe['streams'] if s['codec_type']=='video')
  if (v['width'],v['height'],v['avg_frame_rate'])!=(1080,1920,'30/1') or abs(float(v['duration'])-args.seconds)>.05:raise ValueError('Requested format or duration failed')
