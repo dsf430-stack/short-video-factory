@@ -1,8 +1,8 @@
 {
-  "job_id": "job-d158225f04c9fad3ceaa",
-  "topic": "月亮冷知識：白天也能看見月亮",
+  "job_id": "job-637378837c79e0ffd659",
+  "topic": "鉛筆芯其實沒有鉛",
   "seconds": 30,
-  "style": "13",
-  "bundle_sha256": "25ec977a300e72a11ecc09978cdad55f60deeecec6ed15797797d9a75fb612c3",
+  "style": "6",
+  "bundle_sha256": "7bd8e7547b2078d2610c9c1d4459204d780d7f3ffb34c432ab1c142125333f8b",
   "mode": "chatgpt-prepared-no-extra-model-api"
 }

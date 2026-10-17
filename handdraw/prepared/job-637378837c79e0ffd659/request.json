@@ -1,0 +1,21 @@
+{
+  "topic": "鉛筆芯其實沒有鉛",
+  "seconds": 30,
+  "style": "6",
+  "job_id": "job-637378837c79e0ffd659",
+  "voice_id": "068",
+  "mode": "chatgpt-prepared-no-extra-model-api",
+  "script_sha256": "d9f142aad360731adf453844420bcd2ad7cce895842d5c1c2c7972b16b277c32",
+  "state": "ASSETS_VALIDATED",
+  "required_files": [
+    "story.json",
+    "design.json",
+    "style/selection.json",
+    "style/resolved.json",
+    "design/art-direction.json",
+    "design/drawing-plan.json",
+    "design/drawing-plan.preflight.json",
+    "design/drawing-review.json",
+    "inputs/cover.png"
+  ]
+}

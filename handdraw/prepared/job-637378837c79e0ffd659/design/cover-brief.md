@@ -1,0 +1,1 @@
+Portrait cover for 鉛筆芯其實沒有鉛. Exact title 鉛筆芯裡 / 其實沒有鉛！ and secondary 真正的主角，是石墨. Use reviewed sheet-0 pencil panel and controlled Noto TC text; vivid golden canvas outside the monochrome illustration.

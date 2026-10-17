@@ -1,0 +1,306 @@
+{
+  "illustrations": [
+    {
+      "id": "surprise",
+      "composition": "A close view of one ordinary hexagonal wooden graphite pencil lying diagonally from upper-left toward lower-right, its sharpened wooden tip and thin dark graphite core clearly exposed and separated in silhouette. A short loose graphite writing trace touches the sharp graphite tip. No hand, no metal lead, no packaging or brand marks. Entire pencil and trace visible with large white margins.",
+      "drawability_reason": "Few separated study objects; open black ballpoint lines can be traced directly without deriving contours from colored shading. No human anatomy.",
+      "outline_strategy": "visible_source_ink",
+      "spatial_order": "top_to_bottom_left_to_right",
+      "order_exception": "Core introduced before casing in opening/ending; comparison follows upper then lower row. Actual regions refined only after seeing generated image.",
+      "subjects": [
+        {
+          "id": "core",
+          "kind": "object"
+        },
+        {
+          "id": "wood",
+          "kind": "object"
+        },
+        {
+          "id": "trace",
+          "kind": "object"
+        }
+      ],
+      "parts": [
+        {
+          "id": "surprise_core",
+          "subject": "core",
+          "role": "core",
+          "stroke_groups": [
+            "Separate spontaneous visible pen strokes; lift between disconnected contour/hatching marks."
+          ]
+        },
+        {
+          "id": "surprise_wood",
+          "subject": "wood",
+          "role": "wood",
+          "stroke_groups": [
+            "Separate spontaneous visible pen strokes; lift between disconnected contour/hatching marks."
+          ]
+        },
+        {
+          "id": "surprise_trace",
+          "subject": "trace",
+          "role": "trace",
+          "stroke_groups": [
+            "Separate spontaneous visible pen strokes; lift between disconnected contour/hatching marks."
+          ]
+        }
+      ],
+      "outline_order": [
+        "surprise_core",
+        "surprise_wood",
+        "surprise_trace"
+      ],
+      "fill_order": [
+        "surprise_core",
+        "surprise_wood",
+        "surprise_trace"
+      ],
+      "narrative_requirements": [
+        {
+          "id": "surprise_fact",
+          "narration_quote": "木製黑鉛筆",
+          "observable": "A close view of one ordinary hexagonal wooden graphite pencil lying diagonally from upper-left toward lower-right, its sharpened wooden tip and thin dark graphite core clearly exposed and separated in silhouette. A short loose graphite writing trace touches the sharp graphite tip. No hand, no metal lead, no packaging or brand marks. Entire pencil and trace visible with large white margins."
+        }
+      ]
+    },
+    {
+      "id": "ingredients",
+      "composition": "A simple object study of pencil-core ingredients: a rough layered graphite rock on the upper-left, one smooth irregular lump of clay on the upper-right, and a thin cylindrical pencil core horizontally below them. Two simple open curved arrows descend separately from graphite and clay toward the pencil core. Graphite rock has darker dense scribble lines; clay has lighter sparse contour strokes. No lettering, labels, numbers or hands. All three objects separated by clean white space.",
+      "drawability_reason": "Few separated study objects; open black ballpoint lines can be traced directly without deriving contours from colored shading. No human anatomy.",
+      "outline_strategy": "visible_source_ink",
+      "spatial_order": "top_to_bottom_left_to_right",
+      "order_exception": "Core introduced before casing in opening/ending; comparison follows upper then lower row. Actual regions refined only after seeing generated image.",
+      "subjects": [
+        {
+          "id": "graphite",
+          "kind": "object"
+        },
+        {
+          "id": "clay",
+          "kind": "object"
+        },
+        {
+          "id": "core",
+          "kind": "object"
+        },
+        {
+          "id": "arrows",
+          "kind": "object"
+        }
+      ],
+      "parts": [
+        {
+          "id": "ingredients_graphite",
+          "subject": "graphite",
+          "role": "graphite",
+          "stroke_groups": [
+            "Separate spontaneous visible pen strokes; lift between disconnected contour/hatching marks."
+          ]
+        },
+        {
+          "id": "ingredients_clay",
+          "subject": "clay",
+          "role": "clay",
+          "stroke_groups": [
+            "Separate spontaneous visible pen strokes; lift between disconnected contour/hatching marks."
+          ]
+        },
+        {
+          "id": "ingredients_core",
+          "subject": "core",
+          "role": "core",
+          "stroke_groups": [
+            "Separate spontaneous visible pen strokes; lift between disconnected contour/hatching marks."
+          ]
+        },
+        {
+          "id": "ingredients_arrows",
+          "subject": "arrows",
+          "role": "arrows",
+          "stroke_groups": [
+            "Separate spontaneous visible pen strokes; lift between disconnected contour/hatching marks."
+          ]
+        }
+      ],
+      "outline_order": [
+        "ingredients_graphite",
+        "ingredients_clay",
+        "ingredients_core",
+        "ingredients_arrows"
+      ],
+      "fill_order": [
+        "ingredients_graphite",
+        "ingredients_clay",
+        "ingredients_core",
+        "ingredients_arrows"
+      ],
+      "narrative_requirements": [
+        {
+          "id": "ingredients_fact",
+          "narration_quote": "石墨和黏土",
+          "observable": "A simple object study of pencil-core ingredients: a rough layered graphite rock on the upper-left, one smooth irregular lump of clay on the upper-right, and a thin cylindrical pencil core horizontally below them. Two simple open curved arrows descend separately from graphite and clay toward the pencil core. Graphite rock has darker dense scribble lines; clay has lighter sparse contour strokes. No lettering, labels, numbers or hands. All three objects separated by clean white space."
+        }
+      ]
+    },
+    {
+      "id": "hardness",
+      "composition": "Two independent horizontal rows comparing ordinary sharpened wooden pencils at equal scale: upper row a pencil points down-right at the end of a thin pale loosely scribbled mark; lower row a second pencil points down-right at a visibly broader denser darker scribbled mark. Both tips contact their own respective marks. Clear wide gap between rows. No labels, numbers, hands, brands or formal comparison chart. The two marks visibly differ in line density.",
+      "drawability_reason": "Few separated study objects; open black ballpoint lines can be traced directly without deriving contours from colored shading. No human anatomy.",
+      "outline_strategy": "visible_source_ink",
+      "spatial_order": "top_to_bottom_left_to_right",
+      "order_exception": "Core introduced before casing in opening/ending; comparison follows upper then lower row. Actual regions refined only after seeing generated image.",
+      "subjects": [
+        {
+          "id": "upper_pencil",
+          "kind": "object"
+        },
+        {
+          "id": "upper_trace",
+          "kind": "object"
+        },
+        {
+          "id": "lower_pencil",
+          "kind": "object"
+        },
+        {
+          "id": "lower_trace",
+          "kind": "object"
+        }
+      ],
+      "parts": [
+        {
+          "id": "hardness_upper_pencil",
+          "subject": "upper_pencil",
+          "role": "upper_pencil",
+          "stroke_groups": [
+            "Separate spontaneous visible pen strokes; lift between disconnected contour/hatching marks."
+          ]
+        },
+        {
+          "id": "hardness_upper_trace",
+          "subject": "upper_trace",
+          "role": "upper_trace",
+          "stroke_groups": [
+            "Separate spontaneous visible pen strokes; lift between disconnected contour/hatching marks."
+          ]
+        },
+        {
+          "id": "hardness_lower_pencil",
+          "subject": "lower_pencil",
+          "role": "lower_pencil",
+          "stroke_groups": [
+            "Separate spontaneous visible pen strokes; lift between disconnected contour/hatching marks."
+          ]
+        },
+        {
+          "id": "hardness_lower_trace",
+          "subject": "lower_trace",
+          "role": "lower_trace",
+          "stroke_groups": [
+            "Separate spontaneous visible pen strokes; lift between disconnected contour/hatching marks."
+          ]
+        }
+      ],
+      "outline_order": [
+        "hardness_upper_pencil",
+        "hardness_upper_trace",
+        "hardness_lower_pencil",
+        "hardness_lower_trace"
+      ],
+      "fill_order": [
+        "hardness_upper_pencil",
+        "hardness_upper_trace",
+        "hardness_lower_pencil",
+        "hardness_lower_trace"
+      ],
+      "narrative_requirements": [
+        {
+          "id": "hardness_fact",
+          "narration_quote": "黏土比例",
+          "observable": "Two independent horizontal rows comparing ordinary sharpened wooden pencils at equal scale: upper row a pencil points down-right at the end of a thin pale loosely scribbled mark; lower row a second pencil points down-right at a visibly broader denser darker scribbled mark. Both tips contact their own respective marks. Clear wide gap between rows. No labels, numbers, hands, brands or formal comparison chart. The two marks visibly differ in line density."
+        }
+      ]
+    },
+    {
+      "id": "remember",
+      "composition": "One ordinary wooden graphite pencil slopes from upper-left toward lower-right with its dark sharpened core contacting a short loose written looping line. A separate small rough layered graphite rock sits lower-left, visually relating the writing tool and material. No words, letters, numbers, people, hands, branding or other objects. Large open white space around the three visible elements.",
+      "drawability_reason": "Few separated study objects; open black ballpoint lines can be traced directly without deriving contours from colored shading. No human anatomy.",
+      "outline_strategy": "visible_source_ink",
+      "spatial_order": "top_to_bottom_left_to_right",
+      "order_exception": "Core introduced before casing in opening/ending; comparison follows upper then lower row. Actual regions refined only after seeing generated image.",
+      "subjects": [
+        {
+          "id": "core",
+          "kind": "object"
+        },
+        {
+          "id": "wood",
+          "kind": "object"
+        },
+        {
+          "id": "graphite",
+          "kind": "object"
+        },
+        {
+          "id": "trace",
+          "kind": "object"
+        }
+      ],
+      "parts": [
+        {
+          "id": "remember_core",
+          "subject": "core",
+          "role": "core",
+          "stroke_groups": [
+            "Separate spontaneous visible pen strokes; lift between disconnected contour/hatching marks."
+          ]
+        },
+        {
+          "id": "remember_wood",
+          "subject": "wood",
+          "role": "wood",
+          "stroke_groups": [
+            "Separate spontaneous visible pen strokes; lift between disconnected contour/hatching marks."
+          ]
+        },
+        {
+          "id": "remember_graphite",
+          "subject": "graphite",
+          "role": "graphite",
+          "stroke_groups": [
+            "Separate spontaneous visible pen strokes; lift between disconnected contour/hatching marks."
+          ]
+        },
+        {
+          "id": "remember_trace",
+          "subject": "trace",
+          "role": "trace",
+          "stroke_groups": [
+            "Separate spontaneous visible pen strokes; lift between disconnected contour/hatching marks."
+          ]
+        }
+      ],
+      "outline_order": [
+        "remember_core",
+        "remember_wood",
+        "remember_graphite",
+        "remember_trace"
+      ],
+      "fill_order": [
+        "remember_core",
+        "remember_wood",
+        "remember_graphite",
+        "remember_trace"
+      ],
+      "narrative_requirements": [
+        {
+          "id": "remember_fact",
+          "narration_quote": "其實是石墨",
+          "observable": "One ordinary wooden graphite pencil slopes from upper-left toward lower-right with its dark sharpened core contacting a short loose written looping line. A separate small rough layered graphite rock sits lower-left, visually relating the writing tool and material. No words, letters, numbers, people, hands, branding or other objects. Large open white space around the three visible elements."
+        }
+      ]
+    }
+  ]
+}

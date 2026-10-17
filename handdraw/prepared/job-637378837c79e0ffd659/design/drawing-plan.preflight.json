@@ -1,0 +1,11 @@
+{
+  "status": "ready_for_generation",
+  "plan_sha256": "f7bc00c6d1c7b48b7bd3742110c48b7da632b0f3db5c25e332c81d23bf26149f",
+  "style_sha256": "efe19a3285bce4a32d3c23282d0da4c2b3f36172966cd4b8714b70ef3e213576",
+  "illustrations": [
+    "surprise",
+    "ingredients",
+    "hardness",
+    "remember"
+  ]
+}

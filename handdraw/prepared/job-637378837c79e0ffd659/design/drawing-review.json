@@ -1,0 +1,98 @@
+{
+  "style_sha256": "efe19a3285bce4a32d3c23282d0da4c2b3f36172966cd4b8714b70ef3e213576",
+  "plan_sha256": "f7bc00c6d1c7b48b7bd3742110c48b7da632b0f3db5c25e332c81d23bf26149f",
+  "illustrations": [
+    {
+      "plan_id": "surprise",
+      "status": "pass",
+      "source_sha256": "640cc437c3a955446767d7bede626b09491e2ea6b003d81187c0583c90254c11",
+      "crop": [
+        0,
+        0,
+        1024,
+        768
+      ],
+      "anatomy_and_occlusion": "Viewed sheet-0 top: a complete ordinary hexagonal wood pencil has a clearly exposed dark graphite point and lighter shaved wooden shoulder, with a short loose mark physically meeting the point. Dense spontaneous open black ballpoint hatching defines volume without colored flat fill; no hand, metal rod, branding or text. No human/animal anatomy appears, so no neck, limbs or hidden parts are invented.",
+      "part_boundaries": "Core point introduced separately before the observed wood shaft. Ingredient regions isolate layered graphite, pale clay and cylindrical core; arrows are separate. Comparison follows actual upper pencil/trace then lower pencil/trace. Ending graphite rock is distinct from the diagonal pencil; final trace region receives remaining stray legitimate scribble strokes and its writing mark.",
+      "stroke_breaks": "Original open ballpoint lines are independently traced; blank-paper travel is pen-up. Separate arrowheads/objects never join by a drawn shortcut.",
+      "outline_then_fill": "Visible source ink is traced directly, then remaining antialias/shading pixels revealed locally; no new solid color or digital gradient added.",
+      "spatial_order": "Core/wood/trace or upper then lower comparison; mechanism-first exceptions documented in pre-generation plan.",
+      "narrative_checks": [
+        {
+          "id": "surprise_fact",
+          "status": "pass",
+          "evidence": "Viewed sheet-0 top: a complete ordinary hexagonal wood pencil has a clearly exposed dark graphite point and lighter shaved wooden shoulder, with a short loose mark physically meeting the point. Dense spontaneous open black ballpoint hatching defines volume without colored flat fill; no hand, metal rod, branding or text."
+        }
+      ]
+    },
+    {
+      "plan_id": "ingredients",
+      "status": "pass",
+      "source_sha256": "640cc437c3a955446767d7bede626b09491e2ea6b003d81187c0583c90254c11",
+      "crop": [
+        0,
+        768,
+        1024,
+        1536
+      ],
+      "anatomy_and_occlusion": "Viewed sheet-0 bottom: a dark rough layered graphite chunk on screen-left and a much lighter clay lump on screen-right are visibly distinct; two descending arrowheads point toward one thin dark cylindrical pencil core below. Objects have white gaps and no fabricated measurements or labels. No human/animal anatomy appears, so no neck, limbs or hidden parts are invented.",
+      "part_boundaries": "Core point introduced separately before the observed wood shaft. Ingredient regions isolate layered graphite, pale clay and cylindrical core; arrows are separate. Comparison follows actual upper pencil/trace then lower pencil/trace. Ending graphite rock is distinct from the diagonal pencil; final trace region receives remaining stray legitimate scribble strokes and its writing mark.",
+      "stroke_breaks": "Original open ballpoint lines are independently traced; blank-paper travel is pen-up. Separate arrowheads/objects never join by a drawn shortcut.",
+      "outline_then_fill": "Visible source ink is traced directly, then remaining antialias/shading pixels revealed locally; no new solid color or digital gradient added.",
+      "spatial_order": "Core/wood/trace or upper then lower comparison; mechanism-first exceptions documented in pre-generation plan.",
+      "narrative_checks": [
+        {
+          "id": "ingredients_fact",
+          "status": "pass",
+          "evidence": "Viewed sheet-0 bottom: a dark rough layered graphite chunk on screen-left and a much lighter clay lump on screen-right are visibly distinct; two descending arrowheads point toward one thin dark cylindrical pencil core below. Objects have white gaps and no fabricated measurements or labels."
+        }
+      ]
+    },
+    {
+      "plan_id": "hardness",
+      "status": "pass",
+      "source_sha256": "943eb96c617979a944d8729bcf135edeacf2bc96a8dd4218ee48c1e81687ae5e",
+      "crop": [
+        0,
+        0,
+        1024,
+        768
+      ],
+      "anatomy_and_occlusion": "Viewed sheet-1 top: two separate rows each have a sharpened wooden pencil whose tip meets its own mark. Upper mark is thin and light with sparse loops; lower mark is broad and visibly darker with denser loops. No claim of exact numeric ratios or equal experimental pressure. No generated lettering. No human/animal anatomy appears, so no neck, limbs or hidden parts are invented.",
+      "part_boundaries": "Core point introduced separately before the observed wood shaft. Ingredient regions isolate layered graphite, pale clay and cylindrical core; arrows are separate. Comparison follows actual upper pencil/trace then lower pencil/trace. Ending graphite rock is distinct from the diagonal pencil; final trace region receives remaining stray legitimate scribble strokes and its writing mark.",
+      "stroke_breaks": "Original open ballpoint lines are independently traced; blank-paper travel is pen-up. Separate arrowheads/objects never join by a drawn shortcut.",
+      "outline_then_fill": "Visible source ink is traced directly, then remaining antialias/shading pixels revealed locally; no new solid color or digital gradient added.",
+      "spatial_order": "Core/wood/trace or upper then lower comparison; mechanism-first exceptions documented in pre-generation plan.",
+      "narrative_checks": [
+        {
+          "id": "hardness_fact",
+          "status": "pass",
+          "evidence": "Viewed sheet-1 top: two separate rows each have a sharpened wooden pencil whose tip meets its own mark. Upper mark is thin and light with sparse loops; lower mark is broad and visibly darker with denser loops. No claim of exact numeric ratios or equal experimental pressure. No generated lettering."
+        }
+      ]
+    },
+    {
+      "plan_id": "remember",
+      "status": "pass",
+      "source_sha256": "943eb96c617979a944d8729bcf135edeacf2bc96a8dd4218ee48c1e81687ae5e",
+      "crop": [
+        0,
+        768,
+        1024,
+        1536
+      ],
+      "anatomy_and_occlusion": "Viewed sheet-1 bottom: dark exposed pencil point touches a looping nonverbal writing trace; a separate rough layered graphite rock sits lower-left with a visible gap from the pencil. This relates graphite material to the writing tool. No human, words, brands or health/safety claims. No human/animal anatomy appears, so no neck, limbs or hidden parts are invented.",
+      "part_boundaries": "Core point introduced separately before the observed wood shaft. Ingredient regions isolate layered graphite, pale clay and cylindrical core; arrows are separate. Comparison follows actual upper pencil/trace then lower pencil/trace. Ending graphite rock is distinct from the diagonal pencil; final trace region receives remaining stray legitimate scribble strokes and its writing mark.",
+      "stroke_breaks": "Original open ballpoint lines are independently traced; blank-paper travel is pen-up. Separate arrowheads/objects never join by a drawn shortcut.",
+      "outline_then_fill": "Visible source ink is traced directly, then remaining antialias/shading pixels revealed locally; no new solid color or digital gradient added.",
+      "spatial_order": "Core/wood/trace or upper then lower comparison; mechanism-first exceptions documented in pre-generation plan.",
+      "narrative_checks": [
+        {
+          "id": "remember_fact",
+          "status": "pass",
+          "evidence": "Viewed sheet-1 bottom: dark exposed pencil point touches a looping nonverbal writing trace; a separate rough layered graphite rock sits lower-left with a visible gap from the pencil. This relates graphite material to the writing tool. No human, words, brands or health/safety claims."
+        }
+      ]
+    }
+  ]
+}

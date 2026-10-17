@@ -1,0 +1,519 @@
+{
+  "topic": "鉛筆芯其實沒有鉛",
+  "audience": "繁體中文一般觀眾",
+  "explanation_goal": "Explain ordinary wooden black graphite pencils use graphite/clay rather than metallic lead, and blend ratio changes hardness.",
+  "source_scope": [
+    "https://fabercastell.com/blogs/creativity-for-life/graphite-pencil-lead-degree-hardness",
+    "https://www.faber-castell.eu/service/frequently-asked-questions/faq-pens-and-pencils"
+  ],
+  "narrative_route": {
+    "decision": "mechanism_explanation",
+    "reason": "Name-based surprise -> actual ingredients -> ratio/hardness -> memorable correction.",
+    "director_review": "Do not generalize wood pencil recipe to colored/polymer leads; avoid unsourced historical dates or health claims. No English letter pronunciation needed.",
+    "director_plan": "Close exposed pencil core; isolated graphite/clay/core; upper/lower density comparison; close writing trace and graphite material. Real narration controls all timing."
+  },
+  "visual_direction": "Complete official 6 black ballpoint scribble recipe, no style mixing. Gold canvas and controlled large Traditional Chinese labels.",
+  "beats": [
+    {
+      "id": "surprise",
+      "text": "一般木製黑鉛筆裡面，其實沒有金屬鉛。每天寫字的你，有沒有被這個名字騙過？",
+      "label": "鉛筆芯其實沒有鉛",
+      "label_x": 90,
+      "label_y": 250,
+      "label_size": 64,
+      "source": "inputs/sheet-0.png",
+      "parts": [
+        {
+          "id": "surprise_core",
+          "polygon": [
+            [
+              0.63,
+              0.67
+            ],
+            [
+              0.72,
+              0.72
+            ],
+            [
+              0.8,
+              0.85
+            ],
+            [
+              0.7,
+              0.82
+            ]
+          ]
+        },
+        {
+          "id": "surprise_wood",
+          "polygon": [
+            [
+              0.01,
+              0.03
+            ],
+            [
+              0.16,
+              0.03
+            ],
+            [
+              0.79,
+              0.79
+            ],
+            [
+              0.8,
+              0.88
+            ],
+            [
+              0.62,
+              0.84
+            ],
+            [
+              0.01,
+              0.25
+            ]
+          ],
+          "exclude_polygons": [
+            [
+              [
+                0.77,
+                0.81
+              ],
+              [
+                1,
+                0.81
+              ],
+              [
+                1,
+                0.94
+              ],
+              [
+                0.77,
+                0.94
+              ]
+            ]
+          ]
+        },
+        {
+          "id": "surprise_trace",
+          "polygon": [
+            [
+              0,
+              0
+            ],
+            [
+              1,
+              0
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              0,
+              1
+            ]
+          ]
+        }
+      ],
+      "image_x": 90,
+      "image_y": 520,
+      "image_width": 900,
+      "image_height": 900,
+      "annotations": [
+        {
+          "text": "一般木製黑鉛筆：石墨芯",
+          "x": 90,
+          "y": 1410,
+          "size": 60
+        }
+      ],
+      "crop": [
+        0,
+        0,
+        1024,
+        768
+      ]
+    },
+    {
+      "id": "ingredients",
+      "text": "筆芯主要是石墨和黏土。石墨留下黑色痕跡，黏土調整筆芯硬度。",
+      "label": "石墨與黏土一起工作",
+      "label_x": 90,
+      "label_y": 250,
+      "label_size": 64,
+      "source": "inputs/sheet-0.png",
+      "parts": [
+        {
+          "id": "ingredients_graphite",
+          "polygon": [
+            [
+              0.015,
+              0.075
+            ],
+            [
+              0.52,
+              0.075
+            ],
+            [
+              0.52,
+              0.59
+            ],
+            [
+              0.015,
+              0.59
+            ]
+          ]
+        },
+        {
+          "id": "ingredients_clay",
+          "polygon": [
+            [
+              0.55,
+              0.095
+            ],
+            [
+              0.99,
+              0.095
+            ],
+            [
+              0.99,
+              0.6
+            ],
+            [
+              0.55,
+              0.6
+            ]
+          ]
+        },
+        {
+          "id": "ingredients_core",
+          "polygon": [
+            [
+              0.18,
+              0.71
+            ],
+            [
+              0.83,
+              0.71
+            ],
+            [
+              0.83,
+              0.9
+            ],
+            [
+              0.18,
+              0.9
+            ]
+          ]
+        },
+        {
+          "id": "ingredients_arrows",
+          "polygon": [
+            [
+              0,
+              0
+            ],
+            [
+              1,
+              0
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              0,
+              1
+            ]
+          ]
+        }
+      ],
+      "image_x": 90,
+      "image_y": 520,
+      "image_width": 900,
+      "image_height": 900,
+      "annotations": [
+        {
+          "text": "石墨 ＋ 黏土 → 筆芯",
+          "x": 90,
+          "y": 1410,
+          "size": 60
+        }
+      ],
+      "crop": [
+        0,
+        768,
+        1024,
+        1536
+      ]
+    },
+    {
+      "id": "hardness",
+      "text": "黏土比例越高，筆芯通常越硬；石墨比例越高，通常越軟、越黑。",
+      "label": "配方決定硬度與深淺",
+      "label_x": 90,
+      "label_y": 250,
+      "label_size": 64,
+      "source": "inputs/sheet-1.png",
+      "parts": [
+        {
+          "id": "hardness_upper_pencil",
+          "polygon": [
+            [
+              0.02,
+              0.025
+            ],
+            [
+              0.525,
+              0.025
+            ],
+            [
+              0.525,
+              0.43
+            ],
+            [
+              0.02,
+              0.43
+            ]
+          ]
+        },
+        {
+          "id": "hardness_upper_trace",
+          "polygon": [
+            [
+              0,
+              0
+            ],
+            [
+              1,
+              0
+            ],
+            [
+              1,
+              0.5
+            ],
+            [
+              0,
+              0.5
+            ]
+          ]
+        },
+        {
+          "id": "hardness_lower_pencil",
+          "polygon": [
+            [
+              0.02,
+              0.5
+            ],
+            [
+              0.55,
+              0.5
+            ],
+            [
+              0.55,
+              0.94
+            ],
+            [
+              0.02,
+              0.94
+            ]
+          ],
+          "exclude_polygons": [
+            [
+              [
+                0.48,
+                0.78
+              ],
+              [
+                1,
+                0.78
+              ],
+              [
+                1,
+                1
+              ],
+              [
+                0.48,
+                1
+              ]
+            ]
+          ]
+        },
+        {
+          "id": "hardness_lower_trace",
+          "polygon": [
+            [
+              0,
+              0
+            ],
+            [
+              1,
+              0
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              0,
+              1
+            ]
+          ]
+        }
+      ],
+      "image_x": 90,
+      "image_y": 520,
+      "image_width": 900,
+      "image_height": 900,
+      "annotations": [
+        {
+          "text": "上：較硬、線條較淡",
+          "x": 90,
+          "y": 1410,
+          "size": 60
+        },
+        {
+          "text": "下：較軟、線條較黑",
+          "x": 90,
+          "y": 1505,
+          "size": 60
+        }
+      ],
+      "crop": [
+        0,
+        0,
+        1024,
+        768
+      ]
+    },
+    {
+      "id": "remember",
+      "text": "下次拿起鉛筆，想起來了吧？名字雖然叫鉛筆，真正陪你寫字、畫圖、留下每一筆痕跡的，其實是石墨。",
+      "label": "名字叫鉛，主角是石墨",
+      "label_x": 90,
+      "label_y": 250,
+      "label_size": 64,
+      "source": "inputs/sheet-1.png",
+      "parts": [
+        {
+          "id": "remember_core",
+          "polygon": [
+            [
+              0.57,
+              0.58
+            ],
+            [
+              0.64,
+              0.61
+            ],
+            [
+              0.675,
+              0.69
+            ],
+            [
+              0.61,
+              0.685
+            ]
+          ]
+        },
+        {
+          "id": "remember_wood",
+          "polygon": [
+            [
+              0.12,
+              0.025
+            ],
+            [
+              0.22,
+              0.02
+            ],
+            [
+              0.64,
+              0.59
+            ],
+            [
+              0.67,
+              0.7
+            ],
+            [
+              0.55,
+              0.65
+            ],
+            [
+              0.12,
+              0.15
+            ]
+          ]
+        },
+        {
+          "id": "remember_graphite",
+          "polygon": [
+            [
+              0.015,
+              0.43
+            ],
+            [
+              0.49,
+              0.43
+            ],
+            [
+              0.49,
+              0.91
+            ],
+            [
+              0.015,
+              0.91
+            ]
+          ]
+        },
+        {
+          "id": "remember_trace",
+          "polygon": [
+            [
+              0,
+              0
+            ],
+            [
+              1,
+              0
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              0,
+              1
+            ]
+          ]
+        }
+      ],
+      "image_x": 90,
+      "image_y": 520,
+      "image_width": 900,
+      "image_height": 900,
+      "annotations": [
+        {
+          "text": "真正留下痕跡的是石墨",
+          "x": 90,
+          "y": 1410,
+          "size": 60
+        }
+      ],
+      "crop": [
+        0,
+        768,
+        1024,
+        1536
+      ]
+    }
+  ],
+  "cover": {
+    "title": "鉛筆芯裡 / 其實沒有鉛！",
+    "visual": "Reviewed exposed graphite point in the original ballpoint sketch"
+  },
+  "asset_prompts": [
+    "design/sheet-0-prompt.txt",
+    "design/sheet-1-prompt.txt"
+  ]
+}

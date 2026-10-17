@@ -1,0 +1,1 @@
+Pillow RGB1080x1920 #FFD45C; exact TC title 90px at x90 y180/300; reviewed sheet-0 crop [0,0,1024,768] fit900x800 at90,570; secondary60px x90 y1470. NotoSansCJK-Regular index3, SIL OFL. No new image generation or style edits.

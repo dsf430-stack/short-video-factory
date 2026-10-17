@@ -1,0 +1,70 @@
+{
+  "dependency_sha256": "fbbfd33d70f729011b6a6bc232851c116cd4a89ead2adea4462888a6ce26fc1a",
+  "style_sha256": "efe19a3285bce4a32d3c23282d0da4c2b3f36172966cd4b8714b70ef3e213576",
+  "images": [
+    {
+      "source": "../inputs/sheet-0.png",
+      "method": "generated_under_guidance",
+      "brief_file": "sheet-0-brief.md",
+      "prompt_file": "sheet-0-prompt.txt",
+      "status": "pass",
+      "brief_sha256": "5765a4efeb4dbc78a3ae198dc65eeab15e8f4e1db65b61176580e1d46e5d5169",
+      "prompt_sha256": "bfc87e578a3818ad1b94f2f1d27a5fa0d7820bf7769cae9065d73e23cd90240b",
+      "sha256": "640cc437c3a955446767d7bede626b09491e2ea6b003d81187c0583c90254c11",
+      "pixel_sha256": "1975ecbb0423caec943a220107c8da3a9bdbd617c6c93509bc5c80c0a7dc25a5",
+      "approved_crops": [
+        [
+          0,
+          0,
+          1024,
+          768
+        ],
+        [
+          0,
+          768,
+          1024,
+          1536
+        ]
+      ],
+      "evidence": "Viewed sheet-0 top: a complete ordinary hexagonal wood pencil has a clearly exposed dark graphite point and lighter shaved wooden shoulder, with a short loose mark physically meeting the point. Dense spontaneous open black ballpoint hatching defines volume without colored flat fill; no hand, metal rod, branding or text. Viewed sheet-0 bottom: a dark rough layered graphite chunk on screen-left and a much lighter clay lump on screen-right are visibly distinct; two descending arrowheads point toward one thin dark cylindrical pencil core below. Objects have white gaps and no fabricated measurements or labels. Complete official style6 scribble recipe retained; no style4/13 images reused."
+    },
+    {
+      "source": "../inputs/sheet-1.png",
+      "method": "generated_under_guidance",
+      "brief_file": "sheet-1-brief.md",
+      "prompt_file": "sheet-1-prompt.txt",
+      "status": "pass",
+      "brief_sha256": "21492243431d4af2a094c638079555aac8a13489f24a05b95a89b6fa5c20e0b5",
+      "prompt_sha256": "09a3f4cd093b9d50f0b0b7a1d83e5766e0490a97ecd08d436c9a2543416be8c9",
+      "sha256": "943eb96c617979a944d8729bcf135edeacf2bc96a8dd4218ee48c1e81687ae5e",
+      "pixel_sha256": "cad4b6c6f991410a3d089b261f1ceb3f43b39cb3478b7165010818bbc9d78ee6",
+      "approved_crops": [
+        [
+          0,
+          0,
+          1024,
+          768
+        ],
+        [
+          0,
+          768,
+          1024,
+          1536
+        ]
+      ],
+      "evidence": "Viewed sheet-1 top: two separate rows each have a sharpened wooden pencil whose tip meets its own mark. Upper mark is thin and light with sparse loops; lower mark is broad and visibly darker with denser loops. No claim of exact numeric ratios or equal experimental pressure. No generated lettering. Viewed sheet-1 bottom: dark exposed pencil point touches a looping nonverbal writing trace; a separate rough layered graphite rock sits lower-left with a visible gap from the pencil. This relates graphite material to the writing tool. No human, words, brands or health/safety claims. Complete official style6 scribble recipe retained; no style4/13 images reused."
+    },
+    {
+      "source": "../inputs/cover.png",
+      "method": "composed_with_verified_layers",
+      "brief_file": "cover-brief.md",
+      "prompt_file": "cover-prompt.txt",
+      "status": "pass",
+      "sha256": "dfa22c12af5c4000b38e32d75acf4f361d0380ae5c193f832a273a782b974801",
+      "pixel_sha256": "0c1d8ef446eb9e864d0d8a05e456f1574dcac708629bd70c201dc67370f4e1f6",
+      "evidence": "Actually viewed cover: exact Traditional Chinese 鉛筆芯裡 / 其實沒有鉛！ and 真正的主角，是石墨 are large, intact and contrasted on golden canvas. Original ballpoint graphite point/wood shoulder and writing trace fully visible in the center, no generated lettering or reused topic artwork.",
+      "brief_sha256": "c4fcd46466ab42621e73c8058b3f91de7112e27e3b387a5e07d31b9fef4e0a0a",
+      "prompt_sha256": "8d9ab34a3cc30c98f020b610fc49c770b054ec50b35ee72587c5f17e0f5062e2"
+    }
+  ]
+}
