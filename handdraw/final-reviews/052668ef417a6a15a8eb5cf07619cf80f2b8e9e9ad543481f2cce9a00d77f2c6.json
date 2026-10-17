@@ -1,0 +1,28 @@
+{
+  "video_sha256": "052668ef417a6a15a8eb5cf07619cf80f2b8e9e9ad543481f2cce9a00d77f2c6",
+  "content": {
+    "status": "pass",
+    "evidence": "Revised Traditional Chinese script retains qualified barrier, heat-storage and serrated-cutting statements. Four standalone English teaching phrases and the explicit 鋁/屢 Chinese homophone joke match real alignment text."
+  },
+  "visual": {
+    "status": "pass",
+    "evidence": "Inspected all seven completed story pages and decoded contact frames plus full-size heat-storage page. Vivid #FFD23F paper preserves black bean characters, orange props and readable outlined captions. Existing reviewed source pixels and semantic masks reused."
+  },
+  "motion": {
+    "status": "pass",
+    "evidence": "Inspected four consecutive frames from revised preview: independent source contours precede black body fill; visible pen movement progresses with slower English captions. Official engineering checks cover full-timeline paths and paint coverage."
+  },
+  "audio": {
+    "status": "pass",
+    "evidence": "Technical scope: existing 068 zh-TW-HsiaoChenNeural Chinese +20%, English-only -25%, pitch +5Hz. Four measured English cues last about 1.85 and 2.333 seconds each. Entire voiced master 80.300408 seconds; real sentence alignment, full decode and loudness pass. Subjective listening remains unverified."
+  },
+  "privacy": {
+    "status": "pass",
+    "evidence": "Official source cleanup receipts and unchanged reviewed pixel hashes; official engineering verification passed. No personal source material or unlicensed music added."
+  },
+  "limitations": [
+    "Subjective listening and pronunciation naturalness have not been independently auditioned; user requested slower English after reviewing the earlier version.",
+    "Visual review used decoded page samples and preview motion samples, not a human real-time watch of every frame.",
+    "No background music. Final duration follows measured PCM timeline; about 81.7 seconds."
+  ]
+}
