@@ -315,8 +315,8 @@
         }
       ],
       "label_x": 180,
-      "label_y": 550,
-      "label_size": 50
+      "label_y": 525,
+      "label_size": 64
     },
     {
       "id": "s1",
@@ -662,8 +662,8 @@
         }
       ],
       "label_x": 180,
-      "label_y": 550,
-      "label_size": 50,
+      "label_y": 525,
+      "label_size": 64,
       "outline_mask": "inputs/s1-outline.png"
     },
     {
@@ -1122,8 +1122,8 @@
         }
       ],
       "label_x": 180,
-      "label_y": 550,
-      "label_size": 50
+      "label_y": 525,
+      "label_size": 64
     },
     {
       "id": "s3",
@@ -1433,8 +1433,8 @@
         }
       ],
       "label_x": 180,
-      "label_y": 550,
-      "label_size": 50
+      "label_y": 525,
+      "label_size": 64
     },
     {
       "id": "s4",
@@ -1784,8 +1784,8 @@
         }
       ],
       "label_x": 180,
-      "label_y": 550,
-      "label_size": 50,
+      "label_y": 525,
+      "label_size": 64,
       "outline_mask": "inputs/s4-outline.png"
     },
     {
@@ -2168,8 +2168,8 @@
         }
       ],
       "label_x": 180,
-      "label_y": 550,
-      "label_size": 50
+      "label_y": 525,
+      "label_size": 64
     },
     {
       "id": "s6",
@@ -2515,11 +2515,11 @@
         }
       ],
       "label_x": 245,
-      "label_y": 550,
-      "label_size": 50
+      "label_y": 525,
+      "label_size": 64
     }
   ],
-  "caption_font_size": 32,
+  "caption_font_size": 52,
   "preview_seconds": 12,
   "paper": "#FFD23F",
   "natural_duration": true,
