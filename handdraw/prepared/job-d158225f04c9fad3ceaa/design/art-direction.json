@@ -1,0 +1,70 @@
+{
+  "dependency_sha256": "fbbfd33d70f729011b6a6bc232851c116cd4a89ead2adea4462888a6ce26fc1a",
+  "style_sha256": "55e1d72dd41dca82135f95ad6df6ba03e76d4bbcc0f34d0ca7bc9a621d7b1dad",
+  "images": [
+    {
+      "source": "../inputs/sheet-0.png",
+      "method": "generated_under_guidance",
+      "brief_file": "sheet-0-brief.md",
+      "prompt_file": "sheet-0-prompt.txt",
+      "status": "pass",
+      "brief_sha256": "a8398563e205cfc4daa6bc027c46f14e014c772140a74eea57896a6705778471",
+      "prompt_sha256": "dc781eb202e6ca30f9a1da46cb52cf91a734ab78f91f2fc2e0767e72dddcec8f",
+      "sha256": "a97147a1f3680f66decd46ad9d2d814ad85863abe13e10a16412e811c138b069",
+      "pixel_sha256": "704f4f4402c2d8710277117333f6277900e94b8f37b7bf433c7ca289e71229cb",
+      "approved_crops": [
+        [
+          0,
+          0,
+          1024,
+          768
+        ],
+        [
+          0,
+          768,
+          1024,
+          1536
+        ]
+      ],
+      "evidence": "Viewed sheet-0 top: separate raised mustard paper Sun on screen-left and ivory crescent on screen-right, both above low lilac/teal horizon layers. Thick curved cardstock edges, embossed motifs, warm upper-left light and broad down-right cast shadows visibly preserve official 13 identity. No people or writing. Viewed sheet-0 bottom: coral ribbon arrow starts at Sun and has an arrowhead meeting the Moon on screen-right. Slate-blue ribbon descends from Moon toward the small teal Earth below, with its arrowhead at Earth. This visibly encodes reflected sunlight, not lunar self-emission. Physical round Moon and Earth have distinct raised faces; no claim of astronomical distances. New style-13 image, not a reused bean image; only voice/script reused."
+    },
+    {
+      "source": "../inputs/sheet-1.png",
+      "method": "generated_under_guidance",
+      "brief_file": "sheet-1-brief.md",
+      "prompt_file": "sheet-1-prompt.txt",
+      "status": "pass",
+      "brief_sha256": "3542a3f92b1019ee4163d3e93478c9137cc7e692dedb7a9d968863259a7f267c",
+      "prompt_sha256": "0928134235cb710026ebc15d0eeb2d0039edf512db746cf9d004f9de6d9fe7d6",
+      "sha256": "db5e58f8f1b3a4dddb516db1f254326234146b22211e89650b83c886c1bc117d",
+      "pixel_sha256": "de16b5046a1fed6173ad078c37113ce5b2627656570789c707adc1cb01e840a1",
+      "approved_crops": [
+        [
+          0,
+          0,
+          1024,
+          768
+        ],
+        [
+          0,
+          768,
+          1024,
+          1536
+        ]
+      ],
+      "evidence": "Viewed sheet-1 top: Sun left and actual crescent (rather than planned half Moon) right both above the same low layered local horizon. Sparse folk foliage belongs to that horizon. No orbit diagram, stars or night sky. Actual lunar shape was recorded in a post-image plan revision; original preflight retained. Viewed sheet-1 bottom: lilac layered cloud is visibly in front of the lower crescent; upper ivory arc remains visible. Sun remains far left, clear of cloud; low horizon unchanged. No invisible lunar region is invented. Shows a visibility condition, not a claim that Moon is visible every day. New style-13 image, not a reused bean image; only voice/script reused."
+    },
+    {
+      "source": "../inputs/cover.png",
+      "method": "composed_with_verified_layers",
+      "brief_file": "cover-brief.md",
+      "prompt_file": "cover-prompt.txt",
+      "status": "pass",
+      "sha256": "fe22159946412d04ea36de917f9e90bea77d5e15d82d0b94379ab8f08836069f",
+      "pixel_sha256": "e8548ffdaaef678cc49d79d1ed3c99b60b60550ed6fe5f197955049e2f2c4f11",
+      "evidence": "Actually viewed cover: exact Traditional Chinese 月亮冷知識 / 白天也看得到？ and 月光，是反射的太陽光 are large and uncut; reviewed paper-folk Sun/Moon/hills panel fills middle; warm honey-gold canvas, dark brown readable type; no bean figure or simulated generated lettering.",
+      "brief_sha256": "437d9dc2c1737275c14903c2124544dba4e499da3c5f904b07c35750f92722a4",
+      "prompt_sha256": "dca5b19779793b463d906139a64fdb061f825da079c4486d78369210780ec695"
+    }
+  ]
+}

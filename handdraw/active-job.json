@@ -1,9 +1,8 @@
 {
-  "job_id": "job-d7644ceac41308c6810d",
-  "topic": "為什麼白天也看得到月亮？",
+  "job_id": "job-d158225f04c9fad3ceaa",
+  "topic": "月亮冷知識：白天也能看見月亮",
   "seconds": 30,
-  "style": "4",
-  "bundle_sha256": "5d1eaac269934f89c35ab9a700cf08f50a596262d4851466e4c8803e6f57fa51",
-  "mode": "chatgpt-prepared-no-extra-model-api",
-  "render_revision": "caption-layout-v2-clearance"
+  "style": "13",
+  "bundle_sha256": "25ec977a300e72a11ecc09978cdad55f60deeecec6ed15797797d9a75fb612c3",
+  "mode": "chatgpt-prepared-no-extra-model-api"
 }

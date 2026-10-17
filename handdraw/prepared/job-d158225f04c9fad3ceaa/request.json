@@ -1,0 +1,21 @@
+{
+  "topic": "月亮冷知識：白天也能看見月亮",
+  "seconds": 30,
+  "style": "13",
+  "job_id": "job-d158225f04c9fad3ceaa",
+  "voice_id": "068",
+  "mode": "chatgpt-prepared-no-extra-model-api",
+  "script_sha256": "70cf2635efa41dbe6c22663aef851d1e40ebc0df71cc2d1b0c46dd8b164419d2",
+  "state": "ASSETS_VALIDATED",
+  "required_files": [
+    "story.json",
+    "design.json",
+    "style/selection.json",
+    "style/resolved.json",
+    "design/art-direction.json",
+    "design/drawing-plan.json",
+    "design/drawing-plan.preflight.json",
+    "design/drawing-review.json",
+    "inputs/cover.png"
+  ]
+}

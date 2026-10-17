@@ -1,0 +1,348 @@
+{
+  "illustrations": [
+    {
+      "id": "hook",
+      "composition": "A daytime sky diorama: a large ivory crescent Moon in the upper right and a smaller mustard Sun with a few broad paper rays in the upper left, both clearly above a low gently curved lilac and teal local horizon. The crescent is a physical curved layered paper sculpture, not a glowing lamp. No people, animals, faces, stars, writing or night sky. The three astronomical/landscape pieces are widely separated with visible background gaps.",
+      "drawability_reason": "Few separated paper sculpture objects; broad contours precede localized color/shadow fill within measured narration. No human anatomy to fabricate. A registered mask preserves 3D paper appearance without forcing a doodle outline.",
+      "outline_strategy": "explicit_mask",
+      "spatial_order": "top_to_bottom_left_to_right",
+      "order_exception": "Moon is introduced before source Sun; causal order in reflection follows Moon, Sun, Earth, then directional light ribbons. Background/cardstock stage is last and owns only remaining pixels.",
+      "subjects": [
+        {
+          "id": "moon",
+          "kind": "object"
+        },
+        {
+          "id": "sun",
+          "kind": "object"
+        },
+        {
+          "id": "horizon",
+          "kind": "environment"
+        },
+        {
+          "id": "background",
+          "kind": "environment"
+        }
+      ],
+      "parts": [
+        {
+          "id": "hook_moon",
+          "subject": "moon",
+          "role": "moon",
+          "stroke_groups": [
+            "Independent visible physical paper contour and raised layer edges; lift between disconnected paper pieces."
+          ]
+        },
+        {
+          "id": "hook_sun",
+          "subject": "sun",
+          "role": "sun",
+          "stroke_groups": [
+            "Independent visible physical paper contour and raised layer edges; lift between disconnected paper pieces."
+          ]
+        },
+        {
+          "id": "hook_horizon",
+          "subject": "horizon",
+          "role": "horizon",
+          "stroke_groups": [
+            "Independent visible physical paper contour and raised layer edges; lift between disconnected paper pieces."
+          ]
+        },
+        {
+          "id": "hook_background",
+          "subject": "background",
+          "role": "background",
+          "stroke_groups": [
+            "Independent visible physical paper contour and raised layer edges; lift between disconnected paper pieces."
+          ]
+        }
+      ],
+      "outline_order": [
+        "hook_moon",
+        "hook_sun",
+        "hook_horizon",
+        "hook_background"
+      ],
+      "fill_order": [
+        "hook_moon",
+        "hook_sun",
+        "hook_horizon",
+        "hook_background"
+      ],
+      "narrative_requirements": [
+        {
+          "id": "hook_fact",
+          "narration_quote": "白天抬頭看到月亮",
+          "observable": "A daytime sky diorama: a large ivory crescent Moon in the upper right and a smaller mustard Sun with a few broad paper rays in the upper left, both clearly above a low gently curved lilac and teal local horizon. The crescent is a physical curved layered paper sculpture, not a glowing lamp. No people, animals, faces, stars, writing or night sky. The three astronomical/landscape pieces are widely separated with visible background gaps."
+        }
+      ]
+    },
+    {
+      "id": "reflection",
+      "composition": "A causal sunlight-reflection diorama, not an orbital scale drawing: mustard Sun upper-left, large ivory round Moon upper-right, a small teal Earth globe lower-middle. One broad coral paper arrow goes from Sun to Moon; one broad slate-blue paper arrow goes from Moon down toward Earth. The arrowheads point unambiguously toward Moon and then Earth. Arrows stop at the objects and do not cross them. No faces, people, writing or extra symbols.",
+      "drawability_reason": "Few separated paper sculpture objects; broad contours precede localized color/shadow fill within measured narration. No human anatomy to fabricate. A registered mask preserves 3D paper appearance without forcing a doodle outline.",
+      "outline_strategy": "explicit_mask",
+      "spatial_order": "top_to_bottom_left_to_right",
+      "order_exception": "Moon is introduced before source Sun; causal order in reflection follows Moon, Sun, Earth, then directional light ribbons. Background/cardstock stage is last and owns only remaining pixels.",
+      "subjects": [
+        {
+          "id": "moon",
+          "kind": "object"
+        },
+        {
+          "id": "sun",
+          "kind": "object"
+        },
+        {
+          "id": "earth",
+          "kind": "object"
+        },
+        {
+          "id": "light_ribbons",
+          "kind": "object"
+        },
+        {
+          "id": "background",
+          "kind": "environment"
+        }
+      ],
+      "parts": [
+        {
+          "id": "reflection_moon",
+          "subject": "moon",
+          "role": "moon",
+          "stroke_groups": [
+            "Independent visible physical paper contour and raised layer edges; lift between disconnected paper pieces."
+          ]
+        },
+        {
+          "id": "reflection_sun",
+          "subject": "sun",
+          "role": "sun",
+          "stroke_groups": [
+            "Independent visible physical paper contour and raised layer edges; lift between disconnected paper pieces."
+          ]
+        },
+        {
+          "id": "reflection_earth",
+          "subject": "earth",
+          "role": "earth",
+          "stroke_groups": [
+            "Independent visible physical paper contour and raised layer edges; lift between disconnected paper pieces."
+          ]
+        },
+        {
+          "id": "reflection_light_ribbons",
+          "subject": "light_ribbons",
+          "role": "light_ribbons",
+          "stroke_groups": [
+            "Independent visible physical paper contour and raised layer edges; lift between disconnected paper pieces."
+          ]
+        },
+        {
+          "id": "reflection_background",
+          "subject": "background",
+          "role": "background",
+          "stroke_groups": [
+            "Independent visible physical paper contour and raised layer edges; lift between disconnected paper pieces."
+          ]
+        }
+      ],
+      "outline_order": [
+        "reflection_moon",
+        "reflection_sun",
+        "reflection_earth",
+        "reflection_light_ribbons",
+        "reflection_background"
+      ],
+      "fill_order": [
+        "reflection_moon",
+        "reflection_sun",
+        "reflection_earth",
+        "reflection_light_ribbons",
+        "reflection_background"
+      ],
+      "narrative_requirements": [
+        {
+          "id": "reflection_fact",
+          "narration_quote": "月亮本身不會發光",
+          "observable": "A causal sunlight-reflection diorama, not an orbital scale drawing: mustard Sun upper-left, large ivory round Moon upper-right, a small teal Earth globe lower-middle. One broad coral paper arrow goes from Sun to Moon; one broad slate-blue paper arrow goes from Moon down toward Earth. The arrowheads point unambiguously toward Moon and then Earth. Arrows stop at the objects and do not cross them. No faces, people, writing or extra symbols."
+        }
+      ]
+    },
+    {
+      "id": "horizon",
+      "composition": "A local daytime horizon diorama: a single long low teal-and-lilac layered landscape band across the lower fifth; a mustard Sun well above it at upper-left and an ivory half Moon well above it at upper-right. Both bodies are simultaneously ABOVE this one horizon. Separate the Sun and Moon widely. A local sky view, not a model of orbital positions or distances. No arrows, people, faces, stars, writing or night sky.",
+      "drawability_reason": "Few separated paper sculpture objects; broad contours precede localized color/shadow fill within measured narration. No human anatomy to fabricate. A registered mask preserves 3D paper appearance without forcing a doodle outline.",
+      "outline_strategy": "explicit_mask",
+      "spatial_order": "top_to_bottom_left_to_right",
+      "order_exception": "Moon is introduced before source Sun; causal order in reflection follows Moon, Sun, Earth, then directional light ribbons. Background/cardstock stage is last and owns only remaining pixels.",
+      "subjects": [
+        {
+          "id": "moon",
+          "kind": "object"
+        },
+        {
+          "id": "sun",
+          "kind": "object"
+        },
+        {
+          "id": "horizon",
+          "kind": "environment"
+        },
+        {
+          "id": "background",
+          "kind": "environment"
+        }
+      ],
+      "parts": [
+        {
+          "id": "horizon_moon",
+          "subject": "moon",
+          "role": "moon",
+          "stroke_groups": [
+            "Independent visible physical paper contour and raised layer edges; lift between disconnected paper pieces."
+          ]
+        },
+        {
+          "id": "horizon_sun",
+          "subject": "sun",
+          "role": "sun",
+          "stroke_groups": [
+            "Independent visible physical paper contour and raised layer edges; lift between disconnected paper pieces."
+          ]
+        },
+        {
+          "id": "horizon_horizon",
+          "subject": "horizon",
+          "role": "horizon",
+          "stroke_groups": [
+            "Independent visible physical paper contour and raised layer edges; lift between disconnected paper pieces."
+          ]
+        },
+        {
+          "id": "horizon_background",
+          "subject": "background",
+          "role": "background",
+          "stroke_groups": [
+            "Independent visible physical paper contour and raised layer edges; lift between disconnected paper pieces."
+          ]
+        }
+      ],
+      "outline_order": [
+        "horizon_moon",
+        "horizon_sun",
+        "horizon_horizon",
+        "horizon_background"
+      ],
+      "fill_order": [
+        "horizon_moon",
+        "horizon_sun",
+        "horizon_horizon",
+        "horizon_background"
+      ],
+      "narrative_requirements": [
+        {
+          "id": "horizon_fact",
+          "narration_quote": "地平線上方",
+          "observable": "A local daytime horizon diorama: a single long low teal-and-lilac layered landscape band across the lower fifth; a mustard Sun well above it at upper-left and an ivory half Moon well above it at upper-right. Both bodies are simultaneously ABOVE this one horizon. Separate the Sun and Moon widely. A local sky view, not a model of orbital positions or distances. No arrows, people, faces, stars, writing or night sky."
+        }
+      ]
+    },
+    {
+      "id": "observe",
+      "composition": "A conditional visibility diorama: ivory crescent Moon upper-right is partially occluded by one large rounded layered lilac cloud placed IN FRONT of its lower half, while the upper arc remains clearly visible. Mustard Sun far upper-left, above a simple low teal horizon. Cloud and Moon have clear depth and their own curved edges. No people, faces, arrows, writing or stars.",
+      "drawability_reason": "Few separated paper sculpture objects; broad contours precede localized color/shadow fill within measured narration. No human anatomy to fabricate. A registered mask preserves 3D paper appearance without forcing a doodle outline.",
+      "outline_strategy": "explicit_mask",
+      "spatial_order": "top_to_bottom_left_to_right",
+      "order_exception": "Moon is introduced before source Sun; causal order in reflection follows Moon, Sun, Earth, then directional light ribbons. Background/cardstock stage is last and owns only remaining pixels.",
+      "subjects": [
+        {
+          "id": "moon",
+          "kind": "object"
+        },
+        {
+          "id": "sun",
+          "kind": "object"
+        },
+        {
+          "id": "cloud",
+          "kind": "object"
+        },
+        {
+          "id": "horizon",
+          "kind": "environment"
+        },
+        {
+          "id": "background",
+          "kind": "environment"
+        }
+      ],
+      "parts": [
+        {
+          "id": "observe_moon",
+          "subject": "moon",
+          "role": "moon",
+          "stroke_groups": [
+            "Independent visible physical paper contour and raised layer edges; lift between disconnected paper pieces."
+          ]
+        },
+        {
+          "id": "observe_sun",
+          "subject": "sun",
+          "role": "sun",
+          "stroke_groups": [
+            "Independent visible physical paper contour and raised layer edges; lift between disconnected paper pieces."
+          ]
+        },
+        {
+          "id": "observe_cloud",
+          "subject": "cloud",
+          "role": "cloud",
+          "stroke_groups": [
+            "Independent visible physical paper contour and raised layer edges; lift between disconnected paper pieces."
+          ]
+        },
+        {
+          "id": "observe_horizon",
+          "subject": "horizon",
+          "role": "horizon",
+          "stroke_groups": [
+            "Independent visible physical paper contour and raised layer edges; lift between disconnected paper pieces."
+          ]
+        },
+        {
+          "id": "observe_background",
+          "subject": "background",
+          "role": "background",
+          "stroke_groups": [
+            "Independent visible physical paper contour and raised layer edges; lift between disconnected paper pieces."
+          ]
+        }
+      ],
+      "outline_order": [
+        "observe_moon",
+        "observe_sun",
+        "observe_cloud",
+        "observe_horizon",
+        "observe_background"
+      ],
+      "fill_order": [
+        "observe_moon",
+        "observe_sun",
+        "observe_cloud",
+        "observe_horizon",
+        "observe_background"
+      ],
+      "narrative_requirements": [
+        {
+          "id": "observe_fact",
+          "narration_quote": "雲遮住",
+          "observable": "A conditional visibility diorama: ivory crescent Moon upper-right is partially occluded by one large rounded layered lilac cloud placed IN FRONT of its lower half, while the upper arc remains clearly visible. Mustard Sun far upper-left, above a simple low teal horizon. Cloud and Moon have clear depth and their own curved edges. No people, faces, arrows, writing or stars."
+        }
+      ]
+    }
+  ]
+}

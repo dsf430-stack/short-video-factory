@@ -1,0 +1,102 @@
+{
+  "style_sha256": "55e1d72dd41dca82135f95ad6df6ba03e76d4bbcc0f34d0ca7bc9a621d7b1dad",
+  "plan_sha256": "c010544c8c3905d78414eaf0329adae43ea9eba372ca89e6934abec9a7c49305",
+  "illustrations": [
+    {
+      "plan_id": "hook",
+      "status": "pass",
+      "source_sha256": "a97147a1f3680f66decd46ad9d2d814ad85863abe13e10a16412e811c138b069",
+      "crop": [
+        0,
+        0,
+        1024,
+        768
+      ],
+      "outline_mask_sha256": "184bc94d1d2a285bc701d9227120e4ba4dcca148ef9ea1c99b4137600e39fc36",
+      "anatomy_and_occlusion": "Viewed sheet-0 top: separate raised mustard paper Sun on screen-left and ivory crescent on screen-right, both above low lilac/teal horizon layers. Thick curved cardstock edges, embossed motifs, warm upper-left light and broad down-right cast shadows visibly preserve official 13 identity. No people or writing. No human/animal is present, so no anatomical roles or hidden limbs are fabricated.",
+      "part_boundaries": "Moon and Sun own their actual object/cast-shadow vicinity; Earth and paper arrow ribbons separately assigned. Overlapping arrowheads excluded from source object regions; visible cloud excluded from lunar ownership. Horizon contains its paper hills/foliage. Background owns all remaining cardstock only.",
+      "stroke_breaks": "Separate physical raised edges and disconnected paper pieces traced with independent pen lifts. Registered outline mask uses smoothed visible image-edge contours, not new decorative ink on finished art.",
+      "outline_then_fill": "Aligned technical mask traces actual piece edges before localized painting reveals original cardstock, texture and shadows. Source artwork pixels are never restyled. Actual simplified masks viewed: large piece boundaries, paper spirals and contour layers are retained; high-frequency fiber texture suppressed from tracing, full source texture restored only by color painting.",
+      "spatial_order": "Moon, Sun, then causal Earth/ribbons or cloud/horizon, with background last. Order exception is deliberate mechanism-first explanation.",
+      "narrative_checks": [
+        {
+          "id": "hook_fact",
+          "status": "pass",
+          "evidence": "Viewed sheet-0 top: separate raised mustard paper Sun on screen-left and ivory crescent on screen-right, both above low lilac/teal horizon layers. Thick curved cardstock edges, embossed motifs, warm upper-left light and broad down-right cast shadows visibly preserve official 13 identity. No people or writing."
+        }
+      ]
+    },
+    {
+      "plan_id": "reflection",
+      "status": "pass",
+      "source_sha256": "a97147a1f3680f66decd46ad9d2d814ad85863abe13e10a16412e811c138b069",
+      "crop": [
+        0,
+        768,
+        1024,
+        1536
+      ],
+      "outline_mask_sha256": "184bc94d1d2a285bc701d9227120e4ba4dcca148ef9ea1c99b4137600e39fc36",
+      "anatomy_and_occlusion": "Viewed sheet-0 bottom: coral ribbon arrow starts at Sun and has an arrowhead meeting the Moon on screen-right. Slate-blue ribbon descends from Moon toward the small teal Earth below, with its arrowhead at Earth. This visibly encodes reflected sunlight, not lunar self-emission. Physical round Moon and Earth have distinct raised faces; no claim of astronomical distances. No human/animal is present, so no anatomical roles or hidden limbs are fabricated.",
+      "part_boundaries": "Moon and Sun own their actual object/cast-shadow vicinity; Earth and paper arrow ribbons separately assigned. Overlapping arrowheads excluded from source object regions; visible cloud excluded from lunar ownership. Horizon contains its paper hills/foliage. Background owns all remaining cardstock only.",
+      "stroke_breaks": "Separate physical raised edges and disconnected paper pieces traced with independent pen lifts. Registered outline mask uses smoothed visible image-edge contours, not new decorative ink on finished art.",
+      "outline_then_fill": "Aligned technical mask traces actual piece edges before localized painting reveals original cardstock, texture and shadows. Source artwork pixels are never restyled. Actual simplified masks viewed: large piece boundaries, paper spirals and contour layers are retained; high-frequency fiber texture suppressed from tracing, full source texture restored only by color painting.",
+      "spatial_order": "Moon, Sun, then causal Earth/ribbons or cloud/horizon, with background last. Order exception is deliberate mechanism-first explanation.",
+      "narrative_checks": [
+        {
+          "id": "reflection_fact",
+          "status": "pass",
+          "evidence": "Viewed sheet-0 bottom: coral ribbon arrow starts at Sun and has an arrowhead meeting the Moon on screen-right. Slate-blue ribbon descends from Moon toward the small teal Earth below, with its arrowhead at Earth. This visibly encodes reflected sunlight, not lunar self-emission. Physical round Moon and Earth have distinct raised faces; no claim of astronomical distances."
+        }
+      ]
+    },
+    {
+      "plan_id": "horizon",
+      "status": "pass",
+      "source_sha256": "db5e58f8f1b3a4dddb516db1f254326234146b22211e89650b83c886c1bc117d",
+      "crop": [
+        0,
+        0,
+        1024,
+        768
+      ],
+      "outline_mask_sha256": "1bf39843b74dab6e61342123c505b0bf833e15415766283fa8f2d91427d095de",
+      "anatomy_and_occlusion": "Viewed sheet-1 top: Sun left and actual crescent (rather than planned half Moon) right both above the same low layered local horizon. Sparse folk foliage belongs to that horizon. No orbit diagram, stars or night sky. Actual lunar shape was recorded in a post-image plan revision; original preflight retained. No human/animal is present, so no anatomical roles or hidden limbs are fabricated.",
+      "part_boundaries": "Moon and Sun own their actual object/cast-shadow vicinity; Earth and paper arrow ribbons separately assigned. Overlapping arrowheads excluded from source object regions; visible cloud excluded from lunar ownership. Horizon contains its paper hills/foliage. Background owns all remaining cardstock only.",
+      "stroke_breaks": "Separate physical raised edges and disconnected paper pieces traced with independent pen lifts. Registered outline mask uses smoothed visible image-edge contours, not new decorative ink on finished art.",
+      "outline_then_fill": "Aligned technical mask traces actual piece edges before localized painting reveals original cardstock, texture and shadows. Source artwork pixels are never restyled. Actual simplified masks viewed: large piece boundaries, paper spirals and contour layers are retained; high-frequency fiber texture suppressed from tracing, full source texture restored only by color painting.",
+      "spatial_order": "Moon, Sun, then causal Earth/ribbons or cloud/horizon, with background last. Order exception is deliberate mechanism-first explanation.",
+      "narrative_checks": [
+        {
+          "id": "horizon_fact",
+          "status": "pass",
+          "evidence": "Viewed sheet-1 top: Sun left and actual crescent (rather than planned half Moon) right both above the same low layered local horizon. Sparse folk foliage belongs to that horizon. No orbit diagram, stars or night sky. Actual lunar shape was recorded in a post-image plan revision; original preflight retained."
+        }
+      ]
+    },
+    {
+      "plan_id": "observe",
+      "status": "pass",
+      "source_sha256": "db5e58f8f1b3a4dddb516db1f254326234146b22211e89650b83c886c1bc117d",
+      "crop": [
+        0,
+        768,
+        1024,
+        1536
+      ],
+      "outline_mask_sha256": "1bf39843b74dab6e61342123c505b0bf833e15415766283fa8f2d91427d095de",
+      "anatomy_and_occlusion": "Viewed sheet-1 bottom: lilac layered cloud is visibly in front of the lower crescent; upper ivory arc remains visible. Sun remains far left, clear of cloud; low horizon unchanged. No invisible lunar region is invented. Shows a visibility condition, not a claim that Moon is visible every day. No human/animal is present, so no anatomical roles or hidden limbs are fabricated.",
+      "part_boundaries": "Moon and Sun own their actual object/cast-shadow vicinity; Earth and paper arrow ribbons separately assigned. Overlapping arrowheads excluded from source object regions; visible cloud excluded from lunar ownership. Horizon contains its paper hills/foliage. Background owns all remaining cardstock only.",
+      "stroke_breaks": "Separate physical raised edges and disconnected paper pieces traced with independent pen lifts. Registered outline mask uses smoothed visible image-edge contours, not new decorative ink on finished art.",
+      "outline_then_fill": "Aligned technical mask traces actual piece edges before localized painting reveals original cardstock, texture and shadows. Source artwork pixels are never restyled. Actual simplified masks viewed: large piece boundaries, paper spirals and contour layers are retained; high-frequency fiber texture suppressed from tracing, full source texture restored only by color painting.",
+      "spatial_order": "Moon, Sun, then causal Earth/ribbons or cloud/horizon, with background last. Order exception is deliberate mechanism-first explanation.",
+      "narrative_checks": [
+        {
+          "id": "observe_fact",
+          "status": "pass",
+          "evidence": "Viewed sheet-1 bottom: lilac layered cloud is visibly in front of the lower crescent; upper ivory arc remains visible. Sun remains far left, clear of cloud; low horizon unchanged. No invisible lunar region is invented. Shows a visibility condition, not a claim that Moon is visible every day."
+        }
+      ]
+    }
+  ]
+}

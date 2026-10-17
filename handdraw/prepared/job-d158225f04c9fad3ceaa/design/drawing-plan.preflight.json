@@ -1,0 +1,11 @@
+{
+  "status": "ready_for_generation",
+  "plan_sha256": "c010544c8c3905d78414eaf0329adae43ea9eba372ca89e6934abec9a7c49305",
+  "style_sha256": "55e1d72dd41dca82135f95ad6df6ba03e76d4bbcc0f34d0ca7bc9a621d7b1dad",
+  "illustrations": [
+    "hook",
+    "reflection",
+    "horizon",
+    "observe"
+  ]
+}

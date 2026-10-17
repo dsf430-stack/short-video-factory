@@ -1,0 +1,1 @@
+Pillow RGB1080x1920 #F6C45A; NotoSansCJK TC index3 size92 x90 y180/300; sheet-0 crop [0,0,1024,768] fit900x800 at90,570; secondary64px at90,1470, #402A20. Font is SIL OFL. Exact title text in separate editable draw layers.

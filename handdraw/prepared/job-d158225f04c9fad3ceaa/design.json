@@ -1,0 +1,678 @@
+{
+  "topic": "月亮冷知識：白天也能看見月亮",
+  "audience": "繁體中文一般觀眾",
+  "explanation_goal": "Explain reflected sunlight, simultaneous daytime horizon visibility and cloud conditions.",
+  "source_scope": [
+    "https://science.nasa.gov/moon/top-moon-questions/",
+    "https://science.nasa.gov/moon/moonlight/"
+  ],
+  "narrative_route": {
+    "decision": "mechanism_explanation",
+    "reason": "Reuse accepted everyday hook and measured narration; paper dioramas show each cause without unrelated decoration.",
+    "director_review": "One mechanism per scene; reflection arrowheads must be visible at Moon and Earth; cloud overlap must be real. No scale or orbit claims.",
+    "director_plan": "Observation -> reflection -> simultaneous above-horizon bodies -> cloud qualification/safety. Preserve voice and sentence boundaries, replace only style-specific art."
+  },
+  "visual_direction": "Complete official 13 sculptural 3D paper-folk; object dioramas with original raised shapes/shadows, registered contour masks for official animation. Honey-gold canvas, editable Traditional Chinese text.",
+  "beats": [
+    {
+      "id": "hook",
+      "text": "白天抬頭看到月亮，難道它忘記下班了嗎？其實，這是很正常的現象。",
+      "label": "白天的月亮沒加班",
+      "label_x": 90,
+      "label_y": 250,
+      "label_size": 70,
+      "source": "inputs/sheet-0.png",
+      "parts": [
+        {
+          "id": "hook_moon",
+          "polygon": [
+            [
+              0.66,
+              0.19
+            ],
+            [
+              0.78,
+              0.12
+            ],
+            [
+              0.87,
+              0.17
+            ],
+            [
+              0.93,
+              0.29
+            ],
+            [
+              0.94,
+              0.43
+            ],
+            [
+              0.89,
+              0.55
+            ],
+            [
+              0.81,
+              0.62
+            ],
+            [
+              0.71,
+              0.6
+            ],
+            [
+              0.64,
+              0.53
+            ],
+            [
+              0.6,
+              0.44
+            ],
+            [
+              0.68,
+              0.49
+            ],
+            [
+              0.75,
+              0.48
+            ],
+            [
+              0.79,
+              0.4
+            ],
+            [
+              0.78,
+              0.28
+            ],
+            [
+              0.72,
+              0.21
+            ]
+          ]
+        },
+        {
+          "id": "hook_sun",
+          "polygon": [
+            [
+              0.035,
+              0.06
+            ],
+            [
+              0.47,
+              0.06
+            ],
+            [
+              0.47,
+              0.59
+            ],
+            [
+              0.035,
+              0.59
+            ]
+          ]
+        },
+        {
+          "id": "hook_horizon",
+          "polygon": [
+            [
+              0,
+              0.65
+            ],
+            [
+              1,
+              0.65
+            ],
+            [
+              1,
+              0.94
+            ],
+            [
+              0,
+              0.94
+            ]
+          ]
+        },
+        {
+          "id": "hook_background",
+          "polygon": [
+            [
+              0,
+              0
+            ],
+            [
+              1,
+              0
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              0,
+              1
+            ]
+          ]
+        }
+      ],
+      "image_x": 90,
+      "image_y": 520,
+      "image_width": 900,
+      "image_height": 900,
+      "annotations": [
+        {
+          "text": "白天，也能見到月亮",
+          "x": 90,
+          "y": 1410,
+          "size": 64
+        }
+      ],
+      "outline_mask": "inputs/sheet-0-outline.png",
+      "crop": [
+        0,
+        0,
+        1024,
+        768
+      ]
+    },
+    {
+      "id": "reflection",
+      "text": "月亮本身不會發光。我們看見月亮，是因為它把照到表面的太陽光，反射進我們眼裡。",
+      "label": "月光其實是太陽光",
+      "label_x": 90,
+      "label_y": 250,
+      "label_size": 70,
+      "source": "inputs/sheet-0.png",
+      "parts": [
+        {
+          "id": "reflection_moon",
+          "polygon": [
+            [
+              0.68,
+              0.075
+            ],
+            [
+              0.97,
+              0.075
+            ],
+            [
+              0.97,
+              0.52
+            ],
+            [
+              0.68,
+              0.52
+            ]
+          ],
+          "exclude_polygons": [
+            [
+              [
+                0.62,
+                0.14
+              ],
+              [
+                0.66,
+                0.14
+              ],
+              [
+                0.71,
+                0.255
+              ],
+              [
+                0.64,
+                0.285
+              ]
+            ]
+          ]
+        },
+        {
+          "id": "reflection_sun",
+          "polygon": [
+            [
+              0.02,
+              0.005
+            ],
+            [
+              0.44,
+              0.005
+            ],
+            [
+              0.44,
+              0.5
+            ],
+            [
+              0.02,
+              0.5
+            ]
+          ],
+          "exclude_polygons": [
+            [
+              [
+                0.32,
+                0.19
+              ],
+              [
+                0.44,
+                0.16
+              ],
+              [
+                0.46,
+                0.25
+              ],
+              [
+                0.32,
+                0.28
+              ]
+            ]
+          ]
+        },
+        {
+          "id": "reflection_earth",
+          "polygon": [
+            [
+              0.38,
+              0.54
+            ],
+            [
+              0.66,
+              0.54
+            ],
+            [
+              0.66,
+              0.9
+            ],
+            [
+              0.38,
+              0.9
+            ]
+          ]
+        },
+        {
+          "id": "reflection_light_ribbons",
+          "polygon": [
+            [
+              0.3,
+              0.15
+            ],
+            [
+              0.76,
+              0.15
+            ],
+            [
+              0.76,
+              0.59
+            ],
+            [
+              0.3,
+              0.59
+            ]
+          ]
+        },
+        {
+          "id": "reflection_background",
+          "polygon": [
+            [
+              0,
+              0
+            ],
+            [
+              1,
+              0
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              0,
+              1
+            ]
+          ]
+        }
+      ],
+      "image_x": 90,
+      "image_y": 520,
+      "image_width": 900,
+      "image_height": 900,
+      "annotations": [
+        {
+          "text": "太陽照亮 → 月球反射",
+          "x": 90,
+          "y": 1410,
+          "size": 64
+        }
+      ],
+      "outline_mask": "inputs/sheet-0-outline.png",
+      "crop": [
+        0,
+        768,
+        1024,
+        1536
+      ]
+    },
+    {
+      "id": "horizon",
+      "text": "月亮每天升起、落下的時間會改變。有時太陽和月亮，會一起出現在地平線上方。",
+      "label": "太陽月亮能同時出現",
+      "label_x": 90,
+      "label_y": 250,
+      "label_size": 70,
+      "source": "inputs/sheet-1.png",
+      "parts": [
+        {
+          "id": "horizon_moon",
+          "polygon": [
+            [
+              0.79,
+              0.185
+            ],
+            [
+              0.87,
+              0.19
+            ],
+            [
+              0.92,
+              0.26
+            ],
+            [
+              0.94,
+              0.35
+            ],
+            [
+              0.93,
+              0.42
+            ],
+            [
+              0.88,
+              0.48
+            ],
+            [
+              0.79,
+              0.5
+            ],
+            [
+              0.735,
+              0.46
+            ],
+            [
+              0.8,
+              0.44
+            ],
+            [
+              0.83,
+              0.38
+            ],
+            [
+              0.83,
+              0.3
+            ],
+            [
+              0.81,
+              0.23
+            ]
+          ]
+        },
+        {
+          "id": "horizon_sun",
+          "polygon": [
+            [
+              0.055,
+              0.07
+            ],
+            [
+              0.43,
+              0.07
+            ],
+            [
+              0.43,
+              0.55
+            ],
+            [
+              0.055,
+              0.55
+            ]
+          ]
+        },
+        {
+          "id": "horizon_horizon",
+          "polygon": [
+            [
+              0,
+              0.6
+            ],
+            [
+              1,
+              0.6
+            ],
+            [
+              1,
+              0.93
+            ],
+            [
+              0,
+              0.93
+            ]
+          ]
+        },
+        {
+          "id": "horizon_background",
+          "polygon": [
+            [
+              0,
+              0
+            ],
+            [
+              1,
+              0
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              0,
+              1
+            ]
+          ]
+        }
+      ],
+      "image_x": 90,
+      "image_y": 520,
+      "image_width": 900,
+      "image_height": 900,
+      "annotations": [
+        {
+          "text": "太陽與月亮都在地平線上",
+          "x": 90,
+          "y": 1410,
+          "size": 64
+        }
+      ],
+      "outline_mask": "inputs/sheet-1-outline.png",
+      "crop": [
+        0,
+        0,
+        1024,
+        768
+      ]
+    },
+    {
+      "id": "observe",
+      "text": "月亮沒被雲遮住、亮度也夠，就有機會看見。但不是每天都明顯，觀察時別直視太陽。",
+      "label": "天氣與位置都要看",
+      "label_x": 90,
+      "label_y": 250,
+      "label_size": 70,
+      "source": "inputs/sheet-1.png",
+      "parts": [
+        {
+          "id": "observe_moon",
+          "polygon": [
+            [
+              0.73,
+              0.145
+            ],
+            [
+              0.915,
+              0.145
+            ],
+            [
+              0.915,
+              0.405
+            ],
+            [
+              0.73,
+              0.405
+            ]
+          ],
+          "exclude_polygons": [
+            [
+              [
+                0.72,
+                0.29
+              ],
+              [
+                0.79,
+                0.275
+              ],
+              [
+                0.82,
+                0.3
+              ],
+              [
+                0.87,
+                0.285
+              ],
+              [
+                0.94,
+                0.32
+              ],
+              [
+                0.97,
+                0.53
+              ],
+              [
+                0.68,
+                0.53
+              ]
+            ]
+          ]
+        },
+        {
+          "id": "observe_sun",
+          "polygon": [
+            [
+              0.045,
+              0.055
+            ],
+            [
+              0.435,
+              0.055
+            ],
+            [
+              0.435,
+              0.54
+            ],
+            [
+              0.045,
+              0.54
+            ]
+          ]
+        },
+        {
+          "id": "observe_cloud",
+          "polygon": [
+            [
+              0.51,
+              0.25
+            ],
+            [
+              0.975,
+              0.25
+            ],
+            [
+              0.975,
+              0.6
+            ],
+            [
+              0.51,
+              0.6
+            ]
+          ]
+        },
+        {
+          "id": "observe_horizon",
+          "polygon": [
+            [
+              0,
+              0.63
+            ],
+            [
+              1,
+              0.63
+            ],
+            [
+              1,
+              0.96
+            ],
+            [
+              0,
+              0.96
+            ]
+          ]
+        },
+        {
+          "id": "observe_background",
+          "polygon": [
+            [
+              0,
+              0
+            ],
+            [
+              1,
+              0
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              0,
+              1
+            ]
+          ]
+        }
+      ],
+      "image_x": 90,
+      "image_y": 520,
+      "image_width": 900,
+      "image_height": 900,
+      "annotations": [
+        {
+          "text": "雲層可能遮住月亮",
+          "x": 90,
+          "y": 1410,
+          "size": 64
+        },
+        {
+          "text": "觀察時別直視太陽",
+          "x": 90,
+          "y": 1505,
+          "size": 64
+        }
+      ],
+      "outline_mask": "inputs/sheet-1-outline.png",
+      "crop": [
+        0,
+        768,
+        1024,
+        1536
+      ]
+    }
+  ],
+  "cover": {
+    "title": "月亮冷知識 / 白天也看得到？",
+    "visual": "Reviewed sculptural paper Sun/Moon/horizon, independent editable Traditional Chinese typography"
+  },
+  "asset_prompts": [
+    "design/sheet-0-prompt.txt",
+    "design/sheet-1-prompt.txt"
+  ]
+}

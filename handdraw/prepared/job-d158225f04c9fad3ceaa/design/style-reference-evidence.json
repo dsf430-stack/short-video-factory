@@ -1,0 +1,14 @@
+{
+  "viewed_before_generation": true,
+  "purpose": "Official style13 medium and depth only; do not copy people or compositions",
+  "references": [
+    {
+      "url": "https://github.com/threerocks/sweety-handdraw-video/releases/download/v1.2/hand-drawn--examples--13-paper-folk-musician.png",
+      "sha256": "41f7e0970dc10d8e344857e6396db3459d1d56f6eef43df560268ac920956303"
+    },
+    {
+      "url": "https://github.com/threerocks/sweety-handdraw-video/releases/download/v1.2/hand-drawn--examples--13-paper-folk.png",
+      "sha256": "b613f1e6f98a15eeea4efb75123b5373cb7f72494e2d4dfc9f2bdbf89d827fc7"
+    }
+  ]
+}

@@ -1,0 +1,1 @@
+Compose a portrait honey-gold cover using reviewed style-13 top panel, with editable exact title 月亮冷知識 / 白天也看得到？ and secondary 月光，是反射的太陽光. No new generation or change to source artwork pixels.
