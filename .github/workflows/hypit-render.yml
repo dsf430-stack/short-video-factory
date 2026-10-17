@@ -1,0 +1,71 @@
+name: Hypit render
+on:
+  pull_request:
+    paths:
+      - '.github/workflows/hypit-render.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Fetch pinned official source
+        run: |
+          git clone https://github.com/hypit-ai/hypit.git hypit
+          git -C hypit checkout dc2b7a8f31b1ef1443a79ca448548d69e3ceb6a0
+      - name: Install locked official dependencies
+        working-directory: hypit
+        run: |
+          npm install --global pnpm@10.33.0
+          pnpm install --frozen-lockfile
+          pnpm build:public-types
+          pnpm --filter @example/chat-scene build
+      - name: Prepare local render tools
+        working-directory: hypit
+        run: |
+          node bin/hypit.mjs programs prepare --project examples/semantic-composition --runtime examples/semantic-composition/hypit.runtime.json --endpoint html.local
+          node bin/hypit.mjs programs prepare --project examples/semantic-composition --runtime examples/semantic-composition/hypit.runtime.json --endpoint media.local
+      - name: Check and render official animation
+        working-directory: hypit
+        run: |
+          mkdir -p delivery
+          node bin/hypit.mjs check examples/semantic-composition/chat.svml --project examples/semantic-composition
+          node bin/hypit.mjs plan examples/semantic-composition/chat.svrun --project examples/semantic-composition --runtime examples/semantic-composition/hypit.runtime.json
+          node bin/hypit.mjs build examples/semantic-composition/chat.svrun --project examples/semantic-composition --runtime examples/semantic-composition/hypit.runtime.json --follow
+          node bin/hypit.mjs builds --project examples/semantic-composition --json > delivery/builds.json
+          build_id=$(node -e 'const f=require("fs"); const r=JSON.parse(f.readFileSync("delivery/builds.json","utf8")); if(r.builds[0].outcome!=="complete") throw new Error("Build did not complete"); process.stdout.write(r.builds[0].id)')
+          node bin/hypit.mjs get "$build_id" --project examples/semantic-composition --output final.video --to delivery/Hypit_Official_Chat_8s.mp4
+      - name: Verify encoded video and extract review frames
+        working-directory: hypit
+        run: |
+          ffprobe -v error -show_streams -show_format -of json delivery/Hypit_Official_Chat_8s.mp4 > delivery/ffprobe.json
+          python3 - <<'PY'
+          import json
+          r=json.load(open("delivery/ffprobe.json"))
+          v=next(s for s in r["streams"] if s["codec_type"]=="video")
+          assert (v["width"],v["height"])==(540,960),v
+          assert abs(float(r["format"]["duration"])-8)<0.15,r
+          PY
+          ffmpeg -v error -i delivery/Hypit_Official_Chat_8s.mp4 -vf "fps=1,scale=270:480,tile=4x2" -frames:v 1 delivery/review.jpg
+          ffmpeg -v error -i delivery/Hypit_Official_Chat_8s.mp4 -f framemd5 delivery/frames.md5
+          python3 - <<'PY'
+          rows=[s.strip().split(",")[-1].strip() for s in open("delivery/frames.md5") if not s.startswith("#")]
+          assert len(set(rows))>10,"No meaningful frame variation"
+          print("PASS: 8 seconds, 540x960, animated video")
+          PY
+          echo "PASS: official Hypit animation rendered to MP4; 8 seconds, 540x960. Silent official example; no generation API." >> "$GITHUB_STEP_SUMMARY"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: hypit-render-delivery
+          path: hypit/delivery/
+          if-no-files-found: warn
+          retention-days: 90
