@@ -28,6 +28,10 @@ jobs:
           pnpm install --frozen-lockfile
           pnpm build:public-types
           pnpm --filter @example/chat-scene build
+      - name: Install required FFmpeg tools
+        run: |
+          sudo apt-get update
+          sudo apt-get install --yes ffmpeg
       - name: Prepare local render tools
         working-directory: hypit
         run: |
