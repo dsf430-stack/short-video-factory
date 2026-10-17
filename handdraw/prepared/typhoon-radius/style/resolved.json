@@ -1,0 +1,17 @@
+{
+  "status": "resolved",
+  "mode": "catalog",
+  "catalog_id": "4",
+  "selection_sha256": "d75538b475f2eb21896ef5760c0f0fe22a69a239195acaa1d38432b2b8e5c826",
+  "recipe_sha256": "2d96a21c16f323dd71f57e7ee1a19173fe2b2ae85caeec7de5a9759fd14d4960",
+  "style_name": "小豆人黑色涂鸦信息图",
+  "rationale": "User selected official numbered style 4. Preserve complete bundled recipe.",
+  "content_fit": "Explain cyclone wind extent and radius with a consistent bean presenter and one orange key item.",
+  "style_spec": {
+    "line": "Complete official style-4 black marker recipe",
+    "palette": "Official monochrome and single orange object with restrained annotation arrows",
+    "shading": "Official outline-only props and solid black bean figure",
+    "texture": "Official off-white paper",
+    "background": "Official minimal one-panel explainer"
+  }
+}

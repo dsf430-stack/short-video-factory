@@ -1,5 +1,5 @@
 name: Sweety 手繪影片 · 068
-run-name: "Sweety 068 · ${{ inputs.topic || '一滴水如何變成雨' }}"
+run-name: "Sweety 068 · ${{ inputs.topic || '颱風的暴風半徑怎麼看？' }}"
 on:
   workflow_dispatch:
     inputs:
@@ -9,7 +9,7 @@ on:
         default: 一滴水如何變成雨
         type: string
   push:
-    branches: [integration/sweety-handdraw-068]
+    branches: [integration/sweety-handdraw-068, fix/handdraw-topic-pipeline]
     paths: ['.github/workflows/sweety-handdraw-068.yml', 'handdraw/**']
 permissions:
   contents: read
@@ -37,6 +37,8 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y ffmpeg fonts-noto-cjk libimage-exiftool-perl
           python -m pip install -r /tmp/sweety-official/skills/sweety-handdraw-video/scripts/requirements.txt -r smart_voice/requirements.txt
+      - name: Test topic preparation and duration selection
+        run: python -m unittest discover -s handdraw -p 'test_*.py'
       - name: Resolve checksum-verified official pen before cached-film verification
         run: |
           python - <<'PY'
@@ -50,7 +52,7 @@ jobs:
       - name: Identify resumable topic job
         id: topic
         env:
-          TOPIC: ${{ inputs.topic || '一滴水如何變成雨' }}
+          TOPIC: ${{ inputs.topic || '颱風的暴風半徑怎麼看？' }}
         run: |
           python - <<'PY'
           import os, hashlib
@@ -67,7 +69,7 @@ jobs:
           restore-keys: sweety-prepared-v1-${{ steps.topic.outputs.key }}-
       - name: Render prepared official handdraw job using existing 068
         env:
-          TOPIC: ${{ inputs.topic || '一滴水如何變成雨' }}
+          TOPIC: ${{ inputs.topic || '颱風的暴風半徑怎麼看？' }}
         run: |
           set -o pipefail
           mkdir -p handdraw/output
@@ -84,7 +86,7 @@ jobs:
         if: success()
         uses: actions/upload-artifact@v4
         with:
-          name: sweety-068-rain-1080x1920-${{ github.run_id }}
+          name: sweety-068-1080x1920-${{ github.run_id }}
           path: |
             handdraw/output/prepared/outputs/film.mp4
             handdraw/output/prepared/outputs/cover.png
@@ -103,7 +105,9 @@ jobs:
             handdraw/output/run.log
             handdraw/output/prepared/voice-measurement.json
             handdraw/output/prepared/acceptance.json
-            handdraw/prepared/rain/story.json
+            handdraw/prepared/**/request.json
+            handdraw/prepared/**/preparation-status.json
+            handdraw/prepared/**/story.json
             handdraw/output/prepared/design.json
             handdraw/output/prepared/design
             handdraw/output/prepared/privacy

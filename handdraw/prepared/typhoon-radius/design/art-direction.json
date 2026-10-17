@@ -1,0 +1,56 @@
+{
+  "dependency_sha256": "fbbfd33d70f729011b6a6bc232851c116cd4a89ead2adea4462888a6ce26fc1a",
+  "images": [
+    {
+      "source": "../inputs/sheet.png",
+      "method": "generated_under_guidance",
+      "brief_file": "sheet-brief.md",
+      "prompt_file": "sheet-prompt.txt",
+      "status": "pass",
+      "brief_sha256": "ec27735747cd38e4b76415dd620f311198c4767c9a16ae4657bccd6be7a7f95d",
+      "prompt_sha256": "7275f46ee3ed6bf6eb25e67e5bdee5374c421a0789dc1e335170c3e053aa5375",
+      "sha256": "b899dba626eb17b1c1b18d8aa8da0ea1a1cda38865fb2d8e0a1658efbc2d4966",
+      "pixel_sha256": "1323f237209ac333167d9e719b4b5d82fdaa4021c8d7f902a8f31f27322edead",
+      "approved_crops": [
+        [
+          0,
+          0,
+          1024,
+          384
+        ],
+        [
+          0,
+          384,
+          1024,
+          768
+        ],
+        [
+          0,
+          768,
+          1024,
+          1130
+        ],
+        [
+          0,
+          1130,
+          1024,
+          1536
+        ]
+      ],
+      "evidence": "Viewed actual generated four-panel atlas. Same solid black bean with white dot eyes in each panel; black outlined objects and orange key accents, red/blue arrows, empty editable label boxes. Panel 1 offshore spiral and umbrella; panel 2 center clearly smaller than wind field; panel 3 exact center-to-boundary orange radius; panel 4 bean inside doorway, outer rain bands reach house. No generated text. No real forecast map claimed."
+    },
+    {
+      "source": "../inputs/cover.png",
+      "method": "composed_with_verified_layers",
+      "brief_file": "cover-brief.md",
+      "prompt_file": "cover-prompt.txt",
+      "status": "pass",
+      "brief_sha256": "9b9e84fa69a603582943a400ab3f527b8d104702b4dfb22972633cfaff6d7a30",
+      "prompt_sha256": "bae41e8e23fc15a5583e8485f6d88fe7b7e4c74711d2389fcca7ce5339c6afcc",
+      "sha256": "c97ad5d586494bb4e5bf56d381399875b7de0e0d9abd9dac13a17a42b3903c7e",
+      "pixel_sha256": "cf08e7a169a3cd4321dac0f8acaff7f85264183b84a5ab17d9b4128513a6a892",
+      "evidence": "Viewed actual 1080x1920 composed cover: exact Traditional Chinese two-line title, no clipped characters, yellow canvas, reviewed radius diagram, readable 別只看颱風中心 subtitle. Title and source panel separated by clear margins."
+    }
+  ],
+  "style_sha256": "a28bed573766c47e644f37eaf306fc3d15db663c87aa8400c2da89d33986f388"
+}

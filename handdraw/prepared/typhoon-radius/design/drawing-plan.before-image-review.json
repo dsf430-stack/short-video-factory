@@ -1,0 +1,436 @@
+{
+  "illustrations": [
+    {
+      "id": "s0",
+      "composition": "A bean presenter stands on the LEFT, holding an orange umbrella tilted against curved wind lines. On the RIGHT a cyclone spiral is offshore, not above the presenter. Rain streaks above umbrella. No letters or numbers.",
+      "drawability_reason": "Simple separated presenter and diagram; refine semantic ownership from viewed atlas before build.",
+      "outline_strategy": "visible_source_ink",
+      "spatial_order": "top_to_bottom_left_to_right",
+      "subjects": [
+        {
+          "id": "presenter",
+          "kind": "human",
+          "omitted_roles": {
+            "neck": "Bean silhouette has no distinct neck."
+          },
+          "order_exception": "Bean head and torso are continuous; semantic division follows visible face and body."
+        },
+        {
+          "id": "diagram",
+          "kind": "object"
+        },
+        {
+          "id": "frame",
+          "kind": "object"
+        }
+      ],
+      "parts": [
+        {
+          "id": "s0_head",
+          "subject": "presenter",
+          "role": "head",
+          "stroke_groups": [
+            "visible contour only; lift between separate marks"
+          ]
+        },
+        {
+          "id": "s0_torso",
+          "subject": "presenter",
+          "role": "torso",
+          "stroke_groups": [
+            "visible contour only; lift between separate marks"
+          ]
+        },
+        {
+          "id": "s0_left_arm",
+          "subject": "presenter",
+          "role": "left_arm",
+          "stroke_groups": [
+            "visible contour only; lift between separate marks"
+          ]
+        },
+        {
+          "id": "s0_right_arm",
+          "subject": "presenter",
+          "role": "right_arm",
+          "stroke_groups": [
+            "visible contour only; lift between separate marks"
+          ]
+        },
+        {
+          "id": "s0_lower_body",
+          "subject": "presenter",
+          "role": "lower_body",
+          "stroke_groups": [
+            "visible contour only; lift between separate marks"
+          ]
+        },
+        {
+          "id": "s0_diagram",
+          "subject": "diagram",
+          "role": "diagram",
+          "stroke_groups": [
+            "independent contours and separate radius segment"
+          ]
+        },
+        {
+          "id": "s0_frame",
+          "subject": "frame",
+          "role": "frame",
+          "stroke_groups": [
+            "separate panel separator strokes"
+          ]
+        }
+      ],
+      "outline_order": [
+        "s0_head",
+        "s0_torso",
+        "s0_left_arm",
+        "s0_right_arm",
+        "s0_lower_body",
+        "s0_diagram",
+        "s0_frame"
+      ],
+      "fill_order": [
+        "s0_head",
+        "s0_torso",
+        "s0_left_arm",
+        "s0_right_arm",
+        "s0_lower_body",
+        "s0_diagram",
+        "s0_frame"
+      ],
+      "narrative_requirements": [
+        {
+          "id": "s0_cause",
+          "narration_quote": "沒被颱風中心掃過，為什麼還是狂風暴雨？",
+          "observable": "A bean presenter stands on the LEFT, holding an orange umbrella tilted against curved wind lines. On the RIGHT a cyclone spiral is offshore, not above the presenter. Rain streaks above umbrella. No letters or numbers."
+        }
+      ]
+    },
+    {
+      "id": "s1",
+      "composition": "A bean presenter on the LEFT points toward a large cyclone swirl on the RIGHT. The cyclone has a small orange center dot and much wider surrounding spiral bands. Show visibly that the storm extends well beyond its center. No letters or numbers.",
+      "drawability_reason": "Simple separated presenter and diagram; refine semantic ownership from viewed atlas before build.",
+      "outline_strategy": "visible_source_ink",
+      "spatial_order": "top_to_bottom_left_to_right",
+      "subjects": [
+        {
+          "id": "presenter",
+          "kind": "human",
+          "omitted_roles": {
+            "neck": "Bean silhouette has no distinct neck."
+          },
+          "order_exception": "Bean head and torso are continuous; semantic division follows visible face and body."
+        },
+        {
+          "id": "diagram",
+          "kind": "object"
+        },
+        {
+          "id": "frame",
+          "kind": "object"
+        }
+      ],
+      "parts": [
+        {
+          "id": "s1_head",
+          "subject": "presenter",
+          "role": "head",
+          "stroke_groups": [
+            "visible contour only; lift between separate marks"
+          ]
+        },
+        {
+          "id": "s1_torso",
+          "subject": "presenter",
+          "role": "torso",
+          "stroke_groups": [
+            "visible contour only; lift between separate marks"
+          ]
+        },
+        {
+          "id": "s1_left_arm",
+          "subject": "presenter",
+          "role": "left_arm",
+          "stroke_groups": [
+            "visible contour only; lift between separate marks"
+          ]
+        },
+        {
+          "id": "s1_right_arm",
+          "subject": "presenter",
+          "role": "right_arm",
+          "stroke_groups": [
+            "visible contour only; lift between separate marks"
+          ]
+        },
+        {
+          "id": "s1_lower_body",
+          "subject": "presenter",
+          "role": "lower_body",
+          "stroke_groups": [
+            "visible contour only; lift between separate marks"
+          ]
+        },
+        {
+          "id": "s1_diagram",
+          "subject": "diagram",
+          "role": "diagram",
+          "stroke_groups": [
+            "independent contours and separate radius segment"
+          ]
+        },
+        {
+          "id": "s1_frame",
+          "subject": "frame",
+          "role": "frame",
+          "stroke_groups": [
+            "separate panel separator strokes"
+          ]
+        }
+      ],
+      "outline_order": [
+        "s1_head",
+        "s1_torso",
+        "s1_left_arm",
+        "s1_right_arm",
+        "s1_lower_body",
+        "s1_diagram",
+        "s1_frame"
+      ],
+      "fill_order": [
+        "s1_head",
+        "s1_torso",
+        "s1_left_arm",
+        "s1_right_arm",
+        "s1_lower_body",
+        "s1_diagram",
+        "s1_frame"
+      ],
+      "narrative_requirements": [
+        {
+          "id": "s1_cause",
+          "narration_quote": "因為颱風不是只有中心才危險，強風範圍可以向外延伸。",
+          "observable": "A bean presenter on the LEFT points toward a large cyclone swirl on the RIGHT. The cyclone has a small orange center dot and much wider surrounding spiral bands. Show visibly that the storm extends well beyond its center. No letters or numbers."
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "composition": "A bean presenter on the LEFT gestures to a large simple circle on the RIGHT. The circle has an orange center dot and an orange straight radius segment from that center to the right circumference. Keep the radius exact and connected to both center and boundary. No letters or numbers.",
+      "drawability_reason": "Simple separated presenter and diagram; refine semantic ownership from viewed atlas before build.",
+      "outline_strategy": "visible_source_ink",
+      "spatial_order": "top_to_bottom_left_to_right",
+      "subjects": [
+        {
+          "id": "presenter",
+          "kind": "human",
+          "omitted_roles": {
+            "neck": "Bean silhouette has no distinct neck."
+          },
+          "order_exception": "Bean head and torso are continuous; semantic division follows visible face and body."
+        },
+        {
+          "id": "diagram",
+          "kind": "object"
+        },
+        {
+          "id": "frame",
+          "kind": "object"
+        }
+      ],
+      "parts": [
+        {
+          "id": "s2_head",
+          "subject": "presenter",
+          "role": "head",
+          "stroke_groups": [
+            "visible contour only; lift between separate marks"
+          ]
+        },
+        {
+          "id": "s2_torso",
+          "subject": "presenter",
+          "role": "torso",
+          "stroke_groups": [
+            "visible contour only; lift between separate marks"
+          ]
+        },
+        {
+          "id": "s2_left_arm",
+          "subject": "presenter",
+          "role": "left_arm",
+          "stroke_groups": [
+            "visible contour only; lift between separate marks"
+          ]
+        },
+        {
+          "id": "s2_right_arm",
+          "subject": "presenter",
+          "role": "right_arm",
+          "stroke_groups": [
+            "visible contour only; lift between separate marks"
+          ]
+        },
+        {
+          "id": "s2_lower_body",
+          "subject": "presenter",
+          "role": "lower_body",
+          "stroke_groups": [
+            "visible contour only; lift between separate marks"
+          ]
+        },
+        {
+          "id": "s2_diagram",
+          "subject": "diagram",
+          "role": "diagram",
+          "stroke_groups": [
+            "independent contours and separate radius segment"
+          ]
+        },
+        {
+          "id": "s2_frame",
+          "subject": "frame",
+          "role": "frame",
+          "stroke_groups": [
+            "separate panel separator strokes"
+          ]
+        }
+      ],
+      "outline_order": [
+        "s2_head",
+        "s2_torso",
+        "s2_left_arm",
+        "s2_right_arm",
+        "s2_lower_body",
+        "s2_diagram",
+        "s2_frame"
+      ],
+      "fill_order": [
+        "s2_head",
+        "s2_torso",
+        "s2_left_arm",
+        "s2_right_arm",
+        "s2_lower_body",
+        "s2_diagram",
+        "s2_frame"
+      ],
+      "narrative_requirements": [
+        {
+          "id": "s2_cause",
+          "narration_quote": "七級風暴風半徑，是從中心向外，平均風速每秒十五公尺以上的範圍。半徑越大，強風影響越廣。",
+          "observable": "A bean presenter on the LEFT gestures to a large simple circle on the RIGHT. The circle has an orange center dot and an orange straight radius segment from that center to the right circumference. Keep the radius exact and connected to both center and boundary. No letters or numbers."
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "composition": "A bean presenter on the LEFT stays inside a simple outline house, visible through the large open doorway. On the RIGHT, a spiral storm with outer curved rain bands; one rain band extends toward the house. Small orange warning triangle above the house. No letters or numbers.",
+      "drawability_reason": "Simple separated presenter and diagram; refine semantic ownership from viewed atlas before build.",
+      "outline_strategy": "visible_source_ink",
+      "spatial_order": "top_to_bottom_left_to_right",
+      "subjects": [
+        {
+          "id": "presenter",
+          "kind": "human",
+          "omitted_roles": {
+            "neck": "Bean silhouette has no distinct neck."
+          },
+          "order_exception": "Bean head and torso are continuous; semantic division follows visible face and body."
+        },
+        {
+          "id": "diagram",
+          "kind": "object"
+        },
+        {
+          "id": "frame",
+          "kind": "object"
+        }
+      ],
+      "parts": [
+        {
+          "id": "s3_head",
+          "subject": "presenter",
+          "role": "head",
+          "stroke_groups": [
+            "visible contour only; lift between separate marks"
+          ]
+        },
+        {
+          "id": "s3_torso",
+          "subject": "presenter",
+          "role": "torso",
+          "stroke_groups": [
+            "visible contour only; lift between separate marks"
+          ]
+        },
+        {
+          "id": "s3_left_arm",
+          "subject": "presenter",
+          "role": "left_arm",
+          "stroke_groups": [
+            "visible contour only; lift between separate marks"
+          ]
+        },
+        {
+          "id": "s3_right_arm",
+          "subject": "presenter",
+          "role": "right_arm",
+          "stroke_groups": [
+            "visible contour only; lift between separate marks"
+          ]
+        },
+        {
+          "id": "s3_lower_body",
+          "subject": "presenter",
+          "role": "lower_body",
+          "stroke_groups": [
+            "visible contour only; lift between separate marks"
+          ]
+        },
+        {
+          "id": "s3_diagram",
+          "subject": "diagram",
+          "role": "diagram",
+          "stroke_groups": [
+            "independent contours and separate radius segment"
+          ]
+        },
+        {
+          "id": "s3_frame",
+          "subject": "frame",
+          "role": "frame",
+          "stroke_groups": [
+            "separate panel separator strokes"
+          ]
+        }
+      ],
+      "outline_order": [
+        "s3_head",
+        "s3_torso",
+        "s3_left_arm",
+        "s3_right_arm",
+        "s3_lower_body",
+        "s3_diagram",
+        "s3_frame"
+      ],
+      "fill_order": [
+        "s3_head",
+        "s3_torso",
+        "s3_left_arm",
+        "s3_right_arm",
+        "s3_lower_body",
+        "s3_diagram",
+        "s3_frame"
+      ],
+      "narrative_requirements": [
+        {
+          "id": "s3_cause",
+          "narration_quote": "外圍環流也可能帶來強風豪雨，所以別只看中心位置，也要留意氣象署的風雨預報。",
+          "observable": "A bean presenter on the LEFT stays inside a simple outline house, visible through the large open doorway. On the RIGHT, a spiral storm with outer curved rain bands; one rain band extends toward the house. Small orange warning triangle above the house. No letters or numbers."
+        }
+      ]
+    }
+  ]
+}
