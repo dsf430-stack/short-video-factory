@@ -43,10 +43,12 @@
 
 - main部署後驗證SUCCESS：https://github.com/dsf430-stack/short-video-factory/actions/runs/39019877970 。14項測試通過，直接使用既有068旁白。交付已更新為main實際MP4，重新完整解碼與13點看圖通過，原分支成片也已驗證；兩次輸出不以位元相同為驗收條件。
 
-## 目前製作：官方13號北歐紙雕・月亮冷知識
+## 已完成：官方13號北歐紙雕・月亮冷知識
 
 - 使用者指定「13月亮冷知識」；沿用30秒、1080×1920、30fps、068原設定與已實測的白天月亮腳本/句界，無額外模型API。
 - 新job_id：job-d158225f04c9fad3ceaa。兩張全新紙雕圖集，使用完整官方13配方及已核對/看過的官方參考圖；未沿用4號小豆人圖片。
 - 出圖前計畫、逐圖簡報、完整提示詞與內容哈希皆先保存；實際看圖後核對反射箭頭、日間地平線及雲層遮擋，對齊輪廓層保留原始3D紙雕像素。
 - 四幕原版build_illustration皆通過，素材ASSETS_VALIDATED；配音VOICE_CACHE_HIT，28.656020833秒＋封面1秒＋收尾0.343979167秒。
-- Actions與最終MP4：等待本次實際執行及驗證，不標為完成。
+- main Actions SUCCESS：https://github.com/dsf430-stack/short-video-factory/actions/runs/39024020289 。14項測試通過，原068旁白快取直接重用。
+- 已交付 Moon_Facts_Style13_068_30s.mp4：30.000秒、1080×1920、30fps、900幀、H.264/AAC。SHA256 73ce18fcb8311bc9996c76626fc2a26aebd5637a731198846337bd9105f9cbd5。下載後完整解碼通過，已實際看13個時間點及14.2/29.5秒完整畫面，紙雕描線/填色、反射箭頭、雲層遮擋、繁體大字幕與文字間距通過。
+- 詳細證據 handdraw/verification/moon-style13-20261017.json；官方工程檢查通過，主觀聽感仍UNCERTAIN，預設未添加背景音樂。
