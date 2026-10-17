@@ -12,7 +12,7 @@
 - Layout revision SUCCESS: https://github.com/dsf430-stack/short-video-factory/actions/runs/38992266611 . Only moves the final heading inside its frame (`label_x=245`) and puts handwritten labels above source paper fill (`z=40`). Images, narration, subtitles and durations stay identical. Final v2 fully decodes, has same 79.966667s duration and identical decoded narration PCM to v1. Final SHA256: `a45443e7426354b0d047d460c1cf4f15eccc1ae7a16a6e170cf2aceb87ad07bc`. Viewed all seven v2 page-completion frames and full-size ending; heading conflict fixed.
 - User-visible MP4 identity: `libfile_c5dc35e09e8c819192fae4fc7a9e7fca`, filename `Gum_Wrapper_Style04_068_80s.mp4`, current version 1. Successfully replaced with corrected v2 after QA, preserving the same file identity.
 - Runtime label layout is authoritative in story.json; design.json records the art-planning stage.
-- Final SHA-bound review is committed under handdraw/final-reviews/. Cached official finalization is queued by that commit. MP4 is saved and ready for user acceptance; do not regenerate images, voice or the completed film.
+- Final SHA-bound review is committed under handdraw/final-reviews/. Official cached finalization SUCCESS: https://github.com/dsf430-stack/short-video-factory/actions/runs/38992753059 . Final receipt status SUCCESS and SHA match the delivered v2. MP4 is saved (Library file version 1) and ready for user acceptance; do not regenerate images, voice or the completed film.
 - Future invocation: existing sweety-handdraw-068.yml, topic `口香糖包裝的鋸齒邊`, seconds `80`.
 - Audio subjective listening: UNCERTAIN. Do not claim naturalness or full human listening. Default no background music.
 - Main has not been changed by this job; all new work is on the branch above.
