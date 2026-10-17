@@ -1,0 +1,42 @@
+name: Hypit remote installation
+on:
+  pull_request:
+    paths:
+      - '.github/workflows/test-hypit.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  install:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      PUPPETEER_SKIP_DOWNLOAD: 'true'
+    steps:
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install official Hypit executable
+        run: npm install --global @hypit/hypit
+      - name: Verify executable
+        run: |
+          hypit version
+          hypit --help
+      - name: Install official Hypit Skill for Codex
+        run: npx --yes skills add hypit-ai/hypit --skill hypit --global --agent codex --yes
+      - name: Verify installed Skill
+        run: |
+          npx --yes skills list --global --agent codex
+          test -f "$HOME/.agents/skills/hypit/SKILL.md"
+      - name: Record installation
+        run: |
+          mkdir -p verification
+          hypit version > verification/hypit-version.txt
+          hypit --help > verification/hypit-help.txt
+          npm ls --global @hypit/hypit --depth=0 > verification/npm-installation.txt
+          echo 'CLI and Skill installed and checked on an ephemeral GitHub runner. Browser preparation, model credentials and video rendering are not tested.' > verification/scope.txt
+          cat verification/scope.txt >> "$GITHUB_STEP_SUMMARY"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: hypit-installation-verification
+          path: verification/
