@@ -1,0 +1,22 @@
+A hand-drawn black marker doodle explainer illustration on off-white paper,
+vertical infographic with 1 stacked panels separated by thin hand-drawn lines.
+
+Character: a simple solid-black round blob person with two white dot eyes,
+a small curved smile, and thin black stick arms and legs. The body is solid
+flat black with smooth edges (no sketchy texture). The SAME character appears
+in every panel doing a different action.
+
+Style: clean black marker/pen outlines, slightly wobbly but fully closed
+hand-drawn lines. All objects are OUTLINE-ONLY black line-art with white
+interiors, no shading, no fill. Everything is monochrome black & white EXCEPT
+one orange accent color used ONLY for the single key item in each panel.
+Hand-drawn curved arrows in red or blue point at key spots, each with a short
+handwritten Chinese label. Each panel has a bold hand-written marker-style
+Chinese title at the top. Minimalist composition, lots of white space.
+
+Panels:
+One panel. Presenter at left with worried face stands beside a large trousers pocket on right containing a wrapped gum stick; a small sun and upward heat wave symbols above pocket show heat exposure, not refrigeration. One orange sun only. Leave labels blank.
+
+画幅比例:1:1。
+
+Production typography constraint: reserve all title and annotation spaces as blank; do not draw any letters, digits, words or fake text. All final Traditional Chinese and English typography will be added by editable font layers. This is an illustration source for progressive drawing, not a finished text poster. Keep all subjects completely inside generous margins.

@@ -1,0 +1,1 @@
+Compose a one-second 1080x1920 cover using the reviewed official-style-4 bubble illustration, exact editable Traditional Chinese title, and two English vocabulary labels. No generative image editing. White background, black type, orange accent.

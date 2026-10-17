@@ -1,0 +1,1 @@
+Use reviewed source inputs/s0.jpg. Place source at (90,500), size 900x900. Use Noto Sans CJK TC index 3. Exact title lines at x=120 y=200 and y=300: 口香糖包裝 / 的小秘密. Subtitle at x=120 y=1450: Chewing gum × Aluminum foil. Footer at x=120 y=1570: 80秒・英文＋冷知識. Keep generous safe margins.

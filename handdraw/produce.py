@@ -41,8 +41,15 @@ def align_scenes(scenes, events):
                 raise ValueError('Measured sentence boundaries overlap')
             start = result[-1]['end']
         end = selected[-1]['end']
+        cues = [{'text': event['text'], 'start': max(0, event['start'] - start),
+                 'end': event['end'] - start} for event in selected]
+        spoken = ''.join(cue['text'] for cue in cues)
+        if scene['text'].startswith(spoken) and not scene['text'][len(spoken):].strip():
+            cues[-1]['text'] += scene['text'][len(spoken):]
+        elif spoken != scene['text']:
+            raise ValueError('Measured subtitle text differs from the scene text')
         result.append({'id': f's{index}', 'text': scene['text'], 'start': start, 'end': end,
-                       'caption_cues': [{'text': scene['text'], 'start': 0, 'end': end - start}]})
+                       'caption_cues': cues})
     if offset != len(events):
         raise ValueError('Unmapped Edge sentence events')
     return result
@@ -105,13 +112,20 @@ def main(args):
   pages=[]
   for s in scenes:
    pages.append({'beats':[{'id':s['id'],'text':s['text'],'actions':[
-    {'type':'text','text':s['label'],'x':120,'y':250,'size':90,'weight':1},
-    {'type':'illustration','drawing_plan_id':s['id'],'source':'inputs/'+s['id']+'.png','x':120,'y':480,'width':840,'height':840,'weight':5,'parts':s['parts']}]}]})
+    {'type':'text','text':s['label'],'x':s.get('label_x',120),'y':s.get('label_y',250),'size':s.get('label_size',90),'weight':1},
+    {'type':'illustration','drawing_plan_id':s['id'],'source':s.get('source','inputs/'+s['id']+'.png'),'x':120,'y':480,'width':840,'height':840,'weight':5,'parts':s['parts']}]}]})
   manifest={'version':1,'title':story['title'],'design_file':'design.json','canvas':{'width':1080,'height':1920,'fps':30},'paper':'#FFFFFF','font':{'path':font,'index':3},'cover':{'source':'inputs/cover.png','seconds':1},'hand':{'preset':'pen-only','scale':.25,'pen_text':''},'narration':{'source':'inputs/master.wav','alignment':'inputs/alignment.json'},'audio':{'end_hold_seconds':hold},'ending':{'caption_hold_seconds':min(.2,hold)},'captions':{'font':{'path':font,'index':3},'font_size':46,'bottom_margin':210,'max_width_ratio':.9,'max_lines':2,'color':'#FFFFFF','stroke_color':'#151515','stroke_width':3,'background':None},'art_direction':{'record':'design/art-direction.json'},'drawing_plan':'design/drawing-plan.json','drawing_review':'design/drawing-review.json','pages':pages}
   save(root/'job.json',manifest);(root/'script.txt').write_text(text)
+  if story.get('caption_font_size'):
+   manifest['captions']['font_size']=story['caption_font_size']
+   manifest['captions']['stroke_width']=2
+   save(root/'job.json',manifest)
   for stage in ['doctor','build']:run(sys.executable,command,stage,root)
   run(sys.executable,command,'verify',root,'--assets-only')
   run(sys.executable,command,'render',root,'--preview','--start',1,'--duration',7)
+  if args.preview_only:
+   print('PREVIEW_READY',root/'work/review/preview.mp4',flush=True)
+   return
   run(sys.executable,command,'render',root)
   save(receipt,{'bundle_sha256':fingerprint,'official_commit':PIN})
  run(sys.executable,command,'verify',root)
@@ -125,4 +139,4 @@ def main(args):
  save(root/'acceptance.json',report)
  print('VERIFIED_FILM',str(film),json.dumps(report),flush=True)
 if __name__=='__main__':
- p=argparse.ArgumentParser(description=__doc__);p.add_argument('--topic',required=True);p.add_argument('--seconds',type=int,default=30);p.add_argument('--official',required=True);p.add_argument('--output',required=True);main(p.parse_args())
+ p=argparse.ArgumentParser(description=__doc__);p.add_argument('--topic',required=True);p.add_argument('--seconds',type=int,default=30);p.add_argument('--official',required=True);p.add_argument('--output',required=True);p.add_argument('--preview-only',action='store_true');main(p.parse_args())

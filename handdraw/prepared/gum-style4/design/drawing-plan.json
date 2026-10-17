@@ -1,0 +1,1046 @@
+{
+  "illustrations": [
+    {
+      "id": "s0",
+      "composition": "One panel. Presenter at left blowing a single round orange gum bubble at mouth height, attached visibly to mouth; a small unwrapped rectangular gum stick on the right, separated by white space. Leave heading and annotation positions blank for editable text.",
+      "drawability_reason": "Sparse outlines and broad flat bean body; five presenter regions and separated simple props are independently traceable within one spoken idea.",
+      "outline_strategy": "visible_source_ink",
+      "spatial_order": "top_to_bottom_left_to_right",
+      "subjects": [
+        {
+          "id": "presenter",
+          "kind": "human",
+          "omitted_roles": {
+            "neck": "Official bean silhouette has no separate neck.",
+            "right_arm": "Not visible: occluded on bubble-facing side by continuous blob silhouette."
+          },
+          "order_exception": "Face-region contours then blob torso, independent arms, feet. Occluding self-touch arm is assigned first by mask ownership."
+        },
+        {
+          "id": "bubble",
+          "kind": "object"
+        },
+        {
+          "id": "wrapper",
+          "kind": "object"
+        },
+        {
+          "id": "arrows",
+          "kind": "object"
+        },
+        {
+          "id": "panel_frame",
+          "kind": "object"
+        }
+      ],
+      "parts": [
+        {
+          "id": "s0_head",
+          "subject": "presenter",
+          "role": "head",
+          "stroke_groups": [
+            "visible outer contour, pen lift at breaks",
+            "independent visible facial/limb marks only"
+          ]
+        },
+        {
+          "id": "s0_torso",
+          "subject": "presenter",
+          "role": "torso",
+          "stroke_groups": [
+            "visible outer contour, pen lift at breaks",
+            "independent visible facial/limb marks only"
+          ]
+        },
+        {
+          "id": "s0_left_arm",
+          "subject": "presenter",
+          "role": "left_arm",
+          "stroke_groups": [
+            "visible outer contour, pen lift at breaks",
+            "independent visible facial/limb marks only"
+          ]
+        },
+        {
+          "id": "s0_lower_body",
+          "subject": "presenter",
+          "role": "lower_body",
+          "stroke_groups": [
+            "visible outer contour, pen lift at breaks",
+            "independent visible facial/limb marks only"
+          ]
+        },
+        {
+          "id": "s0_bubble",
+          "subject": "bubble",
+          "role": "bubble",
+          "stroke_groups": [
+            "independent visible contour for each separated component",
+            "lift between distinct arrows, teeth, highlights and interior marks"
+          ]
+        },
+        {
+          "id": "s0_wrapper",
+          "subject": "wrapper",
+          "role": "wrapper",
+          "stroke_groups": [
+            "independent visible contour for each separated component",
+            "lift between distinct arrows, teeth, highlights and interior marks"
+          ]
+        },
+        {
+          "id": "s0_arrows",
+          "subject": "arrows",
+          "role": "arrows",
+          "stroke_groups": [
+            "independent visible contour for each separated component",
+            "lift between distinct arrows, teeth, highlights and interior marks"
+          ]
+        },
+        {
+          "id": "s0_frame",
+          "subject": "panel_frame",
+          "role": "panel_frame",
+          "stroke_groups": [
+            "separate outer frame strokes",
+            "separate blank heading box strokes"
+          ]
+        }
+      ],
+      "outline_order": [
+        "s0_head",
+        "s0_torso",
+        "s0_left_arm",
+        "s0_lower_body",
+        "s0_bubble",
+        "s0_wrapper",
+        "s0_arrows",
+        "s0_frame"
+      ],
+      "fill_order": [
+        "s0_head",
+        "s0_torso",
+        "s0_left_arm",
+        "s0_lower_body",
+        "s0_bubble",
+        "s0_wrapper",
+        "s0_arrows",
+        "s0_frame"
+      ],
+      "narrative_requirements": [
+        {
+          "id": "s0_visible",
+          "narration_quote": "口香糖的包裝邊緣，為什麼像一排小鋸齒？學英文吧！口香糖叫 Chewing gum，適合吹泡泡的泡泡糖，則常叫 Bubble gum。",
+          "observable": "One panel. Presenter at left blowing a single round orange gum bubble at mouth height, attached visibly to mouth; a small unwrapped rectangular gum stick on the right, separated by white space. Leave heading and annotation positions blank for editable text."
+        }
+      ],
+      "post_generation_refinement": "Reviewed generated image; refined prop masks and recorded genuinely occluded arm. Original pre-generation plan and receipt preserved separately."
+    },
+    {
+      "id": "s1",
+      "composition": "One panel. Presenter at left points toward one large opened gum wrapper at right with a folded-over corner and clearly serrated top edge. The gum stick remains partially wrapped. A single orange question mark tile below, no writing inside. Leave heading and annotation positions blank.",
+      "drawability_reason": "Sparse outlines and broad flat bean body; five presenter regions and separated simple props are independently traceable within one spoken idea.",
+      "outline_strategy": "visible_source_ink",
+      "spatial_order": "top_to_bottom_left_to_right",
+      "subjects": [
+        {
+          "id": "presenter",
+          "kind": "human",
+          "omitted_roles": {
+            "neck": "Official bean silhouette has no separate neck."
+          },
+          "order_exception": "Face-region contours then blob torso, independent arms, feet. Occluding self-touch arm is assigned first by mask ownership."
+        },
+        {
+          "id": "wrapper",
+          "kind": "object"
+        },
+        {
+          "id": "question",
+          "kind": "object"
+        },
+        {
+          "id": "arrows",
+          "kind": "object"
+        },
+        {
+          "id": "panel_frame",
+          "kind": "object"
+        }
+      ],
+      "parts": [
+        {
+          "id": "s1_head",
+          "subject": "presenter",
+          "role": "head",
+          "stroke_groups": [
+            "visible outer contour, pen lift at breaks",
+            "independent visible facial/limb marks only"
+          ]
+        },
+        {
+          "id": "s1_torso",
+          "subject": "presenter",
+          "role": "torso",
+          "stroke_groups": [
+            "visible outer contour, pen lift at breaks",
+            "independent visible facial/limb marks only"
+          ]
+        },
+        {
+          "id": "s1_left_arm",
+          "subject": "presenter",
+          "role": "left_arm",
+          "stroke_groups": [
+            "visible outer contour, pen lift at breaks",
+            "independent visible facial/limb marks only"
+          ]
+        },
+        {
+          "id": "s1_right_arm",
+          "subject": "presenter",
+          "role": "right_arm",
+          "stroke_groups": [
+            "visible outer contour, pen lift at breaks",
+            "independent visible facial/limb marks only"
+          ]
+        },
+        {
+          "id": "s1_lower_body",
+          "subject": "presenter",
+          "role": "lower_body",
+          "stroke_groups": [
+            "visible outer contour, pen lift at breaks",
+            "independent visible facial/limb marks only"
+          ]
+        },
+        {
+          "id": "s1_wrapper",
+          "subject": "wrapper",
+          "role": "wrapper",
+          "stroke_groups": [
+            "independent visible contour for each separated component",
+            "lift between distinct arrows, teeth, highlights and interior marks"
+          ]
+        },
+        {
+          "id": "s1_question",
+          "subject": "question",
+          "role": "question",
+          "stroke_groups": [
+            "independent visible contour for each separated component",
+            "lift between distinct arrows, teeth, highlights and interior marks"
+          ]
+        },
+        {
+          "id": "s1_arrows",
+          "subject": "arrows",
+          "role": "arrows",
+          "stroke_groups": [
+            "independent visible contour for each separated component",
+            "lift between distinct arrows, teeth, highlights and interior marks"
+          ]
+        },
+        {
+          "id": "s1_frame",
+          "subject": "panel_frame",
+          "role": "panel_frame",
+          "stroke_groups": [
+            "separate outer frame strokes",
+            "separate blank heading box strokes"
+          ]
+        }
+      ],
+      "outline_order": [
+        "s1_head",
+        "s1_torso",
+        "s1_left_arm",
+        "s1_right_arm",
+        "s1_lower_body",
+        "s1_wrapper",
+        "s1_question",
+        "s1_arrows",
+        "s1_frame"
+      ],
+      "fill_order": [
+        "s1_head",
+        "s1_torso",
+        "s1_left_arm",
+        "s1_right_arm",
+        "s1_lower_body",
+        "s1_wrapper",
+        "s1_question",
+        "s1_arrows",
+        "s1_frame"
+      ],
+      "narrative_requirements": [
+        {
+          "id": "s1_visible",
+          "narration_quote": "打開片狀口香糖，你可能看見一張亮亮的包裝。先猜猜，它是為了防止誤食、方便生產，還是純粹裝飾？",
+          "observable": "One panel. Presenter at left points toward one large opened gum wrapper at right with a folded-over corner and clearly serrated top edge. The gum stick remains partially wrapped. A single orange question mark tile below, no writing inside. Leave heading and annotation positions blank."
+        }
+      ],
+      "post_generation_refinement": "Reviewed generated image; refined prop masks and recorded genuinely occluded arm. Original pre-generation plan and receipt preserved separately."
+    },
+    {
+      "id": "s2",
+      "composition": "One panel. Presenter at left examines a separated three-layer wrapper diagram on right: top foil sheet, middle paper sheet and thin bottom coating, offset vertically, with generous white gaps, no literal chemical structure. One small orange sample tab only. Leave titles and labels blank.",
+      "drawability_reason": "Sparse outlines and broad flat bean body; five presenter regions and separated simple props are independently traceable within one spoken idea.",
+      "outline_strategy": "visible_source_ink",
+      "spatial_order": "top_to_bottom_left_to_right",
+      "subjects": [
+        {
+          "id": "presenter",
+          "kind": "human",
+          "omitted_roles": {
+            "neck": "Official bean silhouette has no separate neck."
+          },
+          "order_exception": "Face-region contours then blob torso, independent arms, feet. Occluding self-touch arm is assigned first by mask ownership."
+        },
+        {
+          "id": "foil",
+          "kind": "object"
+        },
+        {
+          "id": "paper",
+          "kind": "object"
+        },
+        {
+          "id": "coating",
+          "kind": "object"
+        },
+        {
+          "id": "sample",
+          "kind": "object"
+        },
+        {
+          "id": "arrows",
+          "kind": "object"
+        },
+        {
+          "id": "panel_frame",
+          "kind": "object"
+        }
+      ],
+      "parts": [
+        {
+          "id": "s2_head",
+          "subject": "presenter",
+          "role": "head",
+          "stroke_groups": [
+            "visible outer contour, pen lift at breaks",
+            "independent visible facial/limb marks only"
+          ]
+        },
+        {
+          "id": "s2_torso",
+          "subject": "presenter",
+          "role": "torso",
+          "stroke_groups": [
+            "visible outer contour, pen lift at breaks",
+            "independent visible facial/limb marks only"
+          ]
+        },
+        {
+          "id": "s2_left_arm",
+          "subject": "presenter",
+          "role": "left_arm",
+          "stroke_groups": [
+            "visible outer contour, pen lift at breaks",
+            "independent visible facial/limb marks only"
+          ]
+        },
+        {
+          "id": "s2_right_arm",
+          "subject": "presenter",
+          "role": "right_arm",
+          "stroke_groups": [
+            "visible outer contour, pen lift at breaks",
+            "independent visible facial/limb marks only"
+          ]
+        },
+        {
+          "id": "s2_lower_body",
+          "subject": "presenter",
+          "role": "lower_body",
+          "stroke_groups": [
+            "visible outer contour, pen lift at breaks",
+            "independent visible facial/limb marks only"
+          ]
+        },
+        {
+          "id": "s2_foil",
+          "subject": "foil",
+          "role": "foil",
+          "stroke_groups": [
+            "independent visible contour for each separated component",
+            "lift between distinct arrows, teeth, highlights and interior marks"
+          ]
+        },
+        {
+          "id": "s2_paper",
+          "subject": "paper",
+          "role": "paper",
+          "stroke_groups": [
+            "independent visible contour for each separated component",
+            "lift between distinct arrows, teeth, highlights and interior marks"
+          ]
+        },
+        {
+          "id": "s2_coating",
+          "subject": "coating",
+          "role": "coating",
+          "stroke_groups": [
+            "independent visible contour for each separated component",
+            "lift between distinct arrows, teeth, highlights and interior marks"
+          ]
+        },
+        {
+          "id": "s2_sample",
+          "subject": "sample",
+          "role": "sample",
+          "stroke_groups": [
+            "independent visible contour for each separated component",
+            "lift between distinct arrows, teeth, highlights and interior marks"
+          ]
+        },
+        {
+          "id": "s2_arrows",
+          "subject": "arrows",
+          "role": "arrows",
+          "stroke_groups": [
+            "independent visible contour for each separated component",
+            "lift between distinct arrows, teeth, highlights and interior marks"
+          ]
+        },
+        {
+          "id": "s2_frame",
+          "subject": "panel_frame",
+          "role": "panel_frame",
+          "stroke_groups": [
+            "separate outer frame strokes",
+            "separate blank heading box strokes"
+          ]
+        }
+      ],
+      "outline_order": [
+        "s2_head",
+        "s2_torso",
+        "s2_left_arm",
+        "s2_right_arm",
+        "s2_lower_body",
+        "s2_foil",
+        "s2_paper",
+        "s2_coating",
+        "s2_sample",
+        "s2_arrows",
+        "s2_frame"
+      ],
+      "fill_order": [
+        "s2_head",
+        "s2_torso",
+        "s2_left_arm",
+        "s2_right_arm",
+        "s2_lower_body",
+        "s2_foil",
+        "s2_paper",
+        "s2_coating",
+        "s2_sample",
+        "s2_arrows",
+        "s2_frame"
+      ],
+      "narrative_requirements": [
+        {
+          "id": "s2_visible",
+          "narration_quote": "這種材料常被叫作錫紙，但現在常見的是鋁箔，英文是 Aluminum foil。不過，亮銀色不等於整張都是鋁，口香糖包材也可能是紙、鋁箔與塗層組成的複合材料。",
+          "observable": "One panel. Presenter at left examines a separated three-layer wrapper diagram on right: top foil sheet, middle paper sheet and thin bottom coating, offset vertically, with generous white gaps, no literal chemical structure. One small orange sample tab only. Leave titles and labels blank."
+        }
+      ],
+      "post_generation_refinement": "Reviewed generated image; refined prop masks and recorded genuinely occluded arm. Original pre-generation plan and receipt preserved separately."
+    },
+    {
+      "id": "s3",
+      "composition": "One panel. Presenter at left points toward an intact folded wrapper around a rectangular gum stick on right. Three separate arrows from above stop outside the wrapper, indicating schematic barriers; one arrow orange. No protective superhero shield. Leave labels blank.",
+      "drawability_reason": "Sparse outlines and broad flat bean body; five presenter regions and separated simple props are independently traceable within one spoken idea.",
+      "outline_strategy": "visible_source_ink",
+      "spatial_order": "top_to_bottom_left_to_right",
+      "subjects": [
+        {
+          "id": "presenter",
+          "kind": "human",
+          "omitted_roles": {
+            "neck": "Official bean silhouette has no separate neck."
+          },
+          "order_exception": "Face-region contours then blob torso, independent arms, feet. Occluding self-touch arm is assigned first by mask ownership."
+        },
+        {
+          "id": "wrapper",
+          "kind": "object"
+        },
+        {
+          "id": "arrows",
+          "kind": "object"
+        },
+        {
+          "id": "panel_frame",
+          "kind": "object"
+        }
+      ],
+      "parts": [
+        {
+          "id": "s3_head",
+          "subject": "presenter",
+          "role": "head",
+          "stroke_groups": [
+            "visible outer contour, pen lift at breaks",
+            "independent visible facial/limb marks only"
+          ]
+        },
+        {
+          "id": "s3_torso",
+          "subject": "presenter",
+          "role": "torso",
+          "stroke_groups": [
+            "visible outer contour, pen lift at breaks",
+            "independent visible facial/limb marks only"
+          ]
+        },
+        {
+          "id": "s3_left_arm",
+          "subject": "presenter",
+          "role": "left_arm",
+          "stroke_groups": [
+            "visible outer contour, pen lift at breaks",
+            "independent visible facial/limb marks only"
+          ]
+        },
+        {
+          "id": "s3_right_arm",
+          "subject": "presenter",
+          "role": "right_arm",
+          "stroke_groups": [
+            "visible outer contour, pen lift at breaks",
+            "independent visible facial/limb marks only"
+          ]
+        },
+        {
+          "id": "s3_lower_body",
+          "subject": "presenter",
+          "role": "lower_body",
+          "stroke_groups": [
+            "visible outer contour, pen lift at breaks",
+            "independent visible facial/limb marks only"
+          ]
+        },
+        {
+          "id": "s3_wrapper",
+          "subject": "wrapper",
+          "role": "wrapper",
+          "stroke_groups": [
+            "independent visible contour for each separated component",
+            "lift between distinct arrows, teeth, highlights and interior marks"
+          ]
+        },
+        {
+          "id": "s3_arrows",
+          "subject": "arrows",
+          "role": "arrows",
+          "stroke_groups": [
+            "independent visible contour for each separated component",
+            "lift between distinct arrows, teeth, highlights and interior marks"
+          ]
+        },
+        {
+          "id": "s3_frame",
+          "subject": "panel_frame",
+          "role": "panel_frame",
+          "stroke_groups": [
+            "separate outer frame strokes",
+            "separate blank heading box strokes"
+          ]
+        }
+      ],
+      "outline_order": [
+        "s3_head",
+        "s3_torso",
+        "s3_left_arm",
+        "s3_right_arm",
+        "s3_lower_body",
+        "s3_wrapper",
+        "s3_arrows",
+        "s3_frame"
+      ],
+      "fill_order": [
+        "s3_head",
+        "s3_torso",
+        "s3_left_arm",
+        "s3_right_arm",
+        "s3_lower_body",
+        "s3_wrapper",
+        "s3_arrows",
+        "s3_frame"
+      ],
+      "narrative_requirements": [
+        {
+          "id": "s3_visible",
+          "narration_quote": "鋁箔的重要本領，是阻隔光線、氣體與濕氣，幫助保存風味。但包裝有沒有封好、材料有沒有破損，同樣重要。它可不是讓口香糖永遠新鮮的魔法盾牌！",
+          "observable": "One panel. Presenter at left points toward an intact folded wrapper around a rectangular gum stick on right. Three separate arrows from above stop outside the wrapper, indicating schematic barriers; one arrow orange. No protective superhero shield. Leave labels blank."
+        }
+      ],
+      "post_generation_refinement": "Reviewed generated image; refined prop masks and recorded genuinely occluded arm. Original pre-generation plan and receipt preserved separately."
+    },
+    {
+      "id": "s4",
+      "composition": "One panel. Presenter at left with worried face stands beside a large trousers pocket on right containing a wrapped gum stick; a small sun and upward heat wave symbols above pocket show heat exposure, not refrigeration. One orange sun only. Leave labels blank.",
+      "drawability_reason": "Sparse outlines and broad flat bean body; five presenter regions and separated simple props are independently traceable within one spoken idea.",
+      "outline_strategy": "visible_source_ink",
+      "spatial_order": "top_to_bottom_left_to_right",
+      "subjects": [
+        {
+          "id": "presenter",
+          "kind": "human",
+          "omitted_roles": {
+            "neck": "Official bean silhouette has no separate neck."
+          },
+          "order_exception": "Face-region contours then blob torso, independent arms, feet. Occluding self-touch arm is assigned first by mask ownership."
+        },
+        {
+          "id": "heat",
+          "kind": "object"
+        },
+        {
+          "id": "pocket",
+          "kind": "object"
+        },
+        {
+          "id": "arrows",
+          "kind": "object"
+        },
+        {
+          "id": "panel_frame",
+          "kind": "object"
+        }
+      ],
+      "parts": [
+        {
+          "id": "s4_head",
+          "subject": "presenter",
+          "role": "head",
+          "stroke_groups": [
+            "visible outer contour, pen lift at breaks",
+            "independent visible facial/limb marks only"
+          ]
+        },
+        {
+          "id": "s4_torso",
+          "subject": "presenter",
+          "role": "torso",
+          "stroke_groups": [
+            "visible outer contour, pen lift at breaks",
+            "independent visible facial/limb marks only"
+          ]
+        },
+        {
+          "id": "s4_left_arm",
+          "subject": "presenter",
+          "role": "left_arm",
+          "stroke_groups": [
+            "visible outer contour, pen lift at breaks",
+            "independent visible facial/limb marks only"
+          ]
+        },
+        {
+          "id": "s4_right_arm",
+          "subject": "presenter",
+          "role": "right_arm",
+          "stroke_groups": [
+            "visible outer contour, pen lift at breaks",
+            "independent visible facial/limb marks only"
+          ]
+        },
+        {
+          "id": "s4_lower_body",
+          "subject": "presenter",
+          "role": "lower_body",
+          "stroke_groups": [
+            "visible outer contour, pen lift at breaks",
+            "independent visible facial/limb marks only"
+          ]
+        },
+        {
+          "id": "s4_heat",
+          "subject": "heat",
+          "role": "heat",
+          "stroke_groups": [
+            "independent visible contour for each separated component",
+            "lift between distinct arrows, teeth, highlights and interior marks"
+          ]
+        },
+        {
+          "id": "s4_pocket",
+          "subject": "pocket",
+          "role": "pocket",
+          "stroke_groups": [
+            "independent visible contour for each separated component",
+            "lift between distinct arrows, teeth, highlights and interior marks"
+          ]
+        },
+        {
+          "id": "s4_arrows",
+          "subject": "arrows",
+          "role": "arrows",
+          "stroke_groups": [
+            "independent visible contour for each separated component",
+            "lift between distinct arrows, teeth, highlights and interior marks"
+          ]
+        },
+        {
+          "id": "s4_frame",
+          "subject": "panel_frame",
+          "role": "panel_frame",
+          "stroke_groups": [
+            "separate outer frame strokes",
+            "separate blank heading box strokes"
+          ]
+        }
+      ],
+      "outline_order": [
+        "s4_head",
+        "s4_torso",
+        "s4_left_arm",
+        "s4_right_arm",
+        "s4_lower_body",
+        "s4_heat",
+        "s4_pocket",
+        "s4_arrows",
+        "s4_frame"
+      ],
+      "fill_order": [
+        "s4_head",
+        "s4_torso",
+        "s4_left_arm",
+        "s4_right_arm",
+        "s4_lower_body",
+        "s4_heat",
+        "s4_pocket",
+        "s4_arrows",
+        "s4_frame"
+      ],
+      "narrative_requirements": [
+        {
+          "id": "s4_visible",
+          "narration_quote": "還有一個誤會：包著鋁箔，就不怕夏天悶熱？錯！反光不代表放進口袋也能隔絕熱量。口香糖還是應該依照包裝指示，避免高溫保存。",
+          "observable": "One panel. Presenter at left with worried face stands beside a large trousers pocket on right containing a wrapped gum stick; a small sun and upward heat wave symbols above pocket show heat exposure, not refrigeration. One orange sun only. Leave labels blank."
+        }
+      ],
+      "post_generation_refinement": "Reviewed generated image; refined prop masks and recorded genuinely occluded arm. Original pre-generation plan and receipt preserved separately."
+    },
+    {
+      "id": "s5",
+      "composition": "One panel. Presenter at left, arms away from machine, observes a schematic serrated cutter above a flat strip of wrapping paper on right; cutter physically above paper with two cut sheets separated below; no hand touching blade. One orange cut sheet. Leave labels blank.",
+      "drawability_reason": "Sparse outlines and broad flat bean body; five presenter regions and separated simple props are independently traceable within one spoken idea.",
+      "outline_strategy": "visible_source_ink",
+      "spatial_order": "top_to_bottom_left_to_right",
+      "subjects": [
+        {
+          "id": "presenter",
+          "kind": "human",
+          "omitted_roles": {
+            "neck": "Official bean silhouette has no separate neck."
+          },
+          "order_exception": "Face-region contours then blob torso, independent arms, feet. Occluding self-touch arm is assigned first by mask ownership."
+        },
+        {
+          "id": "cutter",
+          "kind": "object"
+        },
+        {
+          "id": "roll",
+          "kind": "object"
+        },
+        {
+          "id": "sheets",
+          "kind": "object"
+        },
+        {
+          "id": "arrows",
+          "kind": "object"
+        },
+        {
+          "id": "panel_frame",
+          "kind": "object"
+        }
+      ],
+      "parts": [
+        {
+          "id": "s5_head",
+          "subject": "presenter",
+          "role": "head",
+          "stroke_groups": [
+            "visible outer contour, pen lift at breaks",
+            "independent visible facial/limb marks only"
+          ]
+        },
+        {
+          "id": "s5_torso",
+          "subject": "presenter",
+          "role": "torso",
+          "stroke_groups": [
+            "visible outer contour, pen lift at breaks",
+            "independent visible facial/limb marks only"
+          ]
+        },
+        {
+          "id": "s5_left_arm",
+          "subject": "presenter",
+          "role": "left_arm",
+          "stroke_groups": [
+            "visible outer contour, pen lift at breaks",
+            "independent visible facial/limb marks only"
+          ]
+        },
+        {
+          "id": "s5_right_arm",
+          "subject": "presenter",
+          "role": "right_arm",
+          "stroke_groups": [
+            "visible outer contour, pen lift at breaks",
+            "independent visible facial/limb marks only"
+          ]
+        },
+        {
+          "id": "s5_lower_body",
+          "subject": "presenter",
+          "role": "lower_body",
+          "stroke_groups": [
+            "visible outer contour, pen lift at breaks",
+            "independent visible facial/limb marks only"
+          ]
+        },
+        {
+          "id": "s5_cutter",
+          "subject": "cutter",
+          "role": "cutter",
+          "stroke_groups": [
+            "independent visible contour for each separated component",
+            "lift between distinct arrows, teeth, highlights and interior marks"
+          ]
+        },
+        {
+          "id": "s5_roll",
+          "subject": "roll",
+          "role": "roll",
+          "stroke_groups": [
+            "independent visible contour for each separated component",
+            "lift between distinct arrows, teeth, highlights and interior marks"
+          ]
+        },
+        {
+          "id": "s5_sheets",
+          "subject": "sheets",
+          "role": "sheets",
+          "stroke_groups": [
+            "independent visible contour for each separated component",
+            "lift between distinct arrows, teeth, highlights and interior marks"
+          ]
+        },
+        {
+          "id": "s5_arrows",
+          "subject": "arrows",
+          "role": "arrows",
+          "stroke_groups": [
+            "independent visible contour for each separated component",
+            "lift between distinct arrows, teeth, highlights and interior marks"
+          ]
+        },
+        {
+          "id": "s5_frame",
+          "subject": "panel_frame",
+          "role": "panel_frame",
+          "stroke_groups": [
+            "separate outer frame strokes",
+            "separate blank heading box strokes"
+          ]
+        }
+      ],
+      "outline_order": [
+        "s5_head",
+        "s5_torso",
+        "s5_left_arm",
+        "s5_right_arm",
+        "s5_lower_body",
+        "s5_cutter",
+        "s5_roll",
+        "s5_sheets",
+        "s5_arrows",
+        "s5_frame"
+      ],
+      "fill_order": [
+        "s5_head",
+        "s5_torso",
+        "s5_left_arm",
+        "s5_right_arm",
+        "s5_lower_body",
+        "s5_cutter",
+        "s5_roll",
+        "s5_sheets",
+        "s5_arrows",
+        "s5_frame"
+      ],
+      "narrative_requirements": [
+        {
+          "id": "s5_visible",
+          "narration_quote": "至於鋸齒邊，包裝機確實會使用鋸齒或齒形刀具裁切材料，但不同品牌的製程不一樣，不能只看邊緣，就斷言它一定是為了防割手。鋸齒也不代表絕對安全，別拿手指來回刮！",
+          "observable": "One panel. Presenter at left, arms away from machine, observes a schematic serrated cutter above a flat strip of wrapping paper on right; cutter physically above paper with two cut sheets separated below; no hand touching blade. One orange cut sheet. Leave labels blank."
+        }
+      ],
+      "post_generation_refinement": "Reviewed generated image; refined prop masks and recorded genuinely occluded arm. Original pre-generation plan and receipt preserved separately."
+    },
+    {
+      "id": "s6",
+      "composition": "One panel. Presenter at left waves goodbye; at right, a plain gum stick above and a separate open wrapper below, clearly distinct objects. One orange gum stick only. Leave title and vocabulary labels blank for later exact typesetting.",
+      "drawability_reason": "Sparse outlines and broad flat bean body; five presenter regions and separated simple props are independently traceable within one spoken idea.",
+      "outline_strategy": "visible_source_ink",
+      "spatial_order": "top_to_bottom_left_to_right",
+      "subjects": [
+        {
+          "id": "presenter",
+          "kind": "human",
+          "omitted_roles": {
+            "neck": "Official bean silhouette has no separate neck."
+          },
+          "order_exception": "Face-region contours then blob torso, independent arms, feet. Occluding self-touch arm is assigned first by mask ownership."
+        },
+        {
+          "id": "gum",
+          "kind": "object"
+        },
+        {
+          "id": "wrapper",
+          "kind": "object"
+        },
+        {
+          "id": "arrows",
+          "kind": "object"
+        },
+        {
+          "id": "panel_frame",
+          "kind": "object"
+        }
+      ],
+      "parts": [
+        {
+          "id": "s6_head",
+          "subject": "presenter",
+          "role": "head",
+          "stroke_groups": [
+            "visible outer contour, pen lift at breaks",
+            "independent visible facial/limb marks only"
+          ]
+        },
+        {
+          "id": "s6_torso",
+          "subject": "presenter",
+          "role": "torso",
+          "stroke_groups": [
+            "visible outer contour, pen lift at breaks",
+            "independent visible facial/limb marks only"
+          ]
+        },
+        {
+          "id": "s6_left_arm",
+          "subject": "presenter",
+          "role": "left_arm",
+          "stroke_groups": [
+            "visible outer contour, pen lift at breaks",
+            "independent visible facial/limb marks only"
+          ]
+        },
+        {
+          "id": "s6_right_arm",
+          "subject": "presenter",
+          "role": "right_arm",
+          "stroke_groups": [
+            "visible outer contour, pen lift at breaks",
+            "independent visible facial/limb marks only"
+          ]
+        },
+        {
+          "id": "s6_lower_body",
+          "subject": "presenter",
+          "role": "lower_body",
+          "stroke_groups": [
+            "visible outer contour, pen lift at breaks",
+            "independent visible facial/limb marks only"
+          ]
+        },
+        {
+          "id": "s6_gum",
+          "subject": "gum",
+          "role": "gum",
+          "stroke_groups": [
+            "independent visible contour for each separated component",
+            "lift between distinct arrows, teeth, highlights and interior marks"
+          ]
+        },
+        {
+          "id": "s6_wrapper",
+          "subject": "wrapper",
+          "role": "wrapper",
+          "stroke_groups": [
+            "independent visible contour for each separated component",
+            "lift between distinct arrows, teeth, highlights and interior marks"
+          ]
+        },
+        {
+          "id": "s6_arrows",
+          "subject": "arrows",
+          "role": "arrows",
+          "stroke_groups": [
+            "independent visible contour for each separated component",
+            "lift between distinct arrows, teeth, highlights and interior marks"
+          ]
+        },
+        {
+          "id": "s6_frame",
+          "subject": "panel_frame",
+          "role": "panel_frame",
+          "stroke_groups": [
+            "separate outer frame strokes",
+            "separate blank heading box strokes"
+          ]
+        }
+      ],
+      "outline_order": [
+        "s6_head",
+        "s6_torso",
+        "s6_left_arm",
+        "s6_right_arm",
+        "s6_lower_body",
+        "s6_gum",
+        "s6_wrapper",
+        "s6_arrows",
+        "s6_frame"
+      ],
+      "fill_order": [
+        "s6_head",
+        "s6_torso",
+        "s6_left_arm",
+        "s6_right_arm",
+        "s6_lower_body",
+        "s6_gum",
+        "s6_wrapper",
+        "s6_arrows",
+        "s6_frame"
+      ],
+      "narrative_requirements": [
+        {
+          "id": "s6_visible",
+          "narration_quote": "Chewing gum 是口香糖，Aluminum foil 是鋁箔。小小一張包裝，藏著材料與製造的學問。",
+          "observable": "One panel. Presenter at left waves goodbye; at right, a plain gum stick above and a separate open wrapper below, clearly distinct objects. One orange gum stick only. Leave title and vocabulary labels blank for later exact typesetting."
+        }
+      ],
+      "post_generation_refinement": "Reviewed generated image; refined prop masks and recorded genuinely occluded arm. Original pre-generation plan and receipt preserved separately."
+    }
+  ]
+}

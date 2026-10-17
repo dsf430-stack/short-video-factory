@@ -1,0 +1,132 @@
+{
+  "style_sha256": "3011eba2e2dfd04c8d2fcf92ed47dc9422c4ba384c680de2f9af9c095e58bfea",
+  "plan_sha256": "eb66ec769bd634fac8bdfcc197350b8354c60361de0e0158640a693a5cf1d2ae",
+  "illustrations": [
+    {
+      "plan_id": "s0",
+      "status": "pass",
+      "source_sha256": "e5afbd1ed1bbdbc6aab19ce59c1d4dd521a45db5a091bd6598ee4b04cfb5d00c",
+      "crop": null,
+      "anatomy_and_occlusion": "Solid blob head/torso with no distinct neck; arms and legs inspected. Bubble-facing arm not visible; recorded omitted.",
+      "part_boundaries": "Polygons follow actual bean face, torso, screen-left/right arms, feet and separate semantic props. Broad frame region receives only remaining pixels after all semantic masks.",
+      "stroke_breaks": "Disconnected eye/mouth marks, limb ends, wrapper folds, tooth tips and separate arrows require pen lifts.",
+      "outline_then_fill": "Visible black source ink is separate from orange color; complete contour stage precedes fill for every scene.",
+      "spatial_order": "Face then torso, separate arm contours and feet, then semantic packaging props; frame last avoids frame ownership leaking into anatomy.",
+      "narrative_checks": [
+        {
+          "id": "s0_visible",
+          "status": "pass",
+          "evidence": "Visible bubble attached to bean mouth and separate wrapped stick; bubble is only orange object; no baked text."
+        }
+      ]
+    },
+    {
+      "plan_id": "s1",
+      "status": "pass",
+      "source_sha256": "7d84a8855e33ce9c188497b91f8e3c7b825be4729695cb0b44b450631b3f793b",
+      "crop": null,
+      "anatomy_and_occlusion": "Solid blob head/torso with no distinct neck; arms and legs inspected. Both visible arm regions assigned separately; no invented hand contact.",
+      "part_boundaries": "Polygons follow actual bean face, torso, screen-left/right arms, feet and separate semantic props. Broad frame region receives only remaining pixels after all semantic masks.",
+      "stroke_breaks": "Disconnected eye/mouth marks, limb ends, wrapper folds, tooth tips and separate arrows require pen lifts.",
+      "outline_then_fill": "Visible black source ink is separate from orange color; complete contour stage precedes fill for every scene.",
+      "spatial_order": "Face then torso, separate arm contours and feet, then semantic packaging props; frame last avoids frame ownership leaking into anatomy.",
+      "narrative_checks": [
+        {
+          "id": "s1_visible",
+          "status": "pass",
+          "evidence": "Large open wrapper visibly has sawtooth edges and folded corner; pointing bean and question tile support packaging question."
+        }
+      ]
+    },
+    {
+      "plan_id": "s2",
+      "status": "pass",
+      "source_sha256": "822e75249754d7a133052343d90630930a0493531630e8ab078ed5766d9f9fe4",
+      "crop": null,
+      "anatomy_and_occlusion": "Solid blob head/torso with no distinct neck; arms and legs inspected. Both visible arm regions assigned separately; no invented hand contact.",
+      "part_boundaries": "Polygons follow actual bean face, torso, screen-left/right arms, feet and separate semantic props. Broad frame region receives only remaining pixels after all semantic masks.",
+      "stroke_breaks": "Disconnected eye/mouth marks, limb ends, wrapper folds, tooth tips and separate arrows require pen lifts.",
+      "outline_then_fill": "Visible black source ink is separate from orange color; complete contour stage precedes fill for every scene.",
+      "spatial_order": "Face then torso, separate arm contours and feet, then semantic packaging props; frame last avoids frame ownership leaking into anatomy.",
+      "narrative_checks": [
+        {
+          "id": "s2_visible",
+          "status": "pass",
+          "evidence": "Three separated wrapper sheets and sample tab visibly support composite-layer explanation; schematic, not a literal cross-section scale claim."
+        }
+      ]
+    },
+    {
+      "plan_id": "s3",
+      "status": "pass",
+      "source_sha256": "bc9196a0a201230de0f4866153debf8c1bd8c09490e7a3a1396ae34322883f96",
+      "crop": null,
+      "anatomy_and_occlusion": "Solid blob head/torso with no distinct neck; arms and legs inspected. Both visible arm regions assigned separately; no invented hand contact.",
+      "part_boundaries": "Polygons follow actual bean face, torso, screen-left/right arms, feet and separate semantic props. Broad frame region receives only remaining pixels after all semantic masks.",
+      "stroke_breaks": "Disconnected eye/mouth marks, limb ends, wrapper folds, tooth tips and separate arrows require pen lifts.",
+      "outline_then_fill": "Visible black source ink is separate from orange color; complete contour stage precedes fill for every scene.",
+      "spatial_order": "Face then torso, separate arm contours and feet, then semantic packaging props; frame last avoids frame ownership leaking into anatomy.",
+      "narrative_checks": [
+        {
+          "id": "s3_visible",
+          "status": "pass",
+          "evidence": "Three arrows stop above intact wrapper outline; these are barrier symbols rather than literal rays or guaranteed hermetic sealing."
+        }
+      ]
+    },
+    {
+      "plan_id": "s4",
+      "status": "pass",
+      "source_sha256": "5278394b4558bf94069b1c8392c09a27e03bc0a479172a13f261d3f02d4b1922",
+      "crop": null,
+      "anatomy_and_occlusion": "Solid blob head/torso with no distinct neck; arms and legs inspected. Both visible arm regions assigned separately; no invented hand contact.",
+      "part_boundaries": "Polygons follow actual bean face, torso, screen-left/right arms, feet and separate semantic props. Broad frame region receives only remaining pixels after all semantic masks.",
+      "stroke_breaks": "Disconnected eye/mouth marks, limb ends, wrapper folds, tooth tips and separate arrows require pen lifts.",
+      "outline_then_fill": "Visible black source ink is separate from orange color; complete contour stage precedes fill for every scene.",
+      "spatial_order": "Face then torso, separate arm contours and feet, then semantic packaging props; frame last avoids frame ownership leaking into anatomy.",
+      "narrative_checks": [
+        {
+          "id": "s4_visible",
+          "status": "pass",
+          "evidence": "Wrapped gum protrudes from pocket and heat symbols appear above; worried bean supports caution about heat; symbolic colors are emphasis."
+        }
+      ]
+    },
+    {
+      "plan_id": "s5",
+      "status": "pass",
+      "source_sha256": "512a61274dec80ba7cfe39fa653f3e74dd1eca8892ff1750bdaf8e41c51760ce",
+      "crop": null,
+      "anatomy_and_occlusion": "Solid blob head/torso with no distinct neck; arms and legs inspected. Both visible arm regions assigned separately; no invented hand contact.",
+      "part_boundaries": "Polygons follow actual bean face, torso, screen-left/right arms, feet and separate semantic props. Broad frame region receives only remaining pixels after all semantic masks.",
+      "stroke_breaks": "Disconnected eye/mouth marks, limb ends, wrapper folds, tooth tips and separate arrows require pen lifts.",
+      "outline_then_fill": "Visible black source ink is separate from orange color; complete contour stage precedes fill for every scene.",
+      "spatial_order": "Face then torso, separate arm contours and feet, then semantic packaging props; frame last avoids frame ownership leaking into anatomy.",
+      "narrative_checks": [
+        {
+          "id": "s5_visible",
+          "status": "pass",
+          "evidence": "Toothed cutter sits above paper roll; cut sheets are below; presenter hands remain away from blade. This is a generic manufacturing schematic."
+        }
+      ]
+    },
+    {
+      "plan_id": "s6",
+      "status": "pass",
+      "source_sha256": "963435dc9f4b23f38de0e9408f7f2666ff3eb806f0145067063b1aa018cedb01",
+      "crop": null,
+      "anatomy_and_occlusion": "Solid blob head/torso with no distinct neck; arms and legs inspected. Both visible arm regions assigned separately; no invented hand contact.",
+      "part_boundaries": "Polygons follow actual bean face, torso, screen-left/right arms, feet and separate semantic props. Broad frame region receives only remaining pixels after all semantic masks.",
+      "stroke_breaks": "Disconnected eye/mouth marks, limb ends, wrapper folds, tooth tips and separate arrows require pen lifts.",
+      "outline_then_fill": "Visible black source ink is separate from orange color; complete contour stage precedes fill for every scene.",
+      "spatial_order": "Face then torso, separate arm contours and feet, then semantic packaging props; frame last avoids frame ownership leaking into anatomy.",
+      "narrative_checks": [
+        {
+          "id": "s6_visible",
+          "status": "pass",
+          "evidence": "Separate gum stick and wrapper are visible beside waving bean, suitable for vocabulary recap."
+        }
+      ]
+    }
+  ]
+}

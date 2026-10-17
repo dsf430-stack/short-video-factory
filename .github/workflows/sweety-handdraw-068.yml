@@ -1,5 +1,5 @@
 name: Sweety 手繪影片 · 068
-run-name: "Sweety 068 · ${{ inputs.topic || '一滴水如何變成雨' }}"
+run-name: "Sweety 068 · ${{ inputs.topic || (github.ref_name == 'render/gum-style4-80s' && '口香糖包裝的鋸齒邊' || '一滴水如何變成雨') }}"
 on:
   workflow_dispatch:
     inputs:
@@ -8,6 +8,11 @@ on:
         required: true
         default: 一滴水如何變成雨
         type: string
+      seconds:
+        description: 目標成片秒數（旁白必須自然符合，不能截斷或變速）
+        required: true
+        default: 30
+        type: number
   push:
     branches: [integration/sweety-handdraw-068, render/gum-style4-80s]
     paths: ['.github/workflows/sweety-handdraw-068.yml', 'handdraw/**']
@@ -50,7 +55,7 @@ jobs:
       - name: Identify resumable topic job
         id: topic
         env:
-          TOPIC: ${{ inputs.topic || '一滴水如何變成雨' }}
+          TOPIC: ${{ inputs.topic || (github.ref_name == 'render/gum-style4-80s' && '口香糖包裝的鋸齒邊' || '一滴水如何變成雨') }}
         run: |
           python - <<'PY'
           import os, hashlib
@@ -64,18 +69,36 @@ jobs:
             handdraw/output
             smart_voice/output/.068-cache
           key: sweety-prepared-v1-${{ steps.topic.outputs.key }}-${{ github.run_id }}-${{ github.run_attempt }}
-          restore-keys: sweety-prepared-v1-${{ steps.topic.outputs.key }}-
-      - name: Measure requested 068 narration before locking storyboard
+          restore-keys: |
+            sweety-prepared-v1-${{ steps.topic.outputs.key }}-
+            sweety-prepared-v1-cd2977c7746f3e88c302ae98-
+      - name: Reuse matching measured complete narration without regenerating it
         run: |
-          mkdir -p handdraw/output/gum-style4
-          python -u smart_voice/generate_voice.py --voice-id 068 --text-file handdraw/prepared/gum-style4/script.txt --output handdraw/output/gum-style4/narration-v2.mp3
-      - name: Upload measured narration
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: gum-style4-voice-measurement-${{ github.run_id }}
-          path: handdraw/output/gum-style4
-          if-no-files-found: error
+          python - <<'PYVOICE'
+          import json,hashlib,shutil
+          from pathlib import Path
+          bundle=Path('handdraw/prepared/gum-style4')
+          if bundle.exists():
+              story=json.loads((bundle/'story.json').read_text())
+              text=''.join(s['text'] for s in story['scenes'])
+              h=hashlib.sha256(text.encode()).hexdigest()
+              source=Path('handdraw/output/gum-style4/narration-v2.mp3')
+              if source.exists():
+                  meta=json.loads(source.with_suffix('.json').read_text())
+                  if meta['text_sha256']==h and meta['sha256']==hashlib.sha256(source.read_bytes()).hexdigest():
+                      target=Path('handdraw/output/prepared/inputs')/('voice-'+h[:16]+'.mp3')
+                      target.parent.mkdir(parents=True,exist_ok=True)
+                      for ext in ['.mp3','.json','.srt']:
+                          shutil.copyfile(source.with_suffix(ext),target.with_suffix(ext))
+                      print('REUSED_MEASURED_COMPLETE_NARRATION',meta['duration'])
+          PYVOICE
+      - name: Render prepared official handdraw job using existing 068
+        env:
+          TOPIC: ${{ inputs.topic || (github.ref_name == 'render/gum-style4-80s' && '口香糖包裝的鋸齒邊' || '一滴水如何變成雨') }}
+        run: |
+          set -o pipefail
+          mkdir -p handdraw/output
+          python -u handdraw/produce.py --topic "$TOPIC" --seconds ${{ inputs.seconds || (github.ref_name == 'render/gum-style4-80s' && 80 || 30) }} --preview-only --official /tmp/sweety-official --output handdraw/output/prepared 2>&1 | tee handdraw/output/run.log
       - name: Save prepared job and verified voice work
         if: always()
         uses: actions/cache/save@v4
@@ -88,7 +111,7 @@ jobs:
         if: false
         uses: actions/upload-artifact@v4
         with:
-          name: sweety-068-rain-1080x1920-${{ github.run_id }}
+          name: sweety-068-1080x1920-${{ github.run_id }}
           path: |
             handdraw/output/prepared/outputs/film.mp4
             handdraw/output/prepared/outputs/cover.png
@@ -107,13 +130,15 @@ jobs:
             handdraw/output/run.log
             handdraw/output/prepared/voice-measurement.json
             handdraw/output/prepared/acceptance.json
-            handdraw/prepared/rain/story.json
+            handdraw/prepared/gum-style4/story.json
             handdraw/output/prepared/design.json
             handdraw/output/prepared/design
             handdraw/output/prepared/privacy
             handdraw/output/prepared/*review.json
             handdraw/output/prepared/job.json
             handdraw/output/prepared/work/review
+            handdraw/output/prepared/work/timeline.json
+            handdraw/output/prepared/privacy
             handdraw/output/prepared/work/verification.json
             handdraw/output/prepared/inputs/*.json
             handdraw/output/prepared/inputs/*.error.log
