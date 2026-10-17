@@ -69,7 +69,7 @@ def align_scenes(scenes, events):
 
 
 def main(args):
- from PIL import Image
+ from PIL import Image, ImageFont
  from preparation import resolve_bundle, choose_candidate
  bundle=resolve_bundle(REPO/'handdraw/prepared',args.topic,args.seconds,args.job_id,args.style,args.voice_only)
  root=Path(args.output).resolve();root.mkdir(parents=True,exist_ok=True)
@@ -80,7 +80,7 @@ def main(args):
  from clean_image import clean_image
  from video_verifier import build_fingerprint, file_hash
  command=skill/'scripts/handdraw_video.py'
- fingerprint=hashlib.sha256((str(args.seconds)+digest(Path(__file__))+digest(REPO/'handdraw/preparation.py')+digest(REPO/'handdraw/voice_cache.py')+digest(REPO/'smart_voice/generate_voice.py')+json.dumps(json.loads((REPO/'smart_voice/voices.json').read_text())['voices']['068'],sort_keys=True) + ''.join(str(p.relative_to(bundle))+digest(p) for p in sorted(bundle.rglob('*')) if p.is_file())).encode()).hexdigest()
+ fingerprint=hashlib.sha256((str(args.seconds)+digest(Path(__file__))+digest(REPO/'handdraw/preparation.py')+digest(REPO/'handdraw/voice_cache.py')+digest(REPO/'handdraw/caption_layout.py')+digest(REPO/'smart_voice/generate_voice.py')+json.dumps(json.loads((REPO/'smart_voice/voices.json').read_text())['voices']['068'],sort_keys=True) + ''.join(str(p.relative_to(bundle))+digest(p) for p in sorted(bundle.rglob('*')) if p.is_file())).encode()).hexdigest()
  receipt=root/'prepared-receipt.json'
  film=root/'outputs/film.mp4'
  cached=False
@@ -155,7 +155,11 @@ def main(args):
   if story.get('caption_font_size'):
    manifest['captions']['font_size']=story['caption_font_size']
    manifest['captions']['stroke_width']=2
-   save(root/'job.json',manifest)
+  from caption_layout import choose_caption_width
+  caption_font=ImageFont.truetype(font,manifest['captions']['font_size'],index=3)
+  manifest['captions']['max_width_ratio']=choose_caption_width((cue['text'] for beat in beats for cue in beat['caption_cues']),caption_font.getlength,stroke=manifest['captions']['stroke_width'])
+  print('CAPTION_WIDTH_RATIO',manifest['captions']['max_width_ratio'],flush=True)
+  save(root/'job.json',manifest)
   for stage in ['doctor','build']:run(sys.executable,command,stage,root)
   run(sys.executable,command,'verify',root,'--assets-only')
   run(sys.executable,command,'render',root,'--preview','--start',1,'--duration',story.get('preview_seconds',7))

@@ -11,7 +11,7 @@
 - 新增本地 check_bundle，使用未修改的官方審查及 build_illustration，先攔截語義部位/輪廓錯誤。
 - Actions 從 active-job.json 或明確 inputs 讀取 job_id、topic、seconds、style，片長不再寫死；每個任務有獨立輸出與快取。main 提交 active-job.json 自動出片。
 - 渲染回執改為完整驗證及格式/時長通過後才保存；壞掉的渲染回執會重建本任務。
-- 統一 WORKFLOW.md、AGENTS.md 與 README，不再把使用者導向付費 API。原金鑰僅保留在 GitHub Secrets，不讀取或輸出；移除不再使用的 provider-readiness workflow。
+- 統一 WORKFLOW.md、AGENTS.md 與 README，不再把使用者導向付費 API。原金鑰僅保留在 GitHub Secrets，不讀取或輸出；本分支不啟用 provider-readiness workflow。
 
 ## 全新腳本驗證：為什麼白天也看得到月亮？
 
@@ -20,8 +20,9 @@
 - 原始腳本、NASA 來源、自然長短候選、出圖前分鏡/簡報/提示詞/哈希、實際看圖與語義部位審查均保存在新任務包。
 - 先實測完整配音，自然重選後旁白28.656020833秒 + 封面1秒 + 收尾0.343979167秒 = 30秒。已將此 MP3、字幕、聲音設定和 SHA 放入素材包；本地重驗 VOICE_CACHE_HIT，無需重配。
 - 本地前兩幕原版檢查通過；第三幕發現 `horizon_sun` 橙色輪廓無可描繪黑線，按官方支援的 aligned outline_mask 保留可見橙色筆畫，原圖像素未變。重新看過遮罩，四幕均通過原版 build_illustration。
-- 11項單元測試通過，任務解析/自訂ID/缺漏與錯稿快取/無圖片先測聲音均已驗證。
-- GitHub Actions 及最終 MP4：等待本次真實執行結果；未標成成功。
+- 13項單元測試通過，任務解析/自訂ID/缺漏與錯稿快取/無圖片先測聲音均已驗證。
+- 第一輪 Actions SUCCESS：https://github.com/dsf430-stack/short-video-factory/actions/runs/39019030134 。已實際產出30秒、1080×1920、900幀 H.264/AAC，完整解碼通過，音軌相關度0.99997568、尾句0.99994786。
+- 實際看13個時間點後發現首句問號孤立換行；保持52px大字幕、原配音與所有實測句界，新增字幕寬度預檢（不改官方引擎），避免行首閉合標點。新增2項回歸測試通過；等待修正後Actions及成片重驗。
 
 ## 已完成且保留
 
