@@ -1,0 +1,8 @@
+{
+  "workflow": "voice-068.yml",
+  "ref": "main",
+  "inputs": {
+    "narration": "這個鉛錘，你知道英文怎麼說嗎？ 它叫 plumb bob，中文是鉛錘。 繩子下方吊著重錘，垂下時能用來檢查垂直方向。 例句：The plumb bob hangs from a\nstring. 鉛錘懸掛在繩子下方。 記住這個生活英文，換你出題！",
+    "filename": "ENG-20261018-170-plumb_bob"
+  }
+}
