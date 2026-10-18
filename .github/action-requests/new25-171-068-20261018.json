@@ -1,0 +1,8 @@
+{
+  "workflow": "voice-068.yml",
+  "ref": "main",
+  "inputs": {
+    "narration": "這個虎鉗，你知道英文怎麼說嗎？ 它叫 vise，中文是虎鉗。 轉動螺桿讓兩邊鉗口靠近，就能夾住正在加工的物件。 例句：The vise holds the wood\nfirmly. 虎鉗牢牢夾住木頭。 記住這個生活英文，換你出題！",
+    "filename": "ENG-20261018-171-vise"
+  }
+}
