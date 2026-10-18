@@ -1,0 +1,8 @@
+{
+  "workflow": "voice-068.yml",
+  "ref": "main",
+  "inputs": {
+    "narration": "這個木槌，你知道英文怎麼說嗎？ 它叫 mallet，中文是木槌。 它像槌子，但敲擊頭較大，常用木材或橡膠製成。 例句：Tap the wood with a mallet. 用木槌輕敲木頭。 記住這個生活英文，換你出題！",
+    "filename": "ENG-20261018-172-mallet"
+  }
+}
