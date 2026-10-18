@@ -53,7 +53,33 @@ jobs:
         continue-on-error: true
         run: |
           set -o pipefail
-          python .douyin-tool/scripts/douyin_transcript.py --link 'https://v.douyin.com/lAfxhR2XUe8/' --action info 2>&1 | tee verification/douyin/link-info.log
+          python -u - <<'PY' 2>&1 | tee verification/douyin/link-info.log
+          import sys, pathlib, json, re, traceback
+          sys.path.insert(0, str(pathlib.Path('.douyin-tool/scripts').resolve()))
+          import douyin_transcript as dt
+          dt.ensure_dependencies()
+          original_get=dt.requests.get
+          records=[]
+          def diagnostic_get(*args, **kwargs):
+              response=original_get(*args, **kwargs)
+              record={'request_url':args[0],'resolved_url':response.url,'status':response.status_code,'bytes':len(response.content)}
+              match=re.search(r"window\._ROUTER_DATA\s*=\s*(.*?)</script>",response.text,re.DOTALL)
+              if match:
+                  payload=json.loads(match.group(1).strip().rstrip(';'))
+                  record['router_data']=payload
+              records.append(record)
+              pathlib.Path('verification/douyin/link-diagnostic.json').write_text(json.dumps(records,ensure_ascii=False,indent=2))
+              return response
+          dt.requests.get=diagnostic_get
+          try:
+              info=dt.get_video_info('https://v.douyin.com/lAfxhR2XUe8/')
+              pathlib.Path('verification/douyin/info.json').write_text(json.dumps(info,ensure_ascii=False,indent=2))
+              print(json.dumps(info,ensure_ascii=False,indent=2))
+          except Exception:
+              traceback.print_exc()
+              print(json.dumps(records,ensure_ascii=False,indent=2))
+              raise
+          PY
       - name: Real Douyin video to SRT and transcript
         if: steps.link.outcome == 'success'
         run: |
@@ -74,6 +100,7 @@ jobs:
           import sys, pathlib, subprocess, json, re, hashlib
           sys.path.insert(0, str(pathlib.Path('.douyin-tool/scripts').resolve()))
           import douyin_transcript as dt
+          dt.ensure_dependencies(require_ffmpeg=True)
           out=pathlib.Path('verification/douyin')
           source=pathlib.Path('handdraw/prepared/job-637378837c79e0ffd659/inputs/voice-2395983e1d4d5ff9.mp3')
           video=out/'chinese-test.mp4'
