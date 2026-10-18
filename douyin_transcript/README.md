@@ -33,7 +33,9 @@
 
 首輪新整合發現官方函式以 `with_suffix('.srt')` 檢查產物，雙副檔名 `transcript.raw.srt` 會檢查成另一個檔名；只改為 `transcript-raw.srt`，保留官方程式不修改。medium 當時已實際產出 9 段字幕，檔名錯誤仍如實記為失敗。
 
-抖音缺 `videoInfoRes` 時，依次以官方原始識別、Android、桌面識別測試同一解析器；各次結果分開保存，不猜測是刪片或區域限制，也不接第三方付費解析服務。
+2026-10-18 接續檢查已直接取得兩個分享頁：HTTP 200 且有影片 ID，但缺少 `videoInfoRes`、`item_list` 與播放網址；yt-dlp 官方原始碼使用的影片詳情介面回傳 HTTP 403 / `Blocked by ArgusSecurityPlugin Uifid Not Found`。這不足以判定影片刪除或地域限制，也沒有可據以修補的新媒體欄位。
+
+已加入模型安裝前預檢：沿用官方解析器及原始識別，只做一次解析；失敗立即輸出 `SHARE_PAGE_HAS_NO_MEDIA_DATA` 與去除查詢值的回應結構，不再更換 User-Agent 重試。預檢成功時把可用媒體資訊暫存在 runner 本地，後續下載使用相同資訊；該暫存檔不加入 Artifact。缺資料時跳過 whisper.cpp 編譯、模型下載及辨識，不把預檢成功當作轉錄成功。
 
 ## 輸出與現有製片流程
 
@@ -65,3 +67,10 @@
 - **本地中文轉錄 PASS**：[實際手動執行](https://github.com/dsf430-stack/short-video-factory/actions/runs/39093733910)、[輸出 ZIP](https://github.com/dsf430-stack/short-video-factory/actions/runs/39093733910/artifacts/12124026541)。28.488005 秒、9 段；尾端 28.2 秒，沒有任何時間修剪。121 個正規化文字字元與真實旁白一致，字元錯誤率 0%，不含標點／空白評比；不外推為任意影片零錯誤。下載後另以獨立解析重新核對 SRT 順序、範圍、文字與雜湊。
 - **抖音下載 FAIL**：[實際貼連結執行](https://github.com/dsf430-stack/short-video-factory/actions/runs/39093628808)。原始及 Android 識別回報「视频信息为空」；桌面識別回報「从HTML中解析视频信息失败」。尚未取得該影片，不能宣稱抖音完整流程成功。
 - 成功的實際輸出另保存在 `verification/medium/`，與先前失敗證據分開。尚未合併 main，PR 保持草稿；手機可先透過上述 bridge 在本整合分支操作。
+
+## 接續修復實測
+
+- 新增連結預檢與不含查詢值的回應結構診斷，已提交 `38ec3fd`。
+- [新 Actions 實測](https://github.com/dsf430-stack/short-video-factory/actions/runs/39099545784)：依賴、官方 CLI、2 項回歸測試成功；預檢如實回報 `SHARE_PAGE_HAS_NO_MEDIA_DATA`，模型編譯/下載/轉錄皆跳過。這是失敗處理改善，不是下載功能已修好。
+- [診斷 ZIP](https://github.com/dsf430-stack/short-video-factory/actions/runs/39099545784/artifacts/12126191546)：3,721 bytes；保留三天。
+- 詳細接續紀錄：`verification/preflight-20261018.json`。要完成原本目標，仍需取得平台允許存取的實際影片資料；目前未找到可驗證的解析修補。

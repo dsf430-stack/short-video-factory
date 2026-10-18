@@ -1,0 +1,59 @@
+{
+  "date": "2026-10-18",
+  "scope": "Preflight and response diagnostics repair; real Douyin download remains blocked",
+  "commit": "38ec3fdf460767fe1c65e6c56302ac6c020b2f33",
+  "run": "https://github.com/dsf430-stack/short-video-factory/actions/runs/39099545784",
+  "artifact_id": 12126191546,
+  "official_cli": "PASS",
+  "preflight_regression_tests": 2,
+  "cloud_result": "SHARE_PAGE_HAS_NO_MEDIA_DATA",
+  "model_setup": "SKIPPED_BEFORE_DOWNLOAD",
+  "transcription": "NOT_STARTED",
+  "diagnostic_artifact": "UPLOADED",
+  "local_saved_asr_export_regression": {
+    "status": "PASS",
+    "segments": 9,
+    "character_error_rate": 0.0,
+    "note": "Reuses existing raw recognition; not a new ASR run"
+  },
+  "local_response_shape": {
+    "status": "FAIL",
+    "reason": "SHARE_PAGE_HAS_NO_MEDIA_DATA",
+    "responses": [
+      {
+        "host": "www.iesdouyin.com",
+        "path": "/share/video/7645269431458843958/",
+        "http_status": 200,
+        "bytes": 36000,
+        "router_data_present": true,
+        "pages": [
+          {
+            "key": "video_(id)/page",
+            "item_id_present": true,
+            "video_info_present": false,
+            "item_count": 0
+          }
+        ]
+      },
+      {
+        "host": "www.iesdouyin.com",
+        "path": "/share/video/7645269431458843958",
+        "http_status": 200,
+        "bytes": 32607,
+        "router_data_present": true,
+        "pages": [
+          {
+            "key": "video_(id)/page",
+            "item_id_present": true,
+            "video_info_present": false,
+            "item_count": 0
+          }
+        ]
+      }
+    ],
+    "download_started": false,
+    "interpretation": "No usable media data obtained; deletion, region or login cause is unproven."
+  },
+  "remaining_blocker": "No public playable media returned by tested share pages. No proven replacement data field; detail endpoint explicitly refused the unauthenticated cloud request. No paid API, cookie extraction or authentication bypass used.",
+  "main_merged": false
+}
