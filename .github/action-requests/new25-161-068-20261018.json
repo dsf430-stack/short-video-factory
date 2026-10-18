@@ -1,0 +1,8 @@
+{
+  "workflow": "voice-068.yml",
+  "ref": "main",
+  "inputs": {
+    "narration": "這個書擋，你知道英文怎麼說嗎？ 它叫 bookend，中文是書擋。 這個支撐物擋在書本旁邊，讓一排書保持直立。 例句：The bookend keeps the books\nupright. 書擋讓書本保持直立。 記住這個生活英文，換你出題！",
+    "filename": "ENG-20261018-161-bookend"
+  }
+}
