@@ -1,0 +1,8 @@
+{
+  "workflow": "voice-068.yml",
+  "ref": "main",
+  "inputs": {
+    "narration": "這個磨刀石，你知道英文怎麼說嗎？ 它叫 whetstone，中文是磨刀石。 這種磨石用來磨利刀具，或其他切削工具的刃口。 例句：Sharpen the blade on a\nwhetstone. 在磨刀石上磨利刀刃。 記住這個生活英文，換你出題！",
+    "filename": "ENG-20261018-174-whetstone"
+  }
+}
