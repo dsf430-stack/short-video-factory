@@ -1,0 +1,8 @@
+{
+  "workflow": "voice-068.yml",
+  "ref": "main",
+  "inputs": {
+    "narration": "這個鎖孔飾板，你知道英文怎麼說嗎？ 它叫 escutcheon，中文是鎖孔飾板。 鎖孔周圍這片平面的金屬板，也有專屬的英文名稱。 例句：The escutcheon surrounds the\nkeyhole. 鎖孔飾板圍在鎖孔周圍。 記住這個生活英文，換你出題！",
+    "filename": "ENG-20261018-179-escutcheon"
+  }
+}
