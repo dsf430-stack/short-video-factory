@@ -1,0 +1,8 @@
+{
+  "workflow": "voice-068.yml",
+  "ref": "main",
+  "inputs": {
+    "narration": "這個吸墨墊，你知道英文怎麼說嗎？ 它叫 blotter，中文是吸墨墊。 這種有硬底的吸墨紙墊，可以吸收書寫時多餘的墨水。 例句：The blotter absorbs extra ink. 吸墨墊吸收多餘墨水。 記住這個生活英文，換你出題！",
+    "filename": "ENG-20261018-163-blotter"
+  }
+}
