@@ -1,0 +1,8 @@
+{
+  "workflow": "voice-068.yml",
+  "ref": "main",
+  "inputs": {
+    "narration": "這個鐵砧，你知道英文怎麼說嗎？ 它叫 anvil，中文是鐵砧。 厚重的鐵塊提供支撐，讓工匠能在上面敲打金屬。 例句：The metal rests on the anvil. 金屬放在鐵砧上。 記住這個生活英文，換你出題！",
+    "filename": "ENG-20261018-173-anvil"
+  }
+}
