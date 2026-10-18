@@ -1,0 +1,8 @@
+{
+  "workflow": "voice-068.yml",
+  "ref": "main",
+  "inputs": {
+    "narration": "這個卡尺，你知道英文怎麼說嗎？ 它叫 caliper，中文是卡尺。 移動的量爪配合固定量爪，可以量出物件的尺寸。 例句：Measure the width with a\ncaliper. 用卡尺量寬度。 記住這個生活英文，換你出題！",
+    "filename": "ENG-20261018-167-caliper"
+  }
+}
