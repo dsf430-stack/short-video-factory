@@ -1,0 +1,8 @@
+{
+  "workflow": "voice-068.yml",
+  "ref": "main",
+  "inputs": {
+    "narration": "這個樓梯主柱，你知道英文怎麼說嗎？ 它叫 newel，中文是樓梯主柱。 樓梯起點或終點較粗的立柱，可以支撐扶手。 例句：The handrail meets the newel. 扶手連接到樓梯主柱。 記住這個生活英文，換你出題！",
+    "filename": "ENG-20261018-183-newel"
+  }
+}
