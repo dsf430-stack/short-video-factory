@@ -72,7 +72,7 @@ jobs:
               return response
           dt.requests.get=diagnostic_get
           try:
-              info=dt.get_video_info('https://v.douyin.com/lAfxhR2XUe8/')
+              info=dt.get_video_info('https://v.douyin.com/SfG9zFf0DWs/')
               pathlib.Path('verification/douyin/info.json').write_text(json.dumps(info,ensure_ascii=False,indent=2))
               print(json.dumps(info,ensure_ascii=False,indent=2))
           except Exception:
@@ -84,8 +84,8 @@ jobs:
         if: steps.link.outcome == 'success'
         run: |
           set -o pipefail
-          python .douyin-tool/scripts/douyin_transcript.py --link 'https://v.douyin.com/lAfxhR2XUe8/' --action transcript --format srt --save-video --output verification/douyin/live 2>&1 | tee verification/douyin/live-srt.log
-          python .douyin-tool/scripts/douyin_transcript.py --link 'https://v.douyin.com/lAfxhR2XUe8/' --action transcript --format text --output verification/douyin/live 2>&1 | tee verification/douyin/live-text.log
+          python .douyin-tool/scripts/douyin_transcript.py --link 'https://v.douyin.com/SfG9zFf0DWs/' --action transcript --format srt --save-video --output verification/douyin/live 2>&1 | tee verification/douyin/live-srt.log
+          python .douyin-tool/scripts/douyin_transcript.py --link 'https://v.douyin.com/SfG9zFf0DWs/' --action transcript --format text --output verification/douyin/live 2>&1 | tee verification/douyin/live-text.log
           python - <<'PY'
           import pathlib
           root=pathlib.Path('verification/douyin/live')
