@@ -1,0 +1,8 @@
+{
+  "workflow": "voice-068.yml",
+  "ref": "main",
+  "inputs": {
+    "narration": "這個活動角尺，你知道英文怎麼說嗎？ 它叫 sliding bevel，中文是活動角尺。 可以轉動並鎖定的尺片，方便把角度轉移到另一個位置。 例句：Set the angle with the sliding\nbevel. 用活動角尺設定角度。 記住這個生活英文，換你出題！",
+    "filename": "ENG-20261018-168-sliding_bevel"
+  }
+}
