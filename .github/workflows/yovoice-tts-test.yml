@@ -1,0 +1,66 @@
+name: Yovoice Traditional Chinese CPU test
+on:
+  push:
+    branches: [feature/yovoice-tts-test]
+    paths: [.github/workflows/yovoice-tts-test.yml]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - name: Install verification tools
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ffmpeg unzip
+      - name: Download official CLI and generate speech
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p results cli
+          exec > >(tee results/test.log) 2>&1
+          curl -fL --retry 3 https://github.com/leemysw/yovoice/releases/download/v0.2.1/yovoice-v0.2.1-cli-linux-x64.zip -o cli.zip
+          echo '0a9f200ad5bc51a449941a8c7911527f23057e4386ed783c28bef74ce1bce63e  cli.zip' | sha256sum -c -
+          unzip cli.zip -d cli
+          BIN="$(find "$PWD/cli" -type f -name yovoice -print -quit)"
+          test -n "$BIN"
+          chmod +x "$BIN"
+          "$BIN" --version
+          "$BIN" --help
+          ldd "$BIN" || true
+          DATA="$PWD/voice-test-data"
+          "$BIN" setup --backend cpu --data-dir "$DATA"
+          "$BIN" models list --json --data-dir "$DATA" > results/models.json
+          "$BIN" models download kokoro-1.1-zh-q8 --source huggingface --data-dir "$DATA"
+          printf '%s' '你知道嗎？颱風的英文叫做 Typhoon。今天我們用三十秒，了解颱風是怎麼形成的。' > results/narration.txt
+          "$BIN" generate --model kokoro-1.1-zh-q8 --speaker zf_001 --text-file results/narration.txt --output "$PWD/results/test-tw.wav" --data-dir "$DATA" | tee results/generate.json
+          test -s results/test-tw.wav
+          ffprobe -v error -show_format -show_streams -of json results/test-tw.wav > results/ffprobe.json
+          ffmpeg -v error -xerror -i results/test-tw.wav -f null - 2> results/decode.log
+          python3 - <<'PY'
+          import json, math, pathlib, hashlib
+          p=pathlib.Path("results")
+          probe=json.loads((p/"ffprobe.json").read_text())
+          audio=[s for s in probe["streams"] if s["codec_type"]=="audio"]
+          duration=float(probe["format"]["duration"])
+          assert len(audio)==1 and math.isfinite(duration) and duration>0
+          assert int(audio[0]["sample_rate"])>0
+          report={"status":"AUDIO_GENERATED_AND_DECODED","duration_seconds":duration,"codec":audio[0]["codec_name"],"sample_rate":audio[0]["sample_rate"],"channels":audio[0]["channels"],"sha256":hashlib.sha256((p/"test-tw.wav").read_bytes()).hexdigest(),"model":"kokoro-1.1-zh-q8","speaker":"zf_001","backend":"cpu","subjective_listening":"NOT_VERIFIED","subtitle_alignment":"NOT_TESTED"}
+          (p/"verification.json").write_text(json.dumps(report,ensure_ascii=False,indent=2))
+          print(json.dumps(report,ensure_ascii=False))
+          PY
+      - name: Collect engine logs
+        if: always()
+        run: |
+          mkdir -p results
+          if [ -d voice-test-data/logs ]; then cp -r voice-test-data/logs results/engine-logs; fi
+      - name: Upload audio and evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: yovoice-tw-cpu-test
+          path: results/
+          if-no-files-found: error
+          retention-days: 30
