@@ -1,0 +1,8 @@
+{
+  "workflow": "voice-068.yml",
+  "ref": "main",
+  "inputs": {
+    "narration": "這個門窗橫梃，你知道英文怎麼說嗎？ 它叫 transom，中文是門窗橫梃。 這根橫向框條，可以把門與上方的小窗分隔開來。 例句：The transom runs above the\ndoor. 橫梃位在門的上方。 記住這個生活英文，換你出題！",
+    "filename": "ENG-20261018-182-transom"
+  }
+}
