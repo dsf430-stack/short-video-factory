@@ -1,0 +1,8 @@
+{
+  "workflow": "voice-068.yml",
+  "ref": "main",
+  "inputs": {
+    "narration": "這個螺旋手鑽，你知道英文怎麼說嗎？ 它叫 gimlet，中文是螺旋手鑽。 橫向握柄配上螺旋尖端，是用來鑽木頭小孔的手工具。 例句：The gimlet drills into the\nwood. 螺旋手鑽鑽入木頭。 記住這個生活英文，換你出題！",
+    "filename": "ENG-20261018-166-gimlet"
+  }
+}
