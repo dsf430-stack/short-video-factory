@@ -1,0 +1,8 @@
+{
+  "workflow": "voice-068.yml",
+  "ref": "main",
+  "inputs": {
+    "narration": "這個花籃螺絲，你知道英文怎麼說嗎？ 它叫 turnbuckle，中文是花籃螺絲。 轉動中間的連接套，可以調整兩端連桿或鋼索的鬆緊。 例句：Tighten the wire with a\nturnbuckle. 用花籃螺絲拉緊鋼索。 記住這個生活英文，換你出題！",
+    "filename": "ENG-20261018-178-turnbuckle"
+  }
+}
