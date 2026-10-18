@@ -1,9 +1,17 @@
 name: Douyin transcript
 run-name: "Transcript · ${{ inputs.mode || 'local-test' }} · ${{ inputs.model || 'medium' }}"
 on:
-  push:
-    branches: [integration/douyin-transcript]
-    paths: ['douyin_transcript/run.py', '.github/workflows/douyin-transcript.yml']
+  workflow_call:
+    inputs:
+      mode:
+        type: string
+        default: douyin
+      link:
+        type: string
+        default: ''
+      model:
+        type: string
+        default: medium
   workflow_dispatch:
     inputs:
       mode:
@@ -32,7 +40,7 @@ jobs:
     env:
       ASR_MODEL: ${{ inputs.model || 'medium' }}
       TRANSCRIPT_MODE: ${{ inputs.mode || 'local-test' }}
-      DOUYIN_LINK: ${{ inputs.link || 'https://v.douyin.com/SfG9zFf0DWs/' }}
+      DOUYIN_LINK: ${{ github.event_name == 'push' && 'https://v.douyin.com/SfG9zFf0DWs/' || inputs.link }}
     steps:
       - uses: actions/checkout@v4
         with:
