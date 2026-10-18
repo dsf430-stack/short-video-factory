@@ -1,0 +1,8 @@
+{
+  "workflow": "voice-068.yml",
+  "ref": "main",
+  "inputs": {
+    "narration": "這個窗中梃，你知道英文怎麼說嗎？ 它叫 mullion，中文是窗中梃。 窗戶玻璃之間這根狹長的垂直框條，叫作窗中梃。 例句：The mullion divides the\nwindow. 窗中梃分隔窗戶。 記住這個生活英文，換你出題！",
+    "filename": "ENG-20261018-181-mullion"
+  }
+}
