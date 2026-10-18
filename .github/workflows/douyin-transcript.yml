@@ -1,0 +1,96 @@
+name: Douyin transcript
+run-name: "Transcript · ${{ inputs.mode || 'local-test' }} · ${{ inputs.model || 'medium' }}"
+on:
+  push:
+    branches: [integration/douyin-transcript]
+    paths: ['douyin_transcript/run.py', '.github/workflows/douyin-transcript.yml']
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: 'douyin：轉錄分享連結；local-test：既有中文影片自測'
+        type: choice
+        options: [douyin, local-test]
+        default: douyin
+      link:
+        description: '抖音分享連結或完整分享文字（local-test 可留空）'
+        type: string
+        required: false
+      model:
+        description: '免費本地多語言模型；medium 較準確，small 較快'
+        type: choice
+        options: [medium, small, base]
+        default: medium
+permissions:
+  contents: read
+concurrency:
+  group: douyin-transcript-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  transcribe:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    env:
+      ASR_MODEL: ${{ inputs.model || 'medium' }}
+      TRANSCRIPT_MODE: ${{ inputs.mode || 'local-test' }}
+      DOUYIN_LINK: ${{ inputs.link || 'https://v.douyin.com/SfG9zFf0DWs/' }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install dependencies and verify OpenCC
+        run: |
+          python -m pip install requests ffmpeg-python opencc
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq ffmpeg cmake build-essential
+          mkdir -p transcription-output
+          python -c "import requests, ffmpeg; from opencc import OpenCC; assert OpenCC('s2twp.json').convert('铅笔') == '鉛筆'"
+          python -m pip freeze > transcription-output/python-dependencies.txt
+          ffmpeg -version > transcription-output/ffmpeg-version.txt
+      - name: Checkout pinned official source
+        run: |
+          git clone -q https://github.com/CherishLyf/douyin-transcript.git .douyin-tool
+          git -C .douyin-tool checkout -q 421c11c6e167b5e38d9cd8fb4219ae926bd4643b
+          git clone -q https://github.com/ggml-org/whisper.cpp.git .whisper
+          git -C .whisper checkout -q 0c7be696371069e0baa2515ed7aa08d5a5473aa6
+      - uses: actions/cache@v4
+        with:
+          path: |
+            .whisper/build
+            .whisper/models/ggml-${{ env.ASR_MODEL }}.bin
+          key: whisper-ubuntu24-cpu-0c7be696-${{ env.ASR_MODEL }}-v1
+      - name: Build CPU CLI and download free multilingual model
+        run: |
+          cmake -S .whisper -B .whisper/build -DCMAKE_BUILD_TYPE=Release -DGGML_NATIVE=OFF
+          cmake --build .whisper/build --target whisper-cli -j 2 --config Release
+          test -s ".whisper/models/ggml-$ASR_MODEL.bin" || (cd .whisper && sh models/download-ggml-model.sh "$ASR_MODEL")
+          sha256sum ".whisper/models/ggml-$ASR_MODEL.bin" > transcription-output/model-sha256.txt
+          df -h . > transcription-output/disk-space.txt
+      - name: Verify official CLI
+        run: |
+          python .douyin-tool/scripts/douyin_transcript.py --help > transcription-output/official-cli-help.txt
+          python .douyin-tool/scripts/douyin_transcript.py --print-config > transcription-output/official-default-config.json
+          .whisper/build/bin/whisper-cli --help > transcription-output/whisper-cli-help.txt 2>&1
+      - name: Download, transcribe and validate actual files
+        run: |
+          set -o pipefail
+          python -u douyin_transcript/run.py --mode "$TRANSCRIPT_MODE" --model ".whisper/models/ggml-$ASR_MODEL.bin" 2>&1 | tee transcription-output/transcription.log
+      - name: Upload text, SRT, raw recognition and verification
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: douyin-transcript-${{ github.run_id }}
+          path: transcription-output/
+          if-no-files-found: error
+          retention-days: 3
+      - name: Summarize verified result
+        if: always()
+        run: |
+          python - <<'PY'
+          import json, os, pathlib
+          p=pathlib.Path('transcription-output/run.json')
+          data=json.loads(p.read_text()) if p.exists() else {'status':'INSTALLATION_OR_CLI_FAILED'}
+          pathlib.Path(os.environ['GITHUB_STEP_SUMMARY']).write_text('```json\n'+json.dumps(data,ensure_ascii=False,indent=2)+'\n```\n\nDownload the artifact below. local-test is NOT a successful Douyin download.\n')
+          PY
