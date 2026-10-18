@@ -1,0 +1,8 @@
+{
+  "workflow": "voice-068.yml",
+  "ref": "main",
+  "inputs": {
+    "narration": "這個尖錐，你知道英文怎麼說嗎？ 它叫 awl，中文是尖錐。 尖端細長的這種工具，可以在木材或皮革上打小孔。 例句：This awl makes a small hole. 這支尖錐能打出小孔。 記住這個生活英文，換你出題！",
+    "filename": "ENG-20261018-165-awl"
+  }
+}
