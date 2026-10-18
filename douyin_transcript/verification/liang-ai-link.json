@@ -1,0 +1,13 @@
+{
+  "source_url": "https://v.douyin.com/SfG9zFf0DWs/",
+  "video_id": "7645269431458843958",
+  "run_url": "https://github.com/dsf430-stack/short-video-factory/actions/runs/39091881010",
+  "artifact_url": "https://github.com/dsf430-stack/short-video-factory/actions/runs/39091881010/artifacts/12123315666",
+  "status": "FAILED",
+  "evidence": "HTTP 200; router_data.loaderData video_(id)/page exists but lacks videoInfoRes; official parser raises 视频信息为空",
+  "download": "NOT_STARTED",
+  "transcript": "NOT_CREATED_FOR_THIS_VIDEO",
+  "speech_api_used": false,
+  "main_modified": false,
+  "conclusion": "Two different share links have the same missing-data response. Do not diagnose the user link as invalid or assume changing links fixes it."
+}
