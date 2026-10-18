@@ -34,7 +34,7 @@ jobs:
           cmake -S .whisper -B .whisper/build -DCMAKE_BUILD_TYPE=Release
           cmake --build .whisper/build -j 2 --config Release
           cd .whisper
-          sh ./models/download-ggml-model.sh base
+          sh ./models/download-ggml-model.sh small
       - name: Configure official tool without API keys
         run: |
           python - <<'PY'
@@ -42,12 +42,12 @@ jobs:
           root = pathlib.Path.cwd()
           p = root / '.douyin-tool/configs/config-schema.json'
           config = json.loads(p.read_text())
-          config['whisper'].update(bin=str(root/'.whisper/build/bin/whisper-cli'), model=str(root/'.whisper/models/ggml-base.bin'), language='zh')
+          config['whisper'].update(bin=str(root/'.whisper/build/bin/whisper-cli'), model=str(root/'.whisper/models/ggml-small.bin'), language='zh')
           config['output'].update(default_dir=str(root/'verification/douyin/live'), format='srt', save_video=True)
           p.write_text(json.dumps(config, indent=2))
           PY
           python .douyin-tool/scripts/douyin_transcript.py --print-config
-          sha256sum .whisper/models/ggml-base.bin > verification/douyin/model-sha256.txt
+          sha256sum .whisper/models/ggml-small.bin > verification/douyin/model-sha256.txt
       - name: First test real Douyin link parsing
         id: link
         continue-on-error: true
@@ -108,16 +108,16 @@ jobs:
           processor=dt.DouyinProcessor()
           audio=processor.extract_audio(video)
           srt=out/'transcript.srt'
-          processor.transcribe_audio_to_srt(audio,srt,str(pathlib.Path('.whisper/build/bin/whisper-cli').resolve()),str(pathlib.Path('.whisper/models/ggml-base.bin').resolve()),'zh')
+          processor.transcribe_audio_to_srt(audio,srt,str(pathlib.Path('.whisper/build/bin/whisper-cli').resolve()),str(pathlib.Path('.whisper/models/ggml-small.bin').resolve()),'zh')
           segments=dt.parse_srt_segments(srt.read_text())
           assert segments, 'Empty subtitles'
           duration=float(subprocess.check_output(['ffprobe','-v','error','-show_entries','format=duration','-of','csv=p=0',str(video)],text=True))
           assert all(0 <= s['start'] < s['end'] <= duration+0.5 for s in segments)
           text=''.join(s['text'] for s in segments)
-          assert '鉛筆' in text or '铅笔' in text, text
-          assert '石墨' in text, text
           md=out/'transcript.md'
           md.write_text(dt.generate_markdown({'title':'Existing pencil narration local video test','duration_seconds':duration},segments))
+          assert '鉛筆' in text or '铅笔' in text, text
+          assert '石墨' in text, text
           assert md.stat().st_size and srt.stat().st_size
           report={'test':'independent existing Chinese narration, not a successful Douyin download','duration':duration,'segments':len(segments),'text':text,'files':{str(p):{'bytes':p.stat().st_size,'sha256':hashlib.sha256(p.read_bytes()).hexdigest()} for p in (video,srt,md)}}
           (out/'local-verification.json').write_text(json.dumps(report,ensure_ascii=False,indent=2))
