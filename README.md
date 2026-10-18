@@ -204,3 +204,8 @@ Copyright © 2025 YILS.
 ## 手繪影片：免額外模型 API 的接力製作
 
 在 ChatGPT 提供題材或完整腳本、畫風、片長，由助手準備新內容的分鏡與圖片，GitHub 自動執行 068、字幕、官方手繪動畫與成片驗證；無須題材範本或額外 Gemini/OpenAI Key。通用 job_id、active-job 自動啟動及交付規範見 [WORKFLOW.md](WORKFLOW.md) 與 [handdraw/README.md](handdraw/README.md)。
+
+
+## 抖音逐字稿與繁體字幕（獨立整合分支）
+
+使用免費本地 whisper.cpp，輸出 TXT、Markdown、SRT 及交接設定。未合併 main 時可從既有 Actions bridge 選整合分支手動啟動；手機操作、實測結果與抖音缺資料限制見 [douyin_transcript/README.md](douyin_transcript/README.md)。

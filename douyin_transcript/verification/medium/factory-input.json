@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "mode": "transcription",
+  "language": "zh-TW",
+  "transcript_file": "transcript.zh-TW.txt",
+  "subtitleFile": "transcript.zh-TW.srt",
+  "segments_file": "segments.zh-TW.json",
+  "source_kind": "local-test",
+  "asr_review_required": true,
+  "automatic_render": false
+}

@@ -1,0 +1,34 @@
+{
+  "status": "PASS",
+  "duration_seconds": 28.488005,
+  "segments": 9,
+  "timestamp_adjustments": [],
+  "text": "一般木製黑鉛筆裡面,其實沒有金屬鉛\n每天寫字的你,有沒有被這個名字騙過?\n筆芯主要是石墨和黏土\n石墨留下黑色痕跡,黏土調整筆芯硬度\n黏土比例越高,筆芯通常越硬\n石墨比例越高,通常越軟,越黑\n下次拿起鉛筆,想起來了吧?\n名字雖然叫鉛筆,真正陪你寫字、畫圖\n留下每一筆痕跡的,其實是石墨",
+  "human_review_required": true,
+  "paid_api_used": false,
+  "character_error_rate": 0.0,
+  "reference_characters": 121,
+  "differences": [],
+  "files": {
+    "transcript-raw.srt": {
+      "bytes": 683,
+      "sha256": "56c3b07db78a05afecb72eba51e0d5d629f22bd7b2082d0cba442c156cd28218"
+    },
+    "transcript.zh-TW.srt": {
+      "bytes": 682,
+      "sha256": "841c0f7978664930ac7095e66e590ab2290352f53f3c1c93885187346cd17162"
+    },
+    "transcript.zh-TW.md": {
+      "bytes": 572,
+      "sha256": "928bc9b87a9e8a3fb9e4c21dc6cca3280711d50acf1c33cc1019f1ead9a4ba61"
+    },
+    "transcript.zh-TW.txt": {
+      "bytes": 386,
+      "sha256": "c5108b03d5401fac6294eb7b82fc9711a7afcaf7ecc840ab666a24bd445f6c62"
+    },
+    "segments.zh-TW.json": {
+      "bytes": 1069,
+      "sha256": "9820a0be6174f3243cae29ccc070ed9b940bec94b0341e55d156502cbb8cdb40"
+    }
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "date": "2026-10-18",
+  "branch": "integration/douyin-transcript",
+  "pr": "https://github.com/dsf430-stack/short-video-factory/pull/10",
+  "local_test": {
+    "status": "PASS",
+    "run": "https://github.com/dsf430-stack/short-video-factory/actions/runs/39093733910",
+    "artifact": "https://github.com/dsf430-stack/short-video-factory/actions/runs/39093733910/artifacts/12124026541",
+    "model": "medium multilingual",
+    "duration_seconds": 28.488005,
+    "srt_segments": 9,
+    "srt_last_end_seconds": 28.2,
+    "timestamp_adjustments": [],
+    "normalized_reference_characters": 121,
+    "character_error_rate": 0.0,
+    "verification_scope": "Existing project narration wrapped into local video, not a successful Douyin download. CER excludes punctuation and whitespace. No reference text supplied to recognizer.",
+    "downloaded_artifact_sha256": "cff18c23d93e80f0afba5891db3f24411b461b7f45022cbb0b7600b3f288a346",
+    "downloaded_files_hashes_rechecked": true,
+    "independent_srt_structure_and_text_rechecked": true
+  },
+  "douyin_test": {
+    "status": "FAIL",
+    "source_url": "https://v.douyin.com/SfG9zFf0DWs/",
+    "run": "https://github.com/dsf430-stack/short-video-factory/actions/runs/39093628808",
+    "artifact": "https://github.com/dsf430-stack/short-video-factory/actions/runs/39093628808/artifacts/12123576779",
+    "diagnostics": [
+      {
+        "user_agent_variant": 0,
+        "error": "视频信息为空"
+      },
+      {
+        "user_agent_variant": 1,
+        "error": "视频信息为空"
+      },
+      {
+        "user_agent_variant": 2,
+        "error": "从HTML中解析视频信息失败"
+      }
+    ],
+    "download_started": false,
+    "video_transcribed": false
+  },
+  "manual_ui": {
+    "status": "VERIFIED_DISPATCH",
+    "workflow": "actions-request.yml",
+    "branch": "integration/douyin-transcript",
+    "input_field": "request_id",
+    "input_for_local_test": "douyin-local-test",
+    "input_for_douyin": "https:// Douyin share URL"
+  },
+  "paid_api_used": false,
+  "main_merged": false,
+  "remaining_blocker": "Official parser cannot obtain playable media from tested Douyin share page. A working accessible share page or authorized original media is needed to prove the real download path; no cookie extraction or third-party paid parsers used."
+}
