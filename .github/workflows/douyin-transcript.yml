@@ -57,10 +57,20 @@ jobs:
           python -c "import requests, ffmpeg; from opencc import OpenCC; assert OpenCC('s2twp.json').convert('铅笔') == '鉛筆'"
           python -m pip freeze > transcription-output/python-dependencies.txt
           ffmpeg -version > transcription-output/ffmpeg-version.txt
-      - name: Checkout pinned official source
+      - name: Checkout pinned official source and verify CLI
         run: |
           git clone -q https://github.com/CherishLyf/douyin-transcript.git .douyin-tool
           git -C .douyin-tool checkout -q 421c11c6e167b5e38d9cd8fb4219ae926bd4643b
+          python -m unittest discover -s douyin_transcript -p test_preflight.py
+          python .douyin-tool/scripts/douyin_transcript.py --help > transcription-output/official-cli-help.txt
+          python .douyin-tool/scripts/douyin_transcript.py --print-config > transcription-output/official-default-config.json
+      - name: Check share page before downloading or building the model
+        if: env.TRANSCRIPT_MODE == 'douyin'
+        run: |
+          set -o pipefail
+          python -u douyin_transcript/run.py --mode douyin --model unused --preflight-only --info-file .douyin-info.json 2>&1 | tee transcription-output/preflight.log
+      - name: Checkout pinned whisper.cpp
+        run: |
           git clone -q https://github.com/ggml-org/whisper.cpp.git .whisper
           git -C .whisper checkout -q 0c7be696371069e0baa2515ed7aa08d5a5473aa6
       - uses: actions/cache/restore@v4
@@ -87,13 +97,11 @@ jobs:
           key: ${{ steps.whisper-cache.outputs.cache-primary-key }}
       - name: Verify official CLI
         run: |
-          python .douyin-tool/scripts/douyin_transcript.py --help > transcription-output/official-cli-help.txt
-          python .douyin-tool/scripts/douyin_transcript.py --print-config > transcription-output/official-default-config.json
           .whisper/build/bin/whisper-cli --help > transcription-output/whisper-cli-help.txt 2>&1
       - name: Download, transcribe and validate actual files
         run: |
           set -o pipefail
-          python -u douyin_transcript/run.py --mode "$TRANSCRIPT_MODE" --model ".whisper/models/ggml-$ASR_MODEL.bin" 2>&1 | tee transcription-output/transcription.log
+          python -u douyin_transcript/run.py --mode "$TRANSCRIPT_MODE" --info-file .douyin-info.json --model ".whisper/models/ggml-$ASR_MODEL.bin" 2>&1 | tee transcription-output/transcription.log
       - name: Upload text, SRT, raw recognition and verification
         if: always()
         uses: actions/upload-artifact@v4

@@ -29,22 +29,48 @@ def load_tool(path):
 
 
 def get_info(dt, link, out):
-    # Diagnose the observed missing videoInfoRes response, one User-Agent at a time.
-    agents = [dt.HEADERS['User-Agent'],
-              'Mozilla/5.0 (Linux; Android 13; Pixel 7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Mobile Safari/537.36',
-              'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36']
-    results = []
-    for i, agent in enumerate(agents):
-        dt.HEADERS['User-Agent'] = agent
-        try:
-            info = dt.get_video_info(link)
-            results.append({'user_agent_variant': i, 'status': 'PASS'})
-            write_json(out / 'link-diagnostic.json', results)
-            return info
-        except Exception as exc:
-            results.append({'user_agent_variant': i, 'status': 'FAIL', 'error': str(exc)})
-            write_json(out / 'link-diagnostic.json', results)
-    raise RuntimeError('Official Douyin parser failed with all 3 User-Agent variants; see link-diagnostic.json. No video downloaded.')
+    # Record response shape, never cookies, signed URLs, share query values or HTML.
+    from urllib.parse import urlsplit
+    records = []
+    original_get = dt.requests.get
+
+    def observe(*args, **kwargs):
+        response = original_get(*args, **kwargs)
+        parsed = urlsplit(response.url)
+        record = {'host': parsed.hostname, 'path': parsed.path,
+                  'http_status': response.status_code, 'bytes': len(response.content)}
+        match = re.search(r'window\._ROUTER_DATA\s*=\s*(.*?)</script>', response.text, re.DOTALL)
+        record['router_data_present'] = bool(match)
+        if match:
+            try:
+                loader = json.loads(match.group(1).strip().rstrip(';')).get('loaderData', {})
+                record['pages'] = []
+                for key, value in loader.items():
+                    if isinstance(value, dict) and ('video_(id)/page' in key or 'note_(id)/page' in key):
+                        info = value.get('videoInfoRes') or {}
+                        record['pages'].append({'key': key, 'item_id_present': bool(value.get('itemId')),
+                            'video_info_present': bool(info), 'item_count': len(info.get('item_list') or [])})
+            except (ValueError, AttributeError, TypeError):
+                record['router_json_valid'] = False
+        records.append(record)
+        return response
+
+    dt.requests.get = observe
+    try:
+        info = dt.get_video_info(link)
+        write_json(out / 'link-diagnostic.json', {'status': 'PASS', 'responses': records})
+        return info
+    except Exception:
+        missing = any(page['item_id_present'] and not page['video_info_present']
+                      for record in records for page in record.get('pages', []))
+        reason = 'SHARE_PAGE_HAS_NO_MEDIA_DATA' if missing else 'OFFICIAL_PARSER_FAILED'
+        write_json(out / 'link-diagnostic.json', {'status': 'FAIL', 'reason': reason,
+                   'responses': records, 'download_started': False,
+                   'interpretation': 'No usable media data obtained; deletion, region or login cause is unproven.'})
+        raise RuntimeError(f'{reason}: official share page supplied no usable video. '
+                           'No media downloaded; see link-diagnostic.json.') from None
+    finally:
+        dt.requests.get = original_get
 
 
 def export(dt, raw_srt, video, out, meta, reference=None):
@@ -127,6 +153,8 @@ def main():
     p.add_argument('--link', default=os.environ.get('DOUYIN_LINK', ''))
     p.add_argument('--output', default='transcription-output')
     p.add_argument('--max-seconds', type=int, default=600)
+    p.add_argument('--preflight-only', action='store_true')
+    p.add_argument('--info-file', help='Private runner-local preflight result; never upload this file')
     args = p.parse_args()
     out = Path(args.output).resolve()
     out.mkdir(parents=True, exist_ok=True)
@@ -156,10 +184,23 @@ def main():
             from urllib.parse import urlparse
             if not url or urlparse(url).hostname not in {'v.douyin.com','www.douyin.com','douyin.com','www.iesdouyin.com'}:
                 raise ValueError('Input must contain a Douyin share URL')
-            info = get_info(dt, args.link, out)
+            if args.info_file and Path(args.info_file).exists() and not args.preflight_only:
+                cached = json.loads(Path(args.info_file).read_text(encoding='utf-8'))
+                if cached['share_text_sha256'] != hashlib.sha256(args.link.encode()).hexdigest():
+                    raise ValueError('Preflight source does not match this link')
+                info = cached['info']
+            else:
+                info = get_info(dt, args.link, out)
             write_json(out/'source.json', {k:info.get(k) for k in ('video_id','title','duration_seconds','source_url')})
             if float(info.get('duration_seconds',0)) > args.max_seconds:
                 raise ValueError('Video exceeds configured duration limit')
+            if args.preflight_only:
+                if not args.info_file:
+                    raise ValueError('--preflight-only requires --info-file')
+                write_json(Path(args.info_file), {'share_text_sha256': hashlib.sha256(args.link.encode()).hexdigest(), 'info': info})
+                Path(args.info_file).chmod(0o600)
+                summary.update(status='PREFLIGHT_PASS', video_downloaded=False, video_transcribed=False)
+                return
             # Download with official implementation, no external parsing APIs/cookies.
             video = dt.DouyinProcessor().download_video(info, output_path=out/'source.mp4')
             meta = {**info, 'source_kind': 'douyin'}
