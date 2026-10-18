@@ -1,0 +1,8 @@
+{
+  "workflow": "voice-068.yml",
+  "ref": "main",
+  "inputs": {
+    "narration": "這個風箱，你知道英文怎麼說嗎？ 它叫 bellows，中文是風箱。 這種工具能吹出空氣，傳統上常用來幫助爐火燃燒。 例句：The bellows blow air into the\nfire. 風箱把空氣吹進爐火。 記住這個生活英文，換你出題！",
+    "filename": "ENG-20261018-175-bellows"
+  }
+}
