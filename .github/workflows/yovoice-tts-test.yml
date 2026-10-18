@@ -35,7 +35,7 @@ jobs:
           "$BIN" models list --json --data-dir "$DATA" > results/models.json
           "$BIN" models download kokoro-1.1-zh-q8 --source huggingface --data-dir "$DATA"
           printf '%s' '你知道嗎？颱風的英文叫做 Typhoon。今天我們用三十秒，了解颱風是怎麼形成的。' > results/narration.txt
-          "$BIN" generate --model kokoro-1.1-zh-q8 --speaker zf_001 --text-file results/narration.txt --output "$PWD/results/test-tw.wav" --data-dir "$DATA" | tee results/generate.json
+          "$BIN" generate --model kokoro-1.1-zh-q8 --speaker zf_003 --text-file results/narration.txt --output "$PWD/results/test-tw.wav" --data-dir "$DATA" | tee results/generate.json
           test -s results/test-tw.wav
           ffprobe -v error -show_format -show_streams -of json results/test-tw.wav > results/ffprobe.json
           ffmpeg -v error -xerror -i results/test-tw.wav -f null - 2> results/decode.log
@@ -47,7 +47,7 @@ jobs:
           duration=float(probe["format"]["duration"])
           assert len(audio)==1 and math.isfinite(duration) and duration>0
           assert int(audio[0]["sample_rate"])>0
-          report={"status":"AUDIO_GENERATED_AND_DECODED","duration_seconds":duration,"codec":audio[0]["codec_name"],"sample_rate":audio[0]["sample_rate"],"channels":audio[0]["channels"],"sha256":hashlib.sha256((p/"test-tw.wav").read_bytes()).hexdigest(),"model":"kokoro-1.1-zh-q8","speaker":"zf_001","backend":"cpu","subjective_listening":"NOT_VERIFIED","subtitle_alignment":"NOT_TESTED"}
+          report={"status":"AUDIO_GENERATED_AND_DECODED","duration_seconds":duration,"codec":audio[0]["codec_name"],"sample_rate":audio[0]["sample_rate"],"channels":audio[0]["channels"],"sha256":hashlib.sha256((p/"test-tw.wav").read_bytes()).hexdigest(),"model":"kokoro-1.1-zh-q8","speaker":"zf_003","backend":"cpu","subjective_listening":"NOT_VERIFIED","subtitle_alignment":"NOT_TESTED"}
           (p/"verification.json").write_text(json.dumps(report,ensure_ascii=False,indent=2))
           print(json.dumps(report,ensure_ascii=False))
           PY
