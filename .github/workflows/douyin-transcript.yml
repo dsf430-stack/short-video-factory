@@ -63,7 +63,8 @@ jobs:
           git -C .douyin-tool checkout -q 421c11c6e167b5e38d9cd8fb4219ae926bd4643b
           git clone -q https://github.com/ggml-org/whisper.cpp.git .whisper
           git -C .whisper checkout -q 0c7be696371069e0baa2515ed7aa08d5a5473aa6
-      - uses: actions/cache@v4
+      - uses: actions/cache/restore@v4
+        id: whisper-cache
         with:
           path: |
             .whisper/build
@@ -76,6 +77,14 @@ jobs:
           test -s ".whisper/models/ggml-$ASR_MODEL.bin" || (cd .whisper && sh models/download-ggml-model.sh "$ASR_MODEL")
           sha256sum ".whisper/models/ggml-$ASR_MODEL.bin" > transcription-output/model-sha256.txt
           df -h . > transcription-output/disk-space.txt
+      - name: Save successful installation even if a later link fails
+        if: steps.whisper-cache.outputs.cache-hit != 'true'
+        uses: actions/cache/save@v4
+        with:
+          path: |
+            .whisper/build
+            .whisper/models/ggml-${{ env.ASR_MODEL }}.bin
+          key: ${{ steps.whisper-cache.outputs.cache-primary-key }}
       - name: Verify official CLI
         run: |
           python .douyin-tool/scripts/douyin_transcript.py --help > transcription-output/official-cli-help.txt

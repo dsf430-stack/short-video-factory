@@ -57,7 +57,7 @@ def export(dt, raw_srt, video, out, meta, reference=None):
     adjustments = []
     normalized = []
     previous = 0.0
-    # Keep original timestamps/text untouched in transcript.raw.srt.
+    # Keep original timestamps/text untouched in transcript-raw.srt.
     # A decoder may round its last end beyond EOF; only intersect with actual media.
     for seg in segments:
         start, end = float(seg['start']), float(seg['end'])
@@ -169,7 +169,7 @@ def main():
         # Lossless mono 16 kHz PCM input avoids an extra MP3 encoding generation.
         audio = out / 'audio.wav'
         subprocess.run(['ffmpeg','-v','error','-y','-i',str(video),'-vn','-ac','1','-ar','16000','-c:a','pcm_s16le',str(audio)], check=True)
-        raw = out/'transcript.raw.srt'
+        raw = out/'transcript-raw.srt'
         dt.DouyinProcessor().transcribe_audio_to_srt(audio,raw,str(Path(args.whisper_bin).resolve()),str(Path(args.model).resolve()),'zh')
         report = export(dt, raw, video, out, meta, reference)
         summary.update(status='PASS', segments=report['segments'], duration_seconds=duration)
