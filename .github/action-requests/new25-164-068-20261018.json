@@ -1,0 +1,8 @@
+{
+  "workflow": "voice-068.yml",
+  "ref": "main",
+  "inputs": {
+    "narration": "這個拆信刀，你知道英文怎麼說嗎？ 它叫 letter opener，中文是拆信刀。 這種像小刀的工具，用來劃開信封封口取出信件。 例句：Open the envelope with a\nletter opener. 用拆信刀打開信封。 記住這個生活英文，換你出題！",
+    "filename": "ENG-20261018-164-letter_opener"
+  }
+}
