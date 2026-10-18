@@ -1,0 +1,8 @@
+{
+  "workflow": "voice-068.yml",
+  "ref": "main",
+  "inputs": {
+    "narration": "這個滑輪，你知道英文怎麼說嗎？ 它叫 pulley，中文是滑輪。 繩子繞過可以轉動的輪子，方便讓物件升起或降下。 例句：The rope runs over the pulley. 繩子繞過滑輪。 記住這個生活英文，換你出題！",
+    "filename": "ENG-20261018-176-pulley"
+  }
+}
