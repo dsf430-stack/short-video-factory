@@ -1,0 +1,8 @@
+{
+  "workflow": "voice-068.yml",
+  "ref": "main",
+  "inputs": {
+    "narration": "這個直角規，你知道英文怎麼說嗎？ 它叫 try square，中文是直角規。 兩個直邊固定成直角，用來檢查或標出九十度角。 例句：Check the corner with a try\nsquare. 用直角規檢查角落。 記住這個生活英文，換你出題！",
+    "filename": "ENG-20261018-169-try_square"
+  }
+}
