@@ -1,0 +1,8 @@
+{
+  "workflow": "voice-068.yml",
+  "ref": "main",
+  "inputs": {
+    "narration": "這個寫字夾板，你知道英文怎麼說嗎？ 它叫 clipboard，中文是寫字夾板。 頂端的夾子固定紙張，下面的硬板方便拿著寫字。 例句：Hold the paper on the\nclipboard. 把紙固定在寫字夾板上。 記住這個生活英文，換你出題！",
+    "filename": "ENG-20261018-162-clipboard"
+  }
+}
