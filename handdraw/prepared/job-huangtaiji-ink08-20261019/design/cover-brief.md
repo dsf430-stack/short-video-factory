@@ -1,0 +1,1 @@
+Compose exact Traditional Chinese title 皇太極 and subtitle 從後金到大清帝國 on pale paper, using the actually reviewed portrait from sheet1. No AI-generated final lettering.

@@ -66,3 +66,14 @@
 - 證據 handdraw/verification/pencil-style06-20261017.json。音軌工程檢查通過，主觀聽感仍UNCERTAIN；預設無配樂。
 
 2026-10-17：依使用者用量疑慮，在WORKFLOW.md補充只讀必要變更、只回傳必要摘要、合格素材不額外生圖的規則；無逐項扣量明細，不推算費用占比。
+
+
+## 已完成：皇太極：從後金到大清帝國（2026-10-19）
+
+- 獨立 job_id：job-huangtaiji-ink08-20261019；完整原稿與史實修訂均保存在任務包。保留權力集中、制度改革、朝鮮蒙古與對明戰略、松錦之戰及身後影響四段主軸。
+- 官方 sweety-handdraw-video 固定版本 5206ec0d17f9b353e400b64b9c51ad69e721e02a；官方8號完整水墨寫意規範，八幕全新素材，實際看圖及原版 build_illustration / check_bundle 檢查通過，使用 waner-brush 毛筆揭示。
+- 068 zh-TW-HsiaoChenNeural，+20%、+5Hz，完整實測 PCM 176.232秒；封面1秒、收尾0.3秒，影片177.533333秒。依真實 WordBoundary 產生繁體52px大字幕，不截音、不強制30秒，無背景音樂。
+- Actions SUCCESS：https://github.com/dsf430-stack/short-video-factory/actions/runs/39223177613 。15項測試通過。修復長篇字幕、自然片長及毛筆選擇，其他任務保留原預設。
+- 已下載最終 MP4：1080×1920、30fps、5326幀、H.264/AAC、31,793,494 bytes；SHA256 72bc2bcef33556ab8469a96535a440da7d95afddba5800314f718ec6cabd5f92。下載後再次完整解碼通過，官方全部工程檢查通過。
+- 實際檢視封面及各幕畫面，最終11個時間點重驗肖像裁切、單行字幕與結尾；先前26點檢視問題已修正。音軌相關度0.99997477、尾句0.99994774，尾端靜音0.972秒。主觀聽感 UNCERTAIN，未宣稱人工聽音。
+- 詳細證據 handdraw/verification/huangtaiji-style08-20261019.json；可直接播放的完整 MP4 已保存交付。

@@ -1,0 +1,1 @@
+Compose reviewed portrait crop sheet-1 [0,670,825,1536], excluding adjacent panel fragment while retaining entire figure. Exact editable title 皇太極 at y180, subtitle 從後金到大清帝國 at y365. Portrait centered below at y600. Preserve generous margins.

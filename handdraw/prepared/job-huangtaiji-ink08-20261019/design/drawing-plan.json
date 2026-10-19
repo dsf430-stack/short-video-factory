@@ -1,0 +1,693 @@
+{
+  "illustrations": [
+    {
+      "id": "history01",
+      "composition": "A seventeenth-century Manchu council chamber seen frontally: four equally sized separate ceremonial seats stand side by side at equal height on a low dais beneath a spare timber roof. No people. Each seat is individually readable, all four visibly equal, with clear gaps.",
+      "drawability_reason": "A few clearly separated semantic subjects with independent brush strokes; sparse details fit measured narration. Pale washes use aligned outline mask if necessary, without adding outlines to the image.",
+      "outline_strategy": "explicit_mask",
+      "spatial_order": "top_to_bottom_left_to_right",
+      "order_exception": "Follow semantic object order; portrait follows head neck torso screen-left arm screen-right arm lower body.",
+      "subjects": [
+        {
+          "id": "roof",
+          "kind": "object"
+        },
+        {
+          "id": "seat1",
+          "kind": "object"
+        },
+        {
+          "id": "seat2",
+          "kind": "object"
+        },
+        {
+          "id": "seat3",
+          "kind": "object"
+        },
+        {
+          "id": "seat4",
+          "kind": "object"
+        },
+        {
+          "id": "paper_environment",
+          "kind": "environment"
+        }
+      ],
+      "parts": [
+        {
+          "id": "history01_roof",
+          "subject": "roof",
+          "role": "roof",
+          "stroke_groups": [
+            "Separate visible brush contour marks; lift between disconnected dry-brush strokes.",
+            "Local ink wash follows brush footprint; preserve empty gaps."
+          ]
+        },
+        {
+          "id": "history01_seat1",
+          "subject": "seat1",
+          "role": "seat1",
+          "stroke_groups": [
+            "Separate visible brush contour marks; lift between disconnected dry-brush strokes.",
+            "Local ink wash follows brush footprint; preserve empty gaps."
+          ]
+        },
+        {
+          "id": "history01_seat2",
+          "subject": "seat2",
+          "role": "seat2",
+          "stroke_groups": [
+            "Separate visible brush contour marks; lift between disconnected dry-brush strokes.",
+            "Local ink wash follows brush footprint; preserve empty gaps."
+          ]
+        },
+        {
+          "id": "history01_seat3",
+          "subject": "seat3",
+          "role": "seat3",
+          "stroke_groups": [
+            "Separate visible brush contour marks; lift between disconnected dry-brush strokes.",
+            "Local ink wash follows brush footprint; preserve empty gaps."
+          ]
+        },
+        {
+          "id": "history01_seat4",
+          "subject": "seat4",
+          "role": "seat4",
+          "stroke_groups": [
+            "Separate visible brush contour marks; lift between disconnected dry-brush strokes.",
+            "Local ink wash follows brush footprint; preserve empty gaps."
+          ]
+        },
+        {
+          "id": "history01_paper_environment",
+          "subject": "paper_environment",
+          "role": "paper_environment",
+          "stroke_groups": [
+            "Source contextual shadows and red stamp, each isolated; paper texture is revealed locally without joining blank gaps."
+          ]
+        }
+      ],
+      "outline_order": [
+        "history01_roof",
+        "history01_seat1",
+        "history01_seat2",
+        "history01_seat3",
+        "history01_seat4",
+        "history01_paper_environment"
+      ],
+      "fill_order": [
+        "history01_roof",
+        "history01_seat1",
+        "history01_seat2",
+        "history01_seat3",
+        "history01_seat4",
+        "history01_paper_environment"
+      ],
+      "narrative_requirements": [
+        {
+          "id": "history01_fact",
+          "narration_quote": "1626年，努爾哈赤去世",
+          "observable": "A seventeenth-century Manchu council chamber seen frontally: four equally sized separate ceremonial seats stand side by side at equal height on a low dais beneath a spare timber roof. No people. Each seat is individually readable, all four visibly equal, with clear gaps."
+        }
+      ],
+      "post_generation_refinement": "Actually inspected all image parts, retained before-generation plan and preflight separately; added explicit ownership of source paper, chair and contextual shadows. No artwork pixels changed."
+    },
+    {
+      "id": "history02",
+      "composition": "One unoccupied seventeenth-century Manchu imperial throne centered on a raised dais, one closed administrative document box at lower left and a folded official memorial at lower right. A visual transition from divided seats to a single central seat, no people.",
+      "drawability_reason": "A few clearly separated semantic subjects with independent brush strokes; sparse details fit measured narration. Pale washes use aligned outline mask if necessary, without adding outlines to the image.",
+      "outline_strategy": "explicit_mask",
+      "spatial_order": "top_to_bottom_left_to_right",
+      "order_exception": "Follow semantic object order; portrait follows head neck torso screen-left arm screen-right arm lower body.",
+      "subjects": [
+        {
+          "id": "throne",
+          "kind": "object"
+        },
+        {
+          "id": "box",
+          "kind": "object"
+        },
+        {
+          "id": "memorial",
+          "kind": "object"
+        },
+        {
+          "id": "paper_environment",
+          "kind": "environment"
+        }
+      ],
+      "parts": [
+        {
+          "id": "history02_throne",
+          "subject": "throne",
+          "role": "throne",
+          "stroke_groups": [
+            "Separate visible brush contour marks; lift between disconnected dry-brush strokes.",
+            "Local ink wash follows brush footprint; preserve empty gaps."
+          ]
+        },
+        {
+          "id": "history02_box",
+          "subject": "box",
+          "role": "box",
+          "stroke_groups": [
+            "Separate visible brush contour marks; lift between disconnected dry-brush strokes.",
+            "Local ink wash follows brush footprint; preserve empty gaps."
+          ]
+        },
+        {
+          "id": "history02_memorial",
+          "subject": "memorial",
+          "role": "memorial",
+          "stroke_groups": [
+            "Separate visible brush contour marks; lift between disconnected dry-brush strokes.",
+            "Local ink wash follows brush footprint; preserve empty gaps."
+          ]
+        },
+        {
+          "id": "history02_paper_environment",
+          "subject": "paper_environment",
+          "role": "paper_environment",
+          "stroke_groups": [
+            "Source contextual shadows and red stamp, each isolated; paper texture is revealed locally without joining blank gaps."
+          ]
+        }
+      ],
+      "outline_order": [
+        "history02_throne",
+        "history02_box",
+        "history02_memorial",
+        "history02_paper_environment"
+      ],
+      "fill_order": [
+        "history02_throne",
+        "history02_box",
+        "history02_memorial",
+        "history02_paper_environment"
+      ],
+      "narrative_requirements": [
+        {
+          "id": "history02_fact",
+          "narration_quote": "他以失守城池等罪名幽禁阿",
+          "observable": "One unoccupied seventeenth-century Manchu imperial throne centered on a raised dais, one closed administrative document box at lower left and a folded official memorial at lower right. A visual transition from divided seats to a single central seat, no people."
+        }
+      ],
+      "post_generation_refinement": "Actually inspected all image parts, retained before-generation plan and preflight separately; added explicit ownership of source paper, chair and contextual shadows. No artwork pixels changed."
+    },
+    {
+      "id": "history03",
+      "composition": "A bird-eye architectural study of six distinct small ministry courtyard buildings, arranged in two neat rows of three, with a rolled administrative manuscript below. Six buildings must be separately countable, no people, no pseudo-writing.",
+      "drawability_reason": "A few clearly separated semantic subjects with independent brush strokes; sparse details fit measured narration. Pale washes use aligned outline mask if necessary, without adding outlines to the image.",
+      "outline_strategy": "explicit_mask",
+      "spatial_order": "top_to_bottom_left_to_right",
+      "order_exception": "Follow semantic object order; portrait follows head neck torso screen-left arm screen-right arm lower body.",
+      "subjects": [
+        {
+          "id": "ministries",
+          "kind": "object"
+        },
+        {
+          "id": "manuscript",
+          "kind": "object"
+        },
+        {
+          "id": "paper_environment",
+          "kind": "environment"
+        }
+      ],
+      "parts": [
+        {
+          "id": "history03_ministries",
+          "subject": "ministries",
+          "role": "ministries",
+          "stroke_groups": [
+            "Separate visible brush contour marks; lift between disconnected dry-brush strokes.",
+            "Local ink wash follows brush footprint; preserve empty gaps."
+          ]
+        },
+        {
+          "id": "history03_manuscript",
+          "subject": "manuscript",
+          "role": "manuscript",
+          "stroke_groups": [
+            "Separate visible brush contour marks; lift between disconnected dry-brush strokes.",
+            "Local ink wash follows brush footprint; preserve empty gaps."
+          ]
+        },
+        {
+          "id": "history03_paper_environment",
+          "subject": "paper_environment",
+          "role": "paper_environment",
+          "stroke_groups": [
+            "Source contextual shadows and red stamp, each isolated; paper texture is revealed locally without joining blank gaps."
+          ]
+        }
+      ],
+      "outline_order": [
+        "history03_ministries",
+        "history03_manuscript",
+        "history03_paper_environment"
+      ],
+      "fill_order": [
+        "history03_ministries",
+        "history03_manuscript",
+        "history03_paper_environment"
+      ],
+      "narrative_requirements": [
+        {
+          "id": "history03_fact",
+          "narration_quote": "光有權力還不夠。皇太極知",
+          "observable": "A bird-eye architectural study of six distinct small ministry courtyard buildings, arranged in two neat rows of three, with a rolled administrative manuscript below. Six buildings must be separately countable, no people, no pseudo-writing."
+        }
+      ],
+      "post_generation_refinement": "Actually inspected all image parts, retained before-generation plan and preflight separately; added explicit ownership of source paper, chair and contextual shadows. No artwork pixels changed."
+    },
+    {
+      "id": "history04",
+      "composition": "An interpretive portrait of middle-aged Hong Taiji, rounded face, short moustache and sparse chin beard, wearing a seventeenth-century Manchu round court hat and long imperial robe. Seated alone, head, neck, torso, two hands resting separately on the knees, lower robe and feet visible. No invented claim of exact likeness.",
+      "drawability_reason": "A few clearly separated semantic subjects with independent brush strokes; sparse details fit measured narration. Pale washes use aligned outline mask if necessary, without adding outlines to the image.",
+      "outline_strategy": "explicit_mask",
+      "spatial_order": "top_to_bottom_left_to_right",
+      "order_exception": "Follow semantic object order; portrait follows head neck torso screen-left arm screen-right arm lower body.",
+      "subjects": [
+        {
+          "id": "ruler",
+          "kind": "human"
+        },
+        {
+          "id": "paper_environment",
+          "kind": "environment"
+        }
+      ],
+      "parts": [
+        {
+          "id": "history04_head",
+          "subject": "ruler",
+          "role": "head",
+          "stroke_groups": [
+            "Separate visible brush contour marks; lift between disconnected dry-brush strokes.",
+            "Local ink wash follows brush footprint; preserve empty gaps."
+          ]
+        },
+        {
+          "id": "history04_neck",
+          "subject": "ruler",
+          "role": "neck",
+          "stroke_groups": [
+            "Separate visible brush contour marks; lift between disconnected dry-brush strokes.",
+            "Local ink wash follows brush footprint; preserve empty gaps."
+          ]
+        },
+        {
+          "id": "history04_torso",
+          "subject": "ruler",
+          "role": "torso",
+          "stroke_groups": [
+            "Separate visible brush contour marks; lift between disconnected dry-brush strokes.",
+            "Local ink wash follows brush footprint; preserve empty gaps."
+          ]
+        },
+        {
+          "id": "history04_left_arm",
+          "subject": "ruler",
+          "role": "left_arm",
+          "stroke_groups": [
+            "Separate visible brush contour marks; lift between disconnected dry-brush strokes.",
+            "Local ink wash follows brush footprint; preserve empty gaps."
+          ]
+        },
+        {
+          "id": "history04_right_arm",
+          "subject": "ruler",
+          "role": "right_arm",
+          "stroke_groups": [
+            "Separate visible brush contour marks; lift between disconnected dry-brush strokes.",
+            "Local ink wash follows brush footprint; preserve empty gaps."
+          ]
+        },
+        {
+          "id": "history04_lower_body",
+          "subject": "ruler",
+          "role": "lower_body",
+          "stroke_groups": [
+            "Separate visible brush contour marks; lift between disconnected dry-brush strokes.",
+            "Local ink wash follows brush footprint; preserve empty gaps."
+          ]
+        },
+        {
+          "id": "history04_paper_environment",
+          "subject": "paper_environment",
+          "role": "paper_environment",
+          "stroke_groups": [
+            "Source contextual shadows and red stamp, each isolated; paper texture is revealed locally without joining blank gaps."
+          ]
+        }
+      ],
+      "outline_order": [
+        "history04_head",
+        "history04_neck",
+        "history04_torso",
+        "history04_left_arm",
+        "history04_right_arm",
+        "history04_lower_body",
+        "history04_paper_environment"
+      ],
+      "fill_order": [
+        "history04_head",
+        "history04_neck",
+        "history04_torso",
+        "history04_left_arm",
+        "history04_right_arm",
+        "history04_lower_body",
+        "history04_paper_environment"
+      ],
+      "narrative_requirements": [
+        {
+          "id": "history04_fact",
+          "narration_quote": "1635年，他正式確立滿",
+          "observable": "An interpretive portrait of middle-aged Hong Taiji, rounded face, short moustache and sparse chin beard, wearing a seventeenth-century Manchu round court hat and long imperial robe. Seated alone, head, neck, torso, two hands resting separately on the knees, lower robe and feet visible. No invented claim of exact likeness."
+        }
+      ],
+      "post_generation_refinement": "Actually inspected all image parts, retained before-generation plan and preflight separately; added explicit ownership of source paper, chair and contextual shadows. No artwork pixels changed."
+    },
+    {
+      "id": "history05",
+      "composition": "A seventeenth-century Korean walled city gateway at upper left and a separate pair of long Manchu military banners leaning above siege supplies at lower right. No battle damage, no soldiers, no people; interpretive objects of the two campaigns, not a geographic map.",
+      "drawability_reason": "A few clearly separated semantic subjects with independent brush strokes; sparse details fit measured narration. Pale washes use aligned outline mask if necessary, without adding outlines to the image.",
+      "outline_strategy": "explicit_mask",
+      "spatial_order": "top_to_bottom_left_to_right",
+      "order_exception": "Follow semantic object order; portrait follows head neck torso screen-left arm screen-right arm lower body.",
+      "subjects": [
+        {
+          "id": "gateway",
+          "kind": "object"
+        },
+        {
+          "id": "banners",
+          "kind": "object"
+        },
+        {
+          "id": "supplies",
+          "kind": "object"
+        },
+        {
+          "id": "paper_environment",
+          "kind": "environment"
+        }
+      ],
+      "parts": [
+        {
+          "id": "history05_gateway",
+          "subject": "gateway",
+          "role": "gateway",
+          "stroke_groups": [
+            "Separate visible brush contour marks; lift between disconnected dry-brush strokes.",
+            "Local ink wash follows brush footprint; preserve empty gaps."
+          ]
+        },
+        {
+          "id": "history05_banners",
+          "subject": "banners",
+          "role": "banners",
+          "stroke_groups": [
+            "Separate visible brush contour marks; lift between disconnected dry-brush strokes.",
+            "Local ink wash follows brush footprint; preserve empty gaps."
+          ]
+        },
+        {
+          "id": "history05_supplies",
+          "subject": "supplies",
+          "role": "supplies",
+          "stroke_groups": [
+            "Separate visible brush contour marks; lift between disconnected dry-brush strokes.",
+            "Local ink wash follows brush footprint; preserve empty gaps."
+          ]
+        },
+        {
+          "id": "history05_paper_environment",
+          "subject": "paper_environment",
+          "role": "paper_environment",
+          "stroke_groups": [
+            "Source contextual shadows and red stamp, each isolated; paper texture is revealed locally without joining blank gaps."
+          ]
+        }
+      ],
+      "outline_order": [
+        "history05_gateway",
+        "history05_banners",
+        "history05_supplies",
+        "history05_paper_environment"
+      ],
+      "fill_order": [
+        "history05_gateway",
+        "history05_banners",
+        "history05_supplies",
+        "history05_paper_environment"
+      ],
+      "narrative_requirements": [
+        {
+          "id": "history05_fact",
+          "narration_quote": "在軍事上，皇太極將外交、",
+          "observable": "A seventeenth-century Korean walled city gateway at upper left and a separate pair of long Manchu military banners leaning above siege supplies at lower right. No battle damage, no soldiers, no people; interpretive objects of the two campaigns, not a geographic map."
+        }
+      ],
+      "post_generation_refinement": "Actually inspected all image parts, retained before-generation plan and preflight separately; added explicit ownership of source paper, chair and contextual shadows. No artwork pixels changed."
+    },
+    {
+      "id": "history06",
+      "composition": "Three separately spaced historical objects: at upper left a Mongolian recurved bow with a small quiver, at upper right a compact square historical seal with an unlettered face, and below a seventeenth-century iron cannon on a two-wheel wooden carriage. Do not show Qin-style inscriptions or assert a genuine ancient seal.",
+      "drawability_reason": "A few clearly separated semantic subjects with independent brush strokes; sparse details fit measured narration. Pale washes use aligned outline mask if necessary, without adding outlines to the image.",
+      "outline_strategy": "explicit_mask",
+      "spatial_order": "top_to_bottom_left_to_right",
+      "order_exception": "Follow semantic object order; portrait follows head neck torso screen-left arm screen-right arm lower body.",
+      "subjects": [
+        {
+          "id": "bow",
+          "kind": "object"
+        },
+        {
+          "id": "seal",
+          "kind": "object"
+        },
+        {
+          "id": "cannon",
+          "kind": "object"
+        },
+        {
+          "id": "paper_environment",
+          "kind": "environment"
+        }
+      ],
+      "parts": [
+        {
+          "id": "history06_bow",
+          "subject": "bow",
+          "role": "bow",
+          "stroke_groups": [
+            "Separate visible brush contour marks; lift between disconnected dry-brush strokes.",
+            "Local ink wash follows brush footprint; preserve empty gaps."
+          ]
+        },
+        {
+          "id": "history06_seal",
+          "subject": "seal",
+          "role": "seal",
+          "stroke_groups": [
+            "Separate visible brush contour marks; lift between disconnected dry-brush strokes.",
+            "Local ink wash follows brush footprint; preserve empty gaps."
+          ]
+        },
+        {
+          "id": "history06_cannon",
+          "subject": "cannon",
+          "role": "cannon",
+          "stroke_groups": [
+            "Separate visible brush contour marks; lift between disconnected dry-brush strokes.",
+            "Local ink wash follows brush footprint; preserve empty gaps."
+          ]
+        },
+        {
+          "id": "history06_paper_environment",
+          "subject": "paper_environment",
+          "role": "paper_environment",
+          "stroke_groups": [
+            "Source contextual shadows and red stamp, each isolated; paper texture is revealed locally without joining blank gaps."
+          ]
+        }
+      ],
+      "outline_order": [
+        "history06_bow",
+        "history06_seal",
+        "history06_cannon",
+        "history06_paper_environment"
+      ],
+      "fill_order": [
+        "history06_bow",
+        "history06_seal",
+        "history06_cannon",
+        "history06_paper_environment"
+      ],
+      "narrative_requirements": [
+        {
+          "id": "history06_fact",
+          "narration_quote": "他建立蒙古八旗，擴充漢軍",
+          "observable": "Three separately spaced historical objects: at upper left a Mongolian recurved bow with a small quiver, at upper right a compact square historical seal with an unlettered face, and below a seventeenth-century iron cannon on a two-wheel wooden carriage. Do not show Qin-style inscriptions or assert a genuine ancient seal."
+        }
+      ],
+      "post_generation_refinement": "Actually inspected all image parts, retained before-generation plan and preflight separately; added explicit ownership of source paper, chair and contextual shadows. No artwork pixels changed."
+    },
+    {
+      "id": "history07",
+      "composition": "A seventeenth-century Ming fortress at left with a broken supply cart outside its road, and a separate Qing cannon on a wooden carriage at right aimed toward the fortress. The cart is visibly overturned and a few sacks lie beside it; no gore, no people, no modern military items.",
+      "drawability_reason": "A few clearly separated semantic subjects with independent brush strokes; sparse details fit measured narration. Pale washes use aligned outline mask if necessary, without adding outlines to the image.",
+      "outline_strategy": "explicit_mask",
+      "spatial_order": "top_to_bottom_left_to_right",
+      "order_exception": "Follow semantic object order; portrait follows head neck torso screen-left arm screen-right arm lower body.",
+      "subjects": [
+        {
+          "id": "fortress",
+          "kind": "object"
+        },
+        {
+          "id": "cart",
+          "kind": "object"
+        },
+        {
+          "id": "cannon",
+          "kind": "object"
+        },
+        {
+          "id": "paper_environment",
+          "kind": "environment"
+        }
+      ],
+      "parts": [
+        {
+          "id": "history07_fortress",
+          "subject": "fortress",
+          "role": "fortress",
+          "stroke_groups": [
+            "Separate visible brush contour marks; lift between disconnected dry-brush strokes.",
+            "Local ink wash follows brush footprint; preserve empty gaps."
+          ]
+        },
+        {
+          "id": "history07_cart",
+          "subject": "cart",
+          "role": "cart",
+          "stroke_groups": [
+            "Separate visible brush contour marks; lift between disconnected dry-brush strokes.",
+            "Local ink wash follows brush footprint; preserve empty gaps."
+          ]
+        },
+        {
+          "id": "history07_cannon",
+          "subject": "cannon",
+          "role": "cannon",
+          "stroke_groups": [
+            "Separate visible brush contour marks; lift between disconnected dry-brush strokes.",
+            "Local ink wash follows brush footprint; preserve empty gaps."
+          ]
+        },
+        {
+          "id": "history07_paper_environment",
+          "subject": "paper_environment",
+          "role": "paper_environment",
+          "stroke_groups": [
+            "Source contextual shadows and red stamp, each isolated; paper texture is revealed locally without joining blank gaps."
+          ]
+        }
+      ],
+      "outline_order": [
+        "history07_fortress",
+        "history07_cart",
+        "history07_cannon",
+        "history07_paper_environment"
+      ],
+      "fill_order": [
+        "history07_fortress",
+        "history07_cart",
+        "history07_cannon",
+        "history07_paper_environment"
+      ],
+      "narrative_requirements": [
+        {
+          "id": "history07_fact",
+          "narration_quote": "1641年，松錦戰事進入",
+          "observable": "A seventeenth-century Ming fortress at left with a broken supply cart outside its road, and a separate Qing cannon on a wooden carriage at right aimed toward the fortress. The cart is visibly overturned and a few sacks lie beside it; no gore, no people, no modern military items."
+        }
+      ],
+      "post_generation_refinement": "Actually inspected all image parts, retained before-generation plan and preflight separately; added explicit ownership of source paper, chair and contextual shadows. No artwork pixels changed."
+    },
+    {
+      "id": "history08",
+      "composition": "An empty seventeenth-century imperial throne inside a sparse Shengjing hall at left, and a distant separate northern city gateway at right beyond an open road. Empty throne conveys death, road and gate convey the subsequent historical transition. No people, no supernatural spirits.",
+      "drawability_reason": "A few clearly separated semantic subjects with independent brush strokes; sparse details fit measured narration. Pale washes use aligned outline mask if necessary, without adding outlines to the image.",
+      "outline_strategy": "explicit_mask",
+      "spatial_order": "top_to_bottom_left_to_right",
+      "order_exception": "Follow semantic object order; portrait follows head neck torso screen-left arm screen-right arm lower body.",
+      "subjects": [
+        {
+          "id": "hall_throne",
+          "kind": "object"
+        },
+        {
+          "id": "road_gate",
+          "kind": "object"
+        },
+        {
+          "id": "paper_environment",
+          "kind": "environment"
+        }
+      ],
+      "parts": [
+        {
+          "id": "history08_hall_throne",
+          "subject": "hall_throne",
+          "role": "hall_throne",
+          "stroke_groups": [
+            "Separate visible brush contour marks; lift between disconnected dry-brush strokes.",
+            "Local ink wash follows brush footprint; preserve empty gaps."
+          ]
+        },
+        {
+          "id": "history08_road_gate",
+          "subject": "road_gate",
+          "role": "road_gate",
+          "stroke_groups": [
+            "Separate visible brush contour marks; lift between disconnected dry-brush strokes.",
+            "Local ink wash follows brush footprint; preserve empty gaps."
+          ]
+        },
+        {
+          "id": "history08_paper_environment",
+          "subject": "paper_environment",
+          "role": "paper_environment",
+          "stroke_groups": [
+            "Source contextual shadows and red stamp, each isolated; paper texture is revealed locally without joining blank gaps."
+          ]
+        }
+      ],
+      "outline_order": [
+        "history08_hall_throne",
+        "history08_road_gate",
+        "history08_paper_environment"
+      ],
+      "fill_order": [
+        "history08_hall_throne",
+        "history08_road_gate",
+        "history08_paper_environment"
+      ],
+      "narrative_requirements": [
+        {
+          "id": "history08_fact",
+          "narration_quote": "然而，皇太極沒能等到清軍",
+          "observable": "An empty seventeenth-century imperial throne inside a sparse Shengjing hall at left, and a distant separate northern city gateway at right beyond an open road. Empty throne conveys death, road and gate convey the subsequent historical transition. No people, no supernatural spirits."
+        }
+      ],
+      "post_generation_refinement": "Actually inspected all image parts, retained before-generation plan and preflight separately; added explicit ownership of source paper, chair and contextual shadows. No artwork pixels changed."
+    }
+  ]
+}

@@ -1,8 +1,8 @@
 {
-  "job_id": "job-637378837c79e0ffd659",
-  "topic": "鉛筆芯其實沒有鉛",
-  "seconds": 30,
-  "style": "6",
-  "bundle_sha256": "7bd8e7547b2078d2610c9c1d4459204d780d7f3ffb34c432ab1c142125333f8b",
+  "job_id": "job-huangtaiji-ink08-20261019",
+  "topic": "皇太極：從後金到大清帝國",
+  "seconds": 178,
+  "style": "8",
+  "bundle_sha256": "a30f8a32f209aa39501c86bfedc9e48cadb9b3f7675f9ef0891cfd1f8bd05069",
   "mode": "chatgpt-prepared-no-extra-model-api"
 }

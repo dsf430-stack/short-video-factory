@@ -22,7 +22,7 @@ def parse_srt(path):
     return result
 
 
-def align_scenes(scenes, events):
+def align_scenes(scenes, events, word_events=False):
     """Map real Edge sentence boundaries; never interpolate character timing."""
     result, offset = [], 0
     for index, scene in enumerate(scenes):
@@ -60,6 +60,16 @@ def align_scenes(scenes, events):
                 while cursor < len(scene['text']) and not scene['text'][cursor].isalnum(): cursor += 1
                 cue['text'] = scene['text'][begin:cursor]
             if cursor != len(scene['text']): raise ValueError('Subtitle typography mapping incomplete')
+        if word_events:
+            grouped = []
+            for cue in cues:
+                if (not grouped or len(grouped[-1]['text'] + cue['text']) > 16
+                    or grouped[-1]['text'].rstrip().endswith(('，', '。', '；', '！', '？', '：'))):
+                    grouped.append(dict(cue))
+                else:
+                    grouped[-1]['text'] += cue['text']
+                    grouped[-1]['end'] = cue['end']
+            cues = grouped
         result.append({'id': scene['id'], 'text': scene['text'], 'start': start, 'end': end,
                        'caption_cues': cues})
     if offset != len(events):
@@ -91,8 +101,11 @@ def main(args):
  except (ValueError,OSError,KeyError,TypeError):
   print('INVALID_RENDER_CACHE: rebuilding this job from validated inputs',flush=True)
  if not cached:
+  def copy_prepared(source, destination):
+   if Path(source).name.startswith('voice-') and Path(destination).is_file(): return str(destination)
+   return shutil.copy2(source, destination)
   for directory in ['style','design','inputs']:
-   shutil.copytree(bundle/directory,root/directory,dirs_exist_ok=True)
+   shutil.copytree(bundle/directory,root/directory,dirs_exist_ok=True,copy_function=copy_prepared)
   if not args.voice_only:shutil.copyfile(bundle/'design.json',root/'design.json')
   story=json.loads((bundle/'story.json').read_text()); scenes=story['scenes']
   candidates=story.get('script_candidates',[[s['text'] for s in scenes]])
@@ -106,9 +119,11 @@ def main(args):
    mp3=narration.with_suffix('.mp3')
    from voice_cache import valid_voice_cache, invalidate_voice_cache
    expected=json.loads((REPO/'smart_voice/voices.json').read_text())['voices']['068']
-   if not valid_voice_cache(mp3,text_hash,expected,text):
+   boundary=story.get('voice_boundary','SentenceBoundary')
+   cached_boundary=json.loads(mp3.with_suffix('.json').read_text()).get('boundary','SentenceBoundary') if mp3.with_suffix('.json').exists() else None
+   if not valid_voice_cache(mp3,text_hash,expected,text) or cached_boundary != boundary:
     invalidate_voice_cache(mp3)
-    run(sys.executable,REPO/'smart_voice/generate_voice.py','--voice-id','068','--text-file',narration,'--output',mp3)
+    run(sys.executable,REPO/'smart_voice/generate_voice.py','--voice-id','068','--text-file',narration,'--output',mp3,'--boundary',boundary)
    else:
     print('VOICE_CACHE_HIT',mp3.name,flush=True)
    if not valid_voice_cache(mp3,text_hash,expected,text):raise ValueError('Generated voice artifacts failed hash/preset/subtitle checks')
@@ -116,7 +131,7 @@ def main(args):
    master=root/'inputs/master.wav';run('ffmpeg','-y','-v','error','-i',mp3,'-ar',48000,'-ac',1,'-c:a','pcm_s16le',master)
    import wave
    with wave.open(str(master)) as wav: duration=wav.getnframes()/wav.getframerate()
-   hold=args.seconds-1-duration;measured[candidate]=duration
+   hold=.3 if story.get('duration_mode')=='narration' else args.seconds-1-duration;measured[candidate]=duration
    attempts.append({'candidate':candidate,'seconds':duration,'hold':hold,'text':text})
    save(root/'voice-measurement.json',{'attempts':attempts,'target_film_seconds':args.seconds,'voice':meta['preset']})
    print('MEASURED_NARRATION_SECONDS',duration,'REQUIRED_END_HOLD',hold,flush=True)
@@ -125,7 +140,7 @@ def main(args):
   if selected is None:raise ValueError('SCRIPT_FIT_REQUIRED: measured editorial candidates exhausted; see voice-measurement.json. Voice was not stretched or truncated.')
   for scene,spoken in zip(scenes,candidates[selected]):scene['text']=spoken
   # Requirements cite stable core facts present in every editorial candidate.
-  beats=align_scenes(scenes,parse_srt(mp3.with_suffix('.srt')))
+  beats=align_scenes(scenes,parse_srt(mp3.with_suffix('.srt')),word_events=boundary=='WordBoundary')
   save(root/'inputs/alignment.json',{'version':1,'source_sha256':digest(master),'script_sha256':text_hash,'beats':beats})
   if args.voice_only:
    print('VOICE_FIT_READY',json.dumps({'seconds':duration,'hold':hold,'candidate':selected}),flush=True)
@@ -151,6 +166,7 @@ def main(args):
   for page, scene in zip(pages,scenes):
    page['beats'][0]['actions'].extend({'type':'text','weight':.3,'z':50,**item} for item in scene.get('annotations',[]))
   manifest={'version':1,'title':story['title'],'design_file':'design.json','canvas':{'width':1080,'height':1920,'fps':30},'paper':story.get('paper','#FFFFFF'),'font':{'path':font,'index':3},'cover':{'source':'inputs/cover.png','seconds':1},'hand':{'preset':'pen-only','scale':.25,'pen_text':''},'narration':{'source':'inputs/master.wav','alignment':'inputs/alignment.json'},'audio':{'end_hold_seconds':hold},'ending':{'caption_hold_seconds':min(.2,hold)},'captions':{'font':{'path':font,'index':3},'font_size':46,'bottom_margin':210,'max_width_ratio':.9,'max_lines':2,'color':'#FFFFFF','stroke_color':'#151515','stroke_width':3,'background':None},'art_direction':{'record':'design/art-direction.json'},'drawing_plan':'design/drawing-plan.json','drawing_review':'design/drawing-review.json','pages':pages}
+  if story.get('hand'): manifest['hand'] = story['hand']
   save(root/'job.json',manifest);(root/'script.txt').write_text(text)
   if story.get('caption_font_size'):
    manifest['captions']['font_size']=story['caption_font_size']
@@ -181,7 +197,11 @@ def main(args):
  run(sys.executable,command,'verify',root)
  probe=json.loads(subprocess.check_output(['ffprobe','-v','error','-show_streams','-show_format','-of','json',str(film)]))
  v=next(s for s in probe['streams'] if s['codec_type']=='video')
- if (v['width'],v['height'],v['avg_frame_rate'])!=(1080,1920,'30/1') or abs(float(v['duration'])-args.seconds)>.05:raise ValueError('Requested format or duration failed')
+ expected_seconds=args.seconds
+ if json.loads((bundle/'story.json').read_text()).get('duration_mode')=='narration':
+  import wave
+  with wave.open(str(root/'inputs/master.wav')) as wav: expected_seconds=1+wav.getnframes()/wav.getframerate()+.3
+ if (v['width'],v['height'],v['avg_frame_rate'])!=(1080,1920,'30/1') or abs(float(v['duration'])-expected_seconds)>.05:raise ValueError('Requested format or duration failed')
  report={'status':'ENGINEERING_PASS','topic':args.topic,'seconds':float(v['duration']),'official_commit':PIN,'voice':'068','sha256':digest(film),'human_listening':'UNCERTAIN','model_api_required':False}
  review_path=REPO/'handdraw/final-reviews'/f"{digest(film)}.json"
  if review_path.exists():

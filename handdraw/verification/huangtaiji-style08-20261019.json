@@ -1,0 +1,39 @@
+{
+  "job_id": "job-huangtaiji-ink08-20261019",
+  "status": "ENGINEERING_AND_VISUAL_PASS",
+  "actions": "https://github.com/dsf430-stack/short-video-factory/actions/runs/39223177613",
+  "source_commit": "62ea1b55dc046513d6740bb68030ce1f7d88fa6c",
+  "duration": 177.533333,
+  "width": 1080,
+  "height": 1920,
+  "fps": 30,
+  "frames": 5326,
+  "bytes": 31793494,
+  "sha256": "72bc2bcef33556ab8469a96535a440da7d95afddba5800314f718ec6cabd5f92",
+  "full_local_decode": true,
+  "visual_review_seconds": [
+    0.2,
+    9.5,
+    17,
+    32,
+    54,
+    70,
+    101,
+    125,
+    147,
+    176.5,
+    177.3
+  ],
+  "official_checks_all_pass": true,
+  "voice": {
+    "preset": "068",
+    "name": "zh-TW-HsiaoChenNeural",
+    "rate": "+20%",
+    "pitch": "+5Hz",
+    "pcm_seconds": 176.232,
+    "boundary": "WordBoundary"
+  },
+  "background_music": false,
+  "subjective_listening": "UNCERTAIN",
+  "notes": "Final portrait crop and single-line 52px Traditional Chinese captions reviewed; all eight scenes use new style08 illustrations and official waner-brush reveal. Complete historical story retained with documented factual corrections."
+}
