@@ -1,0 +1,10 @@
+{
+  "workflow": "sweety-handdraw-068.yml",
+  "ref": "feature/huangtaiji-ink08-20261019",
+  "inputs": {
+    "job_id": "job-huangtaiji-ink08-20261019",
+    "topic": "皇太極：從後金到大清帝國",
+    "seconds": 178,
+    "style": "8"
+  }
+}
