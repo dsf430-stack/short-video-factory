@@ -101,8 +101,11 @@ def main(args):
  except (ValueError,OSError,KeyError,TypeError):
   print('INVALID_RENDER_CACHE: rebuilding this job from validated inputs',flush=True)
  if not cached:
+  def copy_prepared(source, destination):
+   if Path(source).name.startswith('voice-') and Path(destination).is_file(): return str(destination)
+   return shutil.copy2(source, destination)
   for directory in ['style','design','inputs']:
-   shutil.copytree(bundle/directory,root/directory,dirs_exist_ok=True)
+   shutil.copytree(bundle/directory,root/directory,dirs_exist_ok=True,copy_function=copy_prepared)
   if not args.voice_only:shutil.copyfile(bundle/'design.json',root/'design.json')
   story=json.loads((bundle/'story.json').read_text()); scenes=story['scenes']
   candidates=story.get('script_candidates',[[s['text'] for s in scenes]])
@@ -128,7 +131,7 @@ def main(args):
    master=root/'inputs/master.wav';run('ffmpeg','-y','-v','error','-i',mp3,'-ar',48000,'-ac',1,'-c:a','pcm_s16le',master)
    import wave
    with wave.open(str(master)) as wav: duration=wav.getnframes()/wav.getframerate()
-   hold=args.seconds-1-duration;measured[candidate]=duration
+   hold=.3 if story.get('duration_mode')=='narration' else args.seconds-1-duration;measured[candidate]=duration
    attempts.append({'candidate':candidate,'seconds':duration,'hold':hold,'text':text})
    save(root/'voice-measurement.json',{'attempts':attempts,'target_film_seconds':args.seconds,'voice':meta['preset']})
    print('MEASURED_NARRATION_SECONDS',duration,'REQUIRED_END_HOLD',hold,flush=True)
@@ -194,7 +197,11 @@ def main(args):
  run(sys.executable,command,'verify',root)
  probe=json.loads(subprocess.check_output(['ffprobe','-v','error','-show_streams','-show_format','-of','json',str(film)]))
  v=next(s for s in probe['streams'] if s['codec_type']=='video')
- if (v['width'],v['height'],v['avg_frame_rate'])!=(1080,1920,'30/1') or abs(float(v['duration'])-args.seconds)>.05:raise ValueError('Requested format or duration failed')
+ expected_seconds=args.seconds
+ if json.loads((bundle/'story.json').read_text()).get('duration_mode')=='narration':
+  import wave
+  with wave.open(str(root/'inputs/master.wav')) as wav: expected_seconds=1+wav.getnframes()/wav.getframerate()+.3
+ if (v['width'],v['height'],v['avg_frame_rate'])!=(1080,1920,'30/1') or abs(float(v['duration'])-expected_seconds)>.05:raise ValueError('Requested format or duration failed')
  report={'status':'ENGINEERING_PASS','topic':args.topic,'seconds':float(v['duration']),'official_commit':PIN,'voice':'068','sha256':digest(film),'human_listening':'UNCERTAIN','model_api_required':False}
  review_path=REPO/'handdraw/final-reviews'/f"{digest(film)}.json"
  if review_path.exists():
