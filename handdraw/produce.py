@@ -22,7 +22,7 @@ def parse_srt(path):
     return result
 
 
-def align_scenes(scenes, events):
+def align_scenes(scenes, events, word_events=False):
     """Map real Edge sentence boundaries; never interpolate character timing."""
     result, offset = [], 0
     for index, scene in enumerate(scenes):
@@ -60,6 +60,16 @@ def align_scenes(scenes, events):
                 while cursor < len(scene['text']) and not scene['text'][cursor].isalnum(): cursor += 1
                 cue['text'] = scene['text'][begin:cursor]
             if cursor != len(scene['text']): raise ValueError('Subtitle typography mapping incomplete')
+        if word_events:
+            grouped = []
+            for cue in cues:
+                if (not grouped or len(normalize(grouped[-1]['text']) + normalize(cue['text'])) > 24
+                    or grouped[-1]['text'].rstrip().endswith(('，', '。', '；', '！', '？', '：'))):
+                    grouped.append(dict(cue))
+                else:
+                    grouped[-1]['text'] += cue['text']
+                    grouped[-1]['end'] = cue['end']
+            cues = grouped
         result.append({'id': scene['id'], 'text': scene['text'], 'start': start, 'end': end,
                        'caption_cues': cues})
     if offset != len(events):
@@ -106,9 +116,11 @@ def main(args):
    mp3=narration.with_suffix('.mp3')
    from voice_cache import valid_voice_cache, invalidate_voice_cache
    expected=json.loads((REPO/'smart_voice/voices.json').read_text())['voices']['068']
-   if not valid_voice_cache(mp3,text_hash,expected,text):
+   boundary=story.get('voice_boundary','SentenceBoundary')
+   cached_boundary=json.loads(mp3.with_suffix('.json').read_text()).get('boundary','SentenceBoundary') if mp3.with_suffix('.json').exists() else None
+   if not valid_voice_cache(mp3,text_hash,expected,text) or cached_boundary != boundary:
     invalidate_voice_cache(mp3)
-    run(sys.executable,REPO/'smart_voice/generate_voice.py','--voice-id','068','--text-file',narration,'--output',mp3)
+    run(sys.executable,REPO/'smart_voice/generate_voice.py','--voice-id','068','--text-file',narration,'--output',mp3,'--boundary',boundary)
    else:
     print('VOICE_CACHE_HIT',mp3.name,flush=True)
    if not valid_voice_cache(mp3,text_hash,expected,text):raise ValueError('Generated voice artifacts failed hash/preset/subtitle checks')
@@ -125,7 +137,7 @@ def main(args):
   if selected is None:raise ValueError('SCRIPT_FIT_REQUIRED: measured editorial candidates exhausted; see voice-measurement.json. Voice was not stretched or truncated.')
   for scene,spoken in zip(scenes,candidates[selected]):scene['text']=spoken
   # Requirements cite stable core facts present in every editorial candidate.
-  beats=align_scenes(scenes,parse_srt(mp3.with_suffix('.srt')))
+  beats=align_scenes(scenes,parse_srt(mp3.with_suffix('.srt')),word_events=boundary=='WordBoundary')
   save(root/'inputs/alignment.json',{'version':1,'source_sha256':digest(master),'script_sha256':text_hash,'beats':beats})
   if args.voice_only:
    print('VOICE_FIT_READY',json.dumps({'seconds':duration,'hold':hold,'candidate':selected}),flush=True)

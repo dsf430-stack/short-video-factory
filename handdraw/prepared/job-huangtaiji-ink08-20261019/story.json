@@ -1253,5 +1253,6 @@
   "preview_seconds": 10,
   "hand": {
     "preset": "waner-brush"
-  }
+  },
+  "voice_boundary": "WordBoundary"
 }

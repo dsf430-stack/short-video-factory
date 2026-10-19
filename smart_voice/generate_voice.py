@@ -50,9 +50,11 @@ def atomic_json(path: Path, value: dict) -> None:
     pending.replace(path)
 
 
-def chunk_key(text: str, preset: dict) -> str:
+def chunk_key(text: str, preset: dict, boundary: str = 'SentenceBoundary') -> str:
     config = {'text': text, 'preset': preset, 'service': SERVICE,
               'cache_version': CACHE_VERSION, 'edge_tts': edge_tts.__version__}
+    if boundary != 'SentenceBoundary':
+        config['boundary'] = boundary
     return hashlib.sha256(json.dumps(config, sort_keys=True, ensure_ascii=False).encode()).hexdigest()
 
 
@@ -75,8 +77,8 @@ def inspect_chunk(raw: Path, events: list, text: str) -> float:
 
 
 async def get_chunk(text: str, preset: dict, cache: Path, temp: Path,
-                    progress: dict, journal: Path) -> tuple[Path, list, float, bool]:
-    key = chunk_key(text, preset)
+                    progress: dict, journal: Path, boundary: str = 'SentenceBoundary') -> tuple[Path, list, float, bool]:
+    key = chunk_key(text, preset, boundary)
     saved_audio, saved_meta = cache / f'{key}.mp3', cache / f'{key}.json'
     if saved_audio.exists() and saved_meta.exists():
         try:
@@ -95,7 +97,7 @@ async def get_chunk(text: str, preset: dict, cache: Path, temp: Path,
         try:
             stream = edge_tts.Communicate(
                 text, preset['voice'], rate=preset['rate'], pitch=preset['pitch'],
-                volume=preset['volume'], boundary='SentenceBoundary',
+                volume=preset['volume'], boundary=boundary,
                 connect_timeout=15, receive_timeout=30,
             )
             async def receive_stream():
@@ -103,7 +105,7 @@ async def get_chunk(text: str, preset: dict, cache: Path, temp: Path,
                     async for item in stream.stream():
                         if item['type'] == 'audio':
                             handle.write(item['data'])
-                        elif item['type'] == 'SentenceBoundary':
+                        elif item['type'] == boundary:
                             events.append((item['offset'] / 1e7, item['duration'] / 1e7, item['text']))
             await asyncio.wait_for(receive_stream(), timeout=120)
             duration = inspect_chunk(raw, events, text)
@@ -170,7 +172,7 @@ def timestamp(seconds: float) -> str:
     return f'{h:02}:{m:02}:{s:02},{ms:03}'
 
 
-async def synthesize(text: str, output: str, voice_id: str) -> None:
+async def synthesize(text: str, output: str, voice_id: str, boundary: str = 'SentenceBoundary') -> None:
     text = text.strip()
     if not text:
         raise ValueError('Narration text is empty')
@@ -207,12 +209,12 @@ async def synthesize(text: str, output: str, voice_id: str) -> None:
         journal = out.with_suffix('.progress.json')
         atomic_json(journal, progress)
         for index, chunk in enumerate(chunks):
-            raw, chunk_events, duration, cached = await get_chunk(chunk, preset, cache, temp, progress, journal)
+            raw, chunk_events, duration, cached = await get_chunk(chunk, preset, cache, temp, progress, journal, boundary)
             shutil.copyfile(raw, temp / f'{index}.mp3')
             events.extend((offset + start, min(offset + start + length, offset + duration), sentence)
                           for start, length, sentence in chunk_events)
             offset += duration
-            progress['completed'].append({'index': index, 'key': chunk_key(chunk, preset),
+            progress['completed'].append({'index': index, 'key': chunk_key(chunk, preset, boundary),
                                           'cached': cached, 'duration': duration})
             atomic_json(journal, progress)
             print(f'CHUNK {index + 1}/{len(chunks)} SUCCESS cached={cached}', flush=True)
@@ -238,7 +240,7 @@ async def synthesize(text: str, output: str, voice_id: str) -> None:
                                for i, (start, end, sentence) in enumerate(events, 1)), encoding='utf-8')
         metadata = temp / 'final.json'
         metadata.write_text(json.dumps({
-            'status': 'SUCCESS', 'voice_id': voice_id, 'preset': preset,
+            'status': 'SUCCESS', 'voice_id': voice_id, 'preset': preset, 'boundary': boundary,
             'text_sha256': hashlib.sha256(text.encode()).hexdigest(), 'chunks': len(chunks),
             'duration': duration, 'loudness': stats, 'full_decode': 'PASS',
             'service': SERVICE, 'cache_hits': sum(c['cached'] for c in progress['completed']),
@@ -271,6 +273,7 @@ def main() -> int:
     parser.add_argument('--voice-id', default='auto')
     parser.add_argument('--topic', default='')
     parser.add_argument('--language', default='auto')
+    parser.add_argument('--boundary', choices=['SentenceBoundary', 'WordBoundary'], default='SentenceBoundary')
     args = parser.parse_args()
     try:
         text = args.text if args.text is not None else Path(args.text_file).read_text(encoding='utf-8-sig')
@@ -278,7 +281,7 @@ def main() -> int:
         if language == 'auto':
             language = 'zh' if re.search(r'[\u3400-\u9fff]', text) else 'en'
         voice_id = select_voice(args.topic, language) if args.voice_id == 'auto' else args.voice_id
-        asyncio.run(synthesize(text, args.output, voice_id))
+        asyncio.run(synthesize(text, args.output, voice_id, args.boundary))
     except Exception as error:
         output = Path(args.output)
         output.parent.mkdir(parents=True, exist_ok=True)
