@@ -1254,5 +1254,6 @@
   "hand": {
     "preset": "waner-brush"
   },
-  "voice_boundary": "WordBoundary"
+  "voice_boundary": "WordBoundary",
+  "duration_mode": "narration"
 }
