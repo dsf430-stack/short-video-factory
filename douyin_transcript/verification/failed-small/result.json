@@ -1,0 +1,21 @@
+{
+  "status": "FAILED_NOT_ACCEPTED",
+  "run": "https://github.com/dsf430-stack/short-video-factory/actions/runs/39091480406",
+  "artifact": "https://github.com/dsf430-stack/short-video-factory/actions/runs/39091480406/artifacts/12123007404",
+  "installation": "passed",
+  "speech_api_used": false,
+  "source": "existing pencil narration wrapped in black video; not Douyin video",
+  "video_duration_seconds": 28.488005,
+  "srt_last_end_seconds": 29.9,
+  "segments": 7,
+  "errors": [
+    "small model: 鉛筆 transcribed as 簽筆, 筆芯 as 筆星",
+    "SRT exceeds actual video duration",
+    "Douyin HTTP 200 page lacks videoInfoRes; actual video download and transcription skipped"
+  ],
+  "markdown": "Generated after artifact download with unchanged official generate_markdown; original recognition text preserved",
+  "next_steps": [
+    "Obtain accessible source MP4 or a working share page containing video data before claiming Douyin success",
+    "Improve local recognition and timestamp quality with a controlled model/decoder experiment; do not replace text with source script or relax checks"
+  ]
+}

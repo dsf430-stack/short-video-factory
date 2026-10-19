@@ -1,0 +1,9 @@
+{
+  "mode": "local-test",
+  "status": "PASS",
+  "paid_api_used": false,
+  "douyin_probe": "FAIL",
+  "douyin_error": "Official Douyin parser failed with all 3 User-Agent variants; see link-diagnostic.json. No video downloaded.",
+  "segments": 9,
+  "duration_seconds": 28.488005
+}

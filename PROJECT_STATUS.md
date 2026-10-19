@@ -66,3 +66,16 @@
 - 證據 handdraw/verification/pencil-style06-20261017.json。音軌工程檢查通過，主觀聽感仍UNCERTAIN；預設無配樂。
 
 2026-10-17：依使用者用量疑慮，在WORKFLOW.md補充只讀必要變更、只回傳必要摘要、合格素材不額外生圖的規則；無逐項扣量明細，不推算費用占比。
+
+
+## 2026-10-18：douyin-transcript 獨立整合（未合併 main）
+
+- 分支 `integration/douyin-transcript`、草稿 PR #10；保留既有影片、畫風、068 與字幕功能，未新增付費服務。
+- 免費本地 medium 模型、PCM 音訊、繁體 TXT/Markdown/SRT、交接設定及實際驗證完成。中文本地影片測試 PASS：https://github.com/dsf430-stack/short-video-factory/actions/runs/39093733910 。9 段、28.488005 秒影片、字幕尾端 28.2 秒、無時間修剪；121 個正規化文字字元與原旁白一致，標點不計。Artifact 下載後已獨立重驗結構、文字、大小及 SHA256。
+- 透過現有 bridge 選整合分支，在網頁實際手動啟動兩次；不需要更動 main 才能輸入分享連結。安裝成功後立即保存模型／編譯快取，後續下載失敗仍保留。
+- 抖音真實連結仍 FAIL：https://github.com/dsf430-stack/short-video-factory/actions/runs/39093628808 。原始／Android 識別回報影片資訊為空；桌面識別未能解析 HTML。沒有取得影片、未下載或轉錄該抖音影片，不能宣稱完整抖音流程已驗收。
+- 手機操作、輸出及既有字幕路徑交接見 `douyin_transcript/README.md`；完整證據見 `douyin_transcript/verification/integration-20261018.json` 與 `verification/medium/`。
+
+## douyin-transcript 接續檢查（2026-10-18）
+
+整合分支 `integration/douyin-transcript` / PR #10 保持草稿、未合併。新增模型安裝前連結預檢及去除查詢值的回應結構診斷；Actions 39099545784 證實官方 CLI 與2項回歸測試通過，分享頁缺少媒體資料時跳過模型安裝與轉錄並上傳診斷。該次整體仍為 FAIL，不代表已修好抖音下載。原本本地中文轉錄成功紀錄保留，並重新驗證原始辨識結果的繁體字幕匯出（9段、此測試文字CER 0）。依據、失敗原因及後續卡點見 douyin_transcript/verification/preflight-20261018.json。
