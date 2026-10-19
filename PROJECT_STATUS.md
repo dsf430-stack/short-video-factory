@@ -66,3 +66,15 @@
 - 證據 handdraw/verification/pencil-style06-20261017.json。音軌工程檢查通過，主觀聽感仍UNCERTAIN；預設無配樂。
 
 2026-10-17：依使用者用量疑慮，在WORKFLOW.md補充只讀必要變更、只回傳必要摘要、合格素材不額外生圖的規則；無逐項扣量明細，不推算費用占比。
+
+
+## 製作中：皇太極・官方8號水墨寫意
+
+- job_id：job-huangtaiji-ink08-20261019；獨立分支 feature/huangtaiji-ink08-20261019。
+- 使用者完整稿已收齊，四段主軸保留；校正親征朝鮮、五次入塞領軍、松錦年份、滿漢制度、玉璽與虛歲等敘述。
+- 完整068已實測：zh-TW-HsiaoChenNeural / +20% / +5Hz，MP3封裝176.248163秒、解碼PCM176.208020833秒；目標成片178秒，無配樂。
+- 4張本題新水墨圖集、8幕、封面均已實際看圖；八幕官方check_bundle通過ASSETS_VALIDATED。原版引擎固定5206ec0d17f9b353e400b64b9c51ad69e721e02a。
+- 發現舊入口固定pen-only，已只增加story.hand讀取，採官方waner-brush。
+- 本地預檢發現長SentenceBoundary字幕超出52px兩行上限；保留文字與聲音設定，增加可選WordBoundary實測及按真實詞界分組，其他任務預設不變。15項測試通過。
+- 最新渲染Actions：https://github.com/dsf430-stack/short-video-factory/actions/runs/39221399305 ，狀態製作中，尚未交付MP4或完成成片驗收。首次39221221814失敗於長句字幕；dispatch以active-job設定成功，首個有顯式inputs的bridge回422。
+- 本地補取詞界遭執行環境代理403，未繞過限制；GitHub依既有Actions獨立執行。原始配音及已完成素材保留，不從頭生圖。
