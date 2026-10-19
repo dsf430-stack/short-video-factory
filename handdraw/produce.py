@@ -63,7 +63,7 @@ def align_scenes(scenes, events, word_events=False):
         if word_events:
             grouped = []
             for cue in cues:
-                if (not grouped or len(normalize(grouped[-1]['text']) + normalize(cue['text'])) > 24
+                if (not grouped or len(grouped[-1]['text'] + cue['text']) > 16
                     or grouped[-1]['text'].rstrip().endswith(('，', '。', '；', '！', '？', '：'))):
                     grouped.append(dict(cue))
                 else:

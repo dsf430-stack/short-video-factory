@@ -48,11 +48,11 @@
         [
           0,
           670,
-          1024,
+          825,
           1536
         ]
       ],
-      "evidence": "Viewed: exactly six separate courtyard compounds arranged two rows of three, and one rolled administrative document below. Architectural marks on the scroll are schematic, no formal text is being relied on. Viewed: one seated mature Manchu ruler with round hat, moustache, sparse chin beard, long robe, both distinct hands resting on knees and two visible feet. Interpretive portrait, not an authenticated likeness. Chair is behind and beside the arms; label remains editable. Actual visible medium has variable dark and pale ink, dry breaks, wet bleed and paper texture. No old-topic artwork."
+      "evidence": "Viewed: exactly six separate courtyard compounds arranged two rows of three, and one rolled administrative document below. Architectural marks on the scroll are schematic, no formal text is being relied on. Viewed: one seated mature Manchu ruler with round hat, moustache, sparse chin beard, long robe, both distinct hands resting on knees and two visible feet. Interpretive portrait, not an authenticated likeness. Chair is behind and beside the arms; label remains editable. Actual visible medium has variable dark and pale ink, dry breaks, wet bleed and paper texture. No old-topic artwork. Final film inspection identified a tiny adjacent scroll fragment above portrait at far right; narrower approved crop retains full figure and removes it."
     },
     {
       "source": "../inputs/sheet-2.png",
@@ -113,10 +113,10 @@
       "prompt_file": "cover-prompt.txt",
       "status": "pass",
       "brief_sha256": "dd63c36f21fe52ebd9c7792bc1d75e6b0f6de5047b6a38e5978786f927b0e7cb",
-      "prompt_sha256": "be720c67f35c31d7574fa7e8575b8bd90db6f75931c7bfd53e0d41ba0659c9d3",
-      "sha256": "74a6c2f1a74388b4f9a2e89238dcddf0129836f0a055bfcf636616afadae8cf0",
-      "pixel_sha256": "5e551ec05eaa824e470916c7377b1c306819686d0a0649a0b82b2bbe4a034e18",
-      "evidence": "Actually viewed 1080x1920 cover: complete exact 皇太極 and 從後金到大清帝國, large readable Traditional Chinese type, reviewed seated portrait with intact hat, hands and feet. Generous margins, no subtitles baked in; production label unobscured."
+      "prompt_sha256": "74a21315dbd9031a17b41d974ae4ce76a9943c3142dd9cb04a89f48b99628108",
+      "sha256": "91738b3b7b6d067830e5dc3d556efccb8163ecaa790194209ca14d3c988b19f9",
+      "pixel_sha256": "e49ce3beac149ca5954813cbf279781af93b2691ca092765b19f6d8fd1f1e560",
+      "evidence": "Actually viewed corrected cover: complete exact Traditional Chinese title and subtitle, full seated portrait with hat ornament, hands and both feet retained; adjacent scroll fragment absent; bottom label 水墨歷史 separated and readable."
     }
   ]
 }

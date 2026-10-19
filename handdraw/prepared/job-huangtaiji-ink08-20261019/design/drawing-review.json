@@ -81,12 +81,12 @@
       "crop": [
         0,
         670,
-        1024,
+        825,
         1536
       ],
       "outline_mask_sha256": "4b8d6fd82172e1b33eeeab52eb95f2155a22a4458c3ed80e16a441bdfe918503",
       "anatomy_and_occlusion": "Viewed: one seated mature Manchu ruler with round hat, moustache, sparse chin beard, long robe, both distinct hands resting on knees and two visible feet. Interpretive portrait, not an authenticated likeness. Chair is behind and beside the arms; label remains editable.",
-      "part_boundaries": "Actual object regions entered as polygons; foreground overlaps explicitly excluded, contextual paper and chair owned last. Portrait follows head, neck, torso, screen-left arm, screen-right arm and lower robe with feet.",
+      "part_boundaries": "Actual object regions entered as polygons; foreground overlaps explicitly excluded, contextual paper and chair owned last. Portrait follows head, neck, torso, screen-left arm, screen-right arm and lower robe with feet. Portrait crop narrowed after final-frame inspection to remove adjacent upper-panel scroll remnant, keeping entire hat, hands, robe and feet.",
       "stroke_breaks": "Trace only connected source pigment boundaries from aligned mask; disconnected pigment starts a new lifted stroke.",
       "outline_then_fill": "Aligned technical mask follows existing dark pigment edges; original source pixels retained, no cartoon outline added. Official localized wash follows all outline parts.",
       "spatial_order": "Semantic order from original plan; portrait anatomy first, contextual chair and paper last.",
