@@ -151,6 +151,7 @@ def main(args):
   for page, scene in zip(pages,scenes):
    page['beats'][0]['actions'].extend({'type':'text','weight':.3,'z':50,**item} for item in scene.get('annotations',[]))
   manifest={'version':1,'title':story['title'],'design_file':'design.json','canvas':{'width':1080,'height':1920,'fps':30},'paper':story.get('paper','#FFFFFF'),'font':{'path':font,'index':3},'cover':{'source':'inputs/cover.png','seconds':1},'hand':{'preset':'pen-only','scale':.25,'pen_text':''},'narration':{'source':'inputs/master.wav','alignment':'inputs/alignment.json'},'audio':{'end_hold_seconds':hold},'ending':{'caption_hold_seconds':min(.2,hold)},'captions':{'font':{'path':font,'index':3},'font_size':46,'bottom_margin':210,'max_width_ratio':.9,'max_lines':2,'color':'#FFFFFF','stroke_color':'#151515','stroke_width':3,'background':None},'art_direction':{'record':'design/art-direction.json'},'drawing_plan':'design/drawing-plan.json','drawing_review':'design/drawing-review.json','pages':pages}
+  if story.get('hand'): manifest['hand'] = story['hand']
   save(root/'job.json',manifest);(root/'script.txt').write_text(text)
   if story.get('caption_font_size'):
    manifest['captions']['font_size']=story['caption_font_size']

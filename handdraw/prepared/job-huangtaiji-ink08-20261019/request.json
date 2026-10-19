@@ -1,0 +1,21 @@
+{
+  "topic": "皇太極：從後金到大清帝國",
+  "seconds": 178,
+  "style": "8",
+  "job_id": "job-huangtaiji-ink08-20261019",
+  "voice_id": "068",
+  "mode": "chatgpt-prepared-no-extra-model-api",
+  "script_sha256": "eb8db28c6341610ccfb4bb4ca8de170be115a8b0d396974552d2a87290033bc3",
+  "state": "ASSETS_VALIDATED",
+  "required_files": [
+    "story.json",
+    "design.json",
+    "style/selection.json",
+    "style/resolved.json",
+    "design/art-direction.json",
+    "design/drawing-plan.json",
+    "design/drawing-plan.preflight.json",
+    "design/drawing-review.json",
+    "inputs/cover.png"
+  ]
+}

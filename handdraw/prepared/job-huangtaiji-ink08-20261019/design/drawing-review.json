@@ -1,0 +1,198 @@
+{
+  "style_sha256": "1249a7cdca92580c8dcc516512d7e5bd196e5255b8c0fbe4daf95596cf7ddbe7",
+  "plan_sha256": "3e9226613751fee8d06782e7d3067ba43ff5aae3b33b99bf1b4c176e7ec6871c",
+  "illustrations": [
+    {
+      "plan_id": "history01",
+      "status": "pass",
+      "source_sha256": "31e5b8986b291b5194c8c60dbc8bec807f285fea28d2344fa81bc8b3845564e0",
+      "crop": [
+        0,
+        0,
+        1024,
+        700
+      ],
+      "outline_mask_sha256": "38858817db7851b4174f2985c864f3cc133142a5590c850233b1277b795caa4d",
+      "anatomy_and_occlusion": "Viewed: four separate equally sized seats stand on one low dais; there are exactly four, with visible gaps. Shared roof, pillars and floor make the ceremonial setting explicit.",
+      "part_boundaries": "Actual object regions entered as polygons; foreground overlaps explicitly excluded, contextual paper and chair owned last. Portrait follows head, neck, torso, screen-left arm, screen-right arm and lower robe with feet.",
+      "stroke_breaks": "Trace only connected source pigment boundaries from aligned mask; disconnected pigment starts a new lifted stroke.",
+      "outline_then_fill": "Aligned technical mask follows existing dark pigment edges; original source pixels retained, no cartoon outline added. Official localized wash follows all outline parts.",
+      "spatial_order": "Semantic order from original plan; portrait anatomy first, contextual chair and paper last.",
+      "narrative_checks": [
+        {
+          "id": "history01_fact",
+          "status": "pass",
+          "evidence": "Viewed: four separate equally sized seats stand on one low dais; there are exactly four, with visible gaps. Shared roof, pillars and floor make the ceremonial setting explicit."
+        }
+      ]
+    },
+    {
+      "plan_id": "history02",
+      "status": "pass",
+      "source_sha256": "31e5b8986b291b5194c8c60dbc8bec807f285fea28d2344fa81bc8b3845564e0",
+      "crop": [
+        0,
+        700,
+        1024,
+        1536
+      ],
+      "outline_mask_sha256": "38858817db7851b4174f2985c864f3cc133142a5590c850233b1277b795caa4d",
+      "anatomy_and_occlusion": "Viewed: single central unoccupied throne on raised dais; dark closed administrative box at lower-left and separate open memorial at lower-right. The contrast with four seats is visually explicit.",
+      "part_boundaries": "Actual object regions entered as polygons; foreground overlaps explicitly excluded, contextual paper and chair owned last. Portrait follows head, neck, torso, screen-left arm, screen-right arm and lower robe with feet.",
+      "stroke_breaks": "Trace only connected source pigment boundaries from aligned mask; disconnected pigment starts a new lifted stroke.",
+      "outline_then_fill": "Aligned technical mask follows existing dark pigment edges; original source pixels retained, no cartoon outline added. Official localized wash follows all outline parts.",
+      "spatial_order": "Semantic order from original plan; portrait anatomy first, contextual chair and paper last.",
+      "narrative_checks": [
+        {
+          "id": "history02_fact",
+          "status": "pass",
+          "evidence": "Viewed: single central unoccupied throne on raised dais; dark closed administrative box at lower-left and separate open memorial at lower-right. The contrast with four seats is visually explicit."
+        }
+      ]
+    },
+    {
+      "plan_id": "history03",
+      "status": "pass",
+      "source_sha256": "918cf505f7d7bda15e6e2cae6178ac5c9aeab103432862a18e23072b67649d48",
+      "crop": [
+        0,
+        0,
+        1024,
+        670
+      ],
+      "outline_mask_sha256": "4b8d6fd82172e1b33eeeab52eb95f2155a22a4458c3ed80e16a441bdfe918503",
+      "anatomy_and_occlusion": "Viewed: exactly six separate courtyard compounds arranged two rows of three, and one rolled administrative document below. Architectural marks on the scroll are schematic, no formal text is being relied on.",
+      "part_boundaries": "Actual object regions entered as polygons; foreground overlaps explicitly excluded, contextual paper and chair owned last. Portrait follows head, neck, torso, screen-left arm, screen-right arm and lower robe with feet.",
+      "stroke_breaks": "Trace only connected source pigment boundaries from aligned mask; disconnected pigment starts a new lifted stroke.",
+      "outline_then_fill": "Aligned technical mask follows existing dark pigment edges; original source pixels retained, no cartoon outline added. Official localized wash follows all outline parts.",
+      "spatial_order": "Semantic order from original plan; portrait anatomy first, contextual chair and paper last.",
+      "narrative_checks": [
+        {
+          "id": "history03_fact",
+          "status": "pass",
+          "evidence": "Viewed: exactly six separate courtyard compounds arranged two rows of three, and one rolled administrative document below. Architectural marks on the scroll are schematic, no formal text is being relied on."
+        }
+      ]
+    },
+    {
+      "plan_id": "history04",
+      "status": "pass",
+      "source_sha256": "918cf505f7d7bda15e6e2cae6178ac5c9aeab103432862a18e23072b67649d48",
+      "crop": [
+        0,
+        670,
+        1024,
+        1536
+      ],
+      "outline_mask_sha256": "4b8d6fd82172e1b33eeeab52eb95f2155a22a4458c3ed80e16a441bdfe918503",
+      "anatomy_and_occlusion": "Viewed: one seated mature Manchu ruler with round hat, moustache, sparse chin beard, long robe, both distinct hands resting on knees and two visible feet. Interpretive portrait, not an authenticated likeness. Chair is behind and beside the arms; label remains editable.",
+      "part_boundaries": "Actual object regions entered as polygons; foreground overlaps explicitly excluded, contextual paper and chair owned last. Portrait follows head, neck, torso, screen-left arm, screen-right arm and lower robe with feet.",
+      "stroke_breaks": "Trace only connected source pigment boundaries from aligned mask; disconnected pigment starts a new lifted stroke.",
+      "outline_then_fill": "Aligned technical mask follows existing dark pigment edges; original source pixels retained, no cartoon outline added. Official localized wash follows all outline parts.",
+      "spatial_order": "Semantic order from original plan; portrait anatomy first, contextual chair and paper last.",
+      "narrative_checks": [
+        {
+          "id": "history04_fact",
+          "status": "pass",
+          "evidence": "Viewed: one seated mature Manchu ruler with round hat, moustache, sparse chin beard, long robe, both distinct hands resting on knees and two visible feet. Interpretive portrait, not an authenticated likeness. Chair is behind and beside the arms; label remains editable."
+        }
+      ]
+    },
+    {
+      "plan_id": "history05",
+      "status": "pass",
+      "source_sha256": "49ce741c4154dc4c16388ba078f7f51efcf5ac191cf8aeefb7164caf81ab181e",
+      "crop": [
+        0,
+        0,
+        1024,
+        790
+      ],
+      "outline_mask_sha256": "637ec4b09af50df1b032a2a882e4fa84c09ff9f23a10384f102c65942671ae0a",
+      "anatomy_and_occlusion": "Viewed: stone Korean-style gateway left and two Manchu-style military banners right with bundles and supply crates below. This is an illustrative campaign setting, not a map or a purported exact site.",
+      "part_boundaries": "Actual object regions entered as polygons; foreground overlaps explicitly excluded, contextual paper and chair owned last. Portrait follows head, neck, torso, screen-left arm, screen-right arm and lower robe with feet.",
+      "stroke_breaks": "Trace only connected source pigment boundaries from aligned mask; disconnected pigment starts a new lifted stroke.",
+      "outline_then_fill": "Aligned technical mask follows existing dark pigment edges; original source pixels retained, no cartoon outline added. Official localized wash follows all outline parts.",
+      "spatial_order": "Semantic order from original plan; portrait anatomy first, contextual chair and paper last.",
+      "narrative_checks": [
+        {
+          "id": "history05_fact",
+          "status": "pass",
+          "evidence": "Viewed: stone Korean-style gateway left and two Manchu-style military banners right with bundles and supply crates below. This is an illustrative campaign setting, not a map or a purported exact site."
+        }
+      ]
+    },
+    {
+      "plan_id": "history06",
+      "status": "pass",
+      "source_sha256": "49ce741c4154dc4c16388ba078f7f51efcf5ac191cf8aeefb7164caf81ab181e",
+      "crop": [
+        0,
+        790,
+        1024,
+        1536
+      ],
+      "outline_mask_sha256": "637ec4b09af50df1b032a2a882e4fa84c09ff9f23a10384f102c65942671ae0a",
+      "anatomy_and_occlusion": "Viewed: recurved bow with quiver at upper-left, separate blank-faced seal upper-right, iron cannon and wooden two-wheel carriage below. The blank face does not invent Qin inscriptions or assert a genuine ancient seal.",
+      "part_boundaries": "Actual object regions entered as polygons; foreground overlaps explicitly excluded, contextual paper and chair owned last. Portrait follows head, neck, torso, screen-left arm, screen-right arm and lower robe with feet.",
+      "stroke_breaks": "Trace only connected source pigment boundaries from aligned mask; disconnected pigment starts a new lifted stroke.",
+      "outline_then_fill": "Aligned technical mask follows existing dark pigment edges; original source pixels retained, no cartoon outline added. Official localized wash follows all outline parts.",
+      "spatial_order": "Semantic order from original plan; portrait anatomy first, contextual chair and paper last.",
+      "narrative_checks": [
+        {
+          "id": "history06_fact",
+          "status": "pass",
+          "evidence": "Viewed: recurved bow with quiver at upper-left, separate blank-faced seal upper-right, iron cannon and wooden two-wheel carriage below. The blank face does not invent Qin inscriptions or assert a genuine ancient seal."
+        }
+      ]
+    },
+    {
+      "plan_id": "history07",
+      "status": "pass",
+      "source_sha256": "7ba6e833964d80c5b755886f6e0c0eb1db826c5a4ed7e2438735484b82b8a8e2",
+      "crop": [
+        0,
+        0,
+        1024,
+        760
+      ],
+      "outline_mask_sha256": "8b2364129a7553acb68762f4c09960d71f5c41700d59df18dec2e9cc7d56f0d7",
+      "anatomy_and_occlusion": "Viewed: fortified Ming city left, visibly overturned broken cart and fallen sacks lower-left, separate cannon on right pointed toward the fort. No people or modern equipment; logistics disruption is directly visible.",
+      "part_boundaries": "Actual object regions entered as polygons; foreground overlaps explicitly excluded, contextual paper and chair owned last. Portrait follows head, neck, torso, screen-left arm, screen-right arm and lower robe with feet.",
+      "stroke_breaks": "Trace only connected source pigment boundaries from aligned mask; disconnected pigment starts a new lifted stroke.",
+      "outline_then_fill": "Aligned technical mask follows existing dark pigment edges; original source pixels retained, no cartoon outline added. Official localized wash follows all outline parts.",
+      "spatial_order": "Semantic order from original plan; portrait anatomy first, contextual chair and paper last.",
+      "narrative_checks": [
+        {
+          "id": "history07_fact",
+          "status": "pass",
+          "evidence": "Viewed: fortified Ming city left, visibly overturned broken cart and fallen sacks lower-left, separate cannon on right pointed toward the fort. No people or modern equipment; logistics disruption is directly visible."
+        }
+      ]
+    },
+    {
+      "plan_id": "history08",
+      "status": "pass",
+      "source_sha256": "7ba6e833964d80c5b755886f6e0c0eb1db826c5a4ed7e2438735484b82b8a8e2",
+      "crop": [
+        0,
+        760,
+        1024,
+        1536
+      ],
+      "outline_mask_sha256": "8b2364129a7553acb68762f4c09960d71f5c41700d59df18dec2e9cc7d56f0d7",
+      "anatomy_and_occlusion": "Viewed: empty throne in a hall at left and separate distant northern city gateway reached by open road at right. Absence of ruler supports death; road and gateway show future transition without portraying the ruler alive in 1644.",
+      "part_boundaries": "Actual object regions entered as polygons; foreground overlaps explicitly excluded, contextual paper and chair owned last. Portrait follows head, neck, torso, screen-left arm, screen-right arm and lower robe with feet.",
+      "stroke_breaks": "Trace only connected source pigment boundaries from aligned mask; disconnected pigment starts a new lifted stroke.",
+      "outline_then_fill": "Aligned technical mask follows existing dark pigment edges; original source pixels retained, no cartoon outline added. Official localized wash follows all outline parts.",
+      "spatial_order": "Semantic order from original plan; portrait anatomy first, contextual chair and paper last.",
+      "narrative_checks": [
+        {
+          "id": "history08_fact",
+          "status": "pass",
+          "evidence": "Viewed: empty throne in a hall at left and separate distant northern city gateway reached by open road at right. Absence of ruler supports death; road and gateway show future transition without portraying the ruler alive in 1644."
+        }
+      ]
+    }
+  ]
+}

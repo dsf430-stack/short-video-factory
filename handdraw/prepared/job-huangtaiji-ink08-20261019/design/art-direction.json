@@ -1,0 +1,122 @@
+{
+  "dependency_sha256": "fbbfd33d70f729011b6a6bc232851c116cd4a89ead2adea4462888a6ce26fc1a",
+  "style_sha256": "1249a7cdca92580c8dcc516512d7e5bd196e5255b8c0fbe4daf95596cf7ddbe7",
+  "images": [
+    {
+      "source": "../inputs/sheet-0.png",
+      "method": "generated_under_guidance",
+      "brief_file": "sheet-0-brief.md",
+      "prompt_file": "sheet-0-prompt.txt",
+      "status": "pass",
+      "brief_sha256": "2ea8aaa7440d1cdae873ee2a0a378e5e54d2ac89cf6441118a21833cedcfaa29",
+      "prompt_sha256": "5a09287019686c05241556d6b92124975b1e6cc8e55501ebd935afc02e40d398",
+      "sha256": "31e5b8986b291b5194c8c60dbc8bec807f285fea28d2344fa81bc8b3845564e0",
+      "pixel_sha256": "1a3554e2abb61a655c47b3e3effb7898b6f093fa2c12029a31ab7ee720ee9367",
+      "approved_crops": [
+        [
+          0,
+          0,
+          1024,
+          700
+        ],
+        [
+          0,
+          700,
+          1024,
+          1536
+        ]
+      ],
+      "evidence": "Viewed: four separate equally sized seats stand on one low dais; there are exactly four, with visible gaps. Shared roof, pillars and floor make the ceremonial setting explicit. Viewed: single central unoccupied throne on raised dais; dark closed administrative box at lower-left and separate open memorial at lower-right. The contrast with four seats is visually explicit. Actual visible medium has variable dark and pale ink, dry breaks, wet bleed and paper texture. No old-topic artwork."
+    },
+    {
+      "source": "../inputs/sheet-1.png",
+      "method": "generated_under_guidance",
+      "brief_file": "sheet-1-brief.md",
+      "prompt_file": "sheet-1-prompt.txt",
+      "status": "pass",
+      "brief_sha256": "5666cb10b04d2a2da703223046cb287231302611452bf76799affe20bef6ae4c",
+      "prompt_sha256": "c72b8aee74e235c9e48c776804c38f95815a14dceadcb25dad9c72bfd3ba8f90",
+      "sha256": "918cf505f7d7bda15e6e2cae6178ac5c9aeab103432862a18e23072b67649d48",
+      "pixel_sha256": "222c683031a47fb5377c8c2a9ce6daea65302d089528736f7573c5c5f5ba35d5",
+      "approved_crops": [
+        [
+          0,
+          0,
+          1024,
+          670
+        ],
+        [
+          0,
+          670,
+          1024,
+          1536
+        ]
+      ],
+      "evidence": "Viewed: exactly six separate courtyard compounds arranged two rows of three, and one rolled administrative document below. Architectural marks on the scroll are schematic, no formal text is being relied on. Viewed: one seated mature Manchu ruler with round hat, moustache, sparse chin beard, long robe, both distinct hands resting on knees and two visible feet. Interpretive portrait, not an authenticated likeness. Chair is behind and beside the arms; label remains editable. Actual visible medium has variable dark and pale ink, dry breaks, wet bleed and paper texture. No old-topic artwork."
+    },
+    {
+      "source": "../inputs/sheet-2.png",
+      "method": "generated_under_guidance",
+      "brief_file": "sheet-2-brief.md",
+      "prompt_file": "sheet-2-prompt.txt",
+      "status": "pass",
+      "brief_sha256": "55b58f1a17d2380cac94902833b1011ff253b3663efc710bc6c070b4c3f553cd",
+      "prompt_sha256": "f96e9e708bd99cad8ea5d63dc7fe2cad8180962c66071bb3bf09e1a683755f7a",
+      "sha256": "49ce741c4154dc4c16388ba078f7f51efcf5ac191cf8aeefb7164caf81ab181e",
+      "pixel_sha256": "4a2a49f87a74c2027dafdb436a61b83c6fe11dc2310383b0a66c8816b77912fc",
+      "approved_crops": [
+        [
+          0,
+          0,
+          1024,
+          790
+        ],
+        [
+          0,
+          790,
+          1024,
+          1536
+        ]
+      ],
+      "evidence": "Viewed: stone Korean-style gateway left and two Manchu-style military banners right with bundles and supply crates below. This is an illustrative campaign setting, not a map or a purported exact site. Viewed: recurved bow with quiver at upper-left, separate blank-faced seal upper-right, iron cannon and wooden two-wheel carriage below. The blank face does not invent Qin inscriptions or assert a genuine ancient seal. Actual visible medium has variable dark and pale ink, dry breaks, wet bleed and paper texture. No old-topic artwork."
+    },
+    {
+      "source": "../inputs/sheet-3.png",
+      "method": "generated_under_guidance",
+      "brief_file": "sheet-3-brief.md",
+      "prompt_file": "sheet-3-prompt.txt",
+      "status": "pass",
+      "brief_sha256": "70a1be38ae97d89f7155c7aaf75e729294501a9c76812d1b50b7a77fb6d65830",
+      "prompt_sha256": "fe32b01952f39fccfefaa7347343a0d8b17b81368ccfdbf6f248aab0056b6181",
+      "sha256": "7ba6e833964d80c5b755886f6e0c0eb1db826c5a4ed7e2438735484b82b8a8e2",
+      "pixel_sha256": "cb66f06a2c9eabcb7039f7c29d1ca384520dc279a5c30ed825f78094977986a1",
+      "approved_crops": [
+        [
+          0,
+          0,
+          1024,
+          760
+        ],
+        [
+          0,
+          760,
+          1024,
+          1536
+        ]
+      ],
+      "evidence": "Viewed: fortified Ming city left, visibly overturned broken cart and fallen sacks lower-left, separate cannon on right pointed toward the fort. No people or modern equipment; logistics disruption is directly visible. Viewed: empty throne in a hall at left and separate distant northern city gateway reached by open road at right. Absence of ruler supports death; road and gateway show future transition without portraying the ruler alive in 1644. Actual visible medium has variable dark and pale ink, dry breaks, wet bleed and paper texture. No old-topic artwork."
+    },
+    {
+      "source": "../inputs/cover.png",
+      "method": "composed_with_verified_layers",
+      "brief_file": "cover-brief.md",
+      "prompt_file": "cover-prompt.txt",
+      "status": "pass",
+      "brief_sha256": "dd63c36f21fe52ebd9c7792bc1d75e6b0f6de5047b6a38e5978786f927b0e7cb",
+      "prompt_sha256": "be720c67f35c31d7574fa7e8575b8bd90db6f75931c7bfd53e0d41ba0659c9d3",
+      "sha256": "74a6c2f1a74388b4f9a2e89238dcddf0129836f0a055bfcf636616afadae8cf0",
+      "pixel_sha256": "5e551ec05eaa824e470916c7377b1c306819686d0a0649a0b82b2bbe4a034e18",
+      "evidence": "Actually viewed 1080x1920 cover: complete exact 皇太極 and 從後金到大清帝國, large readable Traditional Chinese type, reviewed seated portrait with intact hat, hands and feet. Generous margins, no subtitles baked in; production label unobscured."
+    }
+  ]
+}

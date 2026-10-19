@@ -1,0 +1,17 @@
+{
+  "status": "resolved",
+  "mode": "catalog",
+  "catalog_id": "8",
+  "selection_sha256": "fde7b0971beddee6df5ed96d15f82955ac699b49d19186a492dba7016b89bec1",
+  "recipe_sha256": "ebbb9048d8f0353a6039d6e3418c390cf6ba3081c152f37d56866824c385a07f",
+  "style_name": "水墨写意",
+  "rationale": "Explicit style8 request; preserve complete original recipe.",
+  "content_fit": "Historical court, government and military objects in traditional expressive ink.",
+  "style_spec": {
+    "line": "Full unchanged official recipe: expressive dry and wet brush",
+    "palette": "Black ink, restrained ochre, one small vermilion seal",
+    "shading": "Five ink densities, no uniform grayscale filter",
+    "texture": "Raw xuan paper and ink diffusion",
+    "background": "Large unpainted paper negative space"
+  }
+}

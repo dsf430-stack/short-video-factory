@@ -1,0 +1,28 @@
+{
+  "source": "inputs/sheet-1.png",
+  "crop": [
+    0,
+    670,
+    1024,
+    1536
+  ],
+  "layers": [
+    {
+      "text": "皇太極",
+      "y": 180,
+      "size": 140
+    },
+    {
+      "text": "從後金到大清帝國",
+      "y": 365,
+      "size": 64
+    },
+    {
+      "text": "068 旁白・水墨歷史",
+      "x": 130,
+      "y": 1750,
+      "size": 42
+    }
+  ],
+  "font_source": "https://github.com/notofonts/noto-cjk/blob/main/Sans/OTF/TraditionalChinese/NotoSansCJKtc-Regular.otf"
+}
