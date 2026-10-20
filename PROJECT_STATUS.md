@@ -77,3 +77,16 @@
 - 已下載最終 MP4：1080×1920、30fps、5326幀、H.264/AAC、31,793,494 bytes；SHA256 72bc2bcef33556ab8469a96535a440da7d95afddba5800314f718ec6cabd5f92。下載後再次完整解碼通過，官方全部工程檢查通過。
 - 實際檢視封面及各幕畫面，最終11個時間點重驗肖像裁切、單行字幕與結尾；先前26點檢視問題已修正。音軌相關度0.99997477、尾句0.99994774，尾端靜音0.972秒。主觀聽感 UNCERTAIN，未宣稱人工聽音。
 - 詳細證據 handdraw/verification/huangtaiji-style08-20261019.json；可直接播放的完整 MP4 已保存交付。
+
+
+## BLOCKED：自動分流安裝審查（2026-10-20）
+
+- 基準 main：11f115111f85e805a990a68775e5fbdcfc86ba4d。獨立分支 feature/actions-routing-20261020；未修改 main，未重裝既有功能。
+- DONE：讀取 README.md、AGENTS.md、PROJECT_STATUS.md、WORKFLOW.md、handdraw/README.md、現有 sweety-handdraw-068.yml 與 actions-request.yml。
+- DONE：確認既有入口已具備 068、真實時間戳字幕、固定官方手繪引擎、獨立任務輸出、快取、驗證及 Actions artifact。workflow_dispatch 接受 job_id/topic/seconds/style。瀏覽器已登入並顯示 Run workflow，可選獨立分支。
+- DONE：現有 push 自動啟動僅限 main 及兩個既有分支；request bridge 僅監聽 main。本任務應從 Run workflow 啟動獨立分支，不為啟動測試而修改 main。
+- BLOCKED：現有手繪 workflow 無 Google Drive 上傳步驟；main 全樹未找到 Drive/rclone/OAuth 上傳實作。GitHub Actions Secrets 設定頁顯示無 environment secrets，repository secrets 僅 GEMINI_API_KEY；未讀取任何 secret 值。
+- 使用者明確要求遇到登入、授權或付費先停下確認，因此尚未新增 Drive OAuth/服務帳戶憑證、未更改權限、未使用付費 API。
+- NOT_STARTED：全新題材備料、Actions 實際觸發、MP4 解碼/畫幅/時長/音軌/字幕驗收、Drive 寫入。尚無本次渲染 Run ID 或 MP4 下載連結；不以歷史影片當新測試。
+- 下一步：取得使用者對「GitHub Actions 僅上傳至指定 Google Drive 資料夾」的授權後，確定最小存取方式與目的資料夾，沿用原 workflow 增加驗收後上傳及上傳回執。再以全新題材只觸發一次，按 Log 修復失敗階段，記錄實際 SHA/Run ID/驗收/下載連結。成功階段不重跑。
+- 現有製片入口：https://github.com/dsf430-stack/short-video-factory/actions/workflows/sweety-handdraw-068.yml 。這是已準備素材任務的入口，並非任意題材自動生圖或 Drive 保存已完成的聲明。
