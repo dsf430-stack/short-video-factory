@@ -90,3 +90,16 @@
 - NOT_STARTED：全新題材備料、Actions 實際觸發、MP4 解碼/畫幅/時長/音軌/字幕驗收、Drive 寫入。尚無本次渲染 Run ID 或 MP4 下載連結；不以歷史影片當新測試。
 - 下一步：取得使用者對「GitHub Actions 僅上傳至指定 Google Drive 資料夾」的授權後，確定最小存取方式與目的資料夾，沿用原 workflow 增加驗收後上傳及上傳回執。再以全新題材只觸發一次，按 Log 修復失敗階段，記錄實際 SHA/Run ID/驗收/下載連結。成功階段不重跑。
 - 現有製片入口：https://github.com/dsf430-stack/short-video-factory/actions/workflows/sweety-handdraw-068.yml 。這是已準備素材任務的入口，並非任意題材自動生圖或 Drive 保存已完成的聲明。
+
+
+### 2026-10-20 接續：已獲授權，程式與測試完成，OAuth 尚未建立
+
+- 使用者已同意設定 Actions 上傳至指定 Drive 資料夾，不重問相同同意。
+- DONE：透過現有 Drive 連線找到 Facebook_Reels，建立並讀回 ACTIONS_VERIFIED 子資料夾，ID 1MYEGF9AgF7nFpTgRZIU-79Vjs6qtDLB5。未加入 READY/發布佇列，未更改既有分享設定。
+- DONE：沿用 sweety-handdraw-068.yml 新增 render / validate / archive 分流；PR 僅測試，Drive preflight 失敗不開始昂貴渲染。archive-only 接收既有 Run ID，不重配音或重渲染。
+- DONE：新增 archive_drive.py，使用官方 Google SDK、drive.file OAuth、指定目的資料夾、成片 SHA/格式/字幕/完整解碼檢查、雜湊查重、有限 chunk 上傳和讀回 checksum 驗證；無自動失敗重試。原 renderer/068/畫風未更動。
+- DONE：本地21項測試通過（15項既有＋6項新增），YAML與內嵌Python語法通過。新增測試使用模擬 Drive 回應，並非真實 Google 上傳。
+- BLOCKED：Google Cloud 憑證設定頁 https://console.cloud.google.com/apis/credentials 在此瀏覽器顯示 Site Unavailable。無可用 Actions OAuth credential，ChatGPT Drive 連線不可直接轉給 runner。不能從已同意推定已產生 refresh token。
+- 待完成的實際 OAuth：同一個 OAuth app 以 drive.file scope 選取上述目的資料夾，將 authorized-user JSON 安全存入 GitHub Secret GDRIVE_AUTHORIZED_USER_JSON。新增 app 不能僅靠資料夾 ID 取得 drive.file 存取；preflight 必須實際成功。完整契約及官方依據見 handdraw/ACTIONS_ROUTING.md。
+- IN_PROGRESS：提交本分支並以 PR 觸發 routing-checks，記錄實際 Actions Run ID。
+- NOT_STARTED：全新題材渲染及MP4驗收、Actions真實Drive寫入。本次未重跑歷史影片；尚無新的影片下載連結，不能宣稱安裝任務整體完成。
