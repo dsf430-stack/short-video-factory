@@ -101,5 +101,5 @@
 - DONE：本地21項測試通過（15項既有＋6項新增），YAML與內嵌Python語法通過。新增測試使用模擬 Drive 回應，並非真實 Google 上傳。
 - BLOCKED：Google Cloud 憑證設定頁 https://console.cloud.google.com/apis/credentials 在此瀏覽器顯示 Site Unavailable。無可用 Actions OAuth credential，ChatGPT Drive 連線不可直接轉給 runner。不能從已同意推定已產生 refresh token。
 - 待完成的實際 OAuth：同一個 OAuth app 以 drive.file scope 選取上述目的資料夾，將 authorized-user JSON 安全存入 GitHub Secret GDRIVE_AUTHORIZED_USER_JSON。新增 app 不能僅靠資料夾 ID 取得 drive.file 存取；preflight 必須實際成功。完整契約及官方依據見 handdraw/ACTIONS_ROUTING.md。
-- IN_PROGRESS：提交本分支並以 PR 觸發 routing-checks，記錄實際 Actions Run ID。
+- DONE：草稿 PR #13：https://github.com/dsf430-stack/short-video-factory/pull/13 。程式 Commit 4a1b8374aa86adb334f1bb483dc29d7d08f4089c；Actions Run 39380639175，routing-checks SUCCESS，日誌確認21項測試通過；render/archive 均 SKIPPED（符合 PR 僅測試契約）。測試執行的 PR merge SHA 為 d9160c94dec61404f993d4fc014910933a2f2117，非修改 main。Run：https://github.com/dsf430-stack/short-video-factory/actions/runs/39380639175 。
 - NOT_STARTED：全新題材渲染及MP4驗收、Actions真實Drive寫入。本次未重跑歷史影片；尚無新的影片下載連結，不能宣稱安裝任務整體完成。
