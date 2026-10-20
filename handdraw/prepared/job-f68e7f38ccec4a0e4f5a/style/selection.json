@@ -1,0 +1,6 @@
+{
+  "mode": "catalog",
+  "catalog_id": "4",
+  "confirmation": "explicit_user_request",
+  "evidence": "Project instructions default to official style 4 when unspecified."
+}

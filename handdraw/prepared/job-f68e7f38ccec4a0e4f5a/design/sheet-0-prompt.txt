@@ -1,0 +1,21 @@
+A hand-drawn black marker doodle explainer illustration on off-white paper,
+vertical infographic with 2 stacked panels separated by thin hand-drawn lines.
+
+Character: a simple solid-black round blob person with two white dot eyes,
+a small curved smile, and thin black stick arms and legs. The body is solid
+flat black with smooth edges (no sketchy texture). The SAME character appears
+in every panel doing a different action.
+
+Style: clean black marker/pen outlines, slightly wobbly but fully closed
+hand-drawn lines. All objects are OUTLINE-ONLY black line-art with white
+interiors, no shading, no fill. Everything is monochrome black & white EXCEPT
+one orange accent color used ONLY for the single key item in each panel.
+Hand-drawn curved arrows in red or blue point at key spots, each with a short
+handwritten Chinese label. Each panel has a bold hand-written marker-style
+Chinese title at the top. Minimalist composition, lots of white space.
+
+Panels:
+1. A bean sits on a simple stool, screen-left hand against its forehead, screen-right hand resting beside the body; tired expression. Above right an orange question mark; no threatening weapons or disease diagnosis.
+2. Bean presenter with both arms apart and both legs visible, an outlined shield upper left and an orange target with a misdirected curved arrow upper right. This is a metaphor for mistaken targeting, not a treatment diagram.
+
+Production layout: 1024x1536 portrait, exactly two equal panels 1024x768 each, separated at center. All title and Chinese label spaces MUST remain empty for later editable typography. No letters or numbers. Each bean stays lower center in its panel with head near 50% panel height, body centered, limbs separated. Use large symbols above, avoid tiny scattered details. This is health education, not a cure advertisement.

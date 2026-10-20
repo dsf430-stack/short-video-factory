@@ -1,0 +1,16 @@
+{
+  "status": "resolved",
+  "mode": "catalog",
+  "catalog_id": "4",
+  "style_name": "小豆人黑色涂鸦信息图",
+  "rationale": "User project default; bean explainer supports non-alarming health education.",
+  "selection_sha256": "d08ad738787f5ce690326f9373d8a4e8714e3a8473a5db5088a023ddb5d126a8",
+  "recipe_sha256": "2d96a21c16f323dd71f57e7ee1a19173fe2b2ae85caeec7de5a9759fd14d4960",
+  "style_spec": {
+    "line": "Clean marker closed outlines",
+    "palette": "Black white and one orange focal object; red/blue arrows",
+    "shading": "None",
+    "texture": "Smooth flat black bean",
+    "background": "Off-white"
+  }
+}

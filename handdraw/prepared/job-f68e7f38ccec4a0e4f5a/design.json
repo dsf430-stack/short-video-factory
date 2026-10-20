@@ -1,0 +1,32 @@
+{
+  "topic": "免疫力不是越強越好",
+  "audience": "繁體中文一般觀眾",
+  "explanation_goal": "將原稿改編成約三分鐘健康教育 Reels，移除恐嚇、普遍忌口及療效保證。",
+  "narrative_route": {
+    "decision": "default_life_concept",
+    "reason": "日常不適與盲目進補誤區→免疫辨識概念→飲食、補品、睡眠與就醫行動。",
+    "director_review": "六幕各有單一重點，圖像作概念比喻，沒有保證治癒或以症狀診斷。末段回到可行小事與專業照護。"
+  },
+  "subtitle_design": {
+    "font": "Noto Sans CJK index 3",
+    "font_size": 46,
+    "color": "white with thin black outline",
+    "rationale": "獨立字幕、逐詞真實時間合併為短句，最多兩行，保留標題與下方安全區。"
+  },
+  "medical_editorial": {
+    "book_source": "使用者提供的書籍解說文字，未取得原書；不冒稱已讀原書。",
+    "removed_claims": [
+      "90天治癒保證",
+      "過敏等同自體免疫",
+      "所有疾病由肠漏導致",
+      "人人剔除麩質乳蛋",
+      "皮質醇必然促炎"
+    ],
+    "sources": [
+      "https://medlineplus.gov/autoimmunediseases.html",
+      "https://www.niddk.nih.gov/health-information/digestive-diseases/celiac-disease/diagnosis",
+      "https://www.nccih.nih.gov/health/probiotics-usefulness-and-safety",
+      "https://www.nccih.nih.gov/health/detoxes-and-cleanses-what-you-need-to-know"
+    ]
+  }
+}

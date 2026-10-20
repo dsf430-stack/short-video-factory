@@ -1,0 +1,4 @@
+Purpose: two reviewed scenes for 180-second Traditional Chinese Reels.
+1. A bean sits on a simple stool, screen-left hand against its forehead, screen-right hand resting beside the body; tired expression. Above right an orange question mark; no threatening weapons or disease diagnosis.
+2. Bean presenter with both arms apart and both legs visible, an outlined shield upper left and an orange target with a misdirected curved arrow upper right. This is a metaphor for mistaken targeting, not a treatment diagram.
+Keep sparse visual hierarchy and independently visible limbs. Exact text added by renderer.

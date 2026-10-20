@@ -1,0 +1,96 @@
+{
+  "dependency_sha256": "fbbfd33d70f729011b6a6bc232851c116cd4a89ead2adea4462888a6ce26fc1a",
+  "style_sha256": "ffb0db74b0d80ac6bf8e2495a454c656f623b6297812439da6d6e463c1f6fd62",
+  "images": [
+    {
+      "source": "../inputs/sheet-0.png",
+      "method": "generated_under_guidance",
+      "brief_file": "sheet-0-brief.md",
+      "prompt_file": "sheet-0-prompt.txt",
+      "status": "pass",
+      "brief_sha256": "c549eb7fa3bd2672fc016543ba72ffea40eb96b7aca9554eb3ae1ced718a651c",
+      "prompt_sha256": "cf6ff4fb70936b5ffdbcf1a0101d32826b4bc7fa971705ef083de2943cf3307d",
+      "sha256": "4a0428e743f7965236f76a7d7993efe6121d4699fc130faae1b5c41ab50e4644",
+      "pixel_sha256": "20f18ba88b4224512588f9e49a33dc6ed62495b5b359bef1435d9bc9fa348d12",
+      "approved_crops": [
+        [
+          0,
+          0,
+          1024,
+          768
+        ],
+        [
+          0,
+          768,
+          1024,
+          1536
+        ]
+      ],
+      "evidence": "Top panel actually viewed: worried bean seated on outlined stool with left hand touching forehead, right hand beside torso; two legs, orange question mark above. No disease is diagnosed by image. Bottom panel actually viewed: neckless bean with open arms and two legs below shield left and orange target right; dashed red arrow misses target, illustrating mistaken targeting only."
+    },
+    {
+      "source": "../inputs/sheet-1.png",
+      "method": "generated_under_guidance",
+      "brief_file": "sheet-1-brief.md",
+      "prompt_file": "sheet-1-prompt.txt",
+      "status": "pass",
+      "brief_sha256": "d8ffa6e3a46edfa8cdeb6bddfcb271bc347ddb9883c04cb1f7d66dd024272122",
+      "prompt_sha256": "f4eba96d4cd9d5b8842a45f05ea9af5ceee775664996666023f6a512a2461b86",
+      "sha256": "d69d8681cc795b97aa483ab6c599e49825ed4600c902316c9eb0acddafe5ae79",
+      "pixel_sha256": "730e022c2982405921fe931179cdf7f164448d2e06448937ba598b1fcf64d040",
+      "approved_crops": [
+        [
+          0,
+          0,
+          1024,
+          768
+        ],
+        [
+          0,
+          768,
+          1024,
+          1536
+        ]
+      ],
+      "evidence": "Top panel actually viewed: blank orange-topped calendar at left and blank open book at right, bean below with open arms and two feet; no cure check mark or written treatment claim. Bottom panel actually viewed: outlined divided plate with vegetables, fish and grain, orange carrot; bean stands in foreground, both arms down, two legs visible; plate is occluded by bean at bottom."
+    },
+    {
+      "source": "../inputs/sheet-2.png",
+      "method": "generated_under_guidance",
+      "brief_file": "sheet-2-brief.md",
+      "prompt_file": "sheet-2-prompt.txt",
+      "status": "pass",
+      "brief_sha256": "fd6c2b842dd3d3e6a4615cce0ff29b87183b2671708fc9f4b3479b44c84fc449",
+      "prompt_sha256": "f13d9152cb882f616a045f6bbd05daee0b9f14b42c3dbb3a3541e0f116c282bd",
+      "sha256": "1638b2aad5b077f046a9fedeaabe7ab566b0d1f7d79de676ed949149f9a96ac5",
+      "pixel_sha256": "ac587c20977d9068ac7391bafbcd7878387ac1546e34829dfb516a6e6452090e",
+      "approved_crops": [
+        [
+          0,
+          0,
+          1024,
+          768
+        ],
+        [
+          0,
+          768,
+          1024,
+          1536
+        ]
+      ],
+      "evidence": "Top panel actually viewed: blank supplement bottle left, orange question mark right, bean beneath with open arms and both feet; no ingestion or brand shown. Bottom panel actually viewed: outlined crescent left, orange medical cross right; bean raises right arm toward cross, left arm down, two feet visible; non-alarming health-care and sleep metaphor."
+    },
+    {
+      "source": "../inputs/cover.png",
+      "method": "composed_with_verified_layers",
+      "brief_file": "cover-brief.md",
+      "prompt_file": "cover-prompt.txt",
+      "status": "pass",
+      "brief_sha256": "d263a5515c9fb65076eea2fae20aa3e475e712e6d1d05a7b16bf651c5e586aa4",
+      "prompt_sha256": "783abd284b7f2e25f2da103df911b976c662aecf41009647256f2bc9a364fbd2",
+      "sha256": "d1a392c1eccd6fbf68b92ad243db4d8d123cd611988d3fd675b7f3b329d80d4d",
+      "pixel_sha256": "e332d0a3bc4a37932c321d420a5946b4e644796cc1e87198d11ef4b4f1769210",
+      "evidence": "Actually viewed entire 1080x1920 cover: exact Traditional Chinese title 免疫力 / 不是越強越好, reviewed tired bean and orange question mark, subtitles 飲食・睡眠・壓力 and 健康管理，從每天的小事開始. All text readable, no overlap or cure promise."
+    }
+  ]
+}

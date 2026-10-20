@@ -1,0 +1,21 @@
+{
+  "topic": "免疫力不是越強越好",
+  "seconds": 180,
+  "style": "4",
+  "job_id": "job-f68e7f38ccec4a0e4f5a",
+  "voice_id": "068",
+  "mode": "chatgpt-prepared-no-extra-model-api",
+  "script_sha256": "30b2417517a7789dd93a4d650efa34c71051d5df4660a7dcf000ae48026edd63",
+  "state": "ASSETS_VALIDATED",
+  "required_files": [
+    "story.json",
+    "design.json",
+    "style/selection.json",
+    "style/resolved.json",
+    "design/art-direction.json",
+    "design/drawing-plan.json",
+    "design/drawing-plan.preflight.json",
+    "design/drawing-review.json",
+    "inputs/cover.png"
+  ]
+}

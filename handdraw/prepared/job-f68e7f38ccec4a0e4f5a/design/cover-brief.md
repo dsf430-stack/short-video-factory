@@ -1,0 +1,1 @@
+1080x1920 off-white cover. Exact title 免疫力 / 不是越強越好. Use reviewed tired bean/question mark panel, lower caption 飲食・睡眠・壓力. No cure promise.

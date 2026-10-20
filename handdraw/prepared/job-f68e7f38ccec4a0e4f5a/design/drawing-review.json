@@ -1,0 +1,150 @@
+{
+  "style_sha256": "ffb0db74b0d80ac6bf8e2495a454c656f623b6297812439da6d6e463c1f6fd62",
+  "plan_sha256": "9635c0f5355c063ffd8416c2ee8a8c1fd9fd62b09d02222a5a6cb9560fc525b3",
+  "illustrations": [
+    {
+      "plan_id": "s1",
+      "status": "pass",
+      "source_sha256": "4a0428e743f7965236f76a7d7993efe6121d4699fc130faae1b5c41ab50e4644",
+      "outline_mask_sha256": "488285a1c947594a611e9d82ee07446b284c05319446c086806c39a7e296b5ff",
+      "crop": [
+        0,
+        0,
+        1024,
+        768
+      ],
+      "anatomy_and_occlusion": "Top panel actually viewed: worried bean seated on outlined stool with left hand touching forehead, right hand beside torso; two legs, orange question mark above. No disease is diagnosed by image. Bean has no separate neck; no hidden anatomy invented.",
+      "part_boundaries": "Viewed head/face above torso. Screen-left arm and screen-right arm own visible limb contours; two legs assigned lower body. Symbols own upper props, remaining frame/context owns actual border and stool; first raised arm excluded from face ownership.",
+      "stroke_breaks": "Trace separate contour runs and pen lifts between eyes, mouth, limbs, objects and border.",
+      "outline_then_fill": "Aligned grayscale source boundary mask uses white only for visible dark/orange edge bands; interior bean and orange fill come after all contours. No background fill in outline mask.",
+      "spatial_order": "Head, torso, screen-left arm, screen-right arm, legs, upper symbols, remaining frame/context.",
+      "narrative_checks": [
+        {
+          "id": "s1-meaning",
+          "status": "pass",
+          "evidence": "Top panel actually viewed: worried bean seated on outlined stool with left hand touching forehead, right hand beside torso; two legs, orange question mark above. No disease is diagnosed by image."
+        }
+      ]
+    },
+    {
+      "plan_id": "s2",
+      "status": "pass",
+      "source_sha256": "4a0428e743f7965236f76a7d7993efe6121d4699fc130faae1b5c41ab50e4644",
+      "outline_mask_sha256": "488285a1c947594a611e9d82ee07446b284c05319446c086806c39a7e296b5ff",
+      "crop": [
+        0,
+        768,
+        1024,
+        1536
+      ],
+      "anatomy_and_occlusion": "Bottom panel actually viewed: neckless bean with open arms and two legs below shield left and orange target right; dashed red arrow misses target, illustrating mistaken targeting only. Bean has no separate neck; no hidden anatomy invented.",
+      "part_boundaries": "Viewed head/face above torso. Screen-left arm and screen-right arm own visible limb contours; two legs assigned lower body. Symbols own upper props, remaining frame/context owns actual border and stool; first raised arm excluded from face ownership.",
+      "stroke_breaks": "Trace separate contour runs and pen lifts between eyes, mouth, limbs, objects and border.",
+      "outline_then_fill": "Aligned grayscale source boundary mask uses white only for visible dark/orange edge bands; interior bean and orange fill come after all contours. No background fill in outline mask.",
+      "spatial_order": "Head, torso, screen-left arm, screen-right arm, legs, upper symbols, remaining frame/context.",
+      "narrative_checks": [
+        {
+          "id": "s2-meaning",
+          "status": "pass",
+          "evidence": "Bottom panel actually viewed: neckless bean with open arms and two legs below shield left and orange target right; dashed red arrow misses target, illustrating mistaken targeting only."
+        }
+      ]
+    },
+    {
+      "plan_id": "s3",
+      "status": "pass",
+      "source_sha256": "d69d8681cc795b97aa483ab6c599e49825ed4600c902316c9eb0acddafe5ae79",
+      "outline_mask_sha256": "b4f57be5fcbadfc57bc1676ab4a7ccaf1c7d94e15bee75d732f9ee90837dafc1",
+      "crop": [
+        0,
+        0,
+        1024,
+        768
+      ],
+      "anatomy_and_occlusion": "Top panel actually viewed: blank orange-topped calendar at left and blank open book at right, bean below with open arms and two feet; no cure check mark or written treatment claim. Bean has no separate neck; no hidden anatomy invented.",
+      "part_boundaries": "Viewed head/face above torso. Screen-left arm and screen-right arm own visible limb contours; two legs assigned lower body. Symbols own upper props, remaining frame/context owns actual border and stool; first raised arm excluded from face ownership.",
+      "stroke_breaks": "Trace separate contour runs and pen lifts between eyes, mouth, limbs, objects and border.",
+      "outline_then_fill": "Aligned grayscale source boundary mask uses white only for visible dark/orange edge bands; interior bean and orange fill come after all contours. No background fill in outline mask.",
+      "spatial_order": "Head, torso, screen-left arm, screen-right arm, legs, upper symbols, remaining frame/context.",
+      "narrative_checks": [
+        {
+          "id": "s3-meaning",
+          "status": "pass",
+          "evidence": "Top panel actually viewed: blank orange-topped calendar at left and blank open book at right, bean below with open arms and two feet; no cure check mark or written treatment claim."
+        }
+      ]
+    },
+    {
+      "plan_id": "s4",
+      "status": "pass",
+      "source_sha256": "d69d8681cc795b97aa483ab6c599e49825ed4600c902316c9eb0acddafe5ae79",
+      "outline_mask_sha256": "b4f57be5fcbadfc57bc1676ab4a7ccaf1c7d94e15bee75d732f9ee90837dafc1",
+      "crop": [
+        0,
+        768,
+        1024,
+        1536
+      ],
+      "anatomy_and_occlusion": "Bottom panel actually viewed: outlined divided plate with vegetables, fish and grain, orange carrot; bean stands in foreground, both arms down, two legs visible; plate is occluded by bean at bottom. Bean has no separate neck; no hidden anatomy invented.",
+      "part_boundaries": "Viewed head/face above torso. Screen-left arm and screen-right arm own visible limb contours; two legs assigned lower body. Symbols own upper props, remaining frame/context owns actual border and stool; first raised arm excluded from face ownership.",
+      "stroke_breaks": "Trace separate contour runs and pen lifts between eyes, mouth, limbs, objects and border.",
+      "outline_then_fill": "Aligned grayscale source boundary mask uses white only for visible dark/orange edge bands; interior bean and orange fill come after all contours. No background fill in outline mask.",
+      "spatial_order": "Head, torso, screen-left arm, screen-right arm, legs, upper symbols, remaining frame/context.",
+      "narrative_checks": [
+        {
+          "id": "s4-meaning",
+          "status": "pass",
+          "evidence": "Bottom panel actually viewed: outlined divided plate with vegetables, fish and grain, orange carrot; bean stands in foreground, both arms down, two legs visible; plate is occluded by bean at bottom."
+        }
+      ]
+    },
+    {
+      "plan_id": "s5",
+      "status": "pass",
+      "source_sha256": "1638b2aad5b077f046a9fedeaabe7ab566b0d1f7d79de676ed949149f9a96ac5",
+      "outline_mask_sha256": "1d86aaa27d1789c9fae28e3fd3f3fe9987297aa327ca1c2a1925bfe6c68b8878",
+      "crop": [
+        0,
+        0,
+        1024,
+        768
+      ],
+      "anatomy_and_occlusion": "Top panel actually viewed: blank supplement bottle left, orange question mark right, bean beneath with open arms and both feet; no ingestion or brand shown. Bean has no separate neck; no hidden anatomy invented.",
+      "part_boundaries": "Viewed head/face above torso. Screen-left arm and screen-right arm own visible limb contours; two legs assigned lower body. Symbols own upper props, remaining frame/context owns actual border and stool; first raised arm excluded from face ownership.",
+      "stroke_breaks": "Trace separate contour runs and pen lifts between eyes, mouth, limbs, objects and border.",
+      "outline_then_fill": "Aligned grayscale source boundary mask uses white only for visible dark/orange edge bands; interior bean and orange fill come after all contours. No background fill in outline mask.",
+      "spatial_order": "Head, torso, screen-left arm, screen-right arm, legs, upper symbols, remaining frame/context.",
+      "narrative_checks": [
+        {
+          "id": "s5-meaning",
+          "status": "pass",
+          "evidence": "Top panel actually viewed: blank supplement bottle left, orange question mark right, bean beneath with open arms and both feet; no ingestion or brand shown."
+        }
+      ]
+    },
+    {
+      "plan_id": "s6",
+      "status": "pass",
+      "source_sha256": "1638b2aad5b077f046a9fedeaabe7ab566b0d1f7d79de676ed949149f9a96ac5",
+      "outline_mask_sha256": "1d86aaa27d1789c9fae28e3fd3f3fe9987297aa327ca1c2a1925bfe6c68b8878",
+      "crop": [
+        0,
+        768,
+        1024,
+        1536
+      ],
+      "anatomy_and_occlusion": "Bottom panel actually viewed: outlined crescent left, orange medical cross right; bean raises right arm toward cross, left arm down, two feet visible; non-alarming health-care and sleep metaphor. Bean has no separate neck; no hidden anatomy invented.",
+      "part_boundaries": "Viewed head/face above torso. Screen-left arm and screen-right arm own visible limb contours; two legs assigned lower body. Symbols own upper props, remaining frame/context owns actual border and stool; first raised arm excluded from face ownership.",
+      "stroke_breaks": "Trace separate contour runs and pen lifts between eyes, mouth, limbs, objects and border.",
+      "outline_then_fill": "Aligned grayscale source boundary mask uses white only for visible dark/orange edge bands; interior bean and orange fill come after all contours. No background fill in outline mask.",
+      "spatial_order": "Head, torso, screen-left arm, screen-right arm, legs, upper symbols, remaining frame/context.",
+      "narrative_checks": [
+        {
+          "id": "s6-meaning",
+          "status": "pass",
+          "evidence": "Bottom panel actually viewed: outlined crescent left, orange medical cross right; bean raises right arm toward cross, left arm down, two feet visible; non-alarming health-care and sleep metaphor."
+        }
+      ]
+    }
+  ]
+}

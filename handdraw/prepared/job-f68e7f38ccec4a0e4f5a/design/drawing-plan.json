@@ -1,0 +1,652 @@
+{
+  "illustrations": [
+    {
+      "id": "s1",
+      "composition": "A bean sits on a simple stool, screen-left hand against its forehead, screen-right hand resting beside the body; tired expression. Above right an orange question mark; no threatening weapons or disease diagnosis.",
+      "drawability_reason": "Sparse bean anatomy plus few large symbols fits the natural narration, clear regions can be traced separately.",
+      "outline_strategy": "visible_source_ink",
+      "spatial_order": "top_to_bottom_left_to_right",
+      "subjects": [
+        {
+          "id": "presenter",
+          "kind": "human",
+          "omitted_roles": {
+            "neck": "Neckless bean silhouette per official recipe."
+          },
+          "order_exception": "Head and torso form one bean silhouette; independent limbs remain separate."
+        },
+        {
+          "id": "symbols",
+          "kind": "object"
+        },
+        {
+          "id": "frame",
+          "kind": "object"
+        }
+      ],
+      "parts": [
+        {
+          "id": "s1_head",
+          "subject": "presenter",
+          "role": "head",
+          "stroke_groups": [
+            "Trace visible contour only; lift pen between disconnected marks."
+          ]
+        },
+        {
+          "id": "s1_torso",
+          "subject": "presenter",
+          "role": "torso",
+          "stroke_groups": [
+            "Trace visible contour only; lift pen between disconnected marks."
+          ]
+        },
+        {
+          "id": "s1_left_arm",
+          "subject": "presenter",
+          "role": "left_arm",
+          "stroke_groups": [
+            "Trace visible contour only; lift pen between disconnected marks."
+          ]
+        },
+        {
+          "id": "s1_right_arm",
+          "subject": "presenter",
+          "role": "right_arm",
+          "stroke_groups": [
+            "Trace visible contour only; lift pen between disconnected marks."
+          ]
+        },
+        {
+          "id": "s1_lower_body",
+          "subject": "presenter",
+          "role": "lower_body",
+          "stroke_groups": [
+            "Trace visible contour only; lift pen between disconnected marks."
+          ]
+        },
+        {
+          "id": "s1_symbols",
+          "subject": "symbols",
+          "role": "symbols",
+          "stroke_groups": [
+            "Trace visible contour only; lift pen between disconnected marks."
+          ]
+        },
+        {
+          "id": "s1_frame",
+          "subject": "frame",
+          "role": "frame",
+          "stroke_groups": [
+            "Trace visible contour only; lift pen between disconnected marks."
+          ]
+        }
+      ],
+      "outline_order": [
+        "s1_head",
+        "s1_torso",
+        "s1_left_arm",
+        "s1_right_arm",
+        "s1_lower_body",
+        "s1_symbols",
+        "s1_frame"
+      ],
+      "fill_order": [
+        "s1_head",
+        "s1_torso",
+        "s1_left_arm",
+        "s1_right_arm",
+        "s1_lower_body",
+        "s1_symbols",
+        "s1_frame"
+      ],
+      "narrative_requirements": [
+        {
+          "id": "s1-meaning",
+          "narration_quote": "你是不是也有過這種感覺？明明睡了",
+          "observable": "A bean sits on a simple stool, screen-left hand against its forehead, screen-right hand resting beside the body; tired expression. Above right an orange question mark; no threatening weapons or disease diagnosis."
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "composition": "Bean presenter with both arms apart and both legs visible, an outlined shield upper left and an orange target with a misdirected curved arrow upper right. This is a metaphor for mistaken targeting, not a treatment diagram.",
+      "drawability_reason": "Sparse bean anatomy plus few large symbols fits the natural narration, clear regions can be traced separately.",
+      "outline_strategy": "visible_source_ink",
+      "spatial_order": "top_to_bottom_left_to_right",
+      "subjects": [
+        {
+          "id": "presenter",
+          "kind": "human",
+          "omitted_roles": {
+            "neck": "Neckless bean silhouette per official recipe."
+          },
+          "order_exception": "Head and torso form one bean silhouette; independent limbs remain separate."
+        },
+        {
+          "id": "symbols",
+          "kind": "object"
+        },
+        {
+          "id": "frame",
+          "kind": "object"
+        }
+      ],
+      "parts": [
+        {
+          "id": "s2_head",
+          "subject": "presenter",
+          "role": "head",
+          "stroke_groups": [
+            "Trace visible contour only; lift pen between disconnected marks."
+          ]
+        },
+        {
+          "id": "s2_torso",
+          "subject": "presenter",
+          "role": "torso",
+          "stroke_groups": [
+            "Trace visible contour only; lift pen between disconnected marks."
+          ]
+        },
+        {
+          "id": "s2_left_arm",
+          "subject": "presenter",
+          "role": "left_arm",
+          "stroke_groups": [
+            "Trace visible contour only; lift pen between disconnected marks."
+          ]
+        },
+        {
+          "id": "s2_right_arm",
+          "subject": "presenter",
+          "role": "right_arm",
+          "stroke_groups": [
+            "Trace visible contour only; lift pen between disconnected marks."
+          ]
+        },
+        {
+          "id": "s2_lower_body",
+          "subject": "presenter",
+          "role": "lower_body",
+          "stroke_groups": [
+            "Trace visible contour only; lift pen between disconnected marks."
+          ]
+        },
+        {
+          "id": "s2_symbols",
+          "subject": "symbols",
+          "role": "symbols",
+          "stroke_groups": [
+            "Trace visible contour only; lift pen between disconnected marks."
+          ]
+        },
+        {
+          "id": "s2_frame",
+          "subject": "frame",
+          "role": "frame",
+          "stroke_groups": [
+            "Trace visible contour only; lift pen between disconnected marks."
+          ]
+        }
+      ],
+      "outline_order": [
+        "s2_head",
+        "s2_torso",
+        "s2_left_arm",
+        "s2_right_arm",
+        "s2_lower_body",
+        "s2_symbols",
+        "s2_frame"
+      ],
+      "fill_order": [
+        "s2_head",
+        "s2_torso",
+        "s2_left_arm",
+        "s2_right_arm",
+        "s2_lower_body",
+        "s2_symbols",
+        "s2_frame"
+      ],
+      "narrative_requirements": [
+        {
+          "id": "s2-meaning",
+          "narration_quote": "真正的自體免疫疾病，是免疫系統辨",
+          "observable": "Bean presenter with both arms apart and both legs visible, an outlined shield upper left and an orange target with a misdirected curved arrow upper right. This is a metaphor for mistaken targeting, not a treatment diagram."
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "composition": "Bean presenter centered below an orange calendar on left and a plain open book on right; calendar blank. Both arms and legs visible. No check mark claiming cure.",
+      "drawability_reason": "Sparse bean anatomy plus few large symbols fits the natural narration, clear regions can be traced separately.",
+      "outline_strategy": "visible_source_ink",
+      "spatial_order": "top_to_bottom_left_to_right",
+      "subjects": [
+        {
+          "id": "presenter",
+          "kind": "human",
+          "omitted_roles": {
+            "neck": "Neckless bean silhouette per official recipe."
+          },
+          "order_exception": "Head and torso form one bean silhouette; independent limbs remain separate."
+        },
+        {
+          "id": "symbols",
+          "kind": "object"
+        },
+        {
+          "id": "frame",
+          "kind": "object"
+        }
+      ],
+      "parts": [
+        {
+          "id": "s3_head",
+          "subject": "presenter",
+          "role": "head",
+          "stroke_groups": [
+            "Trace visible contour only; lift pen between disconnected marks."
+          ]
+        },
+        {
+          "id": "s3_torso",
+          "subject": "presenter",
+          "role": "torso",
+          "stroke_groups": [
+            "Trace visible contour only; lift pen between disconnected marks."
+          ]
+        },
+        {
+          "id": "s3_left_arm",
+          "subject": "presenter",
+          "role": "left_arm",
+          "stroke_groups": [
+            "Trace visible contour only; lift pen between disconnected marks."
+          ]
+        },
+        {
+          "id": "s3_right_arm",
+          "subject": "presenter",
+          "role": "right_arm",
+          "stroke_groups": [
+            "Trace visible contour only; lift pen between disconnected marks."
+          ]
+        },
+        {
+          "id": "s3_lower_body",
+          "subject": "presenter",
+          "role": "lower_body",
+          "stroke_groups": [
+            "Trace visible contour only; lift pen between disconnected marks."
+          ]
+        },
+        {
+          "id": "s3_symbols",
+          "subject": "symbols",
+          "role": "symbols",
+          "stroke_groups": [
+            "Trace visible contour only; lift pen between disconnected marks."
+          ]
+        },
+        {
+          "id": "s3_frame",
+          "subject": "frame",
+          "role": "frame",
+          "stroke_groups": [
+            "Trace visible contour only; lift pen between disconnected marks."
+          ]
+        }
+      ],
+      "outline_order": [
+        "s3_head",
+        "s3_torso",
+        "s3_left_arm",
+        "s3_right_arm",
+        "s3_lower_body",
+        "s3_symbols",
+        "s3_frame"
+      ],
+      "fill_order": [
+        "s3_head",
+        "s3_torso",
+        "s3_left_arm",
+        "s3_right_arm",
+        "s3_lower_body",
+        "s3_symbols",
+        "s3_frame"
+      ],
+      "narrative_requirements": [
+        {
+          "id": "s3-meaning",
+          "narration_quote": "你提供的這篇書籍分享，最值得留下",
+          "observable": "Bean presenter centered below an orange calendar on left and a plain open book on right; calendar blank. Both arms and legs visible. No check mark claiming cure."
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "composition": "Bean presenter centered below a large outlined divided dinner plate, vegetables and fish shown as separate clean shapes; a single orange carrot on the plate. Both arms down and two legs visible; no excluded-food symbols.",
+      "drawability_reason": "Sparse bean anatomy plus few large symbols fits the natural narration, clear regions can be traced separately.",
+      "outline_strategy": "visible_source_ink",
+      "spatial_order": "top_to_bottom_left_to_right",
+      "subjects": [
+        {
+          "id": "presenter",
+          "kind": "human",
+          "omitted_roles": {
+            "neck": "Neckless bean silhouette per official recipe."
+          },
+          "order_exception": "Head and torso form one bean silhouette; independent limbs remain separate."
+        },
+        {
+          "id": "symbols",
+          "kind": "object"
+        },
+        {
+          "id": "frame",
+          "kind": "object"
+        }
+      ],
+      "parts": [
+        {
+          "id": "s4_head",
+          "subject": "presenter",
+          "role": "head",
+          "stroke_groups": [
+            "Trace visible contour only; lift pen between disconnected marks."
+          ]
+        },
+        {
+          "id": "s4_torso",
+          "subject": "presenter",
+          "role": "torso",
+          "stroke_groups": [
+            "Trace visible contour only; lift pen between disconnected marks."
+          ]
+        },
+        {
+          "id": "s4_left_arm",
+          "subject": "presenter",
+          "role": "left_arm",
+          "stroke_groups": [
+            "Trace visible contour only; lift pen between disconnected marks."
+          ]
+        },
+        {
+          "id": "s4_right_arm",
+          "subject": "presenter",
+          "role": "right_arm",
+          "stroke_groups": [
+            "Trace visible contour only; lift pen between disconnected marks."
+          ]
+        },
+        {
+          "id": "s4_lower_body",
+          "subject": "presenter",
+          "role": "lower_body",
+          "stroke_groups": [
+            "Trace visible contour only; lift pen between disconnected marks."
+          ]
+        },
+        {
+          "id": "s4_symbols",
+          "subject": "symbols",
+          "role": "symbols",
+          "stroke_groups": [
+            "Trace visible contour only; lift pen between disconnected marks."
+          ]
+        },
+        {
+          "id": "s4_frame",
+          "subject": "frame",
+          "role": "frame",
+          "stroke_groups": [
+            "Trace visible contour only; lift pen between disconnected marks."
+          ]
+        }
+      ],
+      "outline_order": [
+        "s4_head",
+        "s4_torso",
+        "s4_left_arm",
+        "s4_right_arm",
+        "s4_lower_body",
+        "s4_symbols",
+        "s4_frame"
+      ],
+      "fill_order": [
+        "s4_head",
+        "s4_torso",
+        "s4_left_arm",
+        "s4_right_arm",
+        "s4_lower_body",
+        "s4_symbols",
+        "s4_frame"
+      ],
+      "narrative_requirements": [
+        {
+          "id": "s4-meaning",
+          "narration_quote": "那普通人能做什麼？第一，把三餐吃",
+          "observable": "Bean presenter centered below a large outlined divided dinner plate, vegetables and fish shown as separate clean shapes; a single orange carrot on the plate. Both arms down and two legs visible; no excluded-food symbols."
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "composition": "Bean presenter centered below an outlined supplement bottle on left and an orange question mark on right; hands open, not swallowing anything. Both legs visible. Bottle is blank and not branded.",
+      "drawability_reason": "Sparse bean anatomy plus few large symbols fits the natural narration, clear regions can be traced separately.",
+      "outline_strategy": "visible_source_ink",
+      "spatial_order": "top_to_bottom_left_to_right",
+      "subjects": [
+        {
+          "id": "presenter",
+          "kind": "human",
+          "omitted_roles": {
+            "neck": "Neckless bean silhouette per official recipe."
+          },
+          "order_exception": "Head and torso form one bean silhouette; independent limbs remain separate."
+        },
+        {
+          "id": "symbols",
+          "kind": "object"
+        },
+        {
+          "id": "frame",
+          "kind": "object"
+        }
+      ],
+      "parts": [
+        {
+          "id": "s5_head",
+          "subject": "presenter",
+          "role": "head",
+          "stroke_groups": [
+            "Trace visible contour only; lift pen between disconnected marks."
+          ]
+        },
+        {
+          "id": "s5_torso",
+          "subject": "presenter",
+          "role": "torso",
+          "stroke_groups": [
+            "Trace visible contour only; lift pen between disconnected marks."
+          ]
+        },
+        {
+          "id": "s5_left_arm",
+          "subject": "presenter",
+          "role": "left_arm",
+          "stroke_groups": [
+            "Trace visible contour only; lift pen between disconnected marks."
+          ]
+        },
+        {
+          "id": "s5_right_arm",
+          "subject": "presenter",
+          "role": "right_arm",
+          "stroke_groups": [
+            "Trace visible contour only; lift pen between disconnected marks."
+          ]
+        },
+        {
+          "id": "s5_lower_body",
+          "subject": "presenter",
+          "role": "lower_body",
+          "stroke_groups": [
+            "Trace visible contour only; lift pen between disconnected marks."
+          ]
+        },
+        {
+          "id": "s5_symbols",
+          "subject": "symbols",
+          "role": "symbols",
+          "stroke_groups": [
+            "Trace visible contour only; lift pen between disconnected marks."
+          ]
+        },
+        {
+          "id": "s5_frame",
+          "subject": "frame",
+          "role": "frame",
+          "stroke_groups": [
+            "Trace visible contour only; lift pen between disconnected marks."
+          ]
+        }
+      ],
+      "outline_order": [
+        "s5_head",
+        "s5_torso",
+        "s5_left_arm",
+        "s5_right_arm",
+        "s5_lower_body",
+        "s5_symbols",
+        "s5_frame"
+      ],
+      "fill_order": [
+        "s5_head",
+        "s5_torso",
+        "s5_left_arm",
+        "s5_right_arm",
+        "s5_lower_body",
+        "s5_symbols",
+        "s5_frame"
+      ],
+      "narrative_requirements": [
+        {
+          "id": "s5-meaning",
+          "narration_quote": "第二，別把保健品當成修復捷徑。益",
+          "observable": "Bean presenter centered below an outlined supplement bottle on left and an orange question mark on right; hands open, not swallowing anything. Both legs visible. Bottle is blank and not branded."
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "composition": "Bean standing between an outlined crescent moon left and an orange medical cross right, one arm pointing toward the medical cross. Both stick legs visible; reassuring expression, no cure claim.",
+      "drawability_reason": "Sparse bean anatomy plus few large symbols fits the natural narration, clear regions can be traced separately.",
+      "outline_strategy": "visible_source_ink",
+      "spatial_order": "top_to_bottom_left_to_right",
+      "subjects": [
+        {
+          "id": "presenter",
+          "kind": "human",
+          "omitted_roles": {
+            "neck": "Neckless bean silhouette per official recipe."
+          },
+          "order_exception": "Head and torso form one bean silhouette; independent limbs remain separate."
+        },
+        {
+          "id": "symbols",
+          "kind": "object"
+        },
+        {
+          "id": "frame",
+          "kind": "object"
+        }
+      ],
+      "parts": [
+        {
+          "id": "s6_head",
+          "subject": "presenter",
+          "role": "head",
+          "stroke_groups": [
+            "Trace visible contour only; lift pen between disconnected marks."
+          ]
+        },
+        {
+          "id": "s6_torso",
+          "subject": "presenter",
+          "role": "torso",
+          "stroke_groups": [
+            "Trace visible contour only; lift pen between disconnected marks."
+          ]
+        },
+        {
+          "id": "s6_left_arm",
+          "subject": "presenter",
+          "role": "left_arm",
+          "stroke_groups": [
+            "Trace visible contour only; lift pen between disconnected marks."
+          ]
+        },
+        {
+          "id": "s6_right_arm",
+          "subject": "presenter",
+          "role": "right_arm",
+          "stroke_groups": [
+            "Trace visible contour only; lift pen between disconnected marks."
+          ]
+        },
+        {
+          "id": "s6_lower_body",
+          "subject": "presenter",
+          "role": "lower_body",
+          "stroke_groups": [
+            "Trace visible contour only; lift pen between disconnected marks."
+          ]
+        },
+        {
+          "id": "s6_symbols",
+          "subject": "symbols",
+          "role": "symbols",
+          "stroke_groups": [
+            "Trace visible contour only; lift pen between disconnected marks."
+          ]
+        },
+        {
+          "id": "s6_frame",
+          "subject": "frame",
+          "role": "frame",
+          "stroke_groups": [
+            "Trace visible contour only; lift pen between disconnected marks."
+          ]
+        }
+      ],
+      "outline_order": [
+        "s6_head",
+        "s6_torso",
+        "s6_left_arm",
+        "s6_right_arm",
+        "s6_lower_body",
+        "s6_symbols",
+        "s6_frame"
+      ],
+      "fill_order": [
+        "s6_head",
+        "s6_torso",
+        "s6_left_arm",
+        "s6_right_arm",
+        "s6_lower_body",
+        "s6_symbols",
+        "s6_frame"
+      ],
+      "narrative_requirements": [
+        {
+          "id": "s6-meaning",
+          "narration_quote": "第三，替睡眠和情緒留位置。固定起",
+          "observable": "Bean standing between an outlined crescent moon left and an orange medical cross right, one arm pointing toward the medical cross. Both stick legs visible; reassuring expression, no cure claim."
+        }
+      ]
+    }
+  ]
+}

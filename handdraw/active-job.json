@@ -1,8 +1,8 @@
 {
-  "job_id": "job-huangtaiji-ink08-20261019",
-  "topic": "皇太極：從後金到大清帝國",
-  "seconds": 178,
-  "style": "8",
-  "bundle_sha256": "a30f8a32f209aa39501c86bfedc9e48cadb9b3f7675f9ef0891cfd1f8bd05069",
+  "job_id": "job-f68e7f38ccec4a0e4f5a",
+  "topic": "免疫力不是越強越好",
+  "seconds": 180,
+  "style": "4",
+  "bundle_sha256": "80c13db0097ea701f49d17e765b7f853ce4a34598f7a0c0c3c78d4e67287320f",
   "mode": "chatgpt-prepared-no-extra-model-api"
 }
