@@ -103,3 +103,16 @@
 - 待完成的實際 OAuth：同一個 OAuth app 以 drive.file scope 選取上述目的資料夾，將 authorized-user JSON 安全存入 GitHub Secret GDRIVE_AUTHORIZED_USER_JSON。新增 app 不能僅靠資料夾 ID 取得 drive.file 存取；preflight 必須實際成功。完整契約及官方依據見 handdraw/ACTIONS_ROUTING.md。
 - DONE：草稿 PR #13：https://github.com/dsf430-stack/short-video-factory/pull/13 。程式 Commit 4a1b8374aa86adb334f1bb483dc29d7d08f4089c；Actions Run 39380639175，routing-checks SUCCESS，日誌確認21項測試通過；render/archive 均 SKIPPED（符合 PR 僅測試契約）。測試執行的 PR merge SHA 為 d9160c94dec61404f993d4fc014910933a2f2117，非修改 main。Run：https://github.com/dsf430-stack/short-video-factory/actions/runs/39380639175 。
 - NOT_STARTED：全新題材渲染及MP4驗收、Actions真實Drive寫入。本次未重跑歷史影片；尚無新的影片下載連結，不能宣稱安裝任務整體完成。
+
+
+### 2026-10-20 全新題材實片驗證完成；Actions Drive OAuth 仍 BLOCKED
+
+- DONE：全新題材「冰塊為什麼浮在水上？」；job_id job-ice-float-routing-20261020。USGS Water Density 作為事實來源，沒有重用舊題材影片或插畫。官方4號完整配方，單幅新原創插畫按11個語義部位逐筆描線/填色，52px繁體字幕，預設無配樂。
+- DONE：068 原設定完整旁白由既有 voice-068.yml 產生，Run 39381158639 SUCCESS，Artifact 12245248540；PCM 14.712秒。渲染直接 VOICE_CACHE_HIT，未重配或拉伸/截斷。
+- DONE：新素材與預檢 Commit 15b527c4217fcd01310186f7419daf9be318680f；既有 sweety-handdraw-068.yml 手動以 operation=render、save_to_drive=false、job_id=job-ice-float-routing-20261020、seconds=16、style=4 執行。Run 39382170831 SUCCESS：https://github.com/dsf430-stack/short-video-factory/actions/runs/39382170831 。21項測試通過，原官方引擎全工程檢查通過，未新增渲染器或改聲音設定。
+- DONE：成片 Ice_Floats_068_Actions_20261020.mp4，16.000秒、1080×1920、30fps、480幀、H.264/AAC，1,504,851 bytes；SHA256 f8ccc9af666099c8cc2257a8d2c62d8bb0a87a22f402981562821c3ccf3726e1。Artifact 12245786534。
+- DONE：下載後完整解碼、格式/片長/字幕軌檢查通過；實際檢視0.5/1.5/3/5/7/9/11/13/14.7/15.7秒，逐筆動畫、原圖部位、完稿、繁體字幕唯一性及標題/註解/字幕間距通過。片尾保留完整畫面；封面使用新圖居中構圖，沒有加標題文字。官方旁白相關度0.99997638，末句0.99995914；下載版與原068PCM比較0.99644348，尾段0.99994132。主觀聽感 UNCERTAIN，未宣稱已人工聽音。
+- DONE：使用本對話既有 Google Drive 連線保存至 Facebook_Reels/ACTIONS_VERIFIED，file_id 1srE49srEAwB5DAJ83Qz_kMcJwtOuWGMP；讀回大小/目的資料夾，重新下載核對SHA256完全相同。連結：https://drive.google.com/file/d/1srE49srEAwB5DAJ83Qz_kMcJwtOuWGMP/view?usp=drivesdk 。未加入READY佇列或發布。
+- DONE：免解壓MP4已交付檔案保存，library_file_id libfile_fbdf0dc1a2c481918038cf41a552c624。詳細下載驗證見 handdraw/verification/ice-routing-20261020.json。
+- BLOCKED：Actions自己的Drive長期OAuth憑證仍未產生。Google Cloud設定頁經一次重查仍Site Unavailable；使用者兩次明確授權已記錄，不再詢問相同同意。此次archive job SKIPPED是明確隔離測試，不能把ChatGPT連線保存當成Actions自動保存已驗證。
+- 接續：在可用Google授權介面取得drive.file OAuth及選取目的資料夾，安全存入GDRIVE_AUTHORIZED_USER_JSON，先跑preflight，再operation=archive、archive_run_id=39382170831。已成功的素材、068與MP4不再重做；真實Drive archive通過前不合併草稿PR #13。main保持11f115111f85e805a990a68775e5fbdcfc86ba4d。

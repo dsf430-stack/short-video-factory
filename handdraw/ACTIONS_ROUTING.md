@@ -44,7 +44,8 @@ GitHub Secret 名稱：GDRIVE_AUTHORIZED_USER_JSON。內容為 Google OAuth auth
 - https://google-auth.readthedocs.io/en/latest/reference/google.oauth2.credentials.html
 - https://github.com/actions/download-artifact/tree/v4
 
-## 尚未驗證
+## 已完成的實片測試與剩餘卡點
 
-Actions 實際 Drive 寫入、全新題材成片測試與新的 MP4 下載連結均未完成。單元測試使用模擬 Drive 回應，不代表 OAuth 或 Google 實際上傳成功。
+全新題材「冰塊為什麼浮在水上？」已由原 Actions Run 39382170831 成功產生16秒、1080×1920、30fps、H.264/AAC、068與繁體字幕的MP4。下載完整解碼、10點看圖、字幕與音軌核對均通過；使用者主觀聽感仍未驗收。沒有重用舊片。來源Commit 15b527c4217fcd01310186f7419daf9be318680f，詳細證據見 verification/ice-routing-20261020.json。
 
+此次以 save_to_drive=false 明確隔離渲染；成片已透過ChatGPT既有Drive連線保存並下載比對SHA256一致。這不代表Actions上傳已驗證。實際Actions Drive寫入仍BLOCKED，需完成獨立OAuth後，以operation=archive、archive_run_id=39382170831接續，不重配音或重渲染。單元測試使用模擬Drive回應，不代表OAuth或Google實際上傳成功。
