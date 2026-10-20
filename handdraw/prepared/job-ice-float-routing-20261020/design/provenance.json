@@ -1,0 +1,24 @@
+{
+  "original_generated_file": "/workspace/scratch/4438e6d7ba16/generated_images/exec-fb9d4085-0487-493d-8de6-bea24152172f.png",
+  "original_sha256": "197a75254a510dcfbb4ec5e2a9207b55d65ebc31bed6887b08360d053892f96d",
+  "scene_sha256": "bb5aa7569f9e9c24f9f856fbcfc518be1356d2eaab055125645c05fa09b24569",
+  "pixels_unchanged": true,
+  "cover_composition": {
+    "canvas": [
+      1080,
+      1920
+    ],
+    "paper": "#FFE65A",
+    "source_size": [
+      900,
+      900
+    ],
+    "position": [
+      90,
+      510
+    ],
+    "text": "none"
+  },
+  "voice_run_id": 39381158639,
+  "voice_artifact_id": 12245248540
+}
