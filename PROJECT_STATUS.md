@@ -77,3 +77,15 @@
 - 已下載最終 MP4：1080×1920、30fps、5326幀、H.264/AAC、31,793,494 bytes；SHA256 72bc2bcef33556ab8469a96535a440da7d95afddba5800314f718ec6cabd5f92。下載後再次完整解碼通過，官方全部工程檢查通過。
 - 實際檢視封面及各幕畫面，最終11個時間點重驗肖像裁切、單行字幕與結尾；先前26點檢視問題已修正。音軌相關度0.99997477、尾句0.99994774，尾端靜音0.972秒。主觀聽感 UNCERTAIN，未宣稱人工聽音。
 - 詳細證據 handdraw/verification/huangtaiji-style08-20261019.json；可直接播放的完整 MP4 已保存交付。
+
+
+## 2026-10-21 免疫力 Reels｜IN_PROGRESS
+
+- job_id: `job-f68e7f38ccec4a0e4f5a`; prepared/activation commit: `c0b017590febfdfd07895b11a346e9e05488b6c5`.
+- Actions: https://github.com/dsf430-stack/short-video-factory/actions/runs/39517639322
+- 原稿已改編為約三分鐘繁體中文旁白，移除90天治癒、過敏等同自體免疫、肠漏為單一根因及普遍剔除食物的斷言；依NIH/NIDDK/NCCIH資料核查。
+- 官方4號，6幕全新圖片，068固定+20%/+5Hz，無BGM；代表圖與全部部位已由官方check_bundle通過。
+- 已實測完整旁白171.493878秒；duration_mode=narration，含1秒封面及短收尾約173秒。不是精確180秒，不截音或拉伸。逐詞時間戳已驗證可生成；目前Actions執行已準備素材的正式渲染。
+- DONE: 文案、畫風快照、出圖前簡報/提示詞/預檢、新圖及封面看圖、輪廓遮罩、語義部位檢查、提交與啟動。
+- IN_PROGRESS: Actions配音/字幕/官方動畫與成片驗證。尚未交付MP4，主觀聽感未驗收。
+- 下一步：追蹤上述run；成功後下載film.mp4、完整解碼與逐幕抽查、保存免解壓MP4並交付。勿重新備料或使用舊片。
