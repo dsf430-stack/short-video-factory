@@ -1,0 +1,48 @@
+{
+  "job_id": "job-ice-float-routing-20261020",
+  "render_run_id": 39382170831,
+  "render_commit": "15b527c4217fcd01310186f7419daf9be318680f",
+  "seconds": 16.0,
+  "resolution": [
+    1080,
+    1920
+  ],
+  "fps": 30,
+  "frames": 480,
+  "video_codec": "h264",
+  "audio_codec": "aac",
+  "full_decode": "PASS",
+  "sha256": "f8ccc9af666099c8cc2257a8d2c62d8bb0a87a22f402981562821c3ccf3726e1",
+  "size": 1504851,
+  "audio_correlation": 0.996443480045731,
+  "tail_correlation": 0.9999413186740641,
+  "human_listening": "UNCERTAIN",
+  "visual_sample_times": [
+    0.5,
+    1.5,
+    3,
+    5,
+    7,
+    9,
+    11,
+    13,
+    14.7,
+    15.7
+  ],
+  "visual_review": "PASS",
+  "drive_actions_oauth": "BLOCKED",
+  "visual_findings": [
+    "Viewed cover and nine progressive drawing/fill/final timestamps.",
+    "Original ice/glass/presenter illustration appears progressively; not reused old footage.",
+    "Traditional Chinese captions have one visible layer, no extra subtitle track, no title/annotation overlap.",
+    "Final glass, waterline, partially submerged ice and density annotation fully visible."
+  ],
+  "background_music": false,
+  "official_engineering_checks": "PASS",
+  "voice_run_id": 39381158639,
+  "save_route": "ChatGPT Drive connector; Actions OAuth remains BLOCKED",
+  "drive_upload": "SAVED_AND_READBACK_SHA256_MATCH",
+  "drive_file_id": "1srE49srEAwB5DAJ83Qz_kMcJwtOuWGMP",
+  "drive_url": "https://drive.google.com/file/d/1srE49srEAwB5DAJ83Qz_kMcJwtOuWGMP/view?usp=drivesdk",
+  "library_file_id": "libfile_fbdf0dc1a2c481918038cf41a552c624"
+}

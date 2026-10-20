@@ -1,0 +1,30 @@
+{
+  "dependency_sha256": "fbbfd33d70f729011b6a6bc232851c116cd4a89ead2adea4462888a6ce26fc1a",
+  "style_sha256": "7fb5110c473be7439d5390b6c6f977a3e2f6ebaac08928cc9d913b4f1f9ee085",
+  "images": [
+    {
+      "source": "../inputs/scene.png",
+      "status": "pass",
+      "method": "generated_under_guidance",
+      "brief_file": "brief.txt",
+      "prompt_file": "prompt.txt",
+      "brief_sha256": "29ccd7612e4bc0563726569d4bf9b1c20f50b0e0a4a37e126c9e229a830c8eae",
+      "prompt_sha256": "d22c66ce76f378e5f30d5fe81bcffe15a9cbe1e9629dd0ef463b04fe04b880ce",
+      "sha256": "bb5aa7569f9e9c24f9f856fbcfc518be1356d2eaab055125645c05fa09b24569",
+      "pixel_sha256": "d603e22bd4479fae3bcb549104914fcd27a473b02b5ac42155a4344f49fc1dab",
+      "evidence": "Viewed original1254px illustration: correct official4 bean/black closed outlines/orange ice accent/blue arrow. Ice intersects water surface, mostly submerged, clear gap to bottom. No generated text; cover uses the same verified image centered on yellow canvas without added text."
+    },
+    {
+      "source": "../inputs/cover.png",
+      "status": "pass",
+      "method": "composed_with_verified_layers",
+      "brief_file": "brief.txt",
+      "prompt_file": "prompt.txt",
+      "brief_sha256": "29ccd7612e4bc0563726569d4bf9b1c20f50b0e0a4a37e126c9e229a830c8eae",
+      "prompt_sha256": "d22c66ce76f378e5f30d5fe81bcffe15a9cbe1e9629dd0ef463b04fe04b880ce",
+      "sha256": "8aad8311aa97b46a4925b7056742c1b8c0739ee62ef4b38f2703e1c0c3ee738f",
+      "pixel_sha256": "d5404cdad7a6d3b14f0526bb6c9d2561e81dcd571efa4d2aa6935ca76e9ee0bb",
+      "evidence": "Viewed original1254px illustration: correct official4 bean/black closed outlines/orange ice accent/blue arrow. Ice intersects water surface, mostly submerged, clear gap to bottom. No generated text; cover uses the same verified image centered on yellow canvas without added text."
+    }
+  ]
+}

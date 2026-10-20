@@ -77,3 +77,42 @@
 - 已下載最終 MP4：1080×1920、30fps、5326幀、H.264/AAC、31,793,494 bytes；SHA256 72bc2bcef33556ab8469a96535a440da7d95afddba5800314f718ec6cabd5f92。下載後再次完整解碼通過，官方全部工程檢查通過。
 - 實際檢視封面及各幕畫面，最終11個時間點重驗肖像裁切、單行字幕與結尾；先前26點檢視問題已修正。音軌相關度0.99997477、尾句0.99994774，尾端靜音0.972秒。主觀聽感 UNCERTAIN，未宣稱人工聽音。
 - 詳細證據 handdraw/verification/huangtaiji-style08-20261019.json；可直接播放的完整 MP4 已保存交付。
+
+
+## BLOCKED：自動分流安裝審查（2026-10-20）
+
+- 基準 main：11f115111f85e805a990a68775e5fbdcfc86ba4d。獨立分支 feature/actions-routing-20261020；未修改 main，未重裝既有功能。
+- DONE：讀取 README.md、AGENTS.md、PROJECT_STATUS.md、WORKFLOW.md、handdraw/README.md、現有 sweety-handdraw-068.yml 與 actions-request.yml。
+- DONE：確認既有入口已具備 068、真實時間戳字幕、固定官方手繪引擎、獨立任務輸出、快取、驗證及 Actions artifact。workflow_dispatch 接受 job_id/topic/seconds/style。瀏覽器已登入並顯示 Run workflow，可選獨立分支。
+- DONE：現有 push 自動啟動僅限 main 及兩個既有分支；request bridge 僅監聽 main。本任務應從 Run workflow 啟動獨立分支，不為啟動測試而修改 main。
+- BLOCKED：現有手繪 workflow 無 Google Drive 上傳步驟；main 全樹未找到 Drive/rclone/OAuth 上傳實作。GitHub Actions Secrets 設定頁顯示無 environment secrets，repository secrets 僅 GEMINI_API_KEY；未讀取任何 secret 值。
+- 使用者明確要求遇到登入、授權或付費先停下確認，因此尚未新增 Drive OAuth/服務帳戶憑證、未更改權限、未使用付費 API。
+- NOT_STARTED：全新題材備料、Actions 實際觸發、MP4 解碼/畫幅/時長/音軌/字幕驗收、Drive 寫入。尚無本次渲染 Run ID 或 MP4 下載連結；不以歷史影片當新測試。
+- 下一步：取得使用者對「GitHub Actions 僅上傳至指定 Google Drive 資料夾」的授權後，確定最小存取方式與目的資料夾，沿用原 workflow 增加驗收後上傳及上傳回執。再以全新題材只觸發一次，按 Log 修復失敗階段，記錄實際 SHA/Run ID/驗收/下載連結。成功階段不重跑。
+- 現有製片入口：https://github.com/dsf430-stack/short-video-factory/actions/workflows/sweety-handdraw-068.yml 。這是已準備素材任務的入口，並非任意題材自動生圖或 Drive 保存已完成的聲明。
+
+
+### 2026-10-20 接續：已獲授權，程式與測試完成，OAuth 尚未建立
+
+- 使用者已同意設定 Actions 上傳至指定 Drive 資料夾，不重問相同同意。
+- DONE：透過現有 Drive 連線找到 Facebook_Reels，建立並讀回 ACTIONS_VERIFIED 子資料夾，ID 1MYEGF9AgF7nFpTgRZIU-79Vjs6qtDLB5。未加入 READY/發布佇列，未更改既有分享設定。
+- DONE：沿用 sweety-handdraw-068.yml 新增 render / validate / archive 分流；PR 僅測試，Drive preflight 失敗不開始昂貴渲染。archive-only 接收既有 Run ID，不重配音或重渲染。
+- DONE：新增 archive_drive.py，使用官方 Google SDK、drive.file OAuth、指定目的資料夾、成片 SHA/格式/字幕/完整解碼檢查、雜湊查重、有限 chunk 上傳和讀回 checksum 驗證；無自動失敗重試。原 renderer/068/畫風未更動。
+- DONE：本地21項測試通過（15項既有＋6項新增），YAML與內嵌Python語法通過。新增測試使用模擬 Drive 回應，並非真實 Google 上傳。
+- BLOCKED：Google Cloud 憑證設定頁 https://console.cloud.google.com/apis/credentials 在此瀏覽器顯示 Site Unavailable。無可用 Actions OAuth credential，ChatGPT Drive 連線不可直接轉給 runner。不能從已同意推定已產生 refresh token。
+- 待完成的實際 OAuth：同一個 OAuth app 以 drive.file scope 選取上述目的資料夾，將 authorized-user JSON 安全存入 GitHub Secret GDRIVE_AUTHORIZED_USER_JSON。新增 app 不能僅靠資料夾 ID 取得 drive.file 存取；preflight 必須實際成功。完整契約及官方依據見 handdraw/ACTIONS_ROUTING.md。
+- DONE：草稿 PR #13：https://github.com/dsf430-stack/short-video-factory/pull/13 。程式 Commit 4a1b8374aa86adb334f1bb483dc29d7d08f4089c；Actions Run 39380639175，routing-checks SUCCESS，日誌確認21項測試通過；render/archive 均 SKIPPED（符合 PR 僅測試契約）。測試執行的 PR merge SHA 為 d9160c94dec61404f993d4fc014910933a2f2117，非修改 main。Run：https://github.com/dsf430-stack/short-video-factory/actions/runs/39380639175 。
+- NOT_STARTED：全新題材渲染及MP4驗收、Actions真實Drive寫入。本次未重跑歷史影片；尚無新的影片下載連結，不能宣稱安裝任務整體完成。
+
+
+### 2026-10-20 全新題材實片驗證完成；Actions Drive OAuth 仍 BLOCKED
+
+- DONE：全新題材「冰塊為什麼浮在水上？」；job_id job-ice-float-routing-20261020。USGS Water Density 作為事實來源，沒有重用舊題材影片或插畫。官方4號完整配方，單幅新原創插畫按11個語義部位逐筆描線/填色，52px繁體字幕，預設無配樂。
+- DONE：068 原設定完整旁白由既有 voice-068.yml 產生，Run 39381158639 SUCCESS，Artifact 12245248540；PCM 14.712秒。渲染直接 VOICE_CACHE_HIT，未重配或拉伸/截斷。
+- DONE：新素材與預檢 Commit 15b527c4217fcd01310186f7419daf9be318680f；既有 sweety-handdraw-068.yml 手動以 operation=render、save_to_drive=false、job_id=job-ice-float-routing-20261020、seconds=16、style=4 執行。Run 39382170831 SUCCESS：https://github.com/dsf430-stack/short-video-factory/actions/runs/39382170831 。21項測試通過，原官方引擎全工程檢查通過，未新增渲染器或改聲音設定。
+- DONE：成片 Ice_Floats_068_Actions_20261020.mp4，16.000秒、1080×1920、30fps、480幀、H.264/AAC，1,504,851 bytes；SHA256 f8ccc9af666099c8cc2257a8d2c62d8bb0a87a22f402981562821c3ccf3726e1。Artifact 12245786534。
+- DONE：下載後完整解碼、格式/片長/字幕軌檢查通過；實際檢視0.5/1.5/3/5/7/9/11/13/14.7/15.7秒，逐筆動畫、原圖部位、完稿、繁體字幕唯一性及標題/註解/字幕間距通過。片尾保留完整畫面；封面使用新圖居中構圖，沒有加標題文字。官方旁白相關度0.99997638，末句0.99995914；下載版與原068PCM比較0.99644348，尾段0.99994132。主觀聽感 UNCERTAIN，未宣稱已人工聽音。
+- DONE：使用本對話既有 Google Drive 連線保存至 Facebook_Reels/ACTIONS_VERIFIED，file_id 1srE49srEAwB5DAJ83Qz_kMcJwtOuWGMP；讀回大小/目的資料夾，重新下載核對SHA256完全相同。連結：https://drive.google.com/file/d/1srE49srEAwB5DAJ83Qz_kMcJwtOuWGMP/view?usp=drivesdk 。未加入READY佇列或發布。
+- DONE：免解壓MP4已交付檔案保存，library_file_id libfile_fbdf0dc1a2c481918038cf41a552c624。詳細下載驗證見 handdraw/verification/ice-routing-20261020.json。
+- BLOCKED：Actions自己的Drive長期OAuth憑證仍未產生。Google Cloud設定頁經一次重查仍Site Unavailable；使用者兩次明確授權已記錄，不再詢問相同同意。此次archive job SKIPPED是明確隔離測試，不能把ChatGPT連線保存當成Actions自動保存已驗證。
+- 接續：在可用Google授權介面取得drive.file OAuth及選取目的資料夾，安全存入GDRIVE_AUTHORIZED_USER_JSON，先跑preflight，再operation=archive、archive_run_id=39382170831。已成功的素材、068與MP4不再重做；真實Drive archive通過前不合併草稿PR #13。main保持11f115111f85e805a990a68775e5fbdcfc86ba4d。

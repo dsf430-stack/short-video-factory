@@ -1,0 +1,8 @@
+{
+  "status": "ready_for_generation",
+  "plan_sha256": "15f3a3a40ff0226be791bd460e9718394b8c0d6bde875159f97c72b787af707f",
+  "style_sha256": "7fb5110c473be7439d5390b6c6f977a3e2f6ebaac08928cc9d913b4f1f9ee085",
+  "illustrations": [
+    "ice_float"
+  ]
+}

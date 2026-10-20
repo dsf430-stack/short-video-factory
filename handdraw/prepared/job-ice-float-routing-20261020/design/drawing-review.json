@@ -1,0 +1,29 @@
+{
+  "style_sha256": "7fb5110c473be7439d5390b6c6f977a3e2f6ebaac08928cc9d913b4f1f9ee085",
+  "plan_sha256": "954c02f0c43eef7e43ce385c638580f2234b9b01088a743b693d77b5c2107ed4",
+  "illustrations": [
+    {
+      "plan_id": "ice_float",
+      "status": "pass",
+      "source_sha256": "bb5aa7569f9e9c24f9f856fbcfc518be1356d2eaab055125645c05fa09b24569",
+      "crop": null,
+      "anatomy_and_occlusion": "Bean face/head and lower torso are contiguous; separate masks follow these regions. No visible neck. Arms and legs separated; no object held.",
+      "part_boundaries": "Head/torso exclude arm regions. Rim, exposed ice top, submerged ice, foreground waterline, arrow and container walls/base separately assigned. Blank paper belongs to last container/background region.",
+      "stroke_breaks": "Closed source contours, eyes/mouth separate; upper and lower glass wall ink segments stay separate.",
+      "outline_then_fill": "All semantic contours precede fill, matching official engine sequence.",
+      "spatial_order": "Presenter anatomy first, glass rim/ice/surface/arrow and finally supporting glass walls/base; retains preflight order except visible-neck omission and background ownership.",
+      "narrative_checks": [
+        {
+          "id": "floating",
+          "status": "pass",
+          "evidence": "Visible orange top and small exposed sides above black surface ellipse; larger lower ice body underwater, a wide gap to glass base."
+        },
+        {
+          "id": "glass",
+          "status": "pass",
+          "evidence": "Complete rim, walls and base surround water and cube; bean right arm points toward glass."
+        }
+      ]
+    }
+  ]
+}

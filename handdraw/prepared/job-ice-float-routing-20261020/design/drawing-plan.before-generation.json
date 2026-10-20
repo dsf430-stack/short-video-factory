@@ -1,0 +1,172 @@
+{
+  "illustrations": [
+    {
+      "id": "ice_float",
+      "composition": "Bean presenter left, clear glass right. Ordinary ice floats with most below water, small cap above; no contact with bottom. White negative space.",
+      "drawability_reason": "Large clean closed contours and few objects permit independently traced semantic parts within measured narration.",
+      "outline_strategy": "visible_source_ink",
+      "subjects": [
+        {
+          "id": "bean",
+          "kind": "human"
+        },
+        {
+          "id": "glass",
+          "kind": "object"
+        },
+        {
+          "id": "ice",
+          "kind": "object"
+        },
+        {
+          "id": "water",
+          "kind": "environment"
+        },
+        {
+          "id": "arrow",
+          "kind": "object"
+        }
+      ],
+      "parts": [
+        {
+          "id": "head",
+          "subject": "bean",
+          "role": "head",
+          "stroke_groups": [
+            "head contour, separate dot eyes, smile"
+          ]
+        },
+        {
+          "id": "neck",
+          "subject": "bean",
+          "role": "neck",
+          "stroke_groups": [
+            "two short neck sides"
+          ]
+        },
+        {
+          "id": "torso",
+          "subject": "bean",
+          "role": "torso",
+          "stroke_groups": [
+            "torso perimeter"
+          ]
+        },
+        {
+          "id": "left_arm",
+          "subject": "bean",
+          "role": "left_arm",
+          "stroke_groups": [
+            "left bent arm and hand"
+          ]
+        },
+        {
+          "id": "right_arm",
+          "subject": "bean",
+          "role": "right_arm",
+          "stroke_groups": [
+            "pointing forearm and fingertip"
+          ]
+        },
+        {
+          "id": "lower_body",
+          "subject": "bean",
+          "role": "lower_body",
+          "stroke_groups": [
+            "two independent legs and feet"
+          ]
+        },
+        {
+          "id": "glass_rim",
+          "subject": "glass",
+          "role": "rim",
+          "stroke_groups": [
+            "elliptical glass rim"
+          ]
+        },
+        {
+          "id": "ice_cap",
+          "subject": "ice",
+          "role": "top",
+          "stroke_groups": [
+            "top ice contour above water"
+          ]
+        },
+        {
+          "id": "ice_body",
+          "subject": "ice",
+          "role": "submerged",
+          "stroke_groups": [
+            "underwater contour separated from cap"
+          ]
+        },
+        {
+          "id": "waterline",
+          "subject": "water",
+          "role": "surface",
+          "stroke_groups": [
+            "separate water surface curves with gap at ice"
+          ]
+        },
+        {
+          "id": "glass_wall",
+          "subject": "glass",
+          "role": "side_and_base",
+          "stroke_groups": [
+            "glass sides and curved base"
+          ]
+        },
+        {
+          "id": "arrow",
+          "subject": "arrow",
+          "role": "pointer",
+          "stroke_groups": [
+            "one curved shaft and separately lifted arrowhead"
+          ]
+        }
+      ],
+      "outline_order": [
+        "head",
+        "neck",
+        "torso",
+        "left_arm",
+        "right_arm",
+        "lower_body",
+        "glass_rim",
+        "ice_cap",
+        "ice_body",
+        "waterline",
+        "glass_wall",
+        "arrow"
+      ],
+      "fill_order": [
+        "head",
+        "neck",
+        "torso",
+        "left_arm",
+        "right_arm",
+        "lower_body",
+        "glass_rim",
+        "ice_cap",
+        "ice_body",
+        "waterline",
+        "glass_wall",
+        "arrow"
+      ],
+      "spatial_order": "top_to_bottom_left_to_right",
+      "order_exception": "Presenter anatomical order first, then rim/ice/surface/container and explanatory arrow so foreground and contact are coherent.",
+      "narrative_requirements": [
+        {
+          "id": "floating",
+          "narration_quote": "冰塊為什麼浮在水上",
+          "observable": "Ice intersects the water surface, small top exposed, submerged part clear, no contact with glass bottom."
+        },
+        {
+          "id": "glass",
+          "narration_quote": "杯子裡",
+          "observable": "An ordinary glass holds liquid water and the floating ice; presenter points at it."
+        }
+      ]
+    }
+  ]
+}

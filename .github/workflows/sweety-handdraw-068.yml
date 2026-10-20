@@ -3,6 +3,21 @@ run-name: "Sweety 068 · ${{ inputs.topic || inputs.job_id || '已啟用製作�
 on:
   workflow_dispatch:
     inputs:
+      operation:
+        description: render 製片 / validate 檢查分流 / archive 只保存既有成片
+        required: true
+        default: render
+        type: choice
+        options: [render, validate, archive]
+      save_to_drive:
+        description: 成功成片保存到指定 Drive 資料夾（須先完成 OAuth）
+        required: true
+        default: true
+        type: boolean
+      archive_run_id:
+        description: archive 專用：來源 Actions Run ID（不重新渲染）
+        required: false
+        type: string
       job_id:
         description: 已準備任務 ID（優先使用；免題材索引）
         required: false
@@ -19,16 +34,44 @@ on:
         description: 官方畫風編號（未填沿用已審查設定）
         required: false
         type: string
+  pull_request:
+    paths: ['handdraw/**', '.github/workflows/sweety-handdraw-068.yml']
   push:
     branches: [main, integration/sweety-handdraw-068, fix/handdraw-no-api-ready]
     paths: ['handdraw/active-job.json']
 permissions:
   contents: read
+  actions: read
 concurrency:
   group: sweety-${{ github.ref }}-${{ inputs.job_id || inputs.topic || 'active' }}
   cancel-in-progress: false
 jobs:
+  routing-checks:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Test existing rendering contracts and archive safety
+        run: python -m unittest discover -s handdraw -p 'test_*.py'
+      - name: Check Drive authorization before spending render time
+        if: github.event_name != 'pull_request' && inputs.operation != 'validate' && (github.event_name == 'push' || inputs.save_to_drive || inputs.operation == 'archive')
+        env:
+          GDRIVE_AUTHORIZED_USER_JSON: ${{ secrets.GDRIVE_AUTHORIZED_USER_JSON }}
+        run: |
+          if [ -z "$GDRIVE_AUTHORIZED_USER_JSON" ]; then
+            echo "::error::DRIVE_AUTH_REQUIRED: configure GDRIVE_AUTHORIZED_USER_JSON; no render started."
+            exit 1
+          fi
+          python -m pip install -r handdraw/drive-requirements.txt
+          python handdraw/archive_drive.py --preflight
   render:
+    needs: routing-checks
+    if: github.event_name != 'pull_request' && inputs.operation != 'validate' && inputs.operation != 'archive'
     runs-on: ubuntu-latest
     timeout-minutes: 60
     steps:
@@ -38,8 +81,6 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-      - name: Test request resolution, cache validation and alignment
-        run: python -m unittest discover -s handdraw -p 'test_*.py'
       - name: Resolve exact prepared job and isolated output path
         id: job
         env:
@@ -131,3 +172,59 @@ jobs:
             ${{ steps.job.outputs.root }}/inputs/*.error.log
           if-no-files-found: ignore
           retention-days: 14
+  archive:
+    needs: [routing-checks, render]
+    if: >-
+      ${{ always() && needs.routing-checks.result == 'success' &&
+      ((inputs.operation == 'archive') || (needs.render.result == 'success' && (github.event_name == 'push' || inputs.save_to_drive))) }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    concurrency:
+      group: sweety-drive-archive
+      cancel-in-progress: false
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Resolve source run without rerendering
+        id: source
+        env:
+          REQUESTED_RUN_ID: ${{ inputs.archive_run_id }}
+          OPERATION: ${{ inputs.operation }}
+        run: |
+          python - <<'PY'
+          import os, re
+          source = os.environ['REQUESTED_RUN_ID'] if os.environ['OPERATION'] == 'archive' else os.environ['GITHUB_RUN_ID']
+          if not re.fullmatch(r'[1-9][0-9]*', source):
+              raise SystemExit('archive requires a numeric source Run ID')
+          with open(os.environ['GITHUB_OUTPUT'], 'a') as output:
+              output.write('run_id=' + source + '\n')
+          PY
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: sweety-068-*
+          path: archive-input
+          merge-multiple: false
+          github-token: ${{ github.token }}
+          run-id: ${{ steps.source.outputs.run_id }}
+      - name: Verify artifact and save to Drive
+        env:
+          GDRIVE_AUTHORIZED_USER_JSON: ${{ secrets.GDRIVE_AUTHORIZED_USER_JSON }}
+          SOURCE_RUN_ID: ${{ steps.source.outputs.run_id }}
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ffmpeg
+          python -m pip install -r handdraw/drive-requirements.txt
+          python handdraw/archive_drive.py --artifact archive-input --receipt archive-evidence/drive-receipt.json
+      - name: Preserve Drive receipt
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: drive-receipt-${{ github.run_id }}
+          path: archive-evidence/drive-receipt.json
+          if-no-files-found: warn
+          retention-days: 90
+
