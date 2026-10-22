@@ -1,0 +1,85 @@
+name: Three Sovereigns 2B 068 render
+on:
+  push:
+    branches: [main]
+    paths: ['hypit_projects/three-sovereigns-20261022/**', '.github/workflows/three-sovereigns-2b.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install media tools and Chinese fonts
+        run: |
+          sudo apt-get update
+          sudo apt-get install --yes ffmpeg fonts-noto-cjk
+          python -m pip install Pillow
+      - name: Fetch the existing pinned Hypit engine
+        run: |
+          git clone https://github.com/hypit-ai/hypit.git hypit
+          git -C hypit checkout dc2b7a8f31b1ef1443a79ca448548d69e3ceb6a0
+          npm install --global pnpm@10.33.0
+          cd hypit
+          pnpm install --frozen-lockfile
+          pnpm build:public-types
+      - name: Wait for the approved narration
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh run watch 39807657269 --exit-status
+      - uses: actions/download-artifact@v4
+        with:
+          name: 068-voice-output
+          run-id: 39807657269
+          github-token: ${{ github.token }}
+          path: narration
+      - name: Prepare this film's authored component
+        run: |
+          python - <<'PY'
+          import pathlib,shutil,subprocess,json
+          src=pathlib.Path('hypit_projects/three-sovereigns-20261022')
+          voice=next(pathlib.Path('narration').rglob('Three_Sovereigns_068_20261022.mp3'))
+          metadata=json.loads(voice.with_suffix('.json').read_text())
+          assert metadata['duration'] <= 29.85,metadata['duration']
+          subprocess.run(['python',str(src/'prepare_scene.py'),str(voice.with_suffix('.srt'))],check=True)
+          pkg=pathlib.Path('hypit/examples/semantic-composition/packages/chat-scene')
+          shutil.copyfile(src/'render.ts',pkg/'src/render.ts')
+          shutil.copyfile(src/'scene.json',pkg/'scene.json')
+          svml=pathlib.Path('hypit/examples/semantic-composition/chat.svml')
+          text=svml.read_text().replace('end="8s"','end="30s"').replace('width="540" height="960"','width="1080" height="1920"')
+          svml.write_text(text)
+          pathlib.Path('voice-path.txt').write_text(str(voice))
+          PY
+          cd hypit
+          pnpm --filter @example/chat-scene build
+          node bin/hypit.mjs programs prepare --project examples/semantic-composition --runtime examples/semantic-composition/hypit.runtime.json --endpoint html.local
+          node bin/hypit.mjs programs prepare --project examples/semantic-composition --runtime examples/semantic-composition/hypit.runtime.json --endpoint media.local
+      - name: Check plan render and retrieve this film
+        working-directory: hypit
+        run: |
+          mkdir -p ../delivery
+          node bin/hypit.mjs check examples/semantic-composition/chat.svml --project examples/semantic-composition
+          node bin/hypit.mjs plan examples/semantic-composition/chat.svrun --project examples/semantic-composition --runtime examples/semantic-composition/hypit.runtime.json
+          node bin/hypit.mjs build examples/semantic-composition/chat.svrun --project examples/semantic-composition --runtime examples/semantic-composition/hypit.runtime.json --follow
+          node bin/hypit.mjs builds --project examples/semantic-composition --json > ../delivery/builds.json
+          build_id=$(node -e 'const f=require("fs");const r=JSON.parse(f.readFileSync("../delivery/builds.json","utf8"));if(r.builds[0].outcome!=="complete")throw Error("Build incomplete");process.stdout.write(r.builds[0].id)')
+          node bin/hypit.mjs get "$build_id" --project examples/semantic-composition --output final.video --to ../delivery/silent.mp4
+      - name: Assemble original 068 narration and timed captions and verify
+        run: |
+          python hypit_projects/three-sovereigns-20261022/finalize.py "$(cat voice-path.txt)" delivery/silent.mp4 delivery
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: three-sovereigns-2b-delivery
+          path: |
+            delivery/
+            narration/
+          retention-days: 90
+          if-no-files-found: warn
+
