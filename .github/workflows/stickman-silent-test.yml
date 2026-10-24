@@ -1,0 +1,37 @@
+name: Stickman silent official drawing test
+on:
+  push:
+    branches: [test/stickman-silent-handdraw-15s]
+permissions:
+  contents: read
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install unchanged official drawing engine
+        run: |
+          git clone https://github.com/threerocks/sweety-handdraw-video.git /tmp/sweety
+          git -C /tmp/sweety checkout 3ae9b78d22af907afe70c1af4b8dc677f883bae1
+          python -m pip install -r /tmp/sweety/skills/sweety-handdraw-video/scripts/requirements.txt
+          sudo apt-get update
+          sudo apt-get install -y ffmpeg
+      - name: Render and validate 15-second silent MP4
+        shell: bash
+        run: |
+          set -o pipefail
+          python -u handdraw/stickman-test/render.py --official /tmp/sweety --output handdraw/stickman-test/output 2>&1 | tee handdraw/stickman-test/run.log
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: stickman-silent-15s
+          path: |
+            handdraw/stickman-test/output/stickman-15s.mp4
+            handdraw/stickman-test/output/engine-report.json
+            handdraw/stickman-test/run.log
