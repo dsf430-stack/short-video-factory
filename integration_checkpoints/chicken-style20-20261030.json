@@ -1,0 +1,65 @@
+{
+  "job_id": "chicken-style20-20261030",
+  "state": "BLOCKED_STYLE20_SNAPSHOT_LOCK",
+  "topic": "手裡的那把米",
+  "style": "20",
+  "source_script_original": "两手空空去追鸡，鸡就会到处跑，但你手里有把米，鸡就会跟着你。你千万不要得意，因为鸡喜欢的从来都不是你，而是你手里的那把米。如果你的手里没有米，那鸡的眼里就没有你，你把它喂饱了，它还会离你而去，背着你到处下蛋。所以，你的米只能给鸡看，不能给鸡吃，这样它才能死心塌地跟着你。",
+  "narration": "兩手空空去追雞，雞就會到處跑，但你手裡有把米，雞就會跟著你。你千萬不要得意，因為雞喜歡的從來都不是你，而是你手裡的那把米。如果你的手裡沒有米，那雞的眼裡就沒有你，你把牠餵飽了，牠還會離你而去，背著你到處下蛋。所以，你的米只能給雞看，不能給雞吃，這樣牠才能死心塌地跟著你。",
+  "voice": {
+    "id": "068",
+    "voice": "zh-TW-HsiaoChenNeural",
+    "rate": "+20%",
+    "pitch": "+5Hz",
+    "boundary": "WordBoundary",
+    "run_id": 40967636834,
+    "commit": "422824920a284220bb695e38ac13ef7763a14d40"
+  },
+  "duration_mode": "narration",
+  "canvas": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 30
+  },
+  "music": false,
+  "official_pin": "5206ec0d17f9b353e400b64b9c51ad69e721e02a",
+  "blocker": {
+    "required": "gpt-image-2-2026-04-21 snapshot lock and high-fidelity style anchor",
+    "observed": "Built-in imagegen schema has prompt, referenced_image_paths, num_last_images_to_include and transparent_background; no model snapshot or fidelity controls.",
+    "source": "skills/sweety-handdraw-video/dependencies/hand-drawn-styles/PROTOCOL.md",
+    "generation_started": false,
+    "render_started": false
+  },
+  "storyboard": [
+    {
+      "id": "empty_chase",
+      "text": "兩手空空去追雞，雞就會到處跑，",
+      "action": "空手男子追一隻母雞，雙手攤開，雞朝遠離男子的方向逃跑。"
+    },
+    {
+      "id": "rice_follow",
+      "text": "但你手裡有把米，雞就會跟著你。",
+      "action": "同一男子向前行走，伸出的掌心清楚有米，母雞朝掌心靠近。"
+    },
+    {
+      "id": "rice_attention",
+      "text": "你千萬不要得意，因為雞喜歡的從來都不是你，而是你手裡的那把米。",
+      "action": "男子昂頭得意；母雞的頭和視線只朝向男子掌心的米。"
+    },
+    {
+      "id": "empty_palm",
+      "text": "如果你的手裡沒有米，那雞的眼裡就沒有你，",
+      "action": "男子展示空掌，母雞背對男子向外走，兩者之間留出明顯距離。"
+    },
+    {
+      "id": "fed_departure",
+      "text": "你把牠餵飽了，牠還會離你而去，背著你到處下蛋。",
+      "action": "吃飽的母雞站在遠離男子的位置，身後可見一顆蛋，男子掌心已空。"
+    },
+    {
+      "id": "rice_display",
+      "text": "所以，你的米只能給雞看，不能給雞吃，這樣牠才能死心塌地跟著你。",
+      "action": "男子捧著米但不撒下，母雞仰頭看米、跟在身側。按原文呈現寓言觀點，不額外把它宣稱為動物行為學結論。"
+    }
+  ],
+  "resume": "Fetch existing voice run and save verified audio. Do not resynthesize successful narration. Resolve explicit style20 snapshot-lock restriction before any production generation. Preserve style20, original engine and voice preset."
+}
