@@ -231,7 +231,9 @@ async def synthesize(text: str, output: str, voice_id: str, boundary: str = 'Sen
         run(['ffmpeg', '-v', 'error', '-i', str(final), '-f', 'null', '-'])
         measured = run(['ffmpeg', '-hide_banner', '-i', str(final), '-af',
                         'loudnorm=I=-11:TP=-1:LRA=7:print_format=json', '-f', 'null', '-'])
-        stats = json.loads(measured.stderr[measured.stderr.rfind('{'):])
+        # FFmpeg can emit progress/summary lines after the loudnorm object.
+        # Decode exactly one object; keep the existing level checks below.
+        stats, _ = json.JSONDecoder().raw_decode(measured.stderr[measured.stderr.rfind('{'):])
         if (not math.isfinite(float(stats['input_i'])) or not math.isfinite(float(stats['input_tp']))
                 or float(stats['input_i']) <= -25 or float(stats['input_tp']) >= 0):
             raise RuntimeError(f'Audio level check failed: {stats}')

@@ -1,5 +1,7 @@
 import asyncio
 import importlib.util
+import json
+import subprocess
 import tempfile
 import unittest
 import ssl
@@ -13,6 +15,35 @@ spec.loader.exec_module(voice)
 
 
 class NarrationTests(unittest.TestCase):
+    def test_cached_audio_publishes_with_trailing_ffmpeg_log(self):
+        # Real audio + real ffmpeg, with network forbidden: exercise synthesis,
+        # level validation, subtitles, metadata and atomic publication together.
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            raw = root / 'source.mp3'
+            subprocess.run(['ffmpeg', '-y', '-v', 'error', '-f', 'lavfi',
+                            '-i', 'sine=frequency=440:duration=2', str(raw)], check=True)
+            actual_run = voice.run
+            suffixes = ('', '\n[out#0/null @ 0x123] audio:188KiB\n')
+            for index, suffix in enumerate(suffixes):
+                def logged_run(args):
+                    result = actual_run(args)
+                    if any('print_format=json' in str(arg) for arg in args):
+                        result.stderr += suffix
+                    return result
+                output = root / f'case-{index}.mp3'
+                with patch.object(voice, 'get_chunk', AsyncMock(return_value=(
+                        raw, [(0.0, 1.5, '你好。')], 2.0, True))), \
+                        patch.object(voice, 'run', side_effect=logged_run), \
+                        patch.object(voice.edge_tts, 'Communicate', side_effect=AssertionError('network forbidden')):
+                    asyncio.run(voice.synthesize('你好。', str(output), '068'))
+                metadata = json.loads(output.with_suffix('.json').read_text())
+                self.assertEqual(metadata['status'], 'SUCCESS')
+                self.assertEqual(metadata['cache_hits'], 1)
+                self.assertIn('你好。', output.with_suffix('.srt').read_text())
+                self.assertGreater(output.stat().st_size, 0)
+                self.assertEqual(metadata['preset'], voice.VOICES['068'])
+
     def test_task_rate_reaches_synthesis_without_mutating_068(self):
         original = dict(voice.VOICES['068'])
         probe = AsyncMock(side_effect=RuntimeError('offline synthesis probe'))
