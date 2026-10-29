@@ -1,0 +1,23 @@
+A hand-drawn black marker doodle explainer illustration on off-white paper,
+vertical infographic with 2 stacked panels separated by thin hand-drawn lines.
+
+Character: a simple solid-black round blob person with two white dot eyes,
+a small curved smile, and thin black stick arms and legs. The body is solid
+flat black with smooth edges (no sketchy texture). The SAME character appears
+in every panel doing a different action.
+
+Style: clean black marker/pen outlines, slightly wobbly but fully closed
+hand-drawn lines. All objects are OUTLINE-ONLY black line-art with white
+interiors, no shading, no fill. Everything is monochrome black & white EXCEPT
+one orange accent color used ONLY for the single key item in each panel.
+Hand-drawn curved arrows in red or blue point at key spots, each with a short
+handwritten Chinese label. Each panel has a bold hand-written marker-style
+Chinese title at the top. Minimalist composition, lots of white space.
+
+Panels:
+TOP PANEL: An adult female bean with small side ponytail is kneeling at the left opening the SECOND parcel on a low outlined coffee table; a second closed parcel sits beside it. An orange open parcel is the only accent. At right, an apartment entrance door is visibly swung wide open, and a larger adult male bean with short squared hair is stepping over the threshold holding a small outlined knife in his right hand. Both full silhouettes and visible limbs are simple. Keep the female on left, intruder right.
+BOTTOM PANEL: Same female on the left is tilted backward onto a simple outlined sofa, feet visible at its left end, torso reclining on cushions. Same larger short-haired male at right grips her collar using his left hand; his right hand holds a small orange knife away from her body. Collar contact must be clear but no injury. Full distinct silhouettes, one continuous action, no extra limbs. The knife is the only orange object. No blood.
+
+画幅比例:2:3。
+
+Production format: one portrait atlas, exactly TWO equally sized landscape panels stacked, thin divider exactly at vertical midpoint, composition safe padding 8% each panel. Same female ponytail silhouette and larger male squared-hair silhouette in both panels. Use case illustration-story; original fictionalized reenactment, not an actual security video. Off-white #FFF9E8 background. All important strokes >=4 pixels at 1024 width. Human head and rounded torso recognizable separately; distinct thin stick arms and legs. Character faces appropriate to threat (alarmed or tense), not cheerful. FINAL OVERRIDE FOR VIDEO COMPOSITING: omit ALL Chinese/English titles, labels, lettering and speech bubbles from this image, leave upper 12% of each panel empty; exact typography will be added by renderer. Keep whole figures away from divider and edges. No gradients, pencil hatching, texture, gore, wounds, photorealism or extra vignette panels. Do not show dog attacking, since the script only speculates about its intent.

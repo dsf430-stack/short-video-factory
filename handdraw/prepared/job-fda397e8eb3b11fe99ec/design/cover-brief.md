@@ -1,0 +1,1 @@
+Cover composed from first inspected scene without changing source image. Exact title 未關上的門 in Noto Sans CJK, large high contrast. Small 依來稿改編 label; no claim of genuine surveillance imagery. Original script itself unchanged.

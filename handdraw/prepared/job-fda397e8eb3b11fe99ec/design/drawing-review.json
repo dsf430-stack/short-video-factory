@@ -1,0 +1,198 @@
+{
+  "style_sha256": "675cddde0ae8df64ff3d83b323bbe1aebba76049d56f18ed70bdd2a9e044e4f3",
+  "plan_sha256": "6dc028825f5f21cd8cfccb8e4f9af3d8597c8cbc7d6b21275a246201d3017dfb",
+  "illustrations": [
+    {
+      "plan_id": "s1",
+      "status": "pass",
+      "source_sha256": "3e54bdebdeb38ecdc22eeba939a4f51df8252eb61b66ac244b8a9527b6387b64",
+      "crop": [
+        0,
+        0,
+        1024,
+        768
+      ],
+      "outline_mask_sha256": "379ad289f6d30a527c5d5e62fe12220eba35ea04c870058be49ff31a299192ba",
+      "anatomy_and_occlusion": "Actually viewed full atlas and close-up. Top: female ponytail opens orange second parcel on coffee table; two parcels, open apartment door and entering armed male are visible. Bottom: female reclines on sofa while male hand grips collar, other hand holds knife away; no wound. Far female arm is occluded, recorded in post-generation adjustment. Neckless bean silhouettes. Omissions explicitly recorded for sofa far arm (s2) and intruder far arm behind torso (s8).",
+      "part_boundaries": "Actual-image polygons follow head/torso/arms/lower limbs; hands and held items separated by color exclusion where needed. Remaining setting assigned last, not a whole-person reveal.",
+      "stroke_breaks": "Aligned edge mask follows observed continuous contour segments; official tracer lifts across disconnected strokes. All parts actually passed build_illustration.",
+      "outline_then_fill": "Same ordered parts for all contours before localized paint strokes; source pixels unchanged, contour mask only supplies outline path.",
+      "spatial_order": "Victim or intruder first, then second human, dog where visible, and setting. Anatomical order retained; priority exception documented in plan.",
+      "narrative_checks": [
+        {
+          "id": "s1_action",
+          "status": "pass",
+          "evidence": "Actually viewed full atlas and close-up. Top: female ponytail opens orange second parcel on coffee table; two parcels, open apartment door and entering armed male are visible. Bottom: female reclines on sofa while male hand grips collar, other hand holds knife away; no wound. Far female arm is occluded, recorded in post-generation adjustment."
+        }
+      ]
+    },
+    {
+      "plan_id": "s2",
+      "status": "pass",
+      "source_sha256": "3e54bdebdeb38ecdc22eeba939a4f51df8252eb61b66ac244b8a9527b6387b64",
+      "crop": [
+        0,
+        768,
+        1024,
+        1536
+      ],
+      "outline_mask_sha256": "379ad289f6d30a527c5d5e62fe12220eba35ea04c870058be49ff31a299192ba",
+      "anatomy_and_occlusion": "Actually viewed full atlas and close-up. Top: female ponytail opens orange second parcel on coffee table; two parcels, open apartment door and entering armed male are visible. Bottom: female reclines on sofa while male hand grips collar, other hand holds knife away; no wound. Far female arm is occluded, recorded in post-generation adjustment. Neckless bean silhouettes. Omissions explicitly recorded for sofa far arm (s2) and intruder far arm behind torso (s8).",
+      "part_boundaries": "Actual-image polygons follow head/torso/arms/lower limbs; hands and held items separated by color exclusion where needed. Remaining setting assigned last, not a whole-person reveal.",
+      "stroke_breaks": "Aligned edge mask follows observed continuous contour segments; official tracer lifts across disconnected strokes. All parts actually passed build_illustration.",
+      "outline_then_fill": "Same ordered parts for all contours before localized paint strokes; source pixels unchanged, contour mask only supplies outline path.",
+      "spatial_order": "Victim or intruder first, then second human, dog where visible, and setting. Anatomical order retained; priority exception documented in plan.",
+      "narrative_checks": [
+        {
+          "id": "s2_action",
+          "status": "pass",
+          "evidence": "Actually viewed full atlas and close-up. Top: female ponytail opens orange second parcel on coffee table; two parcels, open apartment door and entering armed male are visible. Bottom: female reclines on sofa while male hand grips collar, other hand holds knife away; no wound. Far female arm is occluded, recorded in post-generation adjustment."
+        }
+      ]
+    },
+    {
+      "plan_id": "s3",
+      "status": "pass",
+      "source_sha256": "23ed2e77db956c718ed7bc01c27623a0f501e80081f09099a29456baa549d92c",
+      "crop": [
+        0,
+        0,
+        1024,
+        768
+      ],
+      "outline_mask_sha256": "f25cdc20adcc04795c8ec91edf4f2c2d7abab7bd3e46059f40b1814300ce20f4",
+      "anatomy_and_occlusion": "Actually viewed full atlas. Top female seated on sofa has open lowered hands and tremble marks; armed man at right, no attack contact. Bottom outlined dog stands between woman and man, looks up at knife, blue circular arrow near feet, mouth not contacting hand; no biting or wound. Both female arms, both male arms and legs are visible. Neckless bean silhouettes. Omissions explicitly recorded for sofa far arm (s2) and intruder far arm behind torso (s8).",
+      "part_boundaries": "Actual-image polygons follow head/torso/arms/lower limbs; hands and held items separated by color exclusion where needed. Remaining setting assigned last, not a whole-person reveal.",
+      "stroke_breaks": "Aligned edge mask follows observed continuous contour segments; official tracer lifts across disconnected strokes. All parts actually passed build_illustration.",
+      "outline_then_fill": "Same ordered parts for all contours before localized paint strokes; source pixels unchanged, contour mask only supplies outline path.",
+      "spatial_order": "Victim or intruder first, then second human, dog where visible, and setting. Anatomical order retained; priority exception documented in plan.",
+      "narrative_checks": [
+        {
+          "id": "s3_action",
+          "status": "pass",
+          "evidence": "Actually viewed full atlas. Top female seated on sofa has open lowered hands and tremble marks; armed man at right, no attack contact. Bottom outlined dog stands between woman and man, looks up at knife, blue circular arrow near feet, mouth not contacting hand; no biting or wound. Both female arms, both male arms and legs are visible."
+        }
+      ]
+    },
+    {
+      "plan_id": "s4",
+      "status": "pass",
+      "source_sha256": "23ed2e77db956c718ed7bc01c27623a0f501e80081f09099a29456baa549d92c",
+      "crop": [
+        0,
+        768,
+        1024,
+        1536
+      ],
+      "outline_mask_sha256": "f25cdc20adcc04795c8ec91edf4f2c2d7abab7bd3e46059f40b1814300ce20f4",
+      "anatomy_and_occlusion": "Actually viewed full atlas. Top female seated on sofa has open lowered hands and tremble marks; armed man at right, no attack contact. Bottom outlined dog stands between woman and man, looks up at knife, blue circular arrow near feet, mouth not contacting hand; no biting or wound. Both female arms, both male arms and legs are visible. Neckless bean silhouettes. Omissions explicitly recorded for sofa far arm (s2) and intruder far arm behind torso (s8).",
+      "part_boundaries": "Actual-image polygons follow head/torso/arms/lower limbs; hands and held items separated by color exclusion where needed. Remaining setting assigned last, not a whole-person reveal.",
+      "stroke_breaks": "Aligned edge mask follows observed continuous contour segments; official tracer lifts across disconnected strokes. All parts actually passed build_illustration.",
+      "outline_then_fill": "Same ordered parts for all contours before localized paint strokes; source pixels unchanged, contour mask only supplies outline path.",
+      "spatial_order": "Victim or intruder first, then second human, dog where visible, and setting. Anatomical order retained; priority exception documented in plan.",
+      "narrative_checks": [
+        {
+          "id": "s4_action",
+          "status": "pass",
+          "evidence": "Actually viewed full atlas. Top female seated on sofa has open lowered hands and tremble marks; armed man at right, no attack contact. Bottom outlined dog stands between woman and man, looks up at knife, blue circular arrow near feet, mouth not contacting hand; no biting or wound. Both female arms, both male arms and legs are visible."
+        }
+      ]
+    },
+    {
+      "plan_id": "s5",
+      "status": "pass",
+      "source_sha256": "b9c659cce04c3bb8e7e951bb5a2f6dbb5292692f86926c9cf974e47e83e5718a",
+      "crop": [
+        0,
+        0,
+        1024,
+        768
+      ],
+      "outline_mask_sha256": "8cdaaacd89170e16875728fcfef97a8aa624a03b8676c9aee5ecad3f77fe7561",
+      "anatomy_and_occlusion": "Actually viewed initial and corrected full atlas2. Female black face/white eyes now matches other beans. Top woman and dog run out left; intruder inside bedroom grips door edge, knife in other hand. Bottom broken orange blade in woman hand left, separate jagged handle held by pursuing man; dog runs right with blue arrow, opposite to woman. No bite, wound or extra complete knife. All heads, torsos, arms, running lower limbs and dog anatomy visibly separable. Neckless bean silhouettes. Omissions explicitly recorded for sofa far arm (s2) and intruder far arm behind torso (s8).",
+      "part_boundaries": "Actual-image polygons follow head/torso/arms/lower limbs; hands and held items separated by color exclusion where needed. Remaining setting assigned last, not a whole-person reveal.",
+      "stroke_breaks": "Aligned edge mask follows observed continuous contour segments; official tracer lifts across disconnected strokes. All parts actually passed build_illustration.",
+      "outline_then_fill": "Same ordered parts for all contours before localized paint strokes; source pixels unchanged, contour mask only supplies outline path.",
+      "spatial_order": "Victim or intruder first, then second human, dog where visible, and setting. Anatomical order retained; priority exception documented in plan.",
+      "narrative_checks": [
+        {
+          "id": "s5_action",
+          "status": "pass",
+          "evidence": "Actually viewed initial and corrected full atlas2. Female black face/white eyes now matches other beans. Top woman and dog run out left; intruder inside bedroom grips door edge, knife in other hand. Bottom broken orange blade in woman hand left, separate jagged handle held by pursuing man; dog runs right with blue arrow, opposite to woman. No bite, wound or extra complete knife. All heads, torsos, arms, running lower limbs and dog anatomy visibly separable."
+        }
+      ]
+    },
+    {
+      "plan_id": "s6",
+      "status": "pass",
+      "source_sha256": "b9c659cce04c3bb8e7e951bb5a2f6dbb5292692f86926c9cf974e47e83e5718a",
+      "crop": [
+        0,
+        768,
+        1024,
+        1536
+      ],
+      "outline_mask_sha256": "8cdaaacd89170e16875728fcfef97a8aa624a03b8676c9aee5ecad3f77fe7561",
+      "anatomy_and_occlusion": "Actually viewed initial and corrected full atlas2. Female black face/white eyes now matches other beans. Top woman and dog run out left; intruder inside bedroom grips door edge, knife in other hand. Bottom broken orange blade in woman hand left, separate jagged handle held by pursuing man; dog runs right with blue arrow, opposite to woman. No bite, wound or extra complete knife. All heads, torsos, arms, running lower limbs and dog anatomy visibly separable. Neckless bean silhouettes. Omissions explicitly recorded for sofa far arm (s2) and intruder far arm behind torso (s8).",
+      "part_boundaries": "Actual-image polygons follow head/torso/arms/lower limbs; hands and held items separated by color exclusion where needed. Remaining setting assigned last, not a whole-person reveal.",
+      "stroke_breaks": "Aligned edge mask follows observed continuous contour segments; official tracer lifts across disconnected strokes. All parts actually passed build_illustration.",
+      "outline_then_fill": "Same ordered parts for all contours before localized paint strokes; source pixels unchanged, contour mask only supplies outline path.",
+      "spatial_order": "Victim or intruder first, then second human, dog where visible, and setting. Anatomical order retained; priority exception documented in plan.",
+      "narrative_checks": [
+        {
+          "id": "s6_action",
+          "status": "pass",
+          "evidence": "Actually viewed initial and corrected full atlas2. Female black face/white eyes now matches other beans. Top woman and dog run out left; intruder inside bedroom grips door edge, knife in other hand. Bottom broken orange blade in woman hand left, separate jagged handle held by pursuing man; dog runs right with blue arrow, opposite to woman. No bite, wound or extra complete knife. All heads, torsos, arms, running lower limbs and dog anatomy visibly separable."
+        }
+      ]
+    },
+    {
+      "plan_id": "s7",
+      "status": "pass",
+      "source_sha256": "ccaf4eeed9fc14cb750ec5ae57128d567b1626289f0874c2b080ce95cb876079",
+      "crop": [
+        0,
+        0,
+        1024,
+        768
+      ],
+      "outline_mask_sha256": "78b38978d62cdba569af86f2633bbc6338d4deff8a85b685fa53514ed84c0f49",
+      "anatomy_and_occlusion": "Actually viewed full atlas3. Top female raises hand with visible sound marks while male runs toward stairwell; orange surveillance camera above. Bottom police cap identifies officer holding intruder wrist; smartphone alert symbol is orange, screen blank, no invented debt amount or sentence. Intruder far arm hidden behind torso, explicitly omitted after review. Neckless bean silhouettes. Omissions explicitly recorded for sofa far arm (s2) and intruder far arm behind torso (s8).",
+      "part_boundaries": "Actual-image polygons follow head/torso/arms/lower limbs; hands and held items separated by color exclusion where needed. Remaining setting assigned last, not a whole-person reveal.",
+      "stroke_breaks": "Aligned edge mask follows observed continuous contour segments; official tracer lifts across disconnected strokes. All parts actually passed build_illustration.",
+      "outline_then_fill": "Same ordered parts for all contours before localized paint strokes; source pixels unchanged, contour mask only supplies outline path.",
+      "spatial_order": "Victim or intruder first, then second human, dog where visible, and setting. Anatomical order retained; priority exception documented in plan.",
+      "narrative_checks": [
+        {
+          "id": "s7_action",
+          "status": "pass",
+          "evidence": "Actually viewed full atlas3. Top female raises hand with visible sound marks while male runs toward stairwell; orange surveillance camera above. Bottom police cap identifies officer holding intruder wrist; smartphone alert symbol is orange, screen blank, no invented debt amount or sentence. Intruder far arm hidden behind torso, explicitly omitted after review."
+        }
+      ]
+    },
+    {
+      "plan_id": "s8",
+      "status": "pass",
+      "source_sha256": "ccaf4eeed9fc14cb750ec5ae57128d567b1626289f0874c2b080ce95cb876079",
+      "crop": [
+        0,
+        768,
+        1024,
+        1536
+      ],
+      "outline_mask_sha256": "78b38978d62cdba569af86f2633bbc6338d4deff8a85b685fa53514ed84c0f49",
+      "anatomy_and_occlusion": "Actually viewed full atlas3. Top female raises hand with visible sound marks while male runs toward stairwell; orange surveillance camera above. Bottom police cap identifies officer holding intruder wrist; smartphone alert symbol is orange, screen blank, no invented debt amount or sentence. Intruder far arm hidden behind torso, explicitly omitted after review. Neckless bean silhouettes. Omissions explicitly recorded for sofa far arm (s2) and intruder far arm behind torso (s8).",
+      "part_boundaries": "Actual-image polygons follow head/torso/arms/lower limbs; hands and held items separated by color exclusion where needed. Remaining setting assigned last, not a whole-person reveal.",
+      "stroke_breaks": "Aligned edge mask follows observed continuous contour segments; official tracer lifts across disconnected strokes. All parts actually passed build_illustration.",
+      "outline_then_fill": "Same ordered parts for all contours before localized paint strokes; source pixels unchanged, contour mask only supplies outline path.",
+      "spatial_order": "Victim or intruder first, then second human, dog where visible, and setting. Anatomical order retained; priority exception documented in plan.",
+      "narrative_checks": [
+        {
+          "id": "s8_action",
+          "status": "pass",
+          "evidence": "Actually viewed full atlas3. Top female raises hand with visible sound marks while male runs toward stairwell; orange surveillance camera above. Bottom police cap identifies officer holding intruder wrist; smartphone alert symbol is orange, screen blank, no invented debt amount or sentence. Intruder far arm hidden behind torso, explicitly omitted after review."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1 @@
+Compositing instructions: use first reviewed scene as centered hero, fit safely in 1080x1920 off-white canvas, add editable typography layer title 未關上的門 and small label 依來稿改編. Do not generate new art or rewrite narration.

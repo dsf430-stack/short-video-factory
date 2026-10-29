@@ -1,12 +1,12 @@
 {
-  "state": "SLOW_VOICE_REQUESTED",
+  "state": "READY_FOR_FINAL_ASSET_CHECK",
   "job_id": "job-fda397e8eb3b11fe99ec",
   "voice_run_id": 40824029517,
   "voice_request_commit": "82411f2aa11578d780b94f9ee3da91436847f95f",
   "original_script_sha256": "47e11239bde055906751f3a30b7b87fb375a2d77e38899f6f2c3da14859f3817",
   "target_seconds": 220,
   "script_changes": [],
-  "next": "Measure newly synthesized speech; preserve original script and voice identity.",
+  "next": "Run check_bundle, activate exact job, commit assets and confirm render run ID.",
   "voice_seconds": 133.564082,
   "voice_sha256": "428eaee0143d249857cf017b50ff94733d7e8545d6ec77c13381a5a302dfac54",
   "voice_artifact_id": 12875388031,
@@ -26,5 +26,11 @@
   },
   "reason": "原稿068 +20%完整實測133.564082秒，與固定220秒差距大；不得擅自改稿、變速或插入長靜音。",
   "authorization": "2026-10-29 使用者選2：原文照讀，允許放慢配音。",
-  "requested_rate": "-27%"
+  "requested_rate": "-27%",
+  "voice_word_run_id": 40826022039,
+  "voice_word_artifact_id": 12876242762,
+  "voice_pcm_seconds": 218.6,
+  "cover_seconds": 1,
+  "end_hold_seconds": 0.4,
+  "expected_film_seconds": 220
 }

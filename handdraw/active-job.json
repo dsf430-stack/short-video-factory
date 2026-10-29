@@ -1,8 +1,8 @@
 {
-  "job_id": "job-f68e7f38ccec4a0e4f5a",
-  "topic": "免疫力不是越強越好",
-  "seconds": 180,
+  "job_id": "job-fda397e8eb3b11fe99ec",
+  "topic": "未關上的門：小李入室搶劫案",
+  "seconds": 220,
   "style": "4",
-  "bundle_sha256": "80c13db0097ea701f49d17e765b7f853ce4a34598f7a0c0c3c78d4e67287320f",
+  "bundle_sha256": "d836dd0cb97de810fa3dfefb893b17370002cbd2842ebe2e3a20cb5fa3550703",
   "mode": "chatgpt-prepared-no-extra-model-api"
 }

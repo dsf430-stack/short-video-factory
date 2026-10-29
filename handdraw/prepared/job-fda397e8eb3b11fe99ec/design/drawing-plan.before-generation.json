@@ -1,0 +1,1314 @@
+{
+  "illustrations": [
+    {
+      "id": "s1",
+      "composition": "小李拿包裹，打開的入戶門與第二個包裹同框。",
+      "drawability_reason": "Clean closed marker contours, simple full-body bean figures separated from props; one orange focal object. 15–35 seconds voice window anticipated, final timing only from measured voice.",
+      "outline_strategy": "explicit_mask",
+      "subjects": [
+        {
+          "id": "victim",
+          "kind": "human",
+          "omitted_roles": {
+            "neck": "Official bean silhouette has no distinct neck; head joins rounded torso."
+          }
+        },
+        {
+          "id": "intruder",
+          "kind": "human",
+          "omitted_roles": {
+            "neck": "Official bean silhouette has no distinct neck; head joins rounded torso."
+          }
+        },
+        {
+          "id": "setting",
+          "kind": "environment"
+        }
+      ],
+      "parts": [
+        {
+          "id": "s1_victim_head",
+          "subject": "victim",
+          "role": "head",
+          "stroke_groups": [
+            "Separate visible victim head silhouette, face or limb strokes; lift between disconnected segments."
+          ]
+        },
+        {
+          "id": "s1_victim_torso",
+          "subject": "victim",
+          "role": "torso",
+          "stroke_groups": [
+            "Separate visible victim torso silhouette, face or limb strokes; lift between disconnected segments."
+          ]
+        },
+        {
+          "id": "s1_victim_left_arm",
+          "subject": "victim",
+          "role": "left_arm",
+          "stroke_groups": [
+            "Separate visible victim left_arm silhouette, face or limb strokes; lift between disconnected segments."
+          ]
+        },
+        {
+          "id": "s1_victim_right_arm",
+          "subject": "victim",
+          "role": "right_arm",
+          "stroke_groups": [
+            "Separate visible victim right_arm silhouette, face or limb strokes; lift between disconnected segments."
+          ]
+        },
+        {
+          "id": "s1_victim_lower_body",
+          "subject": "victim",
+          "role": "lower_body",
+          "stroke_groups": [
+            "Separate visible victim lower_body silhouette, face or limb strokes; lift between disconnected segments."
+          ]
+        },
+        {
+          "id": "s1_intruder_head",
+          "subject": "intruder",
+          "role": "head",
+          "stroke_groups": [
+            "Separate visible intruder head silhouette, face or limb strokes; lift between disconnected segments."
+          ]
+        },
+        {
+          "id": "s1_intruder_torso",
+          "subject": "intruder",
+          "role": "torso",
+          "stroke_groups": [
+            "Separate visible intruder torso silhouette, face or limb strokes; lift between disconnected segments."
+          ]
+        },
+        {
+          "id": "s1_intruder_left_arm",
+          "subject": "intruder",
+          "role": "left_arm",
+          "stroke_groups": [
+            "Separate visible intruder left_arm silhouette, face or limb strokes; lift between disconnected segments."
+          ]
+        },
+        {
+          "id": "s1_intruder_right_arm",
+          "subject": "intruder",
+          "role": "right_arm",
+          "stroke_groups": [
+            "Separate visible intruder right_arm silhouette, face or limb strokes; lift between disconnected segments."
+          ]
+        },
+        {
+          "id": "s1_intruder_lower_body",
+          "subject": "intruder",
+          "role": "lower_body",
+          "stroke_groups": [
+            "Separate visible intruder lower_body silhouette, face or limb strokes; lift between disconnected segments."
+          ]
+        },
+        {
+          "id": "s1_props",
+          "subject": "setting",
+          "role": "props",
+          "stroke_groups": [
+            "Door or furniture outline, key orange object contour, environment line; independent strokes."
+          ]
+        }
+      ],
+      "outline_order": [
+        "s1_victim_head",
+        "s1_victim_torso",
+        "s1_victim_left_arm",
+        "s1_victim_right_arm",
+        "s1_victim_lower_body",
+        "s1_intruder_head",
+        "s1_intruder_torso",
+        "s1_intruder_left_arm",
+        "s1_intruder_right_arm",
+        "s1_intruder_lower_body",
+        "s1_props"
+      ],
+      "fill_order": [
+        "s1_victim_head",
+        "s1_victim_torso",
+        "s1_victim_left_arm",
+        "s1_victim_right_arm",
+        "s1_victim_lower_body",
+        "s1_intruder_head",
+        "s1_intruder_torso",
+        "s1_intruder_left_arm",
+        "s1_intruder_right_arm",
+        "s1_intruder_lower_body",
+        "s1_props"
+      ],
+      "spatial_order": "top_to_bottom_left_to_right",
+      "order_exception": "Narrative priority: victim and intruder, then dog and setting; semantic head-to-limb order retained per person.",
+      "narrative_requirements": [
+        {
+          "id": "s1_action",
+          "narration_quote": "2017年11月23日下午，独居的单身女子小李下楼拿了快递回到房间，然而由于对包裹的期待，她居然连门都忘了顺手带上。",
+          "observable": "小李拿包裹，打開的入戶門與第二個包裹同框。"
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "composition": "男子持刀站在沙發旁，小李被按倒；不呈現流血。",
+      "drawability_reason": "Clean closed marker contours, simple full-body bean figures separated from props; one orange focal object. 15–35 seconds voice window anticipated, final timing only from measured voice.",
+      "outline_strategy": "explicit_mask",
+      "subjects": [
+        {
+          "id": "victim",
+          "kind": "human",
+          "omitted_roles": {
+            "neck": "Official bean silhouette has no distinct neck; head joins rounded torso."
+          }
+        },
+        {
+          "id": "intruder",
+          "kind": "human",
+          "omitted_roles": {
+            "neck": "Official bean silhouette has no distinct neck; head joins rounded torso."
+          }
+        },
+        {
+          "id": "setting",
+          "kind": "environment"
+        }
+      ],
+      "parts": [
+        {
+          "id": "s2_victim_head",
+          "subject": "victim",
+          "role": "head",
+          "stroke_groups": [
+            "Separate visible victim head silhouette, face or limb strokes; lift between disconnected segments."
+          ]
+        },
+        {
+          "id": "s2_victim_torso",
+          "subject": "victim",
+          "role": "torso",
+          "stroke_groups": [
+            "Separate visible victim torso silhouette, face or limb strokes; lift between disconnected segments."
+          ]
+        },
+        {
+          "id": "s2_victim_left_arm",
+          "subject": "victim",
+          "role": "left_arm",
+          "stroke_groups": [
+            "Separate visible victim left_arm silhouette, face or limb strokes; lift between disconnected segments."
+          ]
+        },
+        {
+          "id": "s2_victim_right_arm",
+          "subject": "victim",
+          "role": "right_arm",
+          "stroke_groups": [
+            "Separate visible victim right_arm silhouette, face or limb strokes; lift between disconnected segments."
+          ]
+        },
+        {
+          "id": "s2_victim_lower_body",
+          "subject": "victim",
+          "role": "lower_body",
+          "stroke_groups": [
+            "Separate visible victim lower_body silhouette, face or limb strokes; lift between disconnected segments."
+          ]
+        },
+        {
+          "id": "s2_intruder_head",
+          "subject": "intruder",
+          "role": "head",
+          "stroke_groups": [
+            "Separate visible intruder head silhouette, face or limb strokes; lift between disconnected segments."
+          ]
+        },
+        {
+          "id": "s2_intruder_torso",
+          "subject": "intruder",
+          "role": "torso",
+          "stroke_groups": [
+            "Separate visible intruder torso silhouette, face or limb strokes; lift between disconnected segments."
+          ]
+        },
+        {
+          "id": "s2_intruder_left_arm",
+          "subject": "intruder",
+          "role": "left_arm",
+          "stroke_groups": [
+            "Separate visible intruder left_arm silhouette, face or limb strokes; lift between disconnected segments."
+          ]
+        },
+        {
+          "id": "s2_intruder_right_arm",
+          "subject": "intruder",
+          "role": "right_arm",
+          "stroke_groups": [
+            "Separate visible intruder right_arm silhouette, face or limb strokes; lift between disconnected segments."
+          ]
+        },
+        {
+          "id": "s2_intruder_lower_body",
+          "subject": "intruder",
+          "role": "lower_body",
+          "stroke_groups": [
+            "Separate visible intruder lower_body silhouette, face or limb strokes; lift between disconnected segments."
+          ]
+        },
+        {
+          "id": "s2_props",
+          "subject": "setting",
+          "role": "props",
+          "stroke_groups": [
+            "Door or furniture outline, key orange object contour, environment line; independent strokes."
+          ]
+        }
+      ],
+      "outline_order": [
+        "s2_victim_head",
+        "s2_victim_torso",
+        "s2_victim_left_arm",
+        "s2_victim_right_arm",
+        "s2_victim_lower_body",
+        "s2_intruder_head",
+        "s2_intruder_torso",
+        "s2_intruder_left_arm",
+        "s2_intruder_right_arm",
+        "s2_intruder_lower_body",
+        "s2_props"
+      ],
+      "fill_order": [
+        "s2_victim_head",
+        "s2_victim_torso",
+        "s2_victim_left_arm",
+        "s2_victim_right_arm",
+        "s2_victim_lower_body",
+        "s2_intruder_head",
+        "s2_intruder_torso",
+        "s2_intruder_left_arm",
+        "s2_intruder_right_arm",
+        "s2_intruder_lower_body",
+        "s2_props"
+      ],
+      "spatial_order": "top_to_bottom_left_to_right",
+      "order_exception": "Narrative priority: victim and intruder, then dog and setting; semantic head-to-limb order retained per person.",
+      "narrative_requirements": [
+        {
+          "id": "s2_action",
+          "narration_quote": "持刀男子没有做任何伪装，情绪异常激动，一边揪住小李颈部的衣领往里面拖，一边放话威胁她要是敢喊就捅死她。",
+          "observable": "男子持刀站在沙發旁，小李被按倒；不呈現流血。"
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "composition": "小李坐在沙發上發抖，男子在前景，眼神注意男子。",
+      "drawability_reason": "Clean closed marker contours, simple full-body bean figures separated from props; one orange focal object. 15–35 seconds voice window anticipated, final timing only from measured voice.",
+      "outline_strategy": "explicit_mask",
+      "subjects": [
+        {
+          "id": "victim",
+          "kind": "human",
+          "omitted_roles": {
+            "neck": "Official bean silhouette has no distinct neck; head joins rounded torso."
+          }
+        },
+        {
+          "id": "intruder",
+          "kind": "human",
+          "omitted_roles": {
+            "neck": "Official bean silhouette has no distinct neck; head joins rounded torso."
+          }
+        },
+        {
+          "id": "setting",
+          "kind": "environment"
+        }
+      ],
+      "parts": [
+        {
+          "id": "s3_victim_head",
+          "subject": "victim",
+          "role": "head",
+          "stroke_groups": [
+            "Separate visible victim head silhouette, face or limb strokes; lift between disconnected segments."
+          ]
+        },
+        {
+          "id": "s3_victim_torso",
+          "subject": "victim",
+          "role": "torso",
+          "stroke_groups": [
+            "Separate visible victim torso silhouette, face or limb strokes; lift between disconnected segments."
+          ]
+        },
+        {
+          "id": "s3_victim_left_arm",
+          "subject": "victim",
+          "role": "left_arm",
+          "stroke_groups": [
+            "Separate visible victim left_arm silhouette, face or limb strokes; lift between disconnected segments."
+          ]
+        },
+        {
+          "id": "s3_victim_right_arm",
+          "subject": "victim",
+          "role": "right_arm",
+          "stroke_groups": [
+            "Separate visible victim right_arm silhouette, face or limb strokes; lift between disconnected segments."
+          ]
+        },
+        {
+          "id": "s3_victim_lower_body",
+          "subject": "victim",
+          "role": "lower_body",
+          "stroke_groups": [
+            "Separate visible victim lower_body silhouette, face or limb strokes; lift between disconnected segments."
+          ]
+        },
+        {
+          "id": "s3_intruder_head",
+          "subject": "intruder",
+          "role": "head",
+          "stroke_groups": [
+            "Separate visible intruder head silhouette, face or limb strokes; lift between disconnected segments."
+          ]
+        },
+        {
+          "id": "s3_intruder_torso",
+          "subject": "intruder",
+          "role": "torso",
+          "stroke_groups": [
+            "Separate visible intruder torso silhouette, face or limb strokes; lift between disconnected segments."
+          ]
+        },
+        {
+          "id": "s3_intruder_left_arm",
+          "subject": "intruder",
+          "role": "left_arm",
+          "stroke_groups": [
+            "Separate visible intruder left_arm silhouette, face or limb strokes; lift between disconnected segments."
+          ]
+        },
+        {
+          "id": "s3_intruder_right_arm",
+          "subject": "intruder",
+          "role": "right_arm",
+          "stroke_groups": [
+            "Separate visible intruder right_arm silhouette, face or limb strokes; lift between disconnected segments."
+          ]
+        },
+        {
+          "id": "s3_intruder_lower_body",
+          "subject": "intruder",
+          "role": "lower_body",
+          "stroke_groups": [
+            "Separate visible intruder lower_body silhouette, face or limb strokes; lift between disconnected segments."
+          ]
+        },
+        {
+          "id": "s3_props",
+          "subject": "setting",
+          "role": "props",
+          "stroke_groups": [
+            "Door or furniture outline, key orange object contour, environment line; independent strokes."
+          ]
+        }
+      ],
+      "outline_order": [
+        "s3_victim_head",
+        "s3_victim_torso",
+        "s3_victim_left_arm",
+        "s3_victim_right_arm",
+        "s3_victim_lower_body",
+        "s3_intruder_head",
+        "s3_intruder_torso",
+        "s3_intruder_left_arm",
+        "s3_intruder_right_arm",
+        "s3_intruder_lower_body",
+        "s3_props"
+      ],
+      "fill_order": [
+        "s3_victim_head",
+        "s3_victim_torso",
+        "s3_victim_left_arm",
+        "s3_victim_right_arm",
+        "s3_victim_lower_body",
+        "s3_intruder_head",
+        "s3_intruder_torso",
+        "s3_intruder_left_arm",
+        "s3_intruder_right_arm",
+        "s3_intruder_lower_body",
+        "s3_props"
+      ],
+      "spatial_order": "top_to_bottom_left_to_right",
+      "order_exception": "Narrative priority: victim and intruder, then dog and setting; semantic head-to-limb order retained per person.",
+      "narrative_requirements": [
+        {
+          "id": "s3_action",
+          "narration_quote": "此刻小李的心脏狂跳不止，整个人抖得根本控制不住，她压根不敢往下想后面等着她的会是什么。",
+          "observable": "小李坐在沙發上發抖，男子在前景，眼神注意男子。"
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "composition": "狗在持刀男子腳邊繞行；不畫成已咬中，因原稿只說像在等待。",
+      "drawability_reason": "Clean closed marker contours, simple full-body bean figures separated from props; one orange focal object. 15–35 seconds voice window anticipated, final timing only from measured voice.",
+      "outline_strategy": "explicit_mask",
+      "subjects": [
+        {
+          "id": "victim",
+          "kind": "human",
+          "omitted_roles": {
+            "neck": "Official bean silhouette has no distinct neck; head joins rounded torso."
+          }
+        },
+        {
+          "id": "intruder",
+          "kind": "human",
+          "omitted_roles": {
+            "neck": "Official bean silhouette has no distinct neck; head joins rounded torso."
+          }
+        },
+        {
+          "id": "dog",
+          "kind": "animal"
+        },
+        {
+          "id": "setting",
+          "kind": "environment"
+        }
+      ],
+      "parts": [
+        {
+          "id": "s4_victim_head",
+          "subject": "victim",
+          "role": "head",
+          "stroke_groups": [
+            "Separate visible victim head silhouette, face or limb strokes; lift between disconnected segments."
+          ]
+        },
+        {
+          "id": "s4_victim_torso",
+          "subject": "victim",
+          "role": "torso",
+          "stroke_groups": [
+            "Separate visible victim torso silhouette, face or limb strokes; lift between disconnected segments."
+          ]
+        },
+        {
+          "id": "s4_victim_left_arm",
+          "subject": "victim",
+          "role": "left_arm",
+          "stroke_groups": [
+            "Separate visible victim left_arm silhouette, face or limb strokes; lift between disconnected segments."
+          ]
+        },
+        {
+          "id": "s4_victim_right_arm",
+          "subject": "victim",
+          "role": "right_arm",
+          "stroke_groups": [
+            "Separate visible victim right_arm silhouette, face or limb strokes; lift between disconnected segments."
+          ]
+        },
+        {
+          "id": "s4_victim_lower_body",
+          "subject": "victim",
+          "role": "lower_body",
+          "stroke_groups": [
+            "Separate visible victim lower_body silhouette, face or limb strokes; lift between disconnected segments."
+          ]
+        },
+        {
+          "id": "s4_intruder_head",
+          "subject": "intruder",
+          "role": "head",
+          "stroke_groups": [
+            "Separate visible intruder head silhouette, face or limb strokes; lift between disconnected segments."
+          ]
+        },
+        {
+          "id": "s4_intruder_torso",
+          "subject": "intruder",
+          "role": "torso",
+          "stroke_groups": [
+            "Separate visible intruder torso silhouette, face or limb strokes; lift between disconnected segments."
+          ]
+        },
+        {
+          "id": "s4_intruder_left_arm",
+          "subject": "intruder",
+          "role": "left_arm",
+          "stroke_groups": [
+            "Separate visible intruder left_arm silhouette, face or limb strokes; lift between disconnected segments."
+          ]
+        },
+        {
+          "id": "s4_intruder_right_arm",
+          "subject": "intruder",
+          "role": "right_arm",
+          "stroke_groups": [
+            "Separate visible intruder right_arm silhouette, face or limb strokes; lift between disconnected segments."
+          ]
+        },
+        {
+          "id": "s4_intruder_lower_body",
+          "subject": "intruder",
+          "role": "lower_body",
+          "stroke_groups": [
+            "Separate visible intruder lower_body silhouette, face or limb strokes; lift between disconnected segments."
+          ]
+        },
+        {
+          "id": "s4_dog_head",
+          "subject": "dog",
+          "role": "head",
+          "stroke_groups": [
+            "Outlined dog head with pen lifts at disconnected strokes."
+          ]
+        },
+        {
+          "id": "s4_dog_torso",
+          "subject": "dog",
+          "role": "torso",
+          "stroke_groups": [
+            "Outlined dog torso with pen lifts at disconnected strokes."
+          ]
+        },
+        {
+          "id": "s4_dog_legs_tail",
+          "subject": "dog",
+          "role": "legs_tail",
+          "stroke_groups": [
+            "Outlined dog legs_tail with pen lifts at disconnected strokes."
+          ]
+        },
+        {
+          "id": "s4_props",
+          "subject": "setting",
+          "role": "props",
+          "stroke_groups": [
+            "Door or furniture outline, key orange object contour, environment line; independent strokes."
+          ]
+        }
+      ],
+      "outline_order": [
+        "s4_victim_head",
+        "s4_victim_torso",
+        "s4_victim_left_arm",
+        "s4_victim_right_arm",
+        "s4_victim_lower_body",
+        "s4_intruder_head",
+        "s4_intruder_torso",
+        "s4_intruder_left_arm",
+        "s4_intruder_right_arm",
+        "s4_intruder_lower_body",
+        "s4_dog_head",
+        "s4_dog_torso",
+        "s4_dog_legs_tail",
+        "s4_props"
+      ],
+      "fill_order": [
+        "s4_victim_head",
+        "s4_victim_torso",
+        "s4_victim_left_arm",
+        "s4_victim_right_arm",
+        "s4_victim_lower_body",
+        "s4_intruder_head",
+        "s4_intruder_torso",
+        "s4_intruder_left_arm",
+        "s4_intruder_right_arm",
+        "s4_intruder_lower_body",
+        "s4_dog_head",
+        "s4_dog_torso",
+        "s4_dog_legs_tail",
+        "s4_props"
+      ],
+      "spatial_order": "top_to_bottom_left_to_right",
+      "order_exception": "Narrative priority: victim and intruder, then dog and setting; semantic head-to-limb order retained per person.",
+      "narrative_requirements": [
+        {
+          "id": "s4_action",
+          "narration_quote": "这时小李养的那条看家狗显得特别镇定，它在持刀男子身边来回转悠，像是在等一口咬住歹徒拿刀右手的最好时机。",
+          "observable": "狗在持刀男子腳邊繞行；不畫成已咬中，因原稿只說像在等待。"
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "composition": "小李與狗衝出臥室，男子抓住門緣拉開。",
+      "drawability_reason": "Clean closed marker contours, simple full-body bean figures separated from props; one orange focal object. 15–35 seconds voice window anticipated, final timing only from measured voice.",
+      "outline_strategy": "explicit_mask",
+      "subjects": [
+        {
+          "id": "victim",
+          "kind": "human",
+          "omitted_roles": {
+            "neck": "Official bean silhouette has no distinct neck; head joins rounded torso."
+          }
+        },
+        {
+          "id": "intruder",
+          "kind": "human",
+          "omitted_roles": {
+            "neck": "Official bean silhouette has no distinct neck; head joins rounded torso."
+          }
+        },
+        {
+          "id": "dog",
+          "kind": "animal"
+        },
+        {
+          "id": "setting",
+          "kind": "environment"
+        }
+      ],
+      "parts": [
+        {
+          "id": "s5_victim_head",
+          "subject": "victim",
+          "role": "head",
+          "stroke_groups": [
+            "Separate visible victim head silhouette, face or limb strokes; lift between disconnected segments."
+          ]
+        },
+        {
+          "id": "s5_victim_torso",
+          "subject": "victim",
+          "role": "torso",
+          "stroke_groups": [
+            "Separate visible victim torso silhouette, face or limb strokes; lift between disconnected segments."
+          ]
+        },
+        {
+          "id": "s5_victim_left_arm",
+          "subject": "victim",
+          "role": "left_arm",
+          "stroke_groups": [
+            "Separate visible victim left_arm silhouette, face or limb strokes; lift between disconnected segments."
+          ]
+        },
+        {
+          "id": "s5_victim_right_arm",
+          "subject": "victim",
+          "role": "right_arm",
+          "stroke_groups": [
+            "Separate visible victim right_arm silhouette, face or limb strokes; lift between disconnected segments."
+          ]
+        },
+        {
+          "id": "s5_victim_lower_body",
+          "subject": "victim",
+          "role": "lower_body",
+          "stroke_groups": [
+            "Separate visible victim lower_body silhouette, face or limb strokes; lift between disconnected segments."
+          ]
+        },
+        {
+          "id": "s5_intruder_head",
+          "subject": "intruder",
+          "role": "head",
+          "stroke_groups": [
+            "Separate visible intruder head silhouette, face or limb strokes; lift between disconnected segments."
+          ]
+        },
+        {
+          "id": "s5_intruder_torso",
+          "subject": "intruder",
+          "role": "torso",
+          "stroke_groups": [
+            "Separate visible intruder torso silhouette, face or limb strokes; lift between disconnected segments."
+          ]
+        },
+        {
+          "id": "s5_intruder_left_arm",
+          "subject": "intruder",
+          "role": "left_arm",
+          "stroke_groups": [
+            "Separate visible intruder left_arm silhouette, face or limb strokes; lift between disconnected segments."
+          ]
+        },
+        {
+          "id": "s5_intruder_right_arm",
+          "subject": "intruder",
+          "role": "right_arm",
+          "stroke_groups": [
+            "Separate visible intruder right_arm silhouette, face or limb strokes; lift between disconnected segments."
+          ]
+        },
+        {
+          "id": "s5_intruder_lower_body",
+          "subject": "intruder",
+          "role": "lower_body",
+          "stroke_groups": [
+            "Separate visible intruder lower_body silhouette, face or limb strokes; lift between disconnected segments."
+          ]
+        },
+        {
+          "id": "s5_dog_head",
+          "subject": "dog",
+          "role": "head",
+          "stroke_groups": [
+            "Outlined dog head with pen lifts at disconnected strokes."
+          ]
+        },
+        {
+          "id": "s5_dog_torso",
+          "subject": "dog",
+          "role": "torso",
+          "stroke_groups": [
+            "Outlined dog torso with pen lifts at disconnected strokes."
+          ]
+        },
+        {
+          "id": "s5_dog_legs_tail",
+          "subject": "dog",
+          "role": "legs_tail",
+          "stroke_groups": [
+            "Outlined dog legs_tail with pen lifts at disconnected strokes."
+          ]
+        },
+        {
+          "id": "s5_props",
+          "subject": "setting",
+          "role": "props",
+          "stroke_groups": [
+            "Door or furniture outline, key orange object contour, environment line; independent strokes."
+          ]
+        }
+      ],
+      "outline_order": [
+        "s5_victim_head",
+        "s5_victim_torso",
+        "s5_victim_left_arm",
+        "s5_victim_right_arm",
+        "s5_victim_lower_body",
+        "s5_intruder_head",
+        "s5_intruder_torso",
+        "s5_intruder_left_arm",
+        "s5_intruder_right_arm",
+        "s5_intruder_lower_body",
+        "s5_dog_head",
+        "s5_dog_torso",
+        "s5_dog_legs_tail",
+        "s5_props"
+      ],
+      "fill_order": [
+        "s5_victim_head",
+        "s5_victim_torso",
+        "s5_victim_left_arm",
+        "s5_victim_right_arm",
+        "s5_victim_lower_body",
+        "s5_intruder_head",
+        "s5_intruder_torso",
+        "s5_intruder_left_arm",
+        "s5_intruder_right_arm",
+        "s5_intruder_lower_body",
+        "s5_dog_head",
+        "s5_dog_torso",
+        "s5_dog_legs_tail",
+        "s5_props"
+      ],
+      "spatial_order": "top_to_bottom_left_to_right",
+      "order_exception": "Narrative priority: victim and intruder, then dog and setting; semantic head-to-limb order retained per person.",
+      "narrative_requirements": [
+        {
+          "id": "s5_action",
+          "narration_quote": "随后小李被持刀男子挟持进卧室翻找现金，忽然屋里传出一声惨叫，紧接着小李和看家狗一起冲出房间，随即试图把持刀男锁在卧室，然而对方却眼疾手快，一把就拽开了卧室门。",
+          "observable": "小李與狗衝出臥室，男子抓住門緣拉開。"
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "composition": "刀具兩截清楚分離，小李帶著刀刃往出口跑；狗向反方向離開。",
+      "drawability_reason": "Clean closed marker contours, simple full-body bean figures separated from props; one orange focal object. 15–35 seconds voice window anticipated, final timing only from measured voice.",
+      "outline_strategy": "explicit_mask",
+      "subjects": [
+        {
+          "id": "victim",
+          "kind": "human",
+          "omitted_roles": {
+            "neck": "Official bean silhouette has no distinct neck; head joins rounded torso."
+          }
+        },
+        {
+          "id": "intruder",
+          "kind": "human",
+          "omitted_roles": {
+            "neck": "Official bean silhouette has no distinct neck; head joins rounded torso."
+          }
+        },
+        {
+          "id": "dog",
+          "kind": "animal"
+        },
+        {
+          "id": "setting",
+          "kind": "environment"
+        }
+      ],
+      "parts": [
+        {
+          "id": "s6_victim_head",
+          "subject": "victim",
+          "role": "head",
+          "stroke_groups": [
+            "Separate visible victim head silhouette, face or limb strokes; lift between disconnected segments."
+          ]
+        },
+        {
+          "id": "s6_victim_torso",
+          "subject": "victim",
+          "role": "torso",
+          "stroke_groups": [
+            "Separate visible victim torso silhouette, face or limb strokes; lift between disconnected segments."
+          ]
+        },
+        {
+          "id": "s6_victim_left_arm",
+          "subject": "victim",
+          "role": "left_arm",
+          "stroke_groups": [
+            "Separate visible victim left_arm silhouette, face or limb strokes; lift between disconnected segments."
+          ]
+        },
+        {
+          "id": "s6_victim_right_arm",
+          "subject": "victim",
+          "role": "right_arm",
+          "stroke_groups": [
+            "Separate visible victim right_arm silhouette, face or limb strokes; lift between disconnected segments."
+          ]
+        },
+        {
+          "id": "s6_victim_lower_body",
+          "subject": "victim",
+          "role": "lower_body",
+          "stroke_groups": [
+            "Separate visible victim lower_body silhouette, face or limb strokes; lift between disconnected segments."
+          ]
+        },
+        {
+          "id": "s6_intruder_head",
+          "subject": "intruder",
+          "role": "head",
+          "stroke_groups": [
+            "Separate visible intruder head silhouette, face or limb strokes; lift between disconnected segments."
+          ]
+        },
+        {
+          "id": "s6_intruder_torso",
+          "subject": "intruder",
+          "role": "torso",
+          "stroke_groups": [
+            "Separate visible intruder torso silhouette, face or limb strokes; lift between disconnected segments."
+          ]
+        },
+        {
+          "id": "s6_intruder_left_arm",
+          "subject": "intruder",
+          "role": "left_arm",
+          "stroke_groups": [
+            "Separate visible intruder left_arm silhouette, face or limb strokes; lift between disconnected segments."
+          ]
+        },
+        {
+          "id": "s6_intruder_right_arm",
+          "subject": "intruder",
+          "role": "right_arm",
+          "stroke_groups": [
+            "Separate visible intruder right_arm silhouette, face or limb strokes; lift between disconnected segments."
+          ]
+        },
+        {
+          "id": "s6_intruder_lower_body",
+          "subject": "intruder",
+          "role": "lower_body",
+          "stroke_groups": [
+            "Separate visible intruder lower_body silhouette, face or limb strokes; lift between disconnected segments."
+          ]
+        },
+        {
+          "id": "s6_dog_head",
+          "subject": "dog",
+          "role": "head",
+          "stroke_groups": [
+            "Outlined dog head with pen lifts at disconnected strokes."
+          ]
+        },
+        {
+          "id": "s6_dog_torso",
+          "subject": "dog",
+          "role": "torso",
+          "stroke_groups": [
+            "Outlined dog torso with pen lifts at disconnected strokes."
+          ]
+        },
+        {
+          "id": "s6_dog_legs_tail",
+          "subject": "dog",
+          "role": "legs_tail",
+          "stroke_groups": [
+            "Outlined dog legs_tail with pen lifts at disconnected strokes."
+          ]
+        },
+        {
+          "id": "s6_props",
+          "subject": "setting",
+          "role": "props",
+          "stroke_groups": [
+            "Door or furniture outline, key orange object contour, environment line; independent strokes."
+          ]
+        }
+      ],
+      "outline_order": [
+        "s6_victim_head",
+        "s6_victim_torso",
+        "s6_victim_left_arm",
+        "s6_victim_right_arm",
+        "s6_victim_lower_body",
+        "s6_intruder_head",
+        "s6_intruder_torso",
+        "s6_intruder_left_arm",
+        "s6_intruder_right_arm",
+        "s6_intruder_lower_body",
+        "s6_dog_head",
+        "s6_dog_torso",
+        "s6_dog_legs_tail",
+        "s6_props"
+      ],
+      "fill_order": [
+        "s6_victim_head",
+        "s6_victim_torso",
+        "s6_victim_left_arm",
+        "s6_victim_right_arm",
+        "s6_victim_lower_body",
+        "s6_intruder_head",
+        "s6_intruder_torso",
+        "s6_intruder_left_arm",
+        "s6_intruder_right_arm",
+        "s6_intruder_lower_body",
+        "s6_dog_head",
+        "s6_dog_torso",
+        "s6_dog_legs_tail",
+        "s6_props"
+      ],
+      "spatial_order": "top_to_bottom_left_to_right",
+      "order_exception": "Narrative priority: victim and intruder, then dog and setting; semantic head-to-limb order retained per person.",
+      "narrative_requirements": [
+        {
+          "id": "s6_action",
+          "narration_quote": "小李在慌乱之中一门心思想夺下歹徒手里的刀，于是她大吼了一声，可谁也没料到竟把刀弄成了两截。",
+          "observable": "刀具兩截清楚分離，小李帶著刀刃往出口跑；狗向反方向離開。"
+        }
+      ]
+    },
+    {
+      "id": "s7",
+      "composition": "樓道的小李張口呼救；監控鏡頭與警方查看畫面接續呈現。",
+      "drawability_reason": "Clean closed marker contours, simple full-body bean figures separated from props; one orange focal object. 15–35 seconds voice window anticipated, final timing only from measured voice.",
+      "outline_strategy": "explicit_mask",
+      "subjects": [
+        {
+          "id": "victim",
+          "kind": "human",
+          "omitted_roles": {
+            "neck": "Official bean silhouette has no distinct neck; head joins rounded torso."
+          }
+        },
+        {
+          "id": "intruder",
+          "kind": "human",
+          "omitted_roles": {
+            "neck": "Official bean silhouette has no distinct neck; head joins rounded torso."
+          }
+        },
+        {
+          "id": "setting",
+          "kind": "environment"
+        }
+      ],
+      "parts": [
+        {
+          "id": "s7_victim_head",
+          "subject": "victim",
+          "role": "head",
+          "stroke_groups": [
+            "Separate visible victim head silhouette, face or limb strokes; lift between disconnected segments."
+          ]
+        },
+        {
+          "id": "s7_victim_torso",
+          "subject": "victim",
+          "role": "torso",
+          "stroke_groups": [
+            "Separate visible victim torso silhouette, face or limb strokes; lift between disconnected segments."
+          ]
+        },
+        {
+          "id": "s7_victim_left_arm",
+          "subject": "victim",
+          "role": "left_arm",
+          "stroke_groups": [
+            "Separate visible victim left_arm silhouette, face or limb strokes; lift between disconnected segments."
+          ]
+        },
+        {
+          "id": "s7_victim_right_arm",
+          "subject": "victim",
+          "role": "right_arm",
+          "stroke_groups": [
+            "Separate visible victim right_arm silhouette, face or limb strokes; lift between disconnected segments."
+          ]
+        },
+        {
+          "id": "s7_victim_lower_body",
+          "subject": "victim",
+          "role": "lower_body",
+          "stroke_groups": [
+            "Separate visible victim lower_body silhouette, face or limb strokes; lift between disconnected segments."
+          ]
+        },
+        {
+          "id": "s7_intruder_head",
+          "subject": "intruder",
+          "role": "head",
+          "stroke_groups": [
+            "Separate visible intruder head silhouette, face or limb strokes; lift between disconnected segments."
+          ]
+        },
+        {
+          "id": "s7_intruder_torso",
+          "subject": "intruder",
+          "role": "torso",
+          "stroke_groups": [
+            "Separate visible intruder torso silhouette, face or limb strokes; lift between disconnected segments."
+          ]
+        },
+        {
+          "id": "s7_intruder_left_arm",
+          "subject": "intruder",
+          "role": "left_arm",
+          "stroke_groups": [
+            "Separate visible intruder left_arm silhouette, face or limb strokes; lift between disconnected segments."
+          ]
+        },
+        {
+          "id": "s7_intruder_right_arm",
+          "subject": "intruder",
+          "role": "right_arm",
+          "stroke_groups": [
+            "Separate visible intruder right_arm silhouette, face or limb strokes; lift between disconnected segments."
+          ]
+        },
+        {
+          "id": "s7_intruder_lower_body",
+          "subject": "intruder",
+          "role": "lower_body",
+          "stroke_groups": [
+            "Separate visible intruder lower_body silhouette, face or limb strokes; lift between disconnected segments."
+          ]
+        },
+        {
+          "id": "s7_props",
+          "subject": "setting",
+          "role": "props",
+          "stroke_groups": [
+            "Door or furniture outline, key orange object contour, environment line; independent strokes."
+          ]
+        }
+      ],
+      "outline_order": [
+        "s7_victim_head",
+        "s7_victim_torso",
+        "s7_victim_left_arm",
+        "s7_victim_right_arm",
+        "s7_victim_lower_body",
+        "s7_intruder_head",
+        "s7_intruder_torso",
+        "s7_intruder_left_arm",
+        "s7_intruder_right_arm",
+        "s7_intruder_lower_body",
+        "s7_props"
+      ],
+      "fill_order": [
+        "s7_victim_head",
+        "s7_victim_torso",
+        "s7_victim_left_arm",
+        "s7_victim_right_arm",
+        "s7_victim_lower_body",
+        "s7_intruder_head",
+        "s7_intruder_torso",
+        "s7_intruder_left_arm",
+        "s7_intruder_right_arm",
+        "s7_intruder_lower_body",
+        "s7_props"
+      ],
+      "spatial_order": "top_to_bottom_left_to_right",
+      "order_exception": "Narrative priority: victim and intruder, then dog and setting; semantic head-to-limb order retained per person.",
+      "narrative_requirements": [
+        {
+          "id": "s7_action",
+          "narration_quote": "小李在楼道里声嘶力竭的呼救成功把歹徒给镇住了，使他慌不择路的迅速逃离。",
+          "observable": "樓道的小李張口呼救；監控鏡頭與警方查看畫面接續呈現。"
+        }
+      ]
+    },
+    {
+      "id": "s8",
+      "composition": "手機欠款提示作空白符號道具，警察帶走男子；不虛構判決。",
+      "drawability_reason": "Clean closed marker contours, simple full-body bean figures separated from props; one orange focal object. 15–35 seconds voice window anticipated, final timing only from measured voice.",
+      "outline_strategy": "explicit_mask",
+      "subjects": [
+        {
+          "id": "intruder",
+          "kind": "human",
+          "omitted_roles": {
+            "neck": "Official bean silhouette has no distinct neck; head joins rounded torso."
+          }
+        },
+        {
+          "id": "officer",
+          "kind": "human",
+          "omitted_roles": {
+            "neck": "Official bean silhouette has no distinct neck; head joins rounded torso."
+          }
+        },
+        {
+          "id": "setting",
+          "kind": "environment"
+        }
+      ],
+      "parts": [
+        {
+          "id": "s8_intruder_head",
+          "subject": "intruder",
+          "role": "head",
+          "stroke_groups": [
+            "Separate visible intruder head silhouette, face or limb strokes; lift between disconnected segments."
+          ]
+        },
+        {
+          "id": "s8_intruder_torso",
+          "subject": "intruder",
+          "role": "torso",
+          "stroke_groups": [
+            "Separate visible intruder torso silhouette, face or limb strokes; lift between disconnected segments."
+          ]
+        },
+        {
+          "id": "s8_intruder_left_arm",
+          "subject": "intruder",
+          "role": "left_arm",
+          "stroke_groups": [
+            "Separate visible intruder left_arm silhouette, face or limb strokes; lift between disconnected segments."
+          ]
+        },
+        {
+          "id": "s8_intruder_right_arm",
+          "subject": "intruder",
+          "role": "right_arm",
+          "stroke_groups": [
+            "Separate visible intruder right_arm silhouette, face or limb strokes; lift between disconnected segments."
+          ]
+        },
+        {
+          "id": "s8_intruder_lower_body",
+          "subject": "intruder",
+          "role": "lower_body",
+          "stroke_groups": [
+            "Separate visible intruder lower_body silhouette, face or limb strokes; lift between disconnected segments."
+          ]
+        },
+        {
+          "id": "s8_officer_head",
+          "subject": "officer",
+          "role": "head",
+          "stroke_groups": [
+            "Separate visible officer head silhouette, face or limb strokes; lift between disconnected segments."
+          ]
+        },
+        {
+          "id": "s8_officer_torso",
+          "subject": "officer",
+          "role": "torso",
+          "stroke_groups": [
+            "Separate visible officer torso silhouette, face or limb strokes; lift between disconnected segments."
+          ]
+        },
+        {
+          "id": "s8_officer_left_arm",
+          "subject": "officer",
+          "role": "left_arm",
+          "stroke_groups": [
+            "Separate visible officer left_arm silhouette, face or limb strokes; lift between disconnected segments."
+          ]
+        },
+        {
+          "id": "s8_officer_right_arm",
+          "subject": "officer",
+          "role": "right_arm",
+          "stroke_groups": [
+            "Separate visible officer right_arm silhouette, face or limb strokes; lift between disconnected segments."
+          ]
+        },
+        {
+          "id": "s8_officer_lower_body",
+          "subject": "officer",
+          "role": "lower_body",
+          "stroke_groups": [
+            "Separate visible officer lower_body silhouette, face or limb strokes; lift between disconnected segments."
+          ]
+        },
+        {
+          "id": "s8_props",
+          "subject": "setting",
+          "role": "props",
+          "stroke_groups": [
+            "Door or furniture outline, key orange object contour, environment line; independent strokes."
+          ]
+        }
+      ],
+      "outline_order": [
+        "s8_intruder_head",
+        "s8_intruder_torso",
+        "s8_intruder_left_arm",
+        "s8_intruder_right_arm",
+        "s8_intruder_lower_body",
+        "s8_officer_head",
+        "s8_officer_torso",
+        "s8_officer_left_arm",
+        "s8_officer_right_arm",
+        "s8_officer_lower_body",
+        "s8_props"
+      ],
+      "fill_order": [
+        "s8_intruder_head",
+        "s8_intruder_torso",
+        "s8_intruder_left_arm",
+        "s8_intruder_right_arm",
+        "s8_intruder_lower_body",
+        "s8_officer_head",
+        "s8_officer_torso",
+        "s8_officer_left_arm",
+        "s8_officer_right_arm",
+        "s8_officer_lower_body",
+        "s8_props"
+      ],
+      "spatial_order": "top_to_bottom_left_to_right",
+      "order_exception": "Narrative priority: victim and intruder, then dog and setting; semantic head-to-limb order retained per person.",
+      "narrative_requirements": [
+        {
+          "id": "s8_action",
+          "narration_quote": "陆某在网上也欠了很多钱，当时他想借钱也借不到，刚好当时从那个小区楼上上去，看到那个家里面门是开着的，然后就那个女的被害人一个人在家，所以说就产生了这个抢这个女子的想法。",
+          "observable": "手機欠款提示作空白符號道具，警察帶走男子；不虛構判決。"
+        }
+      ]
+    }
+  ]
+}

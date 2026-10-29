@@ -1,0 +1,1 @@
+Observed actual atlas2: female face is white with black features, while required style4 uses solid black face and white eyes. Change only that region in both panels; preserve actions, broken knife, dog escaping in reverse, male and door. Original generated atlas retained. Same semantic plan and original source text.

@@ -1,0 +1,15 @@
+{
+  "status": "ready_for_generation",
+  "plan_sha256": "6dc028825f5f21cd8cfccb8e4f9af3d8597c8cbc7d6b21275a246201d3017dfb",
+  "style_sha256": "675cddde0ae8df64ff3d83b323bbe1aebba76049d56f18ed70bdd2a9e044e4f3",
+  "illustrations": [
+    "s1",
+    "s2",
+    "s3",
+    "s4",
+    "s5",
+    "s6",
+    "s7",
+    "s8"
+  ]
+}

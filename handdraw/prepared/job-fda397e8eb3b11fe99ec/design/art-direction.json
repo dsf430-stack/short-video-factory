@@ -1,0 +1,124 @@
+{
+  "dependency_sha256": "fbbfd33d70f729011b6a6bc232851c116cd4a89ead2adea4462888a6ce26fc1a",
+  "style_sha256": "675cddde0ae8df64ff3d83b323bbe1aebba76049d56f18ed70bdd2a9e044e4f3",
+  "images": [
+    {
+      "source": "../inputs/sheet-0.png",
+      "method": "generated_under_guidance",
+      "brief_file": "sheet-0-brief.md",
+      "prompt_file": "sheet-0-prompt.txt",
+      "status": "pass",
+      "brief_sha256": "e14f7b17482182c5988a115e29aedb162541baeb48776ef8fe416b88440ba42b",
+      "prompt_sha256": "c22dc165121f2ef35de93cd08e89f26861ba2cc69b68c7d72b71270298545cf6",
+      "sha256": "3e54bdebdeb38ecdc22eeba939a4f51df8252eb61b66ac244b8a9527b6387b64",
+      "pixel_sha256": "a1ffc413d1cd01effabdffee3ebe32c5a641b73506222c8969a8f6e3dcff540f",
+      "approved_crops": [
+        [
+          0,
+          0,
+          1024,
+          768
+        ],
+        [
+          0,
+          768,
+          1024,
+          1536
+        ]
+      ],
+      "evidence": "Actually viewed full atlas and close-up. Top: female ponytail opens orange second parcel on coffee table; two parcels, open apartment door and entering armed male are visible. Bottom: female reclines on sofa while male hand grips collar, other hand holds knife away; no wound. Far female arm is occluded, recorded in post-generation adjustment."
+    },
+    {
+      "source": "../inputs/sheet-1.png",
+      "method": "generated_under_guidance",
+      "brief_file": "sheet-1-brief.md",
+      "prompt_file": "sheet-1-prompt.txt",
+      "status": "pass",
+      "brief_sha256": "13cac2ddbb1f020dd6c91f325539eea8c1f013d21ab78bc783c18c088854fc8a",
+      "prompt_sha256": "76884e2ac405d03e80fd68eeb07cd8c087427b1e0c1ec58173a9569514b0b023",
+      "sha256": "23ed2e77db956c718ed7bc01c27623a0f501e80081f09099a29456baa549d92c",
+      "pixel_sha256": "a40943ea6448289882d47e052da6b44dffe36d2dbacea66f5997e29a5d3870fb",
+      "approved_crops": [
+        [
+          0,
+          0,
+          1024,
+          768
+        ],
+        [
+          0,
+          768,
+          1024,
+          1536
+        ]
+      ],
+      "evidence": "Actually viewed full atlas. Top female seated on sofa has open lowered hands and tremble marks; armed man at right, no attack contact. Bottom outlined dog stands between woman and man, looks up at knife, blue circular arrow near feet, mouth not contacting hand; no biting or wound. Both female arms, both male arms and legs are visible."
+    },
+    {
+      "source": "../inputs/sheet-2.png",
+      "method": "generated_under_guidance",
+      "brief_file": "sheet-2-correction-brief.md",
+      "prompt_file": "sheet-2-correction-prompt.txt",
+      "status": "pass",
+      "brief_sha256": "165f99bc96a373972c34649df518969d7b583a112d3141269d7e13598d2d4a44",
+      "prompt_sha256": "a6230939208f85e2bf2aa7a992d8d0d333881b4502314e3e45d85a8ce942fec5",
+      "initial_prompt_file": "sheet-2-prompt.txt",
+      "initial_brief_file": "sheet-2-brief.md",
+      "sha256": "b9c659cce04c3bb8e7e951bb5a2f6dbb5292692f86926c9cf974e47e83e5718a",
+      "pixel_sha256": "2ed6f18863138467482dd640ed6fedb97f56ebd8377f7ff6646edacf2dbcfeb8",
+      "approved_crops": [
+        [
+          0,
+          0,
+          1024,
+          768
+        ],
+        [
+          0,
+          768,
+          1024,
+          1536
+        ]
+      ],
+      "evidence": "Actually viewed initial and corrected full atlas2. Female black face/white eyes now matches other beans. Top woman and dog run out left; intruder inside bedroom grips door edge, knife in other hand. Bottom broken orange blade in woman hand left, separate jagged handle held by pursuing man; dog runs right with blue arrow, opposite to woman. No bite, wound or extra complete knife. All heads, torsos, arms, running lower limbs and dog anatomy visibly separable."
+    },
+    {
+      "source": "../inputs/sheet-3.png",
+      "method": "generated_under_guidance",
+      "brief_file": "sheet-3-brief.md",
+      "prompt_file": "sheet-3-prompt.txt",
+      "status": "pass",
+      "brief_sha256": "3da209bc77b77547cea1e78f97ebd9a177bc7beb16106588a4baa29742c1710d",
+      "prompt_sha256": "6a292ef8ad90cf451c4b6bc60e6070223e2a34042f7e0a53e940d28ce009291e",
+      "sha256": "ccaf4eeed9fc14cb750ec5ae57128d567b1626289f0874c2b080ce95cb876079",
+      "pixel_sha256": "e67f84e84d03c98af88521ab8fddce372608cf4f0b97dbb89173ba4ab960f198",
+      "approved_crops": [
+        [
+          0,
+          0,
+          1024,
+          768
+        ],
+        [
+          0,
+          768,
+          1024,
+          1536
+        ]
+      ],
+      "evidence": "Actually viewed full atlas3. Top female raises hand with visible sound marks while male runs toward stairwell; orange surveillance camera above. Bottom police cap identifies officer holding intruder wrist; smartphone alert symbol is orange, screen blank, no invented debt amount or sentence. Intruder far arm hidden behind torso, explicitly omitted after review."
+    },
+    {
+      "source": "../inputs/cover.png",
+      "method": "composed_with_verified_layers",
+      "brief_file": "cover-brief.md",
+      "prompt_file": "cover-prompt.txt",
+      "status": "pass",
+      "brief_sha256": "07c192a3ba984ece66d38ce49572151c3088a47548f7f1da4c1d907f4798ff89",
+      "prompt_sha256": "ed24b287d70923c54bc1595b2babae78ec71e4aadb291cb83f91836d354ad67f",
+      "sha256": "53fae9b6fd9defb647518cc6901988256041a1e3feb653c3408d6c811c636c6b",
+      "pixel_sha256": "d219098fb95519b16ad4bd31b8efcbca84553c19441fc65b53b99738bb918047",
+      "evidence": "Actually viewed 1080x1920 cover: accurate title 未關上的門, hero from reviewed first panel, small 依來稿改編 label. No generated gibberish, title or subject cropped out."
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "status": "resolved",
+  "mode": "catalog",
+  "catalog_id": "4",
+  "style_name": "小豆人黑色涂鸦信息图",
+  "rationale": "沿用使用者專案預設，不重選畫風。",
+  "selection_sha256": "430445da4c5e42619c4511664477d23753905e3ae20e0359114c1732ab23f0d4",
+  "recipe_sha256": "2d96a21c16f323dd71f57e7ee1a19173fe2b2ae85caeec7de5a9759fd14d4960",
+  "style_spec": {
+    "line": "Clean closed black marker outlines",
+    "palette": "Black white with one orange key object per panel; red blue arrows",
+    "shading": "None",
+    "texture": "Solid smooth bean bodies",
+    "background": "Off-white"
+  }
+}

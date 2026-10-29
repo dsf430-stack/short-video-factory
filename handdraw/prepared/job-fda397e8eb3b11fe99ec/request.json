@@ -6,7 +6,7 @@
   "voice_id": "068",
   "mode": "chatgpt-prepared-no-extra-model-api",
   "script_sha256": "47e11239bde055906751f3a30b7b87fb375a2d77e38899f6f2c3da14859f3817",
-  "state": "PREPARATION_REQUIRED",
+  "state": "ASSETS_VALIDATED",
   "required_files": [
     "story.json",
     "design.json",

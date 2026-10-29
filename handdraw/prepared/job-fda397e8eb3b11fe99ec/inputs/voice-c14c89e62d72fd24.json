@@ -1,0 +1,46 @@
+{
+  "status": "SUCCESS",
+  "voice_id": "068",
+  "preset": {
+    "voice": "zh-TW-HsiaoChenNeural",
+    "rate": "-27%",
+    "pitch": "+5Hz",
+    "volume": "+0%",
+    "languages": [
+      "zh-TW"
+    ],
+    "tags": [
+      "lifestyle",
+      "friendly"
+    ]
+  },
+  "boundary": "WordBoundary",
+  "text_sha256": "c14c89e62d72fd2442118e03db4f216387c273f2187d4f9c0efeab98a3177ba1",
+  "chunks": 3,
+  "duration": 218.644898,
+  "loudness": {
+    "input_i": "-12.85",
+    "input_tp": "-1.24",
+    "input_lra": "2.40",
+    "input_thresh": "-23.10",
+    "output_i": "-11.96",
+    "output_tp": "-1.00",
+    "output_lra": "2.40",
+    "output_thresh": "-22.20",
+    "normalization_type": "dynamic",
+    "target_offset": "0.96"
+  },
+  "full_decode": "PASS",
+  "service": "api.msedgeservices.com",
+  "cache_hits": 0,
+  "attempts": [],
+  "subjective_listening": "UNCERTAIN",
+  "sha256": "b28ea90b357d6052239dc4aa8d9ce7e92fe15629645b4f45316a35507c3c1de3",
+  "outside_silence_trim": {
+    "input_pcm_seconds": 219.52802083333333,
+    "output_pcm_seconds": 218.6,
+    "last_voice_end_seconds": 218.45000000000002,
+    "tail_protection_seconds": 0.14999999999997726,
+    "method": "Trim verified outer silence only, no speech stretch/cut."
+  }
+}
