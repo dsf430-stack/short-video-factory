@@ -44,6 +44,33 @@ class NarrationTests(unittest.TestCase):
                 self.assertGreater(output.stat().st_size, 0)
                 self.assertEqual(metadata['preset'], voice.VOICES['068'])
 
+    def test_bad_loudness_reports_do_not_publish_audio(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            raw = root / 'source.mp3'
+            subprocess.run(['ffmpeg', '-y', '-v', 'error', '-f', 'lavfi',
+                            '-i', 'sine=frequency=440:duration=2', str(raw)], check=True)
+            actual_run = voice.run
+            reports = ('{"input_i": "-11",', '{}',
+                       '{"input_i":"-inf","input_tp":"-1"}',
+                       '{"input_i":"-30","input_tp":"-1"}',
+                       '{"input_i":"-11","input_tp":"0"}')
+            for index, report in enumerate(reports):
+                def invalid_report(args):
+                    result = actual_run(args)
+                    if any('print_format=json' in str(arg) for arg in args):
+                        result.stderr = report + '\nFFmpeg summary\n'
+                    return result
+                output = root / f'bad-{index}.mp3'
+                with self.subTest(report=report), \
+                        patch.object(voice, 'get_chunk', AsyncMock(return_value=(
+                            raw, [(0.0, 1.5, '你好。')], 2.0, True))), \
+                        patch.object(voice, 'run', side_effect=invalid_report):
+                    with self.assertRaises((json.JSONDecodeError, KeyError, RuntimeError)):
+                        asyncio.run(voice.synthesize('你好。', str(output), '068'))
+                    for suffix in ('.mp3', '.srt', '.json'):
+                        self.assertFalse(output.with_suffix(suffix).exists())
+
     def test_task_rate_reaches_synthesis_without_mutating_068(self):
         original = dict(voice.VOICES['068'])
         probe = AsyncMock(side_effect=RuntimeError('offline synthesis probe'))
