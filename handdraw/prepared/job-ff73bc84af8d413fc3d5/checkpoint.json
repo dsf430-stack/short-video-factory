@@ -1,0 +1,15 @@
+{
+  "state": "ASSET_VALIDATION_RUNNING",
+  "job_id": "job-ff73bc84af8d413fc3d5",
+  "original_source_sha256": "47e11239bde055906751f3a30b7b87fb375a2d77e38899f6f2c3da14859f3817",
+  "target_seconds": 220,
+  "voice_rate": "+20%",
+  "silent_animation_requested": true,
+  "script_changes": [],
+  "voice_run_id": 40831815486,
+  "voice_artifact_id": 12878932975,
+  "silent_animation_seconds": 85.56,
+  "voice_pcm_preservation": "PASS",
+  "original_script_preserved": true,
+  "next": "Complete unchanged official check_bundle, activate new job, commit and track rendering."
+}

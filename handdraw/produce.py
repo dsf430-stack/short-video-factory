@@ -146,6 +146,11 @@ def main(args):
   for scene,spoken in zip(scenes,candidates[selected]):scene['text']=spoken
   # Requirements cite stable core facts present in every editorial candidate.
   beats=align_scenes(scenes,parse_srt(mp3.with_suffix('.srt')),word_events=boundary=='WordBoundary')
+  if story.get('silent_animation_authorization'):
+   # Explicitly requested silent drawing windows are already present in the
+   # prepared audio master; extend visuals, never the real subtitle cues.
+   for index in range(len(beats)-1):
+    beats[index]['end']=beats[index+1]['start']
   save(root/'inputs/alignment.json',{'version':1,'source_sha256':digest(master),'script_sha256':text_hash,'beats':beats})
   if args.voice_only:
    print('VOICE_FIT_READY',json.dumps({'seconds':duration,'hold':hold,'candidate':selected}),flush=True)

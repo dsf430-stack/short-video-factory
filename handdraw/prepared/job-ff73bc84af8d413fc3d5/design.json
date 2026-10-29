@@ -1,0 +1,25 @@
+{
+  "topic": "未關上的門：小李入室搶劫案",
+  "audience": "繁體中文故事觀眾",
+  "explanation_goal": "依來稿完整敘述事件，不修改原文。",
+  "source_scope": {
+    "type": "user_script",
+    "verification": "未找到可靠來源確認日期與細節；不冒稱真實監控重現。",
+    "script_changes": []
+  },
+  "narrative_route": {
+    "decision": "chronological_suspense",
+    "reason": "保留原稿時間順序、威脅、逃脫及追查。",
+    "director_review": "畫面只呈現來稿可見動作，不新增咬傷或判決；旁白逐字保留。",
+    "director_plan": "八幕按事件因果安排；實測聲音後再鎖時間，不按猜測固定每幕時長。"
+  },
+  "target_seconds": 220,
+  "voice": {
+    "id": "068",
+    "rate": "+20%",
+    "pitch": "+5Hz"
+  },
+  "script_editing": "none",
+  "visual_direction": "Official17 expressive ink storybook",
+  "silent_animation_authorization": "User explicitly chose original speed plus ~85 seconds silent animation, full 220 seconds."
+}

@@ -1,0 +1,16 @@
+{
+  "status": "resolved",
+  "mode": "catalog",
+  "catalog_id": "17",
+  "style_name": "墨线绘本",
+  "selection_sha256": "20a7225d3d1187c919b00c25edce796e340785fe08b231aa8c13adb09322f52b",
+  "recipe_sha256": "7fe95f44b36f1e8fc6e47d6ba42eacafd4e87e1fa376123306140057d4e07936",
+  "rationale": "User explicitly selected 17.",
+  "style_spec": {
+    "line": "Confident sketchy ink, region-keyed dark sepia",
+    "palette": "Blue hair, dusty pink blouse, grey-blue offender, peach and cream",
+    "shading": "Clean bright soft digital painting, sparse accent hatching",
+    "texture": "Sparse construction lines and watercolor dry-brush frame, no grainy fill",
+    "background": "Atmospheric peach wash within rough-edged rectangle, cream paper margins"
+  }
+}

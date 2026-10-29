@@ -1,0 +1,198 @@
+{
+  "style_sha256": "31d9f5361db3b626c80bb5fbbecaf524f1d50f2971585f539e03cf481f25b78e",
+  "plan_sha256": "36e67da7b25823ff488a024083d19889d45c21dd9231f427fdd0370632f7e2fb",
+  "illustrations": [
+    {
+      "plan_id": "s1",
+      "status": "pass",
+      "source_sha256": "c73f4c288ef8c55c64de6895eeaf185a3a96f25ed16f1ca6987d846b116a4e53",
+      "crop": [
+        0,
+        0,
+        1024,
+        768
+      ],
+      "outline_mask_sha256": "48fcc51a35087940e0ec909edfefe008b1990a42853084009ecded7fe37153ac",
+      "anatomy_and_occlusion": "Actual atlas0 reviewed: adult blue-ponytail woman opens parcel at coffee table, door wide open and armed grey-jacket male enters; cream dog near her. Bottom man grips her collar and holds knife away from her, woman reclines on sofa. No blood. Man far arm hidden behind door in top panel, woman's far arm occluded on sofa below.",
+      "part_boundaries": "Actual-image head, neck, torso, screen arms and lower body polygons; neck and forearm areas excluded from earlier head/torso ownership, setting assigned last.",
+      "stroke_breaks": "Independent gradient-derived contour paths with pen lifts; actual source reviewed and official build_illustration run for every scene.",
+      "outline_then_fill": "Complete source contours then same ordered semantic paint regions; preserves style17 color pixels.",
+      "spatial_order": "Foreground protagonist, second actor, dog if visible then environment; original priority exceptions retained.",
+      "narrative_checks": [
+        {
+          "id": "s1_action",
+          "status": "pass",
+          "evidence": "Actual atlas0 reviewed: adult blue-ponytail woman opens parcel at coffee table, door wide open and armed grey-jacket male enters; cream dog near her. Bottom man grips her collar and holds knife away from her, woman reclines on sofa. No blood. Man far arm hidden behind door in top panel, woman's far arm occluded on sofa below."
+        }
+      ]
+    },
+    {
+      "plan_id": "s2",
+      "status": "pass",
+      "source_sha256": "c73f4c288ef8c55c64de6895eeaf185a3a96f25ed16f1ca6987d846b116a4e53",
+      "crop": [
+        0,
+        768,
+        1024,
+        1536
+      ],
+      "outline_mask_sha256": "48fcc51a35087940e0ec909edfefe008b1990a42853084009ecded7fe37153ac",
+      "anatomy_and_occlusion": "Actual atlas0 reviewed: adult blue-ponytail woman opens parcel at coffee table, door wide open and armed grey-jacket male enters; cream dog near her. Bottom man grips her collar and holds knife away from her, woman reclines on sofa. No blood. Man far arm hidden behind door in top panel, woman's far arm occluded on sofa below.",
+      "part_boundaries": "Actual-image head, neck, torso, screen arms and lower body polygons; neck and forearm areas excluded from earlier head/torso ownership, setting assigned last.",
+      "stroke_breaks": "Independent gradient-derived contour paths with pen lifts; actual source reviewed and official build_illustration run for every scene.",
+      "outline_then_fill": "Complete source contours then same ordered semantic paint regions; preserves style17 color pixels.",
+      "spatial_order": "Foreground protagonist, second actor, dog if visible then environment; original priority exceptions retained.",
+      "narrative_checks": [
+        {
+          "id": "s2_action",
+          "status": "pass",
+          "evidence": "Actual atlas0 reviewed: adult blue-ponytail woman opens parcel at coffee table, door wide open and armed grey-jacket male enters; cream dog near her. Bottom man grips her collar and holds knife away from her, woman reclines on sofa. No blood. Man far arm hidden behind door in top panel, woman's far arm occluded on sofa below."
+        }
+      ]
+    },
+    {
+      "plan_id": "s3",
+      "status": "pass",
+      "source_sha256": "995c2fc43cacd0ed62262277813583b896b98881faed77fb2aa5cdbf18faaf4d",
+      "crop": [
+        0,
+        0,
+        1024,
+        768
+      ],
+      "outline_mask_sha256": "0730ddf7794ed62a77e88817f952b7325214424580181b1a8a2b1acb10ae62de",
+      "anatomy_and_occlusion": "Actual atlas1 reviewed: woman seated on sofa with open hands and tremble marks, man standing apart holding knife. Bottom cream dog looks upward near man, blue circling arrow, no bite or contact with knife. Neck, both arms, lower limbs visible on the people.",
+      "part_boundaries": "Actual-image head, neck, torso, screen arms and lower body polygons; neck and forearm areas excluded from earlier head/torso ownership, setting assigned last.",
+      "stroke_breaks": "Independent gradient-derived contour paths with pen lifts; actual source reviewed and official build_illustration run for every scene.",
+      "outline_then_fill": "Complete source contours then same ordered semantic paint regions; preserves style17 color pixels.",
+      "spatial_order": "Foreground protagonist, second actor, dog if visible then environment; original priority exceptions retained.",
+      "narrative_checks": [
+        {
+          "id": "s3_action",
+          "status": "pass",
+          "evidence": "Actual atlas1 reviewed: woman seated on sofa with open hands and tremble marks, man standing apart holding knife. Bottom cream dog looks upward near man, blue circling arrow, no bite or contact with knife. Neck, both arms, lower limbs visible on the people."
+        }
+      ]
+    },
+    {
+      "plan_id": "s4",
+      "status": "pass",
+      "source_sha256": "995c2fc43cacd0ed62262277813583b896b98881faed77fb2aa5cdbf18faaf4d",
+      "crop": [
+        0,
+        768,
+        1024,
+        1536
+      ],
+      "outline_mask_sha256": "0730ddf7794ed62a77e88817f952b7325214424580181b1a8a2b1acb10ae62de",
+      "anatomy_and_occlusion": "Actual atlas1 reviewed: woman seated on sofa with open hands and tremble marks, man standing apart holding knife. Bottom cream dog looks upward near man, blue circling arrow, no bite or contact with knife. Neck, both arms, lower limbs visible on the people.",
+      "part_boundaries": "Actual-image head, neck, torso, screen arms and lower body polygons; neck and forearm areas excluded from earlier head/torso ownership, setting assigned last.",
+      "stroke_breaks": "Independent gradient-derived contour paths with pen lifts; actual source reviewed and official build_illustration run for every scene.",
+      "outline_then_fill": "Complete source contours then same ordered semantic paint regions; preserves style17 color pixels.",
+      "spatial_order": "Foreground protagonist, second actor, dog if visible then environment; original priority exceptions retained.",
+      "narrative_checks": [
+        {
+          "id": "s4_action",
+          "status": "pass",
+          "evidence": "Actual atlas1 reviewed: woman seated on sofa with open hands and tremble marks, man standing apart holding knife. Bottom cream dog looks upward near man, blue circling arrow, no bite or contact with knife. Neck, both arms, lower limbs visible on the people."
+        }
+      ]
+    },
+    {
+      "plan_id": "s5",
+      "status": "pass",
+      "source_sha256": "517c8d2757293bc36ebee02d481da1bbbe0bb564e8097b7e6de91e690ef8a4b9",
+      "crop": [
+        0,
+        0,
+        1024,
+        768
+      ],
+      "outline_mask_sha256": "c31df14b883563e5855451f9cbcd7b2edb0909b2034efc8858beb79aa95f97b5",
+      "anatomy_and_occlusion": "Actual atlas2 reviewed: woman and dog run left, man grips door edge from bedroom. Bottom jagged broken blade in woman's hand at left, short separate jagged handle held by pursuing male; dog runs RIGHT, opposite woman, indicated by arrow. No gore or third intact knife.",
+      "part_boundaries": "Actual-image head, neck, torso, screen arms and lower body polygons; neck and forearm areas excluded from earlier head/torso ownership, setting assigned last.",
+      "stroke_breaks": "Independent gradient-derived contour paths with pen lifts; actual source reviewed and official build_illustration run for every scene.",
+      "outline_then_fill": "Complete source contours then same ordered semantic paint regions; preserves style17 color pixels.",
+      "spatial_order": "Foreground protagonist, second actor, dog if visible then environment; original priority exceptions retained.",
+      "narrative_checks": [
+        {
+          "id": "s5_action",
+          "status": "pass",
+          "evidence": "Actual atlas2 reviewed: woman and dog run left, man grips door edge from bedroom. Bottom jagged broken blade in woman's hand at left, short separate jagged handle held by pursuing male; dog runs RIGHT, opposite woman, indicated by arrow. No gore or third intact knife."
+        }
+      ]
+    },
+    {
+      "plan_id": "s6",
+      "status": "pass",
+      "source_sha256": "517c8d2757293bc36ebee02d481da1bbbe0bb564e8097b7e6de91e690ef8a4b9",
+      "crop": [
+        0,
+        768,
+        1024,
+        1536
+      ],
+      "outline_mask_sha256": "c31df14b883563e5855451f9cbcd7b2edb0909b2034efc8858beb79aa95f97b5",
+      "anatomy_and_occlusion": "Actual atlas2 reviewed: woman and dog run left, man grips door edge from bedroom. Bottom jagged broken blade in woman's hand at left, short separate jagged handle held by pursuing male; dog runs RIGHT, opposite woman, indicated by arrow. No gore or third intact knife.",
+      "part_boundaries": "Actual-image head, neck, torso, screen arms and lower body polygons; neck and forearm areas excluded from earlier head/torso ownership, setting assigned last.",
+      "stroke_breaks": "Independent gradient-derived contour paths with pen lifts; actual source reviewed and official build_illustration run for every scene.",
+      "outline_then_fill": "Complete source contours then same ordered semantic paint regions; preserves style17 color pixels.",
+      "spatial_order": "Foreground protagonist, second actor, dog if visible then environment; original priority exceptions retained.",
+      "narrative_checks": [
+        {
+          "id": "s6_action",
+          "status": "pass",
+          "evidence": "Actual atlas2 reviewed: woman and dog run left, man grips door edge from bedroom. Bottom jagged broken blade in woman's hand at left, short separate jagged handle held by pursuing male; dog runs RIGHT, opposite woman, indicated by arrow. No gore or third intact knife."
+        }
+      ]
+    },
+    {
+      "plan_id": "s7",
+      "status": "pass",
+      "source_sha256": "4d3519691dabfca93e644ae0bfa7704cc54e28fd3039f585919f10ae52fe0450",
+      "crop": [
+        0,
+        0,
+        1024,
+        768
+      ],
+      "outline_mask_sha256": "86ce4cb55957d424c0eccecf1493c90684b5eb25a37abcdb6e43d0a98d586fc1",
+      "anatomy_and_occlusion": "Actual atlas3 reviewed: woman shouts in corridor, raised hand and sound marks; man runs toward stairs and orange camera above. Bottom officer in cap holds suspect arm behind his back; phone alert symbol blank screen, no invented debt amount or legal sentence. Suspect far arm obscured by torso.",
+      "part_boundaries": "Actual-image head, neck, torso, screen arms and lower body polygons; neck and forearm areas excluded from earlier head/torso ownership, setting assigned last.",
+      "stroke_breaks": "Independent gradient-derived contour paths with pen lifts; actual source reviewed and official build_illustration run for every scene.",
+      "outline_then_fill": "Complete source contours then same ordered semantic paint regions; preserves style17 color pixels.",
+      "spatial_order": "Foreground protagonist, second actor, dog if visible then environment; original priority exceptions retained.",
+      "narrative_checks": [
+        {
+          "id": "s7_action",
+          "status": "pass",
+          "evidence": "Actual atlas3 reviewed: woman shouts in corridor, raised hand and sound marks; man runs toward stairs and orange camera above. Bottom officer in cap holds suspect arm behind his back; phone alert symbol blank screen, no invented debt amount or legal sentence. Suspect far arm obscured by torso."
+        }
+      ]
+    },
+    {
+      "plan_id": "s8",
+      "status": "pass",
+      "source_sha256": "4d3519691dabfca93e644ae0bfa7704cc54e28fd3039f585919f10ae52fe0450",
+      "crop": [
+        0,
+        768,
+        1024,
+        1536
+      ],
+      "outline_mask_sha256": "86ce4cb55957d424c0eccecf1493c90684b5eb25a37abcdb6e43d0a98d586fc1",
+      "anatomy_and_occlusion": "Actual atlas3 reviewed: woman shouts in corridor, raised hand and sound marks; man runs toward stairs and orange camera above. Bottom officer in cap holds suspect arm behind his back; phone alert symbol blank screen, no invented debt amount or legal sentence. Suspect far arm obscured by torso.",
+      "part_boundaries": "Actual-image head, neck, torso, screen arms and lower body polygons; neck and forearm areas excluded from earlier head/torso ownership, setting assigned last.",
+      "stroke_breaks": "Independent gradient-derived contour paths with pen lifts; actual source reviewed and official build_illustration run for every scene.",
+      "outline_then_fill": "Complete source contours then same ordered semantic paint regions; preserves style17 color pixels.",
+      "spatial_order": "Foreground protagonist, second actor, dog if visible then environment; original priority exceptions retained.",
+      "narrative_checks": [
+        {
+          "id": "s8_action",
+          "status": "pass",
+          "evidence": "Actual atlas3 reviewed: woman shouts in corridor, raised hand and sound marks; man runs toward stairs and orange camera above. Bottom officer in cap holds suspect arm behind his back; phone alert symbol blank screen, no invented debt amount or legal sentence. Suspect far arm obscured by torso."
+        }
+      ]
+    }
+  ]
+}

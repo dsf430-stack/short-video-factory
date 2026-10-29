@@ -1,0 +1,122 @@
+{
+  "dependency_sha256": "fbbfd33d70f729011b6a6bc232851c116cd4a89ead2adea4462888a6ce26fc1a",
+  "style_sha256": "31d9f5361db3b626c80bb5fbbecaf524f1d50f2971585f539e03cf481f25b78e",
+  "images": [
+    {
+      "source": "../inputs/sheet-0.png",
+      "method": "generated_under_guidance",
+      "brief_file": "sheet-0-brief.md",
+      "prompt_file": "sheet-0-prompt.txt",
+      "status": "pass",
+      "brief_sha256": "da1718521d6ccaa7bc151a6a848e3d3654720e5dfe6bc3c40c9f3ee14eba30ac",
+      "prompt_sha256": "8094127f29651a02bc0f33b21d4062efb949cecb69c0435123f3a60790ce35f6",
+      "sha256": "c73f4c288ef8c55c64de6895eeaf185a3a96f25ed16f1ca6987d846b116a4e53",
+      "pixel_sha256": "3bd083bccc3bce6c96c1484035decb3d144a69289bb6e9e307ee089a87a9eb65",
+      "evidence": "Actual atlas0 reviewed: adult blue-ponytail woman opens parcel at coffee table, door wide open and armed grey-jacket male enters; cream dog near her. Bottom man grips her collar and holds knife away from her, woman reclines on sofa. No blood. Man far arm hidden behind door in top panel, woman's far arm occluded on sofa below.",
+      "approved_crops": [
+        [
+          0,
+          0,
+          1024,
+          768
+        ],
+        [
+          0,
+          768,
+          1024,
+          1536
+        ]
+      ]
+    },
+    {
+      "source": "../inputs/sheet-1.png",
+      "method": "generated_under_guidance",
+      "brief_file": "sheet-1-brief.md",
+      "prompt_file": "sheet-1-prompt.txt",
+      "status": "pass",
+      "brief_sha256": "eb27262e22a9b96fdd94551496bf0fab3b99c98daaee0e1c88af89d1e8d9e063",
+      "prompt_sha256": "0f857dae7356ab8b7c938410adc7b2f7dfc0372102adc5ba24516e498db2753b",
+      "sha256": "995c2fc43cacd0ed62262277813583b896b98881faed77fb2aa5cdbf18faaf4d",
+      "pixel_sha256": "88a12431c92faa9461b3b1a079715154fa86133c266c3238a1dd21a6d61d18de",
+      "evidence": "Actual atlas1 reviewed: woman seated on sofa with open hands and tremble marks, man standing apart holding knife. Bottom cream dog looks upward near man, blue circling arrow, no bite or contact with knife. Neck, both arms, lower limbs visible on the people.",
+      "approved_crops": [
+        [
+          0,
+          0,
+          1024,
+          768
+        ],
+        [
+          0,
+          768,
+          1024,
+          1536
+        ]
+      ]
+    },
+    {
+      "source": "../inputs/sheet-2.png",
+      "method": "generated_under_guidance",
+      "brief_file": "sheet-2-brief.md",
+      "prompt_file": "sheet-2-prompt.txt",
+      "status": "pass",
+      "brief_sha256": "24380792c6e2b9411c99c4589576d4fb60993ea3bf31d0c4ee6f100562a30455",
+      "prompt_sha256": "ebdcd15abefc41d6fbb5628327d514316e9070692eb51137efe9b835b4c4a46e",
+      "sha256": "517c8d2757293bc36ebee02d481da1bbbe0bb564e8097b7e6de91e690ef8a4b9",
+      "pixel_sha256": "096d55032cc1200f2742a045fbbac240ef8ac5426d86de3878401ffdc68cceec",
+      "evidence": "Actual atlas2 reviewed: woman and dog run left, man grips door edge from bedroom. Bottom jagged broken blade in woman's hand at left, short separate jagged handle held by pursuing male; dog runs RIGHT, opposite woman, indicated by arrow. No gore or third intact knife.",
+      "approved_crops": [
+        [
+          0,
+          0,
+          1024,
+          768
+        ],
+        [
+          0,
+          768,
+          1024,
+          1536
+        ]
+      ]
+    },
+    {
+      "source": "../inputs/sheet-3.png",
+      "method": "generated_under_guidance",
+      "brief_file": "sheet-3-brief.md",
+      "prompt_file": "sheet-3-prompt.txt",
+      "status": "pass",
+      "brief_sha256": "1c20e92c19f4fd5d84774f1862b5199115875c08fece08b6f6b4140cd3a7c55f",
+      "prompt_sha256": "ade70f3dbea037b0089cade87196388bb50eff574b0b0c89ea11eaccc3ff93f1",
+      "sha256": "4d3519691dabfca93e644ae0bfa7704cc54e28fd3039f585919f10ae52fe0450",
+      "pixel_sha256": "8276e8af9a6919425971cdc6354cf91b79a94be61456a2d5724fd1c60f228ebc",
+      "evidence": "Actual atlas3 reviewed: woman shouts in corridor, raised hand and sound marks; man runs toward stairs and orange camera above. Bottom officer in cap holds suspect arm behind his back; phone alert symbol blank screen, no invented debt amount or legal sentence. Suspect far arm obscured by torso.",
+      "approved_crops": [
+        [
+          0,
+          0,
+          1024,
+          768
+        ],
+        [
+          0,
+          768,
+          1024,
+          1536
+        ]
+      ]
+    },
+    {
+      "source": "../inputs/cover.png",
+      "method": "composed_with_verified_layers",
+      "brief_file": "cover-brief.md",
+      "prompt_file": "cover-prompt.txt",
+      "status": "pass",
+      "sha256": "d94db86519b0f6095cadb30fc998e477eb7803ac4792ee1a10bfda0b4ba9a548",
+      "pixel_sha256": "96058729e32c62d90b2286ea57385381e2afcedff5b106b0f0993e6a95995e62",
+      "brief_sha256": "bb32fc0db5c53fcaea7c3c848a5c28915bdd8a04ba34858849cb1dc9728a748a",
+      "prompt_sha256": "33433f95f771404a991c80e186e147de0295c54dcc63f7e72bf440a022e7fb36",
+      "evidence": "Actually viewed full 1080x1920 cover: correct 未關上的門 title, reviewed style17 first panel and small 依來稿改編 label; no overlap, people and door fully visible."
+    }
+  ]
+}

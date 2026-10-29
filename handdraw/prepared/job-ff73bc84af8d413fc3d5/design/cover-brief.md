@@ -1,0 +1,1 @@
+Compose from actually viewed style17 first panel; accurate title 未關上的門 and small 依來稿改編 label. Clean 1080x1920 cover; no new generation or story change.
