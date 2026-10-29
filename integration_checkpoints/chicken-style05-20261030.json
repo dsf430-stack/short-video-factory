@@ -1,0 +1,23 @@
+{
+  "state": "VOICE_VERIFIED_VIDEO_PREPARATION_REQUIRED",
+  "topic": "手裡的那把米",
+  "style": "5",
+  "voice": {
+    "run_id": 40972170222,
+    "artifact_id": 12940752045,
+    "filename": "chicken_style05_068_fixed_20261030",
+    "duration": 24.24,
+    "sha256": "5c7745dfff193f568048b33caed1b74e415564f1abab49d98b6db9e48b0153ad",
+    "cache_hits": 1,
+    "voice": "zh-TW-HsiaoChenNeural",
+    "rate": "+20%",
+    "pitch": "+5Hz",
+    "boundary": "WordBoundary",
+    "full_decode": "PASS",
+    "subjective_listening": "UNCERTAIN"
+  },
+  "fix_sha": "785c37a4e8ae723489000cb2fddef90ab0c248ad",
+  "tests_sha": "5bca851127d188e5342fc3033ff26d28133bc9fd",
+  "tests_passed": 11,
+  "next": "Reuse verified complete narration and boundaries; create and visually validate official style5 images, activate original handdraw workflow, decode and deliver MP4. No image generation or film render has started."
+}
