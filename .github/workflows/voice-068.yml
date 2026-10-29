@@ -16,6 +16,12 @@ on:
         required: false
         default: ''
         type: string
+      boundary:
+        description: '字幕時間戳粒度'
+        required: false
+        default: SentenceBoundary
+        type: choice
+        options: [SentenceBoundary, WordBoundary]
 permissions:
   contents: read
 jobs:
@@ -54,6 +60,7 @@ jobs:
           NARRATION: ${{ inputs.narration }}
           OUTPUT_NAME: ${{ inputs.filename }}
           VOICE_RATE: ${{ inputs.rate }}
+          VOICE_BOUNDARY: ${{ inputs.boundary || 'SentenceBoundary' }}
         run: |
           python - <<'PY'
           import os, pathlib, re
@@ -69,7 +76,7 @@ jobs:
           set -euxo pipefail
           rate_args=()
           if [ -n "$VOICE_RATE" ]; then rate_args+=("--rate=$VOICE_RATE"); fi
-          python smart_voice/generate_voice.py --voice-id 068 --text-file smart_voice/output/narration.txt --output "smart_voice/output/${OUTPUT_NAME}.mp3" "${rate_args[@]}"
+          python smart_voice/generate_voice.py --voice-id 068 --text-file smart_voice/output/narration.txt --output "smart_voice/output/${OUTPUT_NAME}.mp3" --boundary "$VOICE_BOUNDARY" "${rate_args[@]}"
       - name: Save completed chunks even after a later failure
         if: always()
         uses: actions/cache/save@v4
