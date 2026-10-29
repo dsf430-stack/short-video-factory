@@ -1,0 +1,82 @@
+{
+  "dependency_sha256": "fbbfd33d70f729011b6a6bc232851c116cd4a89ead2adea4462888a6ce26fc1a",
+  "style_sha256": "90302b1539a74f07551bbd82e7f657afd2747e11e82997566e51d56c6d03d2e1",
+  "images": [
+    {
+      "source": "../inputs/sheet-a.png",
+      "method": "generated_under_guidance",
+      "brief_file": "sheet-a-brief.md",
+      "prompt_file": "sheet-a-prompt.txt",
+      "status": "pass",
+      "brief_sha256": "2c14e1d2e30c81fb3731fb68455f67c72f1992f913be215745afc3a2afd5e536",
+      "prompt_sha256": "9b1192511befe13012d16e35844e88f27bb7e069ab181e01ff1ed190d596fde8",
+      "sha256": "0d5aea73e1155914d4412b862ae661f89286619465865eb6494434ac05819374",
+      "pixel_sha256": "31f6d9dcdd3d9aff081e1238bbea3508c703550616340eb2032f757bb99a75e6",
+      "evidence": "Actual top A: blue-shirt black-haired man reaches both empty palms toward right-running white hen. Human and hen are separated; legs show running poses. Sweat and motion marks visible. Thin chin/collar junction reserved as neck contour. Actual bottom A: blue-shirt man walks left with extended screen-right palm holding visible yellow rice. White hen to right faces left and looks up toward rice. Both arms and legs visible; neck is a short collar/chin boundary.",
+      "approved_crops": [
+        [
+          0,
+          0,
+          1024,
+          768
+        ],
+        [
+          0,
+          768,
+          1024,
+          1536
+        ]
+      ]
+    },
+    {
+      "source": "../inputs/sheet-b.png",
+      "method": "generated_under_guidance",
+      "brief_file": "sheet-b-brief.md",
+      "prompt_file": "sheet-b-prompt.txt",
+      "status": "pass",
+      "brief_sha256": "a7d4b5affd1e9506f8d57be42f4c63100a02ae4c72774fde1faca1aa651f66fe",
+      "prompt_sha256": "0719cc65b6479d1db7b1cb90cccc81ae5ab9f0a61d01762b107c3867b019e64b",
+      "sha256": "db4c0f20b98b8393df1f45f626de13ef9a4ea1adb50f2dcea5099ab3f253f877",
+      "pixel_sha256": "f4b1482f62c39d57bbcfe90f64849f40b34610b2d85b1c617ad34e48d38f98a2",
+      "evidence": "Actual top-left B: man tilts chin up with closed eyes and smug smile; screen-right palm holds yellow rice. Hen faces rice to left, eye directed toward palm. Other hand rests at hip; forearm separated from torso by visible contour. Actual top-right B: man shows visibly empty raised palm and sad face. Hen faces right, away from man; motion marks behind hen. Both human arms and legs visible. Actual bottom-left B: man has two lowered empty hands and sad face. Round-bellied hen moves right away from him; one egg is visibly on ground behind hen. No food remains in hands. Actual bottom-right B: man strides left holding yellow rice high in screen-left palm. Hen on right faces left, looks up and follows; no grain falling or hen eating. Other arm hangs down; neck junction visible.",
+      "approved_crops": [
+        [
+          0,
+          0,
+          768,
+          512
+        ],
+        [
+          768,
+          0,
+          1536,
+          512
+        ],
+        [
+          0,
+          512,
+          768,
+          1024
+        ],
+        [
+          768,
+          512,
+          1536,
+          1024
+        ]
+      ]
+    },
+    {
+      "source": "../inputs/cover.png",
+      "method": "composed_with_verified_layers",
+      "brief_file": "cover-brief.md",
+      "prompt_file": "cover-prompt.txt",
+      "status": "pass",
+      "brief_sha256": "2eaf9e45f45b6f171350609b20f07fe472b513321150cad51935ec2fe1d8f964",
+      "prompt_sha256": "d934de930ad20238ee47b452d52d8a802f95db05c7148f04a1ed88fc2da37644",
+      "sha256": "905d15c81afa5b68bdc004b2552376d0cd6bcfa0aa32b388fc4c5c226388d22f",
+      "pixel_sha256": "b0865e54f5284c70f75296738432a059994a1bf5aabd8c9cbcb46b7429f93905",
+      "evidence": "Actual composed cover viewed: exact Traditional Chinese title 手裡的那把米, blue-shirt man holds visible yellow rice, white hen looks toward his hand; title does not overlap figures, no extra text."
+    }
+  ]
+}

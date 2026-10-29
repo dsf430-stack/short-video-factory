@@ -1,0 +1,153 @@
+{
+  "source": "/workspace/scratch/8d0587600adf/sweety-official/skills/sweety-handdraw-video/dependencies/hand-drawn-styles",
+  "styles_sha256": "57999b09875d384a7abcc28984f5e827f4baff88d556634a82c0ddda65d46d68",
+  "styles": [
+    {
+      "id": "1",
+      "name": "极简黑白线条讲解漫画(xkcd 火柴人)",
+      "preview": "https://github.com/threerocks/sweety-handdraw-video/releases/download/v1.2/assets--style-previews--1.jpg",
+      "recipe": "recipes/1.md",
+      "recipe_sha256": "a9c930cb001f5db0403723ad85cb271590732b92433e7eb76d808419502eb3ef"
+    },
+    {
+      "id": "2",
+      "name": "蜡笔童涂(5岁小孩坏画)",
+      "preview": "https://github.com/threerocks/sweety-handdraw-video/releases/download/v1.2/assets--style-previews--2.jpg",
+      "recipe": "recipes/2.md",
+      "recipe_sha256": "d23e8fb186ed8d48c3605f04420550eaf355ae80a5815c7b92e63590064d613a"
+    },
+    {
+      "id": "3",
+      "name": "吉卜力风",
+      "preview": "https://github.com/threerocks/sweety-handdraw-video/releases/download/v1.2/assets--style-previews--3.jpg",
+      "recipe": "recipes/3.md",
+      "recipe_sha256": "54f2987735b3e389d371324cefb67785e0e212a4ff4bf433c5ff09833ae4d2f1"
+    },
+    {
+      "id": "3.1",
+      "name": "蜡笔童涂-潦草自画版",
+      "preview": "https://github.com/threerocks/sweety-handdraw-video/releases/download/v1.2/assets--style-previews--3.1.jpg",
+      "recipe": "recipes/3.1.md",
+      "recipe_sha256": "a3e90f27e39ceb3cc763f448a8b6a288641b55df5354bd52eb000462c5c5cb98"
+    },
+    {
+      "id": "4",
+      "name": "小豆人黑色涂鸦信息图",
+      "preview": "https://github.com/threerocks/sweety-handdraw-video/releases/download/v1.2/assets--style-previews--4.jpg",
+      "recipe": "recipes/4.md",
+      "recipe_sha256": "2d96a21c16f323dd71f57e7ee1a19173fe2b2ae85caeec7de5a9759fd14d4960"
+    },
+    {
+      "id": "5",
+      "name": "MS Paint 烂涂鸦(the worse, the better)",
+      "preview": "https://github.com/threerocks/sweety-handdraw-video/releases/download/v1.2/assets--style-previews--5.jpg",
+      "recipe": "recipes/5.md",
+      "recipe_sha256": "e5dfc13dd61707661e96bc2f1b33bc30dee57510692bf7e1dadf7dc6e001c8eb"
+    },
+    {
+      "id": "6",
+      "name": "圆珠笔单线涂鸦(scribble)",
+      "preview": "https://github.com/threerocks/sweety-handdraw-video/releases/download/v1.2/assets--style-previews--6.jpg",
+      "recipe": "recipes/6.md",
+      "recipe_sha256": "425e05267345137d12c1a55f0b94a24c712994e09aca546b74956ad03c4afbd0"
+    },
+    {
+      "id": "7",
+      "name": "蜡笔实拍(真·儿童手涂纸张)",
+      "preview": "https://github.com/threerocks/sweety-handdraw-video/releases/download/v1.2/assets--style-previews--7.jpg",
+      "recipe": "recipes/7.md",
+      "recipe_sha256": "a6c9864c8609ac8f10581cc4426c637e0d76bf98ff7961ac0df8571e50a36cff"
+    },
+    {
+      "id": "8",
+      "name": "水墨写意",
+      "preview": "https://github.com/threerocks/sweety-handdraw-video/releases/download/v1.2/assets--style-previews--8.jpg",
+      "recipe": "recipes/8.md",
+      "recipe_sha256": "ebbb9048d8f0353a6039d6e3418c390cf6ba3081c152f37d56866824c385a07f"
+    },
+    {
+      "id": "9",
+      "name": "复古像素",
+      "preview": "https://github.com/threerocks/sweety-handdraw-video/releases/download/v1.2/assets--style-previews--9.jpg",
+      "recipe": "recipes/9.md",
+      "recipe_sha256": "9a4dd91730ce5417988c174501a6007ffc497a2de0354524536ce2f32721f343"
+    },
+    {
+      "id": "10",
+      "name": "情绪叙事淡彩速写",
+      "preview": "https://github.com/threerocks/sweety-handdraw-video/releases/download/v1.2/assets--style-previews--10.jpg",
+      "recipe": "recipes/10.md",
+      "recipe_sha256": "1f8b7da29c2bb17272410b0ec9f72b6fa54326ec9cab172396cd7a467f4b31ef"
+    },
+    {
+      "id": "11",
+      "name": "二维水彩风格(复古动画概念稿)",
+      "preview": "https://github.com/threerocks/sweety-handdraw-video/releases/download/v1.2/assets--style-previews--11.jpg",
+      "recipe": "recipes/11.md",
+      "recipe_sha256": "a4a17b0c72ce68975ac7e501c60a482ecea95a2d7ff97d419ebadc6977c0678f"
+    },
+    {
+      "id": "12",
+      "name": "暖光童画(动画概念暖绘)",
+      "preview": "https://github.com/threerocks/sweety-handdraw-video/releases/download/v1.2/assets--style-previews--12.jpg",
+      "recipe": "recipes/12.md",
+      "recipe_sha256": "d4148eb1a148a3104fcf6757c98fc72474c1ad1ca8d6d9d257fa58723ff0aa26"
+    },
+    {
+      "id": "13",
+      "name": "北欧纸雕(paper-folk)",
+      "preview": "https://github.com/threerocks/sweety-handdraw-video/releases/download/v1.2/assets--style-previews--13.jpg",
+      "recipe": "recipes/13.md",
+      "recipe_sha256": "958a0efdae88cac30a831a7bbb925ebaeaca6b0ab8c2d1fa2388243d8985f903"
+    },
+    {
+      "id": "14",
+      "name": "北欧绘本水粉(nordic-storybook)",
+      "preview": "https://github.com/threerocks/sweety-handdraw-video/releases/download/v1.2/assets--style-previews--14.jpg",
+      "recipe": "recipes/14.md",
+      "recipe_sha256": "5ba929d2595021956ea0279e5089f8f0dbbf6723c771748a15d3b469cf5678ca"
+    },
+    {
+      "id": "15",
+      "name": "大鼻软偶(softnose-vinyl)",
+      "preview": "https://github.com/threerocks/sweety-handdraw-video/releases/download/v1.2/assets--style-previews--15.jpg",
+      "recipe": "recipes/15.md",
+      "recipe_sha256": "2531e925bd7ac09fcaf1da944d1cc24c4195b50657353353af57a2229fd12ed0"
+    },
+    {
+      "id": "16",
+      "name": "聚光水粉立绘(gouache-spotlight)",
+      "preview": "https://github.com/threerocks/sweety-handdraw-video/releases/download/v1.2/assets--style-previews--16.jpg",
+      "recipe": "recipes/16.md",
+      "recipe_sha256": "1e6644431c51e340e4531a3f14610448e6fa0138bd4b3f7f37b501ff7b34e61e"
+    },
+    {
+      "id": "17",
+      "name": "墨线绘本(inked-storybook)",
+      "preview": "https://github.com/threerocks/sweety-handdraw-video/releases/download/v1.2/assets--style-previews--17.jpg",
+      "recipe": "recipes/17.md",
+      "recipe_sha256": "7fe95f44b36f1e8fc6e47d6ba42eacafd4e87e1fa376123306140057d4e07936"
+    },
+    {
+      "id": "18",
+      "name": "暖色扁平绘本(warm-flat-storybook)",
+      "preview": "https://github.com/threerocks/sweety-handdraw-video/releases/download/v1.2/assets--style-previews--18.jpg",
+      "recipe": "recipes/18.md",
+      "recipe_sha256": "2070ea7384611b0f5d9affb43a455685ea3914524e2f6b6447c98f4849960a29"
+    },
+    {
+      "id": "19",
+      "name": "圆头红线极简童画(roundhead-redline)",
+      "preview": "https://github.com/threerocks/sweety-handdraw-video/releases/download/v1.2/assets--style-previews--19.jpg",
+      "recipe": "recipes/19.md",
+      "recipe_sha256": "a4a6a2b1c4ba10d95e44167ac3d09e34e68746fcbc6e1646394fea62a7a46ce5"
+    },
+    {
+      "id": "20",
+      "name": "暖黄墨线情绪小剧场(warm-yellow-ink-story)",
+      "preview": "https://github.com/threerocks/sweety-handdraw-video/releases/download/v1.2/assets--style-previews--20.jpg",
+      "recipe": "recipes/20.md",
+      "recipe_sha256": "19440504dc9e8895172d21c90b568b12126803278347e40cad39d614ee7f053c"
+    }
+  ]
+}

@@ -1,8 +1,8 @@
 {
-  "job_id": "job-ff73bc84af8d413fc3d5",
-  "topic": "未關上的門：小李入室搶劫案",
-  "seconds": 220,
-  "style": "17",
-  "bundle_sha256": "dade254c5dd247f407c5411fb1385d56a1b46de342fc00af6d38d291aba4aedb",
+  "job_id": "job-d1a4b483335ea56c4d35",
+  "topic": "手裡的那把米",
+  "seconds": 30,
+  "style": "5",
+  "bundle_sha256": "4d10160e030ba22cdd6e83539ebc9e5f6fc19355319308e45463a6158de0f3a7",
   "mode": "chatgpt-prepared-no-extra-model-api"
 }

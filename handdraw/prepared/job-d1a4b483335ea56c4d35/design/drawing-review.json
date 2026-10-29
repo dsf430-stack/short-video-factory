@@ -1,0 +1,144 @@
+{
+  "style_sha256": "90302b1539a74f07551bbd82e7f657afd2747e11e82997566e51d56c6d03d2e1",
+  "plan_sha256": "e18f1ac1d07b15b70af5455732ff0e0fcc9c719e9c42e3649287ffde23c79a41",
+  "illustrations": [
+    {
+      "plan_id": "empty_chase",
+      "status": "pass",
+      "source_sha256": "0d5aea73e1155914d4412b862ae661f89286619465865eb6494434ac05819374",
+      "crop": [
+        0,
+        0,
+        1024,
+        768
+      ],
+      "anatomy_and_occlusion": "Actual top A: blue-shirt black-haired man reaches both empty palms toward right-running white hen. Human and hen are separated; legs show running poses. Sweat and motion marks visible. Thin chin/collar junction reserved as neck contour.",
+      "part_boundaries": "Polygons manually traced from actual scene; screen arms and legs separated; head reserves narrow chin/collar neck region. Hen head, torso, legs separated. Remainder assigned to rice/egg/action strokes.",
+      "stroke_breaks": "Independent visible source contours; official builder checks disconnected paths and lifts.",
+      "outline_then_fill": "All contours precede ordered fills, unchanged source pixels.",
+      "spatial_order": "Human anatomical order then hen then residual props and motion strokes.",
+      "narrative_checks": [
+        {
+          "id": "empty_chase_action",
+          "status": "pass",
+          "evidence": "Actual top A: blue-shirt black-haired man reaches both empty palms toward right-running white hen. Human and hen are separated; legs show running poses. Sweat and motion marks visible. Thin chin/collar junction reserved as neck contour."
+        }
+      ]
+    },
+    {
+      "plan_id": "rice_follow",
+      "status": "pass",
+      "source_sha256": "0d5aea73e1155914d4412b862ae661f89286619465865eb6494434ac05819374",
+      "crop": [
+        0,
+        768,
+        1024,
+        1536
+      ],
+      "anatomy_and_occlusion": "Actual bottom A: blue-shirt man walks left with extended screen-right palm holding visible yellow rice. White hen to right faces left and looks up toward rice. Both arms and legs visible; neck is a short collar/chin boundary.",
+      "part_boundaries": "Polygons manually traced from actual scene; screen arms and legs separated; head reserves narrow chin/collar neck region. Hen head, torso, legs separated. Remainder assigned to rice/egg/action strokes.",
+      "stroke_breaks": "Independent visible source contours; official builder checks disconnected paths and lifts.",
+      "outline_then_fill": "All contours precede ordered fills, unchanged source pixels.",
+      "spatial_order": "Human anatomical order then hen then residual props and motion strokes.",
+      "narrative_checks": [
+        {
+          "id": "rice_follow_action",
+          "status": "pass",
+          "evidence": "Actual bottom A: blue-shirt man walks left with extended screen-right palm holding visible yellow rice. White hen to right faces left and looks up toward rice. Both arms and legs visible; neck is a short collar/chin boundary."
+        }
+      ]
+    },
+    {
+      "plan_id": "rice_attention",
+      "status": "pass",
+      "source_sha256": "db4c0f20b98b8393df1f45f626de13ef9a4ea1adb50f2dcea5099ab3f253f877",
+      "crop": [
+        0,
+        0,
+        768,
+        512
+      ],
+      "anatomy_and_occlusion": "Actual top-left B: man tilts chin up with closed eyes and smug smile; screen-right palm holds yellow rice. Hen faces rice to left, eye directed toward palm. Other hand rests at hip; forearm separated from torso by visible contour.",
+      "part_boundaries": "Polygons manually traced from actual scene; screen arms and legs separated; head reserves narrow chin/collar neck region. Hen head, torso, legs separated. Remainder assigned to rice/egg/action strokes.",
+      "stroke_breaks": "Independent visible source contours; official builder checks disconnected paths and lifts.",
+      "outline_then_fill": "All contours precede ordered fills, unchanged source pixels.",
+      "spatial_order": "Human anatomical order then hen then residual props and motion strokes.",
+      "narrative_checks": [
+        {
+          "id": "rice_attention_action",
+          "status": "pass",
+          "evidence": "Actual top-left B: man tilts chin up with closed eyes and smug smile; screen-right palm holds yellow rice. Hen faces rice to left, eye directed toward palm. Other hand rests at hip; forearm separated from torso by visible contour."
+        }
+      ]
+    },
+    {
+      "plan_id": "empty_palm",
+      "status": "pass",
+      "source_sha256": "db4c0f20b98b8393df1f45f626de13ef9a4ea1adb50f2dcea5099ab3f253f877",
+      "crop": [
+        768,
+        0,
+        1536,
+        512
+      ],
+      "anatomy_and_occlusion": "Actual top-right B: man shows visibly empty raised palm and sad face. Hen faces right, away from man; motion marks behind hen. Both human arms and legs visible.",
+      "part_boundaries": "Polygons manually traced from actual scene; screen arms and legs separated; head reserves narrow chin/collar neck region. Hen head, torso, legs separated. Remainder assigned to rice/egg/action strokes.",
+      "stroke_breaks": "Independent visible source contours; official builder checks disconnected paths and lifts.",
+      "outline_then_fill": "All contours precede ordered fills, unchanged source pixels.",
+      "spatial_order": "Human anatomical order then hen then residual props and motion strokes.",
+      "narrative_checks": [
+        {
+          "id": "empty_palm_action",
+          "status": "pass",
+          "evidence": "Actual top-right B: man shows visibly empty raised palm and sad face. Hen faces right, away from man; motion marks behind hen. Both human arms and legs visible."
+        }
+      ]
+    },
+    {
+      "plan_id": "fed_departure",
+      "status": "pass",
+      "source_sha256": "db4c0f20b98b8393df1f45f626de13ef9a4ea1adb50f2dcea5099ab3f253f877",
+      "crop": [
+        0,
+        512,
+        768,
+        1024
+      ],
+      "anatomy_and_occlusion": "Actual bottom-left B: man has two lowered empty hands and sad face. Round-bellied hen moves right away from him; one egg is visibly on ground behind hen. No food remains in hands.",
+      "part_boundaries": "Polygons manually traced from actual scene; screen arms and legs separated; head reserves narrow chin/collar neck region. Hen head, torso, legs separated. Remainder assigned to rice/egg/action strokes.",
+      "stroke_breaks": "Independent visible source contours; official builder checks disconnected paths and lifts.",
+      "outline_then_fill": "All contours precede ordered fills, unchanged source pixels.",
+      "spatial_order": "Human anatomical order then hen then residual props and motion strokes.",
+      "narrative_checks": [
+        {
+          "id": "fed_departure_action",
+          "status": "pass",
+          "evidence": "Actual bottom-left B: man has two lowered empty hands and sad face. Round-bellied hen moves right away from him; one egg is visibly on ground behind hen. No food remains in hands."
+        }
+      ]
+    },
+    {
+      "plan_id": "rice_display",
+      "status": "pass",
+      "source_sha256": "db4c0f20b98b8393df1f45f626de13ef9a4ea1adb50f2dcea5099ab3f253f877",
+      "crop": [
+        768,
+        512,
+        1536,
+        1024
+      ],
+      "anatomy_and_occlusion": "Actual bottom-right B: man strides left holding yellow rice high in screen-left palm. Hen on right faces left, looks up and follows; no grain falling or hen eating. Other arm hangs down; neck junction visible.",
+      "part_boundaries": "Polygons manually traced from actual scene; screen arms and legs separated; head reserves narrow chin/collar neck region. Hen head, torso, legs separated. Remainder assigned to rice/egg/action strokes.",
+      "stroke_breaks": "Independent visible source contours; official builder checks disconnected paths and lifts.",
+      "outline_then_fill": "All contours precede ordered fills, unchanged source pixels.",
+      "spatial_order": "Human anatomical order then hen then residual props and motion strokes.",
+      "narrative_checks": [
+        {
+          "id": "rice_display_action",
+          "status": "pass",
+          "evidence": "Actual bottom-right B: man strides left holding yellow rice high in screen-left palm. Hen on right faces left, looks up and follows; no grain falling or hen eating. Other arm hangs down; neck junction visible."
+        }
+      ]
+    }
+  ]
+}

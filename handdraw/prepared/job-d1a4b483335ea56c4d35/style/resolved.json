@@ -1,0 +1,16 @@
+{
+  "status": "resolved",
+  "mode": "catalog",
+  "catalog_id": "5",
+  "style_name": "MS Paint 烂涂鸦(the worse, the better)",
+  "selection_sha256": "02f9aa0d79c4072f4e12aa975deb019dd1564958b328ff7c0268a881bbefbbd7",
+  "recipe_sha256": "e5dfc13dd61707661e96bc2f1b33bc30dee57510692bf7e1dadf7dc6e001c8eb",
+  "rationale": "Explicit user selection.",
+  "style_spec": {
+    "line": "歪扭抖動斷續鼠標線條",
+    "palette": "粗糙純色色塊，故意出界",
+    "shading": "無寫實光影或漸變",
+    "texture": "像素鋸齒低品質數位塗鴉",
+    "background": "純白背景，隨意構圖"
+  }
+}

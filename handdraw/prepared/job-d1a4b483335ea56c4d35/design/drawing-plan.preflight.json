@@ -1,0 +1,13 @@
+{
+  "status": "ready_for_generation",
+  "plan_sha256": "e18f1ac1d07b15b70af5455732ff0e0fcc9c719e9c42e3649287ffde23c79a41",
+  "style_sha256": "90302b1539a74f07551bbd82e7f657afd2747e11e82997566e51d56c6d03d2e1",
+  "illustrations": [
+    "empty_chase",
+    "rice_follow",
+    "rice_attention",
+    "empty_palm",
+    "fed_departure",
+    "rice_display"
+  ]
+}

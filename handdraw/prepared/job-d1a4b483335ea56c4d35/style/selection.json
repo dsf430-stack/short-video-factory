@@ -1,0 +1,6 @@
+{
+  "mode": "catalog",
+  "catalog_id": "5",
+  "confirmation": "explicit_user_request",
+  "evidence": "User chose 5, then confirmed production and requested continuation."
+}
