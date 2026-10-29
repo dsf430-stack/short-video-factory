@@ -11,6 +11,11 @@ on:
         required: false
         default: 'voice-068'
         type: string
+      rate:
+        description: '僅本次已授權語速；留空保留068預設'
+        required: false
+        default: ''
+        type: string
 permissions:
   contents: read
 jobs:
@@ -48,6 +53,7 @@ jobs:
         env:
           NARRATION: ${{ inputs.narration }}
           OUTPUT_NAME: ${{ inputs.filename }}
+          VOICE_RATE: ${{ inputs.rate }}
         run: |
           python - <<'PY'
           import os, pathlib, re
@@ -61,7 +67,9 @@ jobs:
           pathlib.Path('smart_voice/output/narration.txt').write_text(text,encoding='utf-8')
           PY
           set -euxo pipefail
-          python smart_voice/generate_voice.py --voice-id 068 --text-file smart_voice/output/narration.txt --output "smart_voice/output/${OUTPUT_NAME}.mp3"
+          rate_args=()
+          if [ -n "$VOICE_RATE" ]; then rate_args+=("--rate=$VOICE_RATE"); fi
+          python smart_voice/generate_voice.py --voice-id 068 --text-file smart_voice/output/narration.txt --output "smart_voice/output/${OUTPUT_NAME}.mp3" "${rate_args[@]}"
       - name: Save completed chunks even after a later failure
         if: always()
         uses: actions/cache/save@v4

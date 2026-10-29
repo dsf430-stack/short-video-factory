@@ -3,6 +3,7 @@ import importlib.util
 import tempfile
 import unittest
 import ssl
+from unittest.mock import AsyncMock, patch
 import aiohttp
 from pathlib import Path
 
@@ -12,6 +13,21 @@ spec.loader.exec_module(voice)
 
 
 class NarrationTests(unittest.TestCase):
+    def test_task_rate_reaches_synthesis_without_mutating_068(self):
+        original = dict(voice.VOICES['068'])
+        probe = AsyncMock(side_effect=RuntimeError('offline synthesis probe'))
+        with tempfile.TemporaryDirectory() as directory, patch.object(voice, 'get_chunk', probe):
+            with self.assertRaisesRegex(RuntimeError, 'offline synthesis probe'):
+                asyncio.run(voice.synthesize('你好。', str(Path(directory) / 'test.mp3'), '068', rate='-27%'))
+        self.assertEqual(probe.call_args.args[1]['rate'], '-27%')
+        self.assertEqual(probe.call_args.args[1]['voice'], original['voice'])
+        self.assertEqual(probe.call_args.args[1]['pitch'], original['pitch'])
+        self.assertEqual(voice.VOICES['068'], original)
+
+    def test_invalid_task_rate_rejected_before_network(self):
+        with self.assertRaisesRegex(ValueError, 'signed integer'):
+            asyncio.run(voice.synthesize('你好。', '/tmp/unused-rate-test.mp3', '068', rate='-27.5%'))
+
     def test_chunks_preserve_every_character_and_limit(self):
         text = ('這是一段中文旁白。' * 45) + '最後一句不能遺失。'
         chunks = voice.split_text(text)

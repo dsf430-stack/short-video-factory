@@ -119,11 +119,16 @@ def main(args):
    mp3=narration.with_suffix('.mp3')
    from voice_cache import valid_voice_cache, invalidate_voice_cache
    expected=json.loads((REPO/'smart_voice/voices.json').read_text())['voices']['068']
+   voice_rate=story.get('voice_rate')
+   if voice_rate is not None:
+    if not story.get('voice_rate_authorization') or not re.fullmatch(r'[+-]\d+%',voice_rate):raise ValueError('Task-specific voice rate requires explicit authorization and a signed integer percentage')
+    expected['rate']=voice_rate
    boundary=story.get('voice_boundary','SentenceBoundary')
    cached_boundary=json.loads(mp3.with_suffix('.json').read_text()).get('boundary','SentenceBoundary') if mp3.with_suffix('.json').exists() else None
    if not valid_voice_cache(mp3,text_hash,expected,text) or cached_boundary != boundary:
     invalidate_voice_cache(mp3)
-    run(sys.executable,REPO/'smart_voice/generate_voice.py','--voice-id','068','--text-file',narration,'--output',mp3,'--boundary',boundary)
+    rate_args=['--rate='+voice_rate] if voice_rate is not None else []
+    run(sys.executable,REPO/'smart_voice/generate_voice.py','--voice-id','068','--text-file',narration,'--output',mp3,'--boundary',boundary,*rate_args)
    else:
     print('VOICE_CACHE_HIT',mp3.name,flush=True)
    if not valid_voice_cache(mp3,text_hash,expected,text):raise ValueError('Generated voice artifacts failed hash/preset/subtitle checks')

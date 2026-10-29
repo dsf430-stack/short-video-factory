@@ -172,13 +172,17 @@ def timestamp(seconds: float) -> str:
     return f'{h:02}:{m:02}:{s:02},{ms:03}'
 
 
-async def synthesize(text: str, output: str, voice_id: str, boundary: str = 'SentenceBoundary') -> None:
+async def synthesize(text: str, output: str, voice_id: str, boundary: str = 'SentenceBoundary', rate: str | None = None) -> None:
     text = text.strip()
     if not text:
         raise ValueError('Narration text is empty')
     if voice_id not in VOICES:
         raise ValueError(f'Unknown voice id: {voice_id}')
-    preset = VOICES[voice_id]
+    preset = dict(VOICES[voice_id])
+    if rate is not None:
+        if not re.fullmatch(r'[+-]\d+%', rate):
+            raise ValueError('Rate must be a signed integer percentage')
+        preset['rate'] = rate
     if re.search(r'[\u3400-\u9fff]', text) and not any(
         lang.startswith('zh') for lang in preset['languages']
     ):
@@ -274,6 +278,7 @@ def main() -> int:
     parser.add_argument('--topic', default='')
     parser.add_argument('--language', default='auto')
     parser.add_argument('--boundary', choices=['SentenceBoundary', 'WordBoundary'], default='SentenceBoundary')
+    parser.add_argument('--rate', help='Task-specific, explicitly authorized speaking rate; saved presets are unchanged')
     args = parser.parse_args()
     try:
         text = args.text if args.text is not None else Path(args.text_file).read_text(encoding='utf-8-sig')
@@ -281,7 +286,7 @@ def main() -> int:
         if language == 'auto':
             language = 'zh' if re.search(r'[\u3400-\u9fff]', text) else 'en'
         voice_id = select_voice(args.topic, language) if args.voice_id == 'auto' else args.voice_id
-        asyncio.run(synthesize(text, args.output, voice_id, args.boundary))
+        asyncio.run(synthesize(text, args.output, voice_id, args.boundary, args.rate))
     except Exception as error:
         output = Path(args.output)
         output.parent.mkdir(parents=True, exist_ok=True)
