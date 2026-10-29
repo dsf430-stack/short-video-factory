@@ -1,0 +1,10 @@
+{
+  "state": "VOICE_MEASUREMENT_RUNNING",
+  "job_id": "job-fda397e8eb3b11fe99ec",
+  "voice_run_id": 40824029517,
+  "voice_request_commit": "82411f2aa11578d780b94f9ee3da91436847f95f",
+  "original_script_sha256": "47e11239bde055906751f3a30b7b87fb375a2d77e38899f6f2c3da14859f3817",
+  "target_seconds": 220,
+  "script_changes": [],
+  "next": "Read measured full voice duration; resolve any conflict with fixed 220 seconds without rewriting, truncation or time stretching."
+}
