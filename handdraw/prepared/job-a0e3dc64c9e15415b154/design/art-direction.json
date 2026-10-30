@@ -11,7 +11,8 @@
       "brief_sha256": "4ae84ebfb581fccbf6d42abe32574cb967598c08b2fde1656031d549fd48cf61",
       "prompt_sha256": "e57f526adc17b0080dfcd2fcc27d88f68ff07d474b3204aa79bce347b66d793e",
       "sha256": "314daf1a8d38accc4e75d6aa486a7bed977d5379cfd938d23517b6415cc65e27",
-      "evidence": "已實際查看分格原圖，圓頭單線男子在左張開空掌追逐；右側母雞面朝右跑離，雙方分離。雙臂向前、腿呈跑步姿態。；男子朝左行走，右方伸出掌心可見三顆空心米粒；右側母雞朝左抬頭跟隨，雞嘴未接觸米。"
+      "evidence": "已實際查看分格原圖，圓頭單線男子在左張開空掌追逐；右側母雞面朝右跑離，雙方分離。雙臂向前、腿呈跑步姿態。；男子朝左行走，右方伸出掌心可見三顆空心米粒；右側母雞朝左抬頭跟隨，雞嘴未接觸米。",
+      "pixel_sha256": "4cea9a49872dff41f22c863e540ec33e452d69b636d98e5a73b24c07b5a0ef77"
     },
     {
       "source": "../inputs/sheet-b.png",
@@ -22,7 +23,8 @@
       "brief_sha256": "a4b1e031cffd3126b3e50b4267bb4aa99d2cd52ad54be17c35656112d6774af8",
       "prompt_sha256": "8767e112a447f43052e8b6480928c79dcd9bfcff14c4972c537957c5245d0472",
       "sha256": "05c6872dce8e5ed64648c14d0265045a6accb1365008de36143cd9d26b8c5578",
-      "evidence": "已實際查看分格原圖，左上男子昂頭閉眼微笑，右手米粒清楚；右側母雞仰頭朝向米而非男子臉，兩者有留白。；右上男子攤開空掌，母雞背向男子朝右走離；空手與雞的離開方向可見。；左下男子掌心空，右側母雞遠離男子，身後一顆完整雞蛋清楚；吃飽為旁白敘事，沒有聲稱圖像證明生理狀態。；右下男子左行、掌心高舉米粒，母雞跟在右側朝米仰頭，雞嘴與米分離，沒有撒米。"
+      "evidence": "已實際查看分格原圖，左上男子昂頭閉眼微笑，右手米粒清楚；右側母雞仰頭朝向米而非男子臉，兩者有留白。；右上男子攤開空掌，母雞背向男子朝右走離；空手與雞的離開方向可見。；左下男子掌心空，右側母雞遠離男子，身後一顆完整雞蛋清楚；吃飽為旁白敘事，沒有聲稱圖像證明生理狀態。；右下男子左行、掌心高舉米粒，母雞跟在右側朝米仰頭，雞嘴與米分離，沒有撒米。",
+      "pixel_sha256": "88b3bf0cf582846bd5a6e4c6af1185297d08050f1614f79d5530e83cd67f140c"
     },
     {
       "source": "../inputs/cover.png",
@@ -33,7 +35,8 @@
       "brief_sha256": "72ccc59fd06a284072a6a48a0c12957de4ad5633f9ccb8a901640462aa1a87c4",
       "prompt_sha256": "bc12d2d38f7f9e2ffb205c6653b27b4d4f5b8bf2fd44ef779cddf87617666693",
       "sha256": "1e8283a0cb4e9eba1c8aa772c320ed0f5ef2bec4519504df4e246c9b57b2bad3",
-      "evidence": "實際查看1080x1920封面，標題「手裡的那把米」繁中正確、未切邊，持米跟雞圖完整置中，無重疊。"
+      "evidence": "實際查看1080x1920封面，標題「手裡的那把米」繁中正確、未切邊，持米跟雞圖完整置中，無重疊。",
+      "pixel_sha256": "ed2d131c28550e4ff172d5e322518dcfbcbc9dab573ac003c90afb2b5a6e6913"
     },
     {
       "source": "../inputs/empty_chase.png",
@@ -44,7 +47,8 @@
       "brief_sha256": "4ae84ebfb581fccbf6d42abe32574cb967598c08b2fde1656031d549fd48cf61",
       "prompt_sha256": "e57f526adc17b0080dfcd2fcc27d88f68ff07d474b3204aa79bce347b66d793e",
       "sha256": "74b5cf9998addacae2a57ed5e98ba2da4fa6e6d9f9007cbea1b3796ce28158d6",
-      "evidence": "圓頭單線男子在左張開空掌追逐；右側母雞面朝右跑離，雙方分離。雙臂向前、腿呈跑步姿態。"
+      "evidence": "圓頭單線男子在左張開空掌追逐；右側母雞面朝右跑離，雙方分離。雙臂向前、腿呈跑步姿態。",
+      "pixel_sha256": "a677a7463b2c41b5985b2f3d3b52fdd004e1da5e108977f7edbda163ee486d4d"
     },
     {
       "source": "../inputs/rice_follow.png",
@@ -55,7 +59,8 @@
       "brief_sha256": "4ae84ebfb581fccbf6d42abe32574cb967598c08b2fde1656031d549fd48cf61",
       "prompt_sha256": "e57f526adc17b0080dfcd2fcc27d88f68ff07d474b3204aa79bce347b66d793e",
       "sha256": "b0648c2a0c5fe3e39dd393919fe38df00e7b1885e476044d3ba8902352a65040",
-      "evidence": "男子朝左行走，右方伸出掌心可見三顆空心米粒；右側母雞朝左抬頭跟隨，雞嘴未接觸米。"
+      "evidence": "男子朝左行走，右方伸出掌心可見三顆空心米粒；右側母雞朝左抬頭跟隨，雞嘴未接觸米。",
+      "pixel_sha256": "0468298874e6641175ece5127621973dd1fbd03cd78c655c45b9080f766bdd8c"
     },
     {
       "source": "../inputs/rice_attention.png",
@@ -66,7 +71,8 @@
       "brief_sha256": "a4b1e031cffd3126b3e50b4267bb4aa99d2cd52ad54be17c35656112d6774af8",
       "prompt_sha256": "8767e112a447f43052e8b6480928c79dcd9bfcff14c4972c537957c5245d0472",
       "sha256": "bf69b314000479029002e4d164f4484200f6343fc2d632bb1a11f3f8a062dea3",
-      "evidence": "左上男子昂頭閉眼微笑，右手米粒清楚；右側母雞仰頭朝向米而非男子臉，兩者有留白。"
+      "evidence": "左上男子昂頭閉眼微笑，右手米粒清楚；右側母雞仰頭朝向米而非男子臉，兩者有留白。",
+      "pixel_sha256": "fd68979065fcb1f39a16d6f63f0badb0587472c901cfdc1ee7cc5f7e38717dde"
     },
     {
       "source": "../inputs/empty_palm.png",
@@ -77,7 +83,8 @@
       "brief_sha256": "a4b1e031cffd3126b3e50b4267bb4aa99d2cd52ad54be17c35656112d6774af8",
       "prompt_sha256": "8767e112a447f43052e8b6480928c79dcd9bfcff14c4972c537957c5245d0472",
       "sha256": "2084d64fa6c74f648e4f7aa9f371a14d81a47000b25756d916f7ba5aab25717d",
-      "evidence": "右上男子攤開空掌，母雞背向男子朝右走離；空手與雞的離開方向可見。"
+      "evidence": "右上男子攤開空掌，母雞背向男子朝右走離；空手與雞的離開方向可見。",
+      "pixel_sha256": "faf657802fa63a5abe61eaa2501e1e0dcdec4f382ba80aef0c1e09172d418090"
     },
     {
       "source": "../inputs/fed_departure.png",
@@ -88,7 +95,8 @@
       "brief_sha256": "a4b1e031cffd3126b3e50b4267bb4aa99d2cd52ad54be17c35656112d6774af8",
       "prompt_sha256": "8767e112a447f43052e8b6480928c79dcd9bfcff14c4972c537957c5245d0472",
       "sha256": "4735b4bc8f1529a7c3f77ecd05042a0cbd67f09b8306a31e44dbb76c9dbfa185",
-      "evidence": "左下男子掌心空，右側母雞遠離男子，身後一顆完整雞蛋清楚；吃飽為旁白敘事，沒有聲稱圖像證明生理狀態。"
+      "evidence": "左下男子掌心空，右側母雞遠離男子，身後一顆完整雞蛋清楚；吃飽為旁白敘事，沒有聲稱圖像證明生理狀態。",
+      "pixel_sha256": "b1cecf153aaeb56da2d35dce06061c68791125b2cf9e59e119b2270bfd74a7b8"
     },
     {
       "source": "../inputs/rice_display.png",
@@ -99,7 +107,8 @@
       "brief_sha256": "a4b1e031cffd3126b3e50b4267bb4aa99d2cd52ad54be17c35656112d6774af8",
       "prompt_sha256": "8767e112a447f43052e8b6480928c79dcd9bfcff14c4972c537957c5245d0472",
       "sha256": "80df74ca08e82594b1079bd90a2a6fff108de311eac43b71dde354c172cf637c",
-      "evidence": "右下男子左行、掌心高舉米粒，母雞跟在右側朝米仰頭，雞嘴與米分離，沒有撒米。"
+      "evidence": "右下男子左行、掌心高舉米粒，母雞跟在右側朝米仰頭，雞嘴與米分離，沒有撒米。",
+      "pixel_sha256": "ef52c8f54acb98bc3a445cabe2b499a09741cfc3561f7b1001f8888264be6a97"
     }
   ]
 }
