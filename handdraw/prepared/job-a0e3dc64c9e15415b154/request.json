@@ -1,0 +1,21 @@
+{
+  "topic": "手裡的那把米",
+  "seconds": 30,
+  "style": "1",
+  "job_id": "job-a0e3dc64c9e15415b154",
+  "voice_id": "068",
+  "mode": "chatgpt-prepared-no-extra-model-api",
+  "script_sha256": "eca0d0878b029aaccfcf84d5ae4b1536c971dfdac334ca4ffa1ddc1e40b72893",
+  "state": "ASSETS_VALIDATED",
+  "required_files": [
+    "story.json",
+    "design.json",
+    "style/selection.json",
+    "style/resolved.json",
+    "design/art-direction.json",
+    "design/drawing-plan.json",
+    "design/drawing-plan.preflight.json",
+    "design/drawing-review.json",
+    "inputs/cover.png"
+  ]
+}

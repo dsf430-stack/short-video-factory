@@ -1,8 +1,8 @@
 {
-  "job_id": "job-d1a4b483335ea56c4d35",
+  "job_id": "job-a0e3dc64c9e15415b154",
   "topic": "手裡的那把米",
   "seconds": 30,
-  "style": "5",
-  "bundle_sha256": "4d10160e030ba22cdd6e83539ebc9e5f6fc19355319308e45463a6158de0f3a7",
+  "style": "1",
+  "bundle_sha256": "33c89ce78d15b163e4ffe36c92b30794e570e6fa6980c08b1c82cb224e364b5c",
   "mode": "chatgpt-prepared-no-extra-model-api"
 }

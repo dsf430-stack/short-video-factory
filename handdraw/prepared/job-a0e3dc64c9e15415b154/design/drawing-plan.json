@@ -1,0 +1,820 @@
+{
+  "illustrations": [
+    {
+      "id": "empty_chase",
+      "composition": "空手男子追一隻母雞，雙手攤開，雞朝遠離男子的方向逃跑。",
+      "drawability_reason": "Sparse thin black independent contours; stick human head/neck/torso/arms/legs and hen head/body/legs separately traced.",
+      "outline_strategy": "visible_source_ink",
+      "subjects": [
+        {
+          "id": "man",
+          "kind": "human",
+          "omitted_roles": {}
+        },
+        {
+          "id": "hen",
+          "kind": "animal"
+        },
+        {
+          "id": "props",
+          "kind": "object"
+        }
+      ],
+      "parts": [
+        {
+          "id": "empty_chase_head",
+          "subject": "man",
+          "role": "head",
+          "stroke_groups": [
+            "Independent visible head contour strokes, pen lifts at disconnected gaps."
+          ]
+        },
+        {
+          "id": "empty_chase_neck",
+          "subject": "man",
+          "role": "neck",
+          "stroke_groups": [
+            "Independent visible neck contour strokes, pen lifts at disconnected gaps."
+          ]
+        },
+        {
+          "id": "empty_chase_torso",
+          "subject": "man",
+          "role": "torso",
+          "stroke_groups": [
+            "Independent visible torso contour strokes, pen lifts at disconnected gaps."
+          ]
+        },
+        {
+          "id": "empty_chase_left_arm",
+          "subject": "man",
+          "role": "left_arm",
+          "stroke_groups": [
+            "Independent visible left_arm contour strokes, pen lifts at disconnected gaps."
+          ]
+        },
+        {
+          "id": "empty_chase_right_arm",
+          "subject": "man",
+          "role": "right_arm",
+          "stroke_groups": [
+            "Independent visible right_arm contour strokes, pen lifts at disconnected gaps."
+          ]
+        },
+        {
+          "id": "empty_chase_lower_body",
+          "subject": "man",
+          "role": "lower_body",
+          "stroke_groups": [
+            "Independent visible lower_body contour strokes, pen lifts at disconnected gaps."
+          ]
+        },
+        {
+          "id": "empty_chase_hen_head",
+          "subject": "hen",
+          "role": "head",
+          "stroke_groups": [
+            "Independent hen head contours."
+          ]
+        },
+        {
+          "id": "empty_chase_hen_torso",
+          "subject": "hen",
+          "role": "torso",
+          "stroke_groups": [
+            "Independent hen torso contours."
+          ]
+        },
+        {
+          "id": "empty_chase_hen_legs",
+          "subject": "hen",
+          "role": "legs",
+          "stroke_groups": [
+            "Independent hen legs contours."
+          ]
+        },
+        {
+          "id": "empty_chase_props",
+          "subject": "props",
+          "role": "props",
+          "stroke_groups": [
+            "Independent rice, egg or action marks; lift across gaps."
+          ]
+        }
+      ],
+      "outline_order": [
+        "empty_chase_head",
+        "empty_chase_neck",
+        "empty_chase_torso",
+        "empty_chase_left_arm",
+        "empty_chase_right_arm",
+        "empty_chase_lower_body",
+        "empty_chase_hen_head",
+        "empty_chase_hen_torso",
+        "empty_chase_hen_legs",
+        "empty_chase_props"
+      ],
+      "fill_order": [
+        "empty_chase_head",
+        "empty_chase_neck",
+        "empty_chase_torso",
+        "empty_chase_left_arm",
+        "empty_chase_right_arm",
+        "empty_chase_lower_body",
+        "empty_chase_hen_head",
+        "empty_chase_hen_torso",
+        "empty_chase_hen_legs",
+        "empty_chase_props"
+      ],
+      "spatial_order": "top_to_bottom_left_to_right",
+      "order_exception": "Draw the human anatomy first, hen second, props and motion marks last to keep narrative focal order.",
+      "narrative_requirements": [
+        {
+          "id": "empty_chase_action",
+          "narration_quote": "兩手空空去追雞，雞就會到處跑，",
+          "observable": "空手男子追一隻母雞，雙手攤開，雞朝遠離男子的方向逃跑。"
+        }
+      ]
+    },
+    {
+      "id": "rice_follow",
+      "composition": "同一男子向前行走，伸出的掌心清楚有米，母雞朝掌心靠近。",
+      "drawability_reason": "Sparse thin black independent contours; stick human head/neck/torso/arms/legs and hen head/body/legs separately traced.",
+      "outline_strategy": "visible_source_ink",
+      "subjects": [
+        {
+          "id": "man",
+          "kind": "human",
+          "omitted_roles": {}
+        },
+        {
+          "id": "hen",
+          "kind": "animal"
+        },
+        {
+          "id": "props",
+          "kind": "object"
+        }
+      ],
+      "parts": [
+        {
+          "id": "rice_follow_head",
+          "subject": "man",
+          "role": "head",
+          "stroke_groups": [
+            "Independent visible head contour strokes, pen lifts at disconnected gaps."
+          ]
+        },
+        {
+          "id": "rice_follow_neck",
+          "subject": "man",
+          "role": "neck",
+          "stroke_groups": [
+            "Independent visible neck contour strokes, pen lifts at disconnected gaps."
+          ]
+        },
+        {
+          "id": "rice_follow_torso",
+          "subject": "man",
+          "role": "torso",
+          "stroke_groups": [
+            "Independent visible torso contour strokes, pen lifts at disconnected gaps."
+          ]
+        },
+        {
+          "id": "rice_follow_left_arm",
+          "subject": "man",
+          "role": "left_arm",
+          "stroke_groups": [
+            "Independent visible left_arm contour strokes, pen lifts at disconnected gaps."
+          ]
+        },
+        {
+          "id": "rice_follow_right_arm",
+          "subject": "man",
+          "role": "right_arm",
+          "stroke_groups": [
+            "Independent visible right_arm contour strokes, pen lifts at disconnected gaps."
+          ]
+        },
+        {
+          "id": "rice_follow_lower_body",
+          "subject": "man",
+          "role": "lower_body",
+          "stroke_groups": [
+            "Independent visible lower_body contour strokes, pen lifts at disconnected gaps."
+          ]
+        },
+        {
+          "id": "rice_follow_hen_head",
+          "subject": "hen",
+          "role": "head",
+          "stroke_groups": [
+            "Independent hen head contours."
+          ]
+        },
+        {
+          "id": "rice_follow_hen_torso",
+          "subject": "hen",
+          "role": "torso",
+          "stroke_groups": [
+            "Independent hen torso contours."
+          ]
+        },
+        {
+          "id": "rice_follow_hen_legs",
+          "subject": "hen",
+          "role": "legs",
+          "stroke_groups": [
+            "Independent hen legs contours."
+          ]
+        },
+        {
+          "id": "rice_follow_props",
+          "subject": "props",
+          "role": "props",
+          "stroke_groups": [
+            "Independent rice, egg or action marks; lift across gaps."
+          ]
+        }
+      ],
+      "outline_order": [
+        "rice_follow_head",
+        "rice_follow_neck",
+        "rice_follow_torso",
+        "rice_follow_left_arm",
+        "rice_follow_right_arm",
+        "rice_follow_lower_body",
+        "rice_follow_hen_head",
+        "rice_follow_hen_torso",
+        "rice_follow_hen_legs",
+        "rice_follow_props"
+      ],
+      "fill_order": [
+        "rice_follow_head",
+        "rice_follow_neck",
+        "rice_follow_torso",
+        "rice_follow_left_arm",
+        "rice_follow_right_arm",
+        "rice_follow_lower_body",
+        "rice_follow_hen_head",
+        "rice_follow_hen_torso",
+        "rice_follow_hen_legs",
+        "rice_follow_props"
+      ],
+      "spatial_order": "top_to_bottom_left_to_right",
+      "order_exception": "Draw the human anatomy first, hen second, props and motion marks last to keep narrative focal order.",
+      "narrative_requirements": [
+        {
+          "id": "rice_follow_action",
+          "narration_quote": "但你手裡有把米，雞就會跟著你。",
+          "observable": "同一男子向前行走，伸出的掌心清楚有米，母雞朝掌心靠近。"
+        }
+      ]
+    },
+    {
+      "id": "rice_attention",
+      "composition": "男子昂頭得意；母雞的頭和視線只朝向男子掌心的米。",
+      "drawability_reason": "Sparse thin black independent contours; stick human head/neck/torso/arms/legs and hen head/body/legs separately traced.",
+      "outline_strategy": "visible_source_ink",
+      "subjects": [
+        {
+          "id": "man",
+          "kind": "human",
+          "omitted_roles": {}
+        },
+        {
+          "id": "hen",
+          "kind": "animal"
+        },
+        {
+          "id": "props",
+          "kind": "object"
+        }
+      ],
+      "parts": [
+        {
+          "id": "rice_attention_head",
+          "subject": "man",
+          "role": "head",
+          "stroke_groups": [
+            "Independent visible head contour strokes, pen lifts at disconnected gaps."
+          ]
+        },
+        {
+          "id": "rice_attention_neck",
+          "subject": "man",
+          "role": "neck",
+          "stroke_groups": [
+            "Independent visible neck contour strokes, pen lifts at disconnected gaps."
+          ]
+        },
+        {
+          "id": "rice_attention_torso",
+          "subject": "man",
+          "role": "torso",
+          "stroke_groups": [
+            "Independent visible torso contour strokes, pen lifts at disconnected gaps."
+          ]
+        },
+        {
+          "id": "rice_attention_left_arm",
+          "subject": "man",
+          "role": "left_arm",
+          "stroke_groups": [
+            "Independent visible left_arm contour strokes, pen lifts at disconnected gaps."
+          ]
+        },
+        {
+          "id": "rice_attention_right_arm",
+          "subject": "man",
+          "role": "right_arm",
+          "stroke_groups": [
+            "Independent visible right_arm contour strokes, pen lifts at disconnected gaps."
+          ]
+        },
+        {
+          "id": "rice_attention_lower_body",
+          "subject": "man",
+          "role": "lower_body",
+          "stroke_groups": [
+            "Independent visible lower_body contour strokes, pen lifts at disconnected gaps."
+          ]
+        },
+        {
+          "id": "rice_attention_hen_head",
+          "subject": "hen",
+          "role": "head",
+          "stroke_groups": [
+            "Independent hen head contours."
+          ]
+        },
+        {
+          "id": "rice_attention_hen_torso",
+          "subject": "hen",
+          "role": "torso",
+          "stroke_groups": [
+            "Independent hen torso contours."
+          ]
+        },
+        {
+          "id": "rice_attention_hen_legs",
+          "subject": "hen",
+          "role": "legs",
+          "stroke_groups": [
+            "Independent hen legs contours."
+          ]
+        },
+        {
+          "id": "rice_attention_props",
+          "subject": "props",
+          "role": "props",
+          "stroke_groups": [
+            "Independent rice, egg or action marks; lift across gaps."
+          ]
+        }
+      ],
+      "outline_order": [
+        "rice_attention_head",
+        "rice_attention_neck",
+        "rice_attention_torso",
+        "rice_attention_left_arm",
+        "rice_attention_right_arm",
+        "rice_attention_lower_body",
+        "rice_attention_hen_head",
+        "rice_attention_hen_torso",
+        "rice_attention_hen_legs",
+        "rice_attention_props"
+      ],
+      "fill_order": [
+        "rice_attention_head",
+        "rice_attention_neck",
+        "rice_attention_torso",
+        "rice_attention_left_arm",
+        "rice_attention_right_arm",
+        "rice_attention_lower_body",
+        "rice_attention_hen_head",
+        "rice_attention_hen_torso",
+        "rice_attention_hen_legs",
+        "rice_attention_props"
+      ],
+      "spatial_order": "top_to_bottom_left_to_right",
+      "order_exception": "Draw the human anatomy first, hen second, props and motion marks last to keep narrative focal order.",
+      "narrative_requirements": [
+        {
+          "id": "rice_attention_action",
+          "narration_quote": "你千萬不要得意，因為雞喜歡的從來都不是你，而是你手裡的那把米。",
+          "observable": "男子昂頭得意；母雞的頭和視線只朝向男子掌心的米。"
+        }
+      ]
+    },
+    {
+      "id": "empty_palm",
+      "composition": "男子展示空掌，母雞背對男子向外走，兩者之間留出明顯距離。",
+      "drawability_reason": "Sparse thin black independent contours; stick human head/neck/torso/arms/legs and hen head/body/legs separately traced.",
+      "outline_strategy": "visible_source_ink",
+      "subjects": [
+        {
+          "id": "man",
+          "kind": "human",
+          "omitted_roles": {}
+        },
+        {
+          "id": "hen",
+          "kind": "animal"
+        },
+        {
+          "id": "props",
+          "kind": "object"
+        }
+      ],
+      "parts": [
+        {
+          "id": "empty_palm_head",
+          "subject": "man",
+          "role": "head",
+          "stroke_groups": [
+            "Independent visible head contour strokes, pen lifts at disconnected gaps."
+          ]
+        },
+        {
+          "id": "empty_palm_neck",
+          "subject": "man",
+          "role": "neck",
+          "stroke_groups": [
+            "Independent visible neck contour strokes, pen lifts at disconnected gaps."
+          ]
+        },
+        {
+          "id": "empty_palm_torso",
+          "subject": "man",
+          "role": "torso",
+          "stroke_groups": [
+            "Independent visible torso contour strokes, pen lifts at disconnected gaps."
+          ]
+        },
+        {
+          "id": "empty_palm_left_arm",
+          "subject": "man",
+          "role": "left_arm",
+          "stroke_groups": [
+            "Independent visible left_arm contour strokes, pen lifts at disconnected gaps."
+          ]
+        },
+        {
+          "id": "empty_palm_right_arm",
+          "subject": "man",
+          "role": "right_arm",
+          "stroke_groups": [
+            "Independent visible right_arm contour strokes, pen lifts at disconnected gaps."
+          ]
+        },
+        {
+          "id": "empty_palm_lower_body",
+          "subject": "man",
+          "role": "lower_body",
+          "stroke_groups": [
+            "Independent visible lower_body contour strokes, pen lifts at disconnected gaps."
+          ]
+        },
+        {
+          "id": "empty_palm_hen_head",
+          "subject": "hen",
+          "role": "head",
+          "stroke_groups": [
+            "Independent hen head contours."
+          ]
+        },
+        {
+          "id": "empty_palm_hen_torso",
+          "subject": "hen",
+          "role": "torso",
+          "stroke_groups": [
+            "Independent hen torso contours."
+          ]
+        },
+        {
+          "id": "empty_palm_hen_legs",
+          "subject": "hen",
+          "role": "legs",
+          "stroke_groups": [
+            "Independent hen legs contours."
+          ]
+        },
+        {
+          "id": "empty_palm_props",
+          "subject": "props",
+          "role": "props",
+          "stroke_groups": [
+            "Independent rice, egg or action marks; lift across gaps."
+          ]
+        }
+      ],
+      "outline_order": [
+        "empty_palm_head",
+        "empty_palm_neck",
+        "empty_palm_torso",
+        "empty_palm_left_arm",
+        "empty_palm_right_arm",
+        "empty_palm_lower_body",
+        "empty_palm_hen_head",
+        "empty_palm_hen_torso",
+        "empty_palm_hen_legs",
+        "empty_palm_props"
+      ],
+      "fill_order": [
+        "empty_palm_head",
+        "empty_palm_neck",
+        "empty_palm_torso",
+        "empty_palm_left_arm",
+        "empty_palm_right_arm",
+        "empty_palm_lower_body",
+        "empty_palm_hen_head",
+        "empty_palm_hen_torso",
+        "empty_palm_hen_legs",
+        "empty_palm_props"
+      ],
+      "spatial_order": "top_to_bottom_left_to_right",
+      "order_exception": "Draw the human anatomy first, hen second, props and motion marks last to keep narrative focal order.",
+      "narrative_requirements": [
+        {
+          "id": "empty_palm_action",
+          "narration_quote": "如果你的手裡沒有米，那雞的眼裡就沒有你，",
+          "observable": "男子展示空掌，母雞背對男子向外走，兩者之間留出明顯距離。"
+        }
+      ]
+    },
+    {
+      "id": "fed_departure",
+      "composition": "吃飽的母雞站在遠離男子的位置，身後可見一顆蛋，男子掌心已空。",
+      "drawability_reason": "Sparse thin black independent contours; stick human head/neck/torso/arms/legs and hen head/body/legs separately traced.",
+      "outline_strategy": "visible_source_ink",
+      "subjects": [
+        {
+          "id": "man",
+          "kind": "human",
+          "omitted_roles": {}
+        },
+        {
+          "id": "hen",
+          "kind": "animal"
+        },
+        {
+          "id": "props",
+          "kind": "object"
+        }
+      ],
+      "parts": [
+        {
+          "id": "fed_departure_head",
+          "subject": "man",
+          "role": "head",
+          "stroke_groups": [
+            "Independent visible head contour strokes, pen lifts at disconnected gaps."
+          ]
+        },
+        {
+          "id": "fed_departure_neck",
+          "subject": "man",
+          "role": "neck",
+          "stroke_groups": [
+            "Independent visible neck contour strokes, pen lifts at disconnected gaps."
+          ]
+        },
+        {
+          "id": "fed_departure_torso",
+          "subject": "man",
+          "role": "torso",
+          "stroke_groups": [
+            "Independent visible torso contour strokes, pen lifts at disconnected gaps."
+          ]
+        },
+        {
+          "id": "fed_departure_left_arm",
+          "subject": "man",
+          "role": "left_arm",
+          "stroke_groups": [
+            "Independent visible left_arm contour strokes, pen lifts at disconnected gaps."
+          ]
+        },
+        {
+          "id": "fed_departure_right_arm",
+          "subject": "man",
+          "role": "right_arm",
+          "stroke_groups": [
+            "Independent visible right_arm contour strokes, pen lifts at disconnected gaps."
+          ]
+        },
+        {
+          "id": "fed_departure_lower_body",
+          "subject": "man",
+          "role": "lower_body",
+          "stroke_groups": [
+            "Independent visible lower_body contour strokes, pen lifts at disconnected gaps."
+          ]
+        },
+        {
+          "id": "fed_departure_hen_head",
+          "subject": "hen",
+          "role": "head",
+          "stroke_groups": [
+            "Independent hen head contours."
+          ]
+        },
+        {
+          "id": "fed_departure_hen_torso",
+          "subject": "hen",
+          "role": "torso",
+          "stroke_groups": [
+            "Independent hen torso contours."
+          ]
+        },
+        {
+          "id": "fed_departure_hen_legs",
+          "subject": "hen",
+          "role": "legs",
+          "stroke_groups": [
+            "Independent hen legs contours."
+          ]
+        },
+        {
+          "id": "fed_departure_props",
+          "subject": "props",
+          "role": "props",
+          "stroke_groups": [
+            "Independent rice, egg or action marks; lift across gaps."
+          ]
+        }
+      ],
+      "outline_order": [
+        "fed_departure_head",
+        "fed_departure_neck",
+        "fed_departure_torso",
+        "fed_departure_left_arm",
+        "fed_departure_right_arm",
+        "fed_departure_lower_body",
+        "fed_departure_hen_head",
+        "fed_departure_hen_torso",
+        "fed_departure_hen_legs",
+        "fed_departure_props"
+      ],
+      "fill_order": [
+        "fed_departure_head",
+        "fed_departure_neck",
+        "fed_departure_torso",
+        "fed_departure_left_arm",
+        "fed_departure_right_arm",
+        "fed_departure_lower_body",
+        "fed_departure_hen_head",
+        "fed_departure_hen_torso",
+        "fed_departure_hen_legs",
+        "fed_departure_props"
+      ],
+      "spatial_order": "top_to_bottom_left_to_right",
+      "order_exception": "Draw the human anatomy first, hen second, props and motion marks last to keep narrative focal order.",
+      "narrative_requirements": [
+        {
+          "id": "fed_departure_action",
+          "narration_quote": "你把牠餵飽了，牠還會離你而去，背著你到處下蛋。",
+          "observable": "吃飽的母雞站在遠離男子的位置，身後可見一顆蛋，男子掌心已空。"
+        }
+      ]
+    },
+    {
+      "id": "rice_display",
+      "composition": "男子捧著米但不撒下，母雞仰頭看米、跟在身側。按原文呈現寓言觀點，不額外把它宣稱為動物行為學結論。",
+      "drawability_reason": "Sparse thin black independent contours; stick human head/neck/torso/arms/legs and hen head/body/legs separately traced.",
+      "outline_strategy": "visible_source_ink",
+      "subjects": [
+        {
+          "id": "man",
+          "kind": "human",
+          "omitted_roles": {}
+        },
+        {
+          "id": "hen",
+          "kind": "animal"
+        },
+        {
+          "id": "props",
+          "kind": "object"
+        }
+      ],
+      "parts": [
+        {
+          "id": "rice_display_head",
+          "subject": "man",
+          "role": "head",
+          "stroke_groups": [
+            "Independent visible head contour strokes, pen lifts at disconnected gaps."
+          ]
+        },
+        {
+          "id": "rice_display_neck",
+          "subject": "man",
+          "role": "neck",
+          "stroke_groups": [
+            "Independent visible neck contour strokes, pen lifts at disconnected gaps."
+          ]
+        },
+        {
+          "id": "rice_display_torso",
+          "subject": "man",
+          "role": "torso",
+          "stroke_groups": [
+            "Independent visible torso contour strokes, pen lifts at disconnected gaps."
+          ]
+        },
+        {
+          "id": "rice_display_left_arm",
+          "subject": "man",
+          "role": "left_arm",
+          "stroke_groups": [
+            "Independent visible left_arm contour strokes, pen lifts at disconnected gaps."
+          ]
+        },
+        {
+          "id": "rice_display_right_arm",
+          "subject": "man",
+          "role": "right_arm",
+          "stroke_groups": [
+            "Independent visible right_arm contour strokes, pen lifts at disconnected gaps."
+          ]
+        },
+        {
+          "id": "rice_display_lower_body",
+          "subject": "man",
+          "role": "lower_body",
+          "stroke_groups": [
+            "Independent visible lower_body contour strokes, pen lifts at disconnected gaps."
+          ]
+        },
+        {
+          "id": "rice_display_hen_head",
+          "subject": "hen",
+          "role": "head",
+          "stroke_groups": [
+            "Independent hen head contours."
+          ]
+        },
+        {
+          "id": "rice_display_hen_torso",
+          "subject": "hen",
+          "role": "torso",
+          "stroke_groups": [
+            "Independent hen torso contours."
+          ]
+        },
+        {
+          "id": "rice_display_hen_legs",
+          "subject": "hen",
+          "role": "legs",
+          "stroke_groups": [
+            "Independent hen legs contours."
+          ]
+        },
+        {
+          "id": "rice_display_props",
+          "subject": "props",
+          "role": "props",
+          "stroke_groups": [
+            "Independent rice, egg or action marks; lift across gaps."
+          ]
+        }
+      ],
+      "outline_order": [
+        "rice_display_head",
+        "rice_display_neck",
+        "rice_display_torso",
+        "rice_display_left_arm",
+        "rice_display_right_arm",
+        "rice_display_lower_body",
+        "rice_display_hen_head",
+        "rice_display_hen_torso",
+        "rice_display_hen_legs",
+        "rice_display_props"
+      ],
+      "fill_order": [
+        "rice_display_head",
+        "rice_display_neck",
+        "rice_display_torso",
+        "rice_display_left_arm",
+        "rice_display_right_arm",
+        "rice_display_lower_body",
+        "rice_display_hen_head",
+        "rice_display_hen_torso",
+        "rice_display_hen_legs",
+        "rice_display_props"
+      ],
+      "spatial_order": "top_to_bottom_left_to_right",
+      "order_exception": "Draw the human anatomy first, hen second, props and motion marks last to keep narrative focal order.",
+      "narrative_requirements": [
+        {
+          "id": "rice_display_action",
+          "narration_quote": "所以，你的米只能給雞看，不能給雞吃，這樣牠才能死心塌地跟著你。",
+          "observable": "男子捧著米但不撒下，母雞仰頭看米、跟在身側。按原文呈現寓言觀點，不額外把它宣稱為動物行為學結論。"
+        }
+      ]
+    }
+  ]
+}

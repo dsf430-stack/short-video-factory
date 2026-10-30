@@ -1,0 +1,108 @@
+{
+  "style_sha256": "e5ca72f97b0c41583c320d63ed99a4cf07c489e58f0baa93d30f5d807c77954f",
+  "plan_sha256": "eab65a50049d6fed9334460980d4a7a22fde616bbe864a78262b96bb1473536b",
+  "illustrations": [
+    {
+      "plan_id": "empty_chase",
+      "status": "pass",
+      "source_sha256": "74b5cf9998addacae2a57ed5e98ba2da4fa6e6d9f9007cbea1b3796ce28158d6",
+      "anatomy_and_occlusion": "圓頭單線男子在左張開空掌追逐；右側母雞面朝右跑離，雙方分離。雙臂向前、腿呈跑步姿態。圓頭下方短連接線為頸，軀幹與雙臂及雙腿可見。",
+      "part_boundaries": "依實際頭部、頸接點、單線軀幹、雙臂、下半身和雞頭軀幹腿分區，剩餘框線/米/蛋/動作線屬道具。",
+      "stroke_breaks": "分離輪廓由原版builder獨立筆畫與抬筆檢查。",
+      "outline_then_fill": "先全部輪廓，後同序填色；不添加實心黑塊。",
+      "spatial_order": "先人體，再雞，再米蛋和框線。",
+      "narrative_checks": [
+        {
+          "id": "empty_chase_action",
+          "status": "pass",
+          "evidence": "圓頭單線男子在左張開空掌追逐；右側母雞面朝右跑離，雙方分離。雙臂向前、腿呈跑步姿態。"
+        }
+      ]
+    },
+    {
+      "plan_id": "rice_follow",
+      "status": "pass",
+      "source_sha256": "b0648c2a0c5fe3e39dd393919fe38df00e7b1885e476044d3ba8902352a65040",
+      "anatomy_and_occlusion": "男子朝左行走，右方伸出掌心可見三顆空心米粒；右側母雞朝左抬頭跟隨，雞嘴未接觸米。圓頭下方短連接線為頸，軀幹與雙臂及雙腿可見。",
+      "part_boundaries": "依實際頭部、頸接點、單線軀幹、雙臂、下半身和雞頭軀幹腿分區，剩餘框線/米/蛋/動作線屬道具。",
+      "stroke_breaks": "分離輪廓由原版builder獨立筆畫與抬筆檢查。",
+      "outline_then_fill": "先全部輪廓，後同序填色；不添加實心黑塊。",
+      "spatial_order": "先人體，再雞，再米蛋和框線。",
+      "narrative_checks": [
+        {
+          "id": "rice_follow_action",
+          "status": "pass",
+          "evidence": "男子朝左行走，右方伸出掌心可見三顆空心米粒；右側母雞朝左抬頭跟隨，雞嘴未接觸米。"
+        }
+      ]
+    },
+    {
+      "plan_id": "rice_attention",
+      "status": "pass",
+      "source_sha256": "bf69b314000479029002e4d164f4484200f6343fc2d632bb1a11f3f8a062dea3",
+      "anatomy_and_occlusion": "左上男子昂頭閉眼微笑，右手米粒清楚；右側母雞仰頭朝向米而非男子臉，兩者有留白。圓頭下方短連接線為頸，軀幹與雙臂及雙腿可見。",
+      "part_boundaries": "依實際頭部、頸接點、單線軀幹、雙臂、下半身和雞頭軀幹腿分區，剩餘框線/米/蛋/動作線屬道具。",
+      "stroke_breaks": "分離輪廓由原版builder獨立筆畫與抬筆檢查。",
+      "outline_then_fill": "先全部輪廓，後同序填色；不添加實心黑塊。",
+      "spatial_order": "先人體，再雞，再米蛋和框線。",
+      "narrative_checks": [
+        {
+          "id": "rice_attention_action",
+          "status": "pass",
+          "evidence": "左上男子昂頭閉眼微笑，右手米粒清楚；右側母雞仰頭朝向米而非男子臉，兩者有留白。"
+        }
+      ]
+    },
+    {
+      "plan_id": "empty_palm",
+      "status": "pass",
+      "source_sha256": "2084d64fa6c74f648e4f7aa9f371a14d81a47000b25756d916f7ba5aab25717d",
+      "anatomy_and_occlusion": "右上男子攤開空掌，母雞背向男子朝右走離；空手與雞的離開方向可見。圓頭下方短連接線為頸，軀幹與雙臂及雙腿可見。",
+      "part_boundaries": "依實際頭部、頸接點、單線軀幹、雙臂、下半身和雞頭軀幹腿分區，剩餘框線/米/蛋/動作線屬道具。",
+      "stroke_breaks": "分離輪廓由原版builder獨立筆畫與抬筆檢查。",
+      "outline_then_fill": "先全部輪廓，後同序填色；不添加實心黑塊。",
+      "spatial_order": "先人體，再雞，再米蛋和框線。",
+      "narrative_checks": [
+        {
+          "id": "empty_palm_action",
+          "status": "pass",
+          "evidence": "右上男子攤開空掌，母雞背向男子朝右走離；空手與雞的離開方向可見。"
+        }
+      ]
+    },
+    {
+      "plan_id": "fed_departure",
+      "status": "pass",
+      "source_sha256": "4735b4bc8f1529a7c3f77ecd05042a0cbd67f09b8306a31e44dbb76c9dbfa185",
+      "anatomy_and_occlusion": "左下男子掌心空，右側母雞遠離男子，身後一顆完整雞蛋清楚；吃飽為旁白敘事，沒有聲稱圖像證明生理狀態。圓頭下方短連接線為頸，軀幹與雙臂及雙腿可見。",
+      "part_boundaries": "依實際頭部、頸接點、單線軀幹、雙臂、下半身和雞頭軀幹腿分區，剩餘框線/米/蛋/動作線屬道具。",
+      "stroke_breaks": "分離輪廓由原版builder獨立筆畫與抬筆檢查。",
+      "outline_then_fill": "先全部輪廓，後同序填色；不添加實心黑塊。",
+      "spatial_order": "先人體，再雞，再米蛋和框線。",
+      "narrative_checks": [
+        {
+          "id": "fed_departure_action",
+          "status": "pass",
+          "evidence": "左下男子掌心空，右側母雞遠離男子，身後一顆完整雞蛋清楚；吃飽為旁白敘事，沒有聲稱圖像證明生理狀態。"
+        }
+      ]
+    },
+    {
+      "plan_id": "rice_display",
+      "status": "pass",
+      "source_sha256": "80df74ca08e82594b1079bd90a2a6fff108de311eac43b71dde354c172cf637c",
+      "anatomy_and_occlusion": "右下男子左行、掌心高舉米粒，母雞跟在右側朝米仰頭，雞嘴與米分離，沒有撒米。圓頭下方短連接線為頸，軀幹與雙臂及雙腿可見。",
+      "part_boundaries": "依實際頭部、頸接點、單線軀幹、雙臂、下半身和雞頭軀幹腿分區，剩餘框線/米/蛋/動作線屬道具。",
+      "stroke_breaks": "分離輪廓由原版builder獨立筆畫與抬筆檢查。",
+      "outline_then_fill": "先全部輪廓，後同序填色；不添加實心黑塊。",
+      "spatial_order": "先人體，再雞，再米蛋和框線。",
+      "narrative_checks": [
+        {
+          "id": "rice_display_action",
+          "status": "pass",
+          "evidence": "右下男子左行、掌心高舉米粒，母雞跟在右側朝米仰頭，雞嘴與米分離，沒有撒米。"
+        }
+      ]
+    }
+  ]
+}

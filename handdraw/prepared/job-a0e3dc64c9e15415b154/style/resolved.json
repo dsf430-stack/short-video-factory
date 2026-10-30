@@ -1,0 +1,16 @@
+{
+  "status": "resolved",
+  "mode": "catalog",
+  "catalog_id": "1",
+  "style_name": "极简黑白线条讲解漫画(xkcd 火柴人)",
+  "selection_sha256": "8abb2ad29181e4a1930f3b818a3cde022033243ebce1c1823125e354129646ad",
+  "recipe_sha256": "a9c930cb001f5db0403723ad85cb271590732b92433e7eb76d808419502eb3ef",
+  "rationale": "本次指定一號",
+  "style_spec": {
+    "line": "細均勻黑線與圓頭單線火柴人",
+    "palette": "黑線奶油白紙",
+    "shading": "無陰影無實心黑塊",
+    "texture": "平面純輪廓",
+    "background": "米白紙與圓角分格"
+  }
+}

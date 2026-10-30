@@ -1,0 +1,52 @@
+{
+  "topic": "手裡的那把米",
+  "audience": "繁體中文寓言短片觀眾",
+  "explanation_goal": "按原稿呈現人追雞、雞追米的利益寓言。",
+  "source_scope": {
+    "type": "user_script",
+    "verification": "寓言觀點，未當作科學動物行為結論。"
+  },
+  "narrative_route": {
+    "decision": "parable_action_contrast",
+    "reason": "有米與空掌對照是敘事支點。",
+    "director_review": "維持人左雞右及行動方向，讓每個利益轉折可見。",
+    "director_plan": "六幕按空手追逐、持米跟隨、視線看米、空手離開、飽後下蛋、持米跟隨排列；剪點依鎖定WordBoundary。"
+  },
+  "visual_direction": "官方1號完整配方，極簡細黑線、奶油白紙、圓角分格；正式標題字幕由字型層排版。",
+  "beats": [
+    {
+      "id": "empty_chase",
+      "text": "兩手空空去追雞，雞就會到處跑，",
+      "action": "空手男子追一隻母雞，雙手攤開，雞朝遠離男子的方向逃跑。"
+    },
+    {
+      "id": "rice_follow",
+      "text": "但你手裡有把米，雞就會跟著你。",
+      "action": "同一男子向前行走，伸出的掌心清楚有米，母雞朝掌心靠近。"
+    },
+    {
+      "id": "rice_attention",
+      "text": "你千萬不要得意，因為雞喜歡的從來都不是你，而是你手裡的那把米。",
+      "action": "男子昂頭得意；母雞的頭和視線只朝向男子掌心的米。"
+    },
+    {
+      "id": "empty_palm",
+      "text": "如果你的手裡沒有米，那雞的眼裡就沒有你，",
+      "action": "男子展示空掌，母雞背對男子向外走，兩者之間留出明顯距離。"
+    },
+    {
+      "id": "fed_departure",
+      "text": "你把牠餵飽了，牠還會離你而去，背著你到處下蛋。",
+      "action": "吃飽的母雞站在遠離男子的位置，身後可見一顆蛋，男子掌心已空。"
+    },
+    {
+      "id": "rice_display",
+      "text": "所以，你的米只能給雞看，不能給雞吃，這樣牠才能死心塌地跟著你。",
+      "action": "男子捧著米但不撒下，母雞仰頭看米、跟在身側。按原文呈現寓言觀點，不額外把它宣稱為動物行為學結論。"
+    }
+  ],
+  "cover": {
+    "title": "手裡的那把米",
+    "source": "verified rice-follow scene"
+  }
+}

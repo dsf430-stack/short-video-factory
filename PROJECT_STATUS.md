@@ -143,3 +143,11 @@
 - 正式原稿Actions SUCCESS：https://github.com/dsf430-stack/short-video-factory/actions/runs/40972170222 ，CHUNK 1/1 SUCCESS cached=True，原成功語音快取直接復用；沒有重新合成。
 - 正式工件12940752045（068-voice-output）：chicken_style05_068_fixed_20261030.mp3 / .srt / .json，24.24秒；-13.41 LUFS、-1.23 dBTP；MP3 SHA256 5c7745dfff193f568048b33caed1b74e415564f1abab49d98b6db9e48b0153ad。下載後本地再次完整解碼PASS；主觀聽感未人工驗收。
 - 使用者本對話選擇5號MS Paint亂塗鴉，取代本題原20號選擇。配音修復完成；5號影片圖片與MP4尚未製作，不能將此音訊SUCCESS冒充成片完成。下一步重用此完整旁白與WordBoundary字幕，依官方5號配方準備新素材及審查後啟用原手繪Actions，不重配成功旁白。
+
+
+## 手裡的那把米・一號新版｜IN_PROGRESS（2026-10-30）
+
+- job_id `job-a0e3dc64c9e15415b154`，本次使用者指定1號，覆蓋本次製作方向而保留原5號任務。
+- 原稿全文保留，068 +20%/+5Hz WordBoundary 24.24秒音訊及字幕與雜湊直接重用，duration_mode=narration；不截音不拉伸，不硬補30秒。
+- 六幕全新官方1號極簡黑白火柴人，兩張分格原圖、出圖前簡報/提示詞/綁定與preflight、實際看圖/語義審查及封面已完成。六幕原版build_illustration與check_bundle通過。
+- 下一步啟用原手繪Actions，追蹤run、下載MP4完整解碼及六幕描繪/字幕/音軌檢查並保存交付。尚未交付MP4，主觀聽感未驗收。
