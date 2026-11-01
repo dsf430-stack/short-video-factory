@@ -1,0 +1,17 @@
+{
+  "status": "resolved",
+  "mode": "catalog",
+  "catalog_id": "8",
+  "selection_sha256": "2731cc73cc604d5a7e3b3ec1ea6d53a3266c45c547e343f6474127b6fc8db385",
+  "recipe_sha256": "ebbb9048d8f0353a6039d6e3418c390cf6ba3081c152f37d56866824c385a07f",
+  "style_name": "水墨写意",
+  "rationale": "Continue current style8 task without replacing the original drawing engine.",
+  "content_fit": "Expressive ink, negative space and discrete brush traces support a careful South Asian religious-history explainer.",
+  "style_spec": {
+    "line": "Complete unchanged official8 expressive dry/wet brush recipe",
+    "palette": "Black ink, restrained ochre or indigo, one small vermilion seal per illustration",
+    "shading": "Five densities of ink with dry white breaks and wet diffusion",
+    "texture": "Raw xuan paper and natural ink absorption, not uniform gray filtering",
+    "background": "Large unpainted paper areas"
+  }
+}

@@ -136,6 +136,15 @@ class ReliabilityTests(unittest.TestCase):
             self.assertEqual((output/'inputs/voice-other.mp3').read_text(), 'keep')
             self.assertEqual((output/'inputs/voice-same.mp3').read_text(), 'authorized new voice')
 
+    def test_voice_only_handles_empty_directories_not_preserved_by_git(self):
+        with tempfile.TemporaryDirectory() as folder:
+            bundle, output = Path(folder)/'bundle', Path(folder)/'output'
+            bundle.mkdir()
+            sync_inputs(bundle,output,voice_only=True)
+            self.assertTrue(all((output/name).is_dir() for name in ('style','design','inputs')))
+            with self.assertRaises(FileNotFoundError):
+                sync_inputs(bundle,output)
+
     def test_administrative_state_does_not_invalidate_content_cache(self):
         with tempfile.TemporaryDirectory() as folder:
             root=Path(folder); bundle=root/'bundle'; bundle.mkdir()

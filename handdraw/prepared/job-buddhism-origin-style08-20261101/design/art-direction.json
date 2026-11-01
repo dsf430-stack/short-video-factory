@@ -1,0 +1,86 @@
+{
+  "dependency_sha256": "fbbfd33d70f729011b6a6bc232851c116cd4a89ead2adea4462888a6ce26fc1a",
+  "style_sha256": "ec2626b117955b72ba704c3c6e3f7ec0ce04f0b7c2a437ed21beca7456674396",
+  "images": [
+    {
+      "source": "../inputs/sheet-0.png",
+      "method": "generated_under_guidance",
+      "brief_file": "sheet-0-brief.md",
+      "prompt_file": "sheet-0-prompt.txt",
+      "status": "planned",
+      "evidence": "Pending actual generation and visual review.",
+      "brief_sha256": "e0062fefd5b000cccb1b8c0ff39ae369afa357c895c05cc564174e400587bc28",
+      "prompt_sha256": "abe06af2cb035c94c4bea672020cf783760e1e58bfef7c46a29cddf25804b36a"
+    },
+    {
+      "source": "../inputs/sheet-1.png",
+      "method": "generated_under_guidance",
+      "brief_file": "sheet-1-brief.md",
+      "prompt_file": "sheet-1-prompt.txt",
+      "status": "planned",
+      "evidence": "Pending actual generation and visual review.",
+      "brief_sha256": "11f834f6ea27ec9af7179e2898260a9ddc9d665a8fea5f3ca04f208237693878",
+      "prompt_sha256": "24f410ff50294cb652377b1614fbbff9a6a02c79ab0e3d4eb2db18b9c8aea6fe"
+    },
+    {
+      "source": "../inputs/sheet-2.png",
+      "method": "generated_under_guidance",
+      "brief_file": "sheet-2-brief.md",
+      "prompt_file": "sheet-2-prompt.txt",
+      "status": "planned",
+      "evidence": "Pending actual generation and visual review.",
+      "brief_sha256": "7a5ac441881bf7b39cdbd443fe50270f00aaca39cfdde67e99f9c016ae7ba48c",
+      "prompt_sha256": "af567469d34ebd5db3b6f0e45519253bf424707e09aaffb652c3a850c80e4110"
+    },
+    {
+      "source": "../inputs/sheet-3.png",
+      "method": "generated_under_guidance",
+      "brief_file": "sheet-3-brief.md",
+      "prompt_file": "sheet-3-prompt.txt",
+      "status": "planned",
+      "evidence": "Pending actual generation and visual review.",
+      "brief_sha256": "c6c7d241d0582d692f91ed1788b2e219086111d8ec41c5481fa6812ee33bab88",
+      "prompt_sha256": "5e3c9efbab0a728357911c5058e56ed919f15a558033352f8d2062ed75f729a1"
+    },
+    {
+      "source": "../inputs/sheet-4.png",
+      "method": "generated_under_guidance",
+      "brief_file": "sheet-4-brief.md",
+      "prompt_file": "sheet-4-prompt.txt",
+      "status": "planned",
+      "evidence": "Pending actual generation and visual review.",
+      "brief_sha256": "49b5b473d020042107e1e2fcbf8d20add702add82f47bf9086f3a52dc076c611",
+      "prompt_sha256": "7f6b8e12360183f0c1ec79e6f95a03589cc93dd486cb92137533cc42c29aab53"
+    },
+    {
+      "source": "../inputs/sheet-5.png",
+      "method": "generated_under_guidance",
+      "brief_file": "sheet-5-brief.md",
+      "prompt_file": "sheet-5-prompt.txt",
+      "status": "planned",
+      "evidence": "Pending actual generation and visual review.",
+      "brief_sha256": "23091a86a5a0df8a402c98e3a0f6df1eeda971ca2e002da58142c63b8392767a",
+      "prompt_sha256": "c744e8104c9bc056a879b3bee46c031f834de3b8d2e3fdf35ab2b5e47f6e2441"
+    },
+    {
+      "source": "../inputs/sheet-6.png",
+      "method": "generated_under_guidance",
+      "brief_file": "sheet-6-brief.md",
+      "prompt_file": "sheet-6-prompt.txt",
+      "status": "planned",
+      "evidence": "Pending actual generation and visual review.",
+      "brief_sha256": "22c9e4763587cc770a5d671ef108754c8276d0a865d1f3b8607bc5b90c97f29c",
+      "prompt_sha256": "5f7742190aee9017a32abbd7442a7c643d4b11916d14524505642e0673d04d74"
+    },
+    {
+      "source": "../inputs/cover.png",
+      "method": "composed_with_verified_layers",
+      "brief_file": "cover-brief.md",
+      "prompt_file": "cover-prompt.txt",
+      "status": "planned",
+      "evidence": "Pending visual review of actual composed cover.",
+      "brief_sha256": "dd18d43eb66b09d14cbec22e0e1e2f42c37dd83344df4f51bdd8e45b94bea240",
+      "prompt_sha256": "199d1721c7e6a5aa678cfc23018c39f00815f53e3dcfa01398cd65afc0845cee"
+    }
+  ]
+}

@@ -52,7 +52,7 @@ def content_fingerprint(bundle, repo, seconds, voice_only, runtime):
     return hashlib.sha256(json.dumps(identity, sort_keys=True).encode()).hexdigest()
 
 
-def sync_inputs(bundle, root):
+def sync_inputs(bundle, root, voice_only=False):
     import shutil
     bundle, root = Path(bundle), Path(root)
     # Design/style are immutable source snapshots. Remove deleted old files.
@@ -60,7 +60,10 @@ def sync_inputs(bundle, root):
         destination = root / directory
         if destination.exists():
             shutil.rmtree(destination)
-        shutil.copytree(bundle / directory, destination)
+        if voice_only and not (bundle/directory).exists():
+            destination.mkdir(parents=True, exist_ok=True)
+        else:
+            shutil.copytree(bundle / directory, destination)
     destination = root / 'inputs'
     destination.mkdir(parents=True, exist_ok=True)
     for path in destination.iterdir():
@@ -68,7 +71,10 @@ def sync_inputs(bundle, root):
             path.unlink()
     # Prepared audio is authoritative (including authorized silent windows).
     # Audio generated on a previous attempt survives if it is not in the bundle.
-    shutil.copytree(bundle/'inputs', destination, dirs_exist_ok=True)
+    if (bundle/'inputs').exists():
+        shutil.copytree(bundle/'inputs', destination, dirs_exist_ok=True)
+    elif not voice_only:
+        raise FileNotFoundError(bundle/'inputs')
 
 
 def run_command(*args, timeout=1800):

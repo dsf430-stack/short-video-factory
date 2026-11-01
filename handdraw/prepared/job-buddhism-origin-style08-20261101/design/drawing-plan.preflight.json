@@ -1,0 +1,21 @@
+{
+  "status": "ready_for_generation",
+  "plan_sha256": "ecfe6ff344d731fa4eeda5727df6f9c07ecf768f15185bfa0733bed2eaf6d45b",
+  "style_sha256": "ec2626b117955b72ba704c3c6e3f7ec0ce04f0b7c2a437ed21beca7456674396",
+  "illustrations": [
+    "scene-01",
+    "scene-02",
+    "scene-03",
+    "scene-04",
+    "scene-05",
+    "scene-06",
+    "scene-07",
+    "scene-08",
+    "scene-09",
+    "scene-10",
+    "scene-11",
+    "scene-12",
+    "scene-13",
+    "scene-14"
+  ]
+}

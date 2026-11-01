@@ -4,5 +4,6 @@
   "inputs": {
     "job_id": "job-buddhism-origin-style08-20261101",
     "phase": "voice"
-  }
+  },
+  "request_note": "Retry after fixing voice-only missing empty directories; retain WordBoundary narration settings."
 }

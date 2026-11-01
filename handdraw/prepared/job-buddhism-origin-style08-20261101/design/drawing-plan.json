@@ -1,0 +1,1685 @@
+{
+  "illustrations": [
+    {
+      "id": "scene-01",
+      "composition": "An empty mendicant alms bowl beside a worn walking cane and a single fallen leaf; the cane leans naturally against the bowl, separate readable forms. No human figure.",
+      "drawability_reason": "Few separated semantic objects and simple limbs; each scene has its full measured narration window. An aligned contour mask follows actual source ink and wash boundaries without redrawing or changing source pixels.",
+      "outline_strategy": "explicit_mask",
+      "subjects": [
+        {
+          "id": "bowl",
+          "kind": "object"
+        },
+        {
+          "id": "cane",
+          "kind": "object"
+        },
+        {
+          "id": "leaf",
+          "kind": "object"
+        },
+        {
+          "id": "paper_seal",
+          "kind": "environment"
+        }
+      ],
+      "parts": [
+        {
+          "id": "scene-01_bowl_rim",
+          "subject": "bowl",
+          "role": "rim",
+          "stroke_groups": [
+            "Separate visible brush contour marks for this semantic region; lift between disconnected dry marks.",
+            "Follow actual local form and preserve negative gaps before any wash fill."
+          ]
+        },
+        {
+          "id": "scene-01_bowl_body",
+          "subject": "bowl",
+          "role": "body",
+          "stroke_groups": [
+            "Separate visible brush contour marks for this semantic region; lift between disconnected dry marks.",
+            "Follow actual local form and preserve negative gaps before any wash fill."
+          ]
+        },
+        {
+          "id": "scene-01_cane_handle",
+          "subject": "cane",
+          "role": "handle",
+          "stroke_groups": [
+            "Separate visible brush contour marks for this semantic region; lift between disconnected dry marks.",
+            "Follow actual local form and preserve negative gaps before any wash fill."
+          ]
+        },
+        {
+          "id": "scene-01_cane_shaft",
+          "subject": "cane",
+          "role": "shaft",
+          "stroke_groups": [
+            "Separate visible brush contour marks for this semantic region; lift between disconnected dry marks.",
+            "Follow actual local form and preserve negative gaps before any wash fill."
+          ]
+        },
+        {
+          "id": "scene-01_leaf_leaf",
+          "subject": "leaf",
+          "role": "leaf",
+          "stroke_groups": [
+            "Separate visible brush contour marks for this semantic region; lift between disconnected dry marks.",
+            "Follow actual local form and preserve negative gaps before any wash fill."
+          ]
+        },
+        {
+          "id": "scene-01_paper_seal",
+          "subject": "paper_seal",
+          "role": "paper_and_seal",
+          "stroke_groups": [
+            "Trace the small vermilion seal boundary and any separate background ink marks.",
+            "Apply sparse paper/ink-wash residue last without bridging empty paper."
+          ]
+        }
+      ],
+      "outline_order": [
+        "scene-01_bowl_rim",
+        "scene-01_bowl_body",
+        "scene-01_cane_handle",
+        "scene-01_cane_shaft",
+        "scene-01_leaf_leaf",
+        "scene-01_paper_seal"
+      ],
+      "fill_order": [
+        "scene-01_bowl_rim",
+        "scene-01_bowl_body",
+        "scene-01_cane_handle",
+        "scene-01_cane_shaft",
+        "scene-01_leaf_leaf",
+        "scene-01_paper_seal"
+      ],
+      "spatial_order": "top_to_bottom_left_to_right",
+      "order_exception": "Follow semantic subject order before paper/seal residue; the paper region is assigned last to avoid revealing foreground anatomy early.",
+      "narrative_requirements": [
+        {
+          "id": "scene-01-fact",
+          "narration_quote": "人為什麼受苦？",
+          "observable": "An alms bowl, worn cane and fallen leaf evoke inquiry, aging and change; symbolic introduction, not an archaeological reconstruction."
+        }
+      ]
+    },
+    {
+      "id": "scene-02",
+      "composition": "A broad slow river bend in ancient northern India with a single humble riverbank hut and one sparse sal tree, viewed from slightly above; no modern cities, no map labels, no people.",
+      "drawability_reason": "Few separated semantic objects and simple limbs; each scene has its full measured narration window. An aligned contour mask follows actual source ink and wash boundaries without redrawing or changing source pixels.",
+      "outline_strategy": "explicit_mask",
+      "subjects": [
+        {
+          "id": "tree",
+          "kind": "environment"
+        },
+        {
+          "id": "hut",
+          "kind": "object"
+        },
+        {
+          "id": "river",
+          "kind": "environment"
+        },
+        {
+          "id": "paper_seal",
+          "kind": "environment"
+        }
+      ],
+      "parts": [
+        {
+          "id": "scene-02_tree_crown",
+          "subject": "tree",
+          "role": "crown",
+          "stroke_groups": [
+            "Separate visible brush contour marks for this semantic region; lift between disconnected dry marks.",
+            "Follow actual local form and preserve negative gaps before any wash fill."
+          ]
+        },
+        {
+          "id": "scene-02_tree_trunk",
+          "subject": "tree",
+          "role": "trunk",
+          "stroke_groups": [
+            "Separate visible brush contour marks for this semantic region; lift between disconnected dry marks.",
+            "Follow actual local form and preserve negative gaps before any wash fill."
+          ]
+        },
+        {
+          "id": "scene-02_hut_roof",
+          "subject": "hut",
+          "role": "roof",
+          "stroke_groups": [
+            "Separate visible brush contour marks for this semantic region; lift between disconnected dry marks.",
+            "Follow actual local form and preserve negative gaps before any wash fill."
+          ]
+        },
+        {
+          "id": "scene-02_hut_walls",
+          "subject": "hut",
+          "role": "walls",
+          "stroke_groups": [
+            "Separate visible brush contour marks for this semantic region; lift between disconnected dry marks.",
+            "Follow actual local form and preserve negative gaps before any wash fill."
+          ]
+        },
+        {
+          "id": "scene-02_river_watercourse",
+          "subject": "river",
+          "role": "watercourse",
+          "stroke_groups": [
+            "Separate visible brush contour marks for this semantic region; lift between disconnected dry marks.",
+            "Follow actual local form and preserve negative gaps before any wash fill."
+          ]
+        },
+        {
+          "id": "scene-02_river_bank",
+          "subject": "river",
+          "role": "bank",
+          "stroke_groups": [
+            "Separate visible brush contour marks for this semantic region; lift between disconnected dry marks.",
+            "Follow actual local form and preserve negative gaps before any wash fill."
+          ]
+        },
+        {
+          "id": "scene-02_paper_seal",
+          "subject": "paper_seal",
+          "role": "paper_and_seal",
+          "stroke_groups": [
+            "Trace the small vermilion seal boundary and any separate background ink marks.",
+            "Apply sparse paper/ink-wash residue last without bridging empty paper."
+          ]
+        }
+      ],
+      "outline_order": [
+        "scene-02_tree_crown",
+        "scene-02_tree_trunk",
+        "scene-02_hut_roof",
+        "scene-02_hut_walls",
+        "scene-02_river_watercourse",
+        "scene-02_river_bank",
+        "scene-02_paper_seal"
+      ],
+      "fill_order": [
+        "scene-02_tree_crown",
+        "scene-02_tree_trunk",
+        "scene-02_hut_roof",
+        "scene-02_hut_walls",
+        "scene-02_river_watercourse",
+        "scene-02_river_bank",
+        "scene-02_paper_seal"
+      ],
+      "spatial_order": "top_to_bottom_left_to_right",
+      "order_exception": "Follow semantic subject order before paper/seal residue; the paper region is assigned last to avoid revealing foreground anatomy early.",
+      "narrative_requirements": [
+        {
+          "id": "scene-02-fact",
+          "narration_quote": "恆河流域",
+          "observable": "A continuous river and a low riverbank settlement place the historical setting in a riverine South Asian landscape; this is not a surveyed geographic map."
+        }
+      ]
+    },
+    {
+      "id": "scene-03",
+      "composition": "Two visibly separate traditions of seeking: on the left a small ancient Indian brick fire altar with a controlled flame; on the right a wandering ascetic wooden staff and alms bowl. No people or writing.",
+      "drawability_reason": "Few separated semantic objects and simple limbs; each scene has its full measured narration window. An aligned contour mask follows actual source ink and wash boundaries without redrawing or changing source pixels.",
+      "outline_strategy": "explicit_mask",
+      "subjects": [
+        {
+          "id": "altar",
+          "kind": "object"
+        },
+        {
+          "id": "staff",
+          "kind": "object"
+        },
+        {
+          "id": "bowl",
+          "kind": "object"
+        },
+        {
+          "id": "paper_seal",
+          "kind": "environment"
+        }
+      ],
+      "parts": [
+        {
+          "id": "scene-03_altar_flame",
+          "subject": "altar",
+          "role": "flame",
+          "stroke_groups": [
+            "Separate visible brush contour marks for this semantic region; lift between disconnected dry marks.",
+            "Follow actual local form and preserve negative gaps before any wash fill."
+          ]
+        },
+        {
+          "id": "scene-03_altar_brick_base",
+          "subject": "altar",
+          "role": "brick_base",
+          "stroke_groups": [
+            "Separate visible brush contour marks for this semantic region; lift between disconnected dry marks.",
+            "Follow actual local form and preserve negative gaps before any wash fill."
+          ]
+        },
+        {
+          "id": "scene-03_staff_shaft",
+          "subject": "staff",
+          "role": "shaft",
+          "stroke_groups": [
+            "Separate visible brush contour marks for this semantic region; lift between disconnected dry marks.",
+            "Follow actual local form and preserve negative gaps before any wash fill."
+          ]
+        },
+        {
+          "id": "scene-03_bowl_rim",
+          "subject": "bowl",
+          "role": "rim",
+          "stroke_groups": [
+            "Separate visible brush contour marks for this semantic region; lift between disconnected dry marks.",
+            "Follow actual local form and preserve negative gaps before any wash fill."
+          ]
+        },
+        {
+          "id": "scene-03_bowl_body",
+          "subject": "bowl",
+          "role": "body",
+          "stroke_groups": [
+            "Separate visible brush contour marks for this semantic region; lift between disconnected dry marks.",
+            "Follow actual local form and preserve negative gaps before any wash fill."
+          ]
+        },
+        {
+          "id": "scene-03_paper_seal",
+          "subject": "paper_seal",
+          "role": "paper_and_seal",
+          "stroke_groups": [
+            "Trace the small vermilion seal boundary and any separate background ink marks.",
+            "Apply sparse paper/ink-wash residue last without bridging empty paper."
+          ]
+        }
+      ],
+      "outline_order": [
+        "scene-03_altar_flame",
+        "scene-03_altar_brick_base",
+        "scene-03_staff_shaft",
+        "scene-03_bowl_rim",
+        "scene-03_bowl_body",
+        "scene-03_paper_seal"
+      ],
+      "fill_order": [
+        "scene-03_altar_flame",
+        "scene-03_altar_brick_base",
+        "scene-03_staff_shaft",
+        "scene-03_bowl_rim",
+        "scene-03_bowl_body",
+        "scene-03_paper_seal"
+      ],
+      "spatial_order": "top_to_bottom_left_to_right",
+      "order_exception": "Follow semantic subject order before paper/seal residue; the paper region is assigned last to avoid revealing foreground anatomy early.",
+      "narrative_requirements": [
+        {
+          "id": "scene-03-fact",
+          "narration_quote": "婆羅門傳統重視《吠陀》與祭祀",
+          "observable": "Fire altar and mendicant equipment visibly distinguish sacrificial practice from wandering renunciation; neither is asserted to be a portrait of all practitioners."
+        }
+      ]
+    },
+    {
+      "id": "scene-04",
+      "composition": "A young South Asian prince Siddhartha in simple ancient north Indian wrapped cotton clothing stands full-body beside an open palace doorway, turning his calm face outward toward the world; a modest carved arch, no crown or halo. Both arms and bare feet clearly visible, limbs separated. Three-quarter frontal view.",
+      "drawability_reason": "Few separated semantic objects and simple limbs; each scene has its full measured narration window. An aligned contour mask follows actual source ink and wash boundaries without redrawing or changing source pixels.",
+      "outline_strategy": "explicit_mask",
+      "subjects": [
+        {
+          "id": "prince",
+          "kind": "human"
+        },
+        {
+          "id": "palace",
+          "kind": "object"
+        },
+        {
+          "id": "paper_seal",
+          "kind": "environment"
+        }
+      ],
+      "parts": [
+        {
+          "id": "scene-04_prince_head",
+          "subject": "prince",
+          "role": "head",
+          "stroke_groups": [
+            "Separate visible brush contour marks for this semantic region; lift between disconnected dry marks.",
+            "Follow actual local form and preserve negative gaps before any wash fill."
+          ]
+        },
+        {
+          "id": "scene-04_prince_neck",
+          "subject": "prince",
+          "role": "neck",
+          "stroke_groups": [
+            "Separate visible brush contour marks for this semantic region; lift between disconnected dry marks.",
+            "Follow actual local form and preserve negative gaps before any wash fill."
+          ]
+        },
+        {
+          "id": "scene-04_prince_torso",
+          "subject": "prince",
+          "role": "torso",
+          "stroke_groups": [
+            "Separate visible brush contour marks for this semantic region; lift between disconnected dry marks.",
+            "Follow actual local form and preserve negative gaps before any wash fill."
+          ]
+        },
+        {
+          "id": "scene-04_prince_left_arm",
+          "subject": "prince",
+          "role": "left_arm",
+          "stroke_groups": [
+            "Separate visible brush contour marks for this semantic region; lift between disconnected dry marks.",
+            "Follow actual local form and preserve negative gaps before any wash fill."
+          ]
+        },
+        {
+          "id": "scene-04_prince_right_arm",
+          "subject": "prince",
+          "role": "right_arm",
+          "stroke_groups": [
+            "Separate visible brush contour marks for this semantic region; lift between disconnected dry marks.",
+            "Follow actual local form and preserve negative gaps before any wash fill."
+          ]
+        },
+        {
+          "id": "scene-04_prince_lower_body",
+          "subject": "prince",
+          "role": "lower_body",
+          "stroke_groups": [
+            "Separate visible brush contour marks for this semantic region; lift between disconnected dry marks.",
+            "Follow actual local form and preserve negative gaps before any wash fill."
+          ]
+        },
+        {
+          "id": "scene-04_palace_arch",
+          "subject": "palace",
+          "role": "arch",
+          "stroke_groups": [
+            "Separate visible brush contour marks for this semantic region; lift between disconnected dry marks.",
+            "Follow actual local form and preserve negative gaps before any wash fill."
+          ]
+        },
+        {
+          "id": "scene-04_palace_doorstep",
+          "subject": "palace",
+          "role": "doorstep",
+          "stroke_groups": [
+            "Separate visible brush contour marks for this semantic region; lift between disconnected dry marks.",
+            "Follow actual local form and preserve negative gaps before any wash fill."
+          ]
+        },
+        {
+          "id": "scene-04_paper_seal",
+          "subject": "paper_seal",
+          "role": "paper_and_seal",
+          "stroke_groups": [
+            "Trace the small vermilion seal boundary and any separate background ink marks.",
+            "Apply sparse paper/ink-wash residue last without bridging empty paper."
+          ]
+        }
+      ],
+      "outline_order": [
+        "scene-04_prince_head",
+        "scene-04_prince_neck",
+        "scene-04_prince_torso",
+        "scene-04_prince_left_arm",
+        "scene-04_prince_right_arm",
+        "scene-04_prince_lower_body",
+        "scene-04_palace_arch",
+        "scene-04_palace_doorstep",
+        "scene-04_paper_seal"
+      ],
+      "fill_order": [
+        "scene-04_prince_head",
+        "scene-04_prince_neck",
+        "scene-04_prince_torso",
+        "scene-04_prince_left_arm",
+        "scene-04_prince_right_arm",
+        "scene-04_prince_lower_body",
+        "scene-04_palace_arch",
+        "scene-04_palace_doorstep",
+        "scene-04_paper_seal"
+      ],
+      "spatial_order": "top_to_bottom_left_to_right",
+      "order_exception": "Follow semantic subject order before paper/seal residue; the paper region is assigned last to avoid revealing foreground anatomy early.",
+      "narrative_requirements": [
+        {
+          "id": "scene-04-fact",
+          "narration_quote": "受到保護的王子",
+          "observable": "A youthful prince stands at a palace threshold looking outward; treated as traditional narrative, not a verified contemporary portrait."
+        }
+      ]
+    },
+    {
+      "id": "scene-05",
+      "composition": "Four separate, equally clear small symbolic vignettes across the square: an old walking cane, a simple low sickbed with a pillow, a covered funeral bier with no exposed body, and an ascetic alms bowl beside a walking staff. All four completely separated by empty paper. No people and no gore.",
+      "drawability_reason": "Few separated semantic objects and simple limbs; each scene has its full measured narration window. An aligned contour mask follows actual source ink and wash boundaries without redrawing or changing source pixels.",
+      "outline_strategy": "explicit_mask",
+      "subjects": [
+        {
+          "id": "cane",
+          "kind": "object"
+        },
+        {
+          "id": "sickbed",
+          "kind": "object"
+        },
+        {
+          "id": "bier",
+          "kind": "object"
+        },
+        {
+          "id": "mendicant",
+          "kind": "object"
+        },
+        {
+          "id": "paper_seal",
+          "kind": "environment"
+        }
+      ],
+      "parts": [
+        {
+          "id": "scene-05_cane_handle",
+          "subject": "cane",
+          "role": "handle",
+          "stroke_groups": [
+            "Separate visible brush contour marks for this semantic region; lift between disconnected dry marks.",
+            "Follow actual local form and preserve negative gaps before any wash fill."
+          ]
+        },
+        {
+          "id": "scene-05_cane_shaft",
+          "subject": "cane",
+          "role": "shaft",
+          "stroke_groups": [
+            "Separate visible brush contour marks for this semantic region; lift between disconnected dry marks.",
+            "Follow actual local form and preserve negative gaps before any wash fill."
+          ]
+        },
+        {
+          "id": "scene-05_sickbed_pillow",
+          "subject": "sickbed",
+          "role": "pillow",
+          "stroke_groups": [
+            "Separate visible brush contour marks for this semantic region; lift between disconnected dry marks.",
+            "Follow actual local form and preserve negative gaps before any wash fill."
+          ]
+        },
+        {
+          "id": "scene-05_sickbed_bed",
+          "subject": "sickbed",
+          "role": "bed",
+          "stroke_groups": [
+            "Separate visible brush contour marks for this semantic region; lift between disconnected dry marks.",
+            "Follow actual local form and preserve negative gaps before any wash fill."
+          ]
+        },
+        {
+          "id": "scene-05_bier_shroud",
+          "subject": "bier",
+          "role": "shroud",
+          "stroke_groups": [
+            "Separate visible brush contour marks for this semantic region; lift between disconnected dry marks.",
+            "Follow actual local form and preserve negative gaps before any wash fill."
+          ]
+        },
+        {
+          "id": "scene-05_bier_base",
+          "subject": "bier",
+          "role": "base",
+          "stroke_groups": [
+            "Separate visible brush contour marks for this semantic region; lift between disconnected dry marks.",
+            "Follow actual local form and preserve negative gaps before any wash fill."
+          ]
+        },
+        {
+          "id": "scene-05_mendicant_staff",
+          "subject": "mendicant",
+          "role": "staff",
+          "stroke_groups": [
+            "Separate visible brush contour marks for this semantic region; lift between disconnected dry marks.",
+            "Follow actual local form and preserve negative gaps before any wash fill."
+          ]
+        },
+        {
+          "id": "scene-05_mendicant_bowl",
+          "subject": "mendicant",
+          "role": "bowl",
+          "stroke_groups": [
+            "Separate visible brush contour marks for this semantic region; lift between disconnected dry marks.",
+            "Follow actual local form and preserve negative gaps before any wash fill."
+          ]
+        },
+        {
+          "id": "scene-05_paper_seal",
+          "subject": "paper_seal",
+          "role": "paper_and_seal",
+          "stroke_groups": [
+            "Trace the small vermilion seal boundary and any separate background ink marks.",
+            "Apply sparse paper/ink-wash residue last without bridging empty paper."
+          ]
+        }
+      ],
+      "outline_order": [
+        "scene-05_cane_handle",
+        "scene-05_cane_shaft",
+        "scene-05_sickbed_pillow",
+        "scene-05_sickbed_bed",
+        "scene-05_bier_shroud",
+        "scene-05_bier_base",
+        "scene-05_mendicant_staff",
+        "scene-05_mendicant_bowl",
+        "scene-05_paper_seal"
+      ],
+      "fill_order": [
+        "scene-05_cane_handle",
+        "scene-05_cane_shaft",
+        "scene-05_sickbed_pillow",
+        "scene-05_sickbed_bed",
+        "scene-05_bier_shroud",
+        "scene-05_bier_base",
+        "scene-05_mendicant_staff",
+        "scene-05_mendicant_bowl",
+        "scene-05_paper_seal"
+      ],
+      "spatial_order": "top_to_bottom_left_to_right",
+      "order_exception": "Follow semantic subject order before paper/seal residue; the paper region is assigned last to avoid revealing foreground anatomy early.",
+      "narrative_requirements": [
+        {
+          "id": "scene-05-fact",
+          "narration_quote": "老人、病人、死者，以及一位修行者",
+          "observable": "Four distinct symbolic vignettes stand for aging, illness, death and renunciation in the traditional four-sights story; the voice explicitly identifies this as tradition."
+        }
+      ]
+    },
+    {
+      "id": "scene-06",
+      "composition": "A lean but healthy South Asian renunciant in a plain wrapped cotton robe walks barefoot along a gentle open path; to the far left is a low table holding a luxury goblet, to the far right is an unused bed of thorns. He follows the open route away from both extremes. Full body, arms separate, no balance scale, no graphic emaciation.",
+      "drawability_reason": "Few separated semantic objects and simple limbs; each scene has its full measured narration window. An aligned contour mask follows actual source ink and wash boundaries without redrawing or changing source pixels.",
+      "outline_strategy": "explicit_mask",
+      "subjects": [
+        {
+          "id": "seeker",
+          "kind": "human"
+        },
+        {
+          "id": "luxury",
+          "kind": "object"
+        },
+        {
+          "id": "thorns",
+          "kind": "object"
+        },
+        {
+          "id": "path",
+          "kind": "environment"
+        },
+        {
+          "id": "paper_seal",
+          "kind": "environment"
+        }
+      ],
+      "parts": [
+        {
+          "id": "scene-06_seeker_head",
+          "subject": "seeker",
+          "role": "head",
+          "stroke_groups": [
+            "Separate visible brush contour marks for this semantic region; lift between disconnected dry marks.",
+            "Follow actual local form and preserve negative gaps before any wash fill."
+          ]
+        },
+        {
+          "id": "scene-06_seeker_neck",
+          "subject": "seeker",
+          "role": "neck",
+          "stroke_groups": [
+            "Separate visible brush contour marks for this semantic region; lift between disconnected dry marks.",
+            "Follow actual local form and preserve negative gaps before any wash fill."
+          ]
+        },
+        {
+          "id": "scene-06_seeker_torso",
+          "subject": "seeker",
+          "role": "torso",
+          "stroke_groups": [
+            "Separate visible brush contour marks for this semantic region; lift between disconnected dry marks.",
+            "Follow actual local form and preserve negative gaps before any wash fill."
+          ]
+        },
+        {
+          "id": "scene-06_seeker_left_arm",
+          "subject": "seeker",
+          "role": "left_arm",
+          "stroke_groups": [
+            "Separate visible brush contour marks for this semantic region; lift between disconnected dry marks.",
+            "Follow actual local form and preserve negative gaps before any wash fill."
+          ]
+        },
+        {
+          "id": "scene-06_seeker_right_arm",
+          "subject": "seeker",
+          "role": "right_arm",
+          "stroke_groups": [
+            "Separate visible brush contour marks for this semantic region; lift between disconnected dry marks.",
+            "Follow actual local form and preserve negative gaps before any wash fill."
+          ]
+        },
+        {
+          "id": "scene-06_seeker_lower_body",
+          "subject": "seeker",
+          "role": "lower_body",
+          "stroke_groups": [
+            "Separate visible brush contour marks for this semantic region; lift between disconnected dry marks.",
+            "Follow actual local form and preserve negative gaps before any wash fill."
+          ]
+        },
+        {
+          "id": "scene-06_luxury_goblet",
+          "subject": "luxury",
+          "role": "goblet",
+          "stroke_groups": [
+            "Separate visible brush contour marks for this semantic region; lift between disconnected dry marks.",
+            "Follow actual local form and preserve negative gaps before any wash fill."
+          ]
+        },
+        {
+          "id": "scene-06_luxury_table",
+          "subject": "luxury",
+          "role": "table",
+          "stroke_groups": [
+            "Separate visible brush contour marks for this semantic region; lift between disconnected dry marks.",
+            "Follow actual local form and preserve negative gaps before any wash fill."
+          ]
+        },
+        {
+          "id": "scene-06_thorns_points",
+          "subject": "thorns",
+          "role": "points",
+          "stroke_groups": [
+            "Separate visible brush contour marks for this semantic region; lift between disconnected dry marks.",
+            "Follow actual local form and preserve negative gaps before any wash fill."
+          ]
+        },
+        {
+          "id": "scene-06_thorns_bed",
+          "subject": "thorns",
+          "role": "bed",
+          "stroke_groups": [
+            "Separate visible brush contour marks for this semantic region; lift between disconnected dry marks.",
+            "Follow actual local form and preserve negative gaps before any wash fill."
+          ]
+        },
+        {
+          "id": "scene-06_path_path",
+          "subject": "path",
+          "role": "path",
+          "stroke_groups": [
+            "Separate visible brush contour marks for this semantic region; lift between disconnected dry marks.",
+            "Follow actual local form and preserve negative gaps before any wash fill."
+          ]
+        },
+        {
+          "id": "scene-06_paper_seal",
+          "subject": "paper_seal",
+          "role": "paper_and_seal",
+          "stroke_groups": [
+            "Trace the small vermilion seal boundary and any separate background ink marks.",
+            "Apply sparse paper/ink-wash residue last without bridging empty paper."
+          ]
+        }
+      ],
+      "outline_order": [
+        "scene-06_seeker_head",
+        "scene-06_seeker_neck",
+        "scene-06_seeker_torso",
+        "scene-06_seeker_left_arm",
+        "scene-06_seeker_right_arm",
+        "scene-06_seeker_lower_body",
+        "scene-06_luxury_goblet",
+        "scene-06_luxury_table",
+        "scene-06_thorns_points",
+        "scene-06_thorns_bed",
+        "scene-06_path_path",
+        "scene-06_paper_seal"
+      ],
+      "fill_order": [
+        "scene-06_seeker_head",
+        "scene-06_seeker_neck",
+        "scene-06_seeker_torso",
+        "scene-06_seeker_left_arm",
+        "scene-06_seeker_right_arm",
+        "scene-06_seeker_lower_body",
+        "scene-06_luxury_goblet",
+        "scene-06_luxury_table",
+        "scene-06_thorns_points",
+        "scene-06_thorns_bed",
+        "scene-06_path_path",
+        "scene-06_paper_seal"
+      ],
+      "spatial_order": "top_to_bottom_left_to_right",
+      "order_exception": "Follow semantic subject order before paper/seal residue; the paper region is assigned last to avoid revealing foreground anatomy early.",
+      "narrative_requirements": [
+        {
+          "id": "scene-06-fact",
+          "narration_quote": "避開沉溺享樂，也避開折磨身體",
+          "observable": "The seeker walks an open route while luxury and self-mortification sit off the route; no claim that the Middle Way is simply splitting a difference."
+        }
+      ]
+    },
+    {
+      "id": "scene-07",
+      "composition": "Siddhartha, a South Asian adult with a calm oval face and simple tied dark hair, seated cross-legged in meditation beneath a broad sparse heart-leaf bodhi tree. A simple wrapped cotton monastic robe, hands gently resting separately on the knees, visible head and neck, arms and crossed legs; tree trunk stands to the right behind him without crossing his face. No Chinese architecture, no halo, no written text.",
+      "drawability_reason": "Few separated semantic objects and simple limbs; each scene has its full measured narration window. An aligned contour mask follows actual source ink and wash boundaries without redrawing or changing source pixels.",
+      "outline_strategy": "explicit_mask",
+      "subjects": [
+        {
+          "id": "buddha",
+          "kind": "human"
+        },
+        {
+          "id": "bodhi",
+          "kind": "environment"
+        },
+        {
+          "id": "paper_seal",
+          "kind": "environment"
+        }
+      ],
+      "parts": [
+        {
+          "id": "scene-07_buddha_head",
+          "subject": "buddha",
+          "role": "head",
+          "stroke_groups": [
+            "Separate visible brush contour marks for this semantic region; lift between disconnected dry marks.",
+            "Follow actual local form and preserve negative gaps before any wash fill."
+          ]
+        },
+        {
+          "id": "scene-07_buddha_neck",
+          "subject": "buddha",
+          "role": "neck",
+          "stroke_groups": [
+            "Separate visible brush contour marks for this semantic region; lift between disconnected dry marks.",
+            "Follow actual local form and preserve negative gaps before any wash fill."
+          ]
+        },
+        {
+          "id": "scene-07_buddha_torso",
+          "subject": "buddha",
+          "role": "torso",
+          "stroke_groups": [
+            "Separate visible brush contour marks for this semantic region; lift between disconnected dry marks.",
+            "Follow actual local form and preserve negative gaps before any wash fill."
+          ]
+        },
+        {
+          "id": "scene-07_buddha_left_arm",
+          "subject": "buddha",
+          "role": "left_arm",
+          "stroke_groups": [
+            "Separate visible brush contour marks for this semantic region; lift between disconnected dry marks.",
+            "Follow actual local form and preserve negative gaps before any wash fill."
+          ]
+        },
+        {
+          "id": "scene-07_buddha_right_arm",
+          "subject": "buddha",
+          "role": "right_arm",
+          "stroke_groups": [
+            "Separate visible brush contour marks for this semantic region; lift between disconnected dry marks.",
+            "Follow actual local form and preserve negative gaps before any wash fill."
+          ]
+        },
+        {
+          "id": "scene-07_buddha_lower_body",
+          "subject": "buddha",
+          "role": "lower_body",
+          "stroke_groups": [
+            "Separate visible brush contour marks for this semantic region; lift between disconnected dry marks.",
+            "Follow actual local form and preserve negative gaps before any wash fill."
+          ]
+        },
+        {
+          "id": "scene-07_bodhi_crown",
+          "subject": "bodhi",
+          "role": "crown",
+          "stroke_groups": [
+            "Separate visible brush contour marks for this semantic region; lift between disconnected dry marks.",
+            "Follow actual local form and preserve negative gaps before any wash fill."
+          ]
+        },
+        {
+          "id": "scene-07_bodhi_trunk",
+          "subject": "bodhi",
+          "role": "trunk",
+          "stroke_groups": [
+            "Separate visible brush contour marks for this semantic region; lift between disconnected dry marks.",
+            "Follow actual local form and preserve negative gaps before any wash fill."
+          ]
+        },
+        {
+          "id": "scene-07_bodhi_roots",
+          "subject": "bodhi",
+          "role": "roots",
+          "stroke_groups": [
+            "Separate visible brush contour marks for this semantic region; lift between disconnected dry marks.",
+            "Follow actual local form and preserve negative gaps before any wash fill."
+          ]
+        },
+        {
+          "id": "scene-07_paper_seal",
+          "subject": "paper_seal",
+          "role": "paper_and_seal",
+          "stroke_groups": [
+            "Trace the small vermilion seal boundary and any separate background ink marks.",
+            "Apply sparse paper/ink-wash residue last without bridging empty paper."
+          ]
+        }
+      ],
+      "outline_order": [
+        "scene-07_buddha_head",
+        "scene-07_buddha_neck",
+        "scene-07_buddha_torso",
+        "scene-07_buddha_left_arm",
+        "scene-07_buddha_right_arm",
+        "scene-07_buddha_lower_body",
+        "scene-07_bodhi_crown",
+        "scene-07_bodhi_trunk",
+        "scene-07_bodhi_roots",
+        "scene-07_paper_seal"
+      ],
+      "fill_order": [
+        "scene-07_buddha_head",
+        "scene-07_buddha_neck",
+        "scene-07_buddha_torso",
+        "scene-07_buddha_left_arm",
+        "scene-07_buddha_right_arm",
+        "scene-07_buddha_lower_body",
+        "scene-07_bodhi_crown",
+        "scene-07_bodhi_trunk",
+        "scene-07_bodhi_roots",
+        "scene-07_paper_seal"
+      ],
+      "spatial_order": "top_to_bottom_left_to_right",
+      "order_exception": "Follow semantic subject order before paper/seal residue; the paper region is assigned last to avoid revealing foreground anatomy early.",
+      "narrative_requirements": [
+        {
+          "id": "scene-07-fact",
+          "narration_quote": "菩提樹下禪坐",
+          "observable": "A seated meditator is visibly beneath a heart-leaf bodhi tree, illustrating the traditional awakening account without presenting a photographic historical record."
+        }
+      ]
+    },
+    {
+      "id": "scene-08",
+      "composition": "Four successive symbolic stations of understanding, in a clear left-to-right progression on separate islands of paper: a tangled rope knot, a visible close view of the same knot and its strands, a loosened open loop with separated rope ends, and a clear winding footpath toward a distant open horizon. No arrows or labels in the generated image.",
+      "drawability_reason": "Few separated semantic objects and simple limbs; each scene has its full measured narration window. An aligned contour mask follows actual source ink and wash boundaries without redrawing or changing source pixels.",
+      "outline_strategy": "explicit_mask",
+      "subjects": [
+        {
+          "id": "problem",
+          "kind": "object"
+        },
+        {
+          "id": "cause",
+          "kind": "object"
+        },
+        {
+          "id": "release",
+          "kind": "object"
+        },
+        {
+          "id": "practice",
+          "kind": "environment"
+        },
+        {
+          "id": "paper_seal",
+          "kind": "environment"
+        }
+      ],
+      "parts": [
+        {
+          "id": "scene-08_problem_knot",
+          "subject": "problem",
+          "role": "knot",
+          "stroke_groups": [
+            "Separate visible brush contour marks for this semantic region; lift between disconnected dry marks.",
+            "Follow actual local form and preserve negative gaps before any wash fill."
+          ]
+        },
+        {
+          "id": "scene-08_cause_strands",
+          "subject": "cause",
+          "role": "strands",
+          "stroke_groups": [
+            "Separate visible brush contour marks for this semantic region; lift between disconnected dry marks.",
+            "Follow actual local form and preserve negative gaps before any wash fill."
+          ]
+        },
+        {
+          "id": "scene-08_release_open_loop",
+          "subject": "release",
+          "role": "open_loop",
+          "stroke_groups": [
+            "Separate visible brush contour marks for this semantic region; lift between disconnected dry marks.",
+            "Follow actual local form and preserve negative gaps before any wash fill."
+          ]
+        },
+        {
+          "id": "scene-08_practice_path",
+          "subject": "practice",
+          "role": "path",
+          "stroke_groups": [
+            "Separate visible brush contour marks for this semantic region; lift between disconnected dry marks.",
+            "Follow actual local form and preserve negative gaps before any wash fill."
+          ]
+        },
+        {
+          "id": "scene-08_practice_horizon",
+          "subject": "practice",
+          "role": "horizon",
+          "stroke_groups": [
+            "Separate visible brush contour marks for this semantic region; lift between disconnected dry marks.",
+            "Follow actual local form and preserve negative gaps before any wash fill."
+          ]
+        },
+        {
+          "id": "scene-08_paper_seal",
+          "subject": "paper_seal",
+          "role": "paper_and_seal",
+          "stroke_groups": [
+            "Trace the small vermilion seal boundary and any separate background ink marks.",
+            "Apply sparse paper/ink-wash residue last without bridging empty paper."
+          ]
+        }
+      ],
+      "outline_order": [
+        "scene-08_problem_knot",
+        "scene-08_cause_strands",
+        "scene-08_release_open_loop",
+        "scene-08_practice_path",
+        "scene-08_practice_horizon",
+        "scene-08_paper_seal"
+      ],
+      "fill_order": [
+        "scene-08_problem_knot",
+        "scene-08_cause_strands",
+        "scene-08_release_open_loop",
+        "scene-08_practice_path",
+        "scene-08_practice_horizon",
+        "scene-08_paper_seal"
+      ],
+      "spatial_order": "top_to_bottom_left_to_right",
+      "order_exception": "Follow semantic subject order before paper/seal residue; the paper region is assigned last to avoid revealing foreground anatomy early.",
+      "narrative_requirements": [
+        {
+          "id": "scene-08-fact",
+          "narration_quote": "苦、集、滅、道",
+          "observable": "Four distinct stations move from a knot/problem, investigation of its strands, loosening and a practicable path; conceptual metaphors, not a complete definition of the doctrines."
+        }
+      ]
+    },
+    {
+      "id": "scene-09",
+      "composition": "Close-up of a human hand and short forearm gently gripping a lotus stem; the flower is above the hand, with two petals visibly falling away to the right. The stem is clearly in contact with the fingers, not floating. No head or torso visible. The hand is natural and relaxed, not violent.",
+      "drawability_reason": "Few separated semantic objects and simple limbs; each scene has its full measured narration window. An aligned contour mask follows actual source ink and wash boundaries without redrawing or changing source pixels.",
+      "outline_strategy": "explicit_mask",
+      "subjects": [
+        {
+          "id": "hand",
+          "kind": "human",
+          "omitted_roles": {
+            "head": "Close-up framing: only hand and forearm visible; this body region is outside the image.",
+            "neck": "Close-up framing: only hand and forearm visible; this body region is outside the image.",
+            "torso": "Close-up framing: only hand and forearm visible; this body region is outside the image.",
+            "right_arm": "Close-up framing: only hand and forearm visible; this body region is outside the image.",
+            "lower_body": "Close-up framing: only hand and forearm visible; this body region is outside the image."
+          }
+        },
+        {
+          "id": "lotus",
+          "kind": "object"
+        },
+        {
+          "id": "paper_seal",
+          "kind": "environment"
+        }
+      ],
+      "parts": [
+        {
+          "id": "scene-09_hand_left_arm",
+          "subject": "hand",
+          "role": "left_arm",
+          "stroke_groups": [
+            "Separate visible brush contour marks for this semantic region; lift between disconnected dry marks.",
+            "Follow actual local form and preserve negative gaps before any wash fill."
+          ]
+        },
+        {
+          "id": "scene-09_lotus_bloom",
+          "subject": "lotus",
+          "role": "bloom",
+          "stroke_groups": [
+            "Separate visible brush contour marks for this semantic region; lift between disconnected dry marks.",
+            "Follow actual local form and preserve negative gaps before any wash fill."
+          ]
+        },
+        {
+          "id": "scene-09_lotus_stem",
+          "subject": "lotus",
+          "role": "stem",
+          "stroke_groups": [
+            "Separate visible brush contour marks for this semantic region; lift between disconnected dry marks.",
+            "Follow actual local form and preserve negative gaps before any wash fill."
+          ]
+        },
+        {
+          "id": "scene-09_lotus_falling_petals",
+          "subject": "lotus",
+          "role": "falling_petals",
+          "stroke_groups": [
+            "Separate visible brush contour marks for this semantic region; lift between disconnected dry marks.",
+            "Follow actual local form and preserve negative gaps before any wash fill."
+          ]
+        },
+        {
+          "id": "scene-09_paper_seal",
+          "subject": "paper_seal",
+          "role": "paper_and_seal",
+          "stroke_groups": [
+            "Trace the small vermilion seal boundary and any separate background ink marks.",
+            "Apply sparse paper/ink-wash residue last without bridging empty paper."
+          ]
+        }
+      ],
+      "outline_order": [
+        "scene-09_hand_left_arm",
+        "scene-09_lotus_bloom",
+        "scene-09_lotus_stem",
+        "scene-09_lotus_falling_petals",
+        "scene-09_paper_seal"
+      ],
+      "fill_order": [
+        "scene-09_hand_left_arm",
+        "scene-09_lotus_bloom",
+        "scene-09_lotus_stem",
+        "scene-09_lotus_falling_petals",
+        "scene-09_paper_seal"
+      ],
+      "spatial_order": "top_to_bottom_left_to_right",
+      "order_exception": "Follow semantic subject order before paper/seal residue; the paper region is assigned last to avoid revealing foreground anatomy early.",
+      "narrative_requirements": [
+        {
+          "id": "scene-09-fact",
+          "narration_quote": "條件會變，關係會變，我們自己也會變",
+          "observable": "A held flower visibly loses petals, making change and the limits of grasping observable; this is an explanatory metaphor."
+        }
+      ]
+    },
+    {
+      "id": "scene-10",
+      "composition": "Three separate phases of the same lotus plant from left to right: a closed bud, an open flower and a drooping seed head. Fine roots touch a shallow pool; a small arc of sun above. No human, no self-help icons, no labels. Clear gaps between the plant phases.",
+      "drawability_reason": "Few separated semantic objects and simple limbs; each scene has its full measured narration window. An aligned contour mask follows actual source ink and wash boundaries without redrawing or changing source pixels.",
+      "outline_strategy": "explicit_mask",
+      "subjects": [
+        {
+          "id": "bud",
+          "kind": "object"
+        },
+        {
+          "id": "bloom",
+          "kind": "object"
+        },
+        {
+          "id": "seed",
+          "kind": "object"
+        },
+        {
+          "id": "conditions",
+          "kind": "environment"
+        },
+        {
+          "id": "paper_seal",
+          "kind": "environment"
+        }
+      ],
+      "parts": [
+        {
+          "id": "scene-10_bud_flower",
+          "subject": "bud",
+          "role": "flower",
+          "stroke_groups": [
+            "Separate visible brush contour marks for this semantic region; lift between disconnected dry marks.",
+            "Follow actual local form and preserve negative gaps before any wash fill."
+          ]
+        },
+        {
+          "id": "scene-10_bud_stem",
+          "subject": "bud",
+          "role": "stem",
+          "stroke_groups": [
+            "Separate visible brush contour marks for this semantic region; lift between disconnected dry marks.",
+            "Follow actual local form and preserve negative gaps before any wash fill."
+          ]
+        },
+        {
+          "id": "scene-10_bloom_flower",
+          "subject": "bloom",
+          "role": "flower",
+          "stroke_groups": [
+            "Separate visible brush contour marks for this semantic region; lift between disconnected dry marks.",
+            "Follow actual local form and preserve negative gaps before any wash fill."
+          ]
+        },
+        {
+          "id": "scene-10_bloom_stem",
+          "subject": "bloom",
+          "role": "stem",
+          "stroke_groups": [
+            "Separate visible brush contour marks for this semantic region; lift between disconnected dry marks.",
+            "Follow actual local form and preserve negative gaps before any wash fill."
+          ]
+        },
+        {
+          "id": "scene-10_seed_head",
+          "subject": "seed",
+          "role": "head",
+          "stroke_groups": [
+            "Separate visible brush contour marks for this semantic region; lift between disconnected dry marks.",
+            "Follow actual local form and preserve negative gaps before any wash fill."
+          ]
+        },
+        {
+          "id": "scene-10_seed_stem",
+          "subject": "seed",
+          "role": "stem",
+          "stroke_groups": [
+            "Separate visible brush contour marks for this semantic region; lift between disconnected dry marks.",
+            "Follow actual local form and preserve negative gaps before any wash fill."
+          ]
+        },
+        {
+          "id": "scene-10_conditions_sun",
+          "subject": "conditions",
+          "role": "sun",
+          "stroke_groups": [
+            "Separate visible brush contour marks for this semantic region; lift between disconnected dry marks.",
+            "Follow actual local form and preserve negative gaps before any wash fill."
+          ]
+        },
+        {
+          "id": "scene-10_conditions_water",
+          "subject": "conditions",
+          "role": "water",
+          "stroke_groups": [
+            "Separate visible brush contour marks for this semantic region; lift between disconnected dry marks.",
+            "Follow actual local form and preserve negative gaps before any wash fill."
+          ]
+        },
+        {
+          "id": "scene-10_paper_seal",
+          "subject": "paper_seal",
+          "role": "paper_and_seal",
+          "stroke_groups": [
+            "Trace the small vermilion seal boundary and any separate background ink marks.",
+            "Apply sparse paper/ink-wash residue last without bridging empty paper."
+          ]
+        }
+      ],
+      "outline_order": [
+        "scene-10_bud_flower",
+        "scene-10_bud_stem",
+        "scene-10_bloom_flower",
+        "scene-10_bloom_stem",
+        "scene-10_seed_head",
+        "scene-10_seed_stem",
+        "scene-10_conditions_sun",
+        "scene-10_conditions_water",
+        "scene-10_paper_seal"
+      ],
+      "fill_order": [
+        "scene-10_bud_flower",
+        "scene-10_bud_stem",
+        "scene-10_bloom_flower",
+        "scene-10_bloom_stem",
+        "scene-10_seed_head",
+        "scene-10_seed_stem",
+        "scene-10_conditions_sun",
+        "scene-10_conditions_water",
+        "scene-10_paper_seal"
+      ],
+      "spatial_order": "top_to_bottom_left_to_right",
+      "order_exception": "Follow semantic subject order before paper/seal residue; the paper region is assigned last to avoid revealing foreground anatomy early.",
+      "narrative_requirements": [
+        {
+          "id": "scene-10-fact",
+          "narration_quote": "事物依條件生起，也會改變",
+          "observable": "Bud, bloom and seed head plus water and sun illustrate conditioned change; the image does not equate no-self with nonexistence."
+        }
+      ]
+    },
+    {
+      "id": "scene-11",
+      "composition": "A simple ancient Indian dharma wheel seen straight-on with exactly eight clearly separated spokes, a dark central hub and an unbroken outer rim; below it an open walking path with two subtle footprints, suggesting practical ethical conduct rather than only relaxation. No written words.",
+      "drawability_reason": "Few separated semantic objects and simple limbs; each scene has its full measured narration window. An aligned contour mask follows actual source ink and wash boundaries without redrawing or changing source pixels.",
+      "outline_strategy": "explicit_mask",
+      "subjects": [
+        {
+          "id": "wheel",
+          "kind": "object"
+        },
+        {
+          "id": "practice",
+          "kind": "environment"
+        },
+        {
+          "id": "paper_seal",
+          "kind": "environment"
+        }
+      ],
+      "parts": [
+        {
+          "id": "scene-11_wheel_hub",
+          "subject": "wheel",
+          "role": "hub",
+          "stroke_groups": [
+            "Separate visible brush contour marks for this semantic region; lift between disconnected dry marks.",
+            "Follow actual local form and preserve negative gaps before any wash fill."
+          ]
+        },
+        {
+          "id": "scene-11_wheel_spokes",
+          "subject": "wheel",
+          "role": "spokes",
+          "stroke_groups": [
+            "Separate visible brush contour marks for this semantic region; lift between disconnected dry marks.",
+            "Follow actual local form and preserve negative gaps before any wash fill."
+          ]
+        },
+        {
+          "id": "scene-11_wheel_rim",
+          "subject": "wheel",
+          "role": "rim",
+          "stroke_groups": [
+            "Separate visible brush contour marks for this semantic region; lift between disconnected dry marks.",
+            "Follow actual local form and preserve negative gaps before any wash fill."
+          ]
+        },
+        {
+          "id": "scene-11_practice_footprints",
+          "subject": "practice",
+          "role": "footprints",
+          "stroke_groups": [
+            "Separate visible brush contour marks for this semantic region; lift between disconnected dry marks.",
+            "Follow actual local form and preserve negative gaps before any wash fill."
+          ]
+        },
+        {
+          "id": "scene-11_practice_path",
+          "subject": "practice",
+          "role": "path",
+          "stroke_groups": [
+            "Separate visible brush contour marks for this semantic region; lift between disconnected dry marks.",
+            "Follow actual local form and preserve negative gaps before any wash fill."
+          ]
+        },
+        {
+          "id": "scene-11_paper_seal",
+          "subject": "paper_seal",
+          "role": "paper_and_seal",
+          "stroke_groups": [
+            "Trace the small vermilion seal boundary and any separate background ink marks.",
+            "Apply sparse paper/ink-wash residue last without bridging empty paper."
+          ]
+        }
+      ],
+      "outline_order": [
+        "scene-11_wheel_hub",
+        "scene-11_wheel_spokes",
+        "scene-11_wheel_rim",
+        "scene-11_practice_footprints",
+        "scene-11_practice_path",
+        "scene-11_paper_seal"
+      ],
+      "fill_order": [
+        "scene-11_wheel_hub",
+        "scene-11_wheel_spokes",
+        "scene-11_wheel_rim",
+        "scene-11_practice_footprints",
+        "scene-11_practice_path",
+        "scene-11_paper_seal"
+      ],
+      "spatial_order": "top_to_bottom_left_to_right",
+      "order_exception": "Follow semantic subject order before paper/seal residue; the paper region is assigned last to avoid revealing foreground anatomy early.",
+      "narrative_requirements": [
+        {
+          "id": "scene-11-fact",
+          "narration_quote": "八正道",
+          "observable": "A wheel with eight spokes and a walking path symbolize the eightfold training as practice; exact spoke count must be visually checked."
+        }
+      ]
+    },
+    {
+      "id": "scene-12",
+      "composition": "An ancient Mauryan stone pillar with a simple lion-shaped capital stands to the left, a modest early Buddhist stupa stands farther right, and a tied bundle of palm-leaf manuscripts lies in the foreground. No legible inscriptions. These are illustrations of different later historical developments, not a claim that written canons existed at the Buddha's first teaching.",
+      "drawability_reason": "Few separated semantic objects and simple limbs; each scene has its full measured narration window. An aligned contour mask follows actual source ink and wash boundaries without redrawing or changing source pixels.",
+      "outline_strategy": "explicit_mask",
+      "subjects": [
+        {
+          "id": "pillar",
+          "kind": "object"
+        },
+        {
+          "id": "stupa",
+          "kind": "object"
+        },
+        {
+          "id": "manuscript",
+          "kind": "object"
+        },
+        {
+          "id": "paper_seal",
+          "kind": "environment"
+        }
+      ],
+      "parts": [
+        {
+          "id": "scene-12_pillar_capital",
+          "subject": "pillar",
+          "role": "capital",
+          "stroke_groups": [
+            "Separate visible brush contour marks for this semantic region; lift between disconnected dry marks.",
+            "Follow actual local form and preserve negative gaps before any wash fill."
+          ]
+        },
+        {
+          "id": "scene-12_pillar_shaft",
+          "subject": "pillar",
+          "role": "shaft",
+          "stroke_groups": [
+            "Separate visible brush contour marks for this semantic region; lift between disconnected dry marks.",
+            "Follow actual local form and preserve negative gaps before any wash fill."
+          ]
+        },
+        {
+          "id": "scene-12_pillar_base",
+          "subject": "pillar",
+          "role": "base",
+          "stroke_groups": [
+            "Separate visible brush contour marks for this semantic region; lift between disconnected dry marks.",
+            "Follow actual local form and preserve negative gaps before any wash fill."
+          ]
+        },
+        {
+          "id": "scene-12_stupa_finial",
+          "subject": "stupa",
+          "role": "finial",
+          "stroke_groups": [
+            "Separate visible brush contour marks for this semantic region; lift between disconnected dry marks.",
+            "Follow actual local form and preserve negative gaps before any wash fill."
+          ]
+        },
+        {
+          "id": "scene-12_stupa_dome",
+          "subject": "stupa",
+          "role": "dome",
+          "stroke_groups": [
+            "Separate visible brush contour marks for this semantic region; lift between disconnected dry marks.",
+            "Follow actual local form and preserve negative gaps before any wash fill."
+          ]
+        },
+        {
+          "id": "scene-12_stupa_base",
+          "subject": "stupa",
+          "role": "base",
+          "stroke_groups": [
+            "Separate visible brush contour marks for this semantic region; lift between disconnected dry marks.",
+            "Follow actual local form and preserve negative gaps before any wash fill."
+          ]
+        },
+        {
+          "id": "scene-12_manuscript_leaves",
+          "subject": "manuscript",
+          "role": "leaves",
+          "stroke_groups": [
+            "Separate visible brush contour marks for this semantic region; lift between disconnected dry marks.",
+            "Follow actual local form and preserve negative gaps before any wash fill."
+          ]
+        },
+        {
+          "id": "scene-12_manuscript_tie",
+          "subject": "manuscript",
+          "role": "tie",
+          "stroke_groups": [
+            "Separate visible brush contour marks for this semantic region; lift between disconnected dry marks.",
+            "Follow actual local form and preserve negative gaps before any wash fill."
+          ]
+        },
+        {
+          "id": "scene-12_paper_seal",
+          "subject": "paper_seal",
+          "role": "paper_and_seal",
+          "stroke_groups": [
+            "Trace the small vermilion seal boundary and any separate background ink marks.",
+            "Apply sparse paper/ink-wash residue last without bridging empty paper."
+          ]
+        }
+      ],
+      "outline_order": [
+        "scene-12_pillar_capital",
+        "scene-12_pillar_shaft",
+        "scene-12_pillar_base",
+        "scene-12_stupa_finial",
+        "scene-12_stupa_dome",
+        "scene-12_stupa_base",
+        "scene-12_manuscript_leaves",
+        "scene-12_manuscript_tie",
+        "scene-12_paper_seal"
+      ],
+      "fill_order": [
+        "scene-12_pillar_capital",
+        "scene-12_pillar_shaft",
+        "scene-12_pillar_base",
+        "scene-12_stupa_finial",
+        "scene-12_stupa_dome",
+        "scene-12_stupa_base",
+        "scene-12_manuscript_leaves",
+        "scene-12_manuscript_tie",
+        "scene-12_paper_seal"
+      ],
+      "spatial_order": "top_to_bottom_left_to_right",
+      "order_exception": "Follow semantic subject order before paper/seal residue; the paper region is assigned last to avoid revealing foreground anatomy early.",
+      "narrative_requirements": [
+        {
+          "id": "scene-12-fact",
+          "narration_quote": "阿育王支持佛教",
+          "observable": "An Ashokan-type pillar, early stupa and palm-leaf manuscript bundle illustrate patronage, community and later textual transmission; chronology is explained by narration."
+        }
+      ]
+    },
+    {
+      "id": "scene-13",
+      "composition": "A carefully opened tied palm-leaf manuscript on the left, its leaves showing only a few nonlegible short lines; on the right a small devotional lotus lamp. They are separate but receive equal visual weight. No modern magnifying glass, no legible pseudo-Sanskrit or Chinese text, no people.",
+      "drawability_reason": "Few separated semantic objects and simple limbs; each scene has its full measured narration window. An aligned contour mask follows actual source ink and wash boundaries without redrawing or changing source pixels.",
+      "outline_strategy": "explicit_mask",
+      "subjects": [
+        {
+          "id": "manuscript",
+          "kind": "object"
+        },
+        {
+          "id": "lamp",
+          "kind": "object"
+        },
+        {
+          "id": "paper_seal",
+          "kind": "environment"
+        }
+      ],
+      "parts": [
+        {
+          "id": "scene-13_manuscript_leaves",
+          "subject": "manuscript",
+          "role": "leaves",
+          "stroke_groups": [
+            "Separate visible brush contour marks for this semantic region; lift between disconnected dry marks.",
+            "Follow actual local form and preserve negative gaps before any wash fill."
+          ]
+        },
+        {
+          "id": "scene-13_manuscript_tie",
+          "subject": "manuscript",
+          "role": "tie",
+          "stroke_groups": [
+            "Separate visible brush contour marks for this semantic region; lift between disconnected dry marks.",
+            "Follow actual local form and preserve negative gaps before any wash fill."
+          ]
+        },
+        {
+          "id": "scene-13_lamp_flame",
+          "subject": "lamp",
+          "role": "flame",
+          "stroke_groups": [
+            "Separate visible brush contour marks for this semantic region; lift between disconnected dry marks.",
+            "Follow actual local form and preserve negative gaps before any wash fill."
+          ]
+        },
+        {
+          "id": "scene-13_lamp_lotus_base",
+          "subject": "lamp",
+          "role": "lotus_base",
+          "stroke_groups": [
+            "Separate visible brush contour marks for this semantic region; lift between disconnected dry marks.",
+            "Follow actual local form and preserve negative gaps before any wash fill."
+          ]
+        },
+        {
+          "id": "scene-13_paper_seal",
+          "subject": "paper_seal",
+          "role": "paper_and_seal",
+          "stroke_groups": [
+            "Trace the small vermilion seal boundary and any separate background ink marks.",
+            "Apply sparse paper/ink-wash residue last without bridging empty paper."
+          ]
+        }
+      ],
+      "outline_order": [
+        "scene-13_manuscript_leaves",
+        "scene-13_manuscript_tie",
+        "scene-13_lamp_flame",
+        "scene-13_lamp_lotus_base",
+        "scene-13_paper_seal"
+      ],
+      "fill_order": [
+        "scene-13_manuscript_leaves",
+        "scene-13_manuscript_tie",
+        "scene-13_lamp_flame",
+        "scene-13_lamp_lotus_base",
+        "scene-13_paper_seal"
+      ],
+      "spatial_order": "top_to_bottom_left_to_right",
+      "order_exception": "Follow semantic subject order before paper/seal residue; the paper region is assigned last to avoid revealing foreground anatomy early.",
+      "narrative_requirements": [
+        {
+          "id": "scene-13-fact",
+          "narration_quote": "既能尊重信仰，也能避免把傳說細節都當成可考證的事實",
+          "observable": "A manuscript and devotional lamp represent the complementary lenses of historical inquiry and faith without claiming one object proves all narrative details."
+        }
+      ]
+    },
+    {
+      "id": "scene-14",
+      "composition": "Close-up of two people's forearms and hands: a younger open hand supports an older wrinkled hand from beneath at the center. Gentle, clear physical contact with anatomically readable fingers; neither hand squeezes the other. No faces, no torsos, no jewelry. Empty space surrounds the joined hands.",
+      "drawability_reason": "Few separated semantic objects and simple limbs; each scene has its full measured narration window. An aligned contour mask follows actual source ink and wash boundaries without redrawing or changing source pixels.",
+      "outline_strategy": "explicit_mask",
+      "subjects": [
+        {
+          "id": "helper",
+          "kind": "human",
+          "omitted_roles": {
+            "head": "Close-up framing: only hand and forearm visible; this body region is outside the image.",
+            "neck": "Close-up framing: only hand and forearm visible; this body region is outside the image.",
+            "torso": "Close-up framing: only hand and forearm visible; this body region is outside the image.",
+            "right_arm": "Close-up framing: only hand and forearm visible; this body region is outside the image.",
+            "lower_body": "Close-up framing: only hand and forearm visible; this body region is outside the image."
+          }
+        },
+        {
+          "id": "elder",
+          "kind": "human",
+          "omitted_roles": {
+            "head": "Close-up framing: only hand and forearm visible; this body region is outside the image.",
+            "neck": "Close-up framing: only hand and forearm visible; this body region is outside the image.",
+            "torso": "Close-up framing: only hand and forearm visible; this body region is outside the image.",
+            "left_arm": "Close-up framing: only hand and forearm visible; this body region is outside the image.",
+            "lower_body": "Close-up framing: only hand and forearm visible; this body region is outside the image."
+          }
+        },
+        {
+          "id": "paper_seal",
+          "kind": "environment"
+        }
+      ],
+      "parts": [
+        {
+          "id": "scene-14_helper_left_arm",
+          "subject": "helper",
+          "role": "left_arm",
+          "stroke_groups": [
+            "Separate visible brush contour marks for this semantic region; lift between disconnected dry marks.",
+            "Follow actual local form and preserve negative gaps before any wash fill."
+          ]
+        },
+        {
+          "id": "scene-14_elder_right_arm",
+          "subject": "elder",
+          "role": "right_arm",
+          "stroke_groups": [
+            "Separate visible brush contour marks for this semantic region; lift between disconnected dry marks.",
+            "Follow actual local form and preserve negative gaps before any wash fill."
+          ]
+        },
+        {
+          "id": "scene-14_paper_seal",
+          "subject": "paper_seal",
+          "role": "paper_and_seal",
+          "stroke_groups": [
+            "Trace the small vermilion seal boundary and any separate background ink marks.",
+            "Apply sparse paper/ink-wash residue last without bridging empty paper."
+          ]
+        }
+      ],
+      "outline_order": [
+        "scene-14_helper_left_arm",
+        "scene-14_elder_right_arm",
+        "scene-14_paper_seal"
+      ],
+      "fill_order": [
+        "scene-14_helper_left_arm",
+        "scene-14_elder_right_arm",
+        "scene-14_paper_seal"
+      ],
+      "spatial_order": "top_to_bottom_left_to_right",
+      "order_exception": "Follow semantic subject order before paper/seal residue; the paper region is assigned last to avoid revealing foreground anatomy early.",
+      "narrative_requirements": [
+        {
+          "id": "scene-14-fact",
+          "narration_quote": "他人的處境",
+          "observable": "One hand visibly supports another older hand, giving the closing call to understand others a concrete compassionate action."
+        }
+      ]
+    }
+  ]
+}

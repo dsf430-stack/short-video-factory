@@ -120,7 +120,7 @@ def main(args, pipeline):
   render_receipt.unlink(missing_ok=True)
   pipeline.start('prepare_inputs')
   from pipeline_state import sync_inputs
-  sync_inputs(bundle,root)
+  sync_inputs(bundle,root,voice_only=args.voice_only)
   if not args.voice_only:shutil.copyfile(bundle/'design.json',root/'design.json')
   story=json.loads((bundle/'story.json').read_text()); scenes=story['scenes']
   pipeline.done()
