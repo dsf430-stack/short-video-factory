@@ -168,3 +168,12 @@
 - 自然片長快取路徑的 `narration_mode` 未初始化風險已以 commit `23b9e231e417bdf20b27cf5e778ff4e9a7c6617d` 修正；尚未跑 Actions 回歸測試。
 - BLOCKED：完整官方17號素材及 drawing-plan、art-direction、drawing-review 缺失；未執行完整068配音、check_bundle、activate或正式渲染，沒有 MP4 或本任務 Actions run ID。
 - NEXT：核對17號完整配方，生成及逐圖看圖、準備審查資料與素材；使用官方check_bundle實測通過後再啟用 Actions。保留原稿與已成功步驟，不虛報驗證。
+
+
+## 手繪穩定性修復｜IN_PROGRESS（2026-11-01）
+
+- 使用者已授權直接修改，允許結構調整，目標為穩定產出；保留官方固定引擎與068。
+- 根因證據：check_bundle原先不查pixel_sha256，produce卻於配音後要求；最新佛教起源run 41267990364第2次失敗於resolve，缺design/style/review/cover，並未進入渲染。ubuntu-latest該run已漂移至26.04。
+- DONE（本地）：共用圖片完整性與片長規格檢查、前置官方素材驗證、階段日誌、有界命令及子程序終止、損壞快取回復、權威音訊同步、完整解碼/編碼/字幕軌檢查；25項回歸測試通過。
+- 已新增正式三案例MP4回歸工作流與直接依賴版本檔；未改active-job，未替未完成佛教素材偽造pass。
+- NEXT：推送修復分支、執行三案例Actions、依真實Log修復；全部通過後合併並記錄實際run/commit。尚未把雲端MP4回歸標DONE。

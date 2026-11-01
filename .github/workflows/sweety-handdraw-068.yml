@@ -29,7 +29,7 @@ concurrency:
   cancel-in-progress: false
 jobs:
   render:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 60
     steps:
       - uses: actions/checkout@v4
@@ -38,8 +38,6 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-      - name: Test request resolution, cache validation and alignment
-        run: python -m unittest discover -s handdraw -p 'test_*.py'
       - name: Resolve exact prepared job and isolated output path
         id: job
         env:
@@ -54,7 +52,12 @@ jobs:
           git -C /tmp/sweety-official checkout 5206ec0d17f9b353e400b64b9c51ad69e721e02a
           sudo apt-get update
           sudo apt-get install -y ffmpeg fonts-noto-cjk libimage-exiftool-perl
-          python -m pip install -r /tmp/sweety-official/skills/sweety-handdraw-video/scripts/requirements.txt -r smart_voice/requirements.txt
+          python -m pip install -r handdraw/requirements.lock
+          python -m pip check
+          python -m pip freeze > handdraw-runtime.txt
+          ffmpeg -version >> handdraw-runtime.txt
+      - name: Test request resolution, cache validation and alignment
+        run: python -m unittest discover -s handdraw -p 'test_*.py'
       - name: Resolve checksum-verified official pen
         run: |
           python - <<'PY'
@@ -110,13 +113,16 @@ jobs:
           if-no-files-found: error
           retention-days: 30
       - name: Upload diagnostic and continuation evidence
-        if: always()
+        if: always() && steps.job.outputs.root != ''
         uses: actions/upload-artifact@v4
         with:
           name: sweety-diagnostics-${{ github.run_id }}-${{ github.run_attempt }}
           path: |
             handdraw/prepared/**/request.json
             handdraw/prepared/**/preparation-status.json
+            handdraw-runtime.txt
+            ${{ steps.job.outputs.root }}/pipeline-state.json
+            ${{ steps.job.outputs.root }}/render-input.json
             ${{ steps.job.outputs.root }}/run.log
             ${{ steps.job.outputs.root }}/voice-measurement.json
             ${{ steps.job.outputs.root }}/acceptance.json
@@ -130,5 +136,15 @@ jobs:
             ${{ steps.job.outputs.root }}/work/timeline.json
             ${{ steps.job.outputs.root }}/inputs/*.json
             ${{ steps.job.outputs.root }}/inputs/*.error.log
+          if-no-files-found: ignore
+          retention-days: 14
+      - name: Upload preparation failure evidence
+        if: failure() && steps.job.outputs.root == ''
+        uses: actions/upload-artifact@v4
+        with:
+          name: sweety-preparation-${{ github.run_id }}-${{ github.run_attempt }}
+          path: |
+            handdraw/prepared/**/request.json
+            handdraw/prepared/**/preparation-status.json
           if-no-files-found: ignore
           retention-days: 14

@@ -8,7 +8,8 @@ PIN='5206ec0d17f9b353e400b64b9c51ad69e721e02a'
 def digest(p): return hashlib.sha256(Path(p).read_bytes()).hexdigest()
 def save(p,v):
  p=Path(p);p.parent.mkdir(parents=True,exist_ok=True);p.write_text(json.dumps(v,ensure_ascii=False,indent=2)+'\n')
-def run(*a): subprocess.run([str(x) for x in a],check=True)
+from pipeline_state import Pipeline, run_command
+def run(*a): run_command(*a)
 def normalize(t): return ''.join(c for c in t if c.isalnum())
 def parse_srt(path):
     def seconds(value):
@@ -78,39 +79,51 @@ def align_scenes(scenes, events, word_events=False):
 
 
 
-def main(args):
+def main(args, pipeline):
  from PIL import Image, ImageFont
  from preparation import resolve_bundle, choose_candidate
+ pipeline.start('preflight')
  bundle=resolve_bundle(REPO/'handdraw/prepared',args.topic,args.seconds,args.job_id,args.style,args.voice_only)
  root=Path(args.output).resolve();root.mkdir(parents=True,exist_ok=True)
  story_meta=json.loads((bundle/'story.json').read_text())
- narration_mode=(args.seconds is None or story_meta.get('duration_mode')=='narration' or
-                 ((bundle/'request.json').exists() and json.loads((bundle/'request.json').read_text()).get('duration_mode')=='narration'))
+ from bundle_contract import duration_mode
+ request=json.loads((bundle/'request.json').read_text()) if (bundle/'request.json').exists() else {}
+ narration_mode=duration_mode(story_meta,request,args.seconds)=='narration'
  skill=Path(args.official).resolve()/'skills/sweety-handdraw-video'
- actual=subprocess.check_output(['git','-C',str(skill),'rev-parse','HEAD'],text=True).strip()
+ actual=subprocess.check_output(['git','-C',str(skill),'rev-parse','HEAD'],text=True,timeout=30).strip()
  if actual!=PIN: raise ValueError('Official source pin changed')
  sys.path.insert(0,str(skill/'scripts'))
  from clean_image import clean_image
  from video_verifier import build_fingerprint, file_hash
  command=skill/'scripts/handdraw_video.py'
- fingerprint=hashlib.sha256((str(args.seconds)+digest(Path(__file__))+digest(REPO/'handdraw/preparation.py')+digest(REPO/'handdraw/voice_cache.py')+digest(REPO/'handdraw/caption_layout.py')+digest(REPO/'smart_voice/generate_voice.py')+json.dumps(json.loads((REPO/'smart_voice/voices.json').read_text())['voices']['068'],sort_keys=True) + ''.join(str(p.relative_to(bundle))+digest(p) for p in sorted(bundle.rglob('*')) if p.is_file())).encode()).hexdigest()
+ if not args.voice_only:
+  from check_bundle import validate_assets
+  validate_assets(bundle,args.official)
+ pipeline.done()
+ from pipeline_state import runtime_fingerprint, content_fingerprint
+ fingerprint=content_fingerprint(bundle,REPO,args.seconds,args.voice_only,runtime_fingerprint())
  receipt=root/'prepared-receipt.json'
+ render_receipt=root/'render-input.json'
  film=root/'outputs/film.mp4'
  cached=False
  try:
-  if receipt.exists() and film.exists() and json.loads(receipt.read_text()).get('bundle_sha256')==fingerprint:
+  source_receipt=receipt if receipt.exists() else render_receipt
+  if source_receipt.exists() and film.exists() and json.loads(source_receipt.read_text()).get('bundle_sha256')==fingerprint:
    record=json.loads((root/'work/render-record.json').read_text())
    cached=record['video_sha256']==file_hash(film) and record['build_fingerprint']==build_fingerprint(root)
+  if args.voice_only or args.preview_only: cached=False
  except (ValueError,OSError,KeyError,TypeError):
   print('INVALID_RENDER_CACHE: rebuilding this job from validated inputs',flush=True)
  if not cached:
-  def copy_prepared(source, destination):
-   if Path(source).name.startswith('voice-') and Path(destination).is_file(): return str(destination)
-   return shutil.copy2(source, destination)
-  for directory in ['style','design','inputs']:
-   shutil.copytree(bundle/directory,root/directory,dirs_exist_ok=True,copy_function=copy_prepared)
+  receipt.unlink(missing_ok=True)
+  render_receipt.unlink(missing_ok=True)
+  pipeline.start('prepare_inputs')
+  from pipeline_state import sync_inputs
+  sync_inputs(bundle,root)
   if not args.voice_only:shutil.copyfile(bundle/'design.json',root/'design.json')
   story=json.loads((bundle/'story.json').read_text()); scenes=story['scenes']
+  pipeline.done()
+  pipeline.start('voice')
 
   candidates=story.get('script_candidates',[[s['text'] for s in scenes]])
   if narration_mode: candidates=[[s['text'] for s in scenes]]
@@ -129,8 +142,9 @@ def main(args):
     if not story.get('voice_rate_authorization') or not re.fullmatch(r'[+-]\d+%',voice_rate):raise ValueError('Task-specific voice rate requires explicit authorization and a signed integer percentage')
     expected['rate']=voice_rate
    boundary=story.get('voice_boundary','SentenceBoundary')
-   cached_boundary=json.loads(mp3.with_suffix('.json').read_text()).get('boundary','SentenceBoundary') if mp3.with_suffix('.json').exists() else None
-   if not valid_voice_cache(mp3,text_hash,expected,text) or cached_boundary != boundary:
+   cache_valid=valid_voice_cache(mp3,text_hash,expected,text)
+   cached_boundary=json.loads(mp3.with_suffix('.json').read_text()).get('boundary','SentenceBoundary') if cache_valid else None
+   if not cache_valid or cached_boundary != boundary:
     invalidate_voice_cache(mp3)
     rate_args=['--rate='+voice_rate] if voice_rate is not None else []
     run(sys.executable,REPO/'smart_voice/generate_voice.py','--voice-id','068','--text-file',narration,'--output',mp3,'--boundary',boundary,*rate_args)
@@ -149,6 +163,8 @@ def main(args):
     selected=candidate;break
   if selected is None:raise ValueError('SCRIPT_FIT_REQUIRED: measured editorial candidates exhausted; see voice-measurement.json. Voice was not stretched or truncated.')
   for scene,spoken in zip(scenes,candidates[selected]):scene['text']=spoken
+  pipeline.done()
+  pipeline.start('alignment')
   # Requirements cite stable core facts present in every editorial candidate.
   beats=align_scenes(scenes,parse_srt(mp3.with_suffix('.srt')),word_events=boundary=='WordBoundary')
   if story.get('silent_animation_authorization'):
@@ -157,9 +173,12 @@ def main(args):
    for index in range(len(beats)-1):
     beats[index]['end']=beats[index+1]['start']
   save(root/'inputs/alignment.json',{'version':1,'source_sha256':digest(master),'script_sha256':text_hash,'beats':beats})
+  pipeline.done()
   if args.voice_only:
+   pipeline.finish('VOICE_READY')
    print('VOICE_FIT_READY',json.dumps({'seconds':duration,'hold':hold,'candidate':selected}),flush=True)
    return
+  pipeline.start('layout')
   art=json.loads((root/'design/art-direction.json').read_text());drawing=json.loads((root/'design/drawing-review.json').read_text())
   for entry in art['images']:
    image=(root/'design'/entry['source']).resolve()
@@ -202,20 +221,36 @@ def main(args):
   print('CAPTION_WIDTH_RATIO',manifest['captions']['max_width_ratio'],flush=True)
   print('CAPTION_BOTTOM_MARGIN',caption_options['bottom_margin'],flush=True)
   save(root/'job.json',manifest)
+  pipeline.done()
+  pipeline.start('build')
   for stage in ['doctor','build']:run(sys.executable,command,stage,root)
   run(sys.executable,command,'verify',root,'--assets-only')
+  pipeline.done()
+  pipeline.start('preview')
   run(sys.executable,command,'render',root,'--preview','--start',1,'--duration',story.get('preview_seconds',7))
+  pipeline.done()
   if args.preview_only:
+   pipeline.finish('PREVIEW_READY')
    print('PREVIEW_READY',root/'work/review/preview.mp4',flush=True)
    return
+  pipeline.start('render')
   run(sys.executable,command,'render',root)
+  save(render_receipt,{'bundle_sha256':fingerprint})
+  pipeline.done()
+ else:
+  pipeline.start('render')
+  pipeline.done(reused=True)
+ pipeline.start('verification')
  run(sys.executable,command,'verify',root)
- probe=json.loads(subprocess.check_output(['ffprobe','-v','error','-show_streams','-show_format','-of','json',str(film)]))
+ run('ffmpeg','-v','error','-xerror','-i',film,'-f','null','-')
+ probe=json.loads(subprocess.check_output(['ffprobe','-v','error','-show_streams','-show_format','-of','json',str(film)],timeout=60))
  v=next(s for s in probe['streams'] if s['codec_type']=='video')
  expected_seconds=args.seconds
  if narration_mode:
   import wave
   with wave.open(str(root/'inputs/master.wav')) as wav: expected_seconds=1+wav.getnframes()/wav.getframerate()+.3
+ audio=[stream for stream in probe['streams'] if stream['codec_type']=='audio']
+ if len(audio)!=1 or audio[0]['codec_name']!='aac' or v['codec_name']!='h264' or any(stream['codec_type']=='subtitle' for stream in probe['streams']):raise ValueError('Requested H.264/AAC or single-subtitle-layer contract failed')
  if (v['width'],v['height'],v['avg_frame_rate'])!=(1080,1920,'30/1') or abs(float(v['duration'])-expected_seconds)>.05:raise ValueError('Requested format or duration failed')
  report={'status':'ENGINEERING_PASS','topic':args.topic,'seconds':float(v['duration']),'official_commit':PIN,'voice':'068','sha256':digest(film),'human_listening':'UNCERTAIN','model_api_required':False}
  review_path=REPO/'handdraw/final-reviews'/f"{digest(film)}.json"
@@ -224,6 +259,21 @@ def main(args):
  report.update(job_id=bundle.name,style=json.loads((bundle/'style/resolved.json').read_text()).get('style_name'),target_seconds=args.seconds)
  save(root/'acceptance.json',report)
  save(receipt,{'bundle_sha256':fingerprint,'official_commit':PIN,'verified_video_sha256':digest(film)})
+ pipeline.done()
+ pipeline.finish('ENGINEERING_PASS')
  print('VERIFIED_FILM',str(film),json.dumps(report),flush=True)
+def execute(args):
+ pipeline=Pipeline(Path(args.output).resolve())
+ try:
+  return main(args,pipeline)
+ except BaseException as error:
+  if pipeline.current=='verification':
+   # Never keep trusting a render receipt after failed final verification.
+   for name in ('prepared-receipt.json','render-input.json'):
+    (Path(args.output)/name).unlink(missing_ok=True)
+  pipeline.fail(error)
+  raise
+
+
 if __name__=='__main__':
- p=argparse.ArgumentParser(description=__doc__);p.add_argument('--topic',required=True);p.add_argument('--seconds',type=int);p.add_argument('--official',required=True);p.add_argument('--output',required=True);p.add_argument('--preview-only',action='store_true');p.add_argument('--voice-only',action='store_true');p.add_argument('--job-id');p.add_argument('--style');main(p.parse_args())
+ p=argparse.ArgumentParser(description=__doc__);p.add_argument('--topic',required=True);p.add_argument('--seconds',type=int);p.add_argument('--official',required=True);p.add_argument('--output',required=True);p.add_argument('--preview-only',action='store_true');p.add_argument('--voice-only',action='store_true');p.add_argument('--job-id');p.add_argument('--style');execute(p.parse_args())

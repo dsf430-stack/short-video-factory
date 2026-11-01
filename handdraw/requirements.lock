@@ -1,0 +1,8 @@
+# Direct production dependencies for Python 3.11, Ubuntu 24.04.
+# Keep aligned with the pinned official engine's supported version ranges.
+Pillow==11.3.0
+numpy==2.2.6
+scipy==1.15.3
+requests==2.32.5
+edge-tts==7.2.8
+certifi==2025.10.5
