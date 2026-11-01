@@ -184,3 +184,10 @@
 - 詳細根因、修復及工件/成片SHA見 integration_checkpoints/handdraw-reliability-20261101.md。
 - BLOCKED（內容製作，與本修復分開）：目前active-job實際為佛教起源8號 `job-buddhism-origin-style08-20261101`；run41267990364第2次失敗於缺design/style/review/cover，未進入渲染。本次未補造素材或啟動該未準備任務。
 - NEXT：新題材先完整備料、官方check_bundle生成當前回執，再activate；製作程式變動沿用三案例正式MP4回歸，不重做已完成影片或更換引擎。
+
+## 2026-11-01 佛教起源8號：Actions 準備門檻修復
+
+- FAILED（實際 Log）：`resolve_job.py` → `validate_bundle()` 回報 `PREPARATION_REQUIRED`；缺8個設計/封面檔，屬於提前啟動，不是 Node.js 警告。影片未完成。
+- FIX（已提交）：`.github/workflows/sweety-handdraw-068.yml` 新增 `preparation_gate`；缺必要檔案、`asset-validation.json` 或 `ASSETS_VALIDATED` 狀態時，略過 render，不再把缺素材當作渲染錯誤。原官方檢查不變。
+- SOP（已提交）：`WORKFLOW.md` 新增事故復盤及 `check_bundle.py` → `activate.py` → commit → Actions → MP4 QA 的強制順序；禁止手寫 active-job.json 跳過門檻。
+- BLOCKED：8號正式圖、封面及審查尚未完成；沒有 MP4。VERIFY PENDING：新 workflow 的實際 Actions 執行與完整回歸測試尚未確認，不能宣稱通過。
