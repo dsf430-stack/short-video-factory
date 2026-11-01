@@ -108,7 +108,9 @@ def main(args):
    shutil.copytree(bundle/directory,root/directory,dirs_exist_ok=True,copy_function=copy_prepared)
   if not args.voice_only:shutil.copyfile(bundle/'design.json',root/'design.json')
   story=json.loads((bundle/'story.json').read_text()); scenes=story['scenes']
+  narration_mode=story.get('duration_mode')=='narration' or json.loads((bundle/'request.json').read_text()).get('duration_mode')=='narration' if (bundle/'request.json').exists() else story.get('duration_mode')=='narration'
   candidates=story.get('script_candidates',[[s['text'] for s in scenes]])
+  if narration_mode: candidates=[[s['text'] for s in scenes]]
   measured={}; attempts=[]; selected=None
   for _ in range(min(12,len(candidates))):
    candidate=choose_candidate(candidates,measured,args.seconds-1-.5,story.get('preferred_candidate'))
@@ -136,7 +138,7 @@ def main(args):
    master=root/'inputs/master.wav';run('ffmpeg','-y','-v','error','-i',mp3,'-ar',48000,'-ac',1,'-c:a','pcm_s16le',master)
    import wave
    with wave.open(str(master)) as wav: duration=wav.getnframes()/wav.getframerate()
-   hold=.3 if story.get('duration_mode')=='narration' else args.seconds-1-duration;measured[candidate]=duration
+   hold=.3 if narration_mode else args.seconds-1-duration;measured[candidate]=duration
    attempts.append({'candidate':candidate,'seconds':duration,'hold':hold,'text':text})
    save(root/'voice-measurement.json',{'attempts':attempts,'target_film_seconds':args.seconds,'voice':meta['preset']})
    print('MEASURED_NARRATION_SECONDS',duration,'REQUIRED_END_HOLD',hold,flush=True)
@@ -208,7 +210,7 @@ def main(args):
  probe=json.loads(subprocess.check_output(['ffprobe','-v','error','-show_streams','-show_format','-of','json',str(film)]))
  v=next(s for s in probe['streams'] if s['codec_type']=='video')
  expected_seconds=args.seconds
- if json.loads((bundle/'story.json').read_text()).get('duration_mode')=='narration':
+ if narration_mode:
   import wave
   with wave.open(str(root/'inputs/master.wav')) as wav: expected_seconds=1+wav.getnframes()/wav.getframerate()+.3
  if (v['width'],v['height'],v['avg_frame_rate'])!=(1080,1920,'30/1') or abs(float(v['duration'])-expected_seconds)>.05:raise ValueError('Requested format or duration failed')
