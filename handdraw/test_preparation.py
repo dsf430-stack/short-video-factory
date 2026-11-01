@@ -10,6 +10,7 @@ class PreparationTests(unittest.TestCase):
    with self.assertRaisesRegex(ValueError,'PREPARATION_REQUIRED'):resolve_bundle(root,'新題材',30)
    requests=list(root.glob('*/request.json'));self.assertEqual(len(requests),1)
    self.assertEqual(json.loads(requests[0].read_text())['topic'],'新題材')
+   self.assertEqual(json.loads(requests[0].read_text())['duration_mode'],'narration')
    self.assertEqual(json.loads((root/'catalog.json').read_text()),{})
  def test_catalog_cannot_escape(self):
   with tempfile.TemporaryDirectory() as folder:
