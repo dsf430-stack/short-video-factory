@@ -18,9 +18,9 @@ def save_json(path, value):
     temporary.replace(path)
 
 
-def job_identity(topic, seconds, style='4', script=''):
-    if not topic.strip() or not isinstance(seconds, int) or not 3 <= seconds <= 3600:
-        raise ValueError('A nonempty topic and integer duration from 3 to 3600 seconds are required')
+def job_identity(topic, seconds=None, style='4', script=''):
+    if not topic.strip() or (seconds is not None and (not isinstance(seconds, int) or seconds <= 0)):
+        raise ValueError('A nonempty topic and optional positive integer duration are required')
     value = {'topic': topic, 'seconds': seconds, 'style': str(style),
              'script_sha256': hashlib.sha256(script.encode()).hexdigest()}
     return 'job-' + hashlib.sha256(json.dumps(value, sort_keys=True, ensure_ascii=False).encode()).hexdigest()[:20]
@@ -36,7 +36,7 @@ def safe_bundle(prepared, identity):
     return bundle
 
 
-def create_request(prepared, topic, seconds, style='4', script='', job_id=None):
+def create_request(prepared, topic, seconds=None, style='4', script='', job_id=None):
     identity = job_id or job_identity(topic, seconds, style, script)
     bundle = safe_bundle(prepared, identity)
     bundle.mkdir(parents=True, exist_ok=True)
@@ -94,7 +94,7 @@ def validate_bundle(bundle, topic, voice_only=False):
     return story
 
 
-def resolve_bundle(prepared, topic, seconds, job_id=None, style=None, voice_only=False):
+def resolve_bundle(prepared, topic, seconds=None, job_id=None, style=None, voice_only=False):
     prepared = Path(prepared).resolve()
     if job_id:
         bundle = safe_bundle(prepared, job_id)
@@ -154,7 +154,7 @@ def choose_candidate(candidates, measured, target, preferred=None):
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--topic', required=True)
-    parser.add_argument('--seconds', type=int, default=30)
+    parser.add_argument('--seconds', type=int)
     parser.add_argument('--style', default='4')
     parser.add_argument('--script-file', type=Path)
     parser.add_argument('--job-id')
