@@ -92,6 +92,8 @@ def main(args, pipeline):
  skill=Path(args.official).resolve()/'skills/sweety-handdraw-video'
  actual=subprocess.check_output(['git','-C',str(skill),'rev-parse','HEAD'],text=True,timeout=30).strip()
  if actual!=PIN: raise ValueError('Official source pin changed')
+ from pipeline_state import check_runtime
+ check_runtime(args.voice_only)
  sys.path.insert(0,str(skill/'scripts'))
  from clean_image import clean_image
  from video_verifier import build_fingerprint, file_hash
@@ -264,6 +266,8 @@ def main(args, pipeline):
  print('VERIFIED_FILM',str(film),json.dumps(report),flush=True)
 def execute(args):
  pipeline=Pipeline(Path(args.output).resolve())
+ # A failed attempt must not leave a previous acceptance report looking current.
+ (Path(args.output)/'acceptance.json').unlink(missing_ok=True)
  try:
   return main(args,pipeline)
  except BaseException as error:

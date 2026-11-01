@@ -9,9 +9,10 @@ import unittest
 from unittest.mock import patch
 from PIL import Image
 from bundle_contract import reviewed_images, duration_mode
-from pipeline_state import Pipeline, run_command, content_fingerprint, sync_inputs
+from pipeline_state import Pipeline, run_command, content_fingerprint, sync_inputs, check_runtime
 from produce import execute
 from preparation import save_json
+from resolve_job import resolve
 
 
 class ReliabilityTests(unittest.TestCase):
@@ -73,11 +74,23 @@ class ReliabilityTests(unittest.TestCase):
             retry.start('voice'); retry.done(reused=True); retry.finish('VOICE_READY')
             self.assertTrue(retry.state['stages']['voice']['reused'])
 
+    def test_zero_duration_is_not_silently_replaced_by_previous_duration(self):
+        with tempfile.TemporaryDirectory() as folder:
+            root = Path(folder)
+            with self.assertRaisesRegex(ValueError, 'positive integer'):
+                resolve({'topic': 'duration test', 'seconds': 0}, root)
+
     def test_command_timeout_is_bounded_and_nonzero_is_failure(self):
         with self.assertRaises(subprocess.TimeoutExpired):
             run_command(sys.executable, '-c', 'import time; time.sleep(20)', timeout=.05)
         with self.assertRaises(subprocess.CalledProcessError):
             run_command(sys.executable, '-c', 'raise SystemExit(7)', timeout=5)
+
+    def test_missing_bun_is_detected_before_image_cleanup(self):
+        with patch('shutil.which', side_effect=lambda command: None if command=='bun' else '/bin/'+command), patch('pathlib.Path.is_file', return_value=True):
+            with self.assertRaisesRegex(ValueError, 'RUNTIME_REQUIRED: bun'):
+                check_runtime()
+            check_runtime(voice_only=True)
 
     def test_failed_verification_invalidates_receipts_but_keeps_voice(self):
         with tempfile.TemporaryDirectory() as folder:

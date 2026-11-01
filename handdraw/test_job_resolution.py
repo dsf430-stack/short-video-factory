@@ -60,6 +60,6 @@ class JobResolutionTests(unittest.TestCase):
   with tempfile.TemporaryDirectory() as d:
    root=Path(d);b=create_request(root,'新腳本',30,job_id='new-script')
    save_json(b/'story.json',{'topic':'新腳本','scenes':[{'id':'intro','text':'先完成旁白。'}]})
-   self.assertEqual(resolve_bundle(root,'新腳本',30,'new-script',voice_only=True),b)
+   self.assertEqual(resolve_bundle(root,'新腳本',30,'new-script',style='4',voice_only=True),b)
    with self.assertRaisesRegex(ValueError,'PREPARATION_REQUIRED'):resolve_bundle(root,'新腳本',30,'new-script')
 if __name__=='__main__':unittest.main()

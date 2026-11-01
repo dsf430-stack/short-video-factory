@@ -10,6 +10,17 @@ from pathlib import Path
 from preparation import save_json
 
 
+def check_runtime(voice_only=False):
+    import shutil
+    commands = ('ffmpeg', 'ffprobe') if voice_only else ('ffmpeg', 'ffprobe', 'bun', 'exiftool')
+    missing = [command for command in commands if not shutil.which(command)]
+    font = Path('/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc')
+    if not voice_only and not font.is_file():
+        missing.append(str(font))
+    if missing:
+        raise ValueError('RUNTIME_REQUIRED: ' + ', '.join(missing))
+
+
 def runtime_fingerprint():
     versions = {'python': __import__('sys').version}
     for name in ('Pillow', 'numpy', 'scipy', 'requests', 'edge-tts', 'aiohttp'):

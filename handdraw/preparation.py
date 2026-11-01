@@ -130,7 +130,7 @@ def resolve_bundle(prepared, topic, seconds=None, job_id=None, style=None, voice
         if request.get('topic') != topic or request.get('seconds') != seconds or (style is not None and request.get('style') != str(style)):
             raise ValueError('REQUEST_SETTINGS_MISMATCH: topic, seconds or style differs from the selected job')
     validate_bundle(bundle, topic, voice_only)
-    if style is not None:
+    if style is not None and not voice_only:
         resolved = json.loads((bundle / 'style/resolved.json').read_text())
         if resolved.get('catalog_id') != str(style):
             raise ValueError('Requested style does not match the reviewed bundle')
