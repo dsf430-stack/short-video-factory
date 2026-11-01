@@ -62,7 +62,7 @@ jobs:
               missing.append('request.state=ASSETS_VALIDATED')
           ready = bool(request and not missing)
           with open(os.environ['GITHUB_OUTPUT'], 'a') as out:
-              out.write(f"ready={str(ready).lower()}\\n")
+              out.write(f"ready={str(ready).lower()}\n")
           if not ready:
               print('PREPARATION_REQUIRED: render skipped; incomplete job:', job_id)
               print('Missing prerequisites:', ', '.join(missing))
