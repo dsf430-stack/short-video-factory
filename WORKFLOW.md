@@ -43,3 +43,18 @@
 `check_bundle.py` 現在產生 `asset-validation.json`；`activate.py` 拒絕缺少或過期回執。改動圖片、腳本、設定或驗證程式後，必須重跑檢查，不能直接手寫 active-job.json 跳過備料。正式製作仍重新執行共用及官方驗證，保留所有人工看圖要求。
 
 失敗先讀輸出目錄的 `pipeline-state.json` 與 run.log。缺工具、缺素材、外部配音服務拒絕、渲染或成片驗收失敗分開處理；不以重試缺素材任務冒充修復。配音快取重用與渲染完成後的驗收接續會重新核對雜湊，錯誤資料不能繞過檢查。
+
+## 2026-11-01 事故復盤：未備妥素材不得啟動渲染
+
+**證據**：佛教起源8號任務於 `handdraw/resolve_job.py` 解析時拋出 `PREPARATION_REQUIRED`，缺少 `design.json`、畫風選擇/解析、美術/描繪計畫及審查、`inputs/cover.png`；`exit code 1` 只是該例外的退出狀態，Node.js 20 棄用警告並非此次根因。
+
+**根因**：準備階段尚未完成，卻直接提交 `handdraw/active-job.json`，觸發只應處理已審查任務的正式 Actions。禁止透過手寫空白檔案、虛假審查、修改 `resolve_job.py` 略過驗證或反覆重跑失敗任務來掩蓋此問題。
+
+**強制操作順序**：
+1. 依官方畫風規範完成腳本、分鏡、封面、每幕圖片、語義描繪部位及全部設計/審查檔案；實際看圖，不得偽造通過。
+2. 在具備官方引擎的環境執行 `python handdraw/check_bundle.py --official /tmp/sweety-official --topic "實際題材" --job-id 實際ID --style 8`；自然片長不傳 `--seconds`。只有實際通過並產生 `asset-validation.json`、任務狀態為 `ASSETS_VALIDATED` 才可繼續。
+3. 執行 `python handdraw/activate.py --job-id 實際ID`，再提交素材及 `handdraw/active-job.json`；**不得直接手寫或更新 active-job.json 代替啟用檢查**。
+4. Actions 的 `preparation_gate` 先檢查必要檔案、驗證回執及狀態；不完整時將渲染標為 skipped 並列出缺項，**不把 skipped 說成影片完成**。通過前置門檻後，原本的 `resolve_job.py`、官方驗證及完整 MP4 QA 仍不可略過。
+5. 失敗時先查第一個 Traceback/Exception 及具體步驟；區分缺素材、程式錯誤、外部服務與渲染失敗。只修對應原因並執行回歸測試，禁止看到 `exit code 1` 就重試或亂升級套件。
+
+**已知本次狀態**：佛教起源8號任務尚未完成素材與 MP4；上述門檻修復不等於出片或驗收通過。
