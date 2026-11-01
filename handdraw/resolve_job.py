@@ -23,14 +23,16 @@ def resolve(inputs, root=ROOT):
     topic = request.get('topic') or inputs.get('topic') or active.get('topic')
     if not topic:
         raise ValueError('Provide a topic or activate a prepared job')
-    requested_seconds = inputs.get('seconds') or request.get('seconds') or (active.get('seconds') if not inputs.get('topic') else None) or 30
-    seconds = int(requested_seconds)
-    if float(requested_seconds) != seconds:
-        raise ValueError('Duration must be an integer number of seconds')
+    requested_seconds = inputs.get('seconds') or request.get('seconds')
+    if requested_seconds is None and not inputs.get('topic') and not inputs.get('job_id'):
+        requested_seconds = active.get('seconds')
+    seconds = int(requested_seconds) if requested_seconds is not None else None
+    if requested_seconds is not None and (float(requested_seconds) != seconds or seconds <= 0):
+        raise ValueError('Duration must be a positive integer number of seconds')
     style = str(inputs.get('style') or request.get('style') or '') or None
     bundle = resolve_bundle(root / 'prepared', topic, seconds, identity, style)
     key = hashlib.sha256(json.dumps({'bundle': bundle.name, 'seconds': seconds, 'style': style}, sort_keys=True).encode()).hexdigest()[:24]
-    return {'topic': topic, 'seconds': seconds, 'style': style or '', 'job_id': bundle.name,
+    return {'topic': topic, 'seconds': seconds if seconds is not None else '', 'style': style or '', 'job_id': bundle.name,
             'key': key, 'root': f'handdraw/output/{key}'}
 
 
