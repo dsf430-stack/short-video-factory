@@ -23,7 +23,9 @@ def resolve(inputs, root=ROOT):
     topic = request.get('topic') or inputs.get('topic') or active.get('topic')
     if not topic:
         raise ValueError('Provide a topic or activate a prepared job')
-    requested_seconds = inputs.get('seconds') or request.get('seconds')
+    requested_seconds = inputs.get('seconds')
+    if requested_seconds is None or requested_seconds == '':
+        requested_seconds = request.get('seconds')
     if requested_seconds is None and not inputs.get('topic') and not inputs.get('job_id'):
         requested_seconds = active.get('seconds')
     seconds = int(requested_seconds) if requested_seconds is not None else None

@@ -1,0 +1,60 @@
+name: Handdraw production regression
+on:
+  workflow_dispatch:
+  pull_request:
+    paths: ['handdraw/**', 'smart_voice/**', '.github/workflows/*handdraw*.yml']
+permissions:
+  contents: read
+concurrency:
+  group: handdraw-regression-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  regression:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
+    strategy:
+      fail-fast: false
+      matrix:
+        case: [short-natural, style13-target, long-silent-style17]
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: '1.3.0'
+      - name: Install fixed engine and declared runtime
+        run: |
+          git clone https://github.com/threerocks/sweety-handdraw-video.git /tmp/sweety-official
+          git -C /tmp/sweety-official checkout 5206ec0d17f9b353e400b64b9c51ad69e721e02a
+          sudo apt-get update
+          sudo apt-get install -y ffmpeg fonts-noto-cjk libimage-exiftool-perl
+          python -m pip install -r handdraw/requirements.lock
+          python -m pip check
+          python -m pip freeze > handdraw-runtime.txt
+          ffmpeg -version >> handdraw-runtime.txt
+      - name: Unit regressions
+        run: python -m unittest discover -s handdraw -p 'test_*.py'
+      - name: Render approved job and verify actual MP4
+        env:
+          REGRESSION_CASE: ${{ matrix.case }}
+        run: |
+          set -o pipefail
+          python -u handdraw/regression.py --case "$REGRESSION_CASE" --official /tmp/sweety-official 2>&1 | tee regression.log
+      - name: Preserve regression evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: handdraw-regression-${{ matrix.case }}-${{ github.run_id }}
+          path: |
+            handdraw-runtime.txt
+            regression.log
+            handdraw/output/regression/${{ matrix.case }}/pipeline-state.json
+            handdraw/output/regression/${{ matrix.case }}/acceptance.json
+            handdraw/output/regression/${{ matrix.case }}/outputs/film.mp4
+            handdraw/output/regression/${{ matrix.case }}/work/verification.json
+          retention-days: 14
+          if-no-files-found: error

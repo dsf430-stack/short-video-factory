@@ -7,13 +7,16 @@ from pathlib import Path
 from preparation import resolve_bundle, save_json
 
 
-def check(official, topic, seconds, job_id, style=None):
-    bundle=resolve_bundle(Path(__file__).parent/'prepared',topic,seconds,job_id,style)
+def validate_assets(bundle, official):
+    import subprocess
+    from bundle_contract import reviewed_images, OFFICIAL_COMMIT
+    actual=subprocess.check_output(['git','-C',str(official),'rev-parse','HEAD'],text=True,timeout=30).strip()
+    if actual!=OFFICIAL_COMMIT:
+        raise ValueError('Official source pin changed')
+    reviewed_images(bundle)
     skill=Path(official).resolve()/'skills/sweety-handdraw-video'
     sys.path.insert(0,str(skill/'scripts'))
-    from style_choice import verify_style
-    from drawing_contract import verify_drawing_plans
-    from art_direction import check_record, digest
+    from art_direction import verify_art_direction
     from stroke_assets import configure_assets, build_illustration
     story=json.loads((bundle/'story.json').read_text())
     actions=[]
@@ -22,11 +25,10 @@ def check(official, topic, seconds, job_id, style=None):
             'source':scene.get('source','inputs/'+scene['id']+'.png'),'parts':scene['parts'],
             **{key:scene[key] for key in ('crop','outline_mask') if key in scene}})
     manifest={'drawing_plan':'design/drawing-plan.json','drawing_review':'design/drawing-review.json',
+              'cover':{'source':'inputs/cover.png'}, 'hand':story.get('hand',{'preset':'pen-only'}),
+              'art_direction':{'record':'design/art-direction.json'},
               'pages':[{'beats':[{'text':scene['text'],'actions':[action]}]} for scene,action in zip(story['scenes'],actions)]}
-    resolved=verify_style(bundle)
-    verify_drawing_plans(bundle,manifest,resolved)
-    sources=[(bundle/'inputs/cover.png',None)]+[(bundle/action['source'],action.get('crop')) for action in actions]
-    check_record(bundle/'design/art-direction.json',sources,digest(skill/'dependencies/sweety-image-art-direction/GUIDE.md'),resolved['resolved_sha256'])
+    review=verify_art_direction(bundle,manifest)
     with tempfile.TemporaryDirectory(prefix='sweety-parts-') as directory:
         configure_assets(directory,'/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc',3)
         for scene,action in zip(story['scenes'],actions):
@@ -34,10 +36,23 @@ def check(official, topic, seconds, job_id, style=None):
                 crop=action.get('crop'),parts=action['parts'],
                 outline_mask_path=bundle/action['outline_mask'] if action.get('outline_mask') else None)
             print('OFFICIAL_PART_CHECK_PASS',scene['id'],flush=True)
+    return {'status':'ASSETS_VALIDATED','job_id':bundle.name,'style':review['style'].get('name'),
+            'illustrations':len(actions),'extra_model_api_used':False}
+
+
+def check(official, topic, seconds, job_id, style=None):
+    bundle=resolve_bundle(Path(__file__).parent/'prepared',topic,seconds,job_id,style)
+    from bundle_contract import duration_mode
+    request_path=bundle/'request.json'
+    request=json.loads(request_path.read_text()) if request_path.exists() else {}
+    duration_mode(json.loads((bundle/'story.json').read_text()),request,seconds)
+    result=validate_assets(bundle,official)
     request_path=bundle/'request.json'
     if request_path.exists():
         request=json.loads(request_path.read_text());request['state']='ASSETS_VALIDATED';save_json(request_path,request)
-    return {'status':'ASSETS_VALIDATED','job_id':bundle.name,'style':resolved['name'],'illustrations':len(actions),'extra_model_api_used':False}
+    from bundle_contract import validation_identity
+    save_json(bundle/'asset-validation.json',{**result,'bundle_sha256':validation_identity(bundle)})
+    return result
 
 if __name__=='__main__':
     p=argparse.ArgumentParser(description=__doc__)
