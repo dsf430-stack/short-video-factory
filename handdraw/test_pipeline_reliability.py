@@ -8,7 +8,7 @@ import tempfile
 import unittest
 from unittest.mock import patch
 from PIL import Image
-from bundle_contract import reviewed_images, duration_mode
+from bundle_contract import reviewed_images, duration_mode, require_validation_receipt
 from pipeline_state import Pipeline, run_command, content_fingerprint, sync_inputs, check_runtime
 from produce import execute
 from preparation import save_json
@@ -38,6 +38,18 @@ class ReliabilityTests(unittest.TestCase):
             with self.assertRaisesRegex(ValueError, 'pixel_sha256 missing'):
                 reviewed_images(root)
             self.assertNotIn('pixel_sha256', json.loads((root/'design/art-direction.json').read_text())['images'][0])
+
+    def test_activation_requires_current_official_preflight_receipt(self):
+        with tempfile.TemporaryDirectory() as folder:
+            root = Path(folder)
+            with self.assertRaisesRegex(ValueError, 'PREFLIGHT_REQUIRED'):
+                require_validation_receipt(root)
+            save_json(root/'asset-validation.json', {'status':'ASSETS_VALIDATED','bundle_sha256':'old'})
+            with patch('bundle_contract.validation_identity',return_value='new'):
+                with self.assertRaisesRegex(ValueError, 'PREFLIGHT_STALE'):
+                    require_validation_receipt(root)
+            with patch('bundle_contract.validation_identity',return_value='old'):
+                require_validation_receipt(root)
 
     def test_replaced_pixels_and_unsafe_sources_are_rejected(self):
         with tempfile.TemporaryDirectory() as folder:

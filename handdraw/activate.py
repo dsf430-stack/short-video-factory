@@ -10,9 +10,10 @@ ROOT = Path(__file__).resolve().parent
 def activate(job_id, prepared=ROOT / 'prepared', destination=ROOT / 'active-job.json'):
     request = json.loads((safe_bundle(prepared, job_id) / 'request.json').read_text())
     bundle = resolve_bundle(prepared, request['topic'], request.get('seconds'), job_id, request['style'])
-    from bundle_contract import reviewed_images, duration_mode
+    from bundle_contract import reviewed_images, duration_mode, require_validation_receipt
     reviewed_images(bundle)
     duration_mode(json.loads((bundle / 'story.json').read_text()), request, request.get('seconds'))
+    require_validation_receipt(bundle)
     selection = {'job_id': bundle.name, 'topic': request['topic'], 'seconds': request.get('seconds'),
                  'style': request['style'], 'bundle_sha256': hashlib.sha256(''.join(str(p.relative_to(bundle)) + hashlib.sha256(p.read_bytes()).hexdigest() for p in sorted(bundle.rglob('*')) if p.is_file() and p.name != 'preparation-status.json').encode()).hexdigest(), 'mode': 'chatgpt-prepared-no-extra-model-api'}
     save_json(destination, selection)

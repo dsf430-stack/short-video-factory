@@ -4,7 +4,7 @@ No model API or model API key is used by this entry point.
 import argparse, hashlib, json, re, shutil, subprocess, sys
 from pathlib import Path
 REPO=Path(__file__).resolve().parents[1]
-PIN='5206ec0d17f9b353e400b64b9c51ad69e721e02a'
+from bundle_contract import OFFICIAL_COMMIT as PIN
 def digest(p): return hashlib.sha256(Path(p).read_bytes()).hexdigest()
 def save(p,v):
  p=Path(p);p.parent.mkdir(parents=True,exist_ok=True);p.write_text(json.dumps(v,ensure_ascii=False,indent=2)+'\n')
@@ -95,7 +95,6 @@ def main(args, pipeline):
  from pipeline_state import check_runtime
  check_runtime(args.voice_only)
  sys.path.insert(0,str(skill/'scripts'))
- from clean_image import clean_image
  from video_verifier import build_fingerprint, file_hash
  command=skill/'scripts/handdraw_video.py'
  if not args.voice_only:
@@ -186,7 +185,7 @@ def main(args, pipeline):
    image=(root/'design'/entry['source']).resolve()
    pixels=lambda:hashlib.sha256(Image.open(image).convert('RGBA').tobytes()).hexdigest()
    if entry['sha256']!=digest(image) or entry['pixel_sha256']!=pixels():raise ValueError('Reviewed source image changed')
-   clean_image(image,root/'privacy'/f'{image.stem}.json')
+   run(sys.executable,skill/'scripts/clean_image.py',image,'--audit',root/'privacy'/f'{image.stem}.json')
    if pixels()!=entry['pixel_sha256']:raise ValueError('Privacy cleanup altered reviewed pixels')
    original_sha=entry['sha256']
    entry['sha256']=digest(image)

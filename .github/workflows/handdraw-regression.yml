@@ -1,9 +1,6 @@
 name: Handdraw production regression
 on:
   workflow_dispatch:
-  push:
-    branches: [fix/handdraw-reliable-pipeline-20261101]
-    paths: ['handdraw/**', 'smart_voice/**', '.github/workflows/handdraw-regression.yml']
   pull_request:
     paths: ['handdraw/**', 'smart_voice/**', '.github/workflows/*handdraw*.yml']
 permissions:

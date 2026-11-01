@@ -6,6 +6,25 @@ import hashlib
 import json
 from pathlib import Path
 
+OFFICIAL_COMMIT = '5206ec0d17f9b353e400b64b9c51ad69e721e02a'
+
+
+def validation_identity(bundle):
+    from pipeline_state import content_fingerprint
+    bundle = Path(bundle)
+    request = json.loads((bundle/'request.json').read_text()) if (bundle/'request.json').exists() else {}
+    return content_fingerprint(bundle, Path(__file__).resolve().parents[1], request.get('seconds'), False,
+                               {'official_commit': OFFICIAL_COMMIT})
+
+
+def require_validation_receipt(bundle):
+    path = Path(bundle)/'asset-validation.json'
+    if not path.exists():
+        raise ValueError('PREFLIGHT_REQUIRED: run check_bundle.py with the pinned official engine before activation')
+    receipt = json.loads(path.read_text())
+    if receipt.get('status') != 'ASSETS_VALIDATED' or receipt.get('bundle_sha256') != validation_identity(bundle):
+        raise ValueError('PREFLIGHT_STALE: bundle or validation code changed; rerun check_bundle.py')
+
 
 def reviewed_images(bundle):
     from PIL import Image

@@ -38,7 +38,7 @@ def content_fingerprint(bundle, repo, seconds, voice_only, runtime):
              repo/'smart_voice/generate_voice.py', repo/'smart_voice/voices.json']
     inputs = []
     for path in sorted(bundle.rglob('*')):
-        if not path.is_file() or path.name == 'preparation-status.json':
+        if not path.is_file() or path.name in ('preparation-status.json', 'asset-validation.json'):
             continue
         if path.name == 'request.json':
             request = json.loads(path.read_text())

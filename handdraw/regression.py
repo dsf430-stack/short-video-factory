@@ -27,6 +27,10 @@ def main():
                '--official', args.official, '--output', str(output)]
     if request.get('seconds') is not None:
         command.extend(['--seconds', str(request['seconds'])])
+    if args.case == 'short-natural':
+        subprocess.run([*command, '--voice-only'], check=True, timeout=600)
+        state = json.loads((output/'pipeline-state.json').read_text())
+        assert state['status']=='VOICE_READY'
     subprocess.run(command, check=True, timeout=3300)
     first = json.loads((output/'acceptance.json').read_text())
     if args.case == 'short-natural':

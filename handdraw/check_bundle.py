@@ -8,7 +8,11 @@ from preparation import resolve_bundle, save_json
 
 
 def validate_assets(bundle, official):
-    from bundle_contract import reviewed_images
+    import subprocess
+    from bundle_contract import reviewed_images, OFFICIAL_COMMIT
+    actual=subprocess.check_output(['git','-C',str(official),'rev-parse','HEAD'],text=True,timeout=30).strip()
+    if actual!=OFFICIAL_COMMIT:
+        raise ValueError('Official source pin changed')
     reviewed_images(bundle)
     skill=Path(official).resolve()/'skills/sweety-handdraw-video'
     sys.path.insert(0,str(skill/'scripts'))
@@ -46,6 +50,8 @@ def check(official, topic, seconds, job_id, style=None):
     request_path=bundle/'request.json'
     if request_path.exists():
         request=json.loads(request_path.read_text());request['state']='ASSETS_VALIDATED';save_json(request_path,request)
+    from bundle_contract import validation_identity
+    save_json(bundle/'asset-validation.json',{**result,'bundle_sha256':validation_identity(bundle)})
     return result
 
 if __name__=='__main__':
