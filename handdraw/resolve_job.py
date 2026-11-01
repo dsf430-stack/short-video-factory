@@ -23,7 +23,7 @@ def resolve(inputs, root=ROOT):
     topic = request.get('topic') or inputs.get('topic') or active.get('topic')
     if not topic:
         raise ValueError('Provide a topic or activate a prepared job')
-    requested_seconds = inputs.get('seconds') or request.get('seconds') or active.get('seconds') or 30
+    requested_seconds = inputs.get('seconds') or request.get('seconds') or (active.get('seconds') if not inputs.get('topic') else None) or 30
     seconds = int(requested_seconds)
     if float(requested_seconds) != seconds:
         raise ValueError('Duration must be an integer number of seconds')
