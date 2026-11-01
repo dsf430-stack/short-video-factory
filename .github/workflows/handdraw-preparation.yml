@@ -1,0 +1,108 @@
+name: Handdraw measured voice and asset preflight
+on:
+  workflow_dispatch:
+    inputs:
+      job_id:
+        description: Exact existing prepared job ID
+        required: true
+        type: string
+      phase:
+        description: Prepare measured voice or validate completed artwork
+        required: true
+        type: choice
+        options: [voice, assets]
+permissions:
+  contents: read
+concurrency:
+  group: handdraw-preparation-${{ inputs.job_id }}-${{ inputs.phase }}
+  cancel-in-progress: false
+jobs:
+  prepare:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: '1.3.0'
+      - name: Install the existing pinned runtime
+        run: |
+          git clone https://github.com/threerocks/sweety-handdraw-video.git /tmp/sweety-official
+          git -C /tmp/sweety-official checkout 5206ec0d17f9b353e400b64b9c51ad69e721e02a
+          sudo apt-get update
+          sudo apt-get install -y ffmpeg fonts-noto-cjk libimage-exiftool-perl
+          python -m pip install -r handdraw/requirements.lock
+          python -m pip check
+      - uses: actions/cache/restore@v4
+        id: chunks
+        with:
+          path: smart_voice/output/.068-cache
+          key: voice-068-v1-${{ runner.os }}-${{ github.run_id }}-${{ github.run_attempt }}
+          restore-keys: voice-068-v1-${{ runner.os }}-
+      - name: Run existing preparation stage
+        env:
+          PREPARE_JOB_ID: ${{ inputs.job_id }}
+          PREPARE_PHASE: ${{ inputs.phase }}
+        run: |
+          python -u - <<'PY'
+          import json, os, pathlib, shutil, subprocess, sys
+          sys.path.insert(0, 'handdraw')
+          from preparation import safe_bundle
+          job_id = os.environ['PREPARE_JOB_ID']
+          bundle = safe_bundle(pathlib.Path('handdraw/prepared'), job_id)
+          request = json.loads((bundle/'request.json').read_text())
+          root = pathlib.Path('handdraw/output/preparation')/bundle.name
+          root.mkdir(parents=True, exist_ok=True)
+          if os.environ['PREPARE_PHASE']=='voice':
+              args = [sys.executable,'handdraw/produce.py','--job-id',job_id,'--topic',request['topic'],
+                      '--style',request['style'],'--official','/tmp/sweety-official','--output',str(root),'--voice-only']
+              if request.get('seconds') is not None:
+                  args.extend(['--seconds',str(request['seconds'])])
+              subprocess.run(args, check=True, timeout=1100)
+          elif os.environ['PREPARE_PHASE']=='assets':
+              from check_bundle import check
+              print(json.dumps(check('/tmp/sweety-official',request['topic'],request.get('seconds'),job_id,request['style']),ensure_ascii=False))
+          else:
+              raise ValueError('Unknown preparation phase')
+          support=root/'runtime-support'
+          support.mkdir(exist_ok=True)
+          shutil.copy2('/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc',support/'NotoSansCJK-Regular.ttc')
+          skill=pathlib.Path('/tmp/sweety-official/skills/sweety-handdraw-video')
+          sys.path.insert(0,str(skill/'scripts'))
+          from hosted_assets import resolve_asset
+          for name in ('pen-only.png','waner-brush.png'):
+              source=skill/'assets/hands'/name
+              try:
+                  asset=resolve_asset(source)
+              except FileNotFoundError:
+                  continue
+              target=support/'asset-cache'/asset.parent.name/asset.name
+              target.parent.mkdir(parents=True,exist_ok=True)
+              shutil.copy2(asset,target)
+          PY
+      - name: Save successful voice chunks
+        if: always() && steps.chunks.outputs.cache-primary-key != ''
+        uses: actions/cache/save@v4
+        with:
+          path: smart_voice/output/.068-cache
+          key: ${{ steps.chunks.outputs.cache-primary-key }}
+      - name: Upload preparation and continuation evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: handdraw-preparation-${{ inputs.phase }}-${{ github.run_id }}
+          path: |
+            handdraw/output/preparation/${{ inputs.job_id }}/inputs/voice-*
+            handdraw/output/preparation/${{ inputs.job_id }}/voice-measurement.json
+            handdraw/output/preparation/${{ inputs.job_id }}/pipeline-state.json
+            handdraw/output/preparation/${{ inputs.job_id }}/runtime-support
+            handdraw/prepared/${{ inputs.job_id }}/asset-validation.json
+            handdraw/prepared/${{ inputs.job_id }}/preparation-status.json
+            smart_voice/output/*.error.log
+          if-no-files-found: error
+          retention-days: 14
