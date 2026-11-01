@@ -45,7 +45,7 @@ def create_request(prepared, topic, seconds=None, style='4', script='', job_id=N
     request = {'topic': topic, 'seconds': seconds, 'style': str(style), 'job_id': identity,
                'voice_id': '068', 'mode': 'chatgpt-prepared-no-extra-model-api',
                'script_sha256': hashlib.sha256(script.encode()).hexdigest(),
-               'state': 'PREPARATION_REQUIRED', 'duration_mode': 'narration', 'required_files': list(REQUIRED)}
+               'state': 'PREPARATION_REQUIRED', 'duration_mode': 'narration' if seconds is None else 'target', 'required_files': list(REQUIRED)}
     existing = bundle / 'request.json'
     if existing.exists():
         current = json.loads(existing.read_text())
