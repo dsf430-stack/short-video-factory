@@ -108,12 +108,13 @@ def main(args):
    shutil.copytree(bundle/directory,root/directory,dirs_exist_ok=True,copy_function=copy_prepared)
   if not args.voice_only:shutil.copyfile(bundle/'design.json',root/'design.json')
   story=json.loads((bundle/'story.json').read_text()); scenes=story['scenes']
-  narration_mode=story.get('duration_mode')=='narration' or json.loads((bundle/'request.json').read_text()).get('duration_mode')=='narration' if (bundle/'request.json').exists() else story.get('duration_mode')=='narration'
+  narration_mode=(args.seconds is None or story.get('duration_mode')=='narration' or
+                  ((bundle/'request.json').exists() and json.loads((bundle/'request.json').read_text()).get('duration_mode')=='narration'))
   candidates=story.get('script_candidates',[[s['text'] for s in scenes]])
   if narration_mode: candidates=[[s['text'] for s in scenes]]
   measured={}; attempts=[]; selected=None
   for _ in range(min(12,len(candidates))):
-   candidate=choose_candidate(candidates,measured,args.seconds-1-.5,story.get('preferred_candidate'))
+   candidate=0 if narration_mode else choose_candidate(candidates,measured,args.seconds-1-.5,story.get('preferred_candidate'))
    if candidate is None: break
    if len(candidates[candidate])!=len(scenes):raise ValueError('Script candidate scene count mismatch')
    text=''.join(candidates[candidate]);text_hash=hashlib.sha256(text.encode()).hexdigest()
@@ -140,7 +141,7 @@ def main(args):
    with wave.open(str(master)) as wav: duration=wav.getnframes()/wav.getframerate()
    hold=.3 if narration_mode else args.seconds-1-duration;measured[candidate]=duration
    attempts.append({'candidate':candidate,'seconds':duration,'hold':hold,'text':text})
-   save(root/'voice-measurement.json',{'attempts':attempts,'target_film_seconds':args.seconds,'voice':meta['preset']})
+   save(root/'voice-measurement.json',{'attempts':attempts,'target_film_seconds':None if narration_mode else args.seconds,'voice':meta['preset']})
    print('MEASURED_NARRATION_SECONDS',duration,'REQUIRED_END_HOLD',hold,flush=True)
    if .2<=hold<=.8:
     selected=candidate;break
@@ -223,4 +224,4 @@ def main(args):
  save(receipt,{'bundle_sha256':fingerprint,'official_commit':PIN,'verified_video_sha256':digest(film)})
  print('VERIFIED_FILM',str(film),json.dumps(report),flush=True)
 if __name__=='__main__':
- p=argparse.ArgumentParser(description=__doc__);p.add_argument('--topic',required=True);p.add_argument('--seconds',type=int,default=30);p.add_argument('--official',required=True);p.add_argument('--output',required=True);p.add_argument('--preview-only',action='store_true');p.add_argument('--voice-only',action='store_true');p.add_argument('--job-id');p.add_argument('--style');main(p.parse_args())
+ p=argparse.ArgumentParser(description=__doc__);p.add_argument('--topic',required=True);p.add_argument('--seconds',type=int);p.add_argument('--official',required=True);p.add_argument('--output',required=True);p.add_argument('--preview-only',action='store_true');p.add_argument('--voice-only',action='store_true');p.add_argument('--job-id');p.add_argument('--style');main(p.parse_args())
