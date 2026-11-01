@@ -83,7 +83,8 @@ jobs:
         run: |
           set -o pipefail
           mkdir -p "$HANDDRAW_JOB_ROOT"
-          args=(--topic "$HANDDRAW_TOPIC" --job-id "$HANDDRAW_JOB_ID" --seconds "$HANDDRAW_SECONDS" --official /tmp/sweety-official --output "$HANDDRAW_JOB_ROOT")
+          args=(--topic "$HANDDRAW_TOPIC" --job-id "$HANDDRAW_JOB_ID" --official /tmp/sweety-official --output "$HANDDRAW_JOB_ROOT")
+          if [ -n "$HANDDRAW_SECONDS" ]; then args+=(--seconds "$HANDDRAW_SECONDS"); fi
           if [ -n "$HANDDRAW_STYLE" ]; then args+=(--style "$HANDDRAW_STYLE"); fi
           python -u handdraw/produce.py "${args[@]}" 2>&1 | tee "$HANDDRAW_JOB_ROOT/run.log"
       - name: Save resumable job and verified voice work
