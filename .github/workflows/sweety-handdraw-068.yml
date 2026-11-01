@@ -28,7 +28,51 @@ concurrency:
   group: sweety-${{ github.ref }}-${{ inputs.job_id || inputs.topic || 'active' }}
   cancel-in-progress: false
 jobs:
+  preparation_gate:
+    runs-on: ubuntu-24.04
+    outputs:
+      ready: ${{ steps.check.outputs.ready }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Check prepared assets before allocating render runner
+        id: check
+        env:
+          HANDDRAW_INPUTS: ${{ toJSON(inputs) }}
+        run: |
+          python - <<'PY'
+          import json, os
+          from pathlib import Path
+          root = Path('handdraw')
+          inputs = json.loads(os.environ.get('HANDDRAW_INPUTS', '{}')) or {}
+          active = json.loads((root / 'active-job.json').read_text())
+          job_id = inputs.get('job_id') or active.get('job_id')
+          if not job_id or '/' in job_id or '..' in job_id:
+              raise ValueError('Invalid or missing job_id')
+          bundle = root / 'prepared' / job_id
+          request_path = bundle / 'request.json'
+          request = json.loads(request_path.read_text()) if request_path.is_file() else {}
+          required = request.get('required_files', [])
+          missing = [p for p in required if not (bundle / p).is_file()]
+          receipt = bundle / 'asset-validation.json'
+          if not receipt.is_file():
+              missing.append('asset-validation.json')
+          if request.get('state') != 'ASSETS_VALIDATED':
+              missing.append('request.state=ASSETS_VALIDATED')
+          ready = bool(request and not missing)
+          with open(os.environ['GITHUB_OUTPUT'], 'a') as out:
+              out.write(f"ready={str(ready).lower()}\\n")
+          if not ready:
+              print('PREPARATION_REQUIRED: render skipped; incomplete job:', job_id)
+              print('Missing prerequisites:', ', '.join(missing))
+              print('NEXT: finish and review assets; run check_bundle.py, then activate.py; never edit active-job.json manually.')
+          else:
+              print('Preparation gate passed; full validators still run in render.')
+          PY
   render:
+    needs: preparation_gate
+    if: needs.preparation_gate.outputs.ready == 'true'
     runs-on: ubuntu-24.04
     timeout-minutes: 60
     steps:
