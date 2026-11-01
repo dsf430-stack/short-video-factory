@@ -1,0 +1,22 @@
+{
+  "topic": "佛教起源：一個關於痛苦的問題，如何走過兩千多年",
+  "seconds": null,
+  "style": "8",
+  "job_id": "job-buddhism-origin-style08-20261101",
+  "voice_id": "068",
+  "mode": "chatgpt-prepared-no-extra-model-api",
+  "script_sha256": "36943d06aa7c43e69e207e73fa5dc2478e92234675c290a6aeeae7e731be9d65",
+  "state": "PREPARATION_REQUIRED",
+  "duration_mode": "narration",
+  "required_files": [
+    "story.json",
+    "design.json",
+    "style/selection.json",
+    "style/resolved.json",
+    "design/art-direction.json",
+    "design/drawing-plan.json",
+    "design/drawing-plan.preflight.json",
+    "design/drawing-review.json",
+    "inputs/cover.png"
+  ]
+}
