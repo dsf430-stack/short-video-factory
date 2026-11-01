@@ -159,3 +159,12 @@
 - MP4 25.54秒、1080×1920、30fps、766幀、H.264/AAC，下載後完整解碼通過；SHA256 `513e25ee7a0d30d9fb346bbb3321e29cbdf83329d686416a586194bf5bc5058d`。
 - 六幕描繪中/完成與補充穩定畫面、封面/結尾共20點實際看圖，使用本次一號新圖，字幕未見重疊，無額外字幕軌。068全文快取重用，音軌相關度0.99997285，尾句0.99997459，無BGM；主觀聽感未人工驗收。
 - `手裡的那把米_1號極簡黑白_068.mp4` 已保存交付，免解壓。證據見 handdraw/verification/chicken-style01-20261030.json。此job已完成，不重新生圖/配音。
+
+
+## 佛教起源17號｜PREPARATION_REQUIRED（2026-11-01）
+
+- job_id `job-buddhism-origin-style17-20261101`；完整原稿 `source-script.txt` 與14幕 `story.json` 已提交，request.json 設定 `seconds:null`、`duration_mode:narration`、068原速、官方17號。
+- 2026-11-01 已在ChatGPT生成佛教起源視覺草圖一張，但尚未按官方17號配方審查，也未提交為合格的封面/分鏡PNG；不能以此草圖冒充14幕正式素材。
+- 自然片長快取路徑的 `narration_mode` 未初始化風險已以 commit `23b9e231e417bdf20b27cf5e778ff4e9a7c6617d` 修正；尚未跑 Actions 回歸測試。
+- BLOCKED：完整官方17號素材及 drawing-plan、art-direction、drawing-review 缺失；未執行完整068配音、check_bundle、activate或正式渲染，沒有 MP4 或本任務 Actions run ID。
+- NEXT：核對17號完整配方，生成及逐圖看圖、準備審查資料與素材；使用官方check_bundle實測通過後再啟用 Actions。保留原稿與已成功步驟，不虛報驗證。
