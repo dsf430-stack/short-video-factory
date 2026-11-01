@@ -83,6 +83,9 @@ def main(args):
  from preparation import resolve_bundle, choose_candidate
  bundle=resolve_bundle(REPO/'handdraw/prepared',args.topic,args.seconds,args.job_id,args.style,args.voice_only)
  root=Path(args.output).resolve();root.mkdir(parents=True,exist_ok=True)
+ story_meta=json.loads((bundle/'story.json').read_text())
+ narration_mode=(args.seconds is None or story_meta.get('duration_mode')=='narration' or
+                 ((bundle/'request.json').exists() and json.loads((bundle/'request.json').read_text()).get('duration_mode')=='narration'))
  skill=Path(args.official).resolve()/'skills/sweety-handdraw-video'
  actual=subprocess.check_output(['git','-C',str(skill),'rev-parse','HEAD'],text=True).strip()
  if actual!=PIN: raise ValueError('Official source pin changed')
@@ -108,8 +111,7 @@ def main(args):
    shutil.copytree(bundle/directory,root/directory,dirs_exist_ok=True,copy_function=copy_prepared)
   if not args.voice_only:shutil.copyfile(bundle/'design.json',root/'design.json')
   story=json.loads((bundle/'story.json').read_text()); scenes=story['scenes']
-  narration_mode=(args.seconds is None or story.get('duration_mode')=='narration' or
-                  ((bundle/'request.json').exists() and json.loads((bundle/'request.json').read_text()).get('duration_mode')=='narration'))
+
   candidates=story.get('script_candidates',[[s['text'] for s in scenes]])
   if narration_mode: candidates=[[s['text'] for s in scenes]]
   measured={}; attempts=[]; selected=None
