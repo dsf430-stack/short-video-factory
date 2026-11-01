@@ -191,3 +191,11 @@
 - FIX（已提交）：`.github/workflows/sweety-handdraw-068.yml` 新增 `preparation_gate`；缺必要檔案、`asset-validation.json` 或 `ASSETS_VALIDATED` 狀態時，略過 render，不再把缺素材當作渲染錯誤。原官方檢查不變。
 - SOP（已提交）：`WORKFLOW.md` 新增事故復盤及 `check_bundle.py` → `activate.py` → commit → Actions → MP4 QA 的強制順序；禁止手寫 active-job.json 跳過門檻。
 - BLOCKED：8號正式圖、封面及審查尚未完成；沒有 MP4。VERIFY PENDING：新 workflow 的實際 Actions 執行與完整回歸測試尚未確認，不能宣稱通過。
+
+## 2026-11-01 8號水墨手繪：素材生成偏離規格（FAILED）
+
+- 根因：助手把官方逐筆手繪的原始場景圖誤做成含播放器控制列、預製字幕及標題的影片截圖風格合成圖；此為助手提示詞及素材驗收錯誤，不是官方引擎故障。
+- 錯誤素材：兩張橫向影片截圖風格圖；未納入8號素材包、不可冒充合格輸入。原始14幕分鏡及完整旁白保留。
+- 預防：依每幕 `story.json.visual` 製作**獨立、無字、無字幕、無UI、無進度條、無假播放器、無現成影片畫面**的水墨線稿；逐張實際看圖，檢查可描繪輪廓及語義部位；正式動畫只能交由固定官方 `sweety-handdraw-video` 從空白畫布逐筆描繪。禁止以圖片平移/縮放、影片截圖或靜態投影片替代。
+- BLOCKED：14幕合格PNG、封面、設計/描繪/審查檔與官方驗證回執尚未完成；不能啟用正式渲染或宣稱MP4完成。
+- NEXT：先製作一張無字、可描繪的8號代表畫面，核對官方畫風配方及輪廓檢查；通過後擴展14幕，依 WORKFLOW.md 驗證、啟用及渲染。
