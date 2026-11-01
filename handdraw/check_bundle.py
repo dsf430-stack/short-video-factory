@@ -42,5 +42,5 @@ def check(official, topic, seconds, job_id, style=None):
 if __name__=='__main__':
     p=argparse.ArgumentParser(description=__doc__)
     p.add_argument('--official',required=True);p.add_argument('--topic',required=True)
-    p.add_argument('--seconds',type=int,default=30);p.add_argument('--job-id',required=True);p.add_argument('--style')
+    p.add_argument('--seconds',type=int,default=None);p.add_argument('--job-id',required=True);p.add_argument('--style')
     args=p.parse_args();print(json.dumps(check(**vars(args)),ensure_ascii=False))
