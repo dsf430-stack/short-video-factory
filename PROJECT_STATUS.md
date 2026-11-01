@@ -170,13 +170,17 @@
 - NEXT：核對17號完整配方，生成及逐圖看圖、準備審查資料與素材；使用官方check_bundle實測通過後再啟用 Actions。保留原稿與已成功步驟，不虛報驗證。
 
 
-## 手繪穩定性修復｜IN_PROGRESS（2026-11-01）
 
-- 使用者已授權直接修改，允許結構調整，目標為穩定產出；保留官方固定引擎與068。
-- 根因證據：check_bundle原先不查pixel_sha256，produce卻於配音後要求；最新佛教起源run 41267990364第2次失敗於resolve，缺design/style/review/cover，並未進入渲染。ubuntu-latest該run已漂移至26.04。
-- DONE（本地）：共用圖片完整性與片長規格檢查、前置官方素材驗證、階段日誌、有界命令及子程序終止、損壞快取回復、權威音訊同步、完整解碼/編碼/字幕軌檢查；28項回歸測試通過。
-- 已新增正式三案例MP4回歸工作流與直接依賴版本檔；未改active-job，未替未完成佛教素材偽造pass。
-- NEXT：推送修復分支、執行三案例Actions、依真實Log修復；全部通過後合併並記錄實際run/commit。尚未把雲端MP4回歸標DONE。
+## 手繪穩定性修復｜DONE（2026-11-01）
 
-- 首輪新回歸run 41268972989：單元測試通過，正式重製因回歸工作流漏裝bun於layout失敗；已依官方clean_image需求補上bun1.3.0，並在preflight先查工具，未改官方引擎或素材。第二輪run 41269100724執行中，最終版仍需核對。
-- 額外修復：明確seconds=0不再默默沿用舊秒數；voice-only可在沒有style素材時執行；新嘗試不殘留舊acceptance；完整官方preflight回執過期不能啟用。
+- 使用者授權直接修改、允許結構調整。PR #14 已合併：https://github.com/dsf430-stack/short-video-factory/pull/14 。合併提交 `339900c8636292320cd81ec7ba2c8db4ba191ad4`；已驗證製作程式提交 `4307ac5e9ad776b1ef2154ddb9a8ff77f87eabf9`。
+- DONE：共用圖片檔案/像素檢查與官方前置驗證；新任務必須持有未過期 asset-validation.json 才能啟用；必要工具先檢查；原官方引擎及068不變。
+- DONE：階段原子日誌、有界外部命令、權威音訊同步、清除舊素材與舊acceptance；渲染後驗收中斷可重用通過雜湊核對的MP4；驗收失敗撤銷回執。聲音快取保留，無新配音或付費生成。
+- DONE：Ubuntu24.04、Python3.11、Bun1.3.0及19項Python直接/間接套件版本固定，保存實際pip freeze及FFmpeg版本；系統套件尚非完整容器鎖定。
+- 本地及正式Actions 28項單元/回歸測試全部通過。最終三案例Actions SUCCESS：https://github.com/dsf430-stack/short-video-factory/actions/runs/41269238666 。
+- 真實成片：一號自然片長25.533333秒（先行配音及驗收中斷重用測試皆通過）、十三號30.000秒、十七號含已授權無旁白動畫220.000秒；均1080×1920、30fps、H.264/AAC，官方驗證與完整解碼通過。
+- 短片已下載重新解碼並查看六個時間點，其SHA與最終版短片一致；長片SHA與先前已驗收成片完全一致。沒有重新宣稱人工聽音；所有測試human_listening仍UNCERTAIN。
+- FAILED歷史：首輪新回歸41268972989漏裝Bun，已補齊並新增前置工具測試；第二輪41269100724及最終版41269238666三案例全部SUCCESS。
+- 詳細根因、修復及工件/成片SHA見 integration_checkpoints/handdraw-reliability-20261101.md。
+- BLOCKED（內容製作，與本修復分開）：目前active-job實際為佛教起源8號 `job-buddhism-origin-style08-20261101`；run41267990364第2次失敗於缺design/style/review/cover，未進入渲染。本次未補造素材或啟動該未準備任務。
+- NEXT：新題材先完整備料、官方check_bundle生成當前回執，再activate；製作程式變動沿用三案例正式MP4回歸，不重做已完成影片或更換引擎。
