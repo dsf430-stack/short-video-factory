@@ -1,0 +1,890 @@
+[
+  {
+    "id": "lemo-opuscar:art-deco",
+    "provider": "lemo-opuscar",
+    "kind": "style",
+    "name": "Art Deco — Style Prompt",
+    "path": "styles/art-deco/STYLE.md",
+    "source": "https://github.com/lemomo-ai/lemo-opuscar/blob/fdc46d7f0e20cc953a71d56241a92d1b4cb7298e/styles/art-deco/STYLE.md"
+  },
+  {
+    "id": "lemo-opuscar:ascii-crt",
+    "provider": "lemo-opuscar",
+    "kind": "style",
+    "name": "ASCII / CRT Terminal: Style Prompt",
+    "path": "styles/ascii-crt/STYLE.md",
+    "source": "https://github.com/lemomo-ai/lemo-opuscar/blob/fdc46d7f0e20cc953a71d56241a92d1b4cb7298e/styles/ascii-crt/STYLE.md"
+  },
+  {
+    "id": "lemo-opuscar:backrooms",
+    "provider": "lemo-opuscar",
+    "kind": "style",
+    "name": "Liminal Found Footage — Style Prompt",
+    "path": "styles/backrooms/STYLE.md",
+    "source": "https://github.com/lemomo-ai/lemo-opuscar/blob/fdc46d7f0e20cc953a71d56241a92d1b4cb7298e/styles/backrooms/STYLE.md"
+  },
+  {
+    "id": "lemo-opuscar:blueprint",
+    "provider": "lemo-opuscar",
+    "kind": "style",
+    "name": "Blueprint — Style Prompt",
+    "path": "styles/blueprint/STYLE.md",
+    "source": "https://github.com/lemomo-ai/lemo-opuscar/blob/fdc46d7f0e20cc953a71d56241a92d1b4cb7298e/styles/blueprint/STYLE.md"
+  },
+  {
+    "id": "lemo-opuscar:brick-toy",
+    "provider": "lemo-opuscar",
+    "kind": "style",
+    "name": "Brick Toy — Style Prompt",
+    "path": "styles/brick-toy/STYLE.md",
+    "source": "https://github.com/lemomo-ai/lemo-opuscar/blob/fdc46d7f0e20cc953a71d56241a92d1b4cb7298e/styles/brick-toy/STYLE.md"
+  },
+  {
+    "id": "lemo-opuscar:cel-anime-80s",
+    "provider": "lemo-opuscar",
+    "kind": "style",
+    "name": "80s Cel Anime — Style Prompt",
+    "path": "styles/cel-anime-80s/STYLE.md",
+    "source": "https://github.com/lemomo-ai/lemo-opuscar/blob/fdc46d7f0e20cc953a71d56241a92d1b4cb7298e/styles/cel-anime-80s/STYLE.md"
+  },
+  {
+    "id": "lemo-opuscar:crayon-book",
+    "provider": "lemo-opuscar",
+    "kind": "style",
+    "name": "Crayon Picture Book — Style Prompt",
+    "path": "styles/crayon-book/STYLE.md",
+    "source": "https://github.com/lemomo-ai/lemo-opuscar/blob/fdc46d7f0e20cc953a71d56241a92d1b4cb7298e/styles/crayon-book/STYLE.md"
+  },
+  {
+    "id": "lemo-opuscar:dark-keynote",
+    "provider": "lemo-opuscar",
+    "kind": "style",
+    "name": "Dark Tech Keynote — Style Prompt",
+    "path": "styles/dark-keynote/STYLE.md",
+    "source": "https://github.com/lemomo-ai/lemo-opuscar/blob/fdc46d7f0e20cc953a71d56241a92d1b4cb7298e/styles/dark-keynote/STYLE.md"
+  },
+  {
+    "id": "lemo-opuscar:dataviz",
+    "provider": "lemo-opuscar",
+    "kind": "style",
+    "name": "Data Storytelling — Style Prompt",
+    "path": "styles/dataviz/STYLE.md",
+    "source": "https://github.com/lemomo-ai/lemo-opuscar/blob/fdc46d7f0e20cc953a71d56241a92d1b4cb7298e/styles/dataviz/STYLE.md"
+  },
+  {
+    "id": "lemo-opuscar:engraving",
+    "provider": "lemo-opuscar",
+    "kind": "style",
+    "name": "Copperplate Engraving — Style Prompt",
+    "path": "styles/engraving/STYLE.md",
+    "source": "https://github.com/lemomo-ai/lemo-opuscar/blob/fdc46d7f0e20cc953a71d56241a92d1b4cb7298e/styles/engraving/STYLE.md"
+  },
+  {
+    "id": "lemo-opuscar:game-show",
+    "provider": "lemo-opuscar",
+    "kind": "style",
+    "name": "Game Show Flat — Style Prompt",
+    "path": "styles/game-show/STYLE.md",
+    "source": "https://github.com/lemomo-ai/lemo-opuscar/blob/fdc46d7f0e20cc953a71d56241a92d1b4cb7298e/styles/game-show/STYLE.md"
+  },
+  {
+    "id": "lemo-opuscar:glass-product",
+    "provider": "lemo-opuscar",
+    "kind": "style",
+    "name": "Glass Product Render — Style Prompt",
+    "path": "styles/glass-product/STYLE.md",
+    "source": "https://github.com/lemomo-ai/lemo-opuscar/blob/fdc46d7f0e20cc953a71d56241a92d1b4cb7298e/styles/glass-product/STYLE.md"
+  },
+  {
+    "id": "lemo-opuscar:halftone-dossier",
+    "provider": "lemo-opuscar",
+    "kind": "style",
+    "name": "Halftone Dossier — Style Prompt",
+    "path": "styles/halftone-dossier/STYLE.md",
+    "source": "https://github.com/lemomo-ai/lemo-opuscar/blob/fdc46d7f0e20cc953a71d56241a92d1b4cb7298e/styles/halftone-dossier/STYLE.md"
+  },
+  {
+    "id": "lemo-opuscar:hd-2d",
+    "provider": "lemo-opuscar",
+    "kind": "style",
+    "name": "HD-2D — Style Prompt",
+    "path": "styles/hd-2d/STYLE.md",
+    "source": "https://github.com/lemomo-ai/lemo-opuscar/blob/fdc46d7f0e20cc953a71d56241a92d1b4cb7298e/styles/hd-2d/STYLE.md"
+  },
+  {
+    "id": "lemo-opuscar:hologram-hud",
+    "provider": "lemo-opuscar",
+    "kind": "style",
+    "name": "Sci-fi Hologram HUD — Style Prompt",
+    "path": "styles/hologram-hud/STYLE.md",
+    "source": "https://github.com/lemomo-ai/lemo-opuscar/blob/fdc46d7f0e20cc953a71d56241a92d1b4cb7298e/styles/hologram-hud/STYLE.md"
+  },
+  {
+    "id": "lemo-opuscar:impasto",
+    "provider": "lemo-opuscar",
+    "kind": "style",
+    "name": "Impasto · Palette Knife — Style Prompt",
+    "path": "styles/impasto/STYLE.md",
+    "source": "https://github.com/lemomo-ai/lemo-opuscar/blob/fdc46d7f0e20cc953a71d56241a92d1b4cb7298e/styles/impasto/STYLE.md"
+  },
+  {
+    "id": "lemo-opuscar:ink-wash",
+    "provider": "lemo-opuscar",
+    "kind": "style",
+    "name": "Chinese Ink Wash — Style Prompt",
+    "path": "styles/ink-wash/STYLE.md",
+    "source": "https://github.com/lemomo-ai/lemo-opuscar/blob/fdc46d7f0e20cc953a71d56241a92d1b4cb7298e/styles/ink-wash/STYLE.md"
+  },
+  {
+    "id": "lemo-opuscar:iso-infographic",
+    "provider": "lemo-opuscar",
+    "kind": "style",
+    "name": "Isometric Infographic — Style Prompt",
+    "path": "styles/iso-infographic/STYLE.md",
+    "source": "https://github.com/lemomo-ai/lemo-opuscar/blob/fdc46d7f0e20cc953a71d56241a92d1b4cb7298e/styles/iso-infographic/STYLE.md"
+  },
+  {
+    "id": "lemo-opuscar:living-screencast",
+    "provider": "lemo-opuscar",
+    "kind": "style",
+    "name": "Living Screencast — Style Prompt",
+    "path": "styles/living-screencast/STYLE.md",
+    "source": "https://github.com/lemomo-ai/lemo-opuscar/blob/fdc46d7f0e20cc953a71d56241a92d1b4cb7298e/styles/living-screencast/STYLE.md"
+  },
+  {
+    "id": "lemo-opuscar:lowpoly-island",
+    "provider": "lemo-opuscar",
+    "kind": "style",
+    "name": "Low-poly Isometric Island — Style Prompt",
+    "path": "styles/lowpoly-island/STYLE.md",
+    "source": "https://github.com/lemomo-ai/lemo-opuscar/blob/fdc46d7f0e20cc953a71d56241a92d1b4cb7298e/styles/lowpoly-island/STYLE.md"
+  },
+  {
+    "id": "lemo-opuscar:microgame",
+    "provider": "lemo-opuscar",
+    "kind": "style",
+    "name": "Microgame Frenzy — Style Prompt",
+    "path": "styles/microgame/STYLE.md",
+    "source": "https://github.com/lemomo-ai/lemo-opuscar/blob/fdc46d7f0e20cc953a71d56241a92d1b4cb7298e/styles/microgame/STYLE.md"
+  },
+  {
+    "id": "lemo-opuscar:midcentury-toon",
+    "provider": "lemo-opuscar",
+    "kind": "style",
+    "name": "Mid-century Cartoon — Style Prompt",
+    "path": "styles/midcentury-toon/STYLE.md",
+    "source": "https://github.com/lemomo-ai/lemo-opuscar/blob/fdc46d7f0e20cc953a71d56241a92d1b4cb7298e/styles/midcentury-toon/STYLE.md"
+  },
+  {
+    "id": "lemo-opuscar:one-line",
+    "provider": "lemo-opuscar",
+    "kind": "style",
+    "name": "One-line Drawing — Style Prompt",
+    "path": "styles/one-line/STYLE.md",
+    "source": "https://github.com/lemomo-ai/lemo-opuscar/blob/fdc46d7f0e20cc953a71d56241a92d1b4cb7298e/styles/one-line/STYLE.md"
+  },
+  {
+    "id": "lemo-opuscar:paper-lantern",
+    "provider": "lemo-opuscar",
+    "kind": "style",
+    "name": "Paper-cut Lightbox — Style Prompt",
+    "path": "styles/paper-lantern/STYLE.md",
+    "source": "https://github.com/lemomo-ai/lemo-opuscar/blob/fdc46d7f0e20cc953a71d56241a92d1b4cb7298e/styles/paper-lantern/STYLE.md"
+  },
+  {
+    "id": "lemo-opuscar:paper-popup",
+    "provider": "lemo-opuscar",
+    "kind": "style",
+    "name": "Paper Pop-up Book — Style Prompt",
+    "path": "styles/paper-popup/STYLE.md",
+    "source": "https://github.com/lemomo-ai/lemo-opuscar/blob/fdc46d7f0e20cc953a71d56241a92d1b4cb7298e/styles/paper-popup/STYLE.md"
+  },
+  {
+    "id": "lemo-opuscar:papercut-red",
+    "provider": "lemo-opuscar",
+    "kind": "style",
+    "name": "Red Paper-cut — Style Prompt",
+    "path": "styles/papercut-red/STYLE.md",
+    "source": "https://github.com/lemomo-ai/lemo-opuscar/blob/fdc46d7f0e20cc953a71d56241a92d1b4cb7298e/styles/papercut-red/STYLE.md"
+  },
+  {
+    "id": "lemo-opuscar:pictogram-motion",
+    "provider": "lemo-opuscar",
+    "kind": "style",
+    "name": "Pictogram Motion — Style Prompt",
+    "path": "styles/pictogram-motion/STYLE.md",
+    "source": "https://github.com/lemomo-ai/lemo-opuscar/blob/fdc46d7f0e20cc953a71d56241a92d1b4cb7298e/styles/pictogram-motion/STYLE.md"
+  },
+  {
+    "id": "lemo-opuscar:pixel-rpg",
+    "provider": "lemo-opuscar",
+    "kind": "style",
+    "name": "16-bit Pixel RPG — Style Prompt",
+    "path": "styles/pixel-rpg/STYLE.md",
+    "source": "https://github.com/lemomo-ai/lemo-opuscar/blob/fdc46d7f0e20cc953a71d56241a92d1b4cb7298e/styles/pixel-rpg/STYLE.md"
+  },
+  {
+    "id": "lemo-opuscar:risograph",
+    "provider": "lemo-opuscar",
+    "kind": "style",
+    "name": "Risograph Print — Style Prompt",
+    "path": "styles/risograph/STYLE.md",
+    "source": "https://github.com/lemomo-ai/lemo-opuscar/blob/fdc46d7f0e20cc953a71d56241a92d1b4cb7298e/styles/risograph/STYLE.md"
+  },
+  {
+    "id": "lemo-opuscar:rubber-hose",
+    "provider": "lemo-opuscar",
+    "kind": "style",
+    "name": "1930s Rubber Hose Cartoon — Style Prompt",
+    "path": "styles/rubber-hose/STYLE.md",
+    "source": "https://github.com/lemomo-ai/lemo-opuscar/blob/fdc46d7f0e20cc953a71d56241a92d1b4cb7298e/styles/rubber-hose/STYLE.md"
+  },
+  {
+    "id": "lemo-opuscar:scifi-toon",
+    "provider": "lemo-opuscar",
+    "kind": "style",
+    "name": "Sci-Fi Sitcom Toon — Style Prompt",
+    "path": "styles/scifi-toon/STYLE.md",
+    "source": "https://github.com/lemomo-ai/lemo-opuscar/blob/fdc46d7f0e20cc953a71d56241a92d1b4cb7298e/styles/scifi-toon/STYLE.md"
+  },
+  {
+    "id": "lemo-opuscar:shadow-puppet",
+    "provider": "lemo-opuscar",
+    "kind": "style",
+    "name": "Shadow Puppetry — Style Prompt",
+    "path": "styles/shadow-puppet/STYLE.md",
+    "source": "https://github.com/lemomo-ai/lemo-opuscar/blob/fdc46d7f0e20cc953a71d56241a92d1b4cb7298e/styles/shadow-puppet/STYLE.md"
+  },
+  {
+    "id": "lemo-opuscar:silent-film",
+    "provider": "lemo-opuscar",
+    "kind": "style",
+    "name": "1920s Silent Film — Style Prompt",
+    "path": "styles/silent-film/STYLE.md",
+    "source": "https://github.com/lemomo-ai/lemo-opuscar/blob/fdc46d7f0e20cc953a71d56241a92d1b4cb7298e/styles/silent-film/STYLE.md"
+  },
+  {
+    "id": "lemo-opuscar:silkscreen-poster",
+    "provider": "lemo-opuscar",
+    "kind": "style",
+    "name": "Silkscreen Travel Poster — Style Prompt",
+    "path": "styles/silkscreen-poster/STYLE.md",
+    "source": "https://github.com/lemomo-ai/lemo-opuscar/blob/fdc46d7f0e20cc953a71d56241a92d1b4cb7298e/styles/silkscreen-poster/STYLE.md"
+  },
+  {
+    "id": "lemo-opuscar:spy-titles",
+    "provider": "lemo-opuscar",
+    "kind": "style",
+    "name": "60s Spy Title Sequence — Style Prompt",
+    "path": "styles/spy-titles/STYLE.md",
+    "source": "https://github.com/lemomo-ai/lemo-opuscar/blob/fdc46d7f0e20cc953a71d56241a92d1b4cb7298e/styles/spy-titles/STYLE.md"
+  },
+  {
+    "id": "lemo-opuscar:stained-glass",
+    "provider": "lemo-opuscar",
+    "kind": "style",
+    "name": "Stained Glass — Style Prompt",
+    "path": "styles/stained-glass/STYLE.md",
+    "source": "https://github.com/lemomo-ai/lemo-opuscar/blob/fdc46d7f0e20cc953a71d56241a92d1b4cb7298e/styles/stained-glass/STYLE.md"
+  },
+  {
+    "id": "lemo-opuscar:swiss-motion",
+    "provider": "lemo-opuscar",
+    "kind": "style",
+    "name": "Swiss Motion Graphics — Style Prompt",
+    "path": "styles/swiss-motion/STYLE.md",
+    "source": "https://github.com/lemomo-ai/lemo-opuscar/blob/fdc46d7f0e20cc953a71d56241a92d1b4cb7298e/styles/swiss-motion/STYLE.md"
+  },
+  {
+    "id": "lemo-opuscar:tilt-shift",
+    "provider": "lemo-opuscar",
+    "kind": "style",
+    "name": "Tilt-Shift Miniature — Style Prompt",
+    "path": "styles/tilt-shift/STYLE.md",
+    "source": "https://github.com/lemomo-ai/lemo-opuscar/blob/fdc46d7f0e20cc953a71d56241a92d1b4cb7298e/styles/tilt-shift/STYLE.md"
+  },
+  {
+    "id": "lemo-opuscar:ukiyoe",
+    "provider": "lemo-opuscar",
+    "kind": "style",
+    "name": "Ukiyo-e — Style Prompt",
+    "path": "styles/ukiyoe/STYLE.md",
+    "source": "https://github.com/lemomo-ai/lemo-opuscar/blob/fdc46d7f0e20cc953a71d56241a92d1b4cb7298e/styles/ukiyoe/STYLE.md"
+  },
+  {
+    "id": "lemo-opuscar:urban-sketch",
+    "provider": "lemo-opuscar",
+    "kind": "style",
+    "name": "Urban Sketch · Pen & Wash — Style Prompt",
+    "path": "styles/urban-sketch/STYLE.md",
+    "source": "https://github.com/lemomo-ai/lemo-opuscar/blob/fdc46d7f0e20cc953a71d56241a92d1b4cb7298e/styles/urban-sketch/STYLE.md"
+  },
+  {
+    "id": "lemo-opuscar:watercolor",
+    "provider": "lemo-opuscar",
+    "kind": "style",
+    "name": "Watercolor Brush — Style Prompt",
+    "path": "styles/watercolor/STYLE.md",
+    "source": "https://github.com/lemomo-ai/lemo-opuscar/blob/fdc46d7f0e20cc953a71d56241a92d1b4cb7298e/styles/watercolor/STYLE.md"
+  },
+  {
+    "id": "lemo-opuscar:whiteboard",
+    "provider": "lemo-opuscar",
+    "kind": "style",
+    "name": "Whiteboard Explainer — Style Prompt (v2, no hands)",
+    "path": "styles/whiteboard/STYLE.md",
+    "source": "https://github.com/lemomo-ai/lemo-opuscar/blob/fdc46d7f0e20cc953a71d56241a92d1b4cb7298e/styles/whiteboard/STYLE.md"
+  },
+  {
+    "id": "lemo-opuscar:woodcut",
+    "provider": "lemo-opuscar",
+    "kind": "style",
+    "name": "Woodcut Print — Style Prompt",
+    "path": "styles/woodcut/STYLE.md",
+    "source": "https://github.com/lemomo-ai/lemo-opuscar/blob/fdc46d7f0e20cc953a71d56241a92d1b4cb7298e/styles/woodcut/STYLE.md"
+  },
+  {
+    "id": "mg-styles-15:01-flat-vector",
+    "provider": "mg-styles-15",
+    "kind": "style",
+    "name": "扁平矢量动画 Flat / Vector 2D Motion Graphics",
+    "path": "prompts/01-flat-vector.md",
+    "source": "https://github.com/Vincentwei1021/mg-styles-15/blob/49052d80bfaf9fa8412cc9710530e5e95a3b8d8c/prompts/01-flat-vector.md"
+  },
+  {
+    "id": "mg-styles-15:02-line-art",
+    "provider": "mg-styles-15",
+    "kind": "style",
+    "name": "线条动画 Line Art / Line Animation",
+    "path": "prompts/02-line-art.md",
+    "source": "https://github.com/Vincentwei1021/mg-styles-15/blob/49052d80bfaf9fa8412cc9710530e5e95a3b8d8c/prompts/02-line-art.md"
+  },
+  {
+    "id": "mg-styles-15:03-isometric",
+    "provider": "mg-styles-15",
+    "kind": "style",
+    "name": "等轴 2.5D Isometric / 2.5D",
+    "path": "prompts/03-isometric.md",
+    "source": "https://github.com/Vincentwei1021/mg-styles-15/blob/49052d80bfaf9fa8412cc9710530e5e95a3b8d8c/prompts/03-isometric.md"
+  },
+  {
+    "id": "mg-styles-15:04-3d-render",
+    "provider": "mg-styles-15",
+    "kind": "style",
+    "name": "3D 渲染系（C4D/Blender 质感） 3D Render / CGI Motion Design",
+    "path": "prompts/04-3d-render.md",
+    "source": "https://github.com/Vincentwei1021/mg-styles-15/blob/49052d80bfaf9fa8412cc9710530e5e95a3b8d8c/prompts/04-3d-render.md"
+  },
+  {
+    "id": "mg-styles-15:05-cel-boil",
+    "provider": "mg-styles-15",
+    "kind": "style",
+    "name": "逐帧手绘 / 线条沸腾 Cel Animation / Frame-by-Frame & Line Boil",
+    "path": "prompts/05-cel-boil.md",
+    "source": "https://github.com/Vincentwei1021/mg-styles-15/blob/49052d80bfaf9fa8412cc9710530e5e95a3b8d8c/prompts/05-cel-boil.md"
+  },
+  {
+    "id": "mg-styles-15:06-collage",
+    "provider": "mg-styles-15",
+    "kind": "style",
+    "name": "拼贴剪贴 Collage / Cutout Animation",
+    "path": "prompts/06-collage.md",
+    "source": "https://github.com/Vincentwei1021/mg-styles-15/blob/49052d80bfaf9fa8412cc9710530e5e95a3b8d8c/prompts/06-collage.md"
+  },
+  {
+    "id": "mg-styles-15:07-liquid",
+    "provider": "mg-styles-15",
+    "kind": "style",
+    "name": "液态流动 Liquid Motion",
+    "path": "prompts/07-liquid.md",
+    "source": "https://github.com/Vincentwei1021/mg-styles-15/blob/49052d80bfaf9fa8412cc9710530e5e95a3b8d8c/prompts/07-liquid.md"
+  },
+  {
+    "id": "mg-styles-15:08-morph",
+    "provider": "mg-styles-15",
+    "kind": "style",
+    "name": "形变动画 Morphing / Shape Morph",
+    "path": "prompts/08-morph.md",
+    "source": "https://github.com/Vincentwei1021/mg-styles-15/blob/49052d80bfaf9fa8412cc9710530e5e95a3b8d8c/prompts/08-morph.md"
+  },
+  {
+    "id": "mg-styles-15:09-bauhaus",
+    "provider": "mg-styles-15",
+    "kind": "style",
+    "name": "几何构成 / 包豪斯 Geometric / Bauhaus Motion",
+    "path": "prompts/09-bauhaus.md",
+    "source": "https://github.com/Vincentwei1021/mg-styles-15/blob/49052d80bfaf9fa8412cc9710530e5e95a3b8d8c/prompts/09-bauhaus.md"
+  },
+  {
+    "id": "mg-styles-15:10-synthwave",
+    "provider": "mg-styles-15",
+    "kind": "style",
+    "name": "复古系（80s Synthwave / Y2K 千禧） Retro: 80s Synthwave / VHS / Y2K",
+    "path": "prompts/10-synthwave.md",
+    "source": "https://github.com/Vincentwei1021/mg-styles-15/blob/49052d80bfaf9fa8412cc9710530e5e95a3b8d8c/prompts/10-synthwave.md"
+  },
+  {
+    "id": "mg-styles-15:12-aurora-glass",
+    "provider": "mg-styles-15",
+    "kind": "style",
+    "name": "弥散渐变 / 玻璃拟态 Gradient Blur (Aurora) & Glassmorphism",
+    "path": "prompts/12-aurora-glass.md",
+    "source": "https://github.com/Vincentwei1021/mg-styles-15/blob/49052d80bfaf9fa8412cc9710530e5e95a3b8d8c/prompts/12-aurora-glass.md"
+  },
+  {
+    "id": "mg-styles-15:18-hanazi",
+    "provider": "mg-styles-15",
+    "kind": "style",
+    "name": "综艺花字 Variety Show Kinetic Captions (Hanazi)",
+    "path": "prompts/18-hanazi.md",
+    "source": "https://github.com/Vincentwei1021/mg-styles-15/blob/49052d80bfaf9fa8412cc9710530e5e95a3b8d8c/prompts/18-hanazi.md"
+  },
+  {
+    "id": "mg-styles-15:19-paperclip",
+    "provider": "mg-styles-15",
+    "kind": "style",
+    "name": "粗描边贴纸人科普 MG（回形针/林超风格） Bold-outline Sticker Explainer MG (PaperClip / Lin Chao style)",
+    "path": "prompts/19-paperclip.md",
+    "source": "https://github.com/Vincentwei1021/mg-styles-15/blob/49052d80bfaf9fa8412cc9710530e5e95a3b8d8c/prompts/19-paperclip.md"
+  },
+  {
+    "id": "mg-styles-15:20-pixel",
+    "provider": "mg-styles-15",
+    "kind": "style",
+    "name": "像素风 Pixel Art / 8-bit",
+    "path": "prompts/20-pixel.md",
+    "source": "https://github.com/Vincentwei1021/mg-styles-15/blob/49052d80bfaf9fa8412cc9710530e5e95a3b8d8c/prompts/20-pixel.md"
+  },
+  {
+    "id": "mg-styles-15:22-hud",
+    "provider": "mg-styles-15",
+    "kind": "style",
+    "name": "赛博朋克 HUD / FUI Cyberpunk HUD / FUI (Fictional UI)",
+    "path": "prompts/22-hud.md",
+    "source": "https://github.com/Vincentwei1021/mg-styles-15/blob/49052d80bfaf9fa8412cc9710530e5e95a3b8d8c/prompts/22-hud.md"
+  },
+  {
+    "id": "dashi-animationstyle:复古剪纸",
+    "provider": "dashi-animationstyle",
+    "kind": "style",
+    "name": "复古剪纸（S03）",
+    "path": "styles/复古剪纸/风格卡.md",
+    "source": "https://github.com/chuspeeism/dashi-animationstyle/blob/aa620f3b859aa5d191b783b2eb0fb59263731c76/styles/复古剪纸/风格卡.md"
+  },
+  {
+    "id": "dashi-animationstyle:复古报刊",
+    "provider": "dashi-animationstyle",
+    "kind": "style",
+    "name": "复古报刊（S06）",
+    "path": "styles/复古报刊/风格卡.md",
+    "source": "https://github.com/chuspeeism/dashi-animationstyle/blob/aa620f3b859aa5d191b783b2eb0fb59263731c76/styles/复古报刊/风格卡.md"
+  },
+  {
+    "id": "dashi-animationstyle:扁平流程图",
+    "provider": "dashi-animationstyle",
+    "kind": "style",
+    "name": "扁平流程图（S19）",
+    "path": "styles/扁平流程图/风格卡.md",
+    "source": "https://github.com/chuspeeism/dashi-animationstyle/blob/aa620f3b859aa5d191b783b2eb0fb59263731c76/styles/扁平流程图/风格卡.md"
+  },
+  {
+    "id": "dashi-animationstyle:手绘笔记",
+    "provider": "dashi-animationstyle",
+    "kind": "style",
+    "name": "手绘笔记（S22）",
+    "path": "styles/手绘笔记/风格卡.md",
+    "source": "https://github.com/chuspeeism/dashi-animationstyle/blob/aa620f3b859aa5d191b783b2eb0fb59263731c76/styles/手绘笔记/风格卡.md"
+  },
+  {
+    "id": "dashi-animationstyle:立体卡通",
+    "provider": "dashi-animationstyle",
+    "kind": "style",
+    "name": "立体卡通（S35）",
+    "path": "styles/立体卡通/风格卡.md",
+    "source": "https://github.com/chuspeeism/dashi-animationstyle/blob/aa620f3b859aa5d191b783b2eb0fb59263731c76/styles/立体卡通/风格卡.md"
+  },
+  {
+    "id": "dashi-animationstyle:超现实拼贴",
+    "provider": "dashi-animationstyle",
+    "kind": "style",
+    "name": "超现实拼贴（S44）",
+    "path": "styles/超现实拼贴/风格卡.md",
+    "source": "https://github.com/chuspeeism/dashi-animationstyle/blob/aa620f3b859aa5d191b783b2eb0fb59263731c76/styles/超现实拼贴/风格卡.md"
+  },
+  {
+    "id": "dashi-animationstyle:霓虹赛博",
+    "provider": "dashi-animationstyle",
+    "kind": "style",
+    "name": "霓虹赛博（v1.2，实测过一次）",
+    "path": "styles/霓虹赛博/风格卡.md",
+    "source": "https://github.com/chuspeeism/dashi-animationstyle/blob/aa620f3b859aa5d191b783b2eb0fb59263731c76/styles/霓虹赛博/风格卡.md"
+  },
+  {
+    "id": "dashi-animationstyle:黑底科技",
+    "provider": "dashi-animationstyle",
+    "kind": "style",
+    "name": "黑底科技（11）",
+    "path": "styles/黑底科技/风格卡.md",
+    "source": "https://github.com/chuspeeism/dashi-animationstyle/blob/aa620f3b859aa5d191b783b2eb0fb59263731c76/styles/黑底科技/风格卡.md"
+  },
+  {
+    "id": "huashu-art-motion:t1_3b1b",
+    "provider": "huashu-art-motion",
+    "kind": "grammar",
+    "name": "t1_3b1b · 3Blue1Brown 式数学／概念可视化",
+    "path": "references/动画语法/t1_3b1b.md",
+    "source": "https://github.com/alchaincyf/huashu-art-motion/blob/2571ee0a9a0467c4d99e935ea9e0fadda19210b0/references/动画语法/t1_3b1b.md"
+  },
+  {
+    "id": "huashu-art-motion:t2_keynote_ui",
+    "provider": "huashu-art-motion",
+    "kind": "grammar",
+    "name": "t2_keynote_ui · 发布会式界面与渐变动效",
+    "path": "references/动画语法/t2_keynote_ui.md",
+    "source": "https://github.com/alchaincyf/huashu-art-motion/blob/2571ee0a9a0467c4d99e935ea9e0fadda19210b0/references/动画语法/t2_keynote_ui.md"
+  },
+  {
+    "id": "huashu-art-motion:t3_finance_chart",
+    "provider": "huashu-art-motion",
+    "kind": "grammar",
+    "name": "t3_finance_chart · 财经数据图表动画",
+    "path": "references/动画语法/t3_finance_chart.md",
+    "source": "https://github.com/alchaincyf/huashu-art-motion/blob/2571ee0a9a0467c4d99e935ea9e0fadda19210b0/references/动画语法/t3_finance_chart.md"
+  },
+  {
+    "id": "huashu-art-motion:y1_kurzgesagt",
+    "provider": "huashu-art-motion",
+    "kind": "grammar",
+    "name": "Y1 · Kurzgesagt 扁平科普：视频动画语法卡",
+    "path": "references/动画语法/y1_kurzgesagt.md",
+    "source": "https://github.com/alchaincyf/huashu-art-motion/blob/2571ee0a9a0467c4d99e935ea9e0fadda19210b0/references/动画语法/y1_kurzgesagt.md"
+  },
+  {
+    "id": "huashu-art-motion:y2_vox",
+    "provider": "huashu-art-motion",
+    "kind": "grammar",
+    "name": "Y2 · Vox 式拼贴解说：视频动画语法卡",
+    "path": "references/动画语法/y2_vox.md",
+    "source": "https://github.com/alchaincyf/huashu-art-motion/blob/2571ee0a9a0467c4d99e935ea9e0fadda19210b0/references/动画语法/y2_vox.md"
+  },
+  {
+    "id": "huashu-art-motion:y3_whiteboard",
+    "provider": "huashu-art-motion",
+    "kind": "grammar",
+    "name": "Y3 · 白板手绘解说（RSA Animate 型）：视频动画语法卡",
+    "path": "references/动画语法/y3_whiteboard.md",
+    "source": "https://github.com/alchaincyf/huashu-art-motion/blob/2571ee0a9a0467c4d99e935ea9e0fadda19210b0/references/动画语法/y3_whiteboard.md"
+  },
+  {
+    "id": "huashu-art-motion:y4_storytime",
+    "provider": "huashu-art-motion",
+    "kind": "grammar",
+    "name": "y4 · 故事型简笔角色动画（YouTube storytime animation）",
+    "path": "references/动画语法/y4_storytime.md",
+    "source": "https://github.com/alchaincyf/huashu-art-motion/blob/2571ee0a9a0467c4d99e935ea9e0fadda19210b0/references/动画语法/y4_storytime.md"
+  },
+  {
+    "id": "huashu-art-motion:y5_kinetic_type",
+    "provider": "huashu-art-motion",
+    "kind": "grammar",
+    "name": "y5 · 动态文字排版 / 信息图动效（kinetic typography）",
+    "path": "references/动画语法/y5_kinetic_type.md",
+    "source": "https://github.com/alchaincyf/huashu-art-motion/blob/2571ee0a9a0467c4d99e935ea9e0fadda19210b0/references/动画语法/y5_kinetic_type.md"
+  },
+  {
+    "id": "huashu-art-motion:y6_presenter_explainer",
+    "provider": "huashu-art-motion",
+    "kind": "grammar",
+    "name": "Y6 · 讲解员式财经科普",
+    "path": "references/动画语法/y6_presenter_explainer.md",
+    "source": "https://github.com/alchaincyf/huashu-art-motion/blob/2571ee0a9a0467c4d99e935ea9e0fadda19210b0/references/动画语法/y6_presenter_explainer.md"
+  },
+  {
+    "id": "huashu-art-motion:01_cave",
+    "provider": "huashu-art-motion",
+    "kind": "style",
+    "name": "01_cave · 40,000 BC 洞穴岩画（纯代码）",
+    "path": "references/风格配方/01_cave.md",
+    "source": "https://github.com/alchaincyf/huashu-art-motion/blob/2571ee0a9a0467c4d99e935ea9e0fadda19210b0/references/风格配方/01_cave.md"
+  },
+  {
+    "id": "huashu-art-motion:02_egypt",
+    "provider": "huashu-art-motion",
+    "kind": "style",
+    "name": "02_egypt · 公元前1350年埃及墓室壁画（纯代码）",
+    "path": "references/风格配方/02_egypt.md",
+    "source": "https://github.com/alchaincyf/huashu-art-motion/blob/2571ee0a9a0467c4d99e935ea9e0fadda19210b0/references/风格配方/02_egypt.md"
+  },
+  {
+    "id": "huashu-art-motion:03_greek",
+    "provider": "huashu-art-motion",
+    "kind": "style",
+    "name": "03_greek · 公元前530 阿提卡黑绘陶器 —— 代码画法笔记",
+    "path": "references/风格配方/03_greek.md",
+    "source": "https://github.com/alchaincyf/huashu-art-motion/blob/2571ee0a9a0467c4d99e935ea9e0fadda19210b0/references/风格配方/03_greek.md"
+  },
+  {
+    "id": "huashu-art-motion:04_roman",
+    "provider": "huashu-art-motion",
+    "kind": "style",
+    "name": "04_roman · 公元79年 庞贝马赛克 —— 手法笔记",
+    "path": "references/风格配方/04_roman.md",
+    "source": "https://github.com/alchaincyf/huashu-art-motion/blob/2571ee0a9a0467c4d99e935ea9e0fadda19210b0/references/风格配方/04_roman.md"
+  },
+  {
+    "id": "huashu-art-motion:05_gothic",
+    "provider": "huashu-art-motion",
+    "kind": "style",
+    "name": "05_gothic · 1290 哥特泥金手抄本",
+    "path": "references/风格配方/05_gothic.md",
+    "source": "https://github.com/alchaincyf/huashu-art-motion/blob/2571ee0a9a0467c4d99e935ea9e0fadda19210b0/references/风格配方/05_gothic.md"
+  },
+  {
+    "id": "huashu-art-motion:06_renaissance",
+    "provider": "huashu-art-motion",
+    "kind": "style",
+    "name": "06_renaissance · 1503 文艺复兴盛期（达芬奇式）",
+    "path": "references/风格配方/06_renaissance.md",
+    "source": "https://github.com/alchaincyf/huashu-art-motion/blob/2571ee0a9a0467c4d99e935ea9e0fadda19210b0/references/风格配方/06_renaissance.md"
+  },
+  {
+    "id": "huashu-art-motion:08_impressionism",
+    "provider": "huashu-art-motion",
+    "kind": "style",
+    "name": "08_impressionism · 1874 印象派（莫奈）",
+    "path": "references/风格配方/08_impressionism.md",
+    "source": "https://github.com/alchaincyf/huashu-art-motion/blob/2571ee0a9a0467c4d99e935ea9e0fadda19210b0/references/风格配方/08_impressionism.md"
+  },
+  {
+    "id": "huashu-art-motion:09_postimp",
+    "provider": "huashu-art-motion",
+    "kind": "style",
+    "name": "09_postimp · 1889 梵高（标杆实现）",
+    "path": "references/风格配方/09_postimp.md",
+    "source": "https://github.com/alchaincyf/huashu-art-motion/blob/2571ee0a9a0467c4d99e935ea9e0fadda19210b0/references/风格配方/09_postimp.md"
+  },
+  {
+    "id": "huashu-art-motion:10_nouveau",
+    "provider": "huashu-art-motion",
+    "kind": "style",
+    "name": "10_nouveau · 1896 新艺术运动（慕夏海报）",
+    "path": "references/风格配方/10_nouveau.md",
+    "source": "https://github.com/alchaincyf/huashu-art-motion/blob/2571ee0a9a0467c4d99e935ea9e0fadda19210b0/references/风格配方/10_nouveau.md"
+  },
+  {
+    "id": "huashu-art-motion:11_cubism",
+    "provider": "huashu-art-motion",
+    "kind": "style",
+    "name": "11_cubism · 1912 分析立体主义（毕加索／布拉克）",
+    "path": "references/风格配方/11_cubism.md",
+    "source": "https://github.com/alchaincyf/huashu-art-motion/blob/2571ee0a9a0467c4d99e935ea9e0fadda19210b0/references/风格配方/11_cubism.md"
+  },
+  {
+    "id": "huashu-art-motion:12_bauhaus",
+    "provider": "huashu-art-motion",
+    "kind": "style",
+    "name": "12_bauhaus · 1923 包豪斯海报",
+    "path": "references/风格配方/12_bauhaus.md",
+    "source": "https://github.com/alchaincyf/huashu-art-motion/blob/2571ee0a9a0467c4d99e935ea9e0fadda19210b0/references/风格配方/12_bauhaus.md"
+  },
+  {
+    "id": "huashu-art-motion:13_pop",
+    "provider": "huashu-art-motion",
+    "kind": "style",
+    "name": "13_pop · 1962 波普（利希滕斯坦漫画格＋沃霍尔四宫格）",
+    "path": "references/风格配方/13_pop.md",
+    "source": "https://github.com/alchaincyf/huashu-art-motion/blob/2571ee0a9a0467c4d99e935ea9e0fadda19210b0/references/风格配方/13_pop.md"
+  },
+  {
+    "id": "huashu-art-motion:14_8bit",
+    "provider": "huashu-art-motion",
+    "kind": "style",
+    "name": "14_8bit · 1985 8-bit 像素游戏",
+    "path": "references/风格配方/14_8bit.md",
+    "source": "https://github.com/alchaincyf/huashu-art-motion/blob/2571ee0a9a0467c4d99e935ea9e0fadda19210b0/references/风格配方/14_8bit.md"
+  },
+  {
+    "id": "huashu-art-motion:15_raytrace",
+    "provider": "huashu-art-motion",
+    "kind": "style",
+    "name": "15_raytrace · 1993 早期光线追踪 CGI",
+    "path": "references/风格配方/15_raytrace.md",
+    "source": "https://github.com/alchaincyf/huashu-art-motion/blob/2571ee0a9a0467c4d99e935ea9e0fadda19210b0/references/风格配方/15_raytrace.md"
+  },
+  {
+    "id": "huashu-art-motion:16_2026",
+    "provider": "huashu-art-motion",
+    "kind": "style",
+    "name": "16_2026 · 2026 扁平矢量插画 ＋ 全片笑点收尾",
+    "path": "references/风格配方/16_2026.md",
+    "source": "https://github.com/alchaincyf/huashu-art-motion/blob/2571ee0a9a0467c4d99e935ea9e0fadda19210b0/references/风格配方/16_2026.md"
+  },
+  {
+    "id": "huashu-art-motion:17_ink",
+    "provider": "huashu-art-motion",
+    "kind": "style",
+    "name": "17_ink · 中国水墨写意（八大山人／齐白石）",
+    "path": "references/风格配方/17_ink.md",
+    "source": "https://github.com/alchaincyf/huashu-art-motion/blob/2571ee0a9a0467c4d99e935ea9e0fadda19210b0/references/风格配方/17_ink.md"
+  },
+  {
+    "id": "huashu-art-motion:18_klimt",
+    "provider": "huashu-art-motion",
+    "kind": "style",
+    "name": "18_klimt · 克里姆特金色时期（1907）",
+    "path": "references/风格配方/18_klimt.md",
+    "source": "https://github.com/alchaincyf/huashu-art-motion/blob/2571ee0a9a0467c4d99e935ea9e0fadda19210b0/references/风格配方/18_klimt.md"
+  },
+  {
+    "id": "huashu-art-motion:19_munch",
+    "provider": "huashu-art-motion",
+    "kind": "style",
+    "name": "19_munch · 蒙克《呐喊》式表现主义（1893）",
+    "path": "references/风格配方/19_munch.md",
+    "source": "https://github.com/alchaincyf/huashu-art-motion/blob/2571ee0a9a0467c4d99e935ea9e0fadda19210b0/references/风格配方/19_munch.md"
+  },
+  {
+    "id": "huashu-art-motion:20_dunhuang",
+    "provider": "huashu-art-motion",
+    "kind": "style",
+    "name": "20_dunhuang · 敦煌壁画（莫高窟·盛唐）",
+    "path": "references/风格配方/20_dunhuang.md",
+    "source": "https://github.com/alchaincyf/huashu-art-motion/blob/2571ee0a9a0467c4d99e935ea9e0fadda19210b0/references/风格配方/20_dunhuang.md"
+  },
+  {
+    "id": "huashu-art-motion:21_kusama",
+    "provider": "huashu-art-motion",
+    "kind": "style",
+    "name": "21_kusama · 草间弥生无限波点",
+    "path": "references/风格配方/21_kusama.md",
+    "source": "https://github.com/alchaincyf/huashu-art-motion/blob/2571ee0a9a0467c4d99e935ea9e0fadda19210b0/references/风格配方/21_kusama.md"
+  },
+  {
+    "id": "huashu-art-motion:22_constructivism",
+    "provider": "huashu-art-motion",
+    "kind": "style",
+    "name": "22_constructivism · 1924 俄罗斯构成主义海报（罗德琴科 / 李西茨基）",
+    "path": "references/风格配方/22_constructivism.md",
+    "source": "https://github.com/alchaincyf/huashu-art-motion/blob/2571ee0a9a0467c4d99e935ea9e0fadda19210b0/references/风格配方/22_constructivism.md"
+  },
+  {
+    "id": "huashu-art-motion:23_dali",
+    "provider": "huashu-art-motion",
+    "kind": "style",
+    "name": "23_dali · 1931 达利超现实主义（《记忆的永恒》）",
+    "path": "references/风格配方/23_dali.md",
+    "source": "https://github.com/alchaincyf/huashu-art-motion/blob/2571ee0a9a0467c4d99e935ea9e0fadda19210b0/references/风格配方/23_dali.md"
+  },
+  {
+    "id": "huashu-art-motion:24_hopper",
+    "provider": "huashu-art-motion",
+    "kind": "style",
+    "name": "24_hopper · 1942 霍珀美国现实主义（硬光块面）",
+    "path": "references/风格配方/24_hopper.md",
+    "source": "https://github.com/alchaincyf/huashu-art-motion/blob/2571ee0a9a0467c4d99e935ea9e0fadda19210b0/references/风格配方/24_hopper.md"
+  },
+  {
+    "id": "huashu-art-motion:25_ghibli",
+    "provider": "huashu-art-motion",
+    "kind": "style",
+    "name": "25_ghibli · 1988 吉卜力式手绘水彩背景美术",
+    "path": "references/风格配方/25_ghibli.md",
+    "source": "https://github.com/alchaincyf/huashu-art-motion/blob/2571ee0a9a0467c4d99e935ea9e0fadda19210b0/references/风格配方/25_ghibli.md"
+  },
+  {
+    "id": "huashu-art-motion:26_vaporwave",
+    "provider": "huashu-art-motion",
+    "kind": "style",
+    "name": "26_vaporwave · 2011 蒸汽波 / 赛博霓虹",
+    "path": "references/风格配方/26_vaporwave.md",
+    "source": "https://github.com/alchaincyf/huashu-art-motion/blob/2571ee0a9a0467c4d99e935ea9e0fadda19210b0/references/风格配方/26_vaporwave.md"
+  },
+  {
+    "id": "huashu-art-motion:27_kirby",
+    "provider": "huashu-art-motion",
+    "kind": "style",
+    "name": "27_kirby · 1966 漫威银河时代（Jack Kirby ＋ 四色胶印）",
+    "path": "references/风格配方/27_kirby.md",
+    "source": "https://github.com/alchaincyf/huashu-art-motion/blob/2571ee0a9a0467c4d99e935ea9e0fadda19210b0/references/风格配方/27_kirby.md"
+  },
+  {
+    "id": "huashu-art-motion:28_monet",
+    "provider": "huashu-art-motion",
+    "kind": "style",
+    "name": "28_monet · 1899 莫奈《睡莲》＋《日本桥》",
+    "path": "references/风格配方/28_monet.md",
+    "source": "https://github.com/alchaincyf/huashu-art-motion/blob/2571ee0a9a0467c4d99e935ea9e0fadda19210b0/references/风格配方/28_monet.md"
+  },
+  {
+    "id": "huashu-art-motion:29_seurat",
+    "provider": "huashu-art-motion",
+    "kind": "style",
+    "name": "29_seurat · 1884 修拉《大碗岛的星期天下午》（点彩：视觉混色渲染器）",
+    "path": "references/风格配方/29_seurat.md",
+    "source": "https://github.com/alchaincyf/huashu-art-motion/blob/2571ee0a9a0467c4d99e935ea9e0fadda19210b0/references/风格配方/29_seurat.md"
+  },
+  {
+    "id": "huashu-art-motion:30_matisse",
+    "provider": "huashu-art-motion",
+    "kind": "style",
+    "name": "30_matisse · 1947 马蒂斯《爵士》剪纸",
+    "path": "references/风格配方/30_matisse.md",
+    "source": "https://github.com/alchaincyf/huashu-art-motion/blob/2571ee0a9a0467c4d99e935ea9e0fadda19210b0/references/风格配方/30_matisse.md"
+  },
+  {
+    "id": "huashu-art-motion:31_haring",
+    "provider": "huashu-art-motion",
+    "kind": "style",
+    "name": "31_haring · 1982 凯斯·哈林",
+    "path": "references/风格配方/31_haring.md",
+    "source": "https://github.com/alchaincyf/huashu-art-motion/blob/2571ee0a9a0467c4d99e935ea9e0fadda19210b0/references/风格配方/31_haring.md"
+  },
+  {
+    "id": "huashu-art-motion:32_rembrandt",
+    "provider": "huashu-art-motion",
+    "kind": "style",
+    "name": "32_rembrandt · 1642 伦勃朗明暗法",
+    "path": "references/风格配方/32_rembrandt.md",
+    "source": "https://github.com/alchaincyf/huashu-art-motion/blob/2571ee0a9a0467c4d99e935ea9e0fadda19210b0/references/风格配方/32_rembrandt.md"
+  },
+  {
+    "id": "huashu-art-motion:33_rubberhose",
+    "provider": "huashu-art-motion",
+    "kind": "style",
+    "name": "33_rubberhose · 1930 橡皮管卡通",
+    "path": "references/风格配方/33_rubberhose.md",
+    "source": "https://github.com/alchaincyf/huashu-art-motion/blob/2571ee0a9a0467c4d99e935ea9e0fadda19210b0/references/风格配方/33_rubberhose.md"
+  },
+  {
+    "id": "huashu-art-motion:34_shadowpuppet",
+    "provider": "huashu-art-motion",
+    "kind": "style",
+    "name": "34_shadowpuppet · 中国皮影戏",
+    "path": "references/风格配方/34_shadowpuppet.md",
+    "source": "https://github.com/alchaincyf/huashu-art-motion/blob/2571ee0a9a0467c4d99e935ea9e0fadda19210b0/references/风格配方/34_shadowpuppet.md"
+  },
+  {
+    "id": "huashu-art-motion:35_shinkai",
+    "provider": "huashu-art-motion",
+    "kind": "style",
+    "name": "35_shinkai · 2016 新海诚光影",
+    "path": "references/风格配方/35_shinkai.md",
+    "source": "https://github.com/alchaincyf/huashu-art-motion/blob/2571ee0a9a0467c4d99e935ea9e0fadda19210b0/references/风格配方/35_shinkai.md"
+  },
+  {
+    "id": "huashu-art-motion:36_picasso_blue",
+    "provider": "huashu-art-motion",
+    "kind": "style",
+    "name": "36_picasso_blue · 1903 毕加索蓝色时期",
+    "path": "references/风格配方/36_picasso_blue.md",
+    "source": "https://github.com/alchaincyf/huashu-art-motion/blob/2571ee0a9a0467c4d99e935ea9e0fadda19210b0/references/风格配方/36_picasso_blue.md"
+  },
+  {
+    "id": "huashu-art-motion:37_rick_morty",
+    "provider": "huashu-art-motion",
+    "kind": "style",
+    "name": "37_rick_morty · Rick & Morty扁平描边卡通",
+    "path": "references/风格配方/37_rick_morty.md",
+    "source": "https://github.com/alchaincyf/huashu-art-motion/blob/2571ee0a9a0467c4d99e935ea9e0fadda19210b0/references/风格配方/37_rick_morty.md"
+  }
+]
