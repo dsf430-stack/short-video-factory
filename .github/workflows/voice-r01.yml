@@ -1,0 +1,120 @@
+name: R01 儒雅青年配音
+run-name: R01 official voice · ${{ github.run_id }}
+on:
+  workflow_dispatch:
+    inputs:
+      narration:
+        description: '旁白正文（1-10000字，官方模型按語義分段）'
+        required: true
+        type: string
+      filename:
+        description: '輸出檔名：英數、底線或連字號'
+        default: voice-r01
+        type: string
+  push:
+    branches: [feature/r01-official-voice]
+    paths: [.github/workflows/voice-r01.yml, smart_voice/prepare_r01.py]
+permissions:
+  contents: read
+concurrency:
+  group: r01-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  synthesize:
+    runs-on: macos-14
+    timeout-minutes: 30
+    env:
+      R01_NARRATION: ${{ inputs.narration || '今天，我們測試一段全新的旁白。每一段文字，都應該完整讀完，保留自然的停頓，讓故事清楚地傳達給聽眾。' }}
+      R01_FILENAME: ${{ inputs.filename || 'r01-new-text-test' }}
+      R01_MODEL: ${{ github.workspace }}/.r01-model/VoxCPM2-8bit
+      R01_MODEL_REVISION: d52725898a0675703f7f9ddc5a4d1a3cdbb99032
+      PYTHONDONTWRITEBYTECODE: '1'
+      HF_HUB_DISABLE_TELEMETRY: '1'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/checkout@v4
+        with:
+          repository: threerocks/sweety-handdraw-video
+          ref: 3ae9b78d22af907afe70c1af4b8dc677f883bae1
+          path: .r01-upstream
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          architecture: arm64
+      - name: Validate runner and narration before model setup
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(uname -m)" = arm64
+          sysctl -n hw.memsize
+          df -h .
+          python smart_voice/prepare_r01.py --output r01-output
+      - name: Install official MLX adapter dependencies
+        shell: bash
+        run: |
+          set -euo pipefail
+          command -v ffmpeg >/dev/null || brew install ffmpeg
+          python -m pip install -r .r01-upstream/skills/sweety-handdraw-video/scripts/requirements.txt
+          python -m pip install 'mlx-audio==0.5.8' soundfile huggingface_hub
+          python -c "import mlx.core; import mlx_audio; print('MLX adapter imports ready')"
+      - name: Restore pinned public model
+        uses: actions/cache@v4
+        with:
+          path: .r01-model
+          key: r01-voxcpm2-8bit-${{ runner.os }}-${{ env.R01_MODEL_REVISION }}
+      - name: Download explicit public VoxCPM2 model revision
+        shell: bash
+        run: |
+          python - <<'PY'
+          import os
+          from huggingface_hub import snapshot_download
+          snapshot_download('mlx-community/VoxCPM2-8bit',
+                            revision=os.environ['R01_MODEL_REVISION'],
+                            local_dir=os.environ['R01_MODEL'])
+          PY
+      - name: Generate new R01 narration with unchanged official adapter
+        shell: bash
+        run: |
+          set -euo pipefail
+          python .r01-upstream/skills/sweety-handdraw-video/scripts/voxcpm_voice.py r01-output
+          ffmpeg -y -v error -i "r01-output/${R01_FILENAME}.wav" -c:a libmp3lame -b:a 192k "r01-output/${R01_FILENAME}.mp3"
+          ffmpeg -v error -i "r01-output/${R01_FILENAME}.mp3" -f null -
+          python .r01-upstream/skills/sweety-handdraw-video/scripts/audio_gate.py "r01-output/${R01_FILENAME}.mp3"
+      - name: Record exact engine and inputs
+        if: success()
+        shell: bash
+        run: |
+          python - <<'PY'
+          import hashlib, json, os, pathlib, subprocess
+          root=pathlib.Path('r01-output')
+          audio=root/(os.environ['R01_FILENAME']+'.mp3')
+          record={'status':'generated_and_engineering_checked','voice':'R01',
+                  'official_voice_id':'scholarly-young-man','engine':'VoxCPM2-8bit MLX',
+                  'official_commit':subprocess.check_output(['git','-C','.r01-upstream','rev-parse','HEAD'],text=True).strip(),
+                  'model_revision':os.environ['R01_MODEL_REVISION'],
+                  'audio_sha256':hashlib.sha256(audio.read_bytes()).hexdigest(),
+                  'source':'new text synthesis, not bundled reference playback',
+                  'subjective_listening':'not_performed','old_068_changed':False}
+          (root/'receipt.json').write_text(json.dumps(record,ensure_ascii=False,indent=2))
+          with open(os.environ['GITHUB_STEP_SUMMARY'],'a') as stream:
+              stream.write('R01 new narration generated. Download the r01-voice-output artifact.\n')
+          PY
+      - name: Upload generated narration and real alignment
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: r01-voice-output
+          path: r01-output/
+          if-no-files-found: error
+          retention-days: 30
+      - name: Preserve failed generation diagnostics
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: r01-failure-diagnostics
+          path: r01-output/
+          if-no-files-found: ignore
+          retention-days: 7
